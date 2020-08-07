@@ -97,10 +97,76 @@
     <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form3.Designer.vb">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Instalasi.Designer.vb">
       <DependentUpon>Instalasi.vb</DependentUpon>
     </Compile>
     <Compile Include="Instalasi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterAlasan.Designer.vb">
+      <DependentUpon>MasterAlasan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterAlasan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterClient.Designer.vb">
+      <DependentUpon>MasterClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterData.Designer.vb">
+      <DependentUpon>MasterData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterDataToko.Designer.vb">
+      <DependentUpon>MasterDataToko.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDataToko.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterDetailLokasi.Designer.vb">
+      <DependentUpon>MasterDetailLokasi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDetailLokasi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterKondisi.Designer.vb">
+      <DependentUpon>MasterKondisi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterKondisi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterLokasi.Designer.vb">
+      <DependentUpon>MasterLokasi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterLokasi.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterStatus.Designer.vb">
+      <DependentUpon>MasterStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterTipe.Designer.vb">
+      <DependentUpon>MasterTipe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterTipe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterUser.Designer.vb">
+      <DependentUpon>MasterUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterUser.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuUtama.Designer.vb">
@@ -125,6 +191,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="QPenawaran.Designer.vb">
+      <DependentUpon>QPenawaran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QPenawaran.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Rental.Designer.vb">
       <DependentUpon>Rental.vb</DependentUpon>
     </Compile>
@@ -148,8 +220,41 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Instalasi.resx">
       <DependentUpon>Instalasi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterAlasan.resx">
+      <DependentUpon>MasterAlasan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterClient.resx">
+      <DependentUpon>MasterClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterData.resx">
+      <DependentUpon>MasterData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterDataToko.resx">
+      <DependentUpon>MasterDataToko.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterDetailLokasi.resx">
+      <DependentUpon>MasterDetailLokasi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterKondisi.resx">
+      <DependentUpon>MasterKondisi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterLokasi.resx">
+      <DependentUpon>MasterLokasi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterStatus.resx">
+      <DependentUpon>MasterStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterTipe.resx">
+      <DependentUpon>MasterTipe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterUser.resx">
+      <DependentUpon>MasterUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuUtama.resx">
       <DependentUpon>MenuUtama.vb</DependentUpon>
@@ -159,6 +264,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QPenawaran.resx">
+      <DependentUpon>QPenawaran.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rental.resx">
       <DependentUpon>Rental.vb</DependentUpon>
@@ -178,6 +286,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-expand-arrow-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-chevron-left-26.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

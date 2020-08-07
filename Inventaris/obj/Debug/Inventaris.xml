@@ -22,5 +22,15 @@ Inventaris
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Inventaris.My.Resources.Resources.icons8_chevron_left_26">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Inventaris.My.Resources.Resources.icons8_expand_arrow_26">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

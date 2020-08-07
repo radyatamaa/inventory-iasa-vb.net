@@ -334,6 +334,7 @@ Partial Class BarangKeluar
         'ComboBox5
         '
         Me.ComboBox5.FormattingEnabled = True
+        Me.ComboBox5.Items.AddRange(New Object() {"Repair", "Rental"})
         Me.ComboBox5.Location = New System.Drawing.Point(172, 16)
         Me.ComboBox5.Name = "ComboBox5"
         Me.ComboBox5.Size = New System.Drawing.Size(174, 24)
@@ -478,7 +479,7 @@ Partial Class BarangKeluar
         Me.Controls.Add(Me.Button13)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "BarangKeluar"
-        Me.Text = "BarangKeluar"
+        Me.Text = "Penjualan"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
