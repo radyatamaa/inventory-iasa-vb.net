@@ -169,10 +169,10 @@
     <Compile Include="MasterUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuUtama.Designer.vb">
-      <DependentUpon>MenuUtama.vb</DependentUpon>
+    <Compile Include="BarangMasuk.Designer.vb">
+      <DependentUpon>BarangMasuk.vb</DependentUpon>
     </Compile>
-    <Compile Include="MenuUtama.vb">
+    <Compile Include="BarangMasuk.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -256,8 +256,8 @@
     <EmbeddedResource Include="MasterUser.resx">
       <DependentUpon>MasterUser.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuUtama.resx">
-      <DependentUpon>MenuUtama.vb</DependentUpon>
+    <EmbeddedResource Include="BarangMasuk.resx">
+      <DependentUpon>BarangMasuk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

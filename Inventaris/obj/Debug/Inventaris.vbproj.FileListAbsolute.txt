@@ -30,3 +30,34 @@ C:\Users\Asus\source\repos\Inventaris\Inventaris\obj\Debug\Inventaris.MasterStat
 C:\Users\Asus\source\repos\Inventaris\Inventaris\obj\Debug\Inventaris.MasterTipe.resources
 C:\Users\Asus\source\repos\Inventaris\Inventaris\obj\Debug\Inventaris.MasterUser.resources
 C:\Users\Asus\source\repos\Inventaris\Inventaris\obj\Debug\Inventaris.QPenawaran.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Inventaris.exe.config
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Inventaris.exe
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Inventaris.pdb
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Inventaris.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.vbprojAssemblyReference.cache
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.BarangKeluar.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Form1.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Form2.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Form3.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Instalasi.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterAlasan.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterClient.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterData.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterDataToko.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterDetailLokasi.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterKondisi.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterLokasi.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterStatus.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterTipe.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterUser.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.BarangMasuk.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Resources.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.QPenawaran.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Rental.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Repair.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.vbproj.GenerateResource.cache
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.vbproj.CoreCompileInputs.cache
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.vbproj.CopyComplete
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.exe
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.pdb
