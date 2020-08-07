@@ -34,6 +34,17 @@ Partial Class MenuUtama
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ComboBox7 = New System.Windows.Forms.ComboBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -63,24 +74,11 @@ Partial Class MenuUtama
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button15 = New System.Windows.Forms.Button()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Button17 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -88,7 +86,7 @@ Partial Class MenuUtama
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.Panel3)
+        Me.Panel1.Controls.Add(Me.Button15)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Button14)
         Me.Panel1.Controls.Add(Me.Button7)
@@ -230,7 +228,7 @@ Partial Class MenuUtama
         Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button8.FlatAppearance.BorderSize = 0
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Location = New System.Drawing.Point(1323, 8)
+        Me.Button8.Location = New System.Drawing.Point(1323, 7)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(47, 53)
         Me.Button8.TabIndex = 9
@@ -241,6 +239,8 @@ Partial Class MenuUtama
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel2.Controls.Add(Me.ComboBox7)
+        Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Controls.Add(Me.Label13)
         Me.Panel2.Controls.Add(Me.ComboBox5)
@@ -275,11 +275,111 @@ Partial Class MenuUtama
         Me.Panel2.Size = New System.Drawing.Size(1539, 468)
         Me.Panel2.TabIndex = 1
         '
+        'ComboBox7
+        '
+        Me.ComboBox7.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.ComboBox7.FormattingEnabled = True
+        Me.ComboBox7.Location = New System.Drawing.Point(924, 58)
+        Me.ComboBox7.Name = "ComboBox7"
+        Me.ComboBox7.Size = New System.Drawing.Size(236, 24)
+        Me.ComboBox7.TabIndex = 34
+        '
+        'Label14
+        '
+        Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(811, 65)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(48, 17)
+        Me.Label14.TabIndex = 33
+        Me.Label14.Text = "Status"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.TextBox1.Location = New System.Drawing.Point(561, 166)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(236, 22)
+        Me.TextBox1.TabIndex = 32
+        '
+        'Label13
+        '
+        Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(448, 169)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(57, 17)
+        Me.Label13.TabIndex = 31
+        Me.Label13.Text = "Catatan"
+        '
+        'ComboBox5
+        '
+        Me.ComboBox5.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.ComboBox5.FormattingEnabled = True
+        Me.ComboBox5.Location = New System.Drawing.Point(561, 97)
+        Me.ComboBox5.Name = "ComboBox5"
+        Me.ComboBox5.Size = New System.Drawing.Size(236, 24)
+        Me.ComboBox5.TabIndex = 30
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.TextBox5.Location = New System.Drawing.Point(924, 97)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(236, 22)
+        Me.TextBox5.TabIndex = 29
+        '
+        'Label12
+        '
+        Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(811, 100)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(89, 17)
+        Me.Label12.TabIndex = 28
+        Me.Label12.Text = "Harga Modal"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.TextBox4.Location = New System.Drawing.Point(924, 133)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(236, 22)
+        Me.TextBox4.TabIndex = 27
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(811, 136)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(97, 17)
+        Me.Label11.TabIndex = 26
+        Me.Label11.Text = "Harga Barang"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.TextBox2.Location = New System.Drawing.Point(561, 136)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(236, 22)
+        Me.TextBox2.TabIndex = 25
+        '
+        'Label10
+        '
+        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(448, 139)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(57, 17)
+        Me.Label10.TabIndex = 24
+        Me.Label10.Text = "License"
+        '
         'Label9
         '
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(812, 139)
+        Me.Label9.Location = New System.Drawing.Point(811, 173)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(105, 17)
         Me.Label9.TabIndex = 23
@@ -287,7 +387,7 @@ Partial Class MenuUtama
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(925, 139)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(924, 173)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(236, 22)
         Me.DateTimePicker1.TabIndex = 22
@@ -327,7 +427,7 @@ Partial Class MenuUtama
         Me.Button10.FlatAppearance.BorderSize = 0
         Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button10.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button10.Location = New System.Drawing.Point(925, 174)
+        Me.Button10.Location = New System.Drawing.Point(1178, 60)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(236, 28)
         Me.Button10.TabIndex = 17
@@ -543,87 +643,6 @@ Partial Class MenuUtama
         Me.Button13.Text = "Hapus"
         Me.Button13.UseVisualStyleBackColor = True
         '
-        'TextBox2
-        '
-        Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TextBox2.Location = New System.Drawing.Point(561, 136)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(236, 22)
-        Me.TextBox2.TabIndex = 25
-        '
-        'Label10
-        '
-        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(448, 139)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(57, 17)
-        Me.Label10.TabIndex = 24
-        Me.Label10.Text = "License"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TextBox4.Location = New System.Drawing.Point(925, 99)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(236, 22)
-        Me.TextBox4.TabIndex = 27
-        '
-        'Label11
-        '
-        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(812, 102)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(97, 17)
-        Me.Label11.TabIndex = 26
-        Me.Label11.Text = "Harga Barang"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TextBox5.Location = New System.Drawing.Point(925, 63)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(236, 22)
-        Me.TextBox5.TabIndex = 29
-        '
-        'Label12
-        '
-        Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(812, 66)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(89, 17)
-        Me.Label12.TabIndex = 28
-        Me.Label12.Text = "Harga Modal"
-        '
-        'ComboBox5
-        '
-        Me.ComboBox5.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(561, 97)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(236, 24)
-        Me.ComboBox5.TabIndex = 30
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TextBox1.Location = New System.Drawing.Point(561, 166)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(236, 22)
-        Me.TextBox1.TabIndex = 32
-        '
-        'Label13
-        '
-        Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(448, 169)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(57, 17)
-        Me.Label13.TabIndex = 31
-        Me.Label13.Text = "Catatan"
-        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.Transparent
@@ -631,67 +650,26 @@ Partial Class MenuUtama
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(795, 0)
+        Me.Button1.Location = New System.Drawing.Point(799, 0)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(115, 62)
+        Me.Button1.Size = New System.Drawing.Size(137, 62)
         Me.Button1.TabIndex = 18
         Me.Button1.Text = "Master User"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.Button15)
-        Me.Panel3.Controls.Add(Me.Button16)
-        Me.Panel3.Controls.Add(Me.Button17)
-        Me.Panel3.Location = New System.Drawing.Point(795, 51)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(200, 97)
-        Me.Panel3.TabIndex = 21
-        Me.Panel3.Visible = False
         '
         'Button15
         '
-        Me.Button15.BackColor = System.Drawing.Color.DarkGray
+        Me.Button15.BackColor = System.Drawing.Color.Transparent
         Me.Button15.FlatAppearance.BorderSize = 0
         Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button15.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button15.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button15.Location = New System.Drawing.Point(3, 63)
+        Me.Button15.Location = New System.Drawing.Point(937, 0)
         Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(194, 30)
-        Me.Button15.TabIndex = 23
-        Me.Button15.Text = "Kelola Password"
+        Me.Button15.Size = New System.Drawing.Size(137, 62)
+        Me.Button15.TabIndex = 19
+        Me.Button15.Text = "Master Data"
         Me.Button15.UseVisualStyleBackColor = False
-        '
-        'Button16
-        '
-        Me.Button16.BackColor = System.Drawing.Color.DarkGray
-        Me.Button16.FlatAppearance.BorderSize = 0
-        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button16.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button16.Location = New System.Drawing.Point(3, 33)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(194, 30)
-        Me.Button16.TabIndex = 22
-        Me.Button16.Text = "Kelola Level User"
-        Me.Button16.UseVisualStyleBackColor = False
-        '
-        'Button17
-        '
-        Me.Button17.BackColor = System.Drawing.Color.DarkGray
-        Me.Button17.FlatAppearance.BorderSize = 0
-        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button17.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button17.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button17.Location = New System.Drawing.Point(3, 3)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(194, 30)
-        Me.Button17.TabIndex = 21
-        Me.Button17.Text = "Kelola Data User"
-        Me.Button17.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button17.UseVisualStyleBackColor = False
         '
         'MenuUtama
         '
@@ -705,12 +683,11 @@ Partial Class MenuUtama
         Me.Controls.Add(Me.Panel1)
         Me.Name = "MenuUtama"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "MenuUtama"
+        Me.Text = "Barang Masuk"
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -764,9 +741,8 @@ Partial Class MenuUtama
     Friend WithEvents Label11 As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents ComboBox7 As ComboBox
+    Friend WithEvents Label14 As Label
     Friend WithEvents Button15 As Button
-    Friend WithEvents Button16 As Button
-    Friend WithEvents Button17 As Button
+    Friend WithEvents Button1 As Button
 End Class
