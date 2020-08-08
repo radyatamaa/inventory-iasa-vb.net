@@ -23,13 +23,13 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -43,17 +43,6 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1294, 627)
         Me.Panel1.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Ubuntu Condensed", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(207, 11)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(88, 41)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Login"
         '
         'Panel2
         '
@@ -72,46 +61,6 @@ Partial Class Form1
         Me.Panel2.Size = New System.Drawing.Size(499, 277)
         Me.Panel2.TabIndex = 1
         '
-        'TextBox2
-        '
-        Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TextBox2.Location = New System.Drawing.Point(134, 84)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(288, 40)
-        Me.TextBox2.TabIndex = 1
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TextBox1.Location = New System.Drawing.Point(133, 150)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(288, 40)
-        Me.TextBox1.TabIndex = 2
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Ubuntu Condensed", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(130, 61)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 20)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Username"
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Ubuntu Condensed", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(130, 127)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(67, 20)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Password"
-        '
         'Button1
         '
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -124,6 +73,57 @@ Partial Class Form1
         Me.Button1.TabIndex = 5
         Me.Button1.Text = "Login"
         Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Ubuntu Condensed", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(207, 11)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(85, 40)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Login"
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Ubuntu Condensed", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(130, 127)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(67, 20)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Password"
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Ubuntu Condensed", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(130, 61)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(71, 20)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Username"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.TextBox1.Location = New System.Drawing.Point(133, 150)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(288, 40)
+        Me.TextBox1.TabIndex = 2
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.TextBox2.Location = New System.Drawing.Point(134, 84)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(288, 40)
+        Me.TextBox2.TabIndex = 1
         '
         'Form1
         '
