@@ -25,10 +25,8 @@ Partial Class Form3
         Me.components = New System.ComponentModel.Container()
         Me.dropbutton1 = New System.Windows.Forms.Button()
         Me.drop1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.drop2 = New System.Windows.Forms.Panel()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -38,81 +36,73 @@ Partial Class Form3
         Me.dropbutton2 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.HaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.JaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HaToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.drop1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.drop2.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'dropbutton1
         '
+        Me.dropbutton1.BackColor = System.Drawing.Color.Transparent
         Me.dropbutton1.Image = Global.Inventaris.My.Resources.Resources.icons8_chevron_left_26
         Me.dropbutton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.dropbutton1.Location = New System.Drawing.Point(3, 3)
+        Me.dropbutton1.Location = New System.Drawing.Point(2, 2)
+        Me.dropbutton1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dropbutton1.Name = "dropbutton1"
-        Me.dropbutton1.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.dropbutton1.Size = New System.Drawing.Size(223, 46)
+        Me.dropbutton1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.dropbutton1.Size = New System.Drawing.Size(167, 37)
         Me.dropbutton1.TabIndex = 0
-        Me.dropbutton1.Text = "Button1"
-        Me.dropbutton1.UseVisualStyleBackColor = True
+        Me.dropbutton1.Text = "Master User"
+        Me.dropbutton1.UseVisualStyleBackColor = False
         '
         'drop1
         '
-        Me.drop1.Controls.Add(Me.Button5)
-        Me.drop1.Controls.Add(Me.Button4)
         Me.drop1.Controls.Add(Me.Button3)
         Me.drop1.Controls.Add(Me.Button2)
         Me.drop1.Controls.Add(Me.dropbutton1)
-        Me.drop1.Location = New System.Drawing.Point(3, 3)
-        Me.drop1.MaximumSize = New System.Drawing.Size(230, 231)
-        Me.drop1.MinimumSize = New System.Drawing.Size(230, 50)
+        Me.drop1.Location = New System.Drawing.Point(5, 28)
+        Me.drop1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.drop1.MaximumSize = New System.Drawing.Size(172, 115)
+        Me.drop1.MinimumSize = New System.Drawing.Size(172, 45)
         Me.drop1.Name = "drop1"
-        Me.drop1.Size = New System.Drawing.Size(230, 231)
+        Me.drop1.Size = New System.Drawing.Size(172, 115)
         Me.drop1.TabIndex = 1
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(3, 48)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(223, 46)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(3, 93)
+        Me.Button3.Location = New System.Drawing.Point(2, 76)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(223, 46)
+        Me.Button3.Size = New System.Drawing.Size(167, 37)
         Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Button3"
+        Me.Button3.Text = "Ubah Profil"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Button4
+        'Button2
         '
-        Me.Button4.Location = New System.Drawing.Point(3, 138)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(223, 46)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(3, 183)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(223, 46)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Button5"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.Button2.Location = New System.Drawing.Point(2, 39)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(167, 37)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Data User"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.drop2)
         Me.Panel2.Controls.Add(Me.drop1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(1244, 0)
+        Me.Panel2.Location = New System.Drawing.Point(850, 24)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(237, 815)
+        Me.Panel2.Size = New System.Drawing.Size(178, 585)
         Me.Panel2.TabIndex = 2
         '
         'drop2
@@ -122,45 +112,50 @@ Partial Class Form3
         Me.drop2.Controls.Add(Me.Button8)
         Me.drop2.Controls.Add(Me.Button9)
         Me.drop2.Controls.Add(Me.dropbutton2)
-        Me.drop2.Location = New System.Drawing.Point(4, 238)
-        Me.drop2.MaximumSize = New System.Drawing.Size(230, 231)
-        Me.drop2.MinimumSize = New System.Drawing.Size(230, 50)
+        Me.drop2.Location = New System.Drawing.Point(3, 193)
+        Me.drop2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.drop2.MaximumSize = New System.Drawing.Size(172, 188)
+        Me.drop2.MinimumSize = New System.Drawing.Size(172, 41)
         Me.drop2.Name = "drop2"
-        Me.drop2.Size = New System.Drawing.Size(230, 231)
+        Me.drop2.Size = New System.Drawing.Size(172, 188)
         Me.drop2.TabIndex = 2
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(3, 183)
+        Me.Button6.Location = New System.Drawing.Point(2, 149)
+        Me.Button6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(223, 46)
+        Me.Button6.Size = New System.Drawing.Size(167, 37)
         Me.Button6.TabIndex = 4
         Me.Button6.Text = "Button6"
         Me.Button6.UseVisualStyleBackColor = True
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(3, 138)
+        Me.Button7.Location = New System.Drawing.Point(2, 112)
+        Me.Button7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(223, 46)
+        Me.Button7.Size = New System.Drawing.Size(167, 37)
         Me.Button7.TabIndex = 3
         Me.Button7.Text = "Button7"
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(3, 93)
+        Me.Button8.Location = New System.Drawing.Point(2, 76)
+        Me.Button8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(223, 46)
+        Me.Button8.Size = New System.Drawing.Size(167, 37)
         Me.Button8.TabIndex = 2
         Me.Button8.Text = "Button8"
         Me.Button8.UseVisualStyleBackColor = True
         '
         'Button9
         '
-        Me.Button9.Location = New System.Drawing.Point(3, 48)
+        Me.Button9.Location = New System.Drawing.Point(2, 39)
+        Me.Button9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(223, 46)
+        Me.Button9.Size = New System.Drawing.Size(167, 37)
         Me.Button9.TabIndex = 1
         Me.Button9.Text = "Button9"
         Me.Button9.UseVisualStyleBackColor = True
@@ -169,9 +164,10 @@ Partial Class Form3
         '
         Me.dropbutton2.Image = Global.Inventaris.My.Resources.Resources.icons8_chevron_left_26
         Me.dropbutton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.dropbutton2.Location = New System.Drawing.Point(3, 3)
+        Me.dropbutton2.Location = New System.Drawing.Point(2, 2)
+        Me.dropbutton2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dropbutton2.Name = "dropbutton2"
-        Me.dropbutton2.Size = New System.Drawing.Size(223, 46)
+        Me.dropbutton2.Size = New System.Drawing.Size(167, 37)
         Me.dropbutton2.TabIndex = 0
         Me.dropbutton2.Text = "Button10"
         Me.dropbutton2.UseVisualStyleBackColor = True
@@ -184,25 +180,63 @@ Partial Class Form3
         '
         Me.Timer2.Interval = 15
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HaToolStripMenuItem, Me.HaToolStripMenuItem1})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1028, 24)
+        Me.MenuStrip1.TabIndex = 3
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'HaToolStripMenuItem
+        '
+        Me.HaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.JaToolStripMenuItem, Me.HaToolStripMenuItem2})
+        Me.HaToolStripMenuItem.Name = "HaToolStripMenuItem"
+        Me.HaToolStripMenuItem.Size = New System.Drawing.Size(34, 20)
+        Me.HaToolStripMenuItem.Text = "Ha"
+        '
+        'HaToolStripMenuItem1
+        '
+        Me.HaToolStripMenuItem1.Name = "HaToolStripMenuItem1"
+        Me.HaToolStripMenuItem1.Size = New System.Drawing.Size(32, 20)
+        Me.HaToolStripMenuItem1.Text = "ha"
+        '
+        'JaToolStripMenuItem
+        '
+        Me.JaToolStripMenuItem.Name = "JaToolStripMenuItem"
+        Me.JaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.JaToolStripMenuItem.Text = "ja"
+        '
+        'HaToolStripMenuItem2
+        '
+        Me.HaToolStripMenuItem2.Name = "HaToolStripMenuItem2"
+        Me.HaToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.HaToolStripMenuItem2.Text = "ha"
+        '
         'Form3
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1481, 815)
+        Me.ClientSize = New System.Drawing.Size(1028, 609)
         Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Form3"
         Me.Text = "Form3"
         Me.drop1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.drop2.ResumeLayout(False)
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents dropbutton1 As Button
     Friend WithEvents drop1 As Panel
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Panel2 As Panel
@@ -214,4 +248,9 @@ Partial Class Form3
     Friend WithEvents dropbutton2 As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents HaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents JaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HaToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents HaToolStripMenuItem1 As ToolStripMenuItem
 End Class

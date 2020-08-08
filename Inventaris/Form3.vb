@@ -55,4 +55,16 @@
         Timer1.Start()
         Timer2.Start()
     End Sub
+
+    Private Sub HaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HaToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub JaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JaToolStripMenuItem.Click
+        MasterAlasan.Show()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+    End Sub
 End Class

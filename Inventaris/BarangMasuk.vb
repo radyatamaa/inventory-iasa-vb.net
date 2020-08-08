@@ -1,4 +1,4 @@
-﻿Public Class MenuUtama
+﻿Public Class BarangMasuk
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub

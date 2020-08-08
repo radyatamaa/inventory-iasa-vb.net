@@ -22,52 +22,42 @@ Partial Class MasterDetailLokasi
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MasterDetailLokasi))
-        Me.Button15 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.id_lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.detail_lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.BarangMasukToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BarangKeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RentalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RepairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QuotationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RentalBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InstallationServiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MaintenenceSerivceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HasilInputBarangMasukToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HasilPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListInvoiceKeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListBarangRentalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GaransiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StockBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Button15
-        '
-        Me.Button15.BackColor = System.Drawing.Color.Transparent
-        Me.Button15.FlatAppearance.BorderSize = 0
-        Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button15.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button15.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button15.Location = New System.Drawing.Point(937, 0)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(137, 62)
-        Me.Button15.TabIndex = 19
-        Me.Button15.Text = "Master Data"
-        Me.Button15.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -82,18 +72,41 @@ Partial Class MasterDetailLokasi
         Me.Panel2.Controls.Add(Me.DataGridView1)
         Me.Panel2.Controls.Add(Me.TextBox3)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Location = New System.Drawing.Point(2, 62)
+        Me.Panel2.Location = New System.Drawing.Point(2, 50)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1539, 468)
+        Me.Panel2.Size = New System.Drawing.Size(1154, 380)
         Me.Panel2.TabIndex = 36
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(32, 63)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(52, 13)
+        Me.Label2.TabIndex = 21
+        Me.Label2.Text = "ID Lokasi" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(135, 61)
+        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(178, 21)
+        Me.ComboBox2.TabIndex = 20
         '
         'ComboBox1
         '
         Me.ComboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(180, 32)
+        Me.ComboBox1.Location = New System.Drawing.Point(135, 26)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(236, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(178, 21)
         Me.ComboBox1.TabIndex = 19
         '
         'Label1
@@ -101,9 +114,10 @@ Partial Class MasterDetailLokasi
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(31, 28)
+        Me.Label1.Location = New System.Drawing.Point(23, 23)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 24)
+        Me.Label1.Size = New System.Drawing.Size(81, 19)
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Master Data"
         '
@@ -113,9 +127,10 @@ Partial Class MasterDetailLokasi
         Me.Button10.FlatAppearance.BorderSize = 0
         Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button10.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button10.Location = New System.Drawing.Point(180, 162)
+        Me.Button10.Location = New System.Drawing.Point(135, 132)
+        Me.Button10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(236, 28)
+        Me.Button10.Size = New System.Drawing.Size(177, 23)
         Me.Button10.TabIndex = 17
         Me.Button10.Text = "Simpan"
         Me.Button10.UseVisualStyleBackColor = False
@@ -127,243 +142,13 @@ Partial Class MasterDetailLokasi
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.id_lokasi, Me.detail_lokasi})
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 208)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 169)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1539, 254)
+        Me.DataGridView1.Size = New System.Drawing.Size(1154, 206)
         Me.DataGridView1.TabIndex = 16
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TextBox3.Location = New System.Drawing.Point(180, 118)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(236, 22)
-        Me.TextBox3.TabIndex = 8
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(42, 118)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(89, 17)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Detail Lokasi" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(799, 0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(137, 62)
-        Me.Button1.TabIndex = 18
-        Me.Button1.Text = "Master User"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button14
-        '
-        Me.Button14.BackColor = System.Drawing.Color.Transparent
-        Me.Button14.FlatAppearance.BorderSize = 0
-        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button14.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button14.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button14.Location = New System.Drawing.Point(0, 0)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(95, 62)
-        Me.Button14.TabIndex = 17
-        Me.Button14.Text = "Beranda"
-        Me.Button14.UseVisualStyleBackColor = False
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.Transparent
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button7.Location = New System.Drawing.Point(661, 0)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(137, 62)
-        Me.Button7.TabIndex = 16
-        Me.Button7.Text = "Stock Opname"
-        Me.Button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.Transparent
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button6.Location = New System.Drawing.Point(560, 0)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(102, 62)
-        Me.Button6.TabIndex = 15
-        Me.Button6.Text = "Laporan"
-        Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.Transparent
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button5.Location = New System.Drawing.Point(476, 0)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(85, 62)
-        Me.Button5.TabIndex = 14
-        Me.Button5.Text = "BAST"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.Transparent
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button4.Location = New System.Drawing.Point(364, 0)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(111, 62)
-        Me.Button4.TabIndex = 13
-        Me.Button4.Text = "Quotation"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button3.Location = New System.Drawing.Point(228, 0)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(136, 62)
-        Me.Button3.TabIndex = 12
-        Me.Button3.Text = "Barang Keluar"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(91, 0)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(139, 62)
-        Me.Button2.TabIndex = 11
-        Me.Button2.Text = "Barang Masuk"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button12
-        '
-        Me.Button12.Location = New System.Drawing.Point(113, 536)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(94, 39)
-        Me.Button12.TabIndex = 38
-        Me.Button12.Text = "Edit"
-        Me.Button12.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.Location = New System.Drawing.Point(13, 536)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(94, 39)
-        Me.Button11.TabIndex = 37
-        Me.Button11.Text = "Lihat Data"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
-        'Button13
-        '
-        Me.Button13.Location = New System.Drawing.Point(213, 536)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(94, 39)
-        Me.Button13.TabIndex = 39
-        Me.Button13.Text = "Hapus"
-        Me.Button13.UseVisualStyleBackColor = True
-        '
-        'Button9
-        '
-        Me.Button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button9.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button9.BackgroundImage = CType(resources.GetObject("Button9.BackgroundImage"), System.Drawing.Image)
-        Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button9.FlatAppearance.BorderSize = 0
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Location = New System.Drawing.Point(1270, 6)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(47, 53)
-        Me.Button9.TabIndex = 10
-        Me.Button9.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button8.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button8.BackgroundImage = CType(resources.GetObject("Button8.BackgroundImage"), System.Drawing.Image)
-        Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button8.FlatAppearance.BorderSize = 0
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Location = New System.Drawing.Point(1323, 7)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(47, 53)
-        Me.Button8.TabIndex = 9
-        Me.Button8.UseVisualStyleBackColor = False
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.Button15)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.Button14)
-        Me.Panel1.Controls.Add(Me.Button7)
-        Me.Panel1.Controls.Add(Me.Button6)
-        Me.Panel1.Controls.Add(Me.Button5)
-        Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button9)
-        Me.Panel1.Controls.Add(Me.Button8)
-        Me.Panel1.Location = New System.Drawing.Point(1, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1540, 62)
-        Me.Panel1.TabIndex = 35
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(180, 75)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(236, 24)
-        Me.ComboBox2.TabIndex = 20
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(42, 78)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 17)
-        Me.Label2.TabIndex = 21
-        Me.Label2.Text = "ID Lokasi" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'id
         '
@@ -386,26 +171,188 @@ Partial Class MasterDetailLokasi
         Me.detail_lokasi.MinimumWidth = 6
         Me.detail_lokasi.Name = "detail_lokasi"
         '
+        'TextBox3
+        '
+        Me.TextBox3.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.TextBox3.Location = New System.Drawing.Point(135, 96)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(178, 20)
+        Me.TextBox3.TabIndex = 8
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(32, 96)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(68, 13)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Detail Lokasi" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(85, 436)
+        Me.Button12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(70, 32)
+        Me.Button12.TabIndex = 38
+        Me.Button12.Text = "Edit"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(10, 436)
+        Me.Button11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(70, 32)
+        Me.Button11.TabIndex = 37
+        Me.Button11.Text = "Lihat Data"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(160, 436)
+        Me.Button13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(70, 32)
+        Me.Button13.TabIndex = 39
+        Me.Button13.Text = "Hapus"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'BarangMasukToolStripMenuItem
+        '
+        Me.BarangMasukToolStripMenuItem.Name = "BarangMasukToolStripMenuItem"
+        Me.BarangMasukToolStripMenuItem.Size = New System.Drawing.Size(144, 29)
+        Me.BarangMasukToolStripMenuItem.Text = "Barang Masuk"
+        '
+        'BarangKeluarToolStripMenuItem
+        '
+        Me.BarangKeluarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem, Me.RentalToolStripMenuItem, Me.RepairToolStripMenuItem})
+        Me.BarangKeluarToolStripMenuItem.Name = "BarangKeluarToolStripMenuItem"
+        Me.BarangKeluarToolStripMenuItem.Size = New System.Drawing.Size(143, 29)
+        Me.BarangKeluarToolStripMenuItem.Text = "Barang Keluar"
+        '
+        'PenjualanToolStripMenuItem
+        '
+        Me.PenjualanToolStripMenuItem.Name = "PenjualanToolStripMenuItem"
+        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(167, 30)
+        Me.PenjualanToolStripMenuItem.Text = "Penjualan"
+        '
+        'RentalToolStripMenuItem
+        '
+        Me.RentalToolStripMenuItem.Name = "RentalToolStripMenuItem"
+        Me.RentalToolStripMenuItem.Size = New System.Drawing.Size(167, 30)
+        Me.RentalToolStripMenuItem.Text = "Rental"
+        '
+        'RepairToolStripMenuItem
+        '
+        Me.RepairToolStripMenuItem.Name = "RepairToolStripMenuItem"
+        Me.RepairToolStripMenuItem.Size = New System.Drawing.Size(167, 30)
+        Me.RepairToolStripMenuItem.Text = "Repair"
+        '
+        'QuotationToolStripMenuItem
+        '
+        Me.QuotationToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RentalBarangToolStripMenuItem, Me.InstallationServiceToolStripMenuItem, Me.MaintenenceSerivceToolStripMenuItem})
+        Me.QuotationToolStripMenuItem.Name = "QuotationToolStripMenuItem"
+        Me.QuotationToolStripMenuItem.Size = New System.Drawing.Size(109, 29)
+        Me.QuotationToolStripMenuItem.Text = "Quotation"
+        '
+        'RentalBarangToolStripMenuItem
+        '
+        Me.RentalBarangToolStripMenuItem.Name = "RentalBarangToolStripMenuItem"
+        Me.RentalBarangToolStripMenuItem.Size = New System.Drawing.Size(259, 30)
+        Me.RentalBarangToolStripMenuItem.Text = "Rental Barang"
+        '
+        'InstallationServiceToolStripMenuItem
+        '
+        Me.InstallationServiceToolStripMenuItem.Name = "InstallationServiceToolStripMenuItem"
+        Me.InstallationServiceToolStripMenuItem.Size = New System.Drawing.Size(259, 30)
+        Me.InstallationServiceToolStripMenuItem.Text = "Installation Service"
+        '
+        'MaintenenceSerivceToolStripMenuItem
+        '
+        Me.MaintenenceSerivceToolStripMenuItem.Name = "MaintenenceSerivceToolStripMenuItem"
+        Me.MaintenenceSerivceToolStripMenuItem.Size = New System.Drawing.Size(259, 30)
+        Me.MaintenenceSerivceToolStripMenuItem.Text = "Maintenence Serivce"
+        '
+        'ReportToolStripMenuItem
+        '
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HasilInputBarangMasukToolStripMenuItem, Me.HasilPenjualanToolStripMenuItem, Me.ListInvoiceKeluarToolStripMenuItem, Me.ListBarangRentalToolStripMenuItem, Me.GaransiToolStripMenuItem, Me.StockBarangToolStripMenuItem})
+        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
+        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(79, 29)
+        Me.ReportToolStripMenuItem.Text = "Report"
+        '
+        'HasilInputBarangMasukToolStripMenuItem
+        '
+        Me.HasilInputBarangMasukToolStripMenuItem.Name = "HasilInputBarangMasukToolStripMenuItem"
+        Me.HasilInputBarangMasukToolStripMenuItem.Size = New System.Drawing.Size(299, 30)
+        Me.HasilInputBarangMasukToolStripMenuItem.Text = "Hasil Input Barang Masuk"
+        '
+        'HasilPenjualanToolStripMenuItem
+        '
+        Me.HasilPenjualanToolStripMenuItem.Name = "HasilPenjualanToolStripMenuItem"
+        Me.HasilPenjualanToolStripMenuItem.Size = New System.Drawing.Size(299, 30)
+        Me.HasilPenjualanToolStripMenuItem.Text = "Hasil Penjualan"
+        '
+        'ListInvoiceKeluarToolStripMenuItem
+        '
+        Me.ListInvoiceKeluarToolStripMenuItem.Name = "ListInvoiceKeluarToolStripMenuItem"
+        Me.ListInvoiceKeluarToolStripMenuItem.Size = New System.Drawing.Size(299, 30)
+        Me.ListInvoiceKeluarToolStripMenuItem.Text = "List Invoice Keluar"
+        '
+        'ListBarangRentalToolStripMenuItem
+        '
+        Me.ListBarangRentalToolStripMenuItem.Name = "ListBarangRentalToolStripMenuItem"
+        Me.ListBarangRentalToolStripMenuItem.Size = New System.Drawing.Size(299, 30)
+        Me.ListBarangRentalToolStripMenuItem.Text = "List Barang Rental"
+        '
+        'GaransiToolStripMenuItem
+        '
+        Me.GaransiToolStripMenuItem.Name = "GaransiToolStripMenuItem"
+        Me.GaransiToolStripMenuItem.Size = New System.Drawing.Size(299, 30)
+        Me.GaransiToolStripMenuItem.Text = "Garansi"
+        '
+        'StockBarangToolStripMenuItem
+        '
+        Me.StockBarangToolStripMenuItem.Name = "StockBarangToolStripMenuItem"
+        Me.StockBarangToolStripMenuItem.Size = New System.Drawing.Size(299, 30)
+        Me.StockBarangToolStripMenuItem.Text = "Stock Barang"
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.AutoSize = False
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarangMasukToolStripMenuItem, Me.BarangKeluarToolStripMenuItem, Me.QuotationToolStripMenuItem, Me.ReportToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1028, 48)
+        Me.MenuStrip1.TabIndex = 40
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
         'MasterDetailLokasi
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1542, 832)
+        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Button12)
         Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button13)
-        Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "MasterDetailLokasi"
         Me.Text = "MasterDetailLokasi"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Button15 As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label1 As Label
@@ -413,23 +360,29 @@ Partial Class MasterDetailLokasi
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button14 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents Button12 As Button
     Friend WithEvents Button11 As Button
     Friend WithEvents Button13 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents id_lokasi As DataGridViewTextBoxColumn
     Friend WithEvents detail_lokasi As DataGridViewTextBoxColumn
+    Friend WithEvents BarangMasukToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BarangKeluarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PenjualanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RentalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RepairToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents QuotationToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RentalBarangToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InstallationServiceToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MaintenenceSerivceToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HasilInputBarangMasukToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HasilPenjualanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListInvoiceKeluarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListBarangRentalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GaransiToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents StockBarangToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MenuStrip1 As MenuStrip
 End Class
