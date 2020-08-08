@@ -139,3 +139,7 @@ C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.exe
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.xml
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.pdb
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.vbprojAssemblyReference.cache
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.exe
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.pdb
