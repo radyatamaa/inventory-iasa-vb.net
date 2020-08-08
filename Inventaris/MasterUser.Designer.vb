@@ -27,6 +27,11 @@ Partial Class MasterUser
         Me.txt_nama_lengkap = New System.Windows.Forms.TextBox()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.data_master_user = New System.Windows.Forms.DataGridView()
+        Me.id_user = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.username = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nama_lengkap = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.password = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_level = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmb_id_level = New System.Windows.Forms.ComboBox()
         Me.txt_password = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -65,11 +70,6 @@ Partial Class MasterUser
         Me.btn_master_data_user = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_master_ubahprofil = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.id_user = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.username = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_lengkap = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.password = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_level = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
@@ -145,6 +145,41 @@ Partial Class MasterUser
         Me.data_master_user.RowTemplate.Height = 24
         Me.data_master_user.Size = New System.Drawing.Size(1536, 254)
         Me.data_master_user.TabIndex = 16
+        '
+        'id_user
+        '
+        Me.id_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.id_user.HeaderText = "ID User"
+        Me.id_user.MinimumWidth = 6
+        Me.id_user.Name = "id_user"
+        '
+        'username
+        '
+        Me.username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.username.HeaderText = "Username"
+        Me.username.MinimumWidth = 6
+        Me.username.Name = "username"
+        '
+        'nama_lengkap
+        '
+        Me.nama_lengkap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.nama_lengkap.HeaderText = "Nama Lengkap"
+        Me.nama_lengkap.MinimumWidth = 6
+        Me.nama_lengkap.Name = "nama_lengkap"
+        '
+        'password
+        '
+        Me.password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.password.HeaderText = "Password"
+        Me.password.MinimumWidth = 6
+        Me.password.Name = "password"
+        '
+        'id_level
+        '
+        Me.id_level.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.id_level.HeaderText = "ID Level"
+        Me.id_level.MinimumWidth = 6
+        Me.id_level.Name = "id_level"
         '
         'cmb_id_level
         '
@@ -434,41 +469,6 @@ Partial Class MasterUser
         Me.btn_logout.Size = New System.Drawing.Size(90, 55)
         Me.btn_logout.Text = "Logout"
         '
-        'id_user
-        '
-        Me.id_user.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.id_user.HeaderText = "ID User"
-        Me.id_user.MinimumWidth = 6
-        Me.id_user.Name = "id_user"
-        '
-        'username
-        '
-        Me.username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.username.HeaderText = "Username"
-        Me.username.MinimumWidth = 6
-        Me.username.Name = "username"
-        '
-        'nama_lengkap
-        '
-        Me.nama_lengkap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nama_lengkap.HeaderText = "Nama Lengkap"
-        Me.nama_lengkap.MinimumWidth = 6
-        Me.nama_lengkap.Name = "nama_lengkap"
-        '
-        'password
-        '
-        Me.password.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.password.HeaderText = "Password"
-        Me.password.MinimumWidth = 6
-        Me.password.Name = "password"
-        '
-        'id_level
-        '
-        Me.id_level.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.id_level.HeaderText = "ID Level"
-        Me.id_level.MinimumWidth = 6
-        Me.id_level.Name = "id_level"
-        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -504,6 +504,7 @@ Partial Class MasterUser
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "MasterUser"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MasterUser"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

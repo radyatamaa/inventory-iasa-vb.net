@@ -32,25 +32,40 @@ Partial Class MasterDetailLokasi
         Me.detail_lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_detail_lokasi = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.BarangMasukToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BarangKeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RentalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RepairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.QuotationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RentalBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InstallationServiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MaintenenceSerivceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HasilInputBarangMasukToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HasilPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListInvoiceKeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListBarangRentalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GaransiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StockBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.btn_menuutama = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_barang_masuk = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BarangKeluarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_penjualan = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_rental = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_repair = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QuotationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_qrental = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_qinstallasi = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_qmaintenence = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_r_barang_masuk = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_r_hasil_penjualan = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_r_invoice_keluar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_r_barang_rental = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_r_garansi = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_r_stock_barang = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_master_jenis = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_master_tipe = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_master_toko = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_master_client = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_master_kondisi = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_master_status = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterLokasiToolStripMenuIbtn_master_lokasi = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_master_detail = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_master_alasan = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_master_data_user = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_master_ubahprofil = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2.SuspendLayout()
         CType(Me.data_master_detail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -163,119 +178,6 @@ Partial Class MasterDetailLokasi
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Detail Lokasi" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'BarangMasukToolStripMenuItem
-        '
-        Me.BarangMasukToolStripMenuItem.Name = "BarangMasukToolStripMenuItem"
-        Me.BarangMasukToolStripMenuItem.Size = New System.Drawing.Size(180, 55)
-        Me.BarangMasukToolStripMenuItem.Text = "Barang Masuk"
-        '
-        'BarangKeluarToolStripMenuItem
-        '
-        Me.BarangKeluarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem, Me.RentalToolStripMenuItem, Me.RepairToolStripMenuItem})
-        Me.BarangKeluarToolStripMenuItem.Name = "BarangKeluarToolStripMenuItem"
-        Me.BarangKeluarToolStripMenuItem.Size = New System.Drawing.Size(177, 55)
-        Me.BarangKeluarToolStripMenuItem.Text = "Barang Keluar"
-        '
-        'PenjualanToolStripMenuItem
-        '
-        Me.PenjualanToolStripMenuItem.Name = "PenjualanToolStripMenuItem"
-        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(207, 36)
-        Me.PenjualanToolStripMenuItem.Text = "Penjualan"
-        '
-        'RentalToolStripMenuItem
-        '
-        Me.RentalToolStripMenuItem.Name = "RentalToolStripMenuItem"
-        Me.RentalToolStripMenuItem.Size = New System.Drawing.Size(207, 36)
-        Me.RentalToolStripMenuItem.Text = "Rental"
-        '
-        'RepairToolStripMenuItem
-        '
-        Me.RepairToolStripMenuItem.Name = "RepairToolStripMenuItem"
-        Me.RepairToolStripMenuItem.Size = New System.Drawing.Size(207, 36)
-        Me.RepairToolStripMenuItem.Text = "Repair"
-        '
-        'QuotationToolStripMenuItem
-        '
-        Me.QuotationToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RentalBarangToolStripMenuItem, Me.InstallationServiceToolStripMenuItem, Me.MaintenenceSerivceToolStripMenuItem})
-        Me.QuotationToolStripMenuItem.Name = "QuotationToolStripMenuItem"
-        Me.QuotationToolStripMenuItem.Size = New System.Drawing.Size(137, 55)
-        Me.QuotationToolStripMenuItem.Text = "Quotation"
-        '
-        'RentalBarangToolStripMenuItem
-        '
-        Me.RentalBarangToolStripMenuItem.Name = "RentalBarangToolStripMenuItem"
-        Me.RentalBarangToolStripMenuItem.Size = New System.Drawing.Size(327, 36)
-        Me.RentalBarangToolStripMenuItem.Text = "Rental Barang"
-        '
-        'InstallationServiceToolStripMenuItem
-        '
-        Me.InstallationServiceToolStripMenuItem.Name = "InstallationServiceToolStripMenuItem"
-        Me.InstallationServiceToolStripMenuItem.Size = New System.Drawing.Size(327, 36)
-        Me.InstallationServiceToolStripMenuItem.Text = "Installation Service"
-        '
-        'MaintenenceSerivceToolStripMenuItem
-        '
-        Me.MaintenenceSerivceToolStripMenuItem.Name = "MaintenenceSerivceToolStripMenuItem"
-        Me.MaintenenceSerivceToolStripMenuItem.Size = New System.Drawing.Size(327, 36)
-        Me.MaintenenceSerivceToolStripMenuItem.Text = "Maintenence Serivce"
-        '
-        'ReportToolStripMenuItem
-        '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HasilInputBarangMasukToolStripMenuItem, Me.HasilPenjualanToolStripMenuItem, Me.ListInvoiceKeluarToolStripMenuItem, Me.ListBarangRentalToolStripMenuItem, Me.GaransiToolStripMenuItem, Me.StockBarangToolStripMenuItem})
-        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
-        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(99, 55)
-        Me.ReportToolStripMenuItem.Text = "Report"
-        '
-        'HasilInputBarangMasukToolStripMenuItem
-        '
-        Me.HasilInputBarangMasukToolStripMenuItem.Name = "HasilInputBarangMasukToolStripMenuItem"
-        Me.HasilInputBarangMasukToolStripMenuItem.Size = New System.Drawing.Size(376, 36)
-        Me.HasilInputBarangMasukToolStripMenuItem.Text = "Hasil Input Barang Masuk"
-        '
-        'HasilPenjualanToolStripMenuItem
-        '
-        Me.HasilPenjualanToolStripMenuItem.Name = "HasilPenjualanToolStripMenuItem"
-        Me.HasilPenjualanToolStripMenuItem.Size = New System.Drawing.Size(376, 36)
-        Me.HasilPenjualanToolStripMenuItem.Text = "Hasil Penjualan"
-        '
-        'ListInvoiceKeluarToolStripMenuItem
-        '
-        Me.ListInvoiceKeluarToolStripMenuItem.Name = "ListInvoiceKeluarToolStripMenuItem"
-        Me.ListInvoiceKeluarToolStripMenuItem.Size = New System.Drawing.Size(376, 36)
-        Me.ListInvoiceKeluarToolStripMenuItem.Text = "List Invoice Keluar"
-        '
-        'ListBarangRentalToolStripMenuItem
-        '
-        Me.ListBarangRentalToolStripMenuItem.Name = "ListBarangRentalToolStripMenuItem"
-        Me.ListBarangRentalToolStripMenuItem.Size = New System.Drawing.Size(376, 36)
-        Me.ListBarangRentalToolStripMenuItem.Text = "List Barang Rental"
-        '
-        'GaransiToolStripMenuItem
-        '
-        Me.GaransiToolStripMenuItem.Name = "GaransiToolStripMenuItem"
-        Me.GaransiToolStripMenuItem.Size = New System.Drawing.Size(376, 36)
-        Me.GaransiToolStripMenuItem.Text = "Garansi"
-        '
-        'StockBarangToolStripMenuItem
-        '
-        Me.StockBarangToolStripMenuItem.Name = "StockBarangToolStripMenuItem"
-        Me.StockBarangToolStripMenuItem.Size = New System.Drawing.Size(376, 36)
-        Me.StockBarangToolStripMenuItem.Text = "Stock Barang"
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.AutoSize = False
-        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BarangMasukToolStripMenuItem, Me.BarangKeluarToolStripMenuItem, Me.QuotationToolStripMenuItem, Me.ReportToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1542, 59)
-        Me.MenuStrip1.TabIndex = 40
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
         'Button13
         '
         Me.Button13.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -300,17 +202,247 @@ Partial Class MasterDetailLokasi
         Me.Button12.Text = "Edit"
         Me.Button12.UseVisualStyleBackColor = False
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.AutoSize = False
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.MenuStrip1.Font = New System.Drawing.Font("Ubuntu Condensed", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_menuutama, Me.btn_barang_masuk, Me.BarangKeluarToolStripMenuItem, Me.QuotationToolStripMenuItem, Me.ReportToolStripMenuItem, Me.MasterDataToolStripMenuItem, Me.MasterUserToolStripMenuItem, Me.btn_logout})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1542, 59)
+        Me.MenuStrip1.TabIndex = 50
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'btn_menuutama
+        '
+        Me.btn_menuutama.Font = New System.Drawing.Font("Segoe UI", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_menuutama.Name = "btn_menuutama"
+        Me.btn_menuutama.Size = New System.Drawing.Size(191, 55)
+        Me.btn_menuutama.Text = "Menu Utama"
+        '
+        'btn_barang_masuk
+        '
+        Me.btn_barang_masuk.Name = "btn_barang_masuk"
+        Me.btn_barang_masuk.Size = New System.Drawing.Size(153, 55)
+        Me.btn_barang_masuk.Text = "Barang Masuk"
+        '
+        'BarangKeluarToolStripMenuItem
+        '
+        Me.BarangKeluarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_penjualan, Me.btn_rental, Me.btn_repair})
+        Me.BarangKeluarToolStripMenuItem.Name = "BarangKeluarToolStripMenuItem"
+        Me.BarangKeluarToolStripMenuItem.Size = New System.Drawing.Size(153, 55)
+        Me.BarangKeluarToolStripMenuItem.Text = "Barang Keluar"
+        '
+        'btn_penjualan
+        '
+        Me.btn_penjualan.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_penjualan.Name = "btn_penjualan"
+        Me.btn_penjualan.Size = New System.Drawing.Size(176, 28)
+        Me.btn_penjualan.Text = "Penjualan"
+        '
+        'btn_rental
+        '
+        Me.btn_rental.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_rental.Name = "btn_rental"
+        Me.btn_rental.Size = New System.Drawing.Size(176, 28)
+        Me.btn_rental.Text = "Rental"
+        '
+        'btn_repair
+        '
+        Me.btn_repair.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_repair.Name = "btn_repair"
+        Me.btn_repair.Size = New System.Drawing.Size(176, 28)
+        Me.btn_repair.Text = "Repair"
+        '
+        'QuotationToolStripMenuItem
+        '
+        Me.QuotationToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_qrental, Me.btn_qinstallasi, Me.btn_qmaintenence})
+        Me.QuotationToolStripMenuItem.Name = "QuotationToolStripMenuItem"
+        Me.QuotationToolStripMenuItem.Size = New System.Drawing.Size(120, 55)
+        Me.QuotationToolStripMenuItem.Text = "Quotation"
+        '
+        'btn_qrental
+        '
+        Me.btn_qrental.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_qrental.Name = "btn_qrental"
+        Me.btn_qrental.Size = New System.Drawing.Size(259, 28)
+        Me.btn_qrental.Text = "Rental Barang"
+        '
+        'btn_qinstallasi
+        '
+        Me.btn_qinstallasi.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_qinstallasi.Name = "btn_qinstallasi"
+        Me.btn_qinstallasi.Size = New System.Drawing.Size(259, 28)
+        Me.btn_qinstallasi.Text = "Installation Service"
+        '
+        'btn_qmaintenence
+        '
+        Me.btn_qmaintenence.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_qmaintenence.Name = "btn_qmaintenence"
+        Me.btn_qmaintenence.Size = New System.Drawing.Size(259, 28)
+        Me.btn_qmaintenence.Text = "Maintenence Serivce"
+        '
+        'ReportToolStripMenuItem
+        '
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_r_barang_masuk, Me.btn_r_hasil_penjualan, Me.btn_r_invoice_keluar, Me.btn_r_barang_rental, Me.btn_r_garansi, Me.btn_r_stock_barang})
+        Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
+        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(87, 55)
+        Me.ReportToolStripMenuItem.Text = "Report"
+        '
+        'btn_r_barang_masuk
+        '
+        Me.btn_r_barang_masuk.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_r_barang_masuk.Name = "btn_r_barang_masuk"
+        Me.btn_r_barang_masuk.Size = New System.Drawing.Size(297, 28)
+        Me.btn_r_barang_masuk.Text = "Hasil Input Barang Masuk"
+        '
+        'btn_r_hasil_penjualan
+        '
+        Me.btn_r_hasil_penjualan.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_r_hasil_penjualan.Name = "btn_r_hasil_penjualan"
+        Me.btn_r_hasil_penjualan.Size = New System.Drawing.Size(297, 28)
+        Me.btn_r_hasil_penjualan.Text = "Hasil Penjualan"
+        '
+        'btn_r_invoice_keluar
+        '
+        Me.btn_r_invoice_keluar.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_r_invoice_keluar.Name = "btn_r_invoice_keluar"
+        Me.btn_r_invoice_keluar.Size = New System.Drawing.Size(297, 28)
+        Me.btn_r_invoice_keluar.Text = "List Invoice Keluar"
+        '
+        'btn_r_barang_rental
+        '
+        Me.btn_r_barang_rental.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_r_barang_rental.Name = "btn_r_barang_rental"
+        Me.btn_r_barang_rental.Size = New System.Drawing.Size(297, 28)
+        Me.btn_r_barang_rental.Text = "List Barang Rental"
+        '
+        'btn_r_garansi
+        '
+        Me.btn_r_garansi.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_r_garansi.Name = "btn_r_garansi"
+        Me.btn_r_garansi.Size = New System.Drawing.Size(297, 28)
+        Me.btn_r_garansi.Text = "Garansi"
+        '
+        'btn_r_stock_barang
+        '
+        Me.btn_r_stock_barang.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_r_stock_barang.Name = "btn_r_stock_barang"
+        Me.btn_r_stock_barang.Size = New System.Drawing.Size(297, 28)
+        Me.btn_r_stock_barang.Text = "Stock Barang"
+        '
+        'MasterDataToolStripMenuItem
+        '
+        Me.MasterDataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_master_jenis, Me.btn_master_tipe, Me.btn_master_toko, Me.btn_master_client, Me.btn_master_kondisi, Me.btn_master_status, Me.MasterLokasiToolStripMenuIbtn_master_lokasi, Me.btn_master_detail, Me.btn_master_alasan})
+        Me.MasterDataToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MasterDataToolStripMenuItem.Name = "MasterDataToolStripMenuItem"
+        Me.MasterDataToolStripMenuItem.Size = New System.Drawing.Size(158, 55)
+        Me.MasterDataToolStripMenuItem.Text = "Master Data"
+        '
+        'btn_master_jenis
+        '
+        Me.btn_master_jenis.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_master_jenis.Name = "btn_master_jenis"
+        Me.btn_master_jenis.Size = New System.Drawing.Size(261, 28)
+        Me.btn_master_jenis.Text = "Master Jenis Barang"
+        '
+        'btn_master_tipe
+        '
+        Me.btn_master_tipe.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_master_tipe.Name = "btn_master_tipe"
+        Me.btn_master_tipe.Size = New System.Drawing.Size(261, 28)
+        Me.btn_master_tipe.Text = "Master Tipe Barang"
+        '
+        'btn_master_toko
+        '
+        Me.btn_master_toko.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_master_toko.Name = "btn_master_toko"
+        Me.btn_master_toko.Size = New System.Drawing.Size(261, 28)
+        Me.btn_master_toko.Text = "Master Toko"
+        '
+        'btn_master_client
+        '
+        Me.btn_master_client.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_master_client.Name = "btn_master_client"
+        Me.btn_master_client.Size = New System.Drawing.Size(261, 28)
+        Me.btn_master_client.Text = "Master Client"
+        '
+        'btn_master_kondisi
+        '
+        Me.btn_master_kondisi.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_master_kondisi.Name = "btn_master_kondisi"
+        Me.btn_master_kondisi.Size = New System.Drawing.Size(261, 28)
+        Me.btn_master_kondisi.Text = "Master Kondisi"
+        '
+        'btn_master_status
+        '
+        Me.btn_master_status.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_master_status.Name = "btn_master_status"
+        Me.btn_master_status.Size = New System.Drawing.Size(261, 28)
+        Me.btn_master_status.Text = "Master Status Barang"
+        '
+        'MasterLokasiToolStripMenuIbtn_master_lokasi
+        '
+        Me.MasterLokasiToolStripMenuIbtn_master_lokasi.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MasterLokasiToolStripMenuIbtn_master_lokasi.Name = "MasterLokasiToolStripMenuIbtn_master_lokasi"
+        Me.MasterLokasiToolStripMenuIbtn_master_lokasi.Size = New System.Drawing.Size(261, 28)
+        Me.MasterLokasiToolStripMenuIbtn_master_lokasi.Text = "Master Lokasi"
+        '
+        'btn_master_detail
+        '
+        Me.btn_master_detail.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_master_detail.Name = "btn_master_detail"
+        Me.btn_master_detail.Size = New System.Drawing.Size(261, 28)
+        Me.btn_master_detail.Text = "Master Detail Lokasi"
+        '
+        'btn_master_alasan
+        '
+        Me.btn_master_alasan.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_master_alasan.Name = "btn_master_alasan"
+        Me.btn_master_alasan.Size = New System.Drawing.Size(261, 28)
+        Me.btn_master_alasan.Text = "Master Alasan"
+        '
+        'MasterUserToolStripMenuItem
+        '
+        Me.MasterUserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_master_data_user, Me.btn_master_ubahprofil})
+        Me.MasterUserToolStripMenuItem.Name = "MasterUserToolStripMenuItem"
+        Me.MasterUserToolStripMenuItem.Size = New System.Drawing.Size(132, 55)
+        Me.MasterUserToolStripMenuItem.Text = "Master User"
+        '
+        'btn_master_data_user
+        '
+        Me.btn_master_data_user.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_master_data_user.Name = "btn_master_data_user"
+        Me.btn_master_data_user.Size = New System.Drawing.Size(187, 28)
+        Me.btn_master_data_user.Text = "Data User"
+        '
+        'btn_master_ubahprofil
+        '
+        Me.btn_master_ubahprofil.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_master_ubahprofil.Name = "btn_master_ubahprofil"
+        Me.btn_master_ubahprofil.Size = New System.Drawing.Size(187, 28)
+        Me.btn_master_ubahprofil.Text = "Ubah Profil"
+        '
+        'btn_logout
+        '
+        Me.btn_logout.Name = "btn_logout"
+        Me.btn_logout.Size = New System.Drawing.Size(90, 55)
+        Me.btn_logout.Text = "Logout"
+        '
         'MasterDetailLokasi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1542, 832)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Button13)
         Me.Controls.Add(Me.Button12)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "MasterDetailLokasi"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MasterDetailLokasi"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -330,23 +462,38 @@ Partial Class MasterDetailLokasi
     Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents id_lokasi As DataGridViewTextBoxColumn
     Friend WithEvents detail_lokasi As DataGridViewTextBoxColumn
-    Friend WithEvents BarangMasukToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents BarangKeluarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PenjualanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RentalToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RepairToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents QuotationToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RentalBarangToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InstallationServiceToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MaintenenceSerivceToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents HasilInputBarangMasukToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents HasilPenjualanToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListInvoiceKeluarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ListBarangRentalToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GaransiToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents StockBarangToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents Button13 As Button
     Friend WithEvents Button12 As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents btn_menuutama As ToolStripMenuItem
+    Friend WithEvents btn_barang_masuk As ToolStripMenuItem
+    Friend WithEvents BarangKeluarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btn_penjualan As ToolStripMenuItem
+    Friend WithEvents btn_rental As ToolStripMenuItem
+    Friend WithEvents btn_repair As ToolStripMenuItem
+    Friend WithEvents QuotationToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btn_qrental As ToolStripMenuItem
+    Friend WithEvents btn_qinstallasi As ToolStripMenuItem
+    Friend WithEvents btn_qmaintenence As ToolStripMenuItem
+    Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btn_r_barang_masuk As ToolStripMenuItem
+    Friend WithEvents btn_r_hasil_penjualan As ToolStripMenuItem
+    Friend WithEvents btn_r_invoice_keluar As ToolStripMenuItem
+    Friend WithEvents btn_r_barang_rental As ToolStripMenuItem
+    Friend WithEvents btn_r_garansi As ToolStripMenuItem
+    Friend WithEvents btn_r_stock_barang As ToolStripMenuItem
+    Friend WithEvents MasterDataToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btn_master_jenis As ToolStripMenuItem
+    Friend WithEvents btn_master_tipe As ToolStripMenuItem
+    Friend WithEvents btn_master_toko As ToolStripMenuItem
+    Friend WithEvents btn_master_client As ToolStripMenuItem
+    Friend WithEvents btn_master_kondisi As ToolStripMenuItem
+    Friend WithEvents btn_master_status As ToolStripMenuItem
+    Friend WithEvents MasterLokasiToolStripMenuIbtn_master_lokasi As ToolStripMenuItem
+    Friend WithEvents btn_master_detail As ToolStripMenuItem
+    Friend WithEvents btn_master_alasan As ToolStripMenuItem
+    Friend WithEvents MasterUserToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btn_master_data_user As ToolStripMenuItem
+    Friend WithEvents btn_master_ubahprofil As ToolStripMenuItem
+    Friend WithEvents btn_logout As ToolStripMenuItem
 End Class

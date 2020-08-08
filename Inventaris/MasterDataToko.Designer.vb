@@ -43,6 +43,16 @@ Partial Class MasterDataToko
         Me.txt_alamat_toko = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.data_master_toko = New System.Windows.Forms.DataGridView()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nama_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.alamat_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kota_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kdpos_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tlp_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.logo_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nama_owner = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tlp_owner = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.norek_owner = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.btn_menuutama = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_barang_masuk = New System.Windows.Forms.ToolStripMenuItem()
@@ -75,16 +85,6 @@ Partial Class MasterDataToko
         Me.btn_master_data_user = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_master_ubahprofil = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.alamat_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kota_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kdpos_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tlp_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.logo_toko = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_owner = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tlp_owner = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.norek_owner = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
@@ -311,6 +311,76 @@ Partial Class MasterDataToko
         Me.data_master_toko.RowTemplate.Height = 24
         Me.data_master_toko.Size = New System.Drawing.Size(1539, 254)
         Me.data_master_toko.TabIndex = 16
+        '
+        'id
+        '
+        Me.id.HeaderText = "ID"
+        Me.id.MinimumWidth = 6
+        Me.id.Name = "id"
+        Me.id.Width = 125
+        '
+        'nama_toko
+        '
+        Me.nama_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.nama_toko.HeaderText = "Nama Toko"
+        Me.nama_toko.MinimumWidth = 6
+        Me.nama_toko.Name = "nama_toko"
+        '
+        'alamat_toko
+        '
+        Me.alamat_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.alamat_toko.HeaderText = "Alamat Toko"
+        Me.alamat_toko.MinimumWidth = 6
+        Me.alamat_toko.Name = "alamat_toko"
+        '
+        'kota_toko
+        '
+        Me.kota_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.kota_toko.HeaderText = "Kota Toko"
+        Me.kota_toko.MinimumWidth = 6
+        Me.kota_toko.Name = "kota_toko"
+        '
+        'kdpos_toko
+        '
+        Me.kdpos_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.kdpos_toko.HeaderText = "Kode Pos Toko"
+        Me.kdpos_toko.MinimumWidth = 6
+        Me.kdpos_toko.Name = "kdpos_toko"
+        '
+        'tlp_toko
+        '
+        Me.tlp_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tlp_toko.HeaderText = "Telepon Toko"
+        Me.tlp_toko.MinimumWidth = 6
+        Me.tlp_toko.Name = "tlp_toko"
+        '
+        'logo_toko
+        '
+        Me.logo_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.logo_toko.HeaderText = "Logo Toko"
+        Me.logo_toko.MinimumWidth = 6
+        Me.logo_toko.Name = "logo_toko"
+        '
+        'nama_owner
+        '
+        Me.nama_owner.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.nama_owner.HeaderText = "Nama Owner"
+        Me.nama_owner.MinimumWidth = 6
+        Me.nama_owner.Name = "nama_owner"
+        '
+        'tlp_owner
+        '
+        Me.tlp_owner.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tlp_owner.HeaderText = "Telepon Owner"
+        Me.tlp_owner.MinimumWidth = 6
+        Me.tlp_owner.Name = "tlp_owner"
+        '
+        'norek_owner
+        '
+        Me.norek_owner.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.norek_owner.HeaderText = "No Rekening"
+        Me.norek_owner.MinimumWidth = 6
+        Me.norek_owner.Name = "norek_owner"
         '
         'MenuStrip1
         '
@@ -541,76 +611,6 @@ Partial Class MasterDataToko
         Me.btn_logout.Size = New System.Drawing.Size(90, 55)
         Me.btn_logout.Text = "Logout"
         '
-        'id
-        '
-        Me.id.HeaderText = "ID"
-        Me.id.MinimumWidth = 6
-        Me.id.Name = "id"
-        Me.id.Width = 125
-        '
-        'nama_toko
-        '
-        Me.nama_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nama_toko.HeaderText = "Nama Toko"
-        Me.nama_toko.MinimumWidth = 6
-        Me.nama_toko.Name = "nama_toko"
-        '
-        'alamat_toko
-        '
-        Me.alamat_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.alamat_toko.HeaderText = "Alamat Toko"
-        Me.alamat_toko.MinimumWidth = 6
-        Me.alamat_toko.Name = "alamat_toko"
-        '
-        'kota_toko
-        '
-        Me.kota_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.kota_toko.HeaderText = "Kota Toko"
-        Me.kota_toko.MinimumWidth = 6
-        Me.kota_toko.Name = "kota_toko"
-        '
-        'kdpos_toko
-        '
-        Me.kdpos_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.kdpos_toko.HeaderText = "Kode Pos Toko"
-        Me.kdpos_toko.MinimumWidth = 6
-        Me.kdpos_toko.Name = "kdpos_toko"
-        '
-        'tlp_toko
-        '
-        Me.tlp_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.tlp_toko.HeaderText = "Telepon Toko"
-        Me.tlp_toko.MinimumWidth = 6
-        Me.tlp_toko.Name = "tlp_toko"
-        '
-        'logo_toko
-        '
-        Me.logo_toko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.logo_toko.HeaderText = "Logo Toko"
-        Me.logo_toko.MinimumWidth = 6
-        Me.logo_toko.Name = "logo_toko"
-        '
-        'nama_owner
-        '
-        Me.nama_owner.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nama_owner.HeaderText = "Nama Owner"
-        Me.nama_owner.MinimumWidth = 6
-        Me.nama_owner.Name = "nama_owner"
-        '
-        'tlp_owner
-        '
-        Me.tlp_owner.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.tlp_owner.HeaderText = "Telepon Owner"
-        Me.tlp_owner.MinimumWidth = 6
-        Me.tlp_owner.Name = "tlp_owner"
-        '
-        'norek_owner
-        '
-        Me.norek_owner.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.norek_owner.HeaderText = "No Rekening"
-        Me.norek_owner.MinimumWidth = 6
-        Me.norek_owner.Name = "norek_owner"
-        '
         'Button13
         '
         Me.Button13.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -645,6 +645,7 @@ Partial Class MasterDataToko
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "MasterDataToko"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MasterDataToko"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

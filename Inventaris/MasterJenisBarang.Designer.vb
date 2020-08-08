@@ -189,112 +189,112 @@ Partial Class MasterJenisBarang
         'btn_barang_masuk
         '
         Me.btn_barang_masuk.Name = "btn_barang_masuk"
-        Me.btn_barang_masuk.Size = New System.Drawing.Size(149, 55)
+        Me.btn_barang_masuk.Size = New System.Drawing.Size(153, 55)
         Me.btn_barang_masuk.Text = "Barang Masuk"
         '
         'BarangKeluarToolStripMenuItem
         '
         Me.BarangKeluarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_penjualan, Me.btn_rental, Me.btn_repair})
         Me.BarangKeluarToolStripMenuItem.Name = "BarangKeluarToolStripMenuItem"
-        Me.BarangKeluarToolStripMenuItem.Size = New System.Drawing.Size(149, 55)
+        Me.BarangKeluarToolStripMenuItem.Size = New System.Drawing.Size(153, 55)
         Me.BarangKeluarToolStripMenuItem.Text = "Barang Keluar"
         '
         'btn_penjualan
         '
         Me.btn_penjualan.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_penjualan.Name = "btn_penjualan"
-        Me.btn_penjualan.Size = New System.Drawing.Size(175, 28)
+        Me.btn_penjualan.Size = New System.Drawing.Size(176, 28)
         Me.btn_penjualan.Text = "Penjualan"
         '
         'btn_rental
         '
         Me.btn_rental.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_rental.Name = "btn_rental"
-        Me.btn_rental.Size = New System.Drawing.Size(175, 28)
+        Me.btn_rental.Size = New System.Drawing.Size(176, 28)
         Me.btn_rental.Text = "Rental"
         '
         'btn_repair
         '
         Me.btn_repair.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_repair.Name = "btn_repair"
-        Me.btn_repair.Size = New System.Drawing.Size(175, 28)
+        Me.btn_repair.Size = New System.Drawing.Size(176, 28)
         Me.btn_repair.Text = "Repair"
         '
         'QuotationToolStripMenuItem
         '
         Me.QuotationToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_qrental, Me.btn_qinstallasi, Me.btn_qmaintenence})
         Me.QuotationToolStripMenuItem.Name = "QuotationToolStripMenuItem"
-        Me.QuotationToolStripMenuItem.Size = New System.Drawing.Size(115, 55)
+        Me.QuotationToolStripMenuItem.Size = New System.Drawing.Size(120, 55)
         Me.QuotationToolStripMenuItem.Text = "Quotation"
         '
         'btn_qrental
         '
         Me.btn_qrental.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_qrental.Name = "btn_qrental"
-        Me.btn_qrental.Size = New System.Drawing.Size(258, 28)
+        Me.btn_qrental.Size = New System.Drawing.Size(259, 28)
         Me.btn_qrental.Text = "Rental Barang"
         '
         'btn_qinstallasi
         '
         Me.btn_qinstallasi.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_qinstallasi.Name = "btn_qinstallasi"
-        Me.btn_qinstallasi.Size = New System.Drawing.Size(258, 28)
+        Me.btn_qinstallasi.Size = New System.Drawing.Size(259, 28)
         Me.btn_qinstallasi.Text = "Installation Service"
         '
         'btn_qmaintenence
         '
         Me.btn_qmaintenence.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_qmaintenence.Name = "btn_qmaintenence"
-        Me.btn_qmaintenence.Size = New System.Drawing.Size(258, 28)
+        Me.btn_qmaintenence.Size = New System.Drawing.Size(259, 28)
         Me.btn_qmaintenence.Text = "Maintenence Serivce"
         '
         'ReportToolStripMenuItem
         '
         Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_r_barang_masuk, Me.btn_r_hasil_penjualan, Me.btn_r_invoice_keluar, Me.btn_r_barang_rental, Me.btn_r_garansi, Me.btn_r_stock_barang})
         Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
-        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(86, 55)
+        Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(87, 55)
         Me.ReportToolStripMenuItem.Text = "Report"
         '
         'btn_r_barang_masuk
         '
         Me.btn_r_barang_masuk.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_r_barang_masuk.Name = "btn_r_barang_masuk"
-        Me.btn_r_barang_masuk.Size = New System.Drawing.Size(296, 28)
+        Me.btn_r_barang_masuk.Size = New System.Drawing.Size(297, 28)
         Me.btn_r_barang_masuk.Text = "Hasil Input Barang Masuk"
         '
         'btn_r_hasil_penjualan
         '
         Me.btn_r_hasil_penjualan.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_r_hasil_penjualan.Name = "btn_r_hasil_penjualan"
-        Me.btn_r_hasil_penjualan.Size = New System.Drawing.Size(296, 28)
+        Me.btn_r_hasil_penjualan.Size = New System.Drawing.Size(297, 28)
         Me.btn_r_hasil_penjualan.Text = "Hasil Penjualan"
         '
         'btn_r_invoice_keluar
         '
         Me.btn_r_invoice_keluar.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_r_invoice_keluar.Name = "btn_r_invoice_keluar"
-        Me.btn_r_invoice_keluar.Size = New System.Drawing.Size(296, 28)
+        Me.btn_r_invoice_keluar.Size = New System.Drawing.Size(297, 28)
         Me.btn_r_invoice_keluar.Text = "List Invoice Keluar"
         '
         'btn_r_barang_rental
         '
         Me.btn_r_barang_rental.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_r_barang_rental.Name = "btn_r_barang_rental"
-        Me.btn_r_barang_rental.Size = New System.Drawing.Size(296, 28)
+        Me.btn_r_barang_rental.Size = New System.Drawing.Size(297, 28)
         Me.btn_r_barang_rental.Text = "List Barang Rental"
         '
         'btn_r_garansi
         '
         Me.btn_r_garansi.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_r_garansi.Name = "btn_r_garansi"
-        Me.btn_r_garansi.Size = New System.Drawing.Size(296, 28)
+        Me.btn_r_garansi.Size = New System.Drawing.Size(297, 28)
         Me.btn_r_garansi.Text = "Garansi"
         '
         'btn_r_stock_barang
         '
         Me.btn_r_stock_barang.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_r_stock_barang.Name = "btn_r_stock_barang"
-        Me.btn_r_stock_barang.Size = New System.Drawing.Size(296, 28)
+        Me.btn_r_stock_barang.Size = New System.Drawing.Size(297, 28)
         Me.btn_r_stock_barang.Text = "Stock Barang"
         '
         'MasterDataToolStripMenuItem
@@ -372,27 +372,27 @@ Partial Class MasterJenisBarang
         '
         Me.MasterUserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_master_data_user, Me.btn_master_ubahprofil})
         Me.MasterUserToolStripMenuItem.Name = "MasterUserToolStripMenuItem"
-        Me.MasterUserToolStripMenuItem.Size = New System.Drawing.Size(130, 55)
+        Me.MasterUserToolStripMenuItem.Size = New System.Drawing.Size(132, 55)
         Me.MasterUserToolStripMenuItem.Text = "Master User"
         '
         'btn_master_data_user
         '
         Me.btn_master_data_user.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_master_data_user.Name = "btn_master_data_user"
-        Me.btn_master_data_user.Size = New System.Drawing.Size(186, 28)
+        Me.btn_master_data_user.Size = New System.Drawing.Size(187, 28)
         Me.btn_master_data_user.Text = "Data User"
         '
         'btn_master_ubahprofil
         '
         Me.btn_master_ubahprofil.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_master_ubahprofil.Name = "btn_master_ubahprofil"
-        Me.btn_master_ubahprofil.Size = New System.Drawing.Size(186, 28)
+        Me.btn_master_ubahprofil.Size = New System.Drawing.Size(187, 28)
         Me.btn_master_ubahprofil.Text = "Ubah Profil"
         '
         'btn_logout
         '
         Me.btn_logout.Name = "btn_logout"
-        Me.btn_logout.Size = New System.Drawing.Size(88, 55)
+        Me.btn_logout.Size = New System.Drawing.Size(90, 55)
         Me.btn_logout.Text = "Logout"
         '
         'Button13
@@ -429,6 +429,7 @@ Partial Class MasterJenisBarang
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "MasterJenisBarang"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Master Jenis Barang"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()

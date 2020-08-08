@@ -325,21 +325,21 @@ Partial Class BarangKeluar
         '
         Me.btn_penjualan.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_penjualan.Name = "btn_penjualan"
-        Me.btn_penjualan.Size = New System.Drawing.Size(224, 28)
+        Me.btn_penjualan.Size = New System.Drawing.Size(176, 28)
         Me.btn_penjualan.Text = "Penjualan"
         '
         'btn_rental
         '
         Me.btn_rental.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_rental.Name = "btn_rental"
-        Me.btn_rental.Size = New System.Drawing.Size(224, 28)
+        Me.btn_rental.Size = New System.Drawing.Size(176, 28)
         Me.btn_rental.Text = "Rental"
         '
         'btn_repair
         '
         Me.btn_repair.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_repair.Name = "btn_repair"
-        Me.btn_repair.Size = New System.Drawing.Size(224, 28)
+        Me.btn_repair.Size = New System.Drawing.Size(176, 28)
         Me.btn_repair.Text = "Repair"
         '
         'QuotationToolStripMenuItem
@@ -555,6 +555,7 @@ Partial Class BarangKeluar
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "BarangKeluar"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Penjualan"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
