@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MasterStatus
+Partial Class MenuUtama
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,13 +22,6 @@ Partial Class MasterStatus
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.data_master_status = New System.Windows.Forms.DataGridView()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_status = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.btn_simpan = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.btn_menuutama = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_barang_masuk = New System.Windows.Forms.ToolStripMenuItem()
@@ -61,86 +54,12 @@ Partial Class MasterStatus
         Me.btn_master_data_user = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_master_ubahprofil = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        CType(Me.data_master_status, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.p_logo = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.p_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'data_master_status
-        '
-        Me.data_master_status.AllowUserToOrderColumns = True
-        Me.data_master_status.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.data_master_status.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.data_master_status.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.data_master_status.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.nama_status})
-        Me.data_master_status.Location = New System.Drawing.Point(0, 208)
-        Me.data_master_status.Name = "data_master_status"
-        Me.data_master_status.RowHeadersWidth = 51
-        Me.data_master_status.RowTemplate.Height = 24
-        Me.data_master_status.Size = New System.Drawing.Size(1539, 254)
-        Me.data_master_status.TabIndex = 16
-        '
-        'id
-        '
-        Me.id.HeaderText = "ID"
-        Me.id.MinimumWidth = 6
-        Me.id.Name = "id"
-        Me.id.Width = 125
-        '
-        'nama_status
-        '
-        Me.nama_status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nama_status.HeaderText = "Nama Status"
-        Me.nama_status.MinimumWidth = 6
-        Me.nama_status.Name = "nama_status"
-        '
-        'txt_status
-        '
-        Me.txt_status.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_status.Location = New System.Drawing.Point(180, 70)
-        Me.txt_status.Name = "txt_status"
-        Me.txt_status.Size = New System.Drawing.Size(236, 22)
-        Me.txt_status.TabIndex = 8
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(42, 70)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(89, 17)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Nama Status"
-        '
-        'btn_simpan
-        '
-        Me.btn_simpan.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_simpan.FlatAppearance.BorderSize = 0
-        Me.btn_simpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_simpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_simpan.Location = New System.Drawing.Point(180, 156)
-        Me.btn_simpan.Name = "btn_simpan"
-        Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
-        Me.btn_simpan.TabIndex = 17
-        Me.btn_simpan.Text = "Simpan"
-        Me.btn_simpan.UseVisualStyleBackColor = False
-        '
-        'Panel2
-        '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel2.Controls.Add(Me.btn_simpan)
-        Me.Panel2.Controls.Add(Me.data_master_status)
-        Me.Panel2.Controls.Add(Me.txt_status)
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Location = New System.Drawing.Point(2, 58)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1539, 468)
-        Me.Panel2.TabIndex = 26
         '
         'MenuStrip1
         '
@@ -152,7 +71,7 @@ Partial Class MasterStatus
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1542, 59)
-        Me.MenuStrip1.TabIndex = 47
+        Me.MenuStrip1.TabIndex = 43
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'btn_menuutama
@@ -371,57 +290,45 @@ Partial Class MasterStatus
         Me.btn_logout.Size = New System.Drawing.Size(90, 55)
         Me.btn_logout.Text = "Logout"
         '
-        'Button13
+        'Panel1
         '
-        Me.Button13.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button13.FlatAppearance.BorderSize = 0
-        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button13.Location = New System.Drawing.Point(125, 532)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(94, 39)
-        Me.Button13.TabIndex = 53
-        Me.Button13.Text = "Hapus"
-        Me.Button13.UseVisualStyleBackColor = False
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Controls.Add(Me.p_logo)
+        Me.Panel1.Location = New System.Drawing.Point(0, 63)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1542, 771)
+        Me.Panel1.TabIndex = 44
         '
-        'Button12
+        'p_logo
         '
-        Me.Button12.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button12.FlatAppearance.BorderSize = 0
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.Location = New System.Drawing.Point(25, 532)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(94, 39)
-        Me.Button12.TabIndex = 52
-        Me.Button12.Text = "Edit"
-        Me.Button12.UseVisualStyleBackColor = False
+        Me.p_logo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.p_logo.Location = New System.Drawing.Point(448, 106)
+        Me.p_logo.Name = "p_logo"
+        Me.p_logo.Size = New System.Drawing.Size(593, 535)
+        Me.p_logo.TabIndex = 0
+        Me.p_logo.TabStop = False
         '
-        'MasterStatus
+        'MenuUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1542, 832)
-        Me.Controls.Add(Me.Button13)
-        Me.Controls.Add(Me.Button12)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Controls.Add(Me.Panel2)
-        Me.Name = "MasterStatus"
+        Me.Name = "MenuUtama"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "MasterStatus"
-        CType(Me.data_master_status, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.Text = "MenuUtama"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.p_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents data_master_status As DataGridView
-    Friend WithEvents txt_status As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents btn_simpan As Button
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents id As DataGridViewTextBoxColumn
-    Friend WithEvents nama_status As DataGridViewTextBoxColumn
+
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents btn_menuutama As ToolStripMenuItem
     Friend WithEvents btn_barang_masuk As ToolStripMenuItem
@@ -454,6 +361,6 @@ Partial Class MasterStatus
     Friend WithEvents btn_master_data_user As ToolStripMenuItem
     Friend WithEvents btn_master_ubahprofil As ToolStripMenuItem
     Friend WithEvents btn_logout As ToolStripMenuItem
-    Friend WithEvents Button13 As Button
-    Friend WithEvents Button12 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents p_logo As PictureBox
 End Class

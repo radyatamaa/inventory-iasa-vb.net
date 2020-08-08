@@ -39,48 +39,48 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.btntk2)
         Me.Panel1.Controls.Add(Me.btntk0)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(290, 89)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel1.Location = New System.Drawing.Point(387, 110)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(476, 337)
+        Me.Panel1.Size = New System.Drawing.Size(635, 415)
         Me.Panel1.TabIndex = 0
         '
         'btntk3
         '
-        Me.btntk3.Location = New System.Drawing.Point(256, 188)
-        Me.btntk3.Margin = New System.Windows.Forms.Padding(2)
+        Me.btntk3.Location = New System.Drawing.Point(341, 231)
+        Me.btntk3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btntk3.Name = "btntk3"
-        Me.btntk3.Size = New System.Drawing.Size(148, 116)
+        Me.btntk3.Size = New System.Drawing.Size(197, 143)
         Me.btntk3.TabIndex = 4
         Me.btntk3.Text = "Button4"
         Me.btntk3.UseVisualStyleBackColor = True
         '
         'btntk1
         '
-        Me.btntk1.Location = New System.Drawing.Point(256, 40)
-        Me.btntk1.Margin = New System.Windows.Forms.Padding(2)
+        Me.btntk1.Location = New System.Drawing.Point(341, 49)
+        Me.btntk1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btntk1.Name = "btntk1"
-        Me.btntk1.Size = New System.Drawing.Size(148, 116)
+        Me.btntk1.Size = New System.Drawing.Size(197, 143)
         Me.btntk1.TabIndex = 3
         Me.btntk1.Text = "Button3"
         Me.btntk1.UseVisualStyleBackColor = True
         '
         'btntk2
         '
-        Me.btntk2.Location = New System.Drawing.Point(74, 188)
-        Me.btntk2.Margin = New System.Windows.Forms.Padding(2)
+        Me.btntk2.Location = New System.Drawing.Point(99, 231)
+        Me.btntk2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btntk2.Name = "btntk2"
-        Me.btntk2.Size = New System.Drawing.Size(148, 116)
+        Me.btntk2.Size = New System.Drawing.Size(197, 143)
         Me.btntk2.TabIndex = 2
         Me.btntk2.Text = "Button2"
         Me.btntk2.UseVisualStyleBackColor = True
         '
         'btntk0
         '
-        Me.btntk0.Location = New System.Drawing.Point(74, 40)
-        Me.btntk0.Margin = New System.Windows.Forms.Padding(2)
+        Me.btntk0.Location = New System.Drawing.Point(99, 49)
+        Me.btntk0.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btntk0.Name = "btntk0"
-        Me.btntk0.Size = New System.Drawing.Size(148, 116)
+        Me.btntk0.Size = New System.Drawing.Size(197, 143)
         Me.btntk0.TabIndex = 1
         Me.btntk0.Text = "Button1"
         Me.btntk0.UseVisualStyleBackColor = True
@@ -88,21 +88,20 @@ Partial Class Form2
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(194, 12)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(259, 15)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 19)
+        Me.Label1.Size = New System.Drawing.Size(100, 23)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Pilih Toko"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Form2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 587)
+        Me.ClientSize = New System.Drawing.Size(1371, 722)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form2"
