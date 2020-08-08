@@ -61,3 +61,42 @@ C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.exe
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.xml
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.pdb
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\Inventaris.exe.config
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\Inventaris.exe
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\Inventaris.pdb
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\Inventaris.xml
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.vbprojAssemblyReference.cache
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.BarangKeluar.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Form1.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Form2.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Form3.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Instalasi.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterAlasan.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterClient.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterData.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterDataToko.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterDetailLokasi.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterKondisi.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterLokasi.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterStatus.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterTipe.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterUser.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.BarangMasuk.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Resources.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.QPenawaran.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Rental.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Repair.resources
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.vbproj.GenerateResource.cache
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.vbproj.CoreCompileInputs.cache
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.vbproj.CopyComplete
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.exe
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.xml
+E:\radya\project\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.pdb
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.AccessControl.dll
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.Permissions.dll
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.Principal.Windows.dll
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.AccessControl.xml
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.Permissions.xml
+E:\radya\project\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.Principal.Windows.xml
