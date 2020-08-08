@@ -7,7 +7,7 @@ Public Class Form1
         Dim idLevel As String
         Dim result
         Using connObj As New SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings("myConnectionString").ConnectionString)
-            Using cmdObj As New SqlClient.SqlCommand("SELECT username, nama, id_level FROM tbl_user WHERE username = '" + usernameLogin + "' and password = '" + passwordLogin + "'", connObj)
+            Using cmdObj As New SqlClient.SqlCommand("SELECT username, nama, id_level FROM tbl_user WHERE is_active = 1 AND username = '" + usernameLogin + "' AND password = '" + passwordLogin + "'", connObj)
                 connObj.Open()
                 Using readerObj As SqlClient.SqlDataReader = cmdObj.ExecuteReader
                     'This will loop through all returned records 
