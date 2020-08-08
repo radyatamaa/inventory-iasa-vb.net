@@ -140,10 +140,10 @@
     <Compile Include="MasterClient.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterData.Designer.vb">
-      <DependentUpon>MasterData.vb</DependentUpon>
+    <Compile Include="MasterJenisBarang.Designer.vb">
+      <DependentUpon>MasterJenisBarang.vb</DependentUpon>
     </Compile>
-    <Compile Include="MasterData.vb">
+    <Compile Include="MasterJenisBarang.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MasterDataToko.Designer.vb">
@@ -192,6 +192,12 @@
       <DependentUpon>BarangMasuk.vb</DependentUpon>
     </Compile>
     <Compile Include="BarangMasuk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuUtama.Designer.vb">
+      <DependentUpon>MenuUtama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenuUtama.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -251,8 +257,8 @@
     <EmbeddedResource Include="MasterClient.resx">
       <DependentUpon>MasterClient.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MasterData.resx">
-      <DependentUpon>MasterData.vb</DependentUpon>
+    <EmbeddedResource Include="MasterJenisBarang.resx">
+      <DependentUpon>MasterJenisBarang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterDataToko.resx">
       <DependentUpon>MasterDataToko.vb</DependentUpon>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BarangMasuk.resx">
       <DependentUpon>BarangMasuk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuUtama.resx">
+      <DependentUpon>MenuUtama.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

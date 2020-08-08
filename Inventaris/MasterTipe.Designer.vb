@@ -436,6 +436,7 @@ Partial Class MasterTipe
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "MasterTipe"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MasterTipe"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
