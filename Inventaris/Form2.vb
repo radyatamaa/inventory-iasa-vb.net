@@ -25,10 +25,23 @@ Public Class Form2
         Return result
     End Function
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btntk0.Click
-        BarangMasuk.Show()
+        MenuUtama.Show()
+        Me.Close()
+    End Sub
+    Private Sub btntk1_Click(sender As Object, e As EventArgs) Handles btntk1.Click
+        MenuUtama.Show()
         Me.Close()
     End Sub
 
+    Private Sub btntk2_Click(sender As Object, e As EventArgs) Handles btntk2.Click
+        MenuUtama.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub btntk3_Click(sender As Object, e As EventArgs) Handles btntk3.Click
+        MenuUtama.Show()
+        Me.Close()
+    End Sub
     Private Sub Button8_Click(sender As Object, e As EventArgs)
 
     End Sub
@@ -54,4 +67,6 @@ Public Class Form2
         Next i
 
     End Sub
+
+
 End Class
