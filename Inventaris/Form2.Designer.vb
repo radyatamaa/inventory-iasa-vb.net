@@ -23,10 +23,10 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btntk3 = New System.Windows.Forms.Button()
+        Me.btntk1 = New System.Windows.Forms.Button()
+        Me.btntk2 = New System.Windows.Forms.Button()
+        Me.btntk0 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -34,60 +34,60 @@ Partial Class Form2
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.btntk3)
+        Me.Panel1.Controls.Add(Me.btntk1)
+        Me.Panel1.Controls.Add(Me.btntk2)
+        Me.Panel1.Controls.Add(Me.btntk0)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(290, 89)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(476, 337)
         Me.Panel1.TabIndex = 0
         '
-        'Button4
+        'btntk3
         '
-        Me.Button4.Location = New System.Drawing.Point(256, 188)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(148, 116)
-        Me.Button4.TabIndex = 4
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btntk3.Location = New System.Drawing.Point(256, 188)
+        Me.btntk3.Margin = New System.Windows.Forms.Padding(2)
+        Me.btntk3.Name = "btntk3"
+        Me.btntk3.Size = New System.Drawing.Size(148, 116)
+        Me.btntk3.TabIndex = 4
+        Me.btntk3.Text = "Button4"
+        Me.btntk3.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btntk1
         '
-        Me.Button3.Location = New System.Drawing.Point(256, 40)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(148, 116)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btntk1.Location = New System.Drawing.Point(256, 40)
+        Me.btntk1.Margin = New System.Windows.Forms.Padding(2)
+        Me.btntk1.Name = "btntk1"
+        Me.btntk1.Size = New System.Drawing.Size(148, 116)
+        Me.btntk1.TabIndex = 3
+        Me.btntk1.Text = "Button3"
+        Me.btntk1.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btntk2
         '
-        Me.Button2.Location = New System.Drawing.Point(74, 188)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(148, 116)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btntk2.Location = New System.Drawing.Point(74, 188)
+        Me.btntk2.Margin = New System.Windows.Forms.Padding(2)
+        Me.btntk2.Name = "btntk2"
+        Me.btntk2.Size = New System.Drawing.Size(148, 116)
+        Me.btntk2.TabIndex = 2
+        Me.btntk2.Text = "Button2"
+        Me.btntk2.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btntk0
         '
-        Me.Button1.Location = New System.Drawing.Point(74, 40)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(148, 116)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btntk0.Location = New System.Drawing.Point(74, 40)
+        Me.btntk0.Margin = New System.Windows.Forms.Padding(2)
+        Me.btntk0.Name = "btntk0"
+        Me.btntk0.Size = New System.Drawing.Size(148, 116)
+        Me.btntk0.TabIndex = 1
+        Me.btntk0.Text = "Button1"
+        Me.btntk0.UseVisualStyleBackColor = True
         '
         'Label1
         '
-        Me.Label1.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(194, 12)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
@@ -102,7 +102,7 @@ Partial Class Form2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 587)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form2"
@@ -112,9 +112,9 @@ Partial Class Form2
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btntk3 As Button
+    Friend WithEvents btntk1 As Button
+    Friend WithEvents btntk2 As Button
+    Friend WithEvents btntk0 As Button
     Friend WithEvents Label1 As Label
 End Class
