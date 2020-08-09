@@ -524,4 +524,16 @@ Public Class BarangMasuk
 
         End If
     End Sub
+
+    Private Sub cbx_teruji_CheckedChanged(sender As Object, e As EventArgs) Handles cbx_teruji.CheckedChanged
+        If cbx_teruji.Checked = True Then
+            cbx_tidak_teruji.Checked = False
+        End If
+    End Sub
+
+    Private Sub cbx_tidak_teruji_CheckedChanged(sender As Object, e As EventArgs) Handles cbx_tidak_teruji.CheckedChanged
+        If cbx_tidak_teruji.Checked = True Then
+            cbx_teruji.Checked = False
+        End If
+    End Sub
 End Class
