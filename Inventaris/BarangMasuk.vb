@@ -233,24 +233,88 @@ Public Class BarangMasuk
     End Function
     Function GetBarangMasuk()
         Dim result As New List(Of Object)
-        Dim query As String = "SELECT * FROM tbl_barang_masuk bm
-                                    INNER JOIN tbl_barang b ON bm.id_barang = b.id
-                                    WHERE bm.is_active = 1 "
+        Dim query As String = "SELECT *  FROM tbl_barang_masuk bm
+                                  INNER JOIN tbl_barang b ON bm.id_barang = b.id_barang
+		                          INNER JOIN tbl_kondisi k ON b.id_kondisi = b.id_kondisi
+		                          INNER JOIN tbl_jenis j ON b.id_jenis = j.id_jenis
+		                          INNER JOIN tbl_tipe t ON b.id_tipe = t.id_tipe
+		                          INNER JOIN tbl_lokasi l ON b.id_lokasi = l.id_lokasi
+		                          INNER JOIN tbl_detail_lokasi dl ON b.id_detail_lokasi = dl.id_detail_lokasi
+		                          INNER JOIN tbl_status_barang sb ON b.id_status_barang = sb.id_status_barang
+                                  WHERE bm.is_active = 1"
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
         cmd.Connection = CONN
         CONN.Open()
-        reader = cmd.ExecuteReader()
+        'reader = cmd.ExecuteReader()
         'This will loop through all returned records 
-        While reader.Read
-            Dim toko As New With {
-                            .IdToko = reader("id_toko"),
-                            .NamaToko = reader("nama_toko").ToString,
-                            .LogoToko = reader("logo_toko").ToString
-                            }
-            result.Add(toko)
-            'handle returned value before next loop here
-        End While
+        Dim dataadapter As New SqlDataAdapter(query, cmd.Connection)
+        Using sda As New SqlDataAdapter(cmd)
+            Using dt As New DataTable()
+                sda.Fill(dt)
+
+                'Set AutoGenerateColumns False
+                Me.data_barang_masuk.AutoGenerateColumns = False
+
+                'Set Columns Count
+                Me.data_barang_masuk.ColumnCount = 13
+
+                'Add Columns
+                Me.data_barang_masuk.Columns(0).Name = "JenisBarang"
+                Me.data_barang_masuk.Columns(0).HeaderText = "Jenis Barang"
+                Me.data_barang_masuk.Columns(0).DataPropertyName = "nama_jenis"
+
+                Me.data_barang_masuk.Columns(1).Name = "TipeDetailBarang"
+                Me.data_barang_masuk.Columns(1).HeaderText = "Tipe Detail Barang"
+                Me.data_barang_masuk.Columns(1).DataPropertyName = "nama_tipe"
+
+                Me.data_barang_masuk.Columns(2).Name = "SerialNumber"
+                Me.data_barang_masuk.Columns(2).HeaderText = "Serial Number"
+                Me.data_barang_masuk.Columns(2).DataPropertyName = "serial_number"
+
+                Me.data_barang_masuk.Columns(3).Name = "Kondisi"
+                Me.data_barang_masuk.Columns(3).HeaderText = "Kondisi"
+                Me.data_barang_masuk.Columns(3).DataPropertyName = "nama_kondisi"
+
+                Me.data_barang_masuk.Columns(4).Name = "Tested"
+                Me.data_barang_masuk.Columns(4).HeaderText = "Tested"
+                Me.data_barang_masuk.Columns(4).DataPropertyName = "tested"
+
+                Me.data_barang_masuk.Columns(5).Name = "Lokasi"
+                Me.data_barang_masuk.Columns(5).HeaderText = "Lokasi"
+                Me.data_barang_masuk.Columns(5).DataPropertyName = "nama_lokasi"
+
+                Me.data_barang_masuk.Columns(6).Name = "Detail Lokasi"
+                Me.data_barang_masuk.Columns(6).HeaderText = "Detail Lokasi"
+                Me.data_barang_masuk.Columns(6).DataPropertyName = "detail_lokasi"
+
+                Me.data_barang_masuk.Columns(7).Name = "License"
+                Me.data_barang_masuk.Columns(7).HeaderText = "License"
+                Me.data_barang_masuk.Columns(7).DataPropertyName = "licence"
+
+                Me.data_barang_masuk.Columns(8).Name = "Catatan"
+                Me.data_barang_masuk.Columns(8).HeaderText = "Catatan"
+                Me.data_barang_masuk.Columns(8).DataPropertyName = "catatan"
+
+                Me.data_barang_masuk.Columns(9).Name = "Status"
+                Me.data_barang_masuk.Columns(9).HeaderText = "Status"
+                Me.data_barang_masuk.Columns(9).DataPropertyName = "nama_status"
+
+                Me.data_barang_masuk.Columns(10).Name = "HargaModal"
+                Me.data_barang_masuk.Columns(10).HeaderText = "Harga Modal"
+                Me.data_barang_masuk.Columns(10).DataPropertyName = "harga_beli"
+
+                Me.data_barang_masuk.Columns(11).Name = "HargaBarang"
+                Me.data_barang_masuk.Columns(11).HeaderText = "Harga Barang"
+                Me.data_barang_masuk.Columns(11).DataPropertyName = "harga_jual"
+
+                Me.data_barang_masuk.Columns(12).Name = "TanggalMasuk"
+                Me.data_barang_masuk.Columns(12).HeaderText = "Tanggal Masuk"
+                Me.data_barang_masuk.Columns(12).DataPropertyName = "tgl_masuk"
+
+                Me.data_barang_masuk.DataSource = dt
+            End Using
+        End Using
         CONN.Close()
 
         Return result
@@ -365,7 +429,7 @@ Public Class BarangMasuk
     Private Sub BarangMasuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             VBnetSQLSeverConnection()
-
+            GetBarangMasuk()
             Dim listbarang As List(Of Object) = GetJenisBarang()
             If listbarang.Count > 0 Then
                 cmb_jenis_barang.DataSource = listbarang
