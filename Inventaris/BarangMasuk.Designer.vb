@@ -99,8 +99,7 @@ Partial Class BarangMasuk
         Me.btn_master_data_user = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_master_ubahprofil = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.hapus_data_barang_masuk = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.data_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -799,39 +798,25 @@ Partial Class BarangMasuk
         Me.btn_logout.Size = New System.Drawing.Size(80, 44)
         Me.btn_logout.Text = "Logout"
         '
-        'Button1
+        'hapus_data_barang_masuk
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(83, 433)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(70, 32)
-        Me.Button1.TabIndex = 57
-        Me.Button1.Text = "Hapus"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(8, 433)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(70, 32)
-        Me.Button2.TabIndex = 56
-        Me.Button2.Text = "Edit"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.hapus_data_barang_masuk.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.hapus_data_barang_masuk.FlatAppearance.BorderSize = 0
+        Me.hapus_data_barang_masuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hapus_data_barang_masuk.Location = New System.Drawing.Point(8, 433)
+        Me.hapus_data_barang_masuk.Margin = New System.Windows.Forms.Padding(2)
+        Me.hapus_data_barang_masuk.Name = "hapus_data_barang_masuk"
+        Me.hapus_data_barang_masuk.Size = New System.Drawing.Size(70, 32)
+        Me.hapus_data_barang_masuk.TabIndex = 56
+        Me.hapus_data_barang_masuk.Text = "Hapus"
+        Me.hapus_data_barang_masuk.UseVisualStyleBackColor = False
         '
         'BarangMasuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1108, 609)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.hapus_data_barang_masuk)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -922,7 +907,6 @@ Partial Class BarangMasuk
     Friend WithEvents harga_modal As DataGridViewTextBoxColumn
     Friend WithEvents harga_barang As DataGridViewTextBoxColumn
     Friend WithEvents tgl_masuk As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents hapus_data_barang_masuk As Button
     Friend WithEvents txt_kode_barang As TextBox
 End Class
