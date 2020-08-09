@@ -1,5 +1,6 @@
 ﻿Public Class MenuUtama
     Private Sub btn_barang_masuk_Click(sender As Object, e As EventArgs) Handles btn_barang_masuk.Click
+        BarangMasuk.MenuStrip1.Tag = BarangMasuk.MenuStrip1.Tag
         BarangMasuk.Show()
         Me.Close()
     End Sub

@@ -19,6 +19,45 @@ Public Class BarangMasuk
         End Try
         CONN.Close()
     End Sub
+    Function DeleteBarangMasuk(idBarangMasuk As Integer, idbarang As Integer)
+        Try
+            Dim userlogin As String = ""
+            If MenuStrip1.Tag IsNot Nothing Then
+                userlogin = MenuStrip1.Tag.Username
+            End If
+            Dim queryTblBarang As String = "UPDATE tbl_barang SET 
+                                    is_active = 0 ,
+                                    deleted_by =   '" + userlogin + "',
+                                    deleted_date = '" + DateTime.Now + "'
+                                WHERE id_barang = " + idbarang.ToString
+            cmd.CommandText = queryTblBarang
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = CONN
+            CONN.Open()
+            reader = cmd.ExecuteReader()
+            CONN.Close()
+
+            Dim queryTblBarangMasuk As String = "UPDATE tbl_barang_masuk SET 
+                                    is_active = 0 ,
+                                    deleted_by =   '" + userlogin + "',
+                                    deleted_date = '" + DateTime.Now + "'
+                                WHERE id_barang_masuk = " + idBarangMasuk.ToString
+            cmd.CommandText = queryTblBarangMasuk
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = CONN
+            CONN.Open()
+            reader = cmd.ExecuteReader()
+            CONN.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            MsgBox("Data Telah Di Hapus")
+            Me.Label1.Tag = 0
+            Me.Label2.Tag = 0
+        End Try
+
+    End Function
     Function GetStatusBarang() As List(Of Object)
         Dim result As New List(Of Object)
         'result.Add(jenisREsult)
@@ -145,6 +184,14 @@ Public Class BarangMasuk
         Return result
     End Function
     Function SimpanBarangMasuk(barangMasuk As Object)
+        Dim idToko
+        Dim userlogin As String = ""
+        If MenuStrip1.Tag IsNot Nothing Then
+            userlogin = MenuStrip1.Tag.Username
+            idToko = MenuStrip1.Tag.IdToko.ToString
+        Else
+            idToko = "NULL"
+        End If
         If barangMasuk.id_barang_masuk <> 0 Then
             Try
                 Dim queryTblBarang As String = " UPDATE tbl_barang SET 
@@ -158,14 +205,14 @@ Public Class BarangMasuk
                                     tested = " + barangMasuk.tested.ToString + ",
                                     id_lokasi  = " + barangMasuk.id_lokasi.ToString + ",
                                     id_detail_lokasi = " + barangMasuk.id_detail_lokasi.ToString + ",
-                                    id_toko = " + barangMasuk.id_toko.ToString + ",
+                                    id_toko = " + idToko + ",
                                     harga_beli =  " + barangMasuk.harga_beli.ToString + ",
                                     harga_jual =  " + barangMasuk.harga_jual.ToString + ",
                                     stock =  " + barangMasuk.stock.ToString + ",
                                     licence =   '" + barangMasuk.licence + "',
                                     ios =  '" + barangMasuk.ios + "',
                                     foto_barang = '" + barangMasuk.foto_barang + "',
-                                    updated_by =  '" + MenuStrip1.Tag.Username + "',
+                                    updated_by =  '" + userlogin + "',
                                     updated_date =  '" + DateTime.Now + "'
                             WHERE  id_barang = " + barangMasuk.id_barang.ToString
 
@@ -181,9 +228,9 @@ Public Class BarangMasuk
                                     kd_transaksi_masuk =  '" + barangMasuk.kd_transaksi_masuk + "',
                                     id_barang =   " + idBarang.ToString + ",
                                     tgl_masuk =  '" + barangMasuk.tgl_masuk + "',
-                                    id_toko =    " + barangMasuk.id_toko.ToString + ",
+                                    id_toko =    " + idToko + ",
                                     jumlah = " + barangMasuk.jumlah.ToString + ",
-                                    updated_by =   '" + MenuStrip1.Tag.Username + "',
+                                    updated_by =   '" + userlogin + "',
                                     updated_date = '" + DateTime.Now + "'
                                 WHERE id_barang_masuk = " + barangMasuk.id_barang_masuk.ToString
 
@@ -236,14 +283,14 @@ Public Class BarangMasuk
                                     " + barangMasuk.tested.ToString + ",
                                     " + barangMasuk.id_lokasi.ToString + ",
                                     " + barangMasuk.id_detail_lokasi.ToString + ",
-                                    " + barangMasuk.id_toko.ToString + ",
+                                    " + idToko + ",
                                     " + barangMasuk.harga_beli.ToString + ",
                                     " + barangMasuk.harga_jual.ToString + ",
                                     " + barangMasuk.stock.ToString + ",
                                     '" + barangMasuk.licence + "',
                                     '" + barangMasuk.ios + "',
                                     '" + barangMasuk.foto_barang + "',
-                                    '" + MenuStrip1.Tag.Username + "',
+                                    '" + userlogin + "',
                                     '" + DateTime.Now + "',
                                     " + 1.ToString + "
                                     ); SELECT SCOPE_IDENTITY() "
@@ -268,9 +315,9 @@ Public Class BarangMasuk
                                     '" + barangMasuk.kd_transaksi_masuk + "',
                                     " + idBarang.ToString + ",
                                     '" + barangMasuk.tgl_masuk + "',
-                                    " + barangMasuk.id_toko.ToString + ",
+                                    " + idToko + ",
                                     " + barangMasuk.jumlah.ToString + ",
-                                    '" + MenuStrip1.Tag.Username + "',
+                                    '" + userlogin + "',
                                     '" + DateTime.Now + "',
                                     " + 1.ToString + "
                                     ) "
@@ -443,6 +490,10 @@ Public Class BarangMasuk
         ElseIf cbx_tidak_teruji.Checked Then
             tested = 0
         End If
+        Dim idToko As String
+        If MenuStrip1.Tag IsNot Nothing Then
+            idToko = MenuStrip1.Tag.IdToko
+        End If
         Dim insertDataBarangMasuk = New With
                 {
                 .id_barang = Me.Label2.Tag,
@@ -457,7 +508,7 @@ Public Class BarangMasuk
                  .tested = tested,
                  .id_lokasi = Me.cmb_lokasi.SelectedValue,
                  .id_detail_lokasi = Me.cmb_detail_lokasi.SelectedValue,
-                 .id_toko = MenuStrip1.Tag.IdToko,
+                 .id_toko = idToko,
                  .harga_beli = Me.txt_harga_modal.Text,
                  .harga_jual = Me.txt_harga_barang.Text,
                  .stock = 0,
@@ -687,6 +738,20 @@ Public Class BarangMasuk
     End Sub
 
     Private Sub data_barang_masuk_KeyPress(sender As Object, e As KeyPressEventArgs) Handles data_barang_masuk.KeyPress
+
+    End Sub
+
+    Private Sub hapus_data_barang_masuk_Click(sender As Object, e As EventArgs) Handles hapus_data_barang_masuk.Click
+        Dim result As DialogResult = MessageBox.Show("Apakah anda yakin ingin menghapus?",
+                              "Hapus Data",
+                              MessageBoxButtons.YesNo)
+
+        If (result = DialogResult.Yes) Then
+            Dim idbarangmasuk = Me.Label1.Tag
+            Dim idBarang = Me.Label2.Tag
+            DeleteBarangMasuk(idbarangmasuk, idBarang)
+        Else
+        End If
 
     End Sub
 End Class
