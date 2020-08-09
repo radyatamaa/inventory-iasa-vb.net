@@ -32,6 +32,8 @@ Public Class Form1
 
         Dim user As Object = Login(Me.TextBox2.Text, Me.TextBox1.Text)
         If user.username IsNot Nothing Then
+
+            Form2.Panel1.Tag = user
             Form2.Show()
             Me.Hide()
         Else
