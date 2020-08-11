@@ -23,6 +23,7 @@ Partial Class BarangMasuk
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txt_kode_barang = New System.Windows.Forms.TextBox()
         Me.cmb_status = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txt_catatan = New System.Windows.Forms.TextBox()
@@ -98,9 +99,7 @@ Partial Class BarangMasuk
         Me.btn_master_data_user = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_master_ubahprofil = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.txt_kode_barang = New System.Windows.Forms.TextBox()
+        Me.hapus_data_barang_masuk = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.data_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
@@ -145,8 +144,17 @@ Partial Class BarangMasuk
         Me.Panel2.Location = New System.Drawing.Point(1, 48)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1154, 380)
+        Me.Panel2.Size = New System.Drawing.Size(1234, 380)
         Me.Panel2.TabIndex = 1
+        '
+        'txt_kode_barang
+        '
+        Me.txt_kode_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_kode_barang.Location = New System.Drawing.Point(135, 22)
+        Me.txt_kode_barang.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_kode_barang.Name = "txt_kode_barang"
+        Me.txt_kode_barang.Size = New System.Drawing.Size(178, 20)
+        Me.txt_kode_barang.TabIndex = 35
         '
         'cmb_status
         '
@@ -322,12 +330,12 @@ Partial Class BarangMasuk
         Me.data_barang_masuk.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.data_barang_masuk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.data_barang_masuk.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang, Me.tipe_barang, Me.serial_number, Me.kondisi, Me.tested, Me.lokasi, Me.detail_lokasi, Me.lisensi, Me.catatan, Me.status_barang, Me.harga_modal, Me.harga_barang, Me.tgl_masuk})
-        Me.data_barang_masuk.Location = New System.Drawing.Point(0, 169)
+        Me.data_barang_masuk.Location = New System.Drawing.Point(0, 175)
         Me.data_barang_masuk.Margin = New System.Windows.Forms.Padding(2)
         Me.data_barang_masuk.Name = "data_barang_masuk"
         Me.data_barang_masuk.RowHeadersWidth = 51
         Me.data_barang_masuk.RowTemplate.Height = 24
-        Me.data_barang_masuk.Size = New System.Drawing.Size(1154, 206)
+        Me.data_barang_masuk.Size = New System.Drawing.Size(1234, 206)
         Me.data_barang_masuk.TabIndex = 16
         '
         'jenis_barang
@@ -570,7 +578,7 @@ Partial Class BarangMasuk
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1028, 48)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1108, 48)
         Me.MenuStrip1.TabIndex = 41
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -790,48 +798,25 @@ Partial Class BarangMasuk
         Me.btn_logout.Size = New System.Drawing.Size(80, 44)
         Me.btn_logout.Text = "Logout"
         '
-        'Button1
+        'hapus_data_barang_masuk
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(83, 433)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(70, 32)
-        Me.Button1.TabIndex = 57
-        Me.Button1.Text = "Hapus"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(8, 433)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(70, 32)
-        Me.Button2.TabIndex = 56
-        Me.Button2.Text = "Edit"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'txt_kode_barang
-        '
-        Me.txt_kode_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kode_barang.Location = New System.Drawing.Point(135, 22)
-        Me.txt_kode_barang.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_kode_barang.Name = "txt_kode_barang"
-        Me.txt_kode_barang.Size = New System.Drawing.Size(178, 20)
-        Me.txt_kode_barang.TabIndex = 35
+        Me.hapus_data_barang_masuk.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.hapus_data_barang_masuk.FlatAppearance.BorderSize = 0
+        Me.hapus_data_barang_masuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hapus_data_barang_masuk.Location = New System.Drawing.Point(8, 433)
+        Me.hapus_data_barang_masuk.Margin = New System.Windows.Forms.Padding(2)
+        Me.hapus_data_barang_masuk.Name = "hapus_data_barang_masuk"
+        Me.hapus_data_barang_masuk.Size = New System.Drawing.Size(70, 32)
+        Me.hapus_data_barang_masuk.TabIndex = 56
+        Me.hapus_data_barang_masuk.Text = "Hapus"
+        Me.hapus_data_barang_masuk.UseVisualStyleBackColor = False
         '
         'BarangMasuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button2)
+        Me.ClientSize = New System.Drawing.Size(1108, 609)
+        Me.Controls.Add(Me.hapus_data_barang_masuk)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -922,7 +907,6 @@ Partial Class BarangMasuk
     Friend WithEvents harga_modal As DataGridViewTextBoxColumn
     Friend WithEvents harga_barang As DataGridViewTextBoxColumn
     Friend WithEvents tgl_masuk As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents hapus_data_barang_masuk As Button
     Friend WithEvents txt_kode_barang As TextBox
 End Class
