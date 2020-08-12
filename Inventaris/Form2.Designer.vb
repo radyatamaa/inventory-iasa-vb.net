@@ -99,6 +99,7 @@ Partial Class Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(1371, 722)
         Me.Controls.Add(Me.Panel1)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)

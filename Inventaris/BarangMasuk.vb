@@ -523,75 +523,75 @@ Public Class BarangMasuk
         SimpanBarangMasuk(insertDataBarangMasuk)
     End Sub
 
-    Private Sub btn_menuutama_Click(sender As Object, e As EventArgs) Handles btn_menuutama.Click
+    Private Sub btn_menuutama_Click(sender As Object, e As EventArgs)
         MenuUtama.Show()
         Me.Close()
     End Sub
-    Private Sub btn_penjualan_Click(sender As Object, e As EventArgs) Handles btn_penjualan.Click
+    Private Sub btn_penjualan_Click(sender As Object, e As EventArgs)
         BarangKeluar.Show()
         Me.Close()
     End Sub
-    Private Sub btn_rental_Click(sender As Object, e As EventArgs) Handles btn_rental.Click
+    Private Sub btn_rental_Click(sender As Object, e As EventArgs)
         Rental.Show()
         Me.Close()
     End Sub
 
-    Private Sub btn_repair_Click(sender As Object, e As EventArgs) Handles btn_repair.Click
+    Private Sub btn_repair_Click(sender As Object, e As EventArgs)
         Repair.Show()
         Me.Close()
     End Sub
 
-    Private Sub btn_master_jenis_Click(sender As Object, e As EventArgs) Handles btn_master_jenis.Click
+    Private Sub btn_master_jenis_Click(sender As Object, e As EventArgs)
         MasterJenisBarang.Show()
         Me.Close()
     End Sub
 
-    Private Sub btn_master_tipe_Click(sender As Object, e As EventArgs) Handles btn_master_tipe.Click
+    Private Sub btn_master_tipe_Click(sender As Object, e As EventArgs)
         MasterTipe.Show()
         Me.Close()
     End Sub
 
-    Private Sub btn_master_toko_Click(sender As Object, e As EventArgs) Handles btn_master_toko.Click
+    Private Sub btn_master_toko_Click(sender As Object, e As EventArgs)
         MasterDataToko.Show()
         Me.Close()
     End Sub
 
-    Private Sub btn_master_client_Click(sender As Object, e As EventArgs) Handles btn_master_client.Click
+    Private Sub btn_master_client_Click(sender As Object, e As EventArgs)
         MasterClient.Show()
         Me.Close()
     End Sub
 
-    Private Sub btn_master_kondisi_Click(sender As Object, e As EventArgs) Handles btn_master_kondisi.Click
+    Private Sub btn_master_kondisi_Click(sender As Object, e As EventArgs)
         MasterKondisi.Show()
         Me.Close()
     End Sub
 
-    Private Sub btn_master_status_Click(sender As Object, e As EventArgs) Handles btn_master_status.Click
+    Private Sub btn_master_status_Click(sender As Object, e As EventArgs)
         MasterStatus.Show()
         Me.Close()
     End Sub
 
-    Private Sub MasterLokasiToolStripMenuIbtn_master_lokasi_Click(sender As Object, e As EventArgs) Handles MasterLokasiToolStripMenuIbtn_master_lokasi.Click
+    Private Sub MasterLokasiToolStripMenuIbtn_master_lokasi_Click(sender As Object, e As EventArgs)
         MasterLokasi.Show()
         Me.Close()
     End Sub
 
-    Private Sub btn_master_detail_Click(sender As Object, e As EventArgs) Handles btn_master_detail.Click
+    Private Sub btn_master_detail_Click(sender As Object, e As EventArgs)
         MasterDetailLokasi.Show()
         Me.Close()
     End Sub
 
-    Private Sub btn_master_alasan_Click(sender As Object, e As EventArgs) Handles btn_master_alasan.Click
+    Private Sub btn_master_alasan_Click(sender As Object, e As EventArgs)
         MasterAlasan.Show()
         Me.Close()
     End Sub
 
-    Private Sub btn_master_data_user_Click(sender As Object, e As EventArgs) Handles btn_master_data_user.Click
+    Private Sub btn_master_data_user_Click(sender As Object, e As EventArgs)
         MasterUser.Show()
         Me.Close()
     End Sub
 
-    Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
+    Private Sub btn_logout_Click(sender As Object, e As EventArgs)
         Form1.Show()
         Me.Close()
     End Sub
@@ -651,7 +651,7 @@ Public Class BarangMasuk
 
     End Sub
 
-    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs)
 
     End Sub
 
@@ -752,6 +752,10 @@ Public Class BarangMasuk
             DeleteBarangMasuk(idbarangmasuk, idBarang)
         Else
         End If
+
+    End Sub
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
 
     End Sub
 End Class
