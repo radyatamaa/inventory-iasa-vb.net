@@ -24,6 +24,7 @@ Partial Class BarangMasuk
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BarangMasuk))
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.hapus_data_barang_masuk = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.dt_barang_masuk = New System.Windows.Forms.DataGridView()
         Me.dt_jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -89,7 +90,6 @@ Partial Class BarangMasuk
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.hapus_data_barang_masuk = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,6 +101,7 @@ Partial Class BarangMasuk
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel2.Controls.Add(Me.hapus_data_barang_masuk)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.dt_barang_masuk)
         Me.Panel2.Controls.Add(Me.cmb_warna)
@@ -142,8 +143,21 @@ Partial Class BarangMasuk
         Me.Panel2.Location = New System.Drawing.Point(1, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1393, 739)
+        Me.Panel2.Size = New System.Drawing.Size(1359, 739)
         Me.Panel2.TabIndex = 1
+        '
+        'hapus_data_barang_masuk
+        '
+        Me.hapus_data_barang_masuk.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.hapus_data_barang_masuk.FlatAppearance.BorderSize = 0
+        Me.hapus_data_barang_masuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.hapus_data_barang_masuk.Location = New System.Drawing.Point(8, 706)
+        Me.hapus_data_barang_masuk.Margin = New System.Windows.Forms.Padding(2)
+        Me.hapus_data_barang_masuk.Name = "hapus_data_barang_masuk"
+        Me.hapus_data_barang_masuk.Size = New System.Drawing.Size(177, 23)
+        Me.hapus_data_barang_masuk.TabIndex = 56
+        Me.hapus_data_barang_masuk.Text = "Hapus"
+        Me.hapus_data_barang_masuk.UseVisualStyleBackColor = False
         '
         'Button1
         '
@@ -156,25 +170,24 @@ Partial Class BarangMasuk
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(177, 23)
         Me.Button1.TabIndex = 56
-        Me.Button1.Text = "Simpan"
+        Me.Button1.Text = "Tambah"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'dt_barang_masuk
         '
         Me.dt_barang_masuk.AllowUserToOrderColumns = True
-        Me.dt_barang_masuk.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dt_barang_masuk.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.dt_barang_masuk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dt_barang_masuk.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dt_barang_masuk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_barang_masuk.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dt_jenis_barang, Me.dt_tipe_barang, Me.dt_serial, Me.dt_kondisi, Me.dt_tested, Me.dt_lokasi, Me.dt_detail, Me.dt_lincese, Me.dt_catatan, Me.dt_status, Me.dt_hargamodal, Me.dt_hargabarang, Me.dt_tgl_masuk})
-        Me.dt_barang_masuk.Location = New System.Drawing.Point(2, 534)
+        Me.dt_barang_masuk.Location = New System.Drawing.Point(2, 507)
         Me.dt_barang_masuk.Margin = New System.Windows.Forms.Padding(2)
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1374, 191)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1357, 191)
         Me.dt_barang_masuk.TabIndex = 55
         '
         'dt_jenis_barang
@@ -492,7 +505,7 @@ Partial Class BarangMasuk
         Me.btn_simpan.FlatAppearance.BorderSize = 0
         Me.btn_simpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_simpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_simpan.Location = New System.Drawing.Point(8, 484)
+        Me.btn_simpan.Location = New System.Drawing.Point(8, 475)
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(177, 23)
@@ -503,9 +516,8 @@ Partial Class BarangMasuk
         'data_barang_masuk
         '
         Me.data_barang_masuk.AllowUserToOrderColumns = True
-        Me.data_barang_masuk.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.data_barang_masuk.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.data_barang_masuk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.data_barang_masuk.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.data_barang_masuk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -515,7 +527,7 @@ Partial Class BarangMasuk
         Me.data_barang_masuk.Name = "data_barang_masuk"
         Me.data_barang_masuk.RowHeadersWidth = 51
         Me.data_barang_masuk.RowTemplate.Height = 24
-        Me.data_barang_masuk.Size = New System.Drawing.Size(1374, 184)
+        Me.data_barang_masuk.Size = New System.Drawing.Size(1357, 184)
         Me.data_barang_masuk.TabIndex = 16
         '
         'jenis_barang
@@ -755,31 +767,18 @@ Partial Class BarangMasuk
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Jenis Barang"
         '
-        'hapus_data_barang_masuk
-        '
-        Me.hapus_data_barang_masuk.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.hapus_data_barang_masuk.FlatAppearance.BorderSize = 0
-        Me.hapus_data_barang_masuk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.hapus_data_barang_masuk.Location = New System.Drawing.Point(16, 772)
-        Me.hapus_data_barang_masuk.Margin = New System.Windows.Forms.Padding(2)
-        Me.hapus_data_barang_masuk.Name = "hapus_data_barang_masuk"
-        Me.hapus_data_barang_masuk.Size = New System.Drawing.Size(70, 32)
-        Me.hapus_data_barang_masuk.TabIndex = 56
-        Me.hapus_data_barang_masuk.Text = "Hapus"
-        Me.hapus_data_barang_masuk.UseVisualStyleBackColor = False
-        '
         'BarangMasuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1028, 609)
-        Me.Controls.Add(Me.hapus_data_barang_masuk)
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BarangMasuk"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Barang Masuk"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).EndInit()

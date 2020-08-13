@@ -819,4 +819,9 @@ Public Class BarangMasuk
 
         End If
     End Sub
+
+    Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.Show()
+        Me.Hide()
+    End Sub
 End Class
