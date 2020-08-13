@@ -75,4 +75,9 @@
     Private Sub data_barang_penjualan_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles data_barang_penjualan.CellContentClick
 
     End Sub
+
+    Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.Show()
+        Me.Hide()
+    End Sub
 End Class
