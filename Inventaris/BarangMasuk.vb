@@ -883,4 +883,8 @@ Public Class BarangMasuk
     Private Sub dt_barang_masuk_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_masuk.CellContentClick
 
     End Sub
+
+    Private Sub pict_logo_Click(sender As Object, e As EventArgs) Handles pict_logo.Click
+
+    End Sub
 End Class
