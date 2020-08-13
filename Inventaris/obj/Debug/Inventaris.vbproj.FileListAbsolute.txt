@@ -42,7 +42,6 @@ C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Instalasi.resources
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterAlasan.resources
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterClient.resources
-C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterData.resources
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterDataToko.resources
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterDetailLokasi.resources
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterKondisi.resources
@@ -180,3 +179,13 @@ E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.v
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.exe
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.xml
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.pdb
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.Permissions.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.Permissions.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterJenisBarang.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MenuUtama.resources

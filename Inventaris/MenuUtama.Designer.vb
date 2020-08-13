@@ -298,7 +298,7 @@ Partial Class MenuUtama
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.p_logo)
         Me.Panel1.Location = New System.Drawing.Point(0, 51)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1156, 626)
         Me.Panel1.TabIndex = 44
@@ -308,7 +308,7 @@ Partial Class MenuUtama
         Me.p_logo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.p_logo.Location = New System.Drawing.Point(336, 86)
-        Me.p_logo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.p_logo.Margin = New System.Windows.Forms.Padding(2)
         Me.p_logo.Name = "p_logo"
         Me.p_logo.Size = New System.Drawing.Size(445, 435)
         Me.p_logo.TabIndex = 0
@@ -321,10 +321,11 @@ Partial Class MenuUtama
         Me.ClientSize = New System.Drawing.Size(1028, 609)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MenuUtama"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MenuUtama"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
