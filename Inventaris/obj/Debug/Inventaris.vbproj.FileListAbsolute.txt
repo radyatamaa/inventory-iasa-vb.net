@@ -189,3 +189,17 @@ C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterJenisBarang.resources
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MenuUtama.resources
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Management.Storage.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Blob.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Common.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Newtonsoft.Json.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Management.Storage.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Blob.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Common.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Newtonsoft.Json.xml

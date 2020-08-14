@@ -6,6 +6,8 @@ Public Class BarangMasuk
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
+    Dim indexPenampung As Integer?
+    Dim isDataReal As Integer?
     Dim listBarangMasuk As New List(Of Object)
 
     Sub VBnetSQLSeverConnection()
@@ -30,7 +32,7 @@ Public Class BarangMasuk
             Dim queryTblBarang As String = "UPDATE tbl_barang SET 
                                     is_active = 0 ,
                                     deleted_by =   '" + userlogin + "',
-                                    deleted_date = '" + DateTime.Now + "'
+                                    deleted_date =    CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME)
                                 WHERE id_barang = " + idbarang.ToString
             cmd.CommandText = queryTblBarang
             cmd.CommandType = CommandType.Text
@@ -42,7 +44,7 @@ Public Class BarangMasuk
             Dim queryTblBarangMasuk As String = "UPDATE tbl_barang_masuk SET 
                                     is_active = 0 ,
                                     deleted_by =   '" + userlogin + "',
-                                    deleted_date = '" + DateTime.Now + "'
+                                    deleted_date =    CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME)
                                 WHERE id_barang_masuk = " + idBarangMasuk.ToString
             cmd.CommandText = queryTblBarangMasuk
             cmd.CommandType = CommandType.Text
@@ -216,7 +218,7 @@ Public Class BarangMasuk
                                     ios =  '" + barangMasuk.ios + "',
                                     foto_barang = '" + barangMasuk.foto_barang + "',
                                     updated_by =  '" + userlogin + "',
-                                    updated_date =    CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),
+                                    updated_date =    CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME)
                             WHERE  id_barang = " + barangMasuk.id_barang.ToString
 
 
@@ -235,7 +237,7 @@ Public Class BarangMasuk
                                     id_toko =    " + idToko + ",
                                     jumlah = " + barangMasuk.jumlah.ToString + ",
                                     updated_by =   '" + userlogin + "',
-                                    updated_date =   CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),
+                                    updated_date =   CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME)
                                 WHERE id_barang_masuk = " + barangMasuk.id_barang_masuk.ToString
 
                 cmd.CommandText = queryTblBarangMasuk
@@ -324,7 +326,7 @@ Public Class BarangMasuk
                                     '" + userlogin + "',
                                      CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),
                                     " + 1.ToString + "
-                                    ) "
+                                    ); SELECT SCOPE_IDENTITY() "
 
                 cmd.CommandText = queryTblBarangMasuk
                 cmd.CommandType = CommandType.Text
@@ -400,7 +402,8 @@ Public Class BarangMasuk
 		                          INNER JOIN tbl_lokasi l ON b.id_lokasi = l.id_lokasi
 		                          INNER JOIN tbl_detail_lokasi dl ON b.id_detail_lokasi = dl.id_detail_lokasi
 		                          INNER JOIN tbl_status_barang sb ON b.id_status_barang = sb.id_status_barang
-                                  WHERE bm.is_active = 1"
+                                  WHERE bm.is_active = 1 "
+
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
         cmd.Connection = CONN
@@ -435,11 +438,17 @@ Public Class BarangMasuk
         Dim index = 0
         For Each insertDataBarangMasuk As Object In result
             dt_barang_masuk.Rows.Add(1)
+            Dim isTest As String
+            If insertDataBarangMasuk.tested = 1 Then
+                isTest = "Teruji"
+            Else
+                isTest = "Tidak Teruji"
+            End If
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.nama_jenis
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_tipe
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.serial_number
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_kondisi
-            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.tested
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(4).Value = isTest
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.nama_lokasi
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.detail_lokasi
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.licence
@@ -467,29 +476,11 @@ Public Class BarangMasuk
 
         For Each insertDataBarangMasuk As Object In listBarangMasuk
             Dim idBarangMasuk As Integer = SimpanBarangMasuk(insertDataBarangMasuk)
-            If insertDataBarangMasuk.id_barang_masuk = 0 Then
-                dt_barang_masuk.Rows.Add(1)
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.id_jenis
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.id_tipe
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.serial_number
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.id_kondisi
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.tested
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.id_lokasi
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.id_detail_lokasi
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.licence
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.catatan
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.id_status_barang
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.harga_beli
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.harga_jual
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
-                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(13).Value = idBarangMasuk
-
-                dt_barang_masuk.Update()
-            End If
-
         Next
         listBarangMasuk.Clear()
         data_barang_masuk.Rows.Clear()
+        dt_barang_masuk.Rows.Clear()
+        GetBarangMasuk()
         Me.txt_kode_barang.Text = ""
         Me.txt_serial.Text = ""
         Me.txt_harga_modal.Text = ""
@@ -691,6 +682,7 @@ Public Class BarangMasuk
 
         Dim iRowIndex As Integer
         For i As Integer = 0 To Me.data_barang_masuk.SelectedCells.Count - 1
+            isDataReal = Nothing
             iRowIndex = Me.data_barang_masuk.SelectedCells.Item(i).RowIndex
             Dim barangMasuk = listBarangMasuk(iRowIndex)
             If barangMasuk.tested = 1 Then
@@ -710,6 +702,7 @@ Public Class BarangMasuk
             Me.txt_harga_barang.Text = barangMasuk.harga_jual
             Me.txt_lisensi.Text = barangMasuk.licence
             Me.date_tgl_masuk.Value = barangMasuk.tgl_masuk
+            indexPenampung = iRowIndex
         Next
 
     End Sub
@@ -719,15 +712,31 @@ Public Class BarangMasuk
     End Sub
 
     Private Sub hapus_data_barang_masuk_Click(sender As Object, e As EventArgs) Handles hapus_data_barang_masuk.Click
-        Dim result As DialogResult = MessageBox.Show("Apakah anda yakin ingin menghapus?",
+        If indexPenampung IsNot Nothing Then
+            listBarangMasuk.RemoveAt(indexPenampung)
+            Me.data_barang_masuk.Rows.RemoveAt(indexPenampung)
+            indexPenampung = Nothing
+        Else
+            Dim result As DialogResult = MessageBox.Show("Apakah anda yakin ingin menghapus?",
                               "Hapus Data",
                               MessageBoxButtons.YesNo)
 
-        If (result = DialogResult.Yes) Then
-            Dim idbarangmasuk = Me.Label1.Tag
-            Dim idBarang = Me.Label2.Tag
-            DeleteBarangMasuk(idbarangmasuk, idBarang)
-        Else
+            If (result = DialogResult.Yes) Then
+                Dim idbarangmasuk = Me.Label1.Tag
+                Dim idBarang = Me.Label2.Tag
+                DeleteBarangMasuk(idbarangmasuk, idBarang)
+                dt_barang_masuk.Rows.Clear()
+                GetBarangMasuk()
+                Me.txt_kode_barang.Text = ""
+                Me.txt_serial.Text = ""
+                Me.txt_harga_modal.Text = ""
+                Me.txt_harga_barang.Text = ""
+                Me.txt_lisensi.Text = ""
+                Me.txt_catatan.Text = ""
+                isDataReal = Nothing
+            Else
+            End If
+
         End If
 
     End Sub
@@ -738,58 +747,103 @@ Public Class BarangMasuk
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim tested As Integer
+        Dim test As String
         If Me.cbx_teruji.Checked Then
             tested = 1
+            test = "Teruji"
         ElseIf cbx_tidak_teruji.Checked Then
             tested = 0
+            test = "Tidak Teruji"
         End If
         Dim idToko As String
         If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
             idToko = MenuUtama.MenuStrip1.Tag.IdToko
         End If
         Dim insertDataBarangMasuk = New With
-                {
-                .catatan = Me.txt_catatan.Text,
-                .id_barang = Me.Label2.Tag,
-                 .id_barang_masuk = Me.Label1.Tag,
-                 .kd_barang = Me.txt_kode_barang.Text,
-                 .id_jenis = Me.cmb_jenis_barang.SelectedValue,
-                 .id_tipe = Me.cmb_tipe_barang.SelectedValue,
-                 .serial_number = Me.txt_serial.Text,
-                 .id_kondisi = Me.cmb_kondisi.SelectedValue,
-                 .warna = "",
-                 .id_status_barang = Me.cmb_status.SelectedValue,
-                 .tested = tested,
-                 .id_lokasi = Me.cmb_lokasi.SelectedValue,
-                 .id_detail_lokasi = Me.cmb_detail_lokasi.SelectedValue,
-                 .id_toko = idToko,
-                 .harga_beli = Me.txt_harga_modal.Text,
-                 .harga_jual = Me.txt_harga_barang.Text,
-                 .stock = 0,
-                 .licence = Me.txt_lisensi.Text,
-                 .ios = "",
-                 .foto_barang = "",
-                 .kd_transaksi_masuk = "adjaskld",
-                 .tgl_masuk = Me.date_tgl_masuk.Value,
-                 .jumlah = 0
-                }
-        listBarangMasuk.Add(insertDataBarangMasuk)
+                    {
+                    .catatan = Me.txt_catatan.Text,
+                    .id_barang = Me.Label2.Tag,
+                     .id_barang_masuk = Me.Label1.Tag,
+                     .kd_barang = Me.txt_kode_barang.Text,
+                     .nama_jenis = Me.cmb_jenis_barang.SelectedItem.nama_jenis,
+                     .id_jenis = Me.cmb_jenis_barang.SelectedValue,
+                     .nama_tipe = Me.cmb_tipe_barang.SelectedItem.nama_tipe,
+                     .id_tipe = Me.cmb_tipe_barang.SelectedValue,
+                     .serial_number = Me.txt_serial.Text,
+                     .nama_kondisi = Me.cmb_kondisi.SelectedItem.nama_kondisi,
+                     .id_kondisi = Me.cmb_kondisi.SelectedValue,
+                     .warna = "",
+                     .nama_status_barang = Me.cmb_status.SelectedItem.nama_status,
+                     .id_status_barang = Me.cmb_status.SelectedValue,
+                     .tested = tested,
+                     .nama_lokasi = Me.cmb_lokasi.SelectedItem.nama_lokasi,
+                     .id_lokasi = Me.cmb_lokasi.SelectedValue,
+                     .nama_detail_lokasi = Me.cmb_detail_lokasi.SelectedItem.detail_lokasi,
+                     .id_detail_lokasi = Me.cmb_detail_lokasi.SelectedValue,
+                     .id_toko = idToko,
+                     .harga_beli = Me.txt_harga_modal.Text,
+                     .harga_jual = Me.txt_harga_barang.Text,
+                     .stock = 0,
+                     .licence = Me.txt_lisensi.Text,
+                     .ios = Me.txt_catatan.Text,
+                     .foto_barang = "",
+                     .kd_transaksi_masuk = "adjaskld",
+                     .tgl_masuk = Me.date_tgl_masuk.Value,
+                     .jumlah = 0
+                    }
 
-        data_barang_masuk.Rows.Add(1)
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.id_jenis
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.id_tipe
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.serial_number
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.id_kondisi
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.tested
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.id_lokasi
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.id_detail_lokasi
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.licence
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.catatan
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.id_status_barang
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.harga_beli
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.harga_jual
-        data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
-        data_barang_masuk.Update()
+        If isDataReal = 1 Then
+            Dim idBarangMasuk As Integer = SimpanBarangMasuk(insertDataBarangMasuk)
+            dt_barang_masuk.Rows.Clear()
+            GetBarangMasuk()
+            Me.txt_kode_barang.Text = ""
+            Me.txt_serial.Text = ""
+            Me.txt_harga_modal.Text = ""
+            Me.txt_harga_barang.Text = ""
+            Me.txt_lisensi.Text = ""
+            Me.txt_catatan.Text = ""
+            isDataReal = Nothing
+            MsgBox("Sukses!")
+        Else
+            If indexPenampung IsNot Nothing Then
+                listBarangMasuk(indexPenampung) = insertDataBarangMasuk
+
+                data_barang_masuk.Rows(indexPenampung).Cells(0).Value = insertDataBarangMasuk.nama_jenis
+                data_barang_masuk.Rows(indexPenampung).Cells(1).Value = insertDataBarangMasuk.nama_tipe
+                data_barang_masuk.Rows(indexPenampung).Cells(2).Value = insertDataBarangMasuk.serial_number
+                data_barang_masuk.Rows(indexPenampung).Cells(3).Value = insertDataBarangMasuk.nama_kondisi
+                data_barang_masuk.Rows(indexPenampung).Cells(4).Value = test
+                data_barang_masuk.Rows(indexPenampung).Cells(5).Value = insertDataBarangMasuk.nama_lokasi
+                data_barang_masuk.Rows(indexPenampung).Cells(6).Value = insertDataBarangMasuk.nama_detail_lokasi
+                data_barang_masuk.Rows(indexPenampung).Cells(7).Value = insertDataBarangMasuk.licence
+                data_barang_masuk.Rows(indexPenampung).Cells(8).Value = insertDataBarangMasuk.catatan
+                data_barang_masuk.Rows(indexPenampung).Cells(9).Value = insertDataBarangMasuk.nama_status_barang
+                data_barang_masuk.Rows(indexPenampung).Cells(10).Value = insertDataBarangMasuk.harga_beli
+                data_barang_masuk.Rows(indexPenampung).Cells(11).Value = insertDataBarangMasuk.harga_jual
+                data_barang_masuk.Rows(indexPenampung).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
+                data_barang_masuk.Update()
+                indexPenampung = Nothing
+            Else
+                listBarangMasuk.Add(insertDataBarangMasuk)
+                data_barang_masuk.Rows.Add(1)
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.nama_jenis
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_tipe
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.serial_number
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_kondisi
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(4).Value = test
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.nama_lokasi
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.nama_detail_lokasi
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.licence
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.catatan
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.nama_status_barang
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.harga_beli
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.harga_jual
+                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
+                data_barang_masuk.Update()
+            End If
+
+        End If
+
     End Sub
 
     Private Sub dt_barang_masuk_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_masuk.CellClick
@@ -797,6 +851,7 @@ Public Class BarangMasuk
         Dim barangMasuk = GetBarangMasukById(idBarang)
 
         If barangMasuk.Count > 0 Then
+            isDataReal = 1
             Me.Label1.Tag = barangMasuk(0).id_barang_masuk
             Me.Label2.Tag = barangMasuk(0).id_barang
             If barangMasuk(0).tested = 1 Then
@@ -823,5 +878,13 @@ Public Class BarangMasuk
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
         MenuUtama.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub dt_barang_masuk_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_masuk.CellContentClick
+
+    End Sub
+
+    Private Sub pict_logo_Click(sender As Object, e As EventArgs) Handles pict_logo.Click
+
     End Sub
 End Class
