@@ -28,6 +28,10 @@ Partial Class Form2
         Me.btntk2 = New System.Windows.Forms.Button()
         Me.btntk0 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbltk0 = New System.Windows.Forms.Label()
+        Me.lbltk1 = New System.Windows.Forms.Label()
+        Me.lbltk2 = New System.Windows.Forms.Label()
+        Me.lbltk3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -35,41 +39,46 @@ Partial Class Form2
         '
         Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel1.Controls.Add(Me.lbltk3)
+        Me.Panel1.Controls.Add(Me.lbltk2)
+        Me.Panel1.Controls.Add(Me.lbltk1)
+        Me.Panel1.Controls.Add(Me.lbltk0)
         Me.Panel1.Controls.Add(Me.btntk3)
         Me.Panel1.Controls.Add(Me.btntk1)
         Me.Panel1.Controls.Add(Me.btntk2)
         Me.Panel1.Controls.Add(Me.btntk0)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(290, 89)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(476, 337)
         Me.Panel1.TabIndex = 0
         '
         'btntk3
         '
+        Me.btntk3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btntk3.Location = New System.Drawing.Point(256, 188)
-        Me.btntk3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btntk3.Margin = New System.Windows.Forms.Padding(2)
         Me.btntk3.Name = "btntk3"
         Me.btntk3.Size = New System.Drawing.Size(148, 116)
         Me.btntk3.TabIndex = 4
-        Me.btntk3.Text = "Button4"
         Me.btntk3.UseVisualStyleBackColor = True
         '
         'btntk1
         '
+        Me.btntk1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btntk1.Location = New System.Drawing.Point(256, 40)
-        Me.btntk1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btntk1.Margin = New System.Windows.Forms.Padding(2)
         Me.btntk1.Name = "btntk1"
         Me.btntk1.Size = New System.Drawing.Size(148, 116)
         Me.btntk1.TabIndex = 3
-        Me.btntk1.Text = "Button3"
         Me.btntk1.UseVisualStyleBackColor = True
         '
         'btntk2
         '
+        Me.btntk2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btntk2.Location = New System.Drawing.Point(74, 188)
-        Me.btntk2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btntk2.Margin = New System.Windows.Forms.Padding(2)
         Me.btntk2.Name = "btntk2"
         Me.btntk2.Size = New System.Drawing.Size(148, 116)
         Me.btntk2.TabIndex = 2
@@ -78,12 +87,12 @@ Partial Class Form2
         '
         'btntk0
         '
+        Me.btntk0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btntk0.Location = New System.Drawing.Point(74, 40)
-        Me.btntk0.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btntk0.Margin = New System.Windows.Forms.Padding(2)
         Me.btntk0.Name = "btntk0"
         Me.btntk0.Size = New System.Drawing.Size(148, 116)
         Me.btntk0.TabIndex = 1
-        Me.btntk0.Text = "Button1"
         Me.btntk0.UseVisualStyleBackColor = True
         '
         'Label1
@@ -97,6 +106,42 @@ Partial Class Form2
         Me.Label1.Text = "Pilih Toko"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'lbltk0
+        '
+        Me.lbltk0.Location = New System.Drawing.Point(71, 158)
+        Me.lbltk0.Name = "lbltk0"
+        Me.lbltk0.Size = New System.Drawing.Size(151, 14)
+        Me.lbltk0.TabIndex = 5
+        Me.lbltk0.Text = "lbltk0"
+        Me.lbltk0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbltk1
+        '
+        Me.lbltk1.Location = New System.Drawing.Point(253, 158)
+        Me.lbltk1.Name = "lbltk1"
+        Me.lbltk1.Size = New System.Drawing.Size(151, 14)
+        Me.lbltk1.TabIndex = 6
+        Me.lbltk1.Text = "lbltk1"
+        Me.lbltk1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbltk2
+        '
+        Me.lbltk2.Location = New System.Drawing.Point(71, 306)
+        Me.lbltk2.Name = "lbltk2"
+        Me.lbltk2.Size = New System.Drawing.Size(151, 14)
+        Me.lbltk2.TabIndex = 7
+        Me.lbltk2.Text = "lbltk2"
+        Me.lbltk2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbltk3
+        '
+        Me.lbltk3.Location = New System.Drawing.Point(253, 306)
+        Me.lbltk3.Name = "lbltk3"
+        Me.lbltk3.Size = New System.Drawing.Size(151, 14)
+        Me.lbltk3.TabIndex = 8
+        Me.lbltk3.Text = "lbltk3"
+        Me.lbltk3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -104,7 +149,7 @@ Partial Class Form2
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(1028, 587)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form2"
@@ -120,4 +165,8 @@ Partial Class Form2
     Friend WithEvents btntk2 As Button
     Friend WithEvents btntk0 As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents lbltk3 As Label
+    Friend WithEvents lbltk2 As Label
+    Friend WithEvents lbltk1 As Label
+    Friend WithEvents lbltk0 As Label
 End Class
