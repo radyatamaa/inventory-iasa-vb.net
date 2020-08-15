@@ -217,3 +217,17 @@ C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.xml
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.xml
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Management.Storage.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Blob.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Common.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Management.Storage.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Blob.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Common.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Newtonsoft.Json.xml

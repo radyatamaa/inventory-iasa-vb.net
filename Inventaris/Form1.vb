@@ -63,6 +63,7 @@ Public Class Form1
             Dim listToko = GetToko()
             For i As Integer = 0 To 3
                 Dim tkButton As Control() = Form2.Controls.Find("btntk" + i.ToString(), True)
+                Dim tklabel As Control() = Form2.Controls.Find("lbltk" + i.ToString(), True)
 
                 Try
                     If listToko(i).LogoToko.ToString <> "" Then
@@ -79,7 +80,7 @@ Public Class Form1
                  .IdLevel = user.IdLevel
                 }
                     tkButton.FirstOrDefault().Tag = standardData
-                    tkButton.FirstOrDefault().Text = standardData.NamaToko
+                    tklabel.FirstOrDefault().Text = standardData.NamaToko
                     'rmButton.FirstOrDefault().Show()
                     'lastIndex = lastIndex + 1
                 Catch ex As Exception
@@ -97,5 +98,13 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If TextBox1.UseSystemPasswordChar = True Then
+            TextBox1.UseSystemPasswordChar = False
+        Else
+            TextBox1.UseSystemPasswordChar = True
+        End If
     End Sub
 End Class

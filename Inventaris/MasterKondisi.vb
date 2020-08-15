@@ -13,6 +13,7 @@ Public Class MasterKondisi
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
     Dim kondisiId As Integer
+
     Sub VBnetSQLSeverConnection()
         Try
             'SQL connection script to SQL Server Instance
@@ -264,7 +265,7 @@ Public Class MasterKondisi
         Dim insertDatakondisi = New With
           {
           .id_kondisi = kondisiId,
-           .nama_jenis = Me.txt_nama_kondisi.Text
+           .nama_kondisi = Me.txt_nama_kondisi.Text
           }
 
         Dim idkondisi As Integer = Simpankondisi(insertDatakondisi)
@@ -293,6 +294,7 @@ Public Class MasterKondisi
         Dim idkondisi = data_master_kondisi.Rows(e.RowIndex).Cells(0).Value.ToString
         Dim kondisi = GetDatakondisiById(idkondisi)
 
+
         If kondisi.Count > 0 Then
             Try
                 kondisiId = kondisi(0).id_kondisi
@@ -307,5 +309,17 @@ Public Class MasterKondisi
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
         MenuUtama.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub data_master_kondisi_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles data_master_kondisi.CellContentClick
+
+    End Sub
+
+    Private Sub data_master_kondisi_CellContextMenuStripChanged(sender As Object, e As DataGridViewCellEventArgs) Handles data_master_kondisi.CellContextMenuStripChanged
+
     End Sub
 End Class
