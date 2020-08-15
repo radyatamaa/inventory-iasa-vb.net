@@ -75,11 +75,11 @@ Partial Class MasterJenisBarang
         'Label6
         '
         Me.Label6.Font = New System.Drawing.Font("Ubuntu Condensed", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(613, 8)
+        Me.Label6.Location = New System.Drawing.Point(611, 25)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(339, 58)
         Me.Label6.TabIndex = 50
-        Me.Label6.Text = "Penjualan"
+        Me.Label6.Text = "Jenis Barang"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btn_kembali
@@ -100,7 +100,7 @@ Partial Class MasterJenisBarang
         '
         Me.ComboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(180, 246)
+        Me.ComboBox1.Location = New System.Drawing.Point(220, 211)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(236, 24)
         Me.ComboBox1.TabIndex = 19
@@ -110,7 +110,7 @@ Partial Class MasterJenisBarang
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(31, 242)
+        Me.Label1.Location = New System.Drawing.Point(71, 207)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(103, 24)
         Me.Label1.TabIndex = 18
@@ -122,7 +122,7 @@ Partial Class MasterJenisBarang
         Me.btn_simpan.FlatAppearance.BorderSize = 0
         Me.btn_simpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_simpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_simpan.Location = New System.Drawing.Point(180, 341)
+        Me.btn_simpan.Location = New System.Drawing.Point(220, 306)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
         Me.btn_simpan.TabIndex = 17
@@ -161,7 +161,7 @@ Partial Class MasterJenisBarang
         'txt_jenis_barang
         '
         Me.txt_jenis_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_jenis_barang.Location = New System.Drawing.Point(180, 296)
+        Me.txt_jenis_barang.Location = New System.Drawing.Point(220, 261)
         Me.txt_jenis_barang.Name = "txt_jenis_barang"
         Me.txt_jenis_barang.Size = New System.Drawing.Size(236, 22)
         Me.txt_jenis_barang.TabIndex = 8
@@ -170,7 +170,7 @@ Partial Class MasterJenisBarang
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(18, 296)
+        Me.Label4.Location = New System.Drawing.Point(58, 261)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(132, 17)
         Me.Label4.TabIndex = 2
