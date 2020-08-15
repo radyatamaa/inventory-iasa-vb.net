@@ -203,3 +203,17 @@ E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Az
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.xml
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.xml
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.KeyVault.Core.dll
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Management.Storage.dll
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Blob.dll
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Common.dll
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.dll
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.dll
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.KeyVault.Core.xml
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Management.Storage.xml
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Blob.xml
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Azure.Storage.Common.xml
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.xml
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.xml
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\Newtonsoft.Json.xml
