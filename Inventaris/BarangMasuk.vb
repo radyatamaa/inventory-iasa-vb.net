@@ -1,6 +1,7 @@
 ﻿Imports System.Configuration
 Imports System.Data.SqlClient
 Imports System.Globalization
+Imports System.Text
 
 Public Class BarangMasuk
     Dim CONN As SqlConnection
@@ -231,7 +232,6 @@ Public Class BarangMasuk
                 Dim idBarang As Integer = barangMasuk.id_barang
                 barangMasukId = barangMasuk.id_barang_masuk
                 Dim queryTblBarangMasuk As String = " UPDATE tbl_barang_masuk SET
-                                    kd_transaksi_masuk =  '" + barangMasuk.kd_transaksi_masuk + "',
                                     id_barang =   " + idBarang.ToString + ",
                                     tgl_masuk =   CAST('" + DateTime.Parse(barangMasuk.tgl_masuk).ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),
                                     id_toko =    " + idToko + ",
@@ -472,6 +472,18 @@ Public Class BarangMasuk
 
         Return result
     End Function
+
+    Function RandomString(r As Random) As String
+        Dim s As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        Dim sb As New StringBuilder
+        Dim cnt As Integer = r.Next(15, 33)
+        For i As Integer = 1 To cnt
+            Dim idx As Integer = r.Next(0, s.Length)
+            sb.Append(s.Substring(idx, 1))
+        Next
+        Return sb.ToString()
+    End Function
+
     Private Sub btn_simpan_Click(sender As Object, e As EventArgs) Handles btn_simpan.Click
 
         For Each insertDataBarangMasuk As Object In listBarangMasuk
@@ -759,6 +771,7 @@ Public Class BarangMasuk
         If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
             idToko = MenuUtama.MenuStrip1.Tag.IdToko
         End If
+        Dim kdTransaksi As String = RandomString(New Random)
         Dim insertDataBarangMasuk = New With
                     {
                     .catatan = Me.txt_catatan.Text,
@@ -787,7 +800,7 @@ Public Class BarangMasuk
                      .licence = Me.txt_lisensi.Text,
                      .ios = Me.txt_catatan.Text,
                      .foto_barang = "",
-                     .kd_transaksi_masuk = "adjaskld",
+                     .kd_transaksi_masuk = kdTransaksi,
                      .tgl_masuk = Me.date_tgl_masuk.Value,
                      .jumlah = 0
                     }
