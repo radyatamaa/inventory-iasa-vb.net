@@ -683,8 +683,11 @@ Public Class BarangKeluar
         Me.txt_harga_total.Text = 0
         Me.txt_harga_akhir.Text = 0
         For Each item As Object In listBarangKeluarFixHandle
-            Dim deleteData As Object = listBarangKeluarFix.Where(Function(x) x.id_barang_masuk = item.id_barang_masuk).FirstOrDefault()
-            listBarangKeluarFix.Remove(deleteData)
+            If item IsNot Nothing Then
+
+                Dim deleteData As Object = listBarangKeluarFix.Where(Function(x) x.id_barang_masuk = item.id_barang_masuk).FirstOrDefault()
+                listBarangKeluarFix.Remove(deleteData)
+            End If
         Next
         dt_barang_keluar_fix.Rows.Clear()
 
