@@ -178,7 +178,7 @@ Partial Class MasterTipe
         Me.btn_kembali.Location = New System.Drawing.Point(9, 9)
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_kembali.Name = "btn_kembali"
-        Me.btn_kembali.Size = New System.Drawing.Size(76, 56)
+        Me.btn_kembali.Size = New System.Drawing.Size(76, 65)
         Me.btn_kembali.TabIndex = 52
         Me.btn_kembali.UseVisualStyleBackColor = False
         '

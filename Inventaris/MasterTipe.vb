@@ -346,10 +346,6 @@ Public Class MasterTipe
         End If
     End Sub
 
-    Private Sub data_master_tipe_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles data_master_tipe.CellContentClick
-
-    End Sub
-
     Private Sub data_master_tipe_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles data_master_tipe.CellClick
         Dim idTipe = data_master_tipe.Rows(e.RowIndex).Cells(0).Value.ToString
         Dim tipe = GetDataTipeById(idTipe)
