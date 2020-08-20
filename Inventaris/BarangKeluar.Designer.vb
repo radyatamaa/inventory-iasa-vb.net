@@ -26,7 +26,6 @@ Partial Class BarangKeluar
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.date_tgl_keluar = New System.Windows.Forms.DateTimePicker()
-        Me.btn_simpan = New System.Windows.Forms.Button()
         Me.dt_barang_masuk = New System.Windows.Forms.DataGridView()
         Me.jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipe_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,7 +46,7 @@ Partial Class BarangKeluar
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btn_tambha = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dt_barang_keluar_fix = New System.Windows.Forms.DataGridView()
         Me.jenis_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipe_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.serial_number2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -69,10 +68,9 @@ Partial Class BarangKeluar
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btn_kembali = New System.Windows.Forms.Button()
         Me.cmb_garansi = New System.Windows.Forms.ComboBox()
-        Me.txt_judul = New System.Windows.Forms.TextBox()
+        Me.txt_kd_transaksi = New System.Windows.Forms.TextBox()
         Me.btn_hapus = New System.Windows.Forms.Button()
-        Me.btn_ubah = New System.Windows.Forms.Button()
-        Me.btn_lihat = New System.Windows.Forms.Button()
+        Me.btn_simpan = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -84,7 +82,7 @@ Partial Class BarangKeluar
         Me.btn_tanda_terima = New System.Windows.Forms.Button()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -117,20 +115,6 @@ Partial Class BarangKeluar
         Me.date_tgl_keluar.Name = "date_tgl_keluar"
         Me.date_tgl_keluar.Size = New System.Drawing.Size(178, 20)
         Me.date_tgl_keluar.TabIndex = 22
-        '
-        'btn_simpan
-        '
-        Me.btn_simpan.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_simpan.FlatAppearance.BorderSize = 0
-        Me.btn_simpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_simpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_simpan.Location = New System.Drawing.Point(466, 197)
-        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_simpan.Name = "btn_simpan"
-        Me.btn_simpan.Size = New System.Drawing.Size(178, 26)
-        Me.btn_simpan.TabIndex = 17
-        Me.btn_simpan.Text = "Simpan"
-        Me.btn_simpan.UseVisualStyleBackColor = False
         '
         'dt_barang_masuk
         '
@@ -299,7 +283,7 @@ Partial Class BarangKeluar
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Panel2.Controls.Add(Me.btn_tambha)
-        Me.Panel2.Controls.Add(Me.DataGridView1)
+        Me.Panel2.Controls.Add(Me.dt_barang_keluar_fix)
         Me.Panel2.Controls.Add(Me.txt_kdpos)
         Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Controls.Add(Me.txt_kota)
@@ -310,11 +294,10 @@ Partial Class BarangKeluar
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.btn_kembali)
         Me.Panel2.Controls.Add(Me.cmb_garansi)
-        Me.Panel2.Controls.Add(Me.txt_judul)
+        Me.Panel2.Controls.Add(Me.txt_kd_transaksi)
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.date_tgl_keluar)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.btn_simpan)
         Me.Panel2.Controls.Add(Me.dt_barang_masuk)
         Me.Panel2.Controls.Add(Me.cmb_client)
         Me.Panel2.Controls.Add(Me.cmb_tipe_barang)
@@ -343,22 +326,22 @@ Partial Class BarangKeluar
         Me.btn_tambha.Text = "Tambah"
         Me.btn_tambha.UseVisualStyleBackColor = False
         '
-        'DataGridView1
+        'dt_barang_keluar_fix
         '
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.dt_barang_keluar_fix.AllowUserToOrderColumns = True
+        Me.dt_barang_keluar_fix.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang2, Me.tipe_barang2, Me.serial_number2, Me.kondisi2, Me.tested2, Me.lokasi2, Me.detail_lokasi2, Me.catatan2, Me.status2, Me.harga_jual2, Me.tgl_akhir_garansi})
-        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.DataGridView1.Location = New System.Drawing.Point(2, 395)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1151, 119)
-        Me.DataGridView1.TabIndex = 55
+        Me.dt_barang_keluar_fix.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.dt_barang_keluar_fix.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dt_barang_keluar_fix.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang2, Me.tipe_barang2, Me.serial_number2, Me.kondisi2, Me.tested2, Me.lokasi2, Me.detail_lokasi2, Me.catatan2, Me.status2, Me.harga_jual2, Me.tgl_akhir_garansi})
+        Me.dt_barang_keluar_fix.GridColor = System.Drawing.SystemColors.ActiveBorder
+        Me.dt_barang_keluar_fix.Location = New System.Drawing.Point(2, 395)
+        Me.dt_barang_keluar_fix.Margin = New System.Windows.Forms.Padding(2)
+        Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
+        Me.dt_barang_keluar_fix.RowHeadersWidth = 51
+        Me.dt_barang_keluar_fix.RowTemplate.Height = 24
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1151, 119)
+        Me.dt_barang_keluar_fix.TabIndex = 55
         '
         'jenis_barang2
         '
@@ -544,18 +527,18 @@ Partial Class BarangKeluar
         Me.cmb_garansi.Size = New System.Drawing.Size(178, 21)
         Me.cmb_garansi.TabIndex = 27
         '
-        'txt_judul
+        'txt_kd_transaksi
         '
-        Me.txt_judul.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_judul.Location = New System.Drawing.Point(217, 83)
-        Me.txt_judul.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_judul.Name = "txt_judul"
-        Me.txt_judul.Size = New System.Drawing.Size(178, 20)
-        Me.txt_judul.TabIndex = 26
+        Me.txt_kd_transaksi.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_kd_transaksi.Location = New System.Drawing.Point(217, 83)
+        Me.txt_kd_transaksi.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_kd_transaksi.Name = "txt_kd_transaksi"
+        Me.txt_kd_transaksi.Size = New System.Drawing.Size(178, 20)
+        Me.txt_kd_transaksi.TabIndex = 26
         '
         'btn_hapus
         '
-        Me.btn_hapus.Location = New System.Drawing.Point(158, 529)
+        Me.btn_hapus.Location = New System.Drawing.Point(92, 529)
         Me.btn_hapus.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_hapus.Name = "btn_hapus"
         Me.btn_hapus.Size = New System.Drawing.Size(70, 32)
@@ -563,25 +546,16 @@ Partial Class BarangKeluar
         Me.btn_hapus.Text = "Hapus"
         Me.btn_hapus.UseVisualStyleBackColor = True
         '
-        'btn_ubah
+        'btn_simpan
         '
-        Me.btn_ubah.Location = New System.Drawing.Point(83, 529)
-        Me.btn_ubah.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_ubah.Name = "btn_ubah"
-        Me.btn_ubah.Size = New System.Drawing.Size(70, 32)
-        Me.btn_ubah.TabIndex = 44
-        Me.btn_ubah.Text = "Edit"
-        Me.btn_ubah.UseVisualStyleBackColor = True
-        '
-        'btn_lihat
-        '
-        Me.btn_lihat.Location = New System.Drawing.Point(8, 529)
-        Me.btn_lihat.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_lihat.Name = "btn_lihat"
-        Me.btn_lihat.Size = New System.Drawing.Size(70, 32)
-        Me.btn_lihat.TabIndex = 43
-        Me.btn_lihat.Text = "Lihat Data"
-        Me.btn_lihat.UseVisualStyleBackColor = True
+        Me.btn_simpan.Enabled = False
+        Me.btn_simpan.Location = New System.Drawing.Point(8, 529)
+        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_simpan.Name = "btn_simpan"
+        Me.btn_simpan.Size = New System.Drawing.Size(70, 32)
+        Me.btn_simpan.TabIndex = 43
+        Me.btn_simpan.Text = "Simpan"
+        Me.btn_simpan.UseVisualStyleBackColor = True
         '
         'Label11
         '
@@ -617,6 +591,7 @@ Partial Class BarangKeluar
         '
         Me.txt_harga_total.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_harga_total.Enabled = False
         Me.txt_harga_total.Location = New System.Drawing.Point(711, 529)
         Me.txt_harga_total.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_harga_total.Name = "txt_harga_total"
@@ -637,6 +612,7 @@ Partial Class BarangKeluar
         '
         Me.txt_harga_akhir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_harga_akhir.Enabled = False
         Me.txt_harga_akhir.Location = New System.Drawing.Point(711, 592)
         Me.txt_harga_akhir.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_harga_akhir.Name = "txt_harga_akhir"
@@ -689,8 +665,7 @@ Partial Class BarangKeluar
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btn_hapus)
-        Me.Controls.Add(Me.btn_ubah)
-        Me.Controls.Add(Me.btn_lihat)
+        Me.Controls.Add(Me.btn_simpan)
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BarangKeluar"
@@ -700,7 +675,7 @@ Partial Class BarangKeluar
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -710,7 +685,6 @@ Partial Class BarangKeluar
     Friend WithEvents Label1 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents date_tgl_keluar As DateTimePicker
-    Friend WithEvents btn_simpan As Button
     Friend WithEvents dt_barang_masuk As DataGridView
     Friend WithEvents cmb_tipe_barang As ComboBox
     Friend WithEvents cmb_jenis_barang As ComboBox
@@ -721,10 +695,9 @@ Partial Class BarangKeluar
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents cmb_garansi As ComboBox
-    Friend WithEvents txt_judul As TextBox
+    Friend WithEvents txt_kd_transaksi As TextBox
     Friend WithEvents btn_hapus As Button
-    Friend WithEvents btn_ubah As Button
-    Friend WithEvents btn_lihat As Button
+    Friend WithEvents btn_simpan As Button
     Friend WithEvents btn_kembali As Button
     Friend WithEvents pict_logo As PictureBox
     Friend WithEvents Label6 As Label
@@ -754,7 +727,7 @@ Partial Class BarangKeluar
     Friend WithEvents status As DataGridViewTextBoxColumn
     Friend WithEvents harga_jual As DataGridViewTextBoxColumn
     Friend WithEvents btn_tambha As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dt_barang_keluar_fix As DataGridView
     Friend WithEvents jenis_barang2 As DataGridViewTextBoxColumn
     Friend WithEvents tipe_barang2 As DataGridViewTextBoxColumn
     Friend WithEvents serial_number2 As DataGridViewTextBoxColumn
