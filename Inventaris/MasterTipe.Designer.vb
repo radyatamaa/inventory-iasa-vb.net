@@ -27,6 +27,7 @@ Partial Class MasterTipe
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btn_simpan = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.image_url = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_foto = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -42,11 +43,10 @@ Partial Class MasterTipe
         Me.foto_tipe = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.hapus_data_tipe = New System.Windows.Forms.Button()
-        Me.image_url = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
+        CType(Me.image_url, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.data_master_tipe, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.image_url, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txt_tipe_barang
@@ -106,6 +106,15 @@ Partial Class MasterTipe
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1154, 486)
         Me.Panel2.TabIndex = 16
+        '
+        'image_url
+        '
+        Me.image_url.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.image_url.Location = New System.Drawing.Point(562, 124)
+        Me.image_url.Name = "image_url"
+        Me.image_url.Size = New System.Drawing.Size(176, 129)
+        Me.image_url.TabIndex = 58
+        Me.image_url.TabStop = False
         '
         'Label1
         '
@@ -169,7 +178,7 @@ Partial Class MasterTipe
         Me.btn_kembali.Location = New System.Drawing.Point(9, 9)
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_kembali.Name = "btn_kembali"
-        Me.btn_kembali.Size = New System.Drawing.Size(76, 56)
+        Me.btn_kembali.Size = New System.Drawing.Size(76, 65)
         Me.btn_kembali.TabIndex = 52
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
@@ -207,7 +216,7 @@ Partial Class MasterTipe
         Me.data_master_tipe.Name = "data_master_tipe"
         Me.data_master_tipe.RowHeadersWidth = 51
         Me.data_master_tipe.RowTemplate.Height = 24
-        Me.data_master_tipe.Size = New System.Drawing.Size(1154, 206)
+        Me.data_master_tipe.Size = New System.Drawing.Size(1026, 206)
         Me.data_master_tipe.TabIndex = 16
         '
         'id
@@ -255,14 +264,6 @@ Partial Class MasterTipe
         Me.hapus_data_tipe.Text = "Hapus"
         Me.hapus_data_tipe.UseVisualStyleBackColor = False
         '
-        'image_url
-        '
-        Me.image_url.Location = New System.Drawing.Point(562, 124)
-        Me.image_url.Name = "image_url"
-        Me.image_url.Size = New System.Drawing.Size(176, 129)
-        Me.image_url.TabIndex = 58
-        Me.image_url.TabStop = False
-        '
         'MasterTipe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -274,11 +275,12 @@ Partial Class MasterTipe
         Me.Name = "MasterTipe"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MasterTipe"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.image_url, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.data_master_tipe, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.image_url, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
