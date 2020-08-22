@@ -58,6 +58,9 @@ Partial Class BarangKeluar
         Me.status2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.harga_jual2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tgl_akhir_garansi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.garansi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.garansi_type = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.garansi_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_kdpos = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_kota = New System.Windows.Forms.TextBox()
@@ -130,28 +133,28 @@ Partial Class BarangKeluar
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1154, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1026, 119)
         Me.dt_barang_masuk.TabIndex = 16
         '
         'jenis_barang
         '
         Me.jenis_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.jenis_barang.HeaderText = "Jenis Barang"
-        Me.jenis_barang.MinimumWidth = 6
+        Me.jenis_barang.MinimumWidth = 70
         Me.jenis_barang.Name = "jenis_barang"
         '
         'tipe_barang
         '
         Me.tipe_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.tipe_barang.HeaderText = "Tipe Barang"
-        Me.tipe_barang.MinimumWidth = 6
+        Me.tipe_barang.MinimumWidth = 70
         Me.tipe_barang.Name = "tipe_barang"
         '
         'serial_number
         '
         Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.serial_number.HeaderText = "Serial Number"
-        Me.serial_number.MinimumWidth = 6
+        Me.serial_number.MinimumWidth = 70
         Me.serial_number.Name = "serial_number"
         '
         'kondisi
@@ -333,35 +336,35 @@ Partial Class BarangKeluar
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_barang_keluar_fix.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dt_barang_keluar_fix.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dt_barang_keluar_fix.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang2, Me.tipe_barang2, Me.serial_number2, Me.kondisi2, Me.tested2, Me.lokasi2, Me.detail_lokasi2, Me.catatan2, Me.status2, Me.harga_jual2, Me.tgl_akhir_garansi})
+        Me.dt_barang_keluar_fix.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang2, Me.tipe_barang2, Me.serial_number2, Me.kondisi2, Me.tested2, Me.lokasi2, Me.detail_lokasi2, Me.catatan2, Me.status2, Me.harga_jual2, Me.tgl_akhir_garansi, Me.garansi, Me.garansi_type, Me.garansi_exp})
         Me.dt_barang_keluar_fix.GridColor = System.Drawing.SystemColors.ActiveBorder
         Me.dt_barang_keluar_fix.Location = New System.Drawing.Point(2, 395)
         Me.dt_barang_keluar_fix.Margin = New System.Windows.Forms.Padding(2)
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1151, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1024, 119)
         Me.dt_barang_keluar_fix.TabIndex = 55
         '
         'jenis_barang2
         '
         Me.jenis_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.jenis_barang2.HeaderText = "Jenis Barang"
-        Me.jenis_barang2.MinimumWidth = 6
+        Me.jenis_barang2.MinimumWidth = 70
         Me.jenis_barang2.Name = "jenis_barang2"
         '
         'tipe_barang2
         '
         Me.tipe_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.tipe_barang2.HeaderText = "Tipe Barang"
-        Me.tipe_barang2.MinimumWidth = 6
+        Me.tipe_barang2.MinimumWidth = 70
         Me.tipe_barang2.Name = "tipe_barang2"
         '
         'serial_number2
         '
         Me.serial_number2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.serial_number2.HeaderText = "Serial Number"
-        Me.serial_number2.MinimumWidth = 6
+        Me.serial_number2.MinimumWidth = 70
         Me.serial_number2.Name = "serial_number2"
         '
         'kondisi2
@@ -419,6 +422,22 @@ Partial Class BarangKeluar
         Me.tgl_akhir_garansi.MinimumWidth = 6
         Me.tgl_akhir_garansi.Name = "tgl_akhir_garansi"
         Me.tgl_akhir_garansi.Width = 125
+        '
+        'garansi
+        '
+        Me.garansi.HeaderText = "Periode Garansi"
+        Me.garansi.Name = "garansi"
+        '
+        'garansi_type
+        '
+        Me.garansi_type.HeaderText = "Tipe Garansi"
+        Me.garansi_type.Items.AddRange(New Object() {"Hari", "Bulan", "Tahun"})
+        Me.garansi_type.Name = "garansi_type"
+        '
+        'garansi_exp
+        '
+        Me.garansi_exp.HeaderText = "Tanggal Akhir Garansi"
+        Me.garansi_exp.Name = "garansi_exp"
         '
         'txt_kdpos
         '
@@ -548,7 +567,6 @@ Partial Class BarangKeluar
         '
         'btn_simpan
         '
-        Me.btn_simpan.Enabled = False
         Me.btn_simpan.Location = New System.Drawing.Point(8, 529)
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_simpan.Name = "btn_simpan"
@@ -716,6 +734,8 @@ Partial Class BarangKeluar
     Friend WithEvents btn_invoice As Button
     Friend WithEvents btn_kwitansi As Button
     Friend WithEvents btn_tanda_terima As Button
+    Friend WithEvents btn_tambha As Button
+    Friend WithEvents dt_barang_keluar_fix As DataGridView
     Friend WithEvents jenis_barang As DataGridViewTextBoxColumn
     Friend WithEvents tipe_barang As DataGridViewTextBoxColumn
     Friend WithEvents serial_number As DataGridViewTextBoxColumn
@@ -726,8 +746,6 @@ Partial Class BarangKeluar
     Friend WithEvents catatan As DataGridViewTextBoxColumn
     Friend WithEvents status As DataGridViewTextBoxColumn
     Friend WithEvents harga_jual As DataGridViewTextBoxColumn
-    Friend WithEvents btn_tambha As Button
-    Friend WithEvents dt_barang_keluar_fix As DataGridView
     Friend WithEvents jenis_barang2 As DataGridViewTextBoxColumn
     Friend WithEvents tipe_barang2 As DataGridViewTextBoxColumn
     Friend WithEvents serial_number2 As DataGridViewTextBoxColumn
@@ -739,4 +757,7 @@ Partial Class BarangKeluar
     Friend WithEvents status2 As DataGridViewTextBoxColumn
     Friend WithEvents harga_jual2 As DataGridViewTextBoxColumn
     Friend WithEvents tgl_akhir_garansi As DataGridViewTextBoxColumn
+    Friend WithEvents garansi As DataGridViewTextBoxColumn
+    Friend WithEvents garansi_type As DataGridViewComboBoxColumn
+    Friend WithEvents garansi_exp As DataGridViewTextBoxColumn
 End Class

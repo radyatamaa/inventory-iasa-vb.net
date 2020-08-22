@@ -32,5 +32,555 @@ Inventaris
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="T:Inventaris._db_inventory_iasaDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.MahasiswaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.sysdiagramsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.TambahDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_aksesDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_barangDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_barang_keluarDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_barang_masukDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_clientDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_detail_lokasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_jenisDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_kondisiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_levelDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_lokasiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_map_akses_levelDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_master_alasanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_menuDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_status_barangDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_tipeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_tokoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_transaksiDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_userDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.View_BARANG_MASUK_DUMMYDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.VIEW_DETAIL_BARANG_KELUARDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.sp_helpdiagramdefinitionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.sp_helpdiagramsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.MahasiswaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.sysdiagramsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.TambahRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_aksesRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_barangRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_barang_keluarRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_barang_masukRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_clientRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_detail_lokasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_jenisRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_kondisiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_levelRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_lokasiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_map_akses_levelRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_master_alasanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_menuRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_status_barangRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_tipeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_tokoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_transaksiRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_userRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.View_BARANG_MASUK_DUMMYRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.VIEW_DETAIL_BARANG_KELUARRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.sp_helpdiagramdefinitionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.sp_helpdiagramsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.MahasiswaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.sysdiagramsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.TambahRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_aksesRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_barangRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_barang_keluarRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_barang_masukRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_clientRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_detail_lokasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_jenisRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_kondisiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_levelRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_lokasiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_map_akses_levelRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_master_alasanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_menuRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_status_barangRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_tipeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_tokoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_transaksiRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.tbl_userRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.View_BARANG_MASUK_DUMMYRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.VIEW_DETAIL_BARANG_KELUARRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.sp_helpdiagramdefinitionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSet.sp_helpdiagramsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.MahasiswaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.sysdiagramsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.TambahTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_aksesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_barangTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_barang_keluarTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_barang_masukTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_clientTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_detail_lokasiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_jenisTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_kondisiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_levelTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_lokasiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_map_akses_levelTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_master_alasanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_menuTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_status_barangTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_tipeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_tokoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_transaksiTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.tbl_userTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.View_BARANG_MASUK_DUMMYTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.VIEW_DETAIL_BARANG_KELUARTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.sp_helpdiagramdefinitionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.sp_helpdiagramsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.QueriesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Inventaris._db_inventory_iasaDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Inventaris._db_inventory_iasaDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Inventaris._db_inventory_iasaDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Inventaris._db_inventory_iasaDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Inventaris._db_inventory_iasaDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Inventaris._db_inventory_iasaDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Inventaris._db_inventory_iasaDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Inventaris._db_inventory_iasaDataSetTableAdapters.TableAdapterManager.UpdateAll(Inventaris._db_inventory_iasaDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Inventaris._db_inventory_iasaDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 </members>
 </doc>
