@@ -354,9 +354,9 @@ Public Class BarangKeluar
             msWord.Visible = True
         End If
 
-        If isCetakInvoice = True And isCetakKwitansi = True And isCetakTandaTangan = True Then
-            Me.btn_simpan.Enabled = True
-        End If
+        'If isCetakInvoice = True And isCetakKwitansi = True And isCetakTandaTangan = True Then
+        Me.btn_simpan.Enabled = True
+        'End If
 
     End Function
     Private Sub btn_menuutama_Click(sender As Object, e As EventArgs)

@@ -83,4 +83,8 @@
     Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
 
     End Sub
+
+    Private Sub btn_r_barang_masuk_Click(sender As Object, e As EventArgs) Handles btn_r_barang_masuk.Click
+        Laporan_Barang_Masuk.Show()
+    End Sub
 End Class
