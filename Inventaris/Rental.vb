@@ -842,4 +842,14 @@ Public Class Rental
         Me.txt_diskon.Text = 0
         MsgBox("Sukses Data Tersimpan!")
     End Sub
+
+    Private Sub txt_diskon_TextChanged(sender As Object, e As EventArgs) Handles txt_diskon.TextChanged
+        If System.Text.RegularExpressions.Regex.IsMatch(txt_diskon.Text, "[  ^ 0-9]") Then
+            Me.txt_harga_akhir.Text = Me.txt_harga_akhir.Text - Me.txt_diskon.Text
+        ElseIf txt_diskon.Text = "" Then
+            Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+        Else
+            MsgBox("Diskon hanya bisa numbering")
+        End If
+    End Sub
 End Class
