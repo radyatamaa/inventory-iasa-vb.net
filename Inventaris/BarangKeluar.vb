@@ -682,6 +682,9 @@ Public Class BarangKeluar
         listBarangMasuk.Clear()
         Dim kdTransaksi As String = RandomString(New Random)
         Me.txt_kd_transaksi.Text = kdTransaksi
+        Me.txt_harga_total.Text = 0
+        Me.txt_harga_akhir.Text = 0
+        Me.txt_diskon.Text = 0
         MsgBox("Sukses Data Tersimpan!")
     End Sub
 
