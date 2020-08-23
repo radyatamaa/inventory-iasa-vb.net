@@ -16,6 +16,7 @@ Public Class MasterDetailLokasi
     Dim detaillokasiId As Integer
     Dim listDetailLokasiHandle As New List(Of Object)
     Dim listIdDetailLokasi As New List(Of Integer)
+    Public Property UserInfo As Object
     Sub VBnetSQLSeverConnection()
         Try
             'SQL connection script to SQL Server Instance
@@ -131,8 +132,8 @@ Public Class MasterDetailLokasi
     Function SimpanDetailLokasi(detail_lokasi As Object) As Integer
         Dim userlogin As String = ""
         Dim idDetailLokasi As Integer
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            userlogin = MenuUtama.MenuStrip1.Tag.Username
+        If UserInfo IsNot Nothing Then
+            userlogin = UserInfo.Username
         End If
         If detail_lokasi.id_detail_lokasi <> 0 Then
             Try
@@ -195,8 +196,8 @@ Public Class MasterDetailLokasi
     Function DeleteDetailLokasi(idDetailLokasi As Integer)
         Try
             Dim userlogin As String = ""
-            If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-                userlogin = MenuUtama.MenuStrip1.Tag.Username
+            If UserInfo IsNot Nothing Then
+                userlogin = UserInfo.Username
             End If
             'For i As Integer = 0 To data_master_detail.Rows.Count() - 1
             'If data_master_detail.Rows(i).Cells(0).Value = True Then
@@ -223,6 +224,7 @@ Public Class MasterDetailLokasi
     End Function
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Close()
     End Sub

@@ -4,6 +4,7 @@ Imports System.Globalization
 Imports System.Text
 
 Public Class Rental
+    Public Property UserInfo As Object
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
@@ -204,9 +205,9 @@ Public Class Rental
         Dim idToko
         Dim userlogin As String = ""
         Dim barangKeluarId As Integer
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            userlogin = MenuUtama.MenuStrip1.Tag.Username
-            idToko = MenuUtama.MenuStrip1.Tag.IdToko.ToString
+        If UserInfo IsNot Nothing Then
+            userlogin = UserInfo.Username
+            idToko = UserInfo.IdToko.ToString
         Else
             idToko = "NULL"
         End If
@@ -360,7 +361,9 @@ Public Class Rental
         Return sb.ToString()
     End Function
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Rental_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -841,5 +844,15 @@ Public Class Rental
         Me.txt_harga_akhir.Text = 0
         Me.txt_diskon.Text = 0
         MsgBox("Sukses Data Tersimpan!")
+    End Sub
+
+    Private Sub txt_diskon_TextChanged(sender As Object, e As EventArgs) Handles txt_diskon.TextChanged
+        If System.Text.RegularExpressions.Regex.IsMatch(txt_diskon.Text, "[  ^ 0-9]") Then
+            Me.txt_harga_akhir.Text = Me.txt_harga_akhir.Text - Me.txt_diskon.Text
+        ElseIf txt_diskon.Text = "" Then
+            Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+        Else
+            MsgBox("Diskon hanya bisa numbering")
+        End If
     End Sub
 End Class

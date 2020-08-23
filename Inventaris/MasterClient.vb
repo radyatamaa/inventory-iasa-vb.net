@@ -13,6 +13,7 @@ Public Class MasterClient
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
     Dim clientid As Integer
+    Public Property UserInfo As Object
     Sub VBnetSQLSeverConnection()
         Try
             'SQL connection script to SQL Server Instance
@@ -29,8 +30,8 @@ Public Class MasterClient
     Function SimpanClient(client As Object) As Integer
         Dim userlogin As String = ""
         Dim idclient As Integer
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            userlogin = MenuUtama.MenuStrip1.Tag.Username
+        If UserInfo IsNot Nothing Then
+            userlogin = UserInfo.Username
         End If
         If client.id_client <> 0 Then
             Try
@@ -183,8 +184,8 @@ Public Class MasterClient
     Function Deleteclient(idclient As Integer)
         Try
             Dim userlogin As String = ""
-            If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-                userlogin = MenuUtama.MenuStrip1.Tag.Username
+            If UserInfo IsNot Nothing Then
+                userlogin = UserInfo.Username
             End If
             Dim queryTblclient As String = "UPDATE tbl_client SET 
                                     is_active = 0 ,
@@ -356,6 +357,7 @@ Public Class MasterClient
     End Sub
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Close()
     End Sub

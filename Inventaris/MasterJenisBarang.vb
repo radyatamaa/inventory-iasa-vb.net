@@ -13,6 +13,7 @@ Public Class MasterJenisBarang
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
     Dim jenisId As Integer
+    Public Property UserInfo As Object
     Sub VBnetSQLSeverConnection()
         Try
             'SQL connection script to SQL Server Instance
@@ -29,8 +30,8 @@ Public Class MasterJenisBarang
     Function SimpanJenis(jenis As Object) As Integer
         Dim userlogin As String = ""
         Dim idJenis As Integer
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            userlogin = MenuUtama.MenuStrip1.Tag.Username
+        If UserInfo IsNot Nothing Then
+            userlogin = UserInfo.Username
         End If
         If jenis.id_jenis <> 0 Then
             Try
@@ -154,8 +155,8 @@ Public Class MasterJenisBarang
     Function DeleteJenis(idJenis As Integer)
         Try
             Dim userlogin As String = ""
-            If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-                userlogin = MenuUtama.MenuStrip1.Tag.Username
+            If UserInfo IsNot Nothing Then
+                userlogin = UserInfo.Username
             End If
             Dim queryTblJenis As String = "UPDATE tbl_jenis SET 
                                     is_active = 0 ,
@@ -207,6 +208,7 @@ Public Class MasterJenisBarang
     End Sub
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Close()
     End Sub

@@ -28,6 +28,15 @@ Partial Class Repair
         Me.txt_harga_akhir = New System.Windows.Forms.TextBox()
         Me.btn_tambah = New System.Windows.Forms.Button()
         Me.dt_barang_keluar_fix = New System.Windows.Forms.DataGridView()
+        Me.jenis_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipe_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.serial_number2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kondisi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tested2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.detail_lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.catatan2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.status2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_kdpos = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_kota = New System.Windows.Forms.TextBox()
@@ -44,6 +53,15 @@ Partial Class Repair
         Me.date_tgl_keluar = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dt_barang_masuk = New System.Windows.Forms.DataGridView()
+        Me.jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipe_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kondisi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tested = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.detail_lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.catatan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmb_client = New System.Windows.Forms.ComboBox()
         Me.cmb_tipe_barang = New System.Windows.Forms.ComboBox()
         Me.cmb_jenis_barang = New System.Windows.Forms.ComboBox()
@@ -57,24 +75,6 @@ Partial Class Repair
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.btn_simpan = New System.Windows.Forms.Button()
-        Me.jenis_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipe_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.serial_number2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kondisi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tested2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.detail_lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.catatan2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.status2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipe_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kondisi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tested = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.detail_lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.catatan = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -142,6 +142,69 @@ Partial Class Repair
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
         Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1024, 119)
         Me.dt_barang_keluar_fix.TabIndex = 55
+        '
+        'jenis_barang2
+        '
+        Me.jenis_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.jenis_barang2.HeaderText = "Jenis Barang"
+        Me.jenis_barang2.MinimumWidth = 70
+        Me.jenis_barang2.Name = "jenis_barang2"
+        '
+        'tipe_barang2
+        '
+        Me.tipe_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tipe_barang2.HeaderText = "Tipe Barang"
+        Me.tipe_barang2.MinimumWidth = 70
+        Me.tipe_barang2.Name = "tipe_barang2"
+        '
+        'serial_number2
+        '
+        Me.serial_number2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.serial_number2.HeaderText = "Serial Number"
+        Me.serial_number2.MinimumWidth = 70
+        Me.serial_number2.Name = "serial_number2"
+        '
+        'kondisi2
+        '
+        Me.kondisi2.HeaderText = "Kondisi"
+        Me.kondisi2.MinimumWidth = 6
+        Me.kondisi2.Name = "kondisi2"
+        Me.kondisi2.Width = 125
+        '
+        'tested2
+        '
+        Me.tested2.HeaderText = "Tested"
+        Me.tested2.MinimumWidth = 6
+        Me.tested2.Name = "tested2"
+        Me.tested2.Width = 125
+        '
+        'lokasi2
+        '
+        Me.lokasi2.HeaderText = "Lokasi"
+        Me.lokasi2.MinimumWidth = 6
+        Me.lokasi2.Name = "lokasi2"
+        Me.lokasi2.Width = 125
+        '
+        'detail_lokasi2
+        '
+        Me.detail_lokasi2.HeaderText = "Detail Lokasi"
+        Me.detail_lokasi2.MinimumWidth = 6
+        Me.detail_lokasi2.Name = "detail_lokasi2"
+        Me.detail_lokasi2.Width = 125
+        '
+        'catatan2
+        '
+        Me.catatan2.HeaderText = "Catatan"
+        Me.catatan2.MinimumWidth = 6
+        Me.catatan2.Name = "catatan2"
+        Me.catatan2.Width = 125
+        '
+        'status2
+        '
+        Me.status2.HeaderText = "Status"
+        Me.status2.MinimumWidth = 6
+        Me.status2.Name = "status2"
+        Me.status2.Width = 125
         '
         'txt_kdpos
         '
@@ -339,6 +402,69 @@ Partial Class Repair
         Me.dt_barang_masuk.Size = New System.Drawing.Size(1026, 119)
         Me.dt_barang_masuk.TabIndex = 16
         '
+        'jenis_barang
+        '
+        Me.jenis_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.jenis_barang.HeaderText = "Jenis Barang"
+        Me.jenis_barang.MinimumWidth = 70
+        Me.jenis_barang.Name = "jenis_barang"
+        '
+        'tipe_barang
+        '
+        Me.tipe_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tipe_barang.HeaderText = "Tipe Barang"
+        Me.tipe_barang.MinimumWidth = 70
+        Me.tipe_barang.Name = "tipe_barang"
+        '
+        'serial_number
+        '
+        Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.serial_number.HeaderText = "Serial Number"
+        Me.serial_number.MinimumWidth = 70
+        Me.serial_number.Name = "serial_number"
+        '
+        'kondisi
+        '
+        Me.kondisi.HeaderText = "Kondisi"
+        Me.kondisi.MinimumWidth = 6
+        Me.kondisi.Name = "kondisi"
+        Me.kondisi.Width = 125
+        '
+        'tested
+        '
+        Me.tested.HeaderText = "Tested"
+        Me.tested.MinimumWidth = 6
+        Me.tested.Name = "tested"
+        Me.tested.Width = 125
+        '
+        'lokasi
+        '
+        Me.lokasi.HeaderText = "Lokasi"
+        Me.lokasi.MinimumWidth = 6
+        Me.lokasi.Name = "lokasi"
+        Me.lokasi.Width = 125
+        '
+        'detail_lokasi
+        '
+        Me.detail_lokasi.HeaderText = "Detail Lokasi"
+        Me.detail_lokasi.MinimumWidth = 6
+        Me.detail_lokasi.Name = "detail_lokasi"
+        Me.detail_lokasi.Width = 125
+        '
+        'catatan
+        '
+        Me.catatan.HeaderText = "Catatan"
+        Me.catatan.MinimumWidth = 6
+        Me.catatan.Name = "catatan"
+        Me.catatan.Width = 125
+        '
+        'status
+        '
+        Me.status.HeaderText = "Status"
+        Me.status.MinimumWidth = 6
+        Me.status.Name = "status"
+        Me.status.Width = 125
+        '
         'cmb_client
         '
         Me.cmb_client.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -472,132 +598,6 @@ Partial Class Repair
         Me.btn_simpan.TabIndex = 87
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = True
-        '
-        'jenis_barang2
-        '
-        Me.jenis_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.jenis_barang2.HeaderText = "Jenis Barang"
-        Me.jenis_barang2.MinimumWidth = 70
-        Me.jenis_barang2.Name = "jenis_barang2"
-        '
-        'tipe_barang2
-        '
-        Me.tipe_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.tipe_barang2.HeaderText = "Tipe Barang"
-        Me.tipe_barang2.MinimumWidth = 70
-        Me.tipe_barang2.Name = "tipe_barang2"
-        '
-        'serial_number2
-        '
-        Me.serial_number2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.serial_number2.HeaderText = "Serial Number"
-        Me.serial_number2.MinimumWidth = 70
-        Me.serial_number2.Name = "serial_number2"
-        '
-        'kondisi2
-        '
-        Me.kondisi2.HeaderText = "Kondisi"
-        Me.kondisi2.MinimumWidth = 6
-        Me.kondisi2.Name = "kondisi2"
-        Me.kondisi2.Width = 125
-        '
-        'tested2
-        '
-        Me.tested2.HeaderText = "Tested"
-        Me.tested2.MinimumWidth = 6
-        Me.tested2.Name = "tested2"
-        Me.tested2.Width = 125
-        '
-        'lokasi2
-        '
-        Me.lokasi2.HeaderText = "Lokasi"
-        Me.lokasi2.MinimumWidth = 6
-        Me.lokasi2.Name = "lokasi2"
-        Me.lokasi2.Width = 125
-        '
-        'detail_lokasi2
-        '
-        Me.detail_lokasi2.HeaderText = "Detail Lokasi"
-        Me.detail_lokasi2.MinimumWidth = 6
-        Me.detail_lokasi2.Name = "detail_lokasi2"
-        Me.detail_lokasi2.Width = 125
-        '
-        'catatan2
-        '
-        Me.catatan2.HeaderText = "Catatan"
-        Me.catatan2.MinimumWidth = 6
-        Me.catatan2.Name = "catatan2"
-        Me.catatan2.Width = 125
-        '
-        'status2
-        '
-        Me.status2.HeaderText = "Status"
-        Me.status2.MinimumWidth = 6
-        Me.status2.Name = "status2"
-        Me.status2.Width = 125
-        '
-        'jenis_barang
-        '
-        Me.jenis_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.jenis_barang.HeaderText = "Jenis Barang"
-        Me.jenis_barang.MinimumWidth = 70
-        Me.jenis_barang.Name = "jenis_barang"
-        '
-        'tipe_barang
-        '
-        Me.tipe_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.tipe_barang.HeaderText = "Tipe Barang"
-        Me.tipe_barang.MinimumWidth = 70
-        Me.tipe_barang.Name = "tipe_barang"
-        '
-        'serial_number
-        '
-        Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.serial_number.HeaderText = "Serial Number"
-        Me.serial_number.MinimumWidth = 70
-        Me.serial_number.Name = "serial_number"
-        '
-        'kondisi
-        '
-        Me.kondisi.HeaderText = "Kondisi"
-        Me.kondisi.MinimumWidth = 6
-        Me.kondisi.Name = "kondisi"
-        Me.kondisi.Width = 125
-        '
-        'tested
-        '
-        Me.tested.HeaderText = "Tested"
-        Me.tested.MinimumWidth = 6
-        Me.tested.Name = "tested"
-        Me.tested.Width = 125
-        '
-        'lokasi
-        '
-        Me.lokasi.HeaderText = "Lokasi"
-        Me.lokasi.MinimumWidth = 6
-        Me.lokasi.Name = "lokasi"
-        Me.lokasi.Width = 125
-        '
-        'detail_lokasi
-        '
-        Me.detail_lokasi.HeaderText = "Detail Lokasi"
-        Me.detail_lokasi.MinimumWidth = 6
-        Me.detail_lokasi.Name = "detail_lokasi"
-        Me.detail_lokasi.Width = 125
-        '
-        'catatan
-        '
-        Me.catatan.HeaderText = "Catatan"
-        Me.catatan.MinimumWidth = 6
-        Me.catatan.Name = "catatan"
-        Me.catatan.Width = 125
-        '
-        'status
-        '
-        Me.status.HeaderText = "Status"
-        Me.status.MinimumWidth = 6
-        Me.status.Name = "status"
-        Me.status.Width = 125
         '
         'Repair
         '

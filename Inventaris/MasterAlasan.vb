@@ -13,6 +13,7 @@ Public Class MasterAlasan
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
     Dim alasanId As Integer
+    Public Property UserInfo As Object
     Sub VBnetSQLSeverConnection()
         Try
             'SQL connection script to SQL Server Instance
@@ -29,8 +30,8 @@ Public Class MasterAlasan
     Function Simpanalasan(alasan As Object) As Integer
         Dim userlogin As String = ""
         Dim idalasan As Integer
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            userlogin = MenuUtama.MenuStrip1.Tag.Username
+        If UserInfo IsNot Nothing Then
+            userlogin = UserInfo.Username
         End If
         If alasan.id_alasan <> 0 Then
             Try
@@ -154,8 +155,8 @@ Public Class MasterAlasan
     Function Deletealasan(idalasan As Integer)
         Try
             Dim userlogin As String = ""
-            If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-                userlogin = MenuUtama.MenuStrip1.Tag.Username
+            If UserInfo IsNot Nothing Then
+                userlogin = UserInfo.Username
             End If
             Dim queryTblalasan As String = "UPDATE tbl_master_alasan SET 
                                     is_active = 0 ,
@@ -177,6 +178,7 @@ Public Class MasterAlasan
 
     End Function
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Hide()
     End Sub

@@ -99,21 +99,21 @@ Partial Class MenuUtama
         '
         Me.btn_penjualan.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_penjualan.Name = "btn_penjualan"
-        Me.btn_penjualan.Size = New System.Drawing.Size(137, 24)
+        Me.btn_penjualan.Size = New System.Drawing.Size(180, 24)
         Me.btn_penjualan.Text = "Penjualan"
         '
         'btn_rental
         '
         Me.btn_rental.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_rental.Name = "btn_rental"
-        Me.btn_rental.Size = New System.Drawing.Size(137, 24)
+        Me.btn_rental.Size = New System.Drawing.Size(180, 24)
         Me.btn_rental.Text = "Rental"
         '
         'btn_repair
         '
         Me.btn_repair.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_repair.Name = "btn_repair"
-        Me.btn_repair.Size = New System.Drawing.Size(137, 24)
+        Me.btn_repair.Size = New System.Drawing.Size(180, 24)
         Me.btn_repair.Text = "Repair"
         '
         'QuotationToolStripMenuItem

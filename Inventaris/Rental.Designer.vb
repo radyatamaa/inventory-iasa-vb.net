@@ -65,8 +65,6 @@ Partial Class Rental
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btn_tambah = New System.Windows.Forms.Button()
         Me.dt_barang_keluar_fix = New System.Windows.Forms.DataGridView()
-        Me.btn_kembali = New System.Windows.Forms.Button()
-        Me.txt_kd_transaksi = New System.Windows.Forms.TextBox()
         Me.jenis_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipe_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.serial_number2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -80,6 +78,8 @@ Partial Class Rental
         Me.periode_rental = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rental_type = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.rental_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_kembali = New System.Windows.Forms.Button()
+        Me.txt_kd_transaksi = New System.Windows.Forms.TextBox()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -525,29 +525,6 @@ Partial Class Rental
         Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1024, 119)
         Me.dt_barang_keluar_fix.TabIndex = 55
         '
-        'btn_kembali
-        '
-        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
-        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_kembali.FlatAppearance.BorderSize = 0
-        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
-        Me.btn_kembali.Location = New System.Drawing.Point(8, 7)
-        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_kembali.Name = "btn_kembali"
-        Me.btn_kembali.Size = New System.Drawing.Size(75, 73)
-        Me.btn_kembali.TabIndex = 46
-        Me.btn_kembali.UseVisualStyleBackColor = False
-        '
-        'txt_kd_transaksi
-        '
-        Me.txt_kd_transaksi.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kd_transaksi.Location = New System.Drawing.Point(235, 108)
-        Me.txt_kd_transaksi.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_kd_transaksi.Name = "txt_kd_transaksi"
-        Me.txt_kd_transaksi.Size = New System.Drawing.Size(178, 20)
-        Me.txt_kd_transaksi.TabIndex = 26
-        '
         'jenis_barang2
         '
         Me.jenis_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -633,6 +610,29 @@ Partial Class Rental
         '
         Me.rental_exp.HeaderText = "Rental Exp"
         Me.rental_exp.Name = "rental_exp"
+        '
+        'btn_kembali
+        '
+        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
+        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_kembali.FlatAppearance.BorderSize = 0
+        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
+        Me.btn_kembali.Location = New System.Drawing.Point(8, 7)
+        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_kembali.Name = "btn_kembali"
+        Me.btn_kembali.Size = New System.Drawing.Size(75, 73)
+        Me.btn_kembali.TabIndex = 46
+        Me.btn_kembali.UseVisualStyleBackColor = False
+        '
+        'txt_kd_transaksi
+        '
+        Me.txt_kd_transaksi.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_kd_transaksi.Location = New System.Drawing.Point(235, 108)
+        Me.txt_kd_transaksi.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_kd_transaksi.Name = "txt_kd_transaksi"
+        Me.txt_kd_transaksi.Size = New System.Drawing.Size(178, 20)
+        Me.txt_kd_transaksi.TabIndex = 26
         '
         'Rental
         '
