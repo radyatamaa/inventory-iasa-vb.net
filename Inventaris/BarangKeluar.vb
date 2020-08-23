@@ -185,6 +185,23 @@ Public Class BarangKeluar
 
         Return result
     End Function
+    Function UpdateStatusBarang(idStatusBarang As Integer, userlogin As String, idBarang As Integer)
+        Dim barangKeluarId
+        Dim queryTblBarang As String = " UPDATE tbl_barang SET 
+                                    id_status_barang = " + idStatusBarang.ToString + ",
+                                    updated_by = '" + userlogin + "',
+                                    updated_date =   CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME)
+                                    WHERE id_barang = " + idBarang.ToString
+
+        cmd.CommandText = queryTblBarang
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        CONN.Open()
+        barangKeluarId = cmd.ExecuteScalar()
+        'reader = cmd.ExecuteReader()
+
+        CONN.Close()
+    End Function
     Function SimpanBarangKeluar(barangKeluar As Object, index As Integer)
         Dim idToko
         Dim userlogin As String = ""
@@ -296,6 +313,9 @@ Public Class BarangKeluar
             'reader = cmd.ExecuteReader()
 
             CONN.Close()
+
+            UpdateStatusBarang(barangKeluar.id_status_barang, userlogin, barangKeluar.id_barang)
+
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -651,6 +671,7 @@ Public Class BarangKeluar
             insertDataBarangKeluar.kota_pengiriman = Me.txt_kota.Text
             insertDataBarangKeluar.kdpos_pengiriman = Me.txt_kdpos.Text
             insertDataBarangKeluar.total_barang = listBarangKeluarFix.Count
+            insertDataBarangKeluar.id_status_barang = 4
             SimpanBarangKeluar(insertDataBarangKeluar, index)
             index = index + 1
         Next
