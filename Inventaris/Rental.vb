@@ -437,10 +437,10 @@ Public Class Rental
     Private Sub cmb_tipe_barang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_tipe_barang.SelectedIndexChanged
         Try
             dt_barang_masuk.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe)
+            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe)
         Catch ex As Exception
             dt_barang_masuk.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue)
+            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue)
         End Try
     End Sub
 
