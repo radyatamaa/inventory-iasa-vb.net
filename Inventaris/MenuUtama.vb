@@ -38,6 +38,7 @@ Public Class MenuUtama
     End Sub
 
     Private Sub btn_repair_Click(sender As Object, e As EventArgs) Handles btn_repair.Click
+        Repair.UserInfo = Me.MenuStrip1.Tag
         Repair.Show()
         Me.Close()
     End Sub
