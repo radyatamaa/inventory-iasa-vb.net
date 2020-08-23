@@ -14,6 +14,7 @@ Public Class MasterTipe
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
     Dim tipeId As Integer
+    Public Property UserInfo As Object
     Sub VBnetSQLSeverConnection()
         Try
             'SQL connection script to SQL Server Instance
@@ -127,8 +128,8 @@ Public Class MasterTipe
     Function SimpanTipe(tipe As Object) As Integer
         Dim userlogin As String = ""
         Dim idTipe As Integer
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            userlogin = MenuUtama.MenuStrip1.Tag.Username
+        If UserInfo IsNot Nothing Then
+            userlogin = UserInfo.Username
         End If
         If tipe.id_tipe <> 0 Then
             Try
@@ -194,8 +195,8 @@ Public Class MasterTipe
     Function DeleteTipe(idTipe As Integer)
         Try
             Dim userlogin As String = ""
-            If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-                userlogin = MenuUtama.MenuStrip1.Tag.Username
+            If UserInfo IsNot Nothing Then
+                userlogin = UserInfo.Username
             End If
             Dim queryTblBarang As String = "UPDATE tbl_tipe SET 
                                     is_active = 0 ,
@@ -269,6 +270,7 @@ Public Class MasterTipe
 
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Close()
 

@@ -5,6 +5,7 @@ Imports System.Text
 Imports Microsoft.Office.Interop
 
 Public Class BarangKeluar
+    Public Property UserInfo As Object
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
@@ -206,9 +207,9 @@ Public Class BarangKeluar
         Dim idToko
         Dim userlogin As String = ""
         Dim barangKeluarId As Integer
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            userlogin = MenuUtama.MenuStrip1.Tag.Username
-            idToko = MenuUtama.MenuStrip1.Tag.IdToko.ToString
+        If UserInfo IsNot Nothing Then
+            userlogin = UserInfo.Username
+            idToko = UserInfo.IdToko.ToString
         Else
             idToko = "NULL"
         End If
@@ -464,6 +465,7 @@ Public Class BarangKeluar
     End Sub
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Hide()
     End Sub
@@ -868,8 +870,8 @@ Public Class BarangKeluar
 
                         For Each barangKeluarFix As Object In listBarangKeluarFix
 
-                                dt_barang_keluar_fix.Rows.Add(1)
-                                Dim isTest As String
+                            dt_barang_keluar_fix.Rows.Add(1)
+                            Dim isTest As String
                             If barangKeluarFix.tested = 1 Then
                                 isTest = "Teruji"
                             Else
@@ -878,14 +880,14 @@ Public Class BarangKeluar
 
                             dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(0).Value = barangKeluarFix.nama_jenis
                             dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(1).Value = barangKeluarFix.nama_tipe
-                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(2).Value = barangKeluarFix.serial_number
-                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(3).Value = barangKeluarFix.nama_kondisi
-                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(4).Value = isTest
-                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(5).Value = barangKeluarFix.nama_lokasi
-                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(6).Value = barangKeluarFix.detail_lokasi
-                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(7).Value = barangKeluarFix.catatan
-                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(8).Value = barangKeluarFix.nama_status
-                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(9).Value = barangKeluarFix.harga_jual
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(2).Value = barangKeluarFix.serial_number
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(3).Value = barangKeluarFix.nama_kondisi
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(4).Value = isTest
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(5).Value = barangKeluarFix.nama_lokasi
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(6).Value = barangKeluarFix.detail_lokasi
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(7).Value = barangKeluarFix.catatan
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(8).Value = barangKeluarFix.nama_status
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(9).Value = barangKeluarFix.harga_jual
                             dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(10).Value = barangKeluarFix.garansi
                             dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(11).Value = barangKeluarFix.garansi_type
                             dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(12).Value = barangKeluarFix.garansi_exp
@@ -897,13 +899,13 @@ Public Class BarangKeluar
                             End If
                             dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(13).Value = barangKeluarFix.id_barang_masuk
 
-                                dt_barang_keluar_fix.Update()
+                            dt_barang_keluar_fix.Update()
 
-                                'listBarangKeluarFix.Add(barangMasukHandle)
-                                index = index + 1
+                            'listBarangKeluarFix.Add(barangMasukHandle)
+                            index = index + 1
 
-                            Next
-                        ElseIf selectedItem.Value = "" Then
+                        Next
+                    ElseIf selectedItem.Value = "" Then
                         'MsgBox("harga Jual Tidak Boleh Kosong")
                     Else
                         MsgBox("garansi hanya bisa number")

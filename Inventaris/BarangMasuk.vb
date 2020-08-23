@@ -4,6 +4,7 @@ Imports System.Globalization
 Imports System.Text
 
 Public Class BarangMasuk
+    Public Property UserInfo As Object
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
@@ -28,8 +29,8 @@ Public Class BarangMasuk
     Function DeleteBarangMasuk(idBarangMasuk As Integer, idbarang As Integer)
         Try
             Dim userlogin As String = ""
-            If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-                userlogin = MenuUtama.MenuStrip1.Tag.Username
+            If UserInfo IsNot Nothing Then
+                userlogin = UserInfo.Username
             End If
             Dim queryTblBarang As String = "UPDATE tbl_barang SET 
                                     is_active = 0 ,
@@ -193,9 +194,9 @@ Public Class BarangMasuk
         Dim idToko
         Dim userlogin As String = ""
         Dim barangMasukId As Integer
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            userlogin = MenuUtama.MenuStrip1.Tag.Username
-            idToko = MenuUtama.MenuStrip1.Tag.IdToko.ToString
+        If UserInfo IsNot Nothing Then
+            userlogin = UserInfo.Username
+            idToko = UserInfo.IdToko.ToString
         Else
             idToko = "NULL"
         End If
@@ -824,8 +825,8 @@ Public Class BarangMasuk
             test = "Tidak Teruji"
         End If
         Dim idToko As String
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            idToko = MenuUtama.MenuStrip1.Tag.IdToko
+        If UserInfo IsNot Nothing Then
+            idToko = UserInfo.IdToko
         End If
         Dim kdTransaksi As String = RandomString(New Random)
         Dim insertDataBarangMasuk = New With
@@ -942,30 +943,31 @@ Public Class BarangMasuk
             indexPenampung.Clear()
             'isDataReal = 1
             Dim barangMasuk = GetBarangMasukById(isDataReal(0))
-            Me.Label1.Tag = BarangMasuk(0).id_barang_masuk
-            Me.Label2.Tag = BarangMasuk(0).id_barang
-            If BarangMasuk(0).tested = 1 Then
+            Me.Label1.Tag = barangMasuk(0).id_barang_masuk
+            Me.Label2.Tag = barangMasuk(0).id_barang
+            If barangMasuk(0).tested = 1 Then
                 Me.cbx_teruji.Checked = True
-            ElseIf BarangMasuk(0).tested = 0 Then
+            ElseIf barangMasuk(0).tested = 0 Then
                 cbx_tidak_teruji.Checked = True
             End If
-            Me.txt_kode_barang.Text = BarangMasuk(0).kd_barang
-            Me.cmb_jenis_barang.SelectedValue = BarangMasuk(0).id_jenis
-            Me.cmb_tipe_barang.SelectedValue = BarangMasuk(0).id_tipe
-            Me.txt_serial.Text = BarangMasuk(0).serial_number
-            Me.cmb_kondisi.SelectedValue = BarangMasuk(0).id_kondisi
-            Me.cmb_status.SelectedValue = BarangMasuk(0).id_status_barang
-            Me.cmb_lokasi.SelectedValue = BarangMasuk(0).id_lokasi
-            Me.cmb_detail_lokasi.SelectedValue = BarangMasuk(0).id_detail_lokasi
-            Me.txt_harga_modal.Text = BarangMasuk(0).harga_beli
-            Me.txt_harga_barang.Text = BarangMasuk(0).harga_jual
-            Me.txt_lisensi.Text = BarangMasuk(0).licence
-            Me.date_tgl_masuk.Value = BarangMasuk(0).tgl_masuk
+            Me.txt_kode_barang.Text = barangMasuk(0).kd_barang
+            Me.cmb_jenis_barang.SelectedValue = barangMasuk(0).id_jenis
+            Me.cmb_tipe_barang.SelectedValue = barangMasuk(0).id_tipe
+            Me.txt_serial.Text = barangMasuk(0).serial_number
+            Me.cmb_kondisi.SelectedValue = barangMasuk(0).id_kondisi
+            Me.cmb_status.SelectedValue = barangMasuk(0).id_status_barang
+            Me.cmb_lokasi.SelectedValue = barangMasuk(0).id_lokasi
+            Me.cmb_detail_lokasi.SelectedValue = barangMasuk(0).id_detail_lokasi
+            Me.txt_harga_modal.Text = barangMasuk(0).harga_beli
+            Me.txt_harga_barang.Text = barangMasuk(0).harga_jual
+            Me.txt_lisensi.Text = barangMasuk(0).licence
+            Me.date_tgl_masuk.Value = barangMasuk(0).tgl_masuk
 
         End If
     End Sub
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Hide()
     End Sub
