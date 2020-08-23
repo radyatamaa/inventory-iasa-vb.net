@@ -310,8 +310,13 @@ Public Class MasterTipe
     End Sub
 
     Private Sub btn_simpan_Click(sender As Object, e As EventArgs) Handles btn_simpan.Click
-
-        Dim imagePath As String = UploadToStorageAzure(Me.txt_foto.Text)
+        Dim imagePath As String = ""
+        If Me.txt_foto.Text <> "" Then
+            imagePath = UploadToStorageAzure(Me.txt_foto.Text)
+        ElseIf Me.txt_foto.Text = "" And tipeId <> 0 Then
+            Dim tipe = GetDataTipeById(tipeId)
+            imagePath = tipe(0).image_url
+        End If
         Dim insertDataTipe = New With
             {
             .id_tipe = tipeId,
@@ -356,7 +361,7 @@ Public Class MasterTipe
             Me.cmb_jenis_barang.SelectedValue = tipe(0).id_jenis
             If Not IsDBNull(tipe(0).image_url) Then
                 If tipe(0).image_url <> Nothing Then
-                    Me.txt_foto.Text = tipe(0).image_url
+                    'Me.txt_foto.Text = tipe(0).image_url
                     Dim tClient As WebClient = New WebClient
                     Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(tipe(0).image_url.ToString)))
                     Me.image_url.BackgroundImage = downloadImage
@@ -364,5 +369,9 @@ Public Class MasterTipe
             End If
 
         End If
+    End Sub
+
+    Private Sub data_master_tipe_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles data_master_tipe.CellContentClick
+
     End Sub
 End Class
