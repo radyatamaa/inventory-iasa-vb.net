@@ -270,8 +270,15 @@ Public Class BarangKeluar
                                      CAST('" + DateTime.Parse(barangKeluar.tgl_keluar).ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),                                  
                                      " + barangKeluar.garansi.ToString + ",
                                      '" + barangKeluar.garansi_type + "',
-                                      CAST('" + DateTime.Parse(barangKeluar.garansi_exp).ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),
-                                     " + barangKeluar.id_client.ToString + ",
+                                      
+                                    "
+            If barangKeluar.garansi_exp = "NULL" Then
+                queryTblBarangKeluar = queryTblBarangKeluar + "NULL,"
+
+            Else
+                queryTblBarangKeluar = queryTblBarangKeluar + "CAST('" + DateTime.Parse(barangKeluar.garansi_exp).ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),"
+            End If
+            queryTblBarangKeluar = queryTblBarangKeluar + " " + barangKeluar.id_client.ToString + ",
                                        " + barangKeluar.id_lokasi.ToString + ",
                                       " + barangKeluar.id_detail_lokasi.ToString + ",
                                         " + barangKeluar.harga_jual.ToString + ",
@@ -281,7 +288,6 @@ Public Class BarangKeluar
                                      CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),
                                     " + 1.ToString + "
                                     ); SELECT SCOPE_IDENTITY() "
-
             cmd.CommandText = queryTblBarangKeluar
             cmd.CommandType = CommandType.Text
             cmd.Connection = CONN
@@ -550,9 +556,9 @@ Public Class BarangKeluar
                     If triggerTambahBarangKeluar = False Then
                         triggerTambahBarangKeluar = True
                         dt_barang_keluar_fix.Columns.Add("id_barang_masuk", "IdBarangMasuk")
-                        dt_barang_keluar_fix.Columns(10).Visible = False
+                        dt_barang_keluar_fix.Columns(13).Visible = False
                     End If
-                    dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(10).Value = barangMasukHandle.id_barang_masuk
+                    dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(13).Value = barangMasukHandle.id_barang_masuk
 
                     dt_barang_keluar_fix.Update()
 
@@ -580,7 +586,10 @@ Public Class BarangKeluar
             'Dim checkDuplicate As Object = listBarangMasukHandle.Where(Function(x) x.id_barang_masuk = idBarangMasuk).FirstOrDefault()
             'If checkDuplicate Is Nothing Then
             Dim barang As Object = listBarangMasuk.Where(Function(x) x.id_barang_masuk = idBarangMasuk).FirstOrDefault()
+            If barang IsNot Nothing Then
+
                 listBarangMasukHandle.Add(barang)
+            End If
             'End If
 
         Next selectedItem
@@ -605,6 +614,19 @@ Public Class BarangKeluar
         For Each insertDataBarangKeluar As Object In listBarangKeluarFix
             Dim diskon = 0
             Dim idToko As String
+            Dim garansiType As String = ""
+            Dim garansi = "NULL"
+            Dim garansiExp = "NULL"
+
+            If insertDataBarangKeluar.garansi IsNot Nothing Then
+                garansi = insertDataBarangKeluar.garansi
+            End If
+            If insertDataBarangKeluar.garansi_type <> "" Then
+                garansiType = insertDataBarangKeluar.garansi_type
+            End If
+            If insertDataBarangKeluar.garansi_exp IsNot Nothing Then
+                garansiExp = insertDataBarangKeluar.garansi_exp
+            End If
             If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
                 idToko = MenuUtama.MenuStrip1.Tag.IdToko
             End If
@@ -617,9 +639,9 @@ Public Class BarangKeluar
             insertDataBarangKeluar.id_alasan = "NULL"
             insertDataBarangKeluar.judul = ""
             insertDataBarangKeluar.tgl_keluar = Me.date_tgl_keluar.Value
-            insertDataBarangKeluar.garansi = "NULL"
-            insertDataBarangKeluar.garansi_type = ""
-            insertDataBarangKeluar.garansi_exp = DateTime.Now.ToString
+            insertDataBarangKeluar.garansi = garansi
+            insertDataBarangKeluar.garansi_type = garansiType
+            insertDataBarangKeluar.garansi_exp = garansiExp
             insertDataBarangKeluar.id_client = Me.cmb_client.SelectedValue
             'insertDataBarangKeluar.jumlah = reader("jumlah"),
             insertDataBarangKeluar.harga_total = Me.txt_harga_total.Text
@@ -650,7 +672,7 @@ Public Class BarangKeluar
         listBarangKeluarFixHandle.Clear()
         Dim selectedIdBarangKeluar = dt_barang_keluar_fix.SelectedRows
         For Each selectedItem As DataGridViewRow In selectedIdBarangKeluar
-            Dim idBarangMasuk = selectedItem.Cells(10).Value
+            Dim idBarangMasuk = selectedItem.Cells(13).Value
             'Dim checkDuplicate As Object = listBarangKeluarFixHandle.Where(Function(x) x.id_barang_masuk = idBarangMasuk).FirstOrDefault()
             'If checkDuplicate Is Nothing Then
             Dim barang As Object = listBarangKeluarFix.Where(Function(x) x.id_barang_masuk = idBarangMasuk).FirstOrDefault()
@@ -713,9 +735,9 @@ Public Class BarangKeluar
             If triggerTambahBarangKeluar = False Then
                 triggerTambahBarangKeluar = True
                 dt_barang_keluar_fix.Columns.Add("id_barang_masuk", "IdBarangMasuk")
-                dt_barang_keluar_fix.Columns(10).Visible = False
+                dt_barang_keluar_fix.Columns(13).Visible = False
             End If
-            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(10).Value = barangKeluarFix.id_barang_masuk
+            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(13).Value = barangKeluarFix.id_barang_masuk
 
             dt_barang_keluar_fix.Update()
 
@@ -727,7 +749,7 @@ Public Class BarangKeluar
         Next
         If listBarangKeluarFix.Count = 0 Then
             triggerTambahBarangKeluar = False
-            dt_barang_keluar_fix.Columns.RemoveAt(10)
+            dt_barang_keluar_fix.Columns.RemoveAt(13)
         End If
     End Sub
 
@@ -773,9 +795,9 @@ Public Class BarangKeluar
                             If triggerTambahBarangKeluar = False Then
                                 triggerTambahBarangKeluar = True
                                 dt_barang_keluar_fix.Columns.Add("id_barang_masuk", "IdBarangMasuk")
-                                dt_barang_keluar_fix.Columns(10).Visible = False
+                                dt_barang_keluar_fix.Columns(13).Visible = False
                             End If
-                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(10).Value = barangKeluarFix.id_barang_masuk
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(13).Value = barangKeluarFix.id_barang_masuk
 
                             dt_barang_keluar_fix.Update()
 
@@ -794,7 +816,147 @@ Public Class BarangKeluar
                     MsgBox("harga Jual tidak boleh kosong")
                 End If
 
+            ElseIf selectedItem.ColumnIndex = 10 Then
+                If selectedItem.Value IsNot Nothing Then
+                    If System.Text.RegularExpressions.Regex.IsMatch(selectedItem.Value, "[  ^ 0-9]") Then
+                        listBarangKeluarFix(selectedItem.RowIndex).garansi = selectedItem.Value
 
+                        If listBarangKeluarFix(selectedItem.RowIndex).garansi_type <> "" Then
+                            If listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Hari" Then
+                                Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                            ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Bulan" Then
+                                Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                            ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Tahun" Then
+                                Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                            End If
+                        End If
+
+                        If index = 0 Then
+                            dt_barang_keluar_fix.Rows.Clear()
+                        End If
+
+
+                        For Each barangKeluarFix As Object In listBarangKeluarFix
+
+                                dt_barang_keluar_fix.Rows.Add(1)
+                                Dim isTest As String
+                            If barangKeluarFix.tested = 1 Then
+                                isTest = "Teruji"
+                            Else
+                                isTest = "Tidak Teruji"
+                            End If
+
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(0).Value = barangKeluarFix.nama_jenis
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(1).Value = barangKeluarFix.nama_tipe
+                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(2).Value = barangKeluarFix.serial_number
+                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(3).Value = barangKeluarFix.nama_kondisi
+                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(4).Value = isTest
+                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(5).Value = barangKeluarFix.nama_lokasi
+                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(6).Value = barangKeluarFix.detail_lokasi
+                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(7).Value = barangKeluarFix.catatan
+                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(8).Value = barangKeluarFix.nama_status
+                                dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(9).Value = barangKeluarFix.harga_jual
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(10).Value = barangKeluarFix.garansi
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(11).Value = barangKeluarFix.garansi_type
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(12).Value = barangKeluarFix.garansi_exp
+
+                            If triggerTambahBarangKeluar = False Then
+                                triggerTambahBarangKeluar = True
+                                dt_barang_keluar_fix.Columns.Add("id_barang_masuk", "IdBarangMasuk")
+                                dt_barang_keluar_fix.Columns(13).Visible = False
+                            End If
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(13).Value = barangKeluarFix.id_barang_masuk
+
+                                dt_barang_keluar_fix.Update()
+
+                                'listBarangKeluarFix.Add(barangMasukHandle)
+                                index = index + 1
+
+                            Next
+                        ElseIf selectedItem.Value = "" Then
+                        'MsgBox("harga Jual Tidak Boleh Kosong")
+                    Else
+                        MsgBox("garansi hanya bisa number")
+                    End If
+                Else
+                    MsgBox("garansi tidak boleh kosong")
+                End If
+            ElseIf selectedItem.ColumnIndex = 11 Then
+                If selectedItem.Value IsNot Nothing Then
+                    If selectedItem.Value <> "" Then
+                        listBarangKeluarFix(selectedItem.RowIndex).garansi_type = selectedItem.Value
+
+                        If listBarangKeluarFix(selectedItem.RowIndex).garansi IsNot Nothing Then
+                            If listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Hari" Then
+                                Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                            ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Bulan" Then
+                                Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                            ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Tahun" Then
+                                Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                            End If
+                        End If
+                        If index = 0 Then
+                            dt_barang_keluar_fix.Rows.Clear()
+                        End If
+
+
+                        For Each barangKeluarFix As Object In listBarangKeluarFix
+
+                            dt_barang_keluar_fix.Rows.Add(1)
+                            Dim isTest As String
+                            If barangKeluarFix.tested = 1 Then
+                                isTest = "Teruji"
+                            Else
+                                isTest = "Tidak Teruji"
+                            End If
+
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(0).Value = barangKeluarFix.nama_jenis
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(1).Value = barangKeluarFix.nama_tipe
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(2).Value = barangKeluarFix.serial_number
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(3).Value = barangKeluarFix.nama_kondisi
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(4).Value = isTest
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(5).Value = barangKeluarFix.nama_lokasi
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(6).Value = barangKeluarFix.detail_lokasi
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(7).Value = barangKeluarFix.catatan
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(8).Value = barangKeluarFix.nama_status
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(9).Value = barangKeluarFix.harga_jual
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(10).Value = barangKeluarFix.garansi
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(11).Value = barangKeluarFix.garansi_type
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(12).Value = barangKeluarFix.garansi_exp
+
+                            If triggerTambahBarangKeluar = False Then
+                                triggerTambahBarangKeluar = True
+                                dt_barang_keluar_fix.Columns.Add("id_barang_masuk", "IdBarangMasuk")
+                                dt_barang_keluar_fix.Columns(13).Visible = False
+                            End If
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(13).Value = barangKeluarFix.id_barang_masuk
+
+                            dt_barang_keluar_fix.Update()
+
+                            'listBarangKeluarFix.Add(barangMasukHandle)
+                            index = index + 1
+
+                        Next
+                    ElseIf selectedItem.Value = "" Then
+                        'MsgBox("harga Jual Tidak Boleh Kosong")
+                    Else
+                        'MsgBox("harga Jual hanya bisa number")
+                    End If
+                Else
+                    'MsgBox("harga Jual tidak boleh kosong")
+                End If
             End If
         Next selectedItem
     End Sub
