@@ -418,3 +418,25 @@ E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Buffe
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Memory.xml
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Numerics.Vectors.xml
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Buffers.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Memory.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Buffers.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Memory.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.extend_rental.resources
