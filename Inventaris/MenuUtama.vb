@@ -126,4 +126,12 @@ Public Class MenuUtama
     Private Sub BarangKeluarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BarangKeluarToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub ReplacementBarangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReplacementBarangToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ExtendRentalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExtendRentalToolStripMenuItem.Click
+        extend_rental.Show()
+    End Sub
 End Class

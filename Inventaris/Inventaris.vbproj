@@ -203,10 +203,16 @@
     <Compile Include="Form3.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form6.Designer.vb">
-      <DependentUpon>Form6.vb</DependentUpon>
+    <Compile Include="Laporan_Barang_Masuk.Designer.vb">
+      <DependentUpon>Laporan_Barang_Masuk.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form6.vb">
+    <Compile Include="Laporan_Barang_Masuk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="extend_rental.Designer.vb">
+      <DependentUpon>extend_rental.vb</DependentUpon>
+    </Compile>
+    <Compile Include="extend_rental.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Instalasi.Designer.vb">
@@ -341,8 +347,11 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.vb</DependentUpon>
+    <EmbeddedResource Include="Laporan_Barang_Masuk.resx">
+      <DependentUpon>Laporan_Barang_Masuk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="extend_rental.resx">
+      <DependentUpon>extend_rental.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instalasi.resx">
       <DependentUpon>Instalasi.vb</DependentUpon>
