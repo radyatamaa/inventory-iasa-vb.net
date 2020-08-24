@@ -37,11 +37,11 @@ Partial Class invoice_cetak
         Me.created_by = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.created_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btn_tampil = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.date_tgl_keluar1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.date_tgl_keluar2 = New System.Windows.Forms.DateTimePicker()
         Me.btn_tampil_list = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dt_transaksi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -167,17 +167,6 @@ Partial Class invoice_cetak
         Me.btn_tampil.Text = "Tampil"
         Me.btn_tampil.UseVisualStyleBackColor = False
         '
-        'Label9
-        '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(11, 24)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(85, 13)
-        Me.Label9.TabIndex = 59
-        Me.Label9.Text = "Tanggal Keluar :"
-        '
         'date_tgl_keluar1
         '
         Me.date_tgl_keluar1.Location = New System.Drawing.Point(110, 20)
@@ -185,17 +174,6 @@ Partial Class invoice_cetak
         Me.date_tgl_keluar1.Name = "date_tgl_keluar1"
         Me.date_tgl_keluar1.Size = New System.Drawing.Size(183, 20)
         Me.date_tgl_keluar1.TabIndex = 58
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(297, 24)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(23, 13)
-        Me.Label1.TabIndex = 60
-        Me.Label1.Text = "s/d"
         '
         'date_tgl_keluar2
         '
@@ -219,15 +197,39 @@ Partial Class invoice_cetak
         Me.btn_tampil_list.Text = "Tampilkan List"
         Me.btn_tampil_list.UseVisualStyleBackColor = False
         '
+        'Label9
+        '
+        Me.Label9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(27, 24)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(79, 13)
+        Me.Label9.TabIndex = 63
+        Me.Label9.Text = "Tanggal Keluar"
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(297, 24)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(23, 13)
+        Me.Label1.TabIndex = 64
+        Me.Label1.Text = "s/d"
+        '
         'invoice_cetak
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(977, 530)
-        Me.Controls.Add(Me.btn_tampil_list)
-        Me.Controls.Add(Me.date_tgl_keluar2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.btn_tampil_list)
+        Me.Controls.Add(Me.date_tgl_keluar2)
         Me.Controls.Add(Me.date_tgl_keluar1)
         Me.Controls.Add(Me.btn_tampil)
         Me.Controls.Add(Me.dt_transaksi)
@@ -256,9 +258,9 @@ Partial Class invoice_cetak
     Friend WithEvents created_by As DataGridViewTextBoxColumn
     Friend WithEvents created_date As DataGridViewTextBoxColumn
     Friend WithEvents btn_tampil As Button
-    Friend WithEvents Label9 As Label
     Friend WithEvents date_tgl_keluar1 As DateTimePicker
-    Friend WithEvents Label1 As Label
     Friend WithEvents date_tgl_keluar2 As DateTimePicker
     Friend WithEvents btn_tampil_list As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label1 As Label
 End Class
