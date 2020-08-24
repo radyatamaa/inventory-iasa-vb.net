@@ -13,6 +13,7 @@ Public Class MasterKondisi
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
     Dim kondisiId As Integer
+    Public Property UserInfo As Object
 
     Sub VBnetSQLSeverConnection()
         Try
@@ -30,8 +31,8 @@ Public Class MasterKondisi
     Function Simpankondisi(kondisi As Object) As Integer
         Dim userlogin As String = ""
         Dim idkondisi As Integer
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            userlogin = MenuUtama.MenuStrip1.Tag.Username
+        If UserInfo IsNot Nothing Then
+            userlogin = UserInfo.Username
         End If
         If kondisi.id_kondisi <> 0 Then
             Try
@@ -155,8 +156,8 @@ Public Class MasterKondisi
     Function Deletekondisi(idkondisi As Integer)
         Try
             Dim userlogin As String = ""
-            If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-                userlogin = MenuUtama.MenuStrip1.Tag.Username
+            If UserInfo IsNot Nothing Then
+                userlogin = UserInfo.Username
             End If
             Dim queryTblkondisi As String = "UPDATE tbl_kondisi SET 
                                     is_active = 0 ,
@@ -307,6 +308,7 @@ Public Class MasterKondisi
     End Sub
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Close()
     End Sub

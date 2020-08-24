@@ -15,6 +15,7 @@ Public Class MasterLokasi
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
     Dim lokasiId As Integer
+    Public Property UserInfo As Object
 
     Sub VBnetSQLSeverConnection()
         Try
@@ -32,8 +33,8 @@ Public Class MasterLokasi
     Function SimpanLokasi(lokasi As Object) As Integer
         Dim userlogin As String = ""
         Dim idlokasi As Integer
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            userlogin = MenuUtama.MenuStrip1.Tag.Username
+        If UserInfo IsNot Nothing Then
+            userlogin = UserInfo.Username
         End If
         If lokasi.id_lokasi <> 0 Then
             Try
@@ -162,8 +163,8 @@ Public Class MasterLokasi
     Function Deletelokasi(idlokasi As Integer)
         Try
             Dim userlogin As String = ""
-            If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-                userlogin = MenuUtama.MenuStrip1.Tag.Username
+            If UserInfo IsNot Nothing Then
+                userlogin = UserInfo.Username
             End If
             Dim queryTbllokasi As String = "UPDATE tbl_lokasi SET 
                                     is_active = 0 ,
@@ -244,6 +245,7 @@ Public Class MasterLokasi
     End Sub
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Close()
     End Sub

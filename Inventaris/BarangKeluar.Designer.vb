@@ -47,20 +47,6 @@ Partial Class BarangKeluar
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btn_tambha = New System.Windows.Forms.Button()
         Me.dt_barang_keluar_fix = New System.Windows.Forms.DataGridView()
-        Me.jenis_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipe_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.serial_number2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kondisi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tested2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.detail_lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.catatan2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.status2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.harga_jual2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tgl_akhir_garansi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.garansi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.garansi_type = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.garansi_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_kdpos = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_kota = New System.Windows.Forms.TextBox()
@@ -83,6 +69,19 @@ Partial Class BarangKeluar
         Me.btn_invoice = New System.Windows.Forms.Button()
         Me.btn_kwitansi = New System.Windows.Forms.Button()
         Me.btn_tanda_terima = New System.Windows.Forms.Button()
+        Me.jenis_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipe_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.serial_number2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kondisi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tested2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.detail_lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.catatan2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.status2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.harga_jual2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.garansi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.garansi_type = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.garansi_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -336,7 +335,7 @@ Partial Class BarangKeluar
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_barang_keluar_fix.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dt_barang_keluar_fix.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dt_barang_keluar_fix.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang2, Me.tipe_barang2, Me.serial_number2, Me.kondisi2, Me.tested2, Me.lokasi2, Me.detail_lokasi2, Me.catatan2, Me.status2, Me.harga_jual2, Me.tgl_akhir_garansi, Me.garansi, Me.garansi_type, Me.garansi_exp})
+        Me.dt_barang_keluar_fix.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang2, Me.tipe_barang2, Me.serial_number2, Me.kondisi2, Me.tested2, Me.lokasi2, Me.detail_lokasi2, Me.catatan2, Me.status2, Me.harga_jual2, Me.garansi, Me.garansi_type, Me.garansi_exp})
         Me.dt_barang_keluar_fix.GridColor = System.Drawing.SystemColors.ActiveBorder
         Me.dt_barang_keluar_fix.Location = New System.Drawing.Point(2, 395)
         Me.dt_barang_keluar_fix.Margin = New System.Windows.Forms.Padding(2)
@@ -345,99 +344,6 @@ Partial Class BarangKeluar
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
         Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1024, 119)
         Me.dt_barang_keluar_fix.TabIndex = 55
-        '
-        'jenis_barang2
-        '
-        Me.jenis_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.jenis_barang2.HeaderText = "Jenis Barang"
-        Me.jenis_barang2.MinimumWidth = 70
-        Me.jenis_barang2.Name = "jenis_barang2"
-        '
-        'tipe_barang2
-        '
-        Me.tipe_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.tipe_barang2.HeaderText = "Tipe Barang"
-        Me.tipe_barang2.MinimumWidth = 70
-        Me.tipe_barang2.Name = "tipe_barang2"
-        '
-        'serial_number2
-        '
-        Me.serial_number2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.serial_number2.HeaderText = "Serial Number"
-        Me.serial_number2.MinimumWidth = 70
-        Me.serial_number2.Name = "serial_number2"
-        '
-        'kondisi2
-        '
-        Me.kondisi2.HeaderText = "Kondisi"
-        Me.kondisi2.MinimumWidth = 6
-        Me.kondisi2.Name = "kondisi2"
-        Me.kondisi2.Width = 125
-        '
-        'tested2
-        '
-        Me.tested2.HeaderText = "Tested"
-        Me.tested2.MinimumWidth = 6
-        Me.tested2.Name = "tested2"
-        Me.tested2.Width = 125
-        '
-        'lokasi2
-        '
-        Me.lokasi2.HeaderText = "Lokasi"
-        Me.lokasi2.MinimumWidth = 6
-        Me.lokasi2.Name = "lokasi2"
-        Me.lokasi2.Width = 125
-        '
-        'detail_lokasi2
-        '
-        Me.detail_lokasi2.HeaderText = "Detail Lokasi"
-        Me.detail_lokasi2.MinimumWidth = 6
-        Me.detail_lokasi2.Name = "detail_lokasi2"
-        Me.detail_lokasi2.Width = 125
-        '
-        'catatan2
-        '
-        Me.catatan2.HeaderText = "Catatan"
-        Me.catatan2.MinimumWidth = 6
-        Me.catatan2.Name = "catatan2"
-        Me.catatan2.Width = 125
-        '
-        'status2
-        '
-        Me.status2.HeaderText = "Status"
-        Me.status2.MinimumWidth = 6
-        Me.status2.Name = "status2"
-        Me.status2.Width = 125
-        '
-        'harga_jual2
-        '
-        Me.harga_jual2.HeaderText = "Harga Jual"
-        Me.harga_jual2.MinimumWidth = 6
-        Me.harga_jual2.Name = "harga_jual2"
-        Me.harga_jual2.Width = 125
-        '
-        'tgl_akhir_garansi
-        '
-        Me.tgl_akhir_garansi.HeaderText = "Tanggal Akhir Garansi"
-        Me.tgl_akhir_garansi.MinimumWidth = 6
-        Me.tgl_akhir_garansi.Name = "tgl_akhir_garansi"
-        Me.tgl_akhir_garansi.Width = 125
-        '
-        'garansi
-        '
-        Me.garansi.HeaderText = "Periode Garansi"
-        Me.garansi.Name = "garansi"
-        '
-        'garansi_type
-        '
-        Me.garansi_type.HeaderText = "Tipe Garansi"
-        Me.garansi_type.Items.AddRange(New Object() {"Hari", "Bulan", "Tahun"})
-        Me.garansi_type.Name = "garansi_type"
-        '
-        'garansi_exp
-        '
-        Me.garansi_exp.HeaderText = "Tanggal Akhir Garansi"
-        Me.garansi_exp.Name = "garansi_exp"
         '
         'txt_kdpos
         '
@@ -667,6 +573,92 @@ Partial Class BarangKeluar
         Me.btn_tanda_terima.Text = "Cetak Tanda Terima"
         Me.btn_tanda_terima.UseVisualStyleBackColor = True
         '
+        'jenis_barang2
+        '
+        Me.jenis_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.jenis_barang2.HeaderText = "Jenis Barang"
+        Me.jenis_barang2.MinimumWidth = 70
+        Me.jenis_barang2.Name = "jenis_barang2"
+        '
+        'tipe_barang2
+        '
+        Me.tipe_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tipe_barang2.HeaderText = "Tipe Barang"
+        Me.tipe_barang2.MinimumWidth = 70
+        Me.tipe_barang2.Name = "tipe_barang2"
+        '
+        'serial_number2
+        '
+        Me.serial_number2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.serial_number2.HeaderText = "Serial Number"
+        Me.serial_number2.MinimumWidth = 70
+        Me.serial_number2.Name = "serial_number2"
+        '
+        'kondisi2
+        '
+        Me.kondisi2.HeaderText = "Kondisi"
+        Me.kondisi2.MinimumWidth = 6
+        Me.kondisi2.Name = "kondisi2"
+        Me.kondisi2.Width = 125
+        '
+        'tested2
+        '
+        Me.tested2.HeaderText = "Tested"
+        Me.tested2.MinimumWidth = 6
+        Me.tested2.Name = "tested2"
+        Me.tested2.Width = 125
+        '
+        'lokasi2
+        '
+        Me.lokasi2.HeaderText = "Lokasi"
+        Me.lokasi2.MinimumWidth = 6
+        Me.lokasi2.Name = "lokasi2"
+        Me.lokasi2.Width = 125
+        '
+        'detail_lokasi2
+        '
+        Me.detail_lokasi2.HeaderText = "Detail Lokasi"
+        Me.detail_lokasi2.MinimumWidth = 6
+        Me.detail_lokasi2.Name = "detail_lokasi2"
+        Me.detail_lokasi2.Width = 125
+        '
+        'catatan2
+        '
+        Me.catatan2.HeaderText = "Catatan"
+        Me.catatan2.MinimumWidth = 6
+        Me.catatan2.Name = "catatan2"
+        Me.catatan2.Width = 125
+        '
+        'status2
+        '
+        Me.status2.HeaderText = "Status"
+        Me.status2.MinimumWidth = 6
+        Me.status2.Name = "status2"
+        Me.status2.Width = 125
+        '
+        'harga_jual2
+        '
+        Me.harga_jual2.HeaderText = "Harga Jual"
+        Me.harga_jual2.MinimumWidth = 6
+        Me.harga_jual2.Name = "harga_jual2"
+        Me.harga_jual2.Width = 125
+        '
+        'garansi
+        '
+        Me.garansi.HeaderText = "Periode Garansi"
+        Me.garansi.Name = "garansi"
+        '
+        'garansi_type
+        '
+        Me.garansi_type.HeaderText = "Tipe Garansi"
+        Me.garansi_type.Items.AddRange(New Object() {"Hari", "Bulan", "Tahun"})
+        Me.garansi_type.Name = "garansi_type"
+        '
+        'garansi_exp
+        '
+        Me.garansi_exp.HeaderText = "Tanggal Akhir Garansi"
+        Me.garansi_exp.Name = "garansi_exp"
+        '
         'BarangKeluar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -756,7 +748,6 @@ Partial Class BarangKeluar
     Friend WithEvents catatan2 As DataGridViewTextBoxColumn
     Friend WithEvents status2 As DataGridViewTextBoxColumn
     Friend WithEvents harga_jual2 As DataGridViewTextBoxColumn
-    Friend WithEvents tgl_akhir_garansi As DataGridViewTextBoxColumn
     Friend WithEvents garansi As DataGridViewTextBoxColumn
     Friend WithEvents garansi_type As DataGridViewComboBoxColumn
     Friend WithEvents garansi_exp As DataGridViewTextBoxColumn

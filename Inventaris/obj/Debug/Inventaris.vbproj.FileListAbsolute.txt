@@ -315,3 +315,130 @@ C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.exe.config
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Laporan_Barang_Masuk.resources
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.exe.config
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Laporan_Barang_Masuk.resources
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.ReportViewer.Common.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.ReportViewer.Design.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\EnvDTE.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\stdole.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\EnvDTE80.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Build.Tasks.Core.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\VSLangProj.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.Shell.Interop.11.0.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.Shell.Interop.10.0.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\VSLangProj80.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.Debugger.Interop.11.0.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.MSXML.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Build.Utilities.Core.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Build.Framework.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\VSLangProj2.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Options.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Primitives.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Buffers.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.ComponentModel.Annotations.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Memory.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Numerics.Vectors.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Options.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Primitives.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Buffers.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Memory.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Numerics.Vectors.xml
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Buffers.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Memory.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Buffers.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Memory.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.extend_rental.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.invoice_lap.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.invoice_cetak.resources

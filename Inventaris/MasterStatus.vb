@@ -13,6 +13,7 @@ Public Class MasterStatus
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
     Dim statusId As Integer
+    Public Property UserInfo As Object
     Sub VBnetSQLSeverConnection()
         Try
             'SQL connection script to SQL Server Instance
@@ -29,8 +30,8 @@ Public Class MasterStatus
     Function Simpanstatus(status As Object) As Integer
         Dim userlogin As String = ""
         Dim idstatus As Integer
-        If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-            userlogin = MenuUtama.MenuStrip1.Tag.Username
+        If UserInfo IsNot Nothing Then
+            userlogin = UserInfo.Username
         End If
         If status.id_status_barang <> 0 Then
             Try
@@ -154,8 +155,8 @@ Public Class MasterStatus
     Function Deletestatus(idstatus As Integer)
         Try
             Dim userlogin As String = ""
-            If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-                userlogin = MenuUtama.MenuStrip1.Tag.Username
+            If UserInfo IsNot Nothing Then
+                userlogin = UserInfo.Username
             End If
             Dim queryTblstatus As String = "UPDATE tbl_status_barang SET 
                                     is_active = 0 ,
@@ -310,6 +311,7 @@ Public Class MasterStatus
     End Sub
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Close()
     End Sub
