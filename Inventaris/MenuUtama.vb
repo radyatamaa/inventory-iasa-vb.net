@@ -134,4 +134,8 @@ Public Class MenuUtama
     Private Sub ExtendRentalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExtendRentalToolStripMenuItem.Click
         extend_rental.Show()
     End Sub
+
+    Private Sub CetakInvoiceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CetakInvoiceToolStripMenuItem.Click
+        invoice_cetak.Show()
+    End Sub
 End Class
