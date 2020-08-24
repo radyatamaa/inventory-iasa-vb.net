@@ -5,6 +5,7 @@ Imports System.Text
 Imports Microsoft.Reporting.WinForms
 
 Public Class invoice_cetak
+    Public Property KdTransaksi As String
     Public Property UserInfo As Object
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
@@ -41,7 +42,39 @@ Public Class invoice_cetak
             Dim da As New SqlDataAdapter
 
             CONN.Open()
-            da.SelectCommand = New SqlCommand(" select id_transaksi, kd_transaksi_keluar,qty,nama_jenis,nama_tipe,serial_number,nama_jenis_tipe,nama_barang,harga_jual,harga_total,diskon,harga_akhir,id_status_barang,nama_status,nama_client, alamat_pengiriman,kota_pengiriman,kdpos_pengiriman,tlp_client, nama_toko, alamat_toko,kota_toko,kdpos_toko,tlp_toko,nama_owner,norek_owner,tlp_owner from view_invoice where kd_transaksi_keluar = 'GG75N2Q66L28ADZ0W' ", CONN)
+            Dim query As String = "select id_transaksi, 
+                                            kd_transaksi_keluar,
+                                            qty,
+                                            nama_jenis,
+                                            nama_tipe,
+                                            serial_number,
+                                            nama_jenis_tipe,
+                                            nama_barang,
+                                            harga_jual,
+                                            harga_total,
+                                            diskon,
+                                            harga_akhir,
+                                            id_status_barang,
+                                            nama_status,
+                                            nama_client, 
+                                            alamat_pengiriman,
+                                            kota_pengiriman,
+                                            kdpos_pengiriman,
+                                            tlp_client, 
+                                            nama_toko, 
+                                            alamat_toko,
+                                            kota_toko,
+                                            kdpos_toko,
+                                            tlp_toko,
+                                            nama_owner,
+                                            norek_owner,
+                                            tlp_owner 
+                                  from view_invoice "
+
+            If KdTransaksi IsNot Nothing And KdTransaksi <> "" Then
+                query = query + " where kd_transaksi_keluar = '" + KdTransaksi + "' "
+            End If
+            da.SelectCommand = New SqlCommand(query, CONN)
             da.Fill(ds.Tables("DataInvoice"))
             CONN.Close()
 
@@ -54,5 +87,9 @@ Public Class invoice_cetak
             'CONN.Close()
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub ReportViewer1_Load(sender As Object, e As EventArgs) Handles ReportViewer1.Load
+
     End Sub
 End Class

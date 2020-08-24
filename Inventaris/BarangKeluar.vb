@@ -620,7 +620,7 @@ Public Class BarangKeluar
     End Sub
 
     Private Sub btn_invoice_Click(sender As Object, e As EventArgs) Handles btn_invoice.Click
-        GenerateWord(1)
+        invoice_cetak.Show()
     End Sub
 
     Private Sub btn_kwitansi_Click(sender As Object, e As EventArgs) Handles btn_kwitansi.Click
@@ -682,6 +682,7 @@ Public Class BarangKeluar
         dt_barang_keluar_fix.Rows.Clear()
         listBarangKeluarFix.Clear()
         listBarangMasuk.Clear()
+        invoice_cetak.KdTransaksi = Me.txt_kd_transaksi.Text
         Dim kdTransaksi As String = RandomString(New Random)
         Me.txt_kd_transaksi.Text = kdTransaksi
         Me.txt_harga_total.Text = 0
