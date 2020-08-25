@@ -27,6 +27,7 @@ Partial Class MasterDataToko
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btn_simpan = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.logo_toko = New System.Windows.Forms.PictureBox()
         Me.pict_logo = New System.Windows.Forms.PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btn_kembali = New System.Windows.Forms.Button()
@@ -61,17 +62,16 @@ Partial Class MasterDataToko
         Me.hapus_data_toko = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.logo_toko = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
+        CType(Me.logo_toko, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.data_master_toko, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.logo_toko, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txt_nama_toko
         '
         Me.txt_nama_toko.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_nama_toko.Location = New System.Drawing.Point(110, 152)
+        Me.txt_nama_toko.Location = New System.Drawing.Point(110, 150)
         Me.txt_nama_toko.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_nama_toko.Name = "txt_nama_toko"
         Me.txt_nama_toko.Size = New System.Drawing.Size(178, 20)
@@ -81,7 +81,7 @@ Partial Class MasterDataToko
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(14, 152)
+        Me.Label4.Location = New System.Drawing.Point(14, 150)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(63, 13)
@@ -139,6 +139,15 @@ Partial Class MasterDataToko
         Me.Panel2.Size = New System.Drawing.Size(1025, 490)
         Me.Panel2.TabIndex = 16
         '
+        'logo_toko
+        '
+        Me.logo_toko.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.logo_toko.Location = New System.Drawing.Point(934, 152)
+        Me.logo_toko.Name = "logo_toko"
+        Me.logo_toko.Size = New System.Drawing.Size(170, 124)
+        Me.logo_toko.TabIndex = 61
+        Me.logo_toko.TabStop = False
+        '
         'pict_logo
         '
         Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
@@ -188,7 +197,7 @@ Partial Class MasterDataToko
         'txt_norek_owner
         '
         Me.txt_norek_owner.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_norek_owner.Location = New System.Drawing.Point(739, 222)
+        Me.txt_norek_owner.Location = New System.Drawing.Point(739, 220)
         Me.txt_norek_owner.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_norek_owner.Name = "txt_norek_owner"
         Me.txt_norek_owner.Size = New System.Drawing.Size(178, 20)
@@ -198,7 +207,7 @@ Partial Class MasterDataToko
         '
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(658, 222)
+        Me.Label8.Location = New System.Drawing.Point(658, 220)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(70, 13)
@@ -208,7 +217,7 @@ Partial Class MasterDataToko
         'txt_tlp_owner
         '
         Me.txt_tlp_owner.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_tlp_owner.Location = New System.Drawing.Point(739, 184)
+        Me.txt_tlp_owner.Location = New System.Drawing.Point(739, 182)
         Me.txt_tlp_owner.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_tlp_owner.Name = "txt_tlp_owner"
         Me.txt_tlp_owner.Size = New System.Drawing.Size(178, 20)
@@ -218,7 +227,7 @@ Partial Class MasterDataToko
         '
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(658, 184)
+        Me.Label9.Location = New System.Drawing.Point(658, 182)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(80, 13)
@@ -228,7 +237,7 @@ Partial Class MasterDataToko
         'txt_nama_owner
         '
         Me.txt_nama_owner.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_nama_owner.Location = New System.Drawing.Point(739, 152)
+        Me.txt_nama_owner.Location = New System.Drawing.Point(739, 150)
         Me.txt_nama_owner.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_nama_owner.Name = "txt_nama_owner"
         Me.txt_nama_owner.Size = New System.Drawing.Size(178, 20)
@@ -238,7 +247,7 @@ Partial Class MasterDataToko
         '
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(658, 152)
+        Me.Label10.Location = New System.Drawing.Point(658, 150)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(69, 13)
@@ -248,7 +257,7 @@ Partial Class MasterDataToko
         'txt_logo_toko
         '
         Me.txt_logo_toko.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_logo_toko.Location = New System.Drawing.Point(430, 222)
+        Me.txt_logo_toko.Location = New System.Drawing.Point(430, 220)
         Me.txt_logo_toko.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_logo_toko.Name = "txt_logo_toko"
         Me.txt_logo_toko.Size = New System.Drawing.Size(178, 20)
@@ -258,7 +267,7 @@ Partial Class MasterDataToko
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(328, 222)
+        Me.Label5.Location = New System.Drawing.Point(328, 220)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(59, 13)
@@ -268,7 +277,7 @@ Partial Class MasterDataToko
         'txt_tlp_toko
         '
         Me.txt_tlp_toko.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_tlp_toko.Location = New System.Drawing.Point(430, 184)
+        Me.txt_tlp_toko.Location = New System.Drawing.Point(430, 182)
         Me.txt_tlp_toko.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_tlp_toko.Name = "txt_tlp_toko"
         Me.txt_tlp_toko.Size = New System.Drawing.Size(178, 20)
@@ -278,7 +287,7 @@ Partial Class MasterDataToko
         '
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(328, 184)
+        Me.Label6.Location = New System.Drawing.Point(328, 182)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(74, 13)
@@ -288,7 +297,7 @@ Partial Class MasterDataToko
         'txt_kdpos_toko
         '
         Me.txt_kdpos_toko.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kdpos_toko.Location = New System.Drawing.Point(430, 152)
+        Me.txt_kdpos_toko.Location = New System.Drawing.Point(430, 150)
         Me.txt_kdpos_toko.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_kdpos_toko.Name = "txt_kdpos_toko"
         Me.txt_kdpos_toko.Size = New System.Drawing.Size(178, 20)
@@ -298,7 +307,7 @@ Partial Class MasterDataToko
         '
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(328, 152)
+        Me.Label7.Location = New System.Drawing.Point(328, 150)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(77, 13)
@@ -308,7 +317,7 @@ Partial Class MasterDataToko
         'txt_kota_toko
         '
         Me.txt_kota_toko.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kota_toko.Location = New System.Drawing.Point(110, 222)
+        Me.txt_kota_toko.Location = New System.Drawing.Point(110, 220)
         Me.txt_kota_toko.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_kota_toko.Name = "txt_kota_toko"
         Me.txt_kota_toko.Size = New System.Drawing.Size(178, 20)
@@ -318,7 +327,7 @@ Partial Class MasterDataToko
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(14, 222)
+        Me.Label3.Location = New System.Drawing.Point(14, 220)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(57, 13)
@@ -328,7 +337,7 @@ Partial Class MasterDataToko
         'txt_alamat_toko
         '
         Me.txt_alamat_toko.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_alamat_toko.Location = New System.Drawing.Point(110, 184)
+        Me.txt_alamat_toko.Location = New System.Drawing.Point(110, 182)
         Me.txt_alamat_toko.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_alamat_toko.Name = "txt_alamat_toko"
         Me.txt_alamat_toko.Size = New System.Drawing.Size(178, 20)
@@ -338,7 +347,7 @@ Partial Class MasterDataToko
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(14, 184)
+        Me.Label2.Location = New System.Drawing.Point(14, 182)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(67, 13)
@@ -358,7 +367,7 @@ Partial Class MasterDataToko
         Me.data_master_toko.Name = "data_master_toko"
         Me.data_master_toko.RowHeadersWidth = 51
         Me.data_master_toko.RowTemplate.Height = 24
-        Me.data_master_toko.Size = New System.Drawing.Size(1010, 206)
+        Me.data_master_toko.Size = New System.Drawing.Size(1127, 206)
         Me.data_master_toko.TabIndex = 16
         '
         'id
@@ -461,15 +470,6 @@ Partial Class MasterDataToko
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'logo_toko
-        '
-        Me.logo_toko.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.logo_toko.Location = New System.Drawing.Point(934, 152)
-        Me.logo_toko.Name = "logo_toko"
-        Me.logo_toko.Size = New System.Drawing.Size(170, 124)
-        Me.logo_toko.TabIndex = 61
-        Me.logo_toko.TabStop = False
-        '
         'MasterDataToko
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -485,9 +485,9 @@ Partial Class MasterDataToko
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.logo_toko, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.data_master_toko, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.logo_toko, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

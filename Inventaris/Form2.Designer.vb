@@ -23,15 +23,15 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lbltk3 = New System.Windows.Forms.Label()
+        Me.lbltk2 = New System.Windows.Forms.Label()
+        Me.lbltk1 = New System.Windows.Forms.Label()
+        Me.lbltk0 = New System.Windows.Forms.Label()
         Me.btntk3 = New System.Windows.Forms.Button()
         Me.btntk1 = New System.Windows.Forms.Button()
         Me.btntk2 = New System.Windows.Forms.Button()
         Me.btntk0 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lbltk0 = New System.Windows.Forms.Label()
-        Me.lbltk1 = New System.Windows.Forms.Label()
-        Me.lbltk2 = New System.Windows.Forms.Label()
-        Me.lbltk3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -53,6 +53,42 @@ Partial Class Form2
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(476, 337)
         Me.Panel1.TabIndex = 0
+        '
+        'lbltk3
+        '
+        Me.lbltk3.Location = New System.Drawing.Point(253, 306)
+        Me.lbltk3.Name = "lbltk3"
+        Me.lbltk3.Size = New System.Drawing.Size(151, 14)
+        Me.lbltk3.TabIndex = 8
+        Me.lbltk3.Text = "lbltk3"
+        Me.lbltk3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbltk2
+        '
+        Me.lbltk2.Location = New System.Drawing.Point(71, 306)
+        Me.lbltk2.Name = "lbltk2"
+        Me.lbltk2.Size = New System.Drawing.Size(151, 14)
+        Me.lbltk2.TabIndex = 7
+        Me.lbltk2.Text = "lbltk2"
+        Me.lbltk2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbltk1
+        '
+        Me.lbltk1.Location = New System.Drawing.Point(253, 158)
+        Me.lbltk1.Name = "lbltk1"
+        Me.lbltk1.Size = New System.Drawing.Size(151, 14)
+        Me.lbltk1.TabIndex = 6
+        Me.lbltk1.Text = "lbltk1"
+        Me.lbltk1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbltk0
+        '
+        Me.lbltk0.Location = New System.Drawing.Point(71, 158)
+        Me.lbltk0.Name = "lbltk0"
+        Me.lbltk0.Size = New System.Drawing.Size(151, 14)
+        Me.lbltk0.TabIndex = 5
+        Me.lbltk0.Text = "lbltk0"
+        Me.lbltk0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btntk3
         '
@@ -82,7 +118,6 @@ Partial Class Form2
         Me.btntk2.Name = "btntk2"
         Me.btntk2.Size = New System.Drawing.Size(148, 116)
         Me.btntk2.TabIndex = 2
-        Me.btntk2.Text = "Button2"
         Me.btntk2.UseVisualStyleBackColor = True
         '
         'btntk0
@@ -105,42 +140,6 @@ Partial Class Form2
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Pilih Toko"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lbltk0
-        '
-        Me.lbltk0.Location = New System.Drawing.Point(71, 158)
-        Me.lbltk0.Name = "lbltk0"
-        Me.lbltk0.Size = New System.Drawing.Size(151, 14)
-        Me.lbltk0.TabIndex = 5
-        Me.lbltk0.Text = "lbltk0"
-        Me.lbltk0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lbltk1
-        '
-        Me.lbltk1.Location = New System.Drawing.Point(253, 158)
-        Me.lbltk1.Name = "lbltk1"
-        Me.lbltk1.Size = New System.Drawing.Size(151, 14)
-        Me.lbltk1.TabIndex = 6
-        Me.lbltk1.Text = "lbltk1"
-        Me.lbltk1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lbltk2
-        '
-        Me.lbltk2.Location = New System.Drawing.Point(71, 306)
-        Me.lbltk2.Name = "lbltk2"
-        Me.lbltk2.Size = New System.Drawing.Size(151, 14)
-        Me.lbltk2.TabIndex = 7
-        Me.lbltk2.Text = "lbltk2"
-        Me.lbltk2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lbltk3
-        '
-        Me.lbltk3.Location = New System.Drawing.Point(253, 306)
-        Me.lbltk3.Name = "lbltk3"
-        Me.lbltk3.Size = New System.Drawing.Size(151, 14)
-        Me.lbltk3.TabIndex = 8
-        Me.lbltk3.Text = "lbltk3"
-        Me.lbltk3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Form2
         '

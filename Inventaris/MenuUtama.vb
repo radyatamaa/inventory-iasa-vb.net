@@ -115,7 +115,7 @@ Public Class MenuUtama
     End Sub
 
     Private Sub btn_master_data_user_Click(sender As Object, e As EventArgs) Handles btn_master_data_user.Click
-        'MasterAlasan.UserInfo = Me.MenuStrip1.Tag
+        MasterUser.UserInfo = Me.MenuStrip1.Tag
         MasterUser.Show()
         Me.Close()
     End Sub
@@ -187,5 +187,9 @@ Public Class MenuUtama
 
     Private Sub CetakInvoiceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CetakInvoiceToolStripMenuItem.Click
         invoice_cetak.Show()
+    End Sub
+
+    Private Sub btn_r_stock_barang_Click(sender As Object, e As EventArgs) Handles btn_r_stock_barang.Click
+        Laporan_Stock_Barang.Show()
     End Sub
 End Class
