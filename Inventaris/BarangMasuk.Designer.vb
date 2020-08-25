@@ -142,7 +142,7 @@ Partial Class BarangMasuk
         Me.Panel2.Location = New System.Drawing.Point(1, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1107, 739)
+        Me.Panel2.Size = New System.Drawing.Size(1090, 739)
         Me.Panel2.TabIndex = 1
         '
         'Button1
@@ -173,7 +173,7 @@ Partial Class BarangMasuk
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(989, 191)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(972, 191)
         Me.dt_barang_masuk.TabIndex = 55
         '
         'dt_jenis_barang
@@ -513,7 +513,7 @@ Partial Class BarangMasuk
         Me.data_barang_masuk.Name = "data_barang_masuk"
         Me.data_barang_masuk.RowHeadersWidth = 51
         Me.data_barang_masuk.RowTemplate.Height = 24
-        Me.data_barang_masuk.Size = New System.Drawing.Size(991, 184)
+        Me.data_barang_masuk.Size = New System.Drawing.Size(974, 184)
         Me.data_barang_masuk.TabIndex = 16
         '
         'jenis_barang

@@ -553,3 +553,4 @@ C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.invoice_lap.resources
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\RdlCompile.cache
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\RdlCompile.compiled
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Laporan_Stock_Barang.resources

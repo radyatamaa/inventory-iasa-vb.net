@@ -224,7 +224,7 @@ Public Class MasterUser
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
         MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub MasterUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load

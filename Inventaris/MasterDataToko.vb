@@ -333,10 +333,16 @@ Public Class MasterDataToko
     End Sub
 
     Private Sub btn_simpan_Click(sender As Object, e As EventArgs) Handles btn_simpan.Click
-        Dim imagePath As String = UploadToStorageAzure(Me.txt_logo_toko.Text)
+        Dim imagePath As String = ""
+        If Me.txt_logo_toko.Text <> "" Then
+            imagePath = UploadToStorageAzure(Me.txt_logo_toko.Text)
+        ElseIf Me.txt_logo_toko.Text = "" And tokoid <> 0 Then
+            Dim toko = GetDataTokoById(tokoid)
+            imagePath = toko(0).logo_toko
+        End If
         Dim insertDataToko = New With
             {
-             .id_toko = tokoid,
+            .id_toko = tokoid,
              .nama_toko = Me.txt_nama_toko.Text,
              .alamat_toko = Me.txt_alamat_toko.Text,
              .kota_toko = Me.txt_kota_toko.Text,
@@ -361,6 +367,35 @@ Public Class MasterDataToko
         Me.txt_tlp_owner.Text = ""
         Me.txt_norek_owner.Text = ""
         MsgBox("Sukses!")
+
+        'Dim imagePath As String = UploadToStorageAzure(Me.txt_logo_toko.Text)
+        'Dim insertDataToko = New With
+        '    {
+        '     .id_toko = tokoid,
+        '     .nama_toko = Me.txt_nama_toko.Text,
+        '     .alamat_toko = Me.txt_alamat_toko.Text,
+        '     .kota_toko = Me.txt_kota_toko.Text,
+        '     .kdpos_toko = Me.txt_kdpos_toko.Text,
+        '     .tlp_toko = Me.txt_tlp_toko.Text,
+        '     .logo_toko = imagePath,
+        '     .nama_owner = Me.txt_nama_owner.Text,
+        '     .tlp_owner = Me.txt_tlp_owner.Text,
+        '     .norek_owner = Me.txt_norek_owner.Text
+        '    }
+
+        'Dim idToko As Integer = SimpanToko(insertDataToko)
+        'data_master_toko.Rows.Clear()
+        'GetDataToko()
+        'Me.txt_nama_toko.Text = ""
+        'Me.txt_alamat_toko.Text = ""
+        'Me.txt_kota_toko.Text = ""
+        'Me.txt_kdpos_toko.Text = ""
+        'Me.txt_tlp_toko.Text = ""
+        'Me.txt_logo_toko.Text = ""
+        'Me.txt_nama_owner.Text = ""
+        'Me.txt_tlp_owner.Text = ""
+        'Me.txt_norek_owner.Text = ""
+        'MsgBox("Sukses!")
     End Sub
 
     Private Sub hapus_data_toko_Click(sender As Object, e As EventArgs) Handles hapus_data_toko.Click
@@ -433,8 +468,8 @@ Public Class MasterDataToko
             Me.txt_norek_owner.Text = norek_owner
             If Not IsDBNull(toko(0).logo_toko) Then
                     If toko(0).logo_toko <> Nothing Then
-                        Me.txt_logo_toko.Text = toko(0).logo_toko
-                        Dim tClient As WebClient = New WebClient
+                    'Me.txt_logo_toko.Text = toko(0).logo_toko
+                    Dim tClient As WebClient = New WebClient
                         Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(toko(0).logo_toko.ToString)))
                         Me.logo_toko.BackgroundImage = downloadImage
                     End If
@@ -442,4 +477,6 @@ Public Class MasterDataToko
 
             End If
     End Sub
+
+
 End Class
