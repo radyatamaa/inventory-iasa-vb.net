@@ -28,6 +28,16 @@ Partial Class Rental
         Me.date_tgl_keluar = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dt_barang_masuk = New System.Windows.Forms.DataGridView()
+        Me.jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipe_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kondisi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tested = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.detail_lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.catatan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.harga_jual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmb_client = New System.Windows.Forms.ComboBox()
         Me.cmb_tipe_barang = New System.Windows.Forms.ComboBox()
         Me.cmb_jenis_barang = New System.Windows.Forms.ComboBox()
@@ -54,19 +64,6 @@ Partial Class Rental
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btn_tambah = New System.Windows.Forms.Button()
         Me.dt_barang_keluar_fix = New System.Windows.Forms.DataGridView()
-        Me.txt_kd_transaksi = New System.Windows.Forms.TextBox()
-        Me.pict_logo = New System.Windows.Forms.PictureBox()
-        Me.btn_kembali = New System.Windows.Forms.Button()
-        Me.jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipe_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kondisi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tested = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.detail_lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.catatan = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.harga_jual = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.jenis_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipe_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.serial_number2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -80,6 +77,9 @@ Partial Class Rental
         Me.periode_rental = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rental_type = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.rental_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pict_logo = New System.Windows.Forms.PictureBox()
+        Me.btn_kembali = New System.Windows.Forms.Button()
+        Me.txt_kd_transaksi = New System.Windows.Forms.TextBox()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,6 +143,76 @@ Partial Class Rental
         Me.dt_barang_masuk.RowTemplate.Height = 24
         Me.dt_barang_masuk.Size = New System.Drawing.Size(1026, 119)
         Me.dt_barang_masuk.TabIndex = 16
+        '
+        'jenis_barang
+        '
+        Me.jenis_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.jenis_barang.HeaderText = "Jenis Barang"
+        Me.jenis_barang.MinimumWidth = 70
+        Me.jenis_barang.Name = "jenis_barang"
+        '
+        'tipe_barang
+        '
+        Me.tipe_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tipe_barang.HeaderText = "Tipe Barang"
+        Me.tipe_barang.MinimumWidth = 70
+        Me.tipe_barang.Name = "tipe_barang"
+        '
+        'serial_number
+        '
+        Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.serial_number.HeaderText = "Serial Number"
+        Me.serial_number.MinimumWidth = 70
+        Me.serial_number.Name = "serial_number"
+        '
+        'kondisi
+        '
+        Me.kondisi.HeaderText = "Kondisi"
+        Me.kondisi.MinimumWidth = 6
+        Me.kondisi.Name = "kondisi"
+        Me.kondisi.Width = 125
+        '
+        'tested
+        '
+        Me.tested.HeaderText = "Tested"
+        Me.tested.MinimumWidth = 6
+        Me.tested.Name = "tested"
+        Me.tested.Width = 125
+        '
+        'lokasi
+        '
+        Me.lokasi.HeaderText = "Lokasi"
+        Me.lokasi.MinimumWidth = 6
+        Me.lokasi.Name = "lokasi"
+        Me.lokasi.Width = 125
+        '
+        'detail_lokasi
+        '
+        Me.detail_lokasi.HeaderText = "Detail Lokasi"
+        Me.detail_lokasi.MinimumWidth = 6
+        Me.detail_lokasi.Name = "detail_lokasi"
+        Me.detail_lokasi.Width = 125
+        '
+        'catatan
+        '
+        Me.catatan.HeaderText = "Catatan"
+        Me.catatan.MinimumWidth = 6
+        Me.catatan.Name = "catatan"
+        Me.catatan.Width = 125
+        '
+        'status
+        '
+        Me.status.HeaderText = "Status"
+        Me.status.MinimumWidth = 6
+        Me.status.Name = "status"
+        Me.status.Width = 125
+        '
+        'harga_jual
+        '
+        Me.harga_jual.HeaderText = "Harga Rental"
+        Me.harga_jual.MinimumWidth = 6
+        Me.harga_jual.Name = "harga_jual"
+        Me.harga_jual.Width = 125
         '
         'cmb_client
         '
@@ -444,110 +514,6 @@ Partial Class Rental
         Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1024, 119)
         Me.dt_barang_keluar_fix.TabIndex = 55
         '
-        'txt_kd_transaksi
-        '
-        Me.txt_kd_transaksi.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kd_transaksi.Location = New System.Drawing.Point(235, 108)
-        Me.txt_kd_transaksi.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_kd_transaksi.Name = "txt_kd_transaksi"
-        Me.txt_kd_transaksi.Size = New System.Drawing.Size(178, 20)
-        Me.txt_kd_transaksi.TabIndex = 26
-        '
-        'pict_logo
-        '
-        Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
-        Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pict_logo.Location = New System.Drawing.Point(1029, 7)
-        Me.pict_logo.Margin = New System.Windows.Forms.Padding(2)
-        Me.pict_logo.Name = "pict_logo"
-        Me.pict_logo.Size = New System.Drawing.Size(117, 70)
-        Me.pict_logo.TabIndex = 48
-        Me.pict_logo.TabStop = False
-        '
-        'btn_kembali
-        '
-        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
-        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_kembali.FlatAppearance.BorderSize = 0
-        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
-        Me.btn_kembali.Location = New System.Drawing.Point(8, 7)
-        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_kembali.Name = "btn_kembali"
-        Me.btn_kembali.Size = New System.Drawing.Size(75, 73)
-        Me.btn_kembali.TabIndex = 46
-        Me.btn_kembali.UseVisualStyleBackColor = False
-        '
-        'jenis_barang
-        '
-        Me.jenis_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.jenis_barang.HeaderText = "Jenis Barang"
-        Me.jenis_barang.MinimumWidth = 70
-        Me.jenis_barang.Name = "jenis_barang"
-        '
-        'tipe_barang
-        '
-        Me.tipe_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.tipe_barang.HeaderText = "Tipe Barang"
-        Me.tipe_barang.MinimumWidth = 70
-        Me.tipe_barang.Name = "tipe_barang"
-        '
-        'serial_number
-        '
-        Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.serial_number.HeaderText = "Serial Number"
-        Me.serial_number.MinimumWidth = 70
-        Me.serial_number.Name = "serial_number"
-        '
-        'kondisi
-        '
-        Me.kondisi.HeaderText = "Kondisi"
-        Me.kondisi.MinimumWidth = 6
-        Me.kondisi.Name = "kondisi"
-        Me.kondisi.Width = 125
-        '
-        'tested
-        '
-        Me.tested.HeaderText = "Tested"
-        Me.tested.MinimumWidth = 6
-        Me.tested.Name = "tested"
-        Me.tested.Width = 125
-        '
-        'lokasi
-        '
-        Me.lokasi.HeaderText = "Lokasi"
-        Me.lokasi.MinimumWidth = 6
-        Me.lokasi.Name = "lokasi"
-        Me.lokasi.Width = 125
-        '
-        'detail_lokasi
-        '
-        Me.detail_lokasi.HeaderText = "Detail Lokasi"
-        Me.detail_lokasi.MinimumWidth = 6
-        Me.detail_lokasi.Name = "detail_lokasi"
-        Me.detail_lokasi.Width = 125
-        '
-        'catatan
-        '
-        Me.catatan.HeaderText = "Catatan"
-        Me.catatan.MinimumWidth = 6
-        Me.catatan.Name = "catatan"
-        Me.catatan.Width = 125
-        '
-        'status
-        '
-        Me.status.HeaderText = "Status"
-        Me.status.MinimumWidth = 6
-        Me.status.Name = "status"
-        Me.status.Width = 125
-        '
-        'harga_jual
-        '
-        Me.harga_jual.HeaderText = "Harga Rental"
-        Me.harga_jual.MinimumWidth = 6
-        Me.harga_jual.Name = "harga_jual"
-        Me.harga_jual.Width = 125
-        '
         'jenis_barang2
         '
         Me.jenis_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -633,6 +599,40 @@ Partial Class Rental
         '
         Me.rental_exp.HeaderText = "Rental Exp"
         Me.rental_exp.Name = "rental_exp"
+        '
+        'pict_logo
+        '
+        Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
+        Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pict_logo.Location = New System.Drawing.Point(1029, 7)
+        Me.pict_logo.Margin = New System.Windows.Forms.Padding(2)
+        Me.pict_logo.Name = "pict_logo"
+        Me.pict_logo.Size = New System.Drawing.Size(117, 70)
+        Me.pict_logo.TabIndex = 48
+        Me.pict_logo.TabStop = False
+        '
+        'btn_kembali
+        '
+        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
+        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_kembali.FlatAppearance.BorderSize = 0
+        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
+        Me.btn_kembali.Location = New System.Drawing.Point(8, 7)
+        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_kembali.Name = "btn_kembali"
+        Me.btn_kembali.Size = New System.Drawing.Size(75, 73)
+        Me.btn_kembali.TabIndex = 46
+        Me.btn_kembali.UseVisualStyleBackColor = False
+        '
+        'txt_kd_transaksi
+        '
+        Me.txt_kd_transaksi.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_kd_transaksi.Location = New System.Drawing.Point(235, 108)
+        Me.txt_kd_transaksi.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_kd_transaksi.Name = "txt_kd_transaksi"
+        Me.txt_kd_transaksi.Size = New System.Drawing.Size(178, 20)
+        Me.txt_kd_transaksi.TabIndex = 26
         '
         'Rental
         '
