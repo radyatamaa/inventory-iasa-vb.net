@@ -458,6 +458,11 @@ Public Class BarangMasuk
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.catatan
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.nama_status
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.harga_beli
+            If UserInfo.IdLevel <> 1 Then
+                dt_barang_masuk.Columns(10).Visible = False
+            ElseIf UserInfo.IdLevel = 1 Then
+                dt_barang_masuk.Columns(10).Visible = True
+            End If
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.harga_jual
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
             If index = 0 Then
@@ -579,8 +584,17 @@ Public Class BarangMasuk
         Me.Close()
     End Sub
 
-    Private Sub BarangMasuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub BarangMasuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            txt_harga_modal.Text = 0
+            txt_harga_barang.Text = 0
+            If UserInfo.IdLevel = 2 Then
+                Me.txt_harga_modal.Visible = False
+            ElseIf UserInfo.IdLevel = 1 Then
+                Me.txt_harga_modal.Visible = True
+            Else
+                Me.txt_harga_modal.Visible = False
+            End If
             Me.Label1.Tag = 0
             Me.Label2.Tag = 0
             VBnetSQLSeverConnection()
@@ -890,6 +904,11 @@ Public Class BarangMasuk
                     data_barang_masuk.Rows(index).Cells(8).Value = insertDataBarangMasuk.catatan
                     data_barang_masuk.Rows(index).Cells(9).Value = insertDataBarangMasuk.nama_status_barang
                     data_barang_masuk.Rows(index).Cells(10).Value = insertDataBarangMasuk.harga_beli
+                    If UserInfo.IdLevel <> 1 Then
+                        data_barang_masuk.Columns(10).Visible = False
+                    ElseIf UserInfo.IdLevel = 1 Then
+                        data_barang_masuk.Columns(10).Visible = True
+                    End If
                     data_barang_masuk.Rows(index).Cells(11).Value = insertDataBarangMasuk.harga_jual
                     data_barang_masuk.Rows(index).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
                     data_barang_masuk.Update()
@@ -910,6 +929,11 @@ Public Class BarangMasuk
                 data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.catatan
                 data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.nama_status_barang
                 data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.harga_beli
+                If UserInfo.IdLevel <> 1 Then
+                    data_barang_masuk.Columns(10).Visible = False
+                ElseIf UserInfo.IdLevel = 1 Then
+                    data_barang_masuk.Columns(10).Visible = True
+                End If
                 data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.harga_jual
                 data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
                 data_barang_masuk.Update()

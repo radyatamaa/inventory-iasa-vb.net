@@ -36,12 +36,16 @@ Partial Class MenuUtama
         Me.btn_qinstallasi = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_qmaintenence = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btn_r_barang_masuk = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ccc = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_hasil_penjualan = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_invoice_keluar = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_barang_rental = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_garansi = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_stock_barang = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CetakToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CetakInvoiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CetakKwitansiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CetakTandaTerimaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MasterDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_master_jenis = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_master_tipe = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,10 +62,6 @@ Partial Class MenuUtama
         Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.p_logo = New System.Windows.Forms.PictureBox()
-        Me.CetakToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CetakInvoiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CetakKwitansiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CetakTandaTerimaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.p_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -166,17 +166,17 @@ Partial Class MenuUtama
         '
         'ReportToolStripMenuItem
         '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_r_barang_masuk, Me.btn_r_hasil_penjualan, Me.btn_r_invoice_keluar, Me.btn_r_barang_rental, Me.btn_r_garansi, Me.btn_r_stock_barang})
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ccc, Me.btn_r_hasil_penjualan, Me.btn_r_invoice_keluar, Me.btn_r_barang_rental, Me.btn_r_garansi, Me.btn_r_stock_barang})
         Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
         Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(78, 44)
         Me.ReportToolStripMenuItem.Text = "Report"
         '
-        'btn_r_barang_masuk
+        'ccc
         '
-        Me.btn_r_barang_masuk.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_r_barang_masuk.Name = "btn_r_barang_masuk"
-        Me.btn_r_barang_masuk.Size = New System.Drawing.Size(237, 24)
-        Me.btn_r_barang_masuk.Text = "Hasil Input Barang Masuk"
+        Me.ccc.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ccc.Name = "ccc"
+        Me.ccc.Size = New System.Drawing.Size(237, 24)
+        Me.ccc.Text = "Hasil Input Barang Masuk"
         '
         'btn_r_hasil_penjualan
         '
@@ -212,6 +212,34 @@ Partial Class MenuUtama
         Me.btn_r_stock_barang.Name = "btn_r_stock_barang"
         Me.btn_r_stock_barang.Size = New System.Drawing.Size(237, 24)
         Me.btn_r_stock_barang.Text = "Stock Barang"
+        '
+        'CetakToolStripMenuItem
+        '
+        Me.CetakToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CetakInvoiceToolStripMenuItem, Me.CetakKwitansiToolStripMenuItem, Me.CetakTandaTerimaToolStripMenuItem})
+        Me.CetakToolStripMenuItem.Name = "CetakToolStripMenuItem"
+        Me.CetakToolStripMenuItem.Size = New System.Drawing.Size(69, 44)
+        Me.CetakToolStripMenuItem.Text = "Cetak"
+        '
+        'CetakInvoiceToolStripMenuItem
+        '
+        Me.CetakInvoiceToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.CetakInvoiceToolStripMenuItem.Name = "CetakInvoiceToolStripMenuItem"
+        Me.CetakInvoiceToolStripMenuItem.Size = New System.Drawing.Size(197, 24)
+        Me.CetakInvoiceToolStripMenuItem.Text = "Cetak Invoice"
+        '
+        'CetakKwitansiToolStripMenuItem
+        '
+        Me.CetakKwitansiToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.CetakKwitansiToolStripMenuItem.Name = "CetakKwitansiToolStripMenuItem"
+        Me.CetakKwitansiToolStripMenuItem.Size = New System.Drawing.Size(197, 24)
+        Me.CetakKwitansiToolStripMenuItem.Text = "Cetak Kwitansi"
+        '
+        'CetakTandaTerimaToolStripMenuItem
+        '
+        Me.CetakTandaTerimaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.CetakTandaTerimaToolStripMenuItem.Name = "CetakTandaTerimaToolStripMenuItem"
+        Me.CetakTandaTerimaToolStripMenuItem.Size = New System.Drawing.Size(197, 24)
+        Me.CetakTandaTerimaToolStripMenuItem.Text = "Cetak Tanda Terima"
         '
         'MasterDataToolStripMenuItem
         '
@@ -295,14 +323,14 @@ Partial Class MenuUtama
         '
         Me.btn_master_data_user.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_master_data_user.Name = "btn_master_data_user"
-        Me.btn_master_data_user.Size = New System.Drawing.Size(147, 24)
+        Me.btn_master_data_user.Size = New System.Drawing.Size(180, 24)
         Me.btn_master_data_user.Text = "Data User"
         '
         'btn_master_ubahprofil
         '
         Me.btn_master_ubahprofil.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_master_ubahprofil.Name = "btn_master_ubahprofil"
-        Me.btn_master_ubahprofil.Size = New System.Drawing.Size(147, 24)
+        Me.btn_master_ubahprofil.Size = New System.Drawing.Size(180, 24)
         Me.btn_master_ubahprofil.Text = "Ubah Profil"
         '
         'btn_logout
@@ -333,34 +361,6 @@ Partial Class MenuUtama
         Me.p_logo.Size = New System.Drawing.Size(495, 435)
         Me.p_logo.TabIndex = 0
         Me.p_logo.TabStop = False
-        '
-        'CetakToolStripMenuItem
-        '
-        Me.CetakToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CetakInvoiceToolStripMenuItem, Me.CetakKwitansiToolStripMenuItem, Me.CetakTandaTerimaToolStripMenuItem})
-        Me.CetakToolStripMenuItem.Name = "CetakToolStripMenuItem"
-        Me.CetakToolStripMenuItem.Size = New System.Drawing.Size(69, 44)
-        Me.CetakToolStripMenuItem.Text = "Cetak"
-        '
-        'CetakInvoiceToolStripMenuItem
-        '
-        Me.CetakInvoiceToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
-        Me.CetakInvoiceToolStripMenuItem.Name = "CetakInvoiceToolStripMenuItem"
-        Me.CetakInvoiceToolStripMenuItem.Size = New System.Drawing.Size(197, 24)
-        Me.CetakInvoiceToolStripMenuItem.Text = "Cetak Invoice"
-        '
-        'CetakKwitansiToolStripMenuItem
-        '
-        Me.CetakKwitansiToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
-        Me.CetakKwitansiToolStripMenuItem.Name = "CetakKwitansiToolStripMenuItem"
-        Me.CetakKwitansiToolStripMenuItem.Size = New System.Drawing.Size(197, 24)
-        Me.CetakKwitansiToolStripMenuItem.Text = "Cetak Kwitansi"
-        '
-        'CetakTandaTerimaToolStripMenuItem
-        '
-        Me.CetakTandaTerimaToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
-        Me.CetakTandaTerimaToolStripMenuItem.Name = "CetakTandaTerimaToolStripMenuItem"
-        Me.CetakTandaTerimaToolStripMenuItem.Size = New System.Drawing.Size(197, 24)
-        Me.CetakTandaTerimaToolStripMenuItem.Text = "Cetak Tanda Terima"
         '
         'MenuUtama
         '
@@ -394,7 +394,7 @@ Partial Class MenuUtama
     Friend WithEvents btn_qinstallasi As ToolStripMenuItem
     Friend WithEvents btn_qmaintenence As ToolStripMenuItem
     Friend WithEvents ReportToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents btn_r_barang_masuk As ToolStripMenuItem
+    Friend WithEvents ccc As ToolStripMenuItem
     Friend WithEvents btn_r_hasil_penjualan As ToolStripMenuItem
     Friend WithEvents btn_r_invoice_keluar As ToolStripMenuItem
     Friend WithEvents btn_r_barang_rental As ToolStripMenuItem

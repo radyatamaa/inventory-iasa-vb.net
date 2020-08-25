@@ -23,6 +23,23 @@ Public Class MenuUtama
     Private Sub btn_barang_masuk_Click(sender As Object, e As EventArgs) Handles btn_barang_masuk.Click
         'BarangMasuk.MenuStrip1.Tag = BarangMasuk.MenuStrip1.Tag
         BarangMasuk.UserInfo = Me.MenuStrip1.Tag
+        BarangMasuk.txt_harga_modal.Text = 0
+        BarangMasuk.txt_harga_barang.Text = 0
+
+        If Me.MenuStrip1.Tag.IdLevel = 2 Then
+            BarangMasuk.txt_harga_modal.Visible = False
+            BarangMasuk.dt_barang_masuk.Columns(10).Visible = False
+            BarangMasuk.data_barang_masuk.Columns(10).Visible = False
+        ElseIf Me.MenuStrip1.Tag.IdLevel = 1 Then
+            BarangMasuk.txt_harga_modal.Visible = True
+            BarangMasuk.dt_barang_masuk.Columns(10).Visible = True
+            BarangMasuk.data_barang_masuk.Columns(10).Visible = True
+        Else
+            BarangMasuk.txt_harga_modal.Visible = False
+            BarangMasuk.dt_barang_masuk.Columns(10).Visible = False
+            BarangMasuk.data_barang_masuk.Columns(10).Visible = False
+        End If
+
         BarangMasuk.Show()
         Me.Close()
     End Sub
@@ -104,12 +121,45 @@ Public Class MenuUtama
     End Sub
 
     Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
+        Form1.TextBox1.Text = ""
+        Form1.TextBox2.Text = ""
         Form1.Show()
         Me.Close()
     End Sub
 
     Private Sub BarangMasuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btn_barang_masuk.Visible = True
+        BarangKeluarToolStripMenuItem.Visible = True
+        QuotationToolStripMenuItem.Visible = True
+        CetakToolStripMenuItem.Visible = True
+        MasterDataToolStripMenuItem.Visible = True
+        btn_master_data_user.Visible = True
+        ccc.Visible = True
+        btn_r_hasil_penjualan.Visible = True
+        btn_r_invoice_keluar.Visible = True
+        btn_r_barang_rental.Visible = True
+        btn_r_garansi.Visible = False
 
+        If Me.MenuStrip1.Tag.IdLevel = 3 Then
+            btn_barang_masuk.Visible = False
+            BarangKeluarToolStripMenuItem.Visible = False
+            QuotationToolStripMenuItem.Visible = False
+            CetakToolStripMenuItem.Visible = False
+            MasterDataToolStripMenuItem.Visible = False
+            btn_master_data_user.Visible = False
+        ElseIf Me.MenuStrip1.Tag.IdLevel = 4 Then
+            btn_barang_masuk.Visible = False
+            BarangKeluarToolStripMenuItem.Visible = False
+            QuotationToolStripMenuItem.Visible = False
+            CetakToolStripMenuItem.Visible = False
+            MasterDataToolStripMenuItem.Visible = False
+            btn_master_data_user.Visible = False
+            ccc.Visible = False
+            btn_r_hasil_penjualan.Visible = False
+            btn_r_invoice_keluar.Visible = False
+            btn_r_barang_rental.Visible = False
+            btn_r_garansi.Visible = False
+        End If
     End Sub
     Private Sub MenuUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -119,7 +169,7 @@ Public Class MenuUtama
 
     End Sub
 
-    Private Sub btn_r_barang_masuk_Click(sender As Object, e As EventArgs) Handles btn_r_barang_masuk.Click
+    Private Sub btn_r_barang_masuk_Click(sender As Object, e As EventArgs) Handles ccc.Click
         Laporan_Barang_Masuk.Show()
     End Sub
 
