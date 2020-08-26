@@ -552,7 +552,7 @@ Public Class Rental
 
             dt_barang_keluar_fix.Update()
 
-            Me.txt_harga_total.Text = Me.txt_harga_total.Text + barangKeluarFix.harga_jual
+            Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangKeluarFix.harga_jual)
             Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
             'listBarangKeluarFix.Add(barangMasukHandle)
             'Index = Index + 1
