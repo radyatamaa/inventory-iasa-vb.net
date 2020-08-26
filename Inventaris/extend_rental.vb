@@ -556,7 +556,7 @@ Public Class extend_rental
 
             MappingToDataGridBarangKeluarFix(barangKeluarFix)
 
-            Me.txt_harga_total.Text = Me.txt_harga_total.Text + barangKeluarFix.harga_akhir
+            Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangKeluarFix.harga_akhir)
             Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
             'listBarangKeluarFix.Add(barangMasukHandle)
             'Index = Index + 1
