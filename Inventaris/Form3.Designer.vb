@@ -22,236 +22,162 @@ Partial Class Form3
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Me.dropbutton1 = New System.Windows.Forms.Button()
-        Me.drop1 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.btn_kembali = New System.Windows.Forms.Button()
+        Me.txt_password_lama = New System.Windows.Forms.TextBox()
+        Me.txt_password_baru = New System.Windows.Forms.TextBox()
+        Me.btn_ubah = New System.Windows.Forms.Button()
+        Me.txt_konfirmasi_password = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.drop2 = New System.Windows.Forms.Panel()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.dropbutton2 = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.HaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.JaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HaToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.drop1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.drop2.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'dropbutton1
+        'Label15
         '
-        Me.dropbutton1.BackColor = System.Drawing.Color.Transparent
-        Me.dropbutton1.Image = Global.Inventaris.My.Resources.Resources.icons8_chevron_left_26
-        Me.dropbutton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.dropbutton1.Location = New System.Drawing.Point(3, 2)
-        Me.dropbutton1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.dropbutton1.Name = "dropbutton1"
-        Me.dropbutton1.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.dropbutton1.Size = New System.Drawing.Size(223, 46)
-        Me.dropbutton1.TabIndex = 0
-        Me.dropbutton1.Text = "Master User"
-        Me.dropbutton1.UseVisualStyleBackColor = False
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(221, 9)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(444, 58)
+        Me.Label15.TabIndex = 55
+        Me.Label15.Text = "Ubah Password"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'drop1
+        'btn_kembali
         '
-        Me.drop1.Controls.Add(Me.Button3)
-        Me.drop1.Controls.Add(Me.Button2)
-        Me.drop1.Controls.Add(Me.dropbutton1)
-        Me.drop1.Location = New System.Drawing.Point(7, 34)
-        Me.drop1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.drop1.MaximumSize = New System.Drawing.Size(229, 142)
-        Me.drop1.MinimumSize = New System.Drawing.Size(229, 55)
-        Me.drop1.Name = "drop1"
-        Me.drop1.Size = New System.Drawing.Size(229, 142)
-        Me.drop1.TabIndex = 1
+        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
+        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_kembali.FlatAppearance.BorderSize = 0
+        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
+        Me.btn_kembali.Location = New System.Drawing.Point(3, 0)
+        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_kembali.Name = "btn_kembali"
+        Me.btn_kembali.Size = New System.Drawing.Size(82, 80)
+        Me.btn_kembali.TabIndex = 54
+        Me.btn_kembali.UseVisualStyleBackColor = False
         '
-        'Button3
+        'txt_password_lama
         '
-        Me.Button3.Location = New System.Drawing.Point(3, 94)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(223, 46)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Ubah Profil"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.txt_password_lama.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_password_lama.Location = New System.Drawing.Point(370, 137)
+        Me.txt_password_lama.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_password_lama.Name = "txt_password_lama"
+        Me.txt_password_lama.Size = New System.Drawing.Size(236, 22)
+        Me.txt_password_lama.TabIndex = 21
+        Me.txt_password_lama.UseSystemPasswordChar = True
         '
-        'Button2
+        'txt_password_baru
         '
-        Me.Button2.Location = New System.Drawing.Point(3, 48)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(223, 46)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Data User"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.txt_password_baru.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_password_baru.Location = New System.Drawing.Point(370, 179)
+        Me.txt_password_baru.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_password_baru.Name = "txt_password_baru"
+        Me.txt_password_baru.Size = New System.Drawing.Size(236, 22)
+        Me.txt_password_baru.TabIndex = 20
+        Me.txt_password_baru.UseSystemPasswordChar = True
+        '
+        'btn_ubah
+        '
+        Me.btn_ubah.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_ubah.FlatAppearance.BorderSize = 0
+        Me.btn_ubah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_ubah.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_ubah.Location = New System.Drawing.Point(308, 269)
+        Me.btn_ubah.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_ubah.Name = "btn_ubah"
+        Me.btn_ubah.Size = New System.Drawing.Size(236, 28)
+        Me.btn_ubah.TabIndex = 17
+        Me.btn_ubah.Text = "Ubah"
+        Me.btn_ubah.UseVisualStyleBackColor = False
+        '
+        'txt_konfirmasi_password
+        '
+        Me.txt_konfirmasi_password.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_konfirmasi_password.Location = New System.Drawing.Point(370, 218)
+        Me.txt_konfirmasi_password.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_konfirmasi_password.Name = "txt_konfirmasi_password"
+        Me.txt_konfirmasi_password.Size = New System.Drawing.Size(236, 22)
+        Me.txt_konfirmasi_password.TabIndex = 8
+        Me.txt_konfirmasi_password.UseSystemPasswordChar = True
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(216, 218)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(139, 17)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Konfirmasi Password"
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(216, 179)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(103, 17)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "Password Baru"
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(216, 140)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(108, 17)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Password Lama"
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.drop2)
-        Me.Panel2.Controls.Add(Me.drop1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(1134, 30)
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Panel2.Controls.Add(Me.Label15)
+        Me.Panel2.Controls.Add(Me.btn_kembali)
+        Me.Panel2.Controls.Add(Me.txt_password_lama)
+        Me.Panel2.Controls.Add(Me.txt_password_baru)
+        Me.Panel2.Controls.Add(Me.btn_ubah)
+        Me.Panel2.Controls.Add(Me.txt_konfirmasi_password)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Location = New System.Drawing.Point(2, 2)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(237, 720)
-        Me.Panel2.TabIndex = 2
-        '
-        'drop2
-        '
-        Me.drop2.Controls.Add(Me.Button6)
-        Me.drop2.Controls.Add(Me.Button7)
-        Me.drop2.Controls.Add(Me.Button8)
-        Me.drop2.Controls.Add(Me.Button9)
-        Me.drop2.Controls.Add(Me.dropbutton2)
-        Me.drop2.Location = New System.Drawing.Point(4, 238)
-        Me.drop2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.drop2.MaximumSize = New System.Drawing.Size(229, 231)
-        Me.drop2.MinimumSize = New System.Drawing.Size(229, 50)
-        Me.drop2.Name = "drop2"
-        Me.drop2.Size = New System.Drawing.Size(229, 231)
-        Me.drop2.TabIndex = 2
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(3, 183)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(223, 46)
-        Me.Button6.TabIndex = 4
-        Me.Button6.Text = "Button6"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(3, 138)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(223, 46)
-        Me.Button7.TabIndex = 3
-        Me.Button7.Text = "Button7"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button8
-        '
-        Me.Button8.Location = New System.Drawing.Point(3, 94)
-        Me.Button8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(223, 46)
-        Me.Button8.TabIndex = 2
-        Me.Button8.Text = "Button8"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'Button9
-        '
-        Me.Button9.Location = New System.Drawing.Point(3, 48)
-        Me.Button9.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(223, 46)
-        Me.Button9.TabIndex = 1
-        Me.Button9.Text = "Button9"
-        Me.Button9.UseVisualStyleBackColor = True
-        '
-        'dropbutton2
-        '
-        Me.dropbutton2.Image = Global.Inventaris.My.Resources.Resources.icons8_chevron_left_26
-        Me.dropbutton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.dropbutton2.Location = New System.Drawing.Point(3, 2)
-        Me.dropbutton2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.dropbutton2.Name = "dropbutton2"
-        Me.dropbutton2.Size = New System.Drawing.Size(223, 46)
-        Me.dropbutton2.TabIndex = 0
-        Me.dropbutton2.Text = "Button10"
-        Me.dropbutton2.UseVisualStyleBackColor = True
-        '
-        'Timer1
-        '
-        Me.Timer1.Interval = 15
-        '
-        'Timer2
-        '
-        Me.Timer2.Interval = 15
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HaToolStripMenuItem, Me.HaToolStripMenuItem1})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1371, 30)
-        Me.MenuStrip1.TabIndex = 3
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'HaToolStripMenuItem
-        '
-        Me.HaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.JaToolStripMenuItem, Me.HaToolStripMenuItem2})
-        Me.HaToolStripMenuItem.Name = "HaToolStripMenuItem"
-        Me.HaToolStripMenuItem.Size = New System.Drawing.Size(42, 26)
-        Me.HaToolStripMenuItem.Text = "Ha"
-        '
-        'JaToolStripMenuItem
-        '
-        Me.JaToolStripMenuItem.Name = "JaToolStripMenuItem"
-        Me.JaToolStripMenuItem.Size = New System.Drawing.Size(108, 26)
-        Me.JaToolStripMenuItem.Text = "ja"
-        '
-        'HaToolStripMenuItem2
-        '
-        Me.HaToolStripMenuItem2.Name = "HaToolStripMenuItem2"
-        Me.HaToolStripMenuItem2.Size = New System.Drawing.Size(108, 26)
-        Me.HaToolStripMenuItem2.Text = "ha"
-        '
-        'HaToolStripMenuItem1
-        '
-        Me.HaToolStripMenuItem1.Name = "HaToolStripMenuItem1"
-        Me.HaToolStripMenuItem1.Size = New System.Drawing.Size(39, 26)
-        Me.HaToolStripMenuItem1.Text = "ha"
+        Me.Panel2.Size = New System.Drawing.Size(831, 398)
+        Me.Panel2.TabIndex = 60
         '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1371, 750)
+        Me.ClientSize = New System.Drawing.Size(834, 406)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
         Me.Name = "Form3"
-        Me.Text = "Form3"
-        Me.drop1.ResumeLayout(False)
+        Me.Text = "Ubah Password"
         Me.Panel2.ResumeLayout(False)
-        Me.drop2.ResumeLayout(False)
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents dropbutton1 As Button
-    Friend WithEvents drop1 As Panel
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents Label15 As Label
+    Friend WithEvents btn_kembali As Button
+    Friend WithEvents txt_password_lama As TextBox
+    Friend WithEvents txt_password_baru As TextBox
+    Friend WithEvents btn_ubah As Button
+    Friend WithEvents txt_konfirmasi_password As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents drop2 As Panel
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents dropbutton2 As Button
-    Friend WithEvents Timer1 As Timer
-    Friend WithEvents Timer2 As Timer
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents HaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents JaToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents HaToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents HaToolStripMenuItem1 As ToolStripMenuItem
 End Class

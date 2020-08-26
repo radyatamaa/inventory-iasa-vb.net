@@ -192,4 +192,14 @@ Public Class MenuUtama
     Private Sub btn_r_stock_barang_Click(sender As Object, e As EventArgs) Handles btn_r_stock_barang.Click
         Laporan_Stock_Barang.Show()
     End Sub
+
+    Private Sub p_logo_Click(sender As Object, e As EventArgs) Handles p_logo.Click
+
+    End Sub
+
+    Private Sub btn_master_ubahprofil_Click(sender As Object, e As EventArgs) Handles btn_master_ubahprofil.Click
+        Form3.UserInfo = Me.MenuStrip1.Tag
+        Form3.Show()
+        Me.Hide()
+    End Sub
 End Class

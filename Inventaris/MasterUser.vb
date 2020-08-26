@@ -296,4 +296,48 @@ Public Class MasterUser
 
 
     End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
+
+    End Sub
+
+    Private Sub txt_username_TextChanged(sender As Object, e As EventArgs) Handles txt_username.TextChanged
+
+    End Sub
+
+    Private Sub txt_nama_lengkap_TextChanged(sender As Object, e As EventArgs) Handles txt_nama_lengkap.TextChanged
+
+    End Sub
+
+    Private Sub data_master_user_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles data_master_user.CellContentClick
+
+    End Sub
+
+    Private Sub cmb_id_level_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_id_level.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub txt_password_TextChanged(sender As Object, e As EventArgs) Handles txt_password.TextChanged
+
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
 End Class
