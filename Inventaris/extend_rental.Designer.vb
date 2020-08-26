@@ -28,28 +28,6 @@ Partial Class extend_rental
         Me.btn_hapus = New System.Windows.Forms.Button()
         Me.btn_tambah = New System.Windows.Forms.Button()
         Me.dt_barang_keluar_fix = New System.Windows.Forms.DataGridView()
-        Me.txt_harga_akhir = New System.Windows.Forms.TextBox()
-        Me.pict_logo = New System.Windows.Forms.PictureBox()
-        Me.btn_simpan = New System.Windows.Forms.Button()
-        Me.btn_kembali = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.date_tgl_keluar = New System.Windows.Forms.DateTimePicker()
-        Me.dt_barang_keluar = New System.Windows.Forms.DataGridView()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.btn_tanda_terima = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.cmb_tipe_barang = New System.Windows.Forms.ComboBox()
-        Me.cmb_jenis_barang = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txt_diskon = New System.Windows.Forms.TextBox()
-        Me.txt_harga_total = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.btncari = New System.Windows.Forms.Button()
         Me.kd_transaksi_keluar_new = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.jenis_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipe_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,6 +42,13 @@ Partial Class extend_rental
         Me.periode_rental = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rental_type = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.rental_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txt_harga_akhir = New System.Windows.Forms.TextBox()
+        Me.pict_logo = New System.Windows.Forms.PictureBox()
+        Me.btn_simpan = New System.Windows.Forms.Button()
+        Me.btn_kembali = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.date_tgl_keluar = New System.Windows.Forms.DateTimePicker()
+        Me.dt_barang_keluar = New System.Windows.Forms.DataGridView()
         Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipe_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -78,6 +63,21 @@ Partial Class extend_rental
         Me.periode_rental_lama = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rental_type_lama = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.rental_exp_lama = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.btn_tanda_terima = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btncari = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.cmb_tipe_barang = New System.Windows.Forms.ComboBox()
+        Me.cmb_jenis_barang = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txt_diskon = New System.Windows.Forms.TextBox()
+        Me.txt_harga_total = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dt_barang_keluar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,256 +144,6 @@ Partial Class extend_rental
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
         Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1024, 119)
         Me.dt_barang_keluar_fix.TabIndex = 55
-        '
-        'txt_harga_akhir
-        '
-        Me.txt_harga_akhir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txt_harga_akhir.Enabled = False
-        Me.txt_harga_akhir.Location = New System.Drawing.Point(706, 609)
-        Me.txt_harga_akhir.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_harga_akhir.Name = "txt_harga_akhir"
-        Me.txt_harga_akhir.Size = New System.Drawing.Size(178, 20)
-        Me.txt_harga_akhir.TabIndex = 94
-        '
-        'pict_logo
-        '
-        Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
-        Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pict_logo.Location = New System.Drawing.Point(1029, 7)
-        Me.pict_logo.Margin = New System.Windows.Forms.Padding(2)
-        Me.pict_logo.Name = "pict_logo"
-        Me.pict_logo.Size = New System.Drawing.Size(117, 70)
-        Me.pict_logo.TabIndex = 48
-        Me.pict_logo.TabStop = False
-        '
-        'btn_simpan
-        '
-        Me.btn_simpan.Location = New System.Drawing.Point(4, 529)
-        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_simpan.Name = "btn_simpan"
-        Me.btn_simpan.Size = New System.Drawing.Size(70, 49)
-        Me.btn_simpan.TabIndex = 87
-        Me.btn_simpan.Text = "Simpan"
-        Me.btn_simpan.UseVisualStyleBackColor = True
-        '
-        'btn_kembali
-        '
-        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
-        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_kembali.FlatAppearance.BorderSize = 0
-        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
-        Me.btn_kembali.Location = New System.Drawing.Point(8, 7)
-        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_kembali.Name = "btn_kembali"
-        Me.btn_kembali.Size = New System.Drawing.Size(75, 73)
-        Me.btn_kembali.TabIndex = 46
-        Me.btn_kembali.UseVisualStyleBackColor = False
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(417, 93)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(144, 13)
-        Me.Label9.TabIndex = 23
-        Me.Label9.Text = "Tanggal Mulai Extend Rental"
-        '
-        'date_tgl_keluar
-        '
-        Me.date_tgl_keluar.Location = New System.Drawing.Point(566, 106)
-        Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(2)
-        Me.date_tgl_keluar.Name = "date_tgl_keluar"
-        Me.date_tgl_keluar.Size = New System.Drawing.Size(178, 20)
-        Me.date_tgl_keluar.TabIndex = 22
-        '
-        'dt_barang_keluar
-        '
-        Me.dt_barang_keluar.AllowUserToOrderColumns = True
-        Me.dt_barang_keluar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_barang_keluar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.dt_barang_keluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dt_barang_keluar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.jenis_barang, Me.tipe_barang, Me.serial_number, Me.kondisi, Me.tested, Me.lokasi, Me.detail_lokasi, Me.catatan, Me.status, Me.harga_jual, Me.periode_rental_lama, Me.rental_type_lama, Me.rental_exp_lama})
-        Me.dt_barang_keluar.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.dt_barang_keluar.Location = New System.Drawing.Point(0, 218)
-        Me.dt_barang_keluar.Margin = New System.Windows.Forms.Padding(2)
-        Me.dt_barang_keluar.Name = "dt_barang_keluar"
-        Me.dt_barang_keluar.RowHeadersWidth = 51
-        Me.dt_barang_keluar.RowTemplate.Height = 24
-        Me.dt_barang_keluar.Size = New System.Drawing.Size(1026, 119)
-        Me.dt_barang_keluar.TabIndex = 16
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(113, 119)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 13)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Tipe Barang"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(611, 546)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(63, 13)
-        Me.Label11.TabIndex = 89
-        Me.Label11.Text = "Harga Total"
-        '
-        'btn_tanda_terima
-        '
-        Me.btn_tanda_terima.Location = New System.Drawing.Point(898, 609)
-        Me.btn_tanda_terima.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_tanda_terima.Name = "btn_tanda_terima"
-        Me.btn_tanda_terima.Size = New System.Drawing.Size(170, 24)
-        Me.btn_tanda_terima.TabIndex = 97
-        Me.btn_tanda_terima.Text = "Cetak Tanda Terima"
-        Me.btn_tanda_terima.UseVisualStyleBackColor = True
-        '
-        'Panel2
-        '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.Panel2.Controls.Add(Me.btncari)
-        Me.Panel2.Controls.Add(Me.TextBox1)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.btn_tambah)
-        Me.Panel2.Controls.Add(Me.dt_barang_keluar_fix)
-        Me.Panel2.Controls.Add(Me.pict_logo)
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.btn_kembali)
-        Me.Panel2.Controls.Add(Me.Label9)
-        Me.Panel2.Controls.Add(Me.date_tgl_keluar)
-        Me.Panel2.Controls.Add(Me.dt_barang_keluar)
-        Me.Panel2.Controls.Add(Me.cmb_tipe_barang)
-        Me.Panel2.Controls.Add(Me.cmb_jenis_barang)
-        Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(2, 1)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1281, 519)
-        Me.Panel2.TabIndex = 86
-        '
-        'Label6
-        '
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(460, 7)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(254, 47)
-        Me.Label6.TabIndex = 47
-        Me.Label6.Text = "Extend Rental"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'cmb_tipe_barang
-        '
-        Me.cmb_tipe_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cmb_tipe_barang.FormattingEnabled = True
-        Me.cmb_tipe_barang.Location = New System.Drawing.Point(235, 117)
-        Me.cmb_tipe_barang.Margin = New System.Windows.Forms.Padding(2)
-        Me.cmb_tipe_barang.Name = "cmb_tipe_barang"
-        Me.cmb_tipe_barang.Size = New System.Drawing.Size(178, 21)
-        Me.cmb_tipe_barang.TabIndex = 10
-        '
-        'cmb_jenis_barang
-        '
-        Me.cmb_jenis_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cmb_jenis_barang.FormattingEnabled = True
-        Me.cmb_jenis_barang.Location = New System.Drawing.Point(235, 89)
-        Me.cmb_jenis_barang.Margin = New System.Windows.Forms.Padding(2)
-        Me.cmb_jenis_barang.Name = "cmb_jenis_barang"
-        Me.cmb_jenis_barang.Size = New System.Drawing.Size(178, 21)
-        Me.cmb_jenis_barang.TabIndex = 9
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(113, 89)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Jenis Barang"
-        '
-        'txt_diskon
-        '
-        Me.txt_diskon.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txt_diskon.Location = New System.Drawing.Point(706, 577)
-        Me.txt_diskon.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_diskon.Name = "txt_diskon"
-        Me.txt_diskon.Size = New System.Drawing.Size(178, 20)
-        Me.txt_diskon.TabIndex = 93
-        '
-        'txt_harga_total
-        '
-        Me.txt_harga_total.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txt_harga_total.Enabled = False
-        Me.txt_harga_total.Location = New System.Drawing.Point(706, 546)
-        Me.txt_harga_total.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_harga_total.Name = "txt_harga_total"
-        Me.txt_harga_total.Size = New System.Drawing.Size(178, 20)
-        Me.txt_harga_total.TabIndex = 92
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(611, 611)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(63, 13)
-        Me.Label13.TabIndex = 91
-        Me.Label13.Text = "Harga Akhir"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(611, 577)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(40, 13)
-        Me.Label12.TabIndex = 90
-        Me.Label12.Text = "Diskon"
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, 182)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(139, 13)
-        Me.Label1.TabIndex = 57
-        Me.Label1.Text = "Cari Barang / Serial Number"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(167, 179)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(292, 20)
-        Me.TextBox1.TabIndex = 58
-        '
-        'btncari
-        '
-        Me.btncari.Location = New System.Drawing.Point(466, 177)
-        Me.btncari.Name = "btncari"
-        Me.btncari.Size = New System.Drawing.Size(75, 23)
-        Me.btncari.TabIndex = 59
-        Me.btncari.Text = "Cari"
-        Me.btncari.UseVisualStyleBackColor = True
         '
         'kd_transaksi_keluar_new
         '
@@ -488,6 +238,88 @@ Partial Class extend_rental
         Me.rental_exp.HeaderText = "Rental Exp Baru"
         Me.rental_exp.Name = "rental_exp"
         '
+        'txt_harga_akhir
+        '
+        Me.txt_harga_akhir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_harga_akhir.Enabled = False
+        Me.txt_harga_akhir.Location = New System.Drawing.Point(706, 609)
+        Me.txt_harga_akhir.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_harga_akhir.Name = "txt_harga_akhir"
+        Me.txt_harga_akhir.Size = New System.Drawing.Size(178, 20)
+        Me.txt_harga_akhir.TabIndex = 94
+        '
+        'pict_logo
+        '
+        Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
+        Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pict_logo.Location = New System.Drawing.Point(1029, 7)
+        Me.pict_logo.Margin = New System.Windows.Forms.Padding(2)
+        Me.pict_logo.Name = "pict_logo"
+        Me.pict_logo.Size = New System.Drawing.Size(117, 70)
+        Me.pict_logo.TabIndex = 48
+        Me.pict_logo.TabStop = False
+        '
+        'btn_simpan
+        '
+        Me.btn_simpan.Location = New System.Drawing.Point(4, 529)
+        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_simpan.Name = "btn_simpan"
+        Me.btn_simpan.Size = New System.Drawing.Size(70, 49)
+        Me.btn_simpan.TabIndex = 87
+        Me.btn_simpan.Text = "Simpan"
+        Me.btn_simpan.UseVisualStyleBackColor = True
+        '
+        'btn_kembali
+        '
+        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
+        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_kembali.FlatAppearance.BorderSize = 0
+        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
+        Me.btn_kembali.Location = New System.Drawing.Point(8, 7)
+        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_kembali.Name = "btn_kembali"
+        Me.btn_kembali.Size = New System.Drawing.Size(75, 73)
+        Me.btn_kembali.TabIndex = 46
+        Me.btn_kembali.UseVisualStyleBackColor = False
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(417, 93)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(144, 13)
+        Me.Label9.TabIndex = 23
+        Me.Label9.Text = "Tanggal Mulai Extend Rental"
+        '
+        'date_tgl_keluar
+        '
+        Me.date_tgl_keluar.Location = New System.Drawing.Point(565, 90)
+        Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(2)
+        Me.date_tgl_keluar.Name = "date_tgl_keluar"
+        Me.date_tgl_keluar.Size = New System.Drawing.Size(178, 20)
+        Me.date_tgl_keluar.TabIndex = 22
+        '
+        'dt_barang_keluar
+        '
+        Me.dt_barang_keluar.AllowUserToOrderColumns = True
+        Me.dt_barang_keluar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dt_barang_keluar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.dt_barang_keluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dt_barang_keluar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.jenis_barang, Me.tipe_barang, Me.serial_number, Me.kondisi, Me.tested, Me.lokasi, Me.detail_lokasi, Me.catatan, Me.status, Me.harga_jual, Me.periode_rental_lama, Me.rental_type_lama, Me.rental_exp_lama})
+        Me.dt_barang_keluar.GridColor = System.Drawing.SystemColors.ActiveBorder
+        Me.dt_barang_keluar.Location = New System.Drawing.Point(0, 218)
+        Me.dt_barang_keluar.Margin = New System.Windows.Forms.Padding(2)
+        Me.dt_barang_keluar.Name = "dt_barang_keluar"
+        Me.dt_barang_keluar.RowHeadersWidth = 51
+        Me.dt_barang_keluar.RowTemplate.Height = 24
+        Me.dt_barang_keluar.Size = New System.Drawing.Size(1026, 119)
+        Me.dt_barang_keluar.TabIndex = 16
+        '
         'kd_transaksi_keluar
         '
         Me.kd_transaksi_keluar.HeaderText = "Kode Transaksi Keluar"
@@ -580,6 +412,174 @@ Partial Class extend_rental
         '
         Me.rental_exp_lama.HeaderText = "Rental Exp Lama"
         Me.rental_exp_lama.Name = "rental_exp_lama"
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(113, 119)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(65, 13)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "Tipe Barang"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(611, 546)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(63, 13)
+        Me.Label11.TabIndex = 89
+        Me.Label11.Text = "Harga Total"
+        '
+        'btn_tanda_terima
+        '
+        Me.btn_tanda_terima.Location = New System.Drawing.Point(898, 609)
+        Me.btn_tanda_terima.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_tanda_terima.Name = "btn_tanda_terima"
+        Me.btn_tanda_terima.Size = New System.Drawing.Size(170, 24)
+        Me.btn_tanda_terima.TabIndex = 97
+        Me.btn_tanda_terima.Text = "Cetak Tanda Terima"
+        Me.btn_tanda_terima.UseVisualStyleBackColor = True
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel2.Controls.Add(Me.btncari)
+        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.btn_tambah)
+        Me.Panel2.Controls.Add(Me.dt_barang_keluar_fix)
+        Me.Panel2.Controls.Add(Me.pict_logo)
+        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Controls.Add(Me.btn_kembali)
+        Me.Panel2.Controls.Add(Me.Label9)
+        Me.Panel2.Controls.Add(Me.date_tgl_keluar)
+        Me.Panel2.Controls.Add(Me.dt_barang_keluar)
+        Me.Panel2.Controls.Add(Me.cmb_tipe_barang)
+        Me.Panel2.Controls.Add(Me.cmb_jenis_barang)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Location = New System.Drawing.Point(2, 1)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1281, 519)
+        Me.Panel2.TabIndex = 86
+        '
+        'btncari
+        '
+        Me.btncari.Location = New System.Drawing.Point(466, 177)
+        Me.btncari.Name = "btncari"
+        Me.btncari.Size = New System.Drawing.Size(75, 23)
+        Me.btncari.TabIndex = 59
+        Me.btncari.Text = "Cari"
+        Me.btncari.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(167, 179)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(292, 20)
+        Me.TextBox1.TabIndex = 58
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(7, 182)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(139, 13)
+        Me.Label1.TabIndex = 57
+        Me.Label1.Text = "Cari Barang / Serial Number"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label6
+        '
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(460, 7)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(254, 47)
+        Me.Label6.TabIndex = 47
+        Me.Label6.Text = "Extend Rental"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'cmb_tipe_barang
+        '
+        Me.cmb_tipe_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.cmb_tipe_barang.FormattingEnabled = True
+        Me.cmb_tipe_barang.Location = New System.Drawing.Point(235, 117)
+        Me.cmb_tipe_barang.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmb_tipe_barang.Name = "cmb_tipe_barang"
+        Me.cmb_tipe_barang.Size = New System.Drawing.Size(178, 21)
+        Me.cmb_tipe_barang.TabIndex = 10
+        '
+        'cmb_jenis_barang
+        '
+        Me.cmb_jenis_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.cmb_jenis_barang.FormattingEnabled = True
+        Me.cmb_jenis_barang.Location = New System.Drawing.Point(235, 89)
+        Me.cmb_jenis_barang.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmb_jenis_barang.Name = "cmb_jenis_barang"
+        Me.cmb_jenis_barang.Size = New System.Drawing.Size(178, 21)
+        Me.cmb_jenis_barang.TabIndex = 9
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(113, 89)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(68, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Jenis Barang"
+        '
+        'txt_diskon
+        '
+        Me.txt_diskon.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_diskon.Location = New System.Drawing.Point(706, 577)
+        Me.txt_diskon.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_diskon.Name = "txt_diskon"
+        Me.txt_diskon.Size = New System.Drawing.Size(178, 20)
+        Me.txt_diskon.TabIndex = 93
+        '
+        'txt_harga_total
+        '
+        Me.txt_harga_total.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_harga_total.Enabled = False
+        Me.txt_harga_total.Location = New System.Drawing.Point(706, 546)
+        Me.txt_harga_total.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_harga_total.Name = "txt_harga_total"
+        Me.txt_harga_total.Size = New System.Drawing.Size(178, 20)
+        Me.txt_harga_total.TabIndex = 92
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(611, 611)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(63, 13)
+        Me.Label13.TabIndex = 91
+        Me.Label13.Text = "Harga Akhir"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(611, 577)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(40, 13)
+        Me.Label12.TabIndex = 90
+        Me.Label12.Text = "Diskon"
         '
         'extend_rental
         '
