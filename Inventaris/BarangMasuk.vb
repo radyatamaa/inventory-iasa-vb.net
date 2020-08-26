@@ -1003,4 +1003,8 @@ Public Class BarangMasuk
     Private Sub pict_logo_Click(sender As Object, e As EventArgs) Handles pict_logo.Click
 
     End Sub
+
+    Private Sub dt_barang_masuk_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_masuk.CellEndEdit
+
+    End Sub
 End Class

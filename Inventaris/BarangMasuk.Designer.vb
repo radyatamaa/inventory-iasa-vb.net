@@ -62,6 +62,19 @@ Partial Class BarangMasuk
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_simpan = New System.Windows.Forms.Button()
         Me.data_barang_masuk = New System.Windows.Forms.DataGridView()
+        Me.jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipe_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kondisi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tested = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.detail_lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lisensi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.catatan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.status_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.harga_modal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.harga_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tgl_masuk = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cbx_tidak_teruji = New System.Windows.Forms.CheckBox()
         Me.cbx_teruji = New System.Windows.Forms.CheckBox()
         Me.cmb_lokasi = New System.Windows.Forms.ComboBox()
@@ -76,19 +89,6 @@ Partial Class BarangMasuk
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.hapus_data_barang_masuk = New System.Windows.Forms.Button()
-        Me.jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipe_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kondisi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tested = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.detail_lokasi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lisensi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.catatan = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.status_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.harga_modal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.harga_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tgl_masuk = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -515,6 +515,97 @@ Partial Class BarangMasuk
         Me.data_barang_masuk.Size = New System.Drawing.Size(957, 184)
         Me.data_barang_masuk.TabIndex = 16
         '
+        'jenis_barang
+        '
+        Me.jenis_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.jenis_barang.HeaderText = "Jenis Barang"
+        Me.jenis_barang.MinimumWidth = 6
+        Me.jenis_barang.Name = "jenis_barang"
+        '
+        'tipe_barang
+        '
+        Me.tipe_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tipe_barang.HeaderText = "Tipe Detail Barang"
+        Me.tipe_barang.MinimumWidth = 6
+        Me.tipe_barang.Name = "tipe_barang"
+        '
+        'serial_number
+        '
+        Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.serial_number.HeaderText = "Serial Number"
+        Me.serial_number.MinimumWidth = 6
+        Me.serial_number.Name = "serial_number"
+        '
+        'kondisi
+        '
+        Me.kondisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.kondisi.HeaderText = "Kondisi"
+        Me.kondisi.MinimumWidth = 6
+        Me.kondisi.Name = "kondisi"
+        '
+        'tested
+        '
+        Me.tested.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tested.HeaderText = "Tested"
+        Me.tested.MinimumWidth = 6
+        Me.tested.Name = "tested"
+        '
+        'lokasi
+        '
+        Me.lokasi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.lokasi.HeaderText = "Lokasi"
+        Me.lokasi.MinimumWidth = 6
+        Me.lokasi.Name = "lokasi"
+        '
+        'detail_lokasi
+        '
+        Me.detail_lokasi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.detail_lokasi.HeaderText = "Detail Lokasi"
+        Me.detail_lokasi.MinimumWidth = 6
+        Me.detail_lokasi.Name = "detail_lokasi"
+        '
+        'lisensi
+        '
+        Me.lisensi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.lisensi.HeaderText = "License"
+        Me.lisensi.MinimumWidth = 6
+        Me.lisensi.Name = "lisensi"
+        '
+        'catatan
+        '
+        Me.catatan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.catatan.HeaderText = "Catatan"
+        Me.catatan.MinimumWidth = 6
+        Me.catatan.Name = "catatan"
+        '
+        'status_barang
+        '
+        Me.status_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.status_barang.HeaderText = "Status"
+        Me.status_barang.MinimumWidth = 6
+        Me.status_barang.Name = "status_barang"
+        '
+        'harga_modal
+        '
+        Me.harga_modal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.harga_modal.HeaderText = "Harga Modal"
+        Me.harga_modal.MinimumWidth = 6
+        Me.harga_modal.Name = "harga_modal"
+        '
+        'harga_barang
+        '
+        Me.harga_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.harga_barang.HeaderText = "Harga Barang"
+        Me.harga_barang.MinimumWidth = 6
+        Me.harga_barang.Name = "harga_barang"
+        '
+        'tgl_masuk
+        '
+        Me.tgl_masuk.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tgl_masuk.HeaderText = "Tanggal Masuk"
+        Me.tgl_masuk.MinimumWidth = 6
+        Me.tgl_masuk.Name = "tgl_masuk"
+        '
         'cbx_tidak_teruji
         '
         Me.cbx_tidak_teruji.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -667,103 +758,12 @@ Partial Class BarangMasuk
         Me.hapus_data_barang_masuk.Text = "Hapus"
         Me.hapus_data_barang_masuk.UseVisualStyleBackColor = False
         '
-        'jenis_barang
-        '
-        Me.jenis_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.jenis_barang.HeaderText = "Jenis Barang"
-        Me.jenis_barang.MinimumWidth = 6
-        Me.jenis_barang.Name = "jenis_barang"
-        '
-        'tipe_barang
-        '
-        Me.tipe_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.tipe_barang.HeaderText = "Tipe Detail Barang"
-        Me.tipe_barang.MinimumWidth = 6
-        Me.tipe_barang.Name = "tipe_barang"
-        '
-        'serial_number
-        '
-        Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.serial_number.HeaderText = "Serial Number"
-        Me.serial_number.MinimumWidth = 6
-        Me.serial_number.Name = "serial_number"
-        '
-        'kondisi
-        '
-        Me.kondisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.kondisi.HeaderText = "Kondisi"
-        Me.kondisi.MinimumWidth = 6
-        Me.kondisi.Name = "kondisi"
-        '
-        'tested
-        '
-        Me.tested.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.tested.HeaderText = "Tested"
-        Me.tested.MinimumWidth = 6
-        Me.tested.Name = "tested"
-        '
-        'lokasi
-        '
-        Me.lokasi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.lokasi.HeaderText = "Lokasi"
-        Me.lokasi.MinimumWidth = 6
-        Me.lokasi.Name = "lokasi"
-        '
-        'detail_lokasi
-        '
-        Me.detail_lokasi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.detail_lokasi.HeaderText = "Detail Lokasi"
-        Me.detail_lokasi.MinimumWidth = 6
-        Me.detail_lokasi.Name = "detail_lokasi"
-        '
-        'lisensi
-        '
-        Me.lisensi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.lisensi.HeaderText = "License"
-        Me.lisensi.MinimumWidth = 6
-        Me.lisensi.Name = "lisensi"
-        '
-        'catatan
-        '
-        Me.catatan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.catatan.HeaderText = "Catatan"
-        Me.catatan.MinimumWidth = 6
-        Me.catatan.Name = "catatan"
-        '
-        'status_barang
-        '
-        Me.status_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.status_barang.HeaderText = "Status"
-        Me.status_barang.MinimumWidth = 6
-        Me.status_barang.Name = "status_barang"
-        '
-        'harga_modal
-        '
-        Me.harga_modal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.harga_modal.HeaderText = "Harga Modal"
-        Me.harga_modal.MinimumWidth = 6
-        Me.harga_modal.Name = "harga_modal"
-        '
-        'harga_barang
-        '
-        Me.harga_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.harga_barang.HeaderText = "Harga Barang"
-        Me.harga_barang.MinimumWidth = 6
-        Me.harga_barang.Name = "harga_barang"
-        '
-        'tgl_masuk
-        '
-        Me.tgl_masuk.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.tgl_masuk.HeaderText = "Tanggal Masuk"
-        Me.tgl_masuk.MinimumWidth = 6
-        Me.tgl_masuk.Name = "tgl_masuk"
-        '
         'BarangMasuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.ClientSize = New System.Drawing.Size(1045, 609)
         Me.Controls.Add(Me.hapus_data_barang_masuk)
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(2)

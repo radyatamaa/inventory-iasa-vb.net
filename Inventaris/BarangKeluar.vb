@@ -785,6 +785,10 @@ Public Class BarangKeluar
     End Sub
 
     Private Sub dt_barang_keluar_fix_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_keluar_fix.CellEndEdit
+
+    End Sub
+
+    Private Sub dt_barang_keluar_fix_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_keluar_fix.CellValueChanged
         listBarangKeluarFixHandle.Clear()
 
         Dim changeHargaJualBarangKeluar = dt_barang_keluar_fix.SelectedCells
