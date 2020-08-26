@@ -38,8 +38,8 @@ Public Class invoice_cetak
         Dim query As String = "SELECT t.*,tc.nama_client FROM tbl_transaksi t
                                     INNER JOIN tbl_client tc ON t.id_client = tc.id_client
                                     WHERE t.is_active = 1 and 
-                                    (t.created_date BETWEEN CAST('" + startDate.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME) AND 
-                                    CAST('" + endDate.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME))"
+                                    (CAST(t.created_date as DATE) BETWEEN CAST('" + startDate.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATE) AND 
+                                    CAST('" + endDate.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATE))"
 
 
         cmd.CommandText = query

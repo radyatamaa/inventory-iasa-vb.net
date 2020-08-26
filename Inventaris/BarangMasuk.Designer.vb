@@ -72,7 +72,6 @@ Partial Class BarangMasuk
         Me.lisensi = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.catatan = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.status_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.warna = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.harga_modal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.harga_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tgl_masuk = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -142,7 +141,7 @@ Partial Class BarangMasuk
         Me.Panel2.Location = New System.Drawing.Point(1, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1090, 739)
+        Me.Panel2.Size = New System.Drawing.Size(1073, 739)
         Me.Panel2.TabIndex = 1
         '
         'Button1
@@ -173,7 +172,7 @@ Partial Class BarangMasuk
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(972, 191)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(955, 191)
         Me.dt_barang_masuk.TabIndex = 55
         '
         'dt_jenis_barang
@@ -507,13 +506,13 @@ Partial Class BarangMasuk
         Me.data_barang_masuk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.data_barang_masuk.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.data_barang_masuk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.data_barang_masuk.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang, Me.tipe_barang, Me.serial_number, Me.kondisi, Me.tested, Me.lokasi, Me.detail_lokasi, Me.lisensi, Me.catatan, Me.status_barang, Me.warna, Me.harga_modal, Me.harga_barang, Me.tgl_masuk})
+        Me.data_barang_masuk.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang, Me.tipe_barang, Me.serial_number, Me.kondisi, Me.tested, Me.lokasi, Me.detail_lokasi, Me.lisensi, Me.catatan, Me.status_barang, Me.harga_modal, Me.harga_barang, Me.tgl_masuk})
         Me.data_barang_masuk.Location = New System.Drawing.Point(0, 281)
         Me.data_barang_masuk.Margin = New System.Windows.Forms.Padding(2)
         Me.data_barang_masuk.Name = "data_barang_masuk"
         Me.data_barang_masuk.RowHeadersWidth = 51
         Me.data_barang_masuk.RowTemplate.Height = 24
-        Me.data_barang_masuk.Size = New System.Drawing.Size(974, 184)
+        Me.data_barang_masuk.Size = New System.Drawing.Size(957, 184)
         Me.data_barang_masuk.TabIndex = 16
         '
         'jenis_barang
@@ -585,13 +584,6 @@ Partial Class BarangMasuk
         Me.status_barang.HeaderText = "Status"
         Me.status_barang.MinimumWidth = 6
         Me.status_barang.Name = "status_barang"
-        '
-        'warna
-        '
-        Me.warna.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.warna.HeaderText = "Warna"
-        Me.warna.MinimumWidth = 6
-        Me.warna.Name = "warna"
         '
         'harga_modal
         '
@@ -771,7 +763,7 @@ Partial Class BarangMasuk
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.ClientSize = New System.Drawing.Size(1045, 609)
         Me.Controls.Add(Me.hapus_data_barang_masuk)
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -850,7 +842,6 @@ Partial Class BarangMasuk
     Friend WithEvents lisensi As DataGridViewTextBoxColumn
     Friend WithEvents catatan As DataGridViewTextBoxColumn
     Friend WithEvents status_barang As DataGridViewTextBoxColumn
-    Friend WithEvents warna As DataGridViewTextBoxColumn
     Friend WithEvents harga_modal As DataGridViewTextBoxColumn
     Friend WithEvents harga_barang As DataGridViewTextBoxColumn
     Friend WithEvents tgl_masuk As DataGridViewTextBoxColumn
