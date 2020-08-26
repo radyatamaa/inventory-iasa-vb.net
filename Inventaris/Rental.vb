@@ -649,7 +649,7 @@ Public Class Rental
 
     Private Sub txt_diskon_TextChanged(sender As Object, e As EventArgs) Handles txt_diskon.TextChanged
         If System.Text.RegularExpressions.Regex.IsMatch(txt_diskon.Text, "[  ^ 0-9]") Then
-            Me.txt_harga_akhir.Text = Me.txt_harga_akhir.Text - Me.txt_diskon.Text
+            Me.txt_harga_akhir.Text = Integer.Parse(Me.txt_harga_akhir.Text) - Integer.Parse(Me.txt_diskon.Text)
         ElseIf txt_diskon.Text = "" Then
             Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
         Else
@@ -717,7 +717,7 @@ Public Class Rental
 
                             dt_barang_keluar_fix.Update()
 
-                            Me.txt_harga_total.Text = Me.txt_harga_total.Text + barangKeluarFix.harga_jual
+                            Me.txt_harga_total.Text = Integer.Parse(Me.txt_harga_total.Text) + Integer.Parse(barangKeluarFix.harga_jual)
                             Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
                             'listBarangKeluarFix.Add(barangMasukHandle)
                             index = index + 1
