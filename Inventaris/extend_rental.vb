@@ -570,7 +570,7 @@ Public Class extend_rental
 
     Private Sub txt_diskon_TextChanged(sender As Object, e As EventArgs) Handles txt_diskon.TextChanged
         If System.Text.RegularExpressions.Regex.IsMatch(txt_diskon.Text, "[  ^ 0-9]") Then
-            Me.txt_harga_akhir.Text = Integer.Parse(Me.txt_harga_akhir.Text) - Integer.Parse(Me.txt_diskon.Text)
+            Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text) - Val(Me.txt_diskon.Text)
         ElseIf txt_diskon.Text = "" Then
             Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
         Else
@@ -683,7 +683,7 @@ Public Class extend_rental
 
                             MappingToDataGridBarangKeluarFix(barangKeluarFix)
 
-                            Me.txt_harga_total.Text = Integer.Parse(Me.txt_harga_total.Text) + Integer.Parse(barangKeluarFix.harga_akhir)
+                            Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangKeluarFix.harga_akhir)
                             Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
                             'listBarangKeluarFix.Add(barangMasukHandle)
                             index = index + 1
