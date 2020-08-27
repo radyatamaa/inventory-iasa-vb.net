@@ -236,6 +236,12 @@
     <Compile Include="Instalasi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Laporan_Barang_Penjualan.Designer.vb">
+      <DependentUpon>Laporan_Barang_Penjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan_Barang_Penjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Laporan_Stock_Barang.Designer.vb">
       <DependentUpon>Laporan_Stock_Barang.vb</DependentUpon>
     </Compile>
@@ -370,6 +376,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_db_inventory_iasaDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_db_inventory_iasaDataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_db_inventory_iasaDataSet3.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BarangKeluar.resx">
@@ -395,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Instalasi.resx">
       <DependentUpon>Instalasi.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan_Barang_Penjualan.resx">
+      <DependentUpon>Laporan_Barang_Penjualan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laporan_Stock_Barang.resx">
       <DependentUpon>Laporan_Stock_Barang.vb</DependentUpon>
@@ -456,6 +470,7 @@
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report_Penjualan.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSet1.xsc">
@@ -511,6 +526,17 @@
     </None>
     <None Include="_db_inventory_iasaDataSet2.xss">
       <DependentUpon>_db_inventory_iasaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="_db_inventory_iasaDataSet3.xsc">
+      <DependentUpon>_db_inventory_iasaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="_db_inventory_iasaDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_db_inventory_iasaDataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_db_inventory_iasaDataSet3.xss">
+      <DependentUpon>_db_inventory_iasaDataSet3.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
