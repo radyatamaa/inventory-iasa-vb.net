@@ -182,7 +182,9 @@ Public Class MenuUtama
     End Sub
 
     Private Sub ExtendRentalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExtendRentalToolStripMenuItem.Click
+        extend_rental.UserInfo = Me.MenuStrip1.Tag
         extend_rental.Show()
+        Me.Close()
     End Sub
 
     Private Sub CetakInvoiceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CetakInvoiceToolStripMenuItem.Click

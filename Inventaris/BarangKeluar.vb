@@ -5,6 +5,7 @@ Imports System.Text
 Imports Microsoft.Office.Interop
 
 Public Class BarangKeluar
+    Dim ppnNominal As Decimal = 0
     Public Property UserInfo As Object
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
@@ -147,7 +148,11 @@ Public Class BarangKeluar
             .shipto_nama = "",
             .shipto_alamat = "",
                 .shipto_kota = "",
-                .shipto_kdpos = ""
+                .shipto_kdpos = "",
+                .persen_ppn = 0,
+                .nominal_ppn = 0,
+                .shipping_handling = 0,
+                .subtotal = 0
                 }
             listBarangMasuk.Add(barang)
             result.Add(barang)
@@ -223,7 +228,11 @@ Public Class BarangKeluar
                                     kd_transaksi_keluar,
                                     harga_total,
                                     diskon,
-                                    harga_akhir,                                   
+                                    harga_akhir,
+                                    persen_ppn,
+                                    nominal_ppn,
+                                    shipping_handling,
+                                    subtotal,
                                     id_client,
                                     alamat_pengiriman,
                                     kota_pengiriman,
@@ -241,8 +250,12 @@ Public Class BarangKeluar
                                     '" + barangKeluar.kd_transaksi_keluar + "',
                                     " + barangKeluar.harga_total.ToString + ",
                                     " + barangKeluar.diskon.ToString + ",
-                                     " + barangKeluar.harga_akhir.ToString + ",
-                                     " + barangKeluar.id_client.ToString + ",
+                                    " + barangKeluar.harga_akhir.ToString + ",
+                                    " + barangKeluar.persen_ppn.ToString + ",
+                                    " + barangKeluar.nominal_ppn.ToString + ",
+                                    " + barangKeluar.shipping_handling.ToString + ",
+                                    " + barangKeluar.subtotal.ToString + ",
+                                    " + barangKeluar.id_client.ToString + ",
                                     '" + barangKeluar.alamat_pengiriman + "',
                                     '" + barangKeluar.kota_pengiriman + "',
                                     '" + barangKeluar.kdpos_pengiriman + "',
@@ -486,6 +499,10 @@ Public Class BarangKeluar
         Try
             Me.txt_harga_total.Text = 0
             Me.txt_harga_akhir.Text = 0
+            Me.txt_subtotal.Text = 0
+            Me.txt_ppn.Text = 0
+            Me.txt_shiphand.Text = 0
+
             isSelectedTipeJenis = 0
             Dim kdTransaksi As String = RandomString(New Random)
             Me.txt_kd_transaksi.Text = kdTransaksi
@@ -694,10 +711,14 @@ Public Class BarangKeluar
             insertDataBarangKeluar.kdpos_pengiriman = Me.txt_kdpos.Text
             insertDataBarangKeluar.total_barang = listBarangKeluarFix.Count
             insertDataBarangKeluar.id_status_barang = 4
-            insertDataBarangKeluar.shipto_nama = Me.txt_client_ship
-            insertDataBarangKeluar.shipto_alamat = Me.txt_alamat_ship
-            insertDataBarangKeluar.shipto_kota = Me.txt_kota_ship
-            insertDataBarangKeluar.shipto_kdpos = Me.txt_kdpos_ship
+            insertDataBarangKeluar.shipto_nama = Me.txt_client_ship.Text
+            insertDataBarangKeluar.shipto_alamat = Me.txt_alamat_ship.Text
+            insertDataBarangKeluar.shipto_kota = Me.txt_kota_ship.Text
+            insertDataBarangKeluar.shipto_kdpos = Me.txt_kdpos_ship.Text
+            insertDataBarangKeluar.persen_ppn = Me.txt_ppn.Text
+            insertDataBarangKeluar.nominal_ppn = ppnNominal
+            insertDataBarangKeluar.shipping_handling = Me.txt_shiphand.Text
+            insertDataBarangKeluar.subtotal = Me.txt_subtotal.Text
             SimpanBarangKeluar(insertDataBarangKeluar, index)
             index = index + 1
         Next
@@ -737,6 +758,7 @@ Public Class BarangKeluar
     Private Sub txt_diskon_TextChanged(sender As Object, e As EventArgs) Handles txt_diskon.TextChanged
         If System.Text.RegularExpressions.Regex.IsMatch(txt_diskon.Text, "[  ^ 0-9]") Then
             Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text) - Val(Me.txt_diskon.Text)
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
         ElseIf txt_diskon.Text = "" Then
             Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
         Else
@@ -1017,6 +1039,57 @@ Public Class BarangKeluar
     End Sub
 
     Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label17.Click
+
+    End Sub
+
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles txt_ppn.TextChanged
+        If System.Text.RegularExpressions.Regex.IsMatch(txt_ppn.Text, "[  ^ 0-9]") Then
+            Dim hargaAkhir = Me.txt_harga_akhir.Text
+            Dim ppnCalculate = Val(txt_ppn.Text) / 100
+            Dim ppn = Val(ppnCalculate) * Val(hargaAkhir)
+            ppnNominal = ppn
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppn) + Val(txt_shiphand.Text)
+        ElseIf txt_ppn.Text = "" Then
+            ppnNominal = 0
+            Me.txt_ppn.Text = ""
+        Else
+            ppnNominal = 0
+            MsgBox("PPN hanya bisa numbering")
+            Me.txt_ppn.Text = ""
+        End If
+    End Sub
+
+    Private Sub txt_shiphand_TextChanged(sender As Object, e As EventArgs)
+        If System.Text.RegularExpressions.Regex.IsMatch(txt_shiphand.Text, "[  ^ 0-9]") Then
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(PPN) + Val(txt_shiphand.Text)
+        ElseIf txt_shiphand.Text = "" Then
+            txt_shiphand.Text = 0
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(PPN) + Val(txt_shiphand.Text)
+        Else
+            txt_shiphand.Text = 0
+            MsgBox("PPN hanya bisa numbering")
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(PPN) + Val(txt_shiphand.Text)
+        End If
+    End Sub
+
+    Private Sub txt_subtotal_TextChanged(sender As Object, e As EventArgs) Handles txt_subtotal.TextChanged
+
+    End Sub
+
+    Private Sub txt_shiphand_TextChanged_1(sender As Object, e As EventArgs) Handles txt_shiphand.TextChanged
+        If System.Text.RegularExpressions.Regex.IsMatch(txt_shiphand.Text, "[  ^ 0-9]") Then
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
+        ElseIf txt_shiphand.Text = "" Then
+            txt_shiphand.Text = 0
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
+        Else
+            txt_shiphand.Text = 0
+            MsgBox("PPN hanya bisa numbering")
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
+        End If
+    End Sub
+
+    Private Sub txt_harga_akhir_TextChanged(sender As Object, e As EventArgs) Handles txt_harga_akhir.TextChanged
 
     End Sub
 End Class

@@ -88,6 +88,12 @@ Partial Class Rental
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.txt_subtotal = New System.Windows.Forms.TextBox()
+        Me.txt_shiphand = New System.Windows.Forms.TextBox()
+        Me.txt_ppn = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.PPN = New System.Windows.Forms.Label()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,7 +155,7 @@ Partial Class Rental
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1026, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1070, 119)
         Me.dt_barang_masuk.TabIndex = 16
         '
         'jenis_barang
@@ -496,7 +502,7 @@ Partial Class Rental
         Me.Panel2.Location = New System.Drawing.Point(2, -1)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1281, 551)
+        Me.Panel2.Size = New System.Drawing.Size(1325, 551)
         Me.Panel2.TabIndex = 74
         '
         'btn_tambah
@@ -527,7 +533,7 @@ Partial Class Rental
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1024, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1068, 119)
         Me.dt_barang_keluar_fix.TabIndex = 55
         '
         'jenis_barang2
@@ -734,11 +740,79 @@ Partial Class Rental
         Me.Label16.TabIndex = 65
         Me.Label16.Text = "Ship To Alamat Transaksi"
         '
+        'txt_subtotal
+        '
+        Me.txt_subtotal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_subtotal.Enabled = False
+        Me.txt_subtotal.Location = New System.Drawing.Point(710, 739)
+        Me.txt_subtotal.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_subtotal.Name = "txt_subtotal"
+        Me.txt_subtotal.Size = New System.Drawing.Size(178, 20)
+        Me.txt_subtotal.TabIndex = 91
+        '
+        'txt_shiphand
+        '
+        Me.txt_shiphand.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_shiphand.Location = New System.Drawing.Point(710, 707)
+        Me.txt_shiphand.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_shiphand.Name = "txt_shiphand"
+        Me.txt_shiphand.Size = New System.Drawing.Size(178, 20)
+        Me.txt_shiphand.TabIndex = 90
+        '
+        'txt_ppn
+        '
+        Me.txt_ppn.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_ppn.Location = New System.Drawing.Point(710, 676)
+        Me.txt_ppn.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_ppn.Name = "txt_ppn"
+        Me.txt_ppn.Size = New System.Drawing.Size(178, 20)
+        Me.txt_ppn.TabIndex = 89
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(615, 741)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(53, 13)
+        Me.Label18.TabIndex = 88
+        Me.Label18.Text = "SubTotal "
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(615, 707)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(84, 13)
+        Me.Label19.TabIndex = 87
+        Me.Label19.Text = "ShipingHandling"
+        '
+        'PPN
+        '
+        Me.PPN.AutoSize = True
+        Me.PPN.Location = New System.Drawing.Point(615, 676)
+        Me.PPN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.PPN.Name = "PPN"
+        Me.PPN.Size = New System.Drawing.Size(29, 13)
+        Me.PPN.TabIndex = 86
+        Me.PPN.Text = "PPN"
+        '
         'Rental
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 676)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1028, 749)
+        Me.Controls.Add(Me.txt_subtotal)
+        Me.Controls.Add(Me.txt_shiphand)
+        Me.Controls.Add(Me.txt_ppn)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.PPN)
         Me.Controls.Add(Me.btn_kwitansi)
         Me.Controls.Add(Me.btn_invoice)
         Me.Controls.Add(Me.txt_harga_akhir)
@@ -831,4 +905,10 @@ Partial Class Rental
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
+    Friend WithEvents txt_subtotal As TextBox
+    Friend WithEvents txt_shiphand As TextBox
+    Friend WithEvents txt_ppn As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents PPN As Label
 End Class

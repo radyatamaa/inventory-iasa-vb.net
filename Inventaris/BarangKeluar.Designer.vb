@@ -45,6 +45,10 @@ Partial Class BarangKeluar
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txt_kdpos_ship = New System.Windows.Forms.TextBox()
+        Me.txt_kota_ship = New System.Windows.Forms.TextBox()
+        Me.txt_alamat_ship = New System.Windows.Forms.TextBox()
+        Me.txt_client_ship = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -86,10 +90,12 @@ Partial Class BarangKeluar
         Me.btn_invoice = New System.Windows.Forms.Button()
         Me.btn_kwitansi = New System.Windows.Forms.Button()
         Me.btn_tanda_terima = New System.Windows.Forms.Button()
-        Me.txt_client_ship = New System.Windows.Forms.TextBox()
-        Me.txt_alamat_ship = New System.Windows.Forms.TextBox()
-        Me.txt_kota_ship = New System.Windows.Forms.TextBox()
-        Me.txt_kdpos_ship = New System.Windows.Forms.TextBox()
+        Me.txt_subtotal = New System.Windows.Forms.TextBox()
+        Me.txt_ppn = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.PPN = New System.Windows.Forms.Label()
+        Me.txt_shiphand = New System.Windows.Forms.TextBox()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -140,7 +146,7 @@ Partial Class BarangKeluar
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1015, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1093, 119)
         Me.dt_barang_masuk.TabIndex = 16
         '
         'jenis_barang
@@ -327,8 +333,48 @@ Partial Class BarangKeluar
         Me.Panel2.Location = New System.Drawing.Point(2, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1270, 516)
+        Me.Panel2.Size = New System.Drawing.Size(1348, 516)
         Me.Panel2.TabIndex = 6
+        '
+        'txt_kdpos_ship
+        '
+        Me.txt_kdpos_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_kdpos_ship.Location = New System.Drawing.Point(870, 175)
+        Me.txt_kdpos_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_kdpos_ship.Multiline = True
+        Me.txt_kdpos_ship.Name = "txt_kdpos_ship"
+        Me.txt_kdpos_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_kdpos_ship.TabIndex = 64
+        '
+        'txt_kota_ship
+        '
+        Me.txt_kota_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_kota_ship.Location = New System.Drawing.Point(870, 144)
+        Me.txt_kota_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_kota_ship.Multiline = True
+        Me.txt_kota_ship.Name = "txt_kota_ship"
+        Me.txt_kota_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_kota_ship.TabIndex = 63
+        '
+        'txt_alamat_ship
+        '
+        Me.txt_alamat_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_alamat_ship.Location = New System.Drawing.Point(870, 116)
+        Me.txt_alamat_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_alamat_ship.Multiline = True
+        Me.txt_alamat_ship.Name = "txt_alamat_ship"
+        Me.txt_alamat_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_alamat_ship.TabIndex = 62
+        '
+        'txt_client_ship
+        '
+        Me.txt_client_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_client_ship.Location = New System.Drawing.Point(870, 88)
+        Me.txt_client_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_client_ship.Multiline = True
+        Me.txt_client_ship.Name = "txt_client_ship"
+        Me.txt_client_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_client_ship.TabIndex = 61
         '
         'Label17
         '
@@ -402,7 +448,7 @@ Partial Class BarangKeluar
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1013, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1091, 119)
         Me.dt_barang_keluar_fix.TabIndex = 55
         '
         'jenis_barang2
@@ -719,52 +765,80 @@ Partial Class BarangKeluar
         Me.btn_tanda_terima.Text = "Cetak Tanda Terima"
         Me.btn_tanda_terima.UseVisualStyleBackColor = True
         '
-        'txt_client_ship
+        'txt_subtotal
         '
-        Me.txt_client_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_client_ship.Location = New System.Drawing.Point(870, 88)
-        Me.txt_client_ship.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_client_ship.Multiline = True
-        Me.txt_client_ship.Name = "txt_client_ship"
-        Me.txt_client_ship.Size = New System.Drawing.Size(178, 19)
-        Me.txt_client_ship.TabIndex = 61
+        Me.txt_subtotal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_subtotal.Enabled = False
+        Me.txt_subtotal.Location = New System.Drawing.Point(711, 690)
+        Me.txt_subtotal.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_subtotal.Name = "txt_subtotal"
+        Me.txt_subtotal.Size = New System.Drawing.Size(178, 20)
+        Me.txt_subtotal.TabIndex = 67
         '
-        'txt_alamat_ship
+        'txt_ppn
         '
-        Me.txt_alamat_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_alamat_ship.Location = New System.Drawing.Point(870, 116)
-        Me.txt_alamat_ship.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_alamat_ship.Multiline = True
-        Me.txt_alamat_ship.Name = "txt_alamat_ship"
-        Me.txt_alamat_ship.Size = New System.Drawing.Size(178, 19)
-        Me.txt_alamat_ship.TabIndex = 62
+        Me.txt_ppn.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_ppn.Location = New System.Drawing.Point(711, 627)
+        Me.txt_ppn.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_ppn.Name = "txt_ppn"
+        Me.txt_ppn.Size = New System.Drawing.Size(178, 20)
+        Me.txt_ppn.TabIndex = 65
         '
-        'txt_kota_ship
+        'Label18
         '
-        Me.txt_kota_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kota_ship.Location = New System.Drawing.Point(870, 144)
-        Me.txt_kota_ship.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_kota_ship.Multiline = True
-        Me.txt_kota_ship.Name = "txt_kota_ship"
-        Me.txt_kota_ship.Size = New System.Drawing.Size(178, 19)
-        Me.txt_kota_ship.TabIndex = 63
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(616, 692)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(53, 13)
+        Me.Label18.TabIndex = 64
+        Me.Label18.Text = "SubTotal "
         '
-        'txt_kdpos_ship
+        'Label19
         '
-        Me.txt_kdpos_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kdpos_ship.Location = New System.Drawing.Point(870, 175)
-        Me.txt_kdpos_ship.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_kdpos_ship.Multiline = True
-        Me.txt_kdpos_ship.Name = "txt_kdpos_ship"
-        Me.txt_kdpos_ship.Size = New System.Drawing.Size(178, 19)
-        Me.txt_kdpos_ship.TabIndex = 64
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(616, 658)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(84, 13)
+        Me.Label19.TabIndex = 63
+        Me.Label19.Text = "ShipingHandling"
+        '
+        'PPN
+        '
+        Me.PPN.AutoSize = True
+        Me.PPN.Location = New System.Drawing.Point(616, 627)
+        Me.PPN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.PPN.Name = "PPN"
+        Me.PPN.Size = New System.Drawing.Size(29, 13)
+        Me.PPN.TabIndex = 62
+        Me.PPN.Text = "PPN"
+        '
+        'txt_shiphand
+        '
+        Me.txt_shiphand.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_shiphand.Location = New System.Drawing.Point(711, 658)
+        Me.txt_shiphand.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_shiphand.Name = "txt_shiphand"
+        Me.txt_shiphand.Size = New System.Drawing.Size(178, 20)
+        Me.txt_shiphand.TabIndex = 68
         '
         'BarangKeluar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(1017, 609)
+        Me.ClientSize = New System.Drawing.Size(1017, 718)
+        Me.Controls.Add(Me.txt_shiphand)
+        Me.Controls.Add(Me.txt_subtotal)
+        Me.Controls.Add(Me.txt_ppn)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.PPN)
         Me.Controls.Add(Me.btn_tanda_terima)
         Me.Controls.Add(Me.btn_kwitansi)
         Me.Controls.Add(Me.btn_invoice)
@@ -859,4 +933,10 @@ Partial Class BarangKeluar
     Friend WithEvents txt_kota_ship As TextBox
     Friend WithEvents txt_alamat_ship As TextBox
     Friend WithEvents txt_client_ship As TextBox
+    Friend WithEvents txt_subtotal As TextBox
+    Friend WithEvents txt_ppn As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents PPN As Label
+    Friend WithEvents txt_shiphand As TextBox
 End Class
