@@ -146,7 +146,7 @@ Public Class extend_rental
         dt_barang_keluar_fix.Update()
 
     End Function
-    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer)
+    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer, idClient As Integer)
         Dim result As New List(Of Object)
         listBarangMasuk.Clear()
         Dim query As String = "SELECT * FROM tbl_barang_keluar bm
@@ -162,7 +162,8 @@ Public Class extend_rental
                                     bm.is_active = 1 AND 
                                     sb.id_status_barang = " + idStatus.ToString + " AND 
                                     j.id_jenis = " + idJenis.ToString + " AND 
-                                    t.id_tipe = " + idTipe.ToString
+                                    t.id_tipe = " + idTipe.ToString + " AND
+                                    trans.id_client = " + idClient.ToString
 
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
@@ -218,7 +219,11 @@ Public Class extend_rental
             .kdpos_pengiriman = reader("kdpos_pengiriman"),
             .total_barang = reader("total_barang"),
             .id_barang = reader("id_barang"),
-            .id_barang_keluar = reader("id_barang_keluar")
+            .id_barang_keluar = reader("id_barang_keluar"),
+            .shipto_nama = "",
+            .shipto_alamat = "",
+                .shipto_kota = "",
+                .shipto_kdpos = ""
                 }
             listBarangMasuk.Add(barang)
             result.Add(barang)
@@ -270,6 +275,10 @@ Public Class extend_rental
                                     kota_pengiriman,
                                     kdpos_pengiriman,
                                     tgl_keluar,
+                                    shipto_nama,
+                                    shipto_alamat,
+                                    shipto_kota,
+                                    shipto_kdpos,
                                     total_barang,
                                     created_by,
                                     created_date,
@@ -284,7 +293,11 @@ Public Class extend_rental
                                     '" + barangKeluar.kota_pengiriman + "',
                                     '" + barangKeluar.kdpos_pengiriman + "',
                                      CAST('" + DateTime.Parse(barangKeluar.tgl_keluar).ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),                                  
-                                     " + barangKeluar.total_barang.ToString + ",
+                                    '" + barangKeluar.shipto_nama + "',
+                                    '" + barangKeluar.shipto_alamat + "',
+                                    '" + barangKeluar.shipto_kota + "',
+                                    '" + barangKeluar.shipto_kdpos + "',   
+                                    " + barangKeluar.total_barang.ToString + ",
                                     '" + userlogin + "',
                                      CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),
                                     " + 1.ToString + "
@@ -426,12 +439,12 @@ Public Class extend_rental
                 cmb_jenis_barang.ValueMember = "id_jenis"
             End If
 
-            'Dim listClient As List(Of Object) = GetClient()
-            'If listClient.Count > 0 Then
-            '    cmb_client.DataSource = listClient
-            '    cmb_client.DisplayMember = "nama_client"
-            '    cmb_client.ValueMember = "id_client"
-            'End If
+            Dim listClient As List(Of Object) = GetClient()
+            If listClient.Count > 0 Then
+                cmb_client.DataSource = listClient
+                cmb_client.DisplayMember = "nama_client"
+                cmb_client.ValueMember = "id_client"
+            End If
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -462,10 +475,10 @@ Public Class extend_rental
     Private Sub cmb_tipe_barang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_tipe_barang.SelectedIndexChanged
         Try
             dt_barang_keluar.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe)
+            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe, cmb_client.SelectedValue)
         Catch ex As Exception
             dt_barang_keluar.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue)
+            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue, cmb_client.SelectedValue)
         End Try
     End Sub
 
@@ -623,6 +636,10 @@ Public Class extend_rental
             'insertDataBarangKeluar.kdpos_pengiriman = Me.txt_kdpos.Text
             'insertDataBarangKeluar.total_barang = listBarangKeluarFix.Count
             insertDataBarangKeluar.id_status_barang = 3
+            insertDataBarangKeluar.shipto_nama = Me.txt_client_ship
+            insertDataBarangKeluar.shipto_alamat = Me.txt_alamat_ship
+            insertDataBarangKeluar.shipto_kota = Me.txt_kota_ship
+            insertDataBarangKeluar.shipto_kdpos = Me.txt_kdpos_ship
             SimpanBarangKeluar(insertDataBarangKeluar, index)
             index = index + 1
         Next
@@ -792,5 +809,29 @@ Public Class extend_rental
                 End If
             End If
         Next selectedItem
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub cmb_client_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_client.SelectedIndexChanged
+        Try
+            Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue.id_client).FirstOrDefault()
+            If client IsNot Nothing Then
+                Me.txt_alamat_ship.Text = client.alamat_client
+                Me.txt_kota_ship.Text = client.kota_client
+                Me.txt_kdpos_ship.Text = client.kdpos_client
+                Me.txt_client_ship.Text = cmb_client.SelectedValue.nama_client
+            End If
+        Catch ex As Exception
+            Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue).FirstOrDefault()
+            If client IsNot Nothing Then
+                Me.txt_alamat_ship.Text = client.alamat_client
+                Me.txt_kota_ship.Text = client.kota_client
+                Me.txt_kdpos_ship.Text = client.kdpos_client
+                Me.txt_client_ship.Text = cmb_client.SelectedText
+            End If
+        End Try
     End Sub
 End Class

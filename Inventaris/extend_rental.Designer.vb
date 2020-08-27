@@ -67,6 +67,8 @@ Partial Class extend_rental
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btn_tanda_terima = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.cmb_client = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.btncari = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -78,6 +80,14 @@ Partial Class extend_rental
         Me.txt_harga_total = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.txt_kdpos_ship = New System.Windows.Forms.TextBox()
+        Me.txt_kota_ship = New System.Windows.Forms.TextBox()
+        Me.txt_alamat_ship = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.txt_client_ship = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dt_barang_keluar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -417,7 +427,7 @@ Partial Class extend_rental
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(113, 119)
+        Me.Label3.Location = New System.Drawing.Point(109, 148)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(65, 13)
@@ -449,6 +459,16 @@ Partial Class extend_rental
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel2.Controls.Add(Me.txt_client_ship)
+        Me.Panel2.Controls.Add(Me.Label17)
+        Me.Panel2.Controls.Add(Me.txt_kdpos_ship)
+        Me.Panel2.Controls.Add(Me.txt_kota_ship)
+        Me.Panel2.Controls.Add(Me.txt_alamat_ship)
+        Me.Panel2.Controls.Add(Me.Label14)
+        Me.Panel2.Controls.Add(Me.Label15)
+        Me.Panel2.Controls.Add(Me.Label16)
+        Me.Panel2.Controls.Add(Me.cmb_client)
+        Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.btncari)
         Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Controls.Add(Me.Label1)
@@ -469,6 +489,27 @@ Partial Class extend_rental
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1281, 519)
         Me.Panel2.TabIndex = 86
+        '
+        'cmb_client
+        '
+        Me.cmb_client.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.cmb_client.FormattingEnabled = True
+        Me.cmb_client.Location = New System.Drawing.Point(231, 87)
+        Me.cmb_client.Margin = New System.Windows.Forms.Padding(2)
+        Me.cmb_client.Name = "cmb_client"
+        Me.cmb_client.Size = New System.Drawing.Size(178, 21)
+        Me.cmb_client.TabIndex = 61
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(109, 90)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(33, 13)
+        Me.Label4.TabIndex = 60
+        Me.Label4.Text = "Client"
         '
         'btncari
         '
@@ -513,7 +554,7 @@ Partial Class extend_rental
         '
         Me.cmb_tipe_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cmb_tipe_barang.FormattingEnabled = True
-        Me.cmb_tipe_barang.Location = New System.Drawing.Point(235, 117)
+        Me.cmb_tipe_barang.Location = New System.Drawing.Point(231, 146)
         Me.cmb_tipe_barang.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_tipe_barang.Name = "cmb_tipe_barang"
         Me.cmb_tipe_barang.Size = New System.Drawing.Size(178, 21)
@@ -523,7 +564,7 @@ Partial Class extend_rental
         '
         Me.cmb_jenis_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cmb_jenis_barang.FormattingEnabled = True
-        Me.cmb_jenis_barang.Location = New System.Drawing.Point(235, 89)
+        Me.cmb_jenis_barang.Location = New System.Drawing.Point(231, 118)
         Me.cmb_jenis_barang.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_jenis_barang.Name = "cmb_jenis_barang"
         Me.cmb_jenis_barang.Size = New System.Drawing.Size(178, 21)
@@ -533,7 +574,7 @@ Partial Class extend_rental
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(113, 89)
+        Me.Label2.Location = New System.Drawing.Point(109, 118)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(68, 13)
@@ -581,11 +622,95 @@ Partial Class extend_rental
         Me.Label12.TabIndex = 90
         Me.Label12.Text = "Diskon"
         '
+        'txt_kdpos_ship
+        '
+        Me.txt_kdpos_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_kdpos_ship.Location = New System.Drawing.Point(896, 132)
+        Me.txt_kdpos_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_kdpos_ship.Multiline = True
+        Me.txt_kdpos_ship.Name = "txt_kdpos_ship"
+        Me.txt_kdpos_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_kdpos_ship.TabIndex = 78
+        '
+        'txt_kota_ship
+        '
+        Me.txt_kota_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_kota_ship.Location = New System.Drawing.Point(562, 153)
+        Me.txt_kota_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_kota_ship.Multiline = True
+        Me.txt_kota_ship.Name = "txt_kota_ship"
+        Me.txt_kota_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_kota_ship.TabIndex = 77
+        '
+        'txt_alamat_ship
+        '
+        Me.txt_alamat_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_alamat_ship.Location = New System.Drawing.Point(896, 94)
+        Me.txt_alamat_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_alamat_ship.Multiline = True
+        Me.txt_alamat_ship.Name = "txt_alamat_ship"
+        Me.txt_alamat_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_alamat_ship.TabIndex = 76
+        '
+        'Label14
+        '
+        Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(754, 129)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(89, 13)
+        Me.Label14.TabIndex = 75
+        Me.Label14.Text = "Ship To Kodepos"
+        '
+        'Label15
+        '
+        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(420, 153)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(69, 13)
+        Me.Label15.TabIndex = 74
+        Me.Label15.Text = "Ship To Kota"
+        '
+        'Label16
+        '
+        Me.Label16.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(754, 93)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(128, 13)
+        Me.Label16.TabIndex = 73
+        Me.Label16.Text = "Ship To Alamat Transaksi"
+        '
+        'txt_client_ship
+        '
+        Me.txt_client_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_client_ship.Location = New System.Drawing.Point(565, 122)
+        Me.txt_client_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_client_ship.Multiline = True
+        Me.txt_client_ship.Name = "txt_client_ship"
+        Me.txt_client_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_client_ship.TabIndex = 80
+        '
+        'Label17
+        '
+        Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(420, 122)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(75, 13)
+        Me.Label17.TabIndex = 79
+        Me.Label17.Text = "Ship To Name"
+        '
         'extend_rental
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 676)
+        Me.ClientSize = New System.Drawing.Size(1028, 677)
         Me.Controls.Add(Me.btn_kwitansi)
         Me.Controls.Add(Me.btn_invoice)
         Me.Controls.Add(Me.btn_hapus)
@@ -666,4 +791,14 @@ Partial Class extend_rental
     Friend WithEvents periode_rental_lama As DataGridViewTextBoxColumn
     Friend WithEvents rental_type_lama As DataGridViewComboBoxColumn
     Friend WithEvents rental_exp_lama As DataGridViewTextBoxColumn
+    Friend WithEvents cmb_client As ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txt_kdpos_ship As TextBox
+    Friend WithEvents txt_kota_ship As TextBox
+    Friend WithEvents txt_alamat_ship As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txt_client_ship As TextBox
+    Friend WithEvents Label17 As Label
 End Class

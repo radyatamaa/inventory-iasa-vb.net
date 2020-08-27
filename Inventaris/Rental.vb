@@ -141,7 +141,11 @@ Public Class Rental
             .kota_pengiriman = "",
             .kdpos_pengiriman = "",
             .total_barang = 0,
-            .id_barang = reader("id_barang")
+            .id_barang = reader("id_barang"),
+            .shipto_nama = "",
+            .shipto_alamat = "",
+                .shipto_kota = "",
+                .shipto_kdpos = ""
                 }
             listBarangMasuk.Add(barang)
             result.Add(barang)
@@ -223,6 +227,10 @@ Public Class Rental
                                     kota_pengiriman,
                                     kdpos_pengiriman,
                                     tgl_keluar,
+                                    shipto_nama,
+                                    shipto_alamat,
+                                    shipto_kota,
+                                    shipto_kdpos,
                                     total_barang,
                                     created_by,
                                     created_date,
@@ -237,7 +245,11 @@ Public Class Rental
                                     '" + barangKeluar.kota_pengiriman + "',
                                     '" + barangKeluar.kdpos_pengiriman + "',
                                      CAST('" + DateTime.Parse(barangKeluar.tgl_keluar).ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),                                  
-                                     " + barangKeluar.total_barang.ToString + ",
+                                    '" + barangKeluar.shipto_nama + "',
+                                    '" + barangKeluar.shipto_alamat + "',
+                                    '" + barangKeluar.shipto_kota + "',
+                                    '" + barangKeluar.shipto_kdpos + "',  
+                                    " + barangKeluar.total_barang.ToString + ",
                                     '" + userlogin + "',
                                      CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),
                                     " + 1.ToString + "
@@ -454,6 +466,10 @@ Public Class Rental
                 Me.txt_alamat.Text = client.alamat_client
                 Me.txt_kota.Text = client.kota_client
                 Me.txt_kdpos.Text = client.kdpos_client
+                Me.txt_alamat_ship.Text = client.alamat_client
+                Me.txt_kota_ship.Text = client.kota_client
+                Me.txt_kdpos_ship.Text = client.kdpos_client
+                Me.txt_client_ship.Text = cmb_client.SelectedValue.nama_client
             End If
         Catch ex As Exception
             Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue).FirstOrDefault()
@@ -461,6 +477,10 @@ Public Class Rental
                 Me.txt_alamat.Text = client.alamat_client
                 Me.txt_kota.Text = client.kota_client
                 Me.txt_kdpos.Text = client.kdpos_client
+                Me.txt_alamat_ship.Text = client.alamat_client
+                Me.txt_kota_ship.Text = client.kota_client
+                Me.txt_kdpos_ship.Text = client.kdpos_client
+                Me.txt_client_ship.Text = cmb_client.SelectedText
             End If
         End Try
     End Sub
@@ -630,6 +650,10 @@ Public Class Rental
             insertDataBarangKeluar.kdpos_pengiriman = Me.txt_kdpos.Text
             insertDataBarangKeluar.total_barang = listBarangKeluarFix.Count
             insertDataBarangKeluar.id_status_barang = 3
+            insertDataBarangKeluar.shipto_nama = Me.txt_client_ship
+            insertDataBarangKeluar.shipto_alamat = Me.txt_alamat_ship
+            insertDataBarangKeluar.shipto_kota = Me.txt_kota_ship
+            insertDataBarangKeluar.shipto_kdpos = Me.txt_kdpos_ship
             SimpanBarangKeluar(insertDataBarangKeluar, index)
             index = index + 1
         Next
