@@ -202,4 +202,8 @@ Public Class MenuUtama
         Form3.Show()
         Me.Hide()
     End Sub
+
+    Private Sub btn_r_hasil_penjualan_Click(sender As Object, e As EventArgs) Handles btn_r_hasil_penjualan.Click
+        Laporan_Barang_Penjualan.Show()
+    End Sub
 End Class

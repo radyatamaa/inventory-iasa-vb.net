@@ -556,3 +556,4 @@ C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Laporan_Stock_Barang.resources
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Laporan_Stock_Barang.resources
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Laporan_Stock_Barang.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Laporan_Barang_Penjualan.resources

@@ -307,7 +307,7 @@ Public Class MasterDataToko
     End Sub
 
     Private Sub btn_browse_Click(sender As Object, e As EventArgs) Handles btn_browse.Click
-        OpenFileDialog1.Filter = "Jpeg|*.JPG|Bitmap| *.BMP|Gif| *.GIF"
+        OpenFileDialog1.Filter = "Jpg|*.JPG|Jpeg|*.JPEG|Bitmap| *.BMP|Gif| *.GIF"
         OpenFileDialog1.RestoreDirectory = True
         OpenFileDialog1.ShowDialog()
         If OpenFileDialog1.FileName = "" Then Exit Sub
