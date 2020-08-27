@@ -34,7 +34,6 @@ C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Inventaris.exe
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Inventaris.pdb
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\Inventaris.xml
-C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.vbprojAssemblyReference.cache
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.BarangKeluar.resources
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Form1.resources
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Form2.resources
@@ -557,3 +556,4 @@ C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Laporan_Stock_Barang.resources
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Laporan_Stock_Barang.resources
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.Laporan_Barang_Penjualan.resources
+C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.vbprojAssemblyReference.cache

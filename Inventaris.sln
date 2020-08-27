@@ -9,6 +9,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InventorySetup", "Inventory
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InventoryDevelopment", "InventoryDevelopment\InventoryDevelopment.vdproj", "{D80EBBFA-3D69-4B4F-B6F0-C987102CF66C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Inventory-iasa-group", "Inventory-iasa-group\Inventory-iasa-group.vdproj", "{8BC2327A-3942-4C21-B88A-6C9AA454F1C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,8 @@ Global
 		{7E99C456-557B-464A-8775-94DFEB362D20}.Release|Any CPU.ActiveCfg = Release
 		{D80EBBFA-3D69-4B4F-B6F0-C987102CF66C}.Debug|Any CPU.ActiveCfg = Debug
 		{D80EBBFA-3D69-4B4F-B6F0-C987102CF66C}.Release|Any CPU.ActiveCfg = Release
+		{8BC2327A-3942-4C21-B88A-6C9AA454F1C5}.Debug|Any CPU.ActiveCfg = Debug
+		{8BC2327A-3942-4C21-B88A-6C9AA454F1C5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
