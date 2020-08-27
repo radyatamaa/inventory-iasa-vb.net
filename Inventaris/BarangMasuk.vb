@@ -392,6 +392,50 @@ Public Class BarangMasuk
         CONN.Close()
         Return result
     End Function
+    Function GetBarangMasukBySerialNumber(serialNumber As String) As List(Of Object)
+        Dim result As New List(Of Object)
+        Dim query As String = "SELECT *  FROM tbl_barang_masuk bm
+                                  INNER JOIN tbl_barang b ON bm.id_barang = b.id_barang
+		                          INNER JOIN tbl_kondisi k ON b.id_kondisi = k.id_kondisi
+		                          INNER JOIN tbl_jenis j ON b.id_jenis = j.id_jenis
+		                          INNER JOIN tbl_tipe t ON b.id_tipe = t.id_tipe
+		                          INNER JOIN tbl_lokasi l ON b.id_lokasi = l.id_lokasi
+		                          INNER JOIN tbl_detail_lokasi dl ON b.id_detail_lokasi = dl.id_detail_lokasi
+		                          INNER JOIN tbl_status_barang sb ON b.id_status_barang = sb.id_status_barang
+                                  WHERE bm.is_active = 1 AND b.serial_number = '" + serialNumber + "'"
+        cmd.CommandText = query
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        CONN.Open()
+        reader = cmd.ExecuteReader()
+        'This will loop through all returned records 
+        While reader.Read
+            Dim barangMasuk = New With
+                {
+                .id_barang = reader("id_barang"),
+                  .id_barang_masuk = reader("id_barang_masuk"),
+                 .kd_barang = reader("kd_barang"),
+                 .id_jenis = reader("id_jenis"),
+                 .id_tipe = reader("id_tipe"),
+                 .serial_number = reader("serial_number"),
+                 .id_kondisi = reader("id_kondisi"),
+                 .id_status_barang = reader("id_status_barang"),
+                 .tested = reader("tested"),
+                 .id_lokasi = reader("id_lokasi"),
+                 .id_detail_lokasi = reader("id_detail_lokasi"),
+                 .id_toko = reader("id_toko"),
+                 .harga_beli = reader("harga_beli"),
+                 .harga_jual = reader("harga_jual"),
+                 .licence = reader("licence"),
+                 .tgl_masuk = reader("tgl_masuk")
+                }
+
+            result.Add(barangMasuk)
+            'handle returned value before next loop here
+        End While
+        CONN.Close()
+        Return result
+    End Function
     Function GetBarangMasuk()
 
         Dim result As New List(Of Object)
@@ -875,7 +919,19 @@ Public Class BarangMasuk
                      .tgl_masuk = Me.date_tgl_masuk.Value,
                      .jumlah = 0
                     }
+        'validationSerialNumberDB
+        Dim barang = GetBarangMasukBySerialNumber(insertDataBarangMasuk.serial_number)
+        If barang.Count > 0 Then
+            MsgBox("Serial Number Sudah ada!")
+            Return
+        End If
 
+        'validationSerialNumberDataGrid
+        Dim barangMasukCheck = listBarangMasuk.Where(Function(x) x.serial_number.ToLower() = insertDataBarangMasuk.serial_number.ToLower())
+        If barangMasukCheck.Count > 0 Then
+            MsgBox("Serial Number Sudah ada!")
+            Return
+        End If
         If isDataReal.Count > 0 Then
             Dim idBarangMasuk As Integer = SimpanBarangMasuk(insertDataBarangMasuk)
             dt_barang_masuk.Rows.Clear()
