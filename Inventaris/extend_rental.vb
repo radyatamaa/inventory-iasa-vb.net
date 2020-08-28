@@ -4,6 +4,7 @@ Imports System.Globalization
 Imports System.Text
 
 Public Class extend_rental
+    Dim ppnNominal As Decimal = 0
     Public Property UserInfo As Object
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
@@ -146,7 +147,7 @@ Public Class extend_rental
         dt_barang_keluar_fix.Update()
 
     End Function
-    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer)
+    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer, idClient As Integer)
         Dim result As New List(Of Object)
         listBarangMasuk.Clear()
         Dim query As String = "SELECT * FROM tbl_barang_keluar bm
@@ -162,7 +163,8 @@ Public Class extend_rental
                                     bm.is_active = 1 AND 
                                     sb.id_status_barang = " + idStatus.ToString + " AND 
                                     j.id_jenis = " + idJenis.ToString + " AND 
-                                    t.id_tipe = " + idTipe.ToString
+                                    t.id_tipe = " + idTipe.ToString + " AND
+                                    trans.id_client = " + idClient.ToString
 
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
@@ -218,7 +220,15 @@ Public Class extend_rental
             .kdpos_pengiriman = reader("kdpos_pengiriman"),
             .total_barang = reader("total_barang"),
             .id_barang = reader("id_barang"),
-            .id_barang_keluar = reader("id_barang_keluar")
+            .id_barang_keluar = reader("id_barang_keluar"),
+            .shipto_nama = "",
+            .shipto_alamat = "",
+                .shipto_kota = "",
+                .shipto_kdpos = "",
+                  .persen_ppn = 0,
+                .nominal_ppn = 0,
+                .shipping_handling = 0,
+                .subtotal = 0
                 }
             listBarangMasuk.Add(barang)
             result.Add(barang)
@@ -264,12 +274,20 @@ Public Class extend_rental
                                     kd_transaksi_keluar,
                                     harga_total,
                                     diskon,
-                                    harga_akhir,                                   
+                                    harga_akhir,      
+                                    persen_ppn,
+                                    nominal_ppn,
+                                    shipping_handling,
+                                    subtotal,
                                     id_client,
                                     alamat_pengiriman,
                                     kota_pengiriman,
                                     kdpos_pengiriman,
                                     tgl_keluar,
+                                    shipto_nama,
+                                    shipto_alamat,
+                                    shipto_kota,
+                                    shipto_kdpos,
                                     total_barang,
                                     created_by,
                                     created_date,
@@ -279,12 +297,20 @@ Public Class extend_rental
                                     " + barangKeluar.harga_total.ToString + ",
                                     " + barangKeluar.diskon.ToString + ",
                                      " + barangKeluar.harga_akhir.ToString + ",
+                                       " + barangKeluar.persen_ppn.ToString + ",
+                                    " + barangKeluar.nominal_ppn.ToString + ",
+                                    " + barangKeluar.shipping_handling.ToString + ",
+                                    " + barangKeluar.subtotal.ToString + ",
                                      " + barangKeluar.id_client.ToString + ",
                                     '" + barangKeluar.alamat_pengiriman + "',
                                     '" + barangKeluar.kota_pengiriman + "',
                                     '" + barangKeluar.kdpos_pengiriman + "',
                                      CAST('" + DateTime.Parse(barangKeluar.tgl_keluar).ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),                                  
-                                     " + barangKeluar.total_barang.ToString + ",
+                                    '" + barangKeluar.shipto_nama + "',
+                                    '" + barangKeluar.shipto_alamat + "',
+                                    '" + barangKeluar.shipto_kota + "',
+                                    '" + barangKeluar.shipto_kdpos + "',   
+                                    " + barangKeluar.total_barang.ToString + ",
                                     '" + userlogin + "',
                                      CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),
                                     " + 1.ToString + "
@@ -414,6 +440,9 @@ Public Class extend_rental
         Try
             Me.txt_harga_total.Text = 0
             Me.txt_harga_akhir.Text = 0
+            Me.txt_subtotal.Text = 0
+            Me.txt_ppn.Text = 0
+            Me.txt_shiphand.Text = 0
             isSelectedTipeJenis = 0
             'Dim kdTransaksi As String = RandomString(New Random)
             'Me.txt_kd_transaksi.Text = kdTransaksi
@@ -426,12 +455,12 @@ Public Class extend_rental
                 cmb_jenis_barang.ValueMember = "id_jenis"
             End If
 
-            'Dim listClient As List(Of Object) = GetClient()
-            'If listClient.Count > 0 Then
-            '    cmb_client.DataSource = listClient
-            '    cmb_client.DisplayMember = "nama_client"
-            '    cmb_client.ValueMember = "id_client"
-            'End If
+            Dim listClient As List(Of Object) = GetClient()
+            If listClient.Count > 0 Then
+                cmb_client.DataSource = listClient
+                cmb_client.DisplayMember = "nama_client"
+                cmb_client.ValueMember = "id_client"
+            End If
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -462,10 +491,10 @@ Public Class extend_rental
     Private Sub cmb_tipe_barang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_tipe_barang.SelectedIndexChanged
         Try
             dt_barang_keluar.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe)
+            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe, cmb_client.SelectedValue)
         Catch ex As Exception
             dt_barang_keluar.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue)
+            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue, cmb_client.SelectedValue)
         End Try
     End Sub
 
@@ -537,6 +566,143 @@ Public Class extend_rental
     End Sub
 
     Private Sub dt_barang_keluar_fix_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_keluar_fix.CellEndEdit
+
+    End Sub
+
+    Private Sub btn_hapus_Click(sender As Object, e As EventArgs) Handles btn_hapus.Click
+        Me.txt_harga_total.Text = 0
+        Me.txt_harga_akhir.Text = 0
+        For Each item As Object In listBarangKeluarFixHandle
+            If item IsNot Nothing Then
+
+                Dim deleteData As Object = listBarangKeluarFix.Where(Function(x) x.id_barang_keluar = item.id_barang_keluar).FirstOrDefault()
+                listBarangKeluarFix.Remove(deleteData)
+            End If
+        Next
+        dt_barang_keluar_fix.Rows.Clear()
+
+        For Each barangKeluarFix As Object In listBarangKeluarFix
+
+            MappingToDataGridBarangKeluarFix(barangKeluarFix)
+
+            Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangKeluarFix.harga_akhir)
+            Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+            'listBarangKeluarFix.Add(barangMasukHandle)
+            'Index = Index + 1
+
+        Next
+        If listBarangKeluarFix.Count = 0 Then
+            triggerTambahBarangKeluar = False
+            dt_barang_keluar_fix.Columns.RemoveAt(13)
+        End If
+    End Sub
+
+    Private Sub txt_diskon_TextChanged(sender As Object, e As EventArgs) Handles txt_diskon.TextChanged
+        If System.Text.RegularExpressions.Regex.IsMatch(txt_diskon.Text, "[  ^ 0-9]") Then
+            Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text) - Val(Me.txt_diskon.Text)
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
+        ElseIf txt_diskon.Text = "" Then
+            Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+        Else
+            MsgBox("Diskon hanya bisa numbering")
+        End If
+    End Sub
+
+    Private Sub btn_simpan_Click(sender As Object, e As EventArgs) Handles btn_simpan.Click
+        Dim index = 0
+
+        Dim kdTransaksi As String = RandomString(New Random)
+        For Each insertDataBarangKeluar As Object In listBarangKeluarFix
+            Dim diskon = 0
+            Dim idToko As String
+            Dim garansiType As String = ""
+            Dim garansi = "NULL"
+            Dim garansiExp = "NULL"
+
+            If insertDataBarangKeluar.periode_rental IsNot Nothing And insertDataBarangKeluar.periode_rental <> "" Then
+                garansi = insertDataBarangKeluar.periode_rental
+            End If
+            If insertDataBarangKeluar.rental_type <> "" Then
+                garansiType = insertDataBarangKeluar.rental_type
+            End If
+            If insertDataBarangKeluar.rental_exp IsNot Nothing Then
+                garansiExp = insertDataBarangKeluar.rental_exp
+            End If
+            If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
+                idToko = MenuUtama.MenuStrip1.Tag.IdToko
+            End If
+            If Me.txt_diskon.Text <> "" Then
+                diskon = Me.txt_diskon.Text
+            End If
+            insertDataBarangKeluar.kd_transaksi_keluar = kdTransaksi
+            'insertDataBarangKeluar.id_client = Me.cmb_client.SelectedValue
+            'insertDataBarangKeluar.id_toko = idToko
+            insertDataBarangKeluar.id_alasan = "NULL"
+            'insertDataBarangKeluar.judul = ""
+            insertDataBarangKeluar.tgl_keluar = Me.date_tgl_keluar.Value
+            insertDataBarangKeluar.garansi = garansi
+            insertDataBarangKeluar.garansi_type = garansiType
+            insertDataBarangKeluar.garansi_exp = garansiExp
+            'insertDataBarangKeluar.id_client = Me.cmb_client.SelectedValue
+            'insertDataBarangKeluar.jumlah = reader("jumlah"),
+            insertDataBarangKeluar.harga_total = Me.txt_harga_total.Text
+            insertDataBarangKeluar.diskon = diskon
+            insertDataBarangKeluar.harga_akhir = Me.txt_harga_akhir.Text
+            'insertDataBarangKeluar.alamat_pengiriman = Me.txt_alamat.Text
+            'insertDataBarangKeluar.kota_pengiriman = Me.txt_kota.Text
+            'insertDataBarangKeluar.kdpos_pengiriman = Me.txt_kdpos.Text
+            'insertDataBarangKeluar.total_barang = listBarangKeluarFix.Count
+            insertDataBarangKeluar.id_status_barang = 3
+            insertDataBarangKeluar.shipto_nama = Me.txt_client_ship.Text
+            insertDataBarangKeluar.shipto_alamat = Me.txt_alamat_ship.Text
+            insertDataBarangKeluar.shipto_kota = Me.txt_kota_ship.Text
+            insertDataBarangKeluar.shipto_kdpos = Me.txt_kdpos_ship.Text
+            insertDataBarangKeluar.persen_ppn = Me.txt_ppn.Text
+            insertDataBarangKeluar.nominal_ppn = ppnNominal
+            insertDataBarangKeluar.shipping_handling = Me.txt_shiphand.Text
+            insertDataBarangKeluar.subtotal = Me.txt_subtotal.Text
+            SimpanBarangKeluar(insertDataBarangKeluar, index)
+            index = index + 1
+        Next
+        index = 0
+        dt_barang_keluar.Rows.Clear()
+        dt_barang_keluar_fix.Rows.Clear()
+        listBarangKeluarFix.Clear()
+        listBarangMasuk.Clear()
+        'invoice_cetak.KdTransaksi = Me.txt_kd_transaksi.Text
+        'Dim kdTransaksi As String = RandomString(New Random)
+        'Me.txt_kd_transaksi.Text = kdTransaksi
+        Me.txt_harga_total.Text = 0
+        Me.txt_harga_akhir.Text = 0
+        Me.txt_diskon.Text = 0
+        MsgBox("Sukses Data Tersimpan!")
+
+    End Sub
+
+    Private Sub btncari_Click(sender As Object, e As EventArgs) Handles btncari.Click
+        Dim keywoard = TextBox1.Text
+        dt_barang_keluar.Rows.Clear()
+        Dim search As List(Of Object)
+        If keywoard <> "" Then
+            search = listBarangMasuk.Where(Function(x) keywoard.StartsWith(x.serial_number) Or
+                                              keywoard.StartsWith(x.kd_transaksi_keluar) Or
+                                              keywoard.StartsWith(x.nama_tipe) Or
+                                              keywoard.StartsWith(x.nama_jenis)).ToList()
+        Else
+            search = listBarangMasuk.ToList()
+        End If
+
+
+        MappingToDataGridBarangKeluar(search)
+    End Sub
+
+    Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
+        MenuUtama.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub dt_barang_keluar_fix_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_keluar_fix.CellValueChanged
         listBarangKeluarFixHandle.Clear()
 
         Dim changeHargaJualBarangKeluar = dt_barang_keluar_fix.SelectedCells
@@ -556,7 +722,7 @@ Public Class extend_rental
 
                             MappingToDataGridBarangKeluarFix(barangKeluarFix)
 
-                            Me.txt_harga_total.Text = Integer.Parse(Me.txt_harga_total.Text) + Integer.Parse(barangKeluarFix.harga_akhir)
+                            Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangKeluarFix.harga_akhir)
                             Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
                             'listBarangKeluarFix.Add(barangMasukHandle)
                             index = index + 1
@@ -667,126 +833,57 @@ Public Class extend_rental
         Next selectedItem
     End Sub
 
-    Private Sub btn_hapus_Click(sender As Object, e As EventArgs) Handles btn_hapus.Click
-        Me.txt_harga_total.Text = 0
-        Me.txt_harga_akhir.Text = 0
-        For Each item As Object In listBarangKeluarFixHandle
-            If item IsNot Nothing Then
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
-                Dim deleteData As Object = listBarangKeluarFix.Where(Function(x) x.id_barang_keluar = item.id_barang_keluar).FirstOrDefault()
-                listBarangKeluarFix.Remove(deleteData)
-            End If
-        Next
-        dt_barang_keluar_fix.Rows.Clear()
-
-        For Each barangKeluarFix As Object In listBarangKeluarFix
-
-            MappingToDataGridBarangKeluarFix(barangKeluarFix)
-
-            Me.txt_harga_total.Text = Me.txt_harga_total.Text + barangKeluarFix.harga_akhir
-            Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
-            'listBarangKeluarFix.Add(barangMasukHandle)
-            'Index = Index + 1
-
-        Next
-        If listBarangKeluarFix.Count = 0 Then
-            triggerTambahBarangKeluar = False
-            dt_barang_keluar_fix.Columns.RemoveAt(13)
-        End If
     End Sub
 
-    Private Sub txt_diskon_TextChanged(sender As Object, e As EventArgs) Handles txt_diskon.TextChanged
-        If System.Text.RegularExpressions.Regex.IsMatch(txt_diskon.Text, "[  ^ 0-9]") Then
-            Me.txt_harga_akhir.Text = Integer.Parse(Me.txt_harga_akhir.Text) - Integer.Parse(Me.txt_diskon.Text)
-        ElseIf txt_diskon.Text = "" Then
-            Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+    Private Sub cmb_client_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_client.SelectedIndexChanged
+        Try
+            Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue.id_client).FirstOrDefault()
+            If client IsNot Nothing Then
+                Me.txt_alamat_ship.Text = client.alamat_client
+                Me.txt_kota_ship.Text = client.kota_client
+                Me.txt_kdpos_ship.Text = client.kdpos_client
+                Me.txt_client_ship.Text = cmb_client.SelectedValue.nama_client
+            End If
+        Catch ex As Exception
+            Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue).FirstOrDefault()
+            If client IsNot Nothing Then
+                Me.txt_alamat_ship.Text = client.alamat_client
+                Me.txt_kota_ship.Text = client.kota_client
+                Me.txt_kdpos_ship.Text = client.kdpos_client
+                Me.txt_client_ship.Text = cmb_client.SelectedText
+            End If
+        End Try
+    End Sub
+
+    Private Sub txt_ppn_TextChanged(sender As Object, e As EventArgs) Handles txt_ppn.TextChanged
+        If System.Text.RegularExpressions.Regex.IsMatch(txt_ppn.Text, "[  ^ 0-9]") Then
+            Dim hargaAkhir = Me.txt_harga_akhir.Text
+            Dim ppnCalculate = Val(txt_ppn.Text) / 100
+            Dim ppn = Val(ppnCalculate) * Val(hargaAkhir)
+            ppnNominal = ppn
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppn) + Val(txt_shiphand.Text)
+        ElseIf txt_ppn.Text = "" Then
+            ppnNominal = 0
+            Me.txt_ppn.Text = ""
         Else
-            MsgBox("Diskon hanya bisa numbering")
+            ppnNominal = 0
+            MsgBox("PPN hanya bisa numbering")
+            Me.txt_ppn.Text = ""
         End If
     End Sub
 
-    Private Sub btn_simpan_Click(sender As Object, e As EventArgs) Handles btn_simpan.Click
-        Dim index = 0
-
-        Dim kdTransaksi As String = RandomString(New Random)
-        For Each insertDataBarangKeluar As Object In listBarangKeluarFix
-            Dim diskon = 0
-            Dim idToko As String
-            Dim garansiType As String = ""
-            Dim garansi = "NULL"
-            Dim garansiExp = "NULL"
-
-            If insertDataBarangKeluar.periode_rental IsNot Nothing And insertDataBarangKeluar.periode_rental <> "" Then
-                garansi = insertDataBarangKeluar.periode_rental
-            End If
-            If insertDataBarangKeluar.rental_type <> "" Then
-                garansiType = insertDataBarangKeluar.rental_type
-            End If
-            If insertDataBarangKeluar.rental_exp IsNot Nothing Then
-                garansiExp = insertDataBarangKeluar.rental_exp
-            End If
-            If MenuUtama.MenuStrip1.Tag IsNot Nothing Then
-                idToko = MenuUtama.MenuStrip1.Tag.IdToko
-            End If
-            If Me.txt_diskon.Text <> "" Then
-                diskon = Me.txt_diskon.Text
-            End If
-            insertDataBarangKeluar.kd_transaksi_keluar = kdTransaksi
-            'insertDataBarangKeluar.id_client = Me.cmb_client.SelectedValue
-            'insertDataBarangKeluar.id_toko = idToko
-            insertDataBarangKeluar.id_alasan = "NULL"
-            'insertDataBarangKeluar.judul = ""
-            insertDataBarangKeluar.tgl_keluar = Me.date_tgl_keluar.Value
-            insertDataBarangKeluar.garansi = garansi
-            insertDataBarangKeluar.garansi_type = garansiType
-            insertDataBarangKeluar.garansi_exp = garansiExp
-            'insertDataBarangKeluar.id_client = Me.cmb_client.SelectedValue
-            'insertDataBarangKeluar.jumlah = reader("jumlah"),
-            insertDataBarangKeluar.harga_total = Me.txt_harga_total.Text
-            insertDataBarangKeluar.diskon = diskon
-            insertDataBarangKeluar.harga_akhir = Me.txt_harga_akhir.Text
-            'insertDataBarangKeluar.alamat_pengiriman = Me.txt_alamat.Text
-            'insertDataBarangKeluar.kota_pengiriman = Me.txt_kota.Text
-            'insertDataBarangKeluar.kdpos_pengiriman = Me.txt_kdpos.Text
-            'insertDataBarangKeluar.total_barang = listBarangKeluarFix.Count
-            insertDataBarangKeluar.id_status_barang = 3
-            SimpanBarangKeluar(insertDataBarangKeluar, index)
-            index = index + 1
-        Next
-        index = 0
-        dt_barang_keluar.Rows.Clear()
-        dt_barang_keluar_fix.Rows.Clear()
-        listBarangKeluarFix.Clear()
-        listBarangMasuk.Clear()
-        'invoice_cetak.KdTransaksi = Me.txt_kd_transaksi.Text
-        'Dim kdTransaksi As String = RandomString(New Random)
-        'Me.txt_kd_transaksi.Text = kdTransaksi
-        Me.txt_harga_total.Text = 0
-        Me.txt_harga_akhir.Text = 0
-        Me.txt_diskon.Text = 0
-        MsgBox("Sukses Data Tersimpan!")
-
-    End Sub
-
-    Private Sub btncari_Click(sender As Object, e As EventArgs) Handles btncari.Click
-        Dim keywoard = TextBox1.Text
-        dt_barang_keluar.Rows.Clear()
-        Dim search As List(Of Object)
-        If keywoard <> "" Then
-            search = listBarangMasuk.Where(Function(x) keywoard.StartsWith(x.serial_number) Or
-                                              keywoard.StartsWith(x.kd_transaksi_keluar) Or
-                                              keywoard.StartsWith(x.nama_tipe) Or
-                                              keywoard.StartsWith(x.nama_jenis)).ToList()
+    Private Sub txt_shiphand_TextChanged(sender As Object, e As EventArgs) Handles txt_shiphand.TextChanged
+        If System.Text.RegularExpressions.Regex.IsMatch(txt_shiphand.Text, "[  ^ 0-9]") Then
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
+        ElseIf txt_shiphand.Text = "" Then
+            txt_shiphand.Text = 0
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
         Else
-            search = listBarangMasuk.ToList()
+            txt_shiphand.Text = 0
+            MsgBox("PPN hanya bisa numbering")
+            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
         End If
-
-
-        MappingToDataGridBarangKeluar(search)
-    End Sub
-
-    Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
-        MenuUtama.Show()
-        Me.Hide()
     End Sub
 End Class

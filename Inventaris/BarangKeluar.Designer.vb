@@ -45,8 +45,29 @@ Partial Class BarangKeluar
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txt_kdpos_ship = New System.Windows.Forms.TextBox()
+        Me.txt_kota_ship = New System.Windows.Forms.TextBox()
+        Me.txt_alamat_ship = New System.Windows.Forms.TextBox()
+        Me.txt_client_ship = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.btn_tambha = New System.Windows.Forms.Button()
         Me.dt_barang_keluar_fix = New System.Windows.Forms.DataGridView()
+        Me.jenis_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipe_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.serial_number2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kondisi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tested2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.detail_lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.catatan2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.status2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.harga_jual2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.garansi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.garansi_type = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.garansi_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_kdpos = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_kota = New System.Windows.Forms.TextBox()
@@ -69,19 +90,12 @@ Partial Class BarangKeluar
         Me.btn_invoice = New System.Windows.Forms.Button()
         Me.btn_kwitansi = New System.Windows.Forms.Button()
         Me.btn_tanda_terima = New System.Windows.Forms.Button()
-        Me.jenis_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipe_barang2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.serial_number2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kondisi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tested2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.detail_lokasi2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.catatan2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.status2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.harga_jual2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.garansi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.garansi_type = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.garansi_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txt_subtotal = New System.Windows.Forms.TextBox()
+        Me.txt_ppn = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.PPN = New System.Windows.Forms.Label()
+        Me.txt_shiphand = New System.Windows.Forms.TextBox()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -132,7 +146,7 @@ Partial Class BarangKeluar
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1026, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1093, 119)
         Me.dt_barang_masuk.TabIndex = 16
         '
         'jenis_barang
@@ -284,6 +298,14 @@ Partial Class BarangKeluar
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel2.Controls.Add(Me.txt_kdpos_ship)
+        Me.Panel2.Controls.Add(Me.txt_kota_ship)
+        Me.Panel2.Controls.Add(Me.txt_alamat_ship)
+        Me.Panel2.Controls.Add(Me.txt_client_ship)
+        Me.Panel2.Controls.Add(Me.Label17)
+        Me.Panel2.Controls.Add(Me.Label14)
+        Me.Panel2.Controls.Add(Me.Label15)
+        Me.Panel2.Controls.Add(Me.Label16)
         Me.Panel2.Controls.Add(Me.btn_tambha)
         Me.Panel2.Controls.Add(Me.dt_barang_keluar_fix)
         Me.Panel2.Controls.Add(Me.txt_kdpos)
@@ -311,8 +333,92 @@ Partial Class BarangKeluar
         Me.Panel2.Location = New System.Drawing.Point(2, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1281, 516)
+        Me.Panel2.Size = New System.Drawing.Size(1348, 516)
         Me.Panel2.TabIndex = 6
+        '
+        'txt_kdpos_ship
+        '
+        Me.txt_kdpos_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_kdpos_ship.Location = New System.Drawing.Point(870, 175)
+        Me.txt_kdpos_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_kdpos_ship.Multiline = True
+        Me.txt_kdpos_ship.Name = "txt_kdpos_ship"
+        Me.txt_kdpos_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_kdpos_ship.TabIndex = 64
+        '
+        'txt_kota_ship
+        '
+        Me.txt_kota_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_kota_ship.Location = New System.Drawing.Point(870, 144)
+        Me.txt_kota_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_kota_ship.Multiline = True
+        Me.txt_kota_ship.Name = "txt_kota_ship"
+        Me.txt_kota_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_kota_ship.TabIndex = 63
+        '
+        'txt_alamat_ship
+        '
+        Me.txt_alamat_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_alamat_ship.Location = New System.Drawing.Point(870, 116)
+        Me.txt_alamat_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_alamat_ship.Multiline = True
+        Me.txt_alamat_ship.Name = "txt_alamat_ship"
+        Me.txt_alamat_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_alamat_ship.TabIndex = 62
+        '
+        'txt_client_ship
+        '
+        Me.txt_client_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_client_ship.Location = New System.Drawing.Point(870, 88)
+        Me.txt_client_ship.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_client_ship.Multiline = True
+        Me.txt_client_ship.Name = "txt_client_ship"
+        Me.txt_client_ship.Size = New System.Drawing.Size(178, 19)
+        Me.txt_client_ship.TabIndex = 61
+        '
+        'Label17
+        '
+        Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(728, 88)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(75, 13)
+        Me.Label17.TabIndex = 60
+        Me.Label17.Text = "Ship To Name"
+        '
+        'Label14
+        '
+        Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(728, 172)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(89, 13)
+        Me.Label14.TabIndex = 59
+        Me.Label14.Text = "Ship To Kodepos"
+        '
+        'Label15
+        '
+        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(728, 144)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(69, 13)
+        Me.Label15.TabIndex = 58
+        Me.Label15.Text = "Ship To Kota"
+        '
+        'Label16
+        '
+        Me.Label16.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(728, 115)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(128, 13)
+        Me.Label16.TabIndex = 57
+        Me.Label16.Text = "Ship To Alamat Transaksi"
         '
         'btn_tambha
         '
@@ -342,8 +448,94 @@ Partial Class BarangKeluar
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1024, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1091, 119)
         Me.dt_barang_keluar_fix.TabIndex = 55
+        '
+        'jenis_barang2
+        '
+        Me.jenis_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.jenis_barang2.HeaderText = "Jenis Barang"
+        Me.jenis_barang2.MinimumWidth = 70
+        Me.jenis_barang2.Name = "jenis_barang2"
+        '
+        'tipe_barang2
+        '
+        Me.tipe_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tipe_barang2.HeaderText = "Tipe Barang"
+        Me.tipe_barang2.MinimumWidth = 70
+        Me.tipe_barang2.Name = "tipe_barang2"
+        '
+        'serial_number2
+        '
+        Me.serial_number2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.serial_number2.HeaderText = "Serial Number"
+        Me.serial_number2.MinimumWidth = 70
+        Me.serial_number2.Name = "serial_number2"
+        '
+        'kondisi2
+        '
+        Me.kondisi2.HeaderText = "Kondisi"
+        Me.kondisi2.MinimumWidth = 6
+        Me.kondisi2.Name = "kondisi2"
+        Me.kondisi2.Width = 125
+        '
+        'tested2
+        '
+        Me.tested2.HeaderText = "Tested"
+        Me.tested2.MinimumWidth = 6
+        Me.tested2.Name = "tested2"
+        Me.tested2.Width = 125
+        '
+        'lokasi2
+        '
+        Me.lokasi2.HeaderText = "Lokasi"
+        Me.lokasi2.MinimumWidth = 6
+        Me.lokasi2.Name = "lokasi2"
+        Me.lokasi2.Width = 125
+        '
+        'detail_lokasi2
+        '
+        Me.detail_lokasi2.HeaderText = "Detail Lokasi"
+        Me.detail_lokasi2.MinimumWidth = 6
+        Me.detail_lokasi2.Name = "detail_lokasi2"
+        Me.detail_lokasi2.Width = 125
+        '
+        'catatan2
+        '
+        Me.catatan2.HeaderText = "Catatan"
+        Me.catatan2.MinimumWidth = 6
+        Me.catatan2.Name = "catatan2"
+        Me.catatan2.Width = 125
+        '
+        'status2
+        '
+        Me.status2.HeaderText = "Status"
+        Me.status2.MinimumWidth = 6
+        Me.status2.Name = "status2"
+        Me.status2.Width = 125
+        '
+        'harga_jual2
+        '
+        Me.harga_jual2.HeaderText = "Harga Jual"
+        Me.harga_jual2.MinimumWidth = 6
+        Me.harga_jual2.Name = "harga_jual2"
+        Me.harga_jual2.Width = 125
+        '
+        'garansi
+        '
+        Me.garansi.HeaderText = "Periode Garansi"
+        Me.garansi.Name = "garansi"
+        '
+        'garansi_type
+        '
+        Me.garansi_type.HeaderText = "Tipe Garansi"
+        Me.garansi_type.Items.AddRange(New Object() {"Hari", "Bulan", "Tahun"})
+        Me.garansi_type.Name = "garansi_type"
+        '
+        'garansi_exp
+        '
+        Me.garansi_exp.HeaderText = "Tanggal Akhir Garansi"
+        Me.garansi_exp.Name = "garansi_exp"
         '
         'txt_kdpos
         '
@@ -573,98 +765,80 @@ Partial Class BarangKeluar
         Me.btn_tanda_terima.Text = "Cetak Tanda Terima"
         Me.btn_tanda_terima.UseVisualStyleBackColor = True
         '
-        'jenis_barang2
+        'txt_subtotal
         '
-        Me.jenis_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.jenis_barang2.HeaderText = "Jenis Barang"
-        Me.jenis_barang2.MinimumWidth = 70
-        Me.jenis_barang2.Name = "jenis_barang2"
+        Me.txt_subtotal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_subtotal.Enabled = False
+        Me.txt_subtotal.Location = New System.Drawing.Point(711, 690)
+        Me.txt_subtotal.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_subtotal.Name = "txt_subtotal"
+        Me.txt_subtotal.Size = New System.Drawing.Size(178, 20)
+        Me.txt_subtotal.TabIndex = 67
         '
-        'tipe_barang2
+        'txt_ppn
         '
-        Me.tipe_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.tipe_barang2.HeaderText = "Tipe Barang"
-        Me.tipe_barang2.MinimumWidth = 70
-        Me.tipe_barang2.Name = "tipe_barang2"
+        Me.txt_ppn.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_ppn.Location = New System.Drawing.Point(711, 627)
+        Me.txt_ppn.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_ppn.Name = "txt_ppn"
+        Me.txt_ppn.Size = New System.Drawing.Size(178, 20)
+        Me.txt_ppn.TabIndex = 65
         '
-        'serial_number2
+        'Label18
         '
-        Me.serial_number2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.serial_number2.HeaderText = "Serial Number"
-        Me.serial_number2.MinimumWidth = 70
-        Me.serial_number2.Name = "serial_number2"
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(616, 692)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(53, 13)
+        Me.Label18.TabIndex = 64
+        Me.Label18.Text = "SubTotal "
         '
-        'kondisi2
+        'Label19
         '
-        Me.kondisi2.HeaderText = "Kondisi"
-        Me.kondisi2.MinimumWidth = 6
-        Me.kondisi2.Name = "kondisi2"
-        Me.kondisi2.Width = 125
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(616, 658)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(84, 13)
+        Me.Label19.TabIndex = 63
+        Me.Label19.Text = "ShipingHandling"
         '
-        'tested2
+        'PPN
         '
-        Me.tested2.HeaderText = "Tested"
-        Me.tested2.MinimumWidth = 6
-        Me.tested2.Name = "tested2"
-        Me.tested2.Width = 125
+        Me.PPN.AutoSize = True
+        Me.PPN.Location = New System.Drawing.Point(616, 627)
+        Me.PPN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.PPN.Name = "PPN"
+        Me.PPN.Size = New System.Drawing.Size(29, 13)
+        Me.PPN.TabIndex = 62
+        Me.PPN.Text = "PPN"
         '
-        'lokasi2
+        'txt_shiphand
         '
-        Me.lokasi2.HeaderText = "Lokasi"
-        Me.lokasi2.MinimumWidth = 6
-        Me.lokasi2.Name = "lokasi2"
-        Me.lokasi2.Width = 125
-        '
-        'detail_lokasi2
-        '
-        Me.detail_lokasi2.HeaderText = "Detail Lokasi"
-        Me.detail_lokasi2.MinimumWidth = 6
-        Me.detail_lokasi2.Name = "detail_lokasi2"
-        Me.detail_lokasi2.Width = 125
-        '
-        'catatan2
-        '
-        Me.catatan2.HeaderText = "Catatan"
-        Me.catatan2.MinimumWidth = 6
-        Me.catatan2.Name = "catatan2"
-        Me.catatan2.Width = 125
-        '
-        'status2
-        '
-        Me.status2.HeaderText = "Status"
-        Me.status2.MinimumWidth = 6
-        Me.status2.Name = "status2"
-        Me.status2.Width = 125
-        '
-        'harga_jual2
-        '
-        Me.harga_jual2.HeaderText = "Harga Jual"
-        Me.harga_jual2.MinimumWidth = 6
-        Me.harga_jual2.Name = "harga_jual2"
-        Me.harga_jual2.Width = 125
-        '
-        'garansi
-        '
-        Me.garansi.HeaderText = "Periode Garansi"
-        Me.garansi.Name = "garansi"
-        '
-        'garansi_type
-        '
-        Me.garansi_type.HeaderText = "Tipe Garansi"
-        Me.garansi_type.Items.AddRange(New Object() {"Hari", "Bulan", "Tahun"})
-        Me.garansi_type.Name = "garansi_type"
-        '
-        'garansi_exp
-        '
-        Me.garansi_exp.HeaderText = "Tanggal Akhir Garansi"
-        Me.garansi_exp.Name = "garansi_exp"
+        Me.txt_shiphand.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_shiphand.Location = New System.Drawing.Point(711, 658)
+        Me.txt_shiphand.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_shiphand.Name = "txt_shiphand"
+        Me.txt_shiphand.Size = New System.Drawing.Size(178, 20)
+        Me.txt_shiphand.TabIndex = 68
         '
         'BarangKeluar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.ClientSize = New System.Drawing.Size(1017, 718)
+        Me.Controls.Add(Me.txt_shiphand)
+        Me.Controls.Add(Me.txt_subtotal)
+        Me.Controls.Add(Me.txt_ppn)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.PPN)
         Me.Controls.Add(Me.btn_tanda_terima)
         Me.Controls.Add(Me.btn_kwitansi)
         Me.Controls.Add(Me.btn_invoice)
@@ -751,4 +925,18 @@ Partial Class BarangKeluar
     Friend WithEvents garansi As DataGridViewTextBoxColumn
     Friend WithEvents garansi_type As DataGridViewComboBoxColumn
     Friend WithEvents garansi_exp As DataGridViewTextBoxColumn
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txt_kdpos_ship As TextBox
+    Friend WithEvents txt_kota_ship As TextBox
+    Friend WithEvents txt_alamat_ship As TextBox
+    Friend WithEvents txt_client_ship As TextBox
+    Friend WithEvents txt_subtotal As TextBox
+    Friend WithEvents txt_ppn As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents PPN As Label
+    Friend WithEvents txt_shiphand As TextBox
 End Class
