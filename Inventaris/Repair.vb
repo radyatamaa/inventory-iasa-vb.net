@@ -693,13 +693,12 @@ Public Class Repair
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.detail_lokasi
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.catatan
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.nama_status
-            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.harga_jual
             If index = 0 And isSelectedTipeJenis = 0 Then
                 isSelectedTipeJenis = 1
                 dt_barang_masuk.Columns.Add("id_barang_masuk", "IdBarangMasuk")
-                dt_barang_masuk.Columns(10).Visible = False
+                dt_barang_masuk.Columns(9).Visible = False
             End If
-            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.id_barang_masuk
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.id_barang_masuk
 
             dt_barang_masuk.Update()
             index = index + 1
