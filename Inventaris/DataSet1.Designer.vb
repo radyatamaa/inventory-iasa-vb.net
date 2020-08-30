@@ -337,6 +337,26 @@ Partial Public Class DataSet1
         
         Private columntlp_owner As Global.System.Data.DataColumn
         
+        Private columnnama_jenis_tipe_serial As Global.System.Data.DataColumn
+        
+        Private columnshipto_nama As Global.System.Data.DataColumn
+        
+        Private columnshipto_alamat As Global.System.Data.DataColumn
+        
+        Private columnshipto_kota As Global.System.Data.DataColumn
+        
+        Private columnshipto_kdpos As Global.System.Data.DataColumn
+        
+        Private columnpersen_ppn As Global.System.Data.DataColumn
+        
+        Private columnnominal_ppn As Global.System.Data.DataColumn
+        
+        Private columnshipping_handling As Global.System.Data.DataColumn
+        
+        Private columnsubtotal As Global.System.Data.DataColumn
+        
+        Private columnlogo_toko As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -589,6 +609,86 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_jenis_tipe_serialColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_jenis_tipe_serial
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property shipto_namaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnshipto_nama
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property shipto_alamatColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnshipto_alamat
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property shipto_kotaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnshipto_kota
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property shipto_kdposColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnshipto_kdpos
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property persen_ppnColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpersen_ppn
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nominal_ppnColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnominal_ppn
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property shipping_handlingColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnshipping_handling
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property subtotalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnsubtotal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property logo_tokoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlogo_toko
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -652,9 +752,19 @@ Partial Public Class DataSet1
                     ByVal tlp_toko As String,  _
                     ByVal nama_owner As String,  _
                     ByVal norek_owner As String,  _
-                    ByVal tlp_owner As String) As DataInvoiceRow
+                    ByVal tlp_owner As String,  _
+                    ByVal nama_jenis_tipe_serial As String,  _
+                    ByVal shipto_nama As String,  _
+                    ByVal shipto_alamat As String,  _
+                    ByVal shipto_kota As String,  _
+                    ByVal shipto_kdpos As String,  _
+                    ByVal persen_ppn As String,  _
+                    ByVal nominal_ppn As String,  _
+                    ByVal shipping_handling As String,  _
+                    ByVal subtotal As String,  _
+                    ByVal logo_toko As String) As DataInvoiceRow
             Dim rowDataInvoiceRow As DataInvoiceRow = CType(Me.NewRow,DataInvoiceRow)
-            Dim columnValuesArray() As Object = New Object() {ID_TRANSAKSI, kd_transaksi_keluar, qty, nama_jenis, nama_tipe, serial_number, nama_jenis_tipe, nama_barang, harga_jual, harga_total, diskon, harga_akhir, id_status_barang, nama_status, nama_client, alamat_pengiriman, kota_pengiriman, kdpos_pengiriman, tlp_client, nama_toko, alamat_toko, kota_toko, kdpos_toko, tlp_toko, nama_owner, norek_owner, tlp_owner}
+            Dim columnValuesArray() As Object = New Object() {ID_TRANSAKSI, kd_transaksi_keluar, qty, nama_jenis, nama_tipe, serial_number, nama_jenis_tipe, nama_barang, harga_jual, harga_total, diskon, harga_akhir, id_status_barang, nama_status, nama_client, alamat_pengiriman, kota_pengiriman, kdpos_pengiriman, tlp_client, nama_toko, alamat_toko, kota_toko, kdpos_toko, tlp_toko, nama_owner, norek_owner, tlp_owner, nama_jenis_tipe_serial, shipto_nama, shipto_alamat, shipto_kota, shipto_kdpos, persen_ppn, nominal_ppn, shipping_handling, subtotal, logo_toko}
             rowDataInvoiceRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataInvoiceRow)
             Return rowDataInvoiceRow
@@ -704,6 +814,16 @@ Partial Public Class DataSet1
             Me.columnnama_owner = MyBase.Columns("nama_owner")
             Me.columnnorek_owner = MyBase.Columns("norek_owner")
             Me.columntlp_owner = MyBase.Columns("tlp_owner")
+            Me.columnnama_jenis_tipe_serial = MyBase.Columns("nama_jenis_tipe_serial")
+            Me.columnshipto_nama = MyBase.Columns("shipto_nama")
+            Me.columnshipto_alamat = MyBase.Columns("shipto_alamat")
+            Me.columnshipto_kota = MyBase.Columns("shipto_kota")
+            Me.columnshipto_kdpos = MyBase.Columns("shipto_kdpos")
+            Me.columnpersen_ppn = MyBase.Columns("persen_ppn")
+            Me.columnnominal_ppn = MyBase.Columns("nominal_ppn")
+            Me.columnshipping_handling = MyBase.Columns("shipping_handling")
+            Me.columnsubtotal = MyBase.Columns("subtotal")
+            Me.columnlogo_toko = MyBase.Columns("logo_toko")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -767,6 +887,26 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnnorek_owner)
             Me.columntlp_owner = New Global.System.Data.DataColumn("tlp_owner", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntlp_owner)
+            Me.columnnama_jenis_tipe_serial = New Global.System.Data.DataColumn("nama_jenis_tipe_serial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_jenis_tipe_serial)
+            Me.columnshipto_nama = New Global.System.Data.DataColumn("shipto_nama", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnshipto_nama)
+            Me.columnshipto_alamat = New Global.System.Data.DataColumn("shipto_alamat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnshipto_alamat)
+            Me.columnshipto_kota = New Global.System.Data.DataColumn("shipto_kota", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnshipto_kota)
+            Me.columnshipto_kdpos = New Global.System.Data.DataColumn("shipto_kdpos", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnshipto_kdpos)
+            Me.columnpersen_ppn = New Global.System.Data.DataColumn("persen_ppn", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpersen_ppn)
+            Me.columnnominal_ppn = New Global.System.Data.DataColumn("nominal_ppn", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnominal_ppn)
+            Me.columnshipping_handling = New Global.System.Data.DataColumn("shipping_handling", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnshipping_handling)
+            Me.columnsubtotal = New Global.System.Data.DataColumn("subtotal", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnsubtotal)
+            Me.columnlogo_toko = New Global.System.Data.DataColumn("logo_toko", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlogo_toko)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1318,6 +1458,156 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_jenis_tipe_serial() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.nama_jenis_tipe_serialColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_jenis_tipe_serial' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.nama_jenis_tipe_serialColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property shipto_nama() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.shipto_namaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'shipto_nama' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.shipto_namaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property shipto_alamat() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.shipto_alamatColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'shipto_alamat' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.shipto_alamatColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property shipto_kota() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.shipto_kotaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'shipto_kota' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.shipto_kotaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property shipto_kdpos() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.shipto_kdposColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'shipto_kdpos' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.shipto_kdposColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property persen_ppn() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.persen_ppnColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'persen_ppn' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.persen_ppnColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nominal_ppn() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.nominal_ppnColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nominal_ppn' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.nominal_ppnColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property shipping_handling() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.shipping_handlingColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'shipping_handling' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.shipping_handlingColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property subtotal() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.subtotalColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'subtotal' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.subtotalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property logo_toko() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.logo_tokoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'logo_toko' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.logo_tokoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsID_TRANSAKSINull() As Boolean
             Return Me.IsNull(Me.tableDataInvoice.ID_TRANSAKSIColumn)
         End Function
@@ -1638,6 +1928,126 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub Settlp_ownerNull()
             Me(Me.tableDataInvoice.tlp_ownerColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_jenis_tipe_serialNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.nama_jenis_tipe_serialColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_jenis_tipe_serialNull()
+            Me(Me.tableDataInvoice.nama_jenis_tipe_serialColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isshipto_namaNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.shipto_namaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setshipto_namaNull()
+            Me(Me.tableDataInvoice.shipto_namaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isshipto_alamatNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.shipto_alamatColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setshipto_alamatNull()
+            Me(Me.tableDataInvoice.shipto_alamatColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isshipto_kotaNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.shipto_kotaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setshipto_kotaNull()
+            Me(Me.tableDataInvoice.shipto_kotaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isshipto_kdposNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.shipto_kdposColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setshipto_kdposNull()
+            Me(Me.tableDataInvoice.shipto_kdposColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Ispersen_ppnNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.persen_ppnColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setpersen_ppnNull()
+            Me(Me.tableDataInvoice.persen_ppnColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnominal_ppnNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.nominal_ppnColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnominal_ppnNull()
+            Me(Me.tableDataInvoice.nominal_ppnColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isshipping_handlingNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.shipping_handlingColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setshipping_handlingNull()
+            Me(Me.tableDataInvoice.shipping_handlingColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IssubtotalNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.subtotalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetsubtotalNull()
+            Me(Me.tableDataInvoice.subtotalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Islogo_tokoNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.logo_tokoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setlogo_tokoNull()
+            Me(Me.tableDataInvoice.logo_tokoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

@@ -1,6 +1,9 @@
 ﻿Imports System.Configuration
 Imports System.Data.SqlClient
 Imports System.Globalization
+Imports System.IO
+Imports System.Net
+Imports System.Runtime.Serialization.Formatters.Binary
 Imports System.Text
 Imports Microsoft.Reporting.WinForms
 
@@ -104,6 +107,22 @@ Public Class invoice_cetak
 
         Return result
     End Function
+    Public Function BmpToBytes_Serialization(bmp As Bitmap) As Byte()
+
+
+
+        '// stream to save the bitmap to
+        Dim MS As MemoryStream = New MemoryStream()
+        Dim bf As BinaryFormatter = New BinaryFormatter()
+        bf.Serialize(MS, bmp)
+
+        '// read to end
+        Dim bmpBytes As Byte() = MS.GetBuffer()
+        bmp.Dispose()
+        MS.Close()
+
+        Return bmpBytes
+    End Function
 
     Sub LoadReport()
         Dim rptDS As ReportDataSource
@@ -117,7 +136,8 @@ Public Class invoice_cetak
             Dim ds As New DataSet1
             Dim da As New SqlDataAdapter
 
-            CONN.Open()
+            'CONN.Open()
+            listTransaksi.Clear()
             Dim query As String = "select id_transaksi, 
                                             kd_transaksi_keluar,
                                             qty,
@@ -144,16 +164,161 @@ Public Class invoice_cetak
                                             tlp_toko,
                                             nama_owner,
                                             norek_owner,
-                                            tlp_owner 
+                                            tlp_owner,
+                                            shipto_nama,
+                                            shipto_alamat,
+                                            shipto_kota,
+                                            shipto_kdpos,
+                                            persen_ppn,
+                                            nominal_ppn,
+                                            shipping_handling,
+                                            subtotal,
+                                            logo_toko,
+                                            id_toko
                                   from view_invoice "
 
             If KdTransaksi IsNot Nothing And KdTransaksi <> "" Then
                 query = query + " where kd_transaksi_keluar = '" + KdTransaksi + "' "
             End If
-            da.SelectCommand = New SqlCommand(query, CONN)
-            da.Fill(ds.Tables("DataInvoice"))
+            'da.SelectCommand = New SqlCommand(query, CONN)
+            'da.Fill(ds.Tables("DataInvoice"))
 
+            'CONN.Close()
+
+            cmd.CommandText = query
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = CONN
+            Try
+
+                CONN.Open()
+            Catch ex As Exception
+                CONN.Close()
+                CONN.Open()
+            End Try
+            Dim reader As SqlDataReader
+            reader = cmd.ExecuteReader
+
+            While reader.Read
+
+                Dim barang = New With
+                {
+                 .id_transaksi = reader("id_transaksi"),
+                 .kd_transaksi_keluar = reader("kd_transaksi_keluar"),
+            .qty = reader("qty"),
+            .nama_jenis = reader("nama_jenis"),
+            .nama_tipe = reader("nama_tipe"),
+            .serial_number = reader("serial_number"),
+            .nama_jenis_tipe = reader("nama_jenis_tipe"),
+            .nama_barang = reader("nama_barang"),
+            .harga_jual = reader("harga_jual"),
+            .harga_total = reader("harga_total"),
+            .diskon = reader("diskon"),
+            .harga_akhir = reader("harga_akhir"),
+            .id_status_barang = reader("id_status_barang"),
+            .nama_status = reader("nama_status"),
+            .nama_client = reader("nama_client"),
+            .alamat_pengiriman = reader("alamat_pengiriman"),
+            .kota_pengiriman = reader("kota_pengiriman"),
+            .kdpos_pengiriman = reader("kdpos_pengiriman"),
+            .tlp_client = reader("tlp_client"),
+            .nama_toko = reader("nama_toko"),
+              .alamat_toko = reader("alamat_toko"),
+            .kota_toko = reader("kota_toko"),
+            .kdpos_toko = reader("kdpos_toko"),
+            .tlp_toko = reader("tlp_toko"),
+            .nama_owner = reader("nama_owner"),
+            .norek_owner = reader("norek_owner"),
+            .tlp_owner = reader("tlp_owner"),
+            .nama_jenis_tipe_serial = "",
+            .shipto_nama = reader("shipto_nama"),
+            .shipto_alamat = reader("shipto_alamat"),
+            .shipto_kota = reader("shipto_kota"),
+            .shipto_kdpos = reader("shipto_kdpos"),
+            .persen_ppn = reader("persen_ppn"),
+            .nominal_ppn = reader("nominal_ppn"),
+            .shipping_handling = reader("shipping_handling"),
+            .subtotal = reader("subtotal"),
+            .logo_toko = reader("logo_toko"),
+            .id_toko = reader("id_toko")
+                }
+                Dim checkBarang = listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
+                If checkBarang.Count = 0 Then
+                    barang.nama_jenis_tipe_serial = barang.nama_jenis_tipe + vbCrLf + "SN: " + barang.serial_number
+                    barang.qty = 1
+                    listTransaksi.Add(barang)
+                    'listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe).FirstOrDefault().nama_jenis_tipe = checkBarang.FirstOrDefault().nama_jenis_tipe + " SN: " + barang.serial_number
+                Else
+                    listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().qty = Val(checkBarang.FirstOrDefault().qty) + 1
+
+                    listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().serial_number = checkBarang.FirstOrDefault().serial_number + "," + barang.serial_number
+
+                    listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().nama_jenis_tipe_serial = checkBarang.FirstOrDefault().nama_jenis_tipe_serial + "," + barang.serial_number
+                End If
+
+                'Result.Add(barang)
+
+            End While
             CONN.Close()
+            Dim data = New DataSet1()
+
+
+            For Each insertDataBarangMasuk As Object In listTransaksi
+                Dim row As DataRow
+
+                row = ds.Tables("DataInvoice").NewRow
+                row.Item(0) = insertDataBarangMasuk.id_transaksi
+                row.Item(1) = insertDataBarangMasuk.kd_transaksi_keluar
+                row.Item(2) = insertDataBarangMasuk.qty
+                row.Item(3) = insertDataBarangMasuk.nama_jenis
+                row.Item(4) = insertDataBarangMasuk.nama_tipe
+                row.Item(5) = insertDataBarangMasuk.serial_number
+                row.Item(6) = insertDataBarangMasuk.nama_jenis_tipe
+                row.Item(7) = insertDataBarangMasuk.nama_barang
+                row.Item(8) = insertDataBarangMasuk.harga_jual
+                row.Item(9) = insertDataBarangMasuk.harga_total
+                row.Item(10) = insertDataBarangMasuk.diskon
+                row.Item(11) = insertDataBarangMasuk.harga_akhir
+                row.Item(12) = insertDataBarangMasuk.id_status_barang
+                row.Item(13) = insertDataBarangMasuk.nama_status
+                row.Item(14) = insertDataBarangMasuk.nama_client
+                row.Item(15) = insertDataBarangMasuk.alamat_pengiriman
+                row.Item(16) = insertDataBarangMasuk.kota_pengiriman
+                row.Item(17) = insertDataBarangMasuk.kdpos_pengiriman
+                row.Item(18) = insertDataBarangMasuk.tlp_client
+                row.Item(19) = insertDataBarangMasuk.nama_toko
+                row.Item(20) = insertDataBarangMasuk.alamat_toko
+                row.Item(21) = insertDataBarangMasuk.kota_toko
+                row.Item(22) = insertDataBarangMasuk.kdpos_toko
+                row.Item(23) = insertDataBarangMasuk.tlp_toko
+                row.Item(24) = insertDataBarangMasuk.nama_owner
+                row.Item(25) = insertDataBarangMasuk.norek_owner
+                row.Item(26) = insertDataBarangMasuk.tlp_owner
+                row.Item(27) = insertDataBarangMasuk.nama_jenis_tipe_serial
+                row.Item(28) = insertDataBarangMasuk.shipto_nama
+                row.Item(29) = insertDataBarangMasuk.shipto_alamat
+                row.Item(30) = insertDataBarangMasuk.shipto_kota
+                row.Item(31) = insertDataBarangMasuk.shipto_kdpos
+                row.Item(32) = insertDataBarangMasuk.persen_ppn
+                row.Item(33) = insertDataBarangMasuk.nominal_ppn
+                row.Item(34) = insertDataBarangMasuk.shipping_handling
+                row.Item(35) = insertDataBarangMasuk.subtotal
+                Dim tClient As WebClient = New WebClient
+                Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(insertDataBarangMasuk.logo_toko.ToString)))
+                'tkButton.FirstOrDefault().BackgroundImage = downloadImage
+                'Dim logoToko = BmpToBytes_Serialization(downloadImage)
+                'Dim convertLogoTOko = Convert.ToBase64String(logoToko)
+                row.Item(36) = Application.StartupPath & "\Reports\" + insertDataBarangMasuk.id_toko.ToString + ".jpeg"
+
+                ds.Tables("DataInvoice").Rows.Add(row)
+
+
+            Next
+
+            Dim r(0) As ReportParameter
+            r(0) = New ReportParameter("rpt_image", "File:\" + Application.StartupPath & "\Reports\" + listTransaksi.FirstOrDefault.id_toko.ToString + ".jpeg", True)
+
+            ReportViewer1.LocalReport.EnableExternalImages = True
+            ReportViewer1.LocalReport.SetParameters(New ReportParameter() {r(0)})
 
             rptDS = New ReportDataSource("DataSet1", ds.Tables("DataInvoice"))
             ReportViewer1.LocalReport.DataSources.Add(rptDS)
