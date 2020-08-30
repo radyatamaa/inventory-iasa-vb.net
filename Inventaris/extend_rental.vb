@@ -865,6 +865,7 @@ Public Class extend_rental
             Dim ppn = Val(ppnCalculate) * Val(hargaAkhir)
             ppnNominal = ppn
             Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppn) + Val(txt_shiphand.Text)
+            Me.txt_ppn_nominal.Text = ppnNominal
         ElseIf txt_ppn.Text = "" Then
             ppnNominal = 0
             Me.txt_ppn.Text = ""

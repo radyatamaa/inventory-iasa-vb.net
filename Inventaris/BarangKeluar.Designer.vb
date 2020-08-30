@@ -98,6 +98,8 @@ Partial Class BarangKeluar
         Me.Label19 = New System.Windows.Forms.Label()
         Me.PPN = New System.Windows.Forms.Label()
         Me.txt_shiphand = New System.Windows.Forms.TextBox()
+        Me.txt_ppn_nominal = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -802,7 +804,7 @@ Partial Class BarangKeluar
         Me.txt_subtotal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_subtotal.Enabled = False
-        Me.txt_subtotal.Location = New System.Drawing.Point(711, 690)
+        Me.txt_subtotal.Location = New System.Drawing.Point(711, 724)
         Me.txt_subtotal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_subtotal.Name = "txt_subtotal"
         Me.txt_subtotal.Size = New System.Drawing.Size(178, 20)
@@ -821,7 +823,7 @@ Partial Class BarangKeluar
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(616, 692)
+        Me.Label18.Location = New System.Drawing.Point(616, 726)
         Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(53, 13)
@@ -831,7 +833,7 @@ Partial Class BarangKeluar
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(616, 658)
+        Me.Label19.Location = New System.Drawing.Point(616, 692)
         Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(84, 13)
@@ -852,11 +854,32 @@ Partial Class BarangKeluar
         '
         Me.txt_shiphand.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txt_shiphand.Location = New System.Drawing.Point(711, 658)
+        Me.txt_shiphand.Location = New System.Drawing.Point(711, 692)
         Me.txt_shiphand.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_shiphand.Name = "txt_shiphand"
         Me.txt_shiphand.Size = New System.Drawing.Size(178, 20)
         Me.txt_shiphand.TabIndex = 68
+        '
+        'txt_ppn_nominal
+        '
+        Me.txt_ppn_nominal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_ppn_nominal.Enabled = False
+        Me.txt_ppn_nominal.Location = New System.Drawing.Point(711, 659)
+        Me.txt_ppn_nominal.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_ppn_nominal.Name = "txt_ppn_nominal"
+        Me.txt_ppn_nominal.Size = New System.Drawing.Size(178, 20)
+        Me.txt_ppn_nominal.TabIndex = 70
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(616, 659)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(70, 13)
+        Me.Label20.TabIndex = 69
+        Me.Label20.Text = "PPN Nominal"
         '
         'BarangKeluar
         '
@@ -864,7 +887,9 @@ Partial Class BarangKeluar
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(1017, 609)
+        Me.ClientSize = New System.Drawing.Size(1017, 749)
+        Me.Controls.Add(Me.txt_ppn_nominal)
+        Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.txt_shiphand)
         Me.Controls.Add(Me.txt_subtotal)
         Me.Controls.Add(Me.txt_ppn)
@@ -973,4 +998,6 @@ Partial Class BarangKeluar
     Friend WithEvents txt_shiphand As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txt_ppn_nominal As TextBox
+    Friend WithEvents Label20 As Label
 End Class
