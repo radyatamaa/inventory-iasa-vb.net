@@ -1119,7 +1119,8 @@ Public Class BarangKeluar
         dt_barang_masuk.Rows.Clear()
         Dim search As List(Of Object)
         If keywoard <> "" Then
-            search = listBarangMasuk.Where(Function(x) keywoard.StartsWith(x.serial_number)).ToList()
+            search = listBarangMasuk.Where(Function(x) keywoard.StartsWith(x.serial_number.ToString.ToLower()) And
+                                               keywoard.EndsWith(x.serial_number)).ToList()
         Else
             search = listBarangMasuk.ToList()
         End If
@@ -1155,6 +1156,10 @@ Public Class BarangKeluar
 
 
         Next
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
 
     End Sub
 End Class
