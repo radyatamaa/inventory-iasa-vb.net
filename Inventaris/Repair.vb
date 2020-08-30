@@ -496,8 +496,8 @@ Public Class Repair
 
                     dt_barang_keluar_fix.Update()
 
-                    Me.txt_harga_total.Text = FormatCurrency(Me.txt_harga_total.Text + barangMasukHandle.harga_jual)
-                    Me.txt_harga_akhir.Text = FormatCurrency(Me.txt_harga_total.Text)
+                    Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangMasukHandle.harga_jual)
+                    Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text)
                     listBarangKeluarFix.Add(barangMasukHandle)
                     'Index = Index + 1
                 Else
@@ -671,8 +671,7 @@ Public Class Repair
         dt_barang_masuk.Rows.Clear()
         Dim search As List(Of Object)
         If keywoard <> "" Then
-            search = listBarangMasuk.Where(Function(x) keywoard.StartsWith(x.serial_number.ToString.ToLower()) And
-                                               keywoard.EndsWith(x.serial_number)).ToList()
+            search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
         Else
             search = listBarangMasuk.ToList()
         End If

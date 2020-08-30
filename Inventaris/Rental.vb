@@ -74,6 +74,25 @@ Public Class Rental
         CONN.Close()
         Return result
     End Function
+    Function GetLastIdTransaksi() As List(Of Integer)
+        Dim result As New List(Of Integer)
+        Dim query As String = "SELECT TOP (1) id_transaksi FROM tbl_transaksi WHERE is_active = 1 ORDER BY id_transaksi desc"
+        cmd.CommandText = query
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        CONN.Open()
+        reader = cmd.ExecuteReader()
+        'This will loop through all returned records 
+        While reader.Read
+
+            Dim idTransaksi As Integer = reader("id_transaksi")
+
+            result.Add(idTransaksi)
+            'handle returned value before next loop here
+        End While
+        CONN.Close()
+        Return result
+    End Function
     Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer, idToko As Integer)
         Dim result As New List(Of Object)
         listBarangMasuk.Clear()
@@ -152,8 +171,7 @@ Public Class Rental
                   .persen_ppn = 0,
                 .nominal_ppn = 0,
                 .shipping_handling = 0,
-                .subtotal = 0,
-                .id_transaksi = reader("id_transaksi")
+                .subtotal = 0
                 }
             listBarangMasuk.Add(barang)
             result.Add(barang)
@@ -195,10 +213,11 @@ Public Class Rental
         CONN.Close()
 
         Dim lastIdTransaksi As Integer = 0
-        If listBarangMasuk.Count > 0 Then
-            lastIdTransaksi = listBarangMasuk.Select(Function(x) x.id_transaksi).OrderByDescending(Function(x) x.id_transaksi).FirstOrDefault()
-            lastIdTransaksi = lastIdTransaksi + 1
+        Dim idTransaksi = GetLastIdTransaksi()
+        If idTransaksi.Count > 0 Then
+            lastIdTransaksi = idTransaksi(0) + 1
         End If
+
         Dim kdTransaksi = GenerateKdtransaksi(lastIdTransaksi.ToString, clientKodeSelect, DateTime.Now.Year)
         Me.txt_kd_transaksi.Text = kdTransaksi
 
@@ -384,7 +403,8 @@ Public Class Rental
                             .nama_client = reader("nama_client"),
                               .alamat_client = reader("alamat_client"),
                             .kota_client = reader("kota_client"),
-                             .kdpos_client = reader("kdpos_client")
+                             .kdpos_client = reader("kdpos_client"),
+                             .kd_client = reader("kd_client")
                             }
             result.Add(client)
             clients.Add(client)
@@ -504,7 +524,7 @@ Public Class Rental
                 Me.txt_kota_ship.Text = client.kota_client
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedValue.nama_client
-                clientKodeSelect = client.kd_client
+                clientKodeSelect = client.kd_client.ToString
             End If
         Catch ex As Exception
             Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue).FirstOrDefault()
@@ -516,7 +536,7 @@ Public Class Rental
                 Me.txt_kota_ship.Text = client.kota_client
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedText
-                clientKodeSelect = client.kd_client
+                clientKodeSelect = client.kd_client.ToString
             End If
         End Try
     End Sub
@@ -554,8 +574,8 @@ Public Class Rental
 
                     dt_barang_keluar_fix.Update()
 
-                    Me.txt_harga_total.Text = FormatCurrency(Me.txt_harga_total.Text + barangMasukHandle.harga_jual)
-                    Me.txt_harga_akhir.Text = FormatCurrency(Me.txt_harga_total.Text)
+                    Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangMasukHandle.harga_jual)
+                    Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text)
                     listBarangKeluarFix.Add(barangMasukHandle)
                     'Index = Index + 1
                 Else
