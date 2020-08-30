@@ -495,8 +495,8 @@ Public Class Repair
 
                     dt_barang_keluar_fix.Update()
 
-                    Me.txt_harga_total.Text = Me.txt_harga_total.Text + barangMasukHandle.harga_jual
-                    Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+                    Me.txt_harga_total.Text = FormatCurrency(Me.txt_harga_total.Text + barangMasukHandle.harga_jual)
+                    Me.txt_harga_akhir.Text = FormatCurrency(Me.txt_harga_total.Text)
                     listBarangKeluarFix.Add(barangMasukHandle)
                     'Index = Index + 1
                 Else
@@ -659,5 +659,53 @@ Public Class Repair
 
     Private Sub btn_invoice_Click(sender As Object, e As EventArgs) Handles btn_invoice.Click
         invoice_cetak.Show()
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub btncari_Click(sender As Object, e As EventArgs) Handles btncari.Click
+        Dim keywoard = TextBox1.Text
+        dt_barang_masuk.Rows.Clear()
+        Dim search As List(Of Object)
+        If keywoard <> "" Then
+            search = listBarangMasuk.Where(Function(x) keywoard.StartsWith(x.serial_number)).ToList()
+        Else
+            search = listBarangMasuk.ToList()
+        End If
+
+        Dim index = 0
+        For Each insertDataBarangMasuk As Object In search
+            dt_barang_masuk.Rows.Add(1)
+            Dim isTest As String
+            If insertDataBarangMasuk.tested = 1 Then
+                isTest = "Teruji"
+            Else
+                isTest = "Tidak Teruji"
+            End If
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.nama_jenis
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_tipe
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.serial_number
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_kondisi
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(4).Value = isTest
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.nama_lokasi
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.detail_lokasi
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.catatan
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.nama_status
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.harga_jual
+            If index = 0 And isSelectedTipeJenis = 0 Then
+                isSelectedTipeJenis = 1
+                dt_barang_masuk.Columns.Add("id_barang_masuk", "IdBarangMasuk")
+                dt_barang_masuk.Columns(10).Visible = False
+            End If
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.id_barang_masuk
+
+            dt_barang_masuk.Update()
+            index = index + 1
+
+
+        Next
+
     End Sub
 End Class
