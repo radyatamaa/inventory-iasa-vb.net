@@ -1,4 +1,6 @@
 ﻿Imports System.Collections.Specialized
+Imports System.IO
+Imports System.Net
 Imports System.Runtime.Serialization
 Imports Microsoft.Extensions.Caching.Memory
 Imports Newtonsoft.Json
@@ -128,6 +130,10 @@ Public Class MenuUtama
     End Sub
 
     Private Sub BarangMasuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+
+        Me.p_logo.Image = downloadImage
         btn_barang_masuk.Visible = True
         BarangKeluarToolStripMenuItem.Visible = True
         QuotationToolStripMenuItem.Visible = True

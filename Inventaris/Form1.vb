@@ -77,7 +77,8 @@ Public Class Form1
                  .NamaToko = listToko(i).NamaToko,
                  .Username = user.Username,
                  .Nama = user.Nama,
-                 .IdLevel = user.IdLevel
+                 .IdLevel = user.IdLevel,
+                 .LogoToko = listToko(i).LogoToko
                 }
                     tkButton.FirstOrDefault().Tag = standardData
                     tklabel.FirstOrDefault().Text = standardData.NamaToko
