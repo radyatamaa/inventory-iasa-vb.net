@@ -533,8 +533,9 @@ Public Class extend_rental
                     barangMasukHandle.rental_exp = Nothing
                     barangMasukHandle.harga_akhir = ""
                     MappingToDataGridBarangKeluarFix(barangMasukHandle)
-                    'Me.txt_harga_total.Text = Me.txt_harga_total.Text + barangMasukHandle.harga_jual
-                    'Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+                    Me.txt_harga_total.Text = FormatCurrency(Me.txt_harga_total.Text + barangMasukHandle.harga_jual)
+                    Me.txt_harga_akhir.Text = FormatCurrency(Me.txt_harga_total.Text)
+
                     listBarangKeluarFix.Add(barangMasukHandle)
                     'Index = Index + 1
                 Else
@@ -686,8 +687,8 @@ Public Class extend_rental
         If keywoard <> "" Then
             search = listBarangMasuk.Where(Function(x) keywoard.StartsWith(x.serial_number) Or
                                               keywoard.StartsWith(x.kd_transaksi_keluar) Or
-                                              keywoard.StartsWith(x.nama_tipe) Or
-                                              keywoard.StartsWith(x.nama_jenis)).ToList()
+                                              keywoard.EndsWith(x.serial_number) Or
+                                              keywoard.EndsWith(x.kd_transaksi_keluar)).ToList()
         Else
             search = listBarangMasuk.ToList()
         End If
