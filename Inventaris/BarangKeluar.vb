@@ -76,7 +76,7 @@ Public Class BarangKeluar
         CONN.Close()
         Return result
     End Function
-    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer)
+    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer, idToko As Integer)
         Dim result As New List(Of Object)
         listBarangMasuk.Clear()
         Dim query As String = "SELECT *  FROM tbl_barang_masuk bm
@@ -91,7 +91,8 @@ Public Class BarangKeluar
                                     bm.is_active = 1 AND 
                                     sb.id_status_barang = " + idStatus.ToString + " AND 
                                     j.id_jenis = " + idJenis.ToString + " AND 
-                                    t.id_tipe = " + idTipe.ToString
+                                    t.id_tipe = " + idTipe.ToString + " AND
+                                    b.id_toko = " + idToko.ToString
 
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
@@ -567,10 +568,10 @@ Public Class BarangKeluar
     Private Sub cmb_tipe_barang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_tipe_barang.SelectedIndexChanged
         Try
             dt_barang_masuk.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe)
+            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe, UserInfo.IdToko)
         Catch ex As Exception
             dt_barang_masuk.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue)
+            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue, UserInfo.IdToko)
         End Try
     End Sub
 

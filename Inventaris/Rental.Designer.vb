@@ -160,7 +160,7 @@ Partial Class Rental
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1247, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1291, 119)
         Me.dt_barang_masuk.TabIndex = 16
         '
         'jenis_barang
@@ -510,7 +510,7 @@ Partial Class Rental
         Me.Panel2.Location = New System.Drawing.Point(2, -1)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1502, 551)
+        Me.Panel2.Size = New System.Drawing.Size(1546, 551)
         Me.Panel2.TabIndex = 74
         '
         'btncari
@@ -653,7 +653,7 @@ Partial Class Rental
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1244, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1288, 119)
         Me.dt_barang_keluar_fix.TabIndex = 55
         '
         'jenis_barang2

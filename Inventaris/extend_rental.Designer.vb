@@ -67,6 +67,8 @@ Partial Class extend_rental
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btn_tanda_terima = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txt_kd_transaksi = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_client_ship = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txt_kdpos_ship = New System.Windows.Forms.TextBox()
@@ -96,8 +98,6 @@ Partial Class extend_rental
         Me.PPN = New System.Windows.Forms.Label()
         Me.txt_ppn_nominal = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.txt_kd_transaksi = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dt_barang_keluar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -162,7 +162,7 @@ Partial Class extend_rental
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1304, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1344, 119)
         Me.dt_barang_keluar_fix.TabIndex = 55
         '
         'kd_transaksi_keluar_new
@@ -343,7 +343,7 @@ Partial Class extend_rental
         Me.dt_barang_keluar.Name = "dt_barang_keluar"
         Me.dt_barang_keluar.RowHeadersWidth = 51
         Me.dt_barang_keluar.RowTemplate.Height = 24
-        Me.dt_barang_keluar.Size = New System.Drawing.Size(1305, 119)
+        Me.dt_barang_keluar.Size = New System.Drawing.Size(1345, 119)
         Me.dt_barang_keluar.TabIndex = 16
         '
         'kd_transaksi_keluar
@@ -511,8 +511,30 @@ Partial Class extend_rental
         Me.Panel2.Location = New System.Drawing.Point(2, 1)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1560, 519)
+        Me.Panel2.Size = New System.Drawing.Size(1600, 519)
         Me.Panel2.TabIndex = 86
+        '
+        'txt_kd_transaksi
+        '
+        Me.txt_kd_transaksi.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_kd_transaksi.Location = New System.Drawing.Point(231, 60)
+        Me.txt_kd_transaksi.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_kd_transaksi.Name = "txt_kd_transaksi"
+        Me.txt_kd_transaksi.Size = New System.Drawing.Size(178, 20)
+        Me.txt_kd_transaksi.TabIndex = 107
+        Me.txt_kd_transaksi.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(110, 58)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(81, 13)
+        Me.Label5.TabIndex = 106
+        Me.Label5.Text = "Kode Transaksi"
+        Me.Label5.Visible = False
         '
         'txt_client_ship
         '
@@ -811,28 +833,6 @@ Partial Class extend_rental
         Me.Label20.Size = New System.Drawing.Size(70, 13)
         Me.Label20.TabIndex = 104
         Me.Label20.Text = "PPN Nominal"
-        '
-        'txt_kd_transaksi
-        '
-        Me.txt_kd_transaksi.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kd_transaksi.Location = New System.Drawing.Point(231, 60)
-        Me.txt_kd_transaksi.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_kd_transaksi.Name = "txt_kd_transaksi"
-        Me.txt_kd_transaksi.Size = New System.Drawing.Size(178, 20)
-        Me.txt_kd_transaksi.TabIndex = 107
-        Me.txt_kd_transaksi.Visible = False
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(110, 58)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(81, 13)
-        Me.Label5.TabIndex = 106
-        Me.Label5.Text = "Kode Transaksi"
-        Me.Label5.Visible = False
         '
         'extend_rental
         '
