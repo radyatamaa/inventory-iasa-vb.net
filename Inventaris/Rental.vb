@@ -5,6 +5,7 @@ Imports System.Text
 
 Public Class Rental
     Dim ppnNominal As Decimal = 0
+    Dim clientKodeSelect As String
     Public Property UserInfo As Object
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
@@ -150,7 +151,8 @@ Public Class Rental
                   .persen_ppn = 0,
                 .nominal_ppn = 0,
                 .shipping_handling = 0,
-                .subtotal = 0
+                .subtotal = 0,
+                .id_transaksi = reader("id_transaksi")
                 }
             listBarangMasuk.Add(barang)
             result.Add(barang)
@@ -191,7 +193,22 @@ Public Class Rental
 
         CONN.Close()
 
+        Dim lastIdTransaksi As Integer = 0
+        If listBarangMasuk.Count > 0 Then
+            lastIdTransaksi = listBarangMasuk.Select(Function(x) x.id_transaksi).OrderByDescending(Function(x) x.id_transaksi).FirstOrDefault()
+            lastIdTransaksi = lastIdTransaksi + 1
+        End If
+        Dim kdTransaksi = GenerateKdtransaksi(lastIdTransaksi.ToString, clientKodeSelect, DateTime.Now.Year)
+        Me.txt_kd_transaksi.Text = kdTransaksi
+
         Return result
+    End Function
+    Function GenerateKdtransaksi(idTransaksi As String, kdclient As String, year As Integer) As String
+        If (idTransaksi.Length = 1) Then
+            idTransaksi = "0" + idTransaksi
+        End If
+        Dim resultKdTransaksi As String = idTransaksi + "/" + kdclient + "/" + year.ToString
+        Return resultKdTransaksi
     End Function
     Function UpdateStatusBarang(idStatusBarang As Integer, userlogin As String, idBarang As Integer)
         Dim barangKeluarId
@@ -399,8 +416,8 @@ Public Class Rental
             Me.txt_ppn.Text = 0
             Me.txt_shiphand.Text = 0
             isSelectedTipeJenis = 0
-            Dim kdTransaksi As String = RandomString(New Random)
-            Me.txt_kd_transaksi.Text = kdTransaksi
+            'Dim kdTransaksi As String = RandomString(New Random)
+            'Me.txt_kd_transaksi.Text = kdTransaksi
             Me.txt_kd_transaksi.Enabled = False
             VBnetSQLSeverConnection()
             Dim listbarang As List(Of Object) = GetJenisBarang()
@@ -486,6 +503,7 @@ Public Class Rental
                 Me.txt_kota_ship.Text = client.kota_client
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedValue.nama_client
+                clientKodeSelect = client.kd_client
             End If
         Catch ex As Exception
             Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue).FirstOrDefault()
@@ -497,6 +515,7 @@ Public Class Rental
                 Me.txt_kota_ship.Text = client.kota_client
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedText
+                clientKodeSelect = client.kd_client
             End If
         End Try
     End Sub
@@ -683,8 +702,8 @@ Public Class Rental
         listBarangKeluarFix.Clear()
         listBarangMasuk.Clear()
         invoice_cetak.KdTransaksi = Me.txt_kd_transaksi.Text
-        Dim kdTransaksi As String = RandomString(New Random)
-        Me.txt_kd_transaksi.Text = kdTransaksi
+        'Dim kdTransaksi As String = RandomString(New Random)
+        Me.txt_kd_transaksi.Text = ""
         Me.txt_harga_total.Text = 0
         Me.txt_harga_akhir.Text = 0
         Me.txt_diskon.Text = 0

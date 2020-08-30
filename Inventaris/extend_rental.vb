@@ -5,6 +5,7 @@ Imports System.Text
 
 Public Class extend_rental
     Dim ppnNominal As Decimal = 0
+    Dim clientKodeSelect As String
     Public Property UserInfo As Object
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
@@ -228,7 +229,8 @@ Public Class extend_rental
                   .persen_ppn = 0,
                 .nominal_ppn = 0,
                 .shipping_handling = 0,
-                .subtotal = 0
+                .subtotal = 0,
+                .id_transaksi = reader("id_transaksi")
                 }
             listBarangMasuk.Add(barang)
             result.Add(barang)
@@ -238,6 +240,15 @@ Public Class extend_rental
         MappingToDataGridBarangKeluar(result)
 
         CONN.Close()
+
+
+        Dim lastIdTransaksi As Integer = 0
+        If listBarangMasuk.Count > 0 Then
+            lastIdTransaksi = listBarangMasuk.Select(Function(x) x.id_transaksi).OrderByDescending(Function(x) x.id_transaksi).FirstOrDefault()
+            lastIdTransaksi = lastIdTransaksi + 1
+        End If
+        Dim kdTransaksi = GenerateKdtransaksi(lastIdTransaksi.ToString, clientKodeSelect, DateTime.Now.Year)
+        Me.txt_kd_transaksi.Text = kdTransaksi
 
         Return result
     End Function
@@ -435,6 +446,13 @@ Public Class extend_rental
             sb.Append(s.Substring(idx, 1))
         Next
         Return sb.ToString()
+    End Function
+    Function GenerateKdtransaksi(idTransaksi As String, kdclient As String, year As Integer) As String
+        If (idTransaksi.Length = 1) Then
+            idTransaksi = "0" + idTransaksi
+        End If
+        Dim resultKdTransaksi As String = idTransaksi + "/" + kdclient + "/" + year.ToString
+        Return resultKdTransaksi
     End Function
     Private Sub extend_rental_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -635,7 +653,7 @@ Public Class extend_rental
             If Me.txt_diskon.Text <> "" Then
                 diskon = Me.txt_diskon.Text
             End If
-            insertDataBarangKeluar.kd_transaksi_keluar = kdTransaksi
+            insertDataBarangKeluar.kd_transaksi_keluar = Me.txt_kd_transaksi.Text
             'insertDataBarangKeluar.id_client = Me.cmb_client.SelectedValue
             'insertDataBarangKeluar.id_toko = idToko
             insertDataBarangKeluar.id_alasan = "NULL"
@@ -672,7 +690,7 @@ Public Class extend_rental
         listBarangMasuk.Clear()
         'invoice_cetak.KdTransaksi = Me.txt_kd_transaksi.Text
         'Dim kdTransaksi As String = RandomString(New Random)
-        'Me.txt_kd_transaksi.Text = kdTransaksi
+        Me.txt_kd_transaksi.Text = ""
         Me.txt_harga_total.Text = 0
         Me.txt_harga_akhir.Text = 0
         Me.txt_diskon.Text = 0
@@ -846,6 +864,7 @@ Public Class extend_rental
                 Me.txt_kota_ship.Text = client.kota_client
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedValue.nama_client
+                clientKodeSelect = client.kd_client
             End If
         Catch ex As Exception
             Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue).FirstOrDefault()
@@ -854,6 +873,7 @@ Public Class extend_rental
                 Me.txt_kota_ship.Text = client.kota_client
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedText
+                clientKodeSelect = client.kd_client
             End If
         End Try
     End Sub
