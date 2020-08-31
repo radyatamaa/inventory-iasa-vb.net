@@ -33,13 +33,17 @@ Partial Class Form3
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label15
         '
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(221, 9)
+        Me.Label15.Location = New System.Drawing.Point(182, 22)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(444, 58)
         Me.Label15.TabIndex = 55
@@ -53,7 +57,7 @@ Partial Class Form3
         Me.btn_kembali.FlatAppearance.BorderSize = 0
         Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
-        Me.btn_kembali.Location = New System.Drawing.Point(3, 0)
+        Me.btn_kembali.Location = New System.Drawing.Point(12, 8)
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(82, 80)
@@ -63,7 +67,7 @@ Partial Class Form3
         'txt_password_lama
         '
         Me.txt_password_lama.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_password_lama.Location = New System.Drawing.Point(370, 137)
+        Me.txt_password_lama.Location = New System.Drawing.Point(362, 22)
         Me.txt_password_lama.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_password_lama.Name = "txt_password_lama"
         Me.txt_password_lama.Size = New System.Drawing.Size(236, 22)
@@ -73,7 +77,7 @@ Partial Class Form3
         'txt_password_baru
         '
         Me.txt_password_baru.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_password_baru.Location = New System.Drawing.Point(370, 179)
+        Me.txt_password_baru.Location = New System.Drawing.Point(362, 64)
         Me.txt_password_baru.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_password_baru.Name = "txt_password_baru"
         Me.txt_password_baru.Size = New System.Drawing.Size(236, 22)
@@ -86,7 +90,7 @@ Partial Class Form3
         Me.btn_ubah.FlatAppearance.BorderSize = 0
         Me.btn_ubah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_ubah.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_ubah.Location = New System.Drawing.Point(308, 269)
+        Me.btn_ubah.Location = New System.Drawing.Point(298, 164)
         Me.btn_ubah.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_ubah.Name = "btn_ubah"
         Me.btn_ubah.Size = New System.Drawing.Size(236, 28)
@@ -97,7 +101,7 @@ Partial Class Form3
         'txt_konfirmasi_password
         '
         Me.txt_konfirmasi_password.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_konfirmasi_password.Location = New System.Drawing.Point(370, 218)
+        Me.txt_konfirmasi_password.Location = New System.Drawing.Point(362, 103)
         Me.txt_konfirmasi_password.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_konfirmasi_password.Name = "txt_konfirmasi_password"
         Me.txt_konfirmasi_password.Size = New System.Drawing.Size(236, 22)
@@ -108,7 +112,7 @@ Partial Class Form3
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(216, 218)
+        Me.Label4.Location = New System.Drawing.Point(208, 103)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(139, 17)
         Me.Label4.TabIndex = 2
@@ -118,7 +122,7 @@ Partial Class Form3
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(216, 179)
+        Me.Label3.Location = New System.Drawing.Point(208, 64)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(103, 17)
         Me.Label3.TabIndex = 1
@@ -128,7 +132,7 @@ Partial Class Form3
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(216, 140)
+        Me.Label2.Location = New System.Drawing.Point(208, 25)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(108, 17)
         Me.Label2.TabIndex = 0
@@ -139,8 +143,6 @@ Partial Class Form3
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel2.Controls.Add(Me.Label15)
-        Me.Panel2.Controls.Add(Me.btn_kembali)
         Me.Panel2.Controls.Add(Me.txt_password_lama)
         Me.Panel2.Controls.Add(Me.txt_password_baru)
         Me.Panel2.Controls.Add(Me.btn_ubah)
@@ -148,17 +150,41 @@ Partial Class Form3
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(2, 2)
+        Me.Panel2.Location = New System.Drawing.Point(2, 98)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(831, 398)
+        Me.Panel2.Size = New System.Drawing.Size(831, 302)
         Me.Panel2.TabIndex = 60
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel1.Controls.Add(Me.btn_kembali)
+        Me.Panel1.Controls.Add(Me.Label15)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(834, 97)
+        Me.Panel1.TabIndex = 61
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(667, 8)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(155, 86)
+        Me.PictureBox1.TabIndex = 51
+        Me.PictureBox1.TabStop = False
         '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(834, 406)
+        Me.ClientSize = New System.Drawing.Size(834, 347)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
@@ -166,6 +192,8 @@ Partial Class Form3
         Me.Text = "Ubah Password"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -180,4 +208,6 @@ Partial Class Form3
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -24,7 +24,6 @@ Partial Class MasterAlasan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MasterAlasan))
         Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
         Me.data_master_alasan = New System.Windows.Forms.DataGridView()
         Me.id_alasan = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nama_alasan = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -32,12 +31,14 @@ Partial Class MasterAlasan
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btn_simpan = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.pict_logo = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btn_kembali = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.data_master_alasan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button13
@@ -45,26 +46,13 @@ Partial Class MasterAlasan
         Me.Button13.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button13.FlatAppearance.BorderSize = 0
         Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button13.Location = New System.Drawing.Point(163, 486)
-        Me.Button13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button13.Location = New System.Drawing.Point(13, 536)
+        Me.Button13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(70, 32)
+        Me.Button13.Size = New System.Drawing.Size(93, 39)
         Me.Button13.TabIndex = 19
         Me.Button13.Text = "Hapus"
         Me.Button13.UseVisualStyleBackColor = False
-        '
-        'Button12
-        '
-        Me.Button12.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button12.FlatAppearance.BorderSize = 0
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.Location = New System.Drawing.Point(88, 486)
-        Me.Button12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(70, 32)
-        Me.Button12.TabIndex = 18
-        Me.Button12.Text = "Edit"
-        Me.Button12.UseVisualStyleBackColor = False
         '
         'data_master_alasan
         '
@@ -74,12 +62,12 @@ Partial Class MasterAlasan
         Me.data_master_alasan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.data_master_alasan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.data_master_alasan.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_alasan, Me.nama_alasan})
-        Me.data_master_alasan.Location = New System.Drawing.Point(2, 271)
-        Me.data_master_alasan.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.data_master_alasan.Location = New System.Drawing.Point(-2, 144)
+        Me.data_master_alasan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.data_master_alasan.Name = "data_master_alasan"
         Me.data_master_alasan.RowHeadersWidth = 51
         Me.data_master_alasan.RowTemplate.Height = 24
-        Me.data_master_alasan.Size = New System.Drawing.Size(1025, 206)
+        Me.data_master_alasan.Size = New System.Drawing.Size(1370, 274)
         Me.data_master_alasan.TabIndex = 16
         '
         'id_alasan
@@ -99,20 +87,19 @@ Partial Class MasterAlasan
         'txt_nama_alasan
         '
         Me.txt_nama_alasan.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_nama_alasan.Location = New System.Drawing.Point(161, 124)
-        Me.txt_nama_alasan.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_nama_alasan.Location = New System.Drawing.Point(192, 65)
+        Me.txt_nama_alasan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_nama_alasan.Name = "txt_nama_alasan"
-        Me.txt_nama_alasan.Size = New System.Drawing.Size(178, 20)
+        Me.txt_nama_alasan.Size = New System.Drawing.Size(236, 22)
         Me.txt_nama_alasan.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(75, 124)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(77, 65)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(70, 13)
+        Me.Label4.Size = New System.Drawing.Size(92, 17)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Nama Alasan"
         '
@@ -122,10 +109,10 @@ Partial Class MasterAlasan
         Me.btn_simpan.FlatAppearance.BorderSize = 0
         Me.btn_simpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_simpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_simpan.Location = New System.Drawing.Point(161, 188)
-        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_simpan.Location = New System.Drawing.Point(192, 96)
+        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
-        Me.btn_simpan.Size = New System.Drawing.Size(177, 23)
+        Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
         Me.btn_simpan.TabIndex = 17
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = False
@@ -134,38 +121,26 @@ Partial Class MasterAlasan
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.AutoScroll = True
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.Panel2.Controls.Add(Me.pict_logo)
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.btn_kembali)
         Me.Panel2.Controls.Add(Me.btn_simpan)
         Me.Panel2.Controls.Add(Me.data_master_alasan)
         Me.Panel2.Controls.Add(Me.txt_nama_alasan)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Location = New System.Drawing.Point(2, 1)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Location = New System.Drawing.Point(2, 97)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1154, 480)
+        Me.Panel2.Size = New System.Drawing.Size(1368, 420)
         Me.Panel2.TabIndex = 16
-        '
-        'pict_logo
-        '
-        Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
-        Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pict_logo.Location = New System.Drawing.Point(1029, 2)
-        Me.pict_logo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.pict_logo.Name = "pict_logo"
-        Me.pict_logo.Size = New System.Drawing.Size(117, 70)
-        Me.pict_logo.TabIndex = 51
-        Me.pict_logo.TabStop = False
         '
         'Label6
         '
+        Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.Font = New System.Drawing.Font("Ubuntu Condensed", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(460, 2)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(504, 13)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(254, 47)
+        Me.Label6.Size = New System.Drawing.Size(339, 58)
         Me.Label6.TabIndex = 50
         Me.Label6.Text = "Master Alasan"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -177,22 +152,46 @@ Partial Class MasterAlasan
         Me.btn_kembali.FlatAppearance.BorderSize = 0
         Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
-        Me.btn_kembali.Location = New System.Drawing.Point(8, 2)
-        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_kembali.Location = New System.Drawing.Point(13, 13)
+        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
-        Me.btn_kembali.Size = New System.Drawing.Size(76, 61)
+        Me.btn_kembali.Size = New System.Drawing.Size(101, 75)
         Me.btn_kembali.TabIndex = 49
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.btn_kembali)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1371, 97)
+        Me.Panel1.TabIndex = 58
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(1213, 7)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(155, 86)
+        Me.PictureBox1.TabIndex = 51
+        Me.PictureBox1.TabStop = False
+        '
         'MasterAlasan
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.ClientSize = New System.Drawing.Size(1371, 750)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button13)
-        Me.Controls.Add(Me.Button12)
         Me.Controls.Add(Me.Panel2)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "MasterAlasan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MasterAlasan"
@@ -200,20 +199,21 @@ Partial Class MasterAlasan
         CType(Me.data_master_alasan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Button13 As Button
-    Friend WithEvents Button12 As Button
     Friend WithEvents data_master_alasan As DataGridView
     Friend WithEvents txt_nama_alasan As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents btn_simpan As Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents pict_logo As PictureBox
     Friend WithEvents Label6 As Label
     Friend WithEvents btn_kembali As Button
     Friend WithEvents id_alasan As DataGridViewTextBoxColumn
     Friend WithEvents nama_alasan As DataGridViewTextBoxColumn
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

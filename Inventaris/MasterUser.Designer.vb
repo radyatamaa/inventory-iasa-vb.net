@@ -24,8 +24,6 @@ Partial Class MasterUser
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MasterUser))
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.btn_kembali = New System.Windows.Forms.Button()
         Me.txt_username = New System.Windows.Forms.TextBox()
         Me.txt_nama_lengkap = New System.Windows.Forms.TextBox()
         Me.btn_simpan = New System.Windows.Forms.Button()
@@ -41,18 +39,23 @@ Partial Class MasterUser
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.btn_kembali = New System.Windows.Forms.Button()
         Me.btn_hapus = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
         CType(Me.data_master_user, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.AutoScroll = True
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel2.Controls.Add(Me.Label15)
-        Me.Panel2.Controls.Add(Me.btn_kembali)
         Me.Panel2.Controls.Add(Me.txt_username)
         Me.Panel2.Controls.Add(Me.txt_nama_lengkap)
         Me.Panel2.Controls.Add(Me.btn_simpan)
@@ -63,40 +66,16 @@ Partial Class MasterUser
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(3, 1)
+        Me.Panel2.Location = New System.Drawing.Point(3, 97)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1709, 626)
+        Me.Panel2.Size = New System.Drawing.Size(1368, 485)
         Me.Panel2.TabIndex = 6
-        '
-        'Label15
-        '
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(568, 7)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(444, 58)
-        Me.Label15.TabIndex = 55
-        Me.Label15.Text = "Master User"
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btn_kembali
-        '
-        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
-        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_kembali.FlatAppearance.BorderSize = 0
-        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
-        Me.btn_kembali.Location = New System.Drawing.Point(57, 7)
-        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btn_kembali.Name = "btn_kembali"
-        Me.btn_kembali.Size = New System.Drawing.Size(101, 80)
-        Me.btn_kembali.TabIndex = 54
-        Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'txt_username
         '
         Me.txt_username.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_username.Location = New System.Drawing.Point(165, 174)
+        Me.txt_username.Location = New System.Drawing.Point(200, 23)
         Me.txt_username.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_username.Name = "txt_username"
         Me.txt_username.Size = New System.Drawing.Size(236, 22)
@@ -105,7 +84,7 @@ Partial Class MasterUser
         'txt_nama_lengkap
         '
         Me.txt_nama_lengkap.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_nama_lengkap.Location = New System.Drawing.Point(165, 208)
+        Me.txt_nama_lengkap.Location = New System.Drawing.Point(200, 57)
         Me.txt_nama_lengkap.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_nama_lengkap.Name = "txt_nama_lengkap"
         Me.txt_nama_lengkap.Size = New System.Drawing.Size(236, 22)
@@ -117,7 +96,7 @@ Partial Class MasterUser
         Me.btn_simpan.FlatAppearance.BorderSize = 0
         Me.btn_simpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_simpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_simpan.Location = New System.Drawing.Point(165, 314)
+        Me.btn_simpan.Location = New System.Drawing.Point(200, 162)
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
@@ -133,12 +112,12 @@ Partial Class MasterUser
         Me.data_master_user.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.data_master_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.data_master_user.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_user, Me.username, Me.nama_lengkap, Me.password, Me.id_level})
-        Me.data_master_user.Location = New System.Drawing.Point(3, 368)
+        Me.data_master_user.Location = New System.Drawing.Point(3, 229)
         Me.data_master_user.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.data_master_user.Name = "data_master_user"
         Me.data_master_user.RowHeadersWidth = 51
         Me.data_master_user.RowTemplate.Height = 24
-        Me.data_master_user.Size = New System.Drawing.Size(1536, 254)
+        Me.data_master_user.Size = New System.Drawing.Size(1365, 254)
         Me.data_master_user.TabIndex = 16
         '
         'id_user
@@ -180,7 +159,7 @@ Partial Class MasterUser
         '
         Me.cmb_id_level.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cmb_id_level.FormattingEnabled = True
-        Me.cmb_id_level.Location = New System.Drawing.Point(165, 271)
+        Me.cmb_id_level.Location = New System.Drawing.Point(200, 120)
         Me.cmb_id_level.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmb_id_level.Name = "cmb_id_level"
         Me.cmb_id_level.Size = New System.Drawing.Size(236, 24)
@@ -189,7 +168,7 @@ Partial Class MasterUser
         'txt_password
         '
         Me.txt_password.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_password.Location = New System.Drawing.Point(165, 240)
+        Me.txt_password.Location = New System.Drawing.Point(200, 89)
         Me.txt_password.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.Size = New System.Drawing.Size(236, 22)
@@ -199,7 +178,7 @@ Partial Class MasterUser
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(5, 279)
+        Me.Label5.Location = New System.Drawing.Point(40, 128)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(59, 17)
         Me.Label5.TabIndex = 3
@@ -209,7 +188,7 @@ Partial Class MasterUser
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(5, 240)
+        Me.Label4.Location = New System.Drawing.Point(40, 89)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(69, 17)
         Me.Label4.TabIndex = 2
@@ -219,7 +198,7 @@ Partial Class MasterUser
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(5, 208)
+        Me.Label3.Location = New System.Drawing.Point(40, 57)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(104, 17)
         Me.Label3.TabIndex = 1
@@ -229,18 +208,44 @@ Partial Class MasterUser
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(5, 174)
+        Me.Label2.Location = New System.Drawing.Point(40, 23)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(73, 17)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Username"
+        '
+        'Label15
+        '
+        Me.Label15.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(463, 19)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(444, 58)
+        Me.Label15.TabIndex = 55
+        Me.Label15.Text = "Master User"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btn_kembali
+        '
+        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
+        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_kembali.FlatAppearance.BorderSize = 0
+        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
+        Me.btn_kembali.Location = New System.Drawing.Point(12, 7)
+        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_kembali.Name = "btn_kembali"
+        Me.btn_kembali.Size = New System.Drawing.Size(101, 80)
+        Me.btn_kembali.TabIndex = 54
+        Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'btn_hapus
         '
         Me.btn_hapus.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btn_hapus.FlatAppearance.BorderSize = 0
         Me.btn_hapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_hapus.Location = New System.Drawing.Point(31, 633)
+        Me.btn_hapus.Location = New System.Drawing.Point(23, 586)
         Me.btn_hapus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_hapus.Name = "btn_hapus"
         Me.btn_hapus.Size = New System.Drawing.Size(93, 39)
@@ -248,11 +253,36 @@ Partial Class MasterUser
         Me.btn_hapus.Text = "Hapus"
         Me.btn_hapus.UseVisualStyleBackColor = False
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel1.Controls.Add(Me.Label15)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.btn_kembali)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1371, 97)
+        Me.Panel1.TabIndex = 58
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(1213, 7)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(155, 86)
+        Me.PictureBox1.TabIndex = 51
+        Me.PictureBox1.TabStop = False
+        '
         'MasterUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1371, 750)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btn_hapus)
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -263,6 +293,8 @@ Partial Class MasterUser
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.data_master_user, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -285,4 +317,6 @@ Partial Class MasterUser
     Friend WithEvents btn_hapus As Button
     Friend WithEvents Label15 As Label
     Friend WithEvents btn_kembali As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
