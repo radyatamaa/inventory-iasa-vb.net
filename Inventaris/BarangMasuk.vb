@@ -1056,7 +1056,7 @@ Public Class BarangMasuk
         isDataReal.Clear()
     End Sub
 
-    Private Sub pict_logo_Click(sender As Object, e As EventArgs) Handles pict_logo.Click
+    Private Sub pict_logo_Click(sender As Object, e As EventArgs)
 
     End Sub
 
