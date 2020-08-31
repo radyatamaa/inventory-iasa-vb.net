@@ -308,7 +308,7 @@ Public Class invoice_cetak
                 'Dim logoToko = BmpToBytes_Serialization(downloadImage)
                 'Dim convertLogoTOko = Convert.ToBase64String(logoToko)
                 row.Item(36) = Application.StartupPath & "\Reports\" + insertDataBarangMasuk.id_toko.ToString + ".jpeg"
-
+                row.Item(37) = insertDataBarangMasuk.id_toko
                 ds.Tables("DataInvoice").Rows.Add(row)
 
 
