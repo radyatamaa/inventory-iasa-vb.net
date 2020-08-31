@@ -72,7 +72,7 @@ Public Class Repair
         CONN.Close()
         Return result
     End Function
-    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer)
+    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer, idToko As Integer)
         Dim result As New List(Of Object)
         listBarangMasuk.Clear()
         Dim query As String = "SELECT *  FROM tbl_barang_masuk bm
@@ -87,7 +87,8 @@ Public Class Repair
                                     bm.is_active = 1 AND 
                                     sb.id_status_barang = " + idStatus.ToString + " AND 
                                     j.id_jenis = " + idJenis.ToString + " AND 
-                                    t.id_tipe = " + idTipe.ToString
+                                    t.id_tipe = " + idTipe.ToString + " AND
+                                    b.id_toko = " + idToko.ToString
 
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
@@ -415,10 +416,10 @@ Public Class Repair
     Private Sub cmb_tipe_barang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_tipe_barang.SelectedIndexChanged
         Try
             dt_barang_masuk.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe)
+            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe, UserInfo.IdToko)
         Catch ex As Exception
             dt_barang_masuk.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue)
+            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue, UserInfo.IdToko)
         End Try
     End Sub
 
@@ -495,8 +496,8 @@ Public Class Repair
 
                     dt_barang_keluar_fix.Update()
 
-                    Me.txt_harga_total.Text = FormatCurrency(Me.txt_harga_total.Text + barangMasukHandle.harga_jual)
-                    Me.txt_harga_akhir.Text = FormatCurrency(Me.txt_harga_total.Text)
+                    Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangMasukHandle.harga_jual)
+                    Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text)
                     listBarangKeluarFix.Add(barangMasukHandle)
                     'Index = Index + 1
                 Else
@@ -670,7 +671,7 @@ Public Class Repair
         dt_barang_masuk.Rows.Clear()
         Dim search As List(Of Object)
         If keywoard <> "" Then
-            search = listBarangMasuk.Where(Function(x) keywoard.StartsWith(x.serial_number)).ToList()
+            search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
         Else
             search = listBarangMasuk.ToList()
         End If
@@ -693,13 +694,12 @@ Public Class Repair
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.detail_lokasi
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.catatan
             dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.nama_status
-            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.harga_jual
             If index = 0 And isSelectedTipeJenis = 0 Then
                 isSelectedTipeJenis = 1
                 dt_barang_masuk.Columns.Add("id_barang_masuk", "IdBarangMasuk")
-                dt_barang_masuk.Columns(10).Visible = False
+                dt_barang_masuk.Columns(9).Visible = False
             End If
-            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.id_barang_masuk
+            dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.id_barang_masuk
 
             dt_barang_masuk.Update()
             index = index + 1

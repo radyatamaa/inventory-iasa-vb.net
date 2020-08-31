@@ -1,4 +1,6 @@
 ﻿Imports System.Collections.Specialized
+Imports System.IO
+Imports System.Net
 Imports System.Runtime.Serialization
 Imports Microsoft.Extensions.Caching.Memory
 Imports Newtonsoft.Json
@@ -22,7 +24,11 @@ Public Class MenuUtama
     'End Sub
     Private Sub btn_barang_masuk_Click(sender As Object, e As EventArgs) Handles btn_barang_masuk.Click
         'BarangMasuk.MenuStrip1.Tag = BarangMasuk.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+
         BarangMasuk.UserInfo = Me.MenuStrip1.Tag
+        BarangMasuk.pict_logo.BackgroundImage = downloadImage
         BarangMasuk.txt_harga_modal.Text = 0
         BarangMasuk.txt_harga_barang.Text = 0
 
@@ -45,17 +51,26 @@ Public Class MenuUtama
     End Sub
     Private Sub btn_penjualan_Click(sender As Object, e As EventArgs) Handles btn_penjualan.Click
         BarangKeluar.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        BarangKeluar.pict_logo.BackgroundImage = downloadImage
         BarangKeluar.Show()
         Me.Close()
     End Sub
     Private Sub btn_rental_Click(sender As Object, e As EventArgs) Handles btn_rental.Click
         Rental.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        Rental.pict_logo.BackgroundImage = downloadImage
         Rental.Show()
         Me.Close()
     End Sub
 
     Private Sub btn_repair_Click(sender As Object, e As EventArgs) Handles btn_repair.Click
         Repair.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        Repair.pict_logo.BackgroundImage = downloadImage
         Repair.Show()
         Me.Close()
     End Sub
@@ -128,6 +143,10 @@ Public Class MenuUtama
     End Sub
 
     Private Sub BarangMasuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+
+        Me.p_logo.Image = downloadImage
         btn_barang_masuk.Visible = True
         BarangKeluarToolStripMenuItem.Visible = True
         QuotationToolStripMenuItem.Visible = True
@@ -183,6 +202,9 @@ Public Class MenuUtama
 
     Private Sub ExtendRentalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExtendRentalToolStripMenuItem.Click
         extend_rental.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        extend_rental.pict_logo.BackgroundImage = downloadImage
         extend_rental.Show()
         Me.Close()
     End Sub

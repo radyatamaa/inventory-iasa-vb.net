@@ -38,8 +38,8 @@ Partial Class MenuUtama
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ccc = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_hasil_penjualan = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btn_r_invoice_keluar = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_barang_rental = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_r_invoice_keluar = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_garansi = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_stock_barang = New System.Windows.Forms.ToolStripMenuItem()
         Me.CetakToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -185,19 +185,19 @@ Partial Class MenuUtama
         Me.btn_r_hasil_penjualan.Size = New System.Drawing.Size(237, 24)
         Me.btn_r_hasil_penjualan.Text = "Hasil Input Penjualan"
         '
-        'btn_r_invoice_keluar
-        '
-        Me.btn_r_invoice_keluar.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_r_invoice_keluar.Name = "btn_r_invoice_keluar"
-        Me.btn_r_invoice_keluar.Size = New System.Drawing.Size(237, 24)
-        Me.btn_r_invoice_keluar.Text = "List Invoice Keluar"
-        '
         'btn_r_barang_rental
         '
         Me.btn_r_barang_rental.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_r_barang_rental.Name = "btn_r_barang_rental"
         Me.btn_r_barang_rental.Size = New System.Drawing.Size(237, 24)
         Me.btn_r_barang_rental.Text = "Hasil Input Barang Rental"
+        '
+        'btn_r_invoice_keluar
+        '
+        Me.btn_r_invoice_keluar.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_r_invoice_keluar.Name = "btn_r_invoice_keluar"
+        Me.btn_r_invoice_keluar.Size = New System.Drawing.Size(237, 24)
+        Me.btn_r_invoice_keluar.Text = "List Invoice Keluar"
         '
         'btn_r_garansi
         '
@@ -346,19 +346,21 @@ Partial Class MenuUtama
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.p_logo)
         Me.Panel1.Location = New System.Drawing.Point(0, 51)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1206, 626)
         Me.Panel1.TabIndex = 44
         '
         'p_logo
         '
-        Me.p_logo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.p_logo.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.p_logo.Location = New System.Drawing.Point(336, 86)
-        Me.p_logo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.p_logo.Location = New System.Drawing.Point(228, 86)
+        Me.p_logo.Margin = New System.Windows.Forms.Padding(2)
         Me.p_logo.Name = "p_logo"
         Me.p_logo.Size = New System.Drawing.Size(495, 435)
+        Me.p_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.p_logo.TabIndex = 0
         Me.p_logo.TabStop = False
         '
@@ -369,7 +371,7 @@ Partial Class MenuUtama
         Me.ClientSize = New System.Drawing.Size(1028, 609)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MenuUtama"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MenuUtama"
