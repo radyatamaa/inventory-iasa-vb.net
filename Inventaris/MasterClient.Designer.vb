@@ -35,8 +35,6 @@ Partial Class MasterClient
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btn_simpan = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.btn_kembali = New System.Windows.Forms.Button()
         Me.txt_tlp_client = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.data_master_client = New System.Windows.Forms.DataGridView()
@@ -47,6 +45,8 @@ Partial Class MasterClient
         Me.kota_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.kdpos_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tlp_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.btn_kembali = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -63,7 +63,7 @@ Partial Class MasterClient
         Me.txt_kota_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_kota_client.Name = "txt_kota_client"
         Me.txt_kota_client.Size = New System.Drawing.Size(236, 22)
-        Me.txt_kota_client.TabIndex = 29
+        Me.txt_kota_client.TabIndex = 4
         '
         'Label5
         '
@@ -82,7 +82,7 @@ Partial Class MasterClient
         Me.txt_kdpos_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_kdpos_client.Name = "txt_kdpos_client"
         Me.txt_kdpos_client.Size = New System.Drawing.Size(236, 22)
-        Me.txt_kdpos_client.TabIndex = 25
+        Me.txt_kdpos_client.TabIndex = 5
         '
         'Label7
         '
@@ -101,7 +101,7 @@ Partial Class MasterClient
         Me.txt_alamat_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_alamat_client.Name = "txt_alamat_client"
         Me.txt_alamat_client.Size = New System.Drawing.Size(236, 22)
-        Me.txt_alamat_client.TabIndex = 23
+        Me.txt_alamat_client.TabIndex = 3
         '
         'Label3
         '
@@ -120,7 +120,7 @@ Partial Class MasterClient
         Me.txt_nama_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_nama_client.Name = "txt_nama_client"
         Me.txt_nama_client.Size = New System.Drawing.Size(236, 22)
-        Me.txt_nama_client.TabIndex = 21
+        Me.txt_nama_client.TabIndex = 2
         '
         'Label2
         '
@@ -139,7 +139,7 @@ Partial Class MasterClient
         Me.txt_kd_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_kd_client.Name = "txt_kd_client"
         Me.txt_kd_client.Size = New System.Drawing.Size(236, 22)
-        Me.txt_kd_client.TabIndex = 8
+        Me.txt_kd_client.TabIndex = 1
         '
         'Label4
         '
@@ -161,7 +161,7 @@ Partial Class MasterClient
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
-        Me.btn_simpan.TabIndex = 17
+        Me.btn_simpan.TabIndex = 7
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = False
         '
@@ -191,32 +191,6 @@ Partial Class MasterClient
         Me.Panel2.Size = New System.Drawing.Size(1367, 561)
         Me.Panel2.TabIndex = 21
         '
-        'Label15
-        '
-        Me.Label15.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(503, 22)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(381, 58)
-        Me.Label15.TabIndex = 56
-        Me.Label15.Text = "Master Data Client"
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btn_kembali
-        '
-        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
-        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_kembali.FlatAppearance.BorderSize = 0
-        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
-        Me.btn_kembali.Location = New System.Drawing.Point(12, 11)
-        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btn_kembali.Name = "btn_kembali"
-        Me.btn_kembali.Size = New System.Drawing.Size(101, 69)
-        Me.btn_kembali.TabIndex = 55
-        Me.btn_kembali.UseVisualStyleBackColor = False
-        '
         'txt_tlp_client
         '
         Me.txt_tlp_client.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -224,7 +198,7 @@ Partial Class MasterClient
         Me.txt_tlp_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_tlp_client.Name = "txt_tlp_client"
         Me.txt_tlp_client.Size = New System.Drawing.Size(236, 22)
-        Me.txt_tlp_client.TabIndex = 31
+        Me.txt_tlp_client.TabIndex = 6
         '
         'Label6
         '
@@ -250,7 +224,7 @@ Partial Class MasterClient
         Me.data_master_client.RowHeadersWidth = 51
         Me.data_master_client.RowTemplate.Height = 24
         Me.data_master_client.Size = New System.Drawing.Size(1366, 335)
-        Me.data_master_client.TabIndex = 16
+        Me.data_master_client.TabIndex = 8
         '
         'id
         '
@@ -301,6 +275,32 @@ Partial Class MasterClient
         Me.tlp_client.MinimumWidth = 6
         Me.tlp_client.Name = "tlp_client"
         '
+        'Label15
+        '
+        Me.Label15.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(503, 22)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(381, 58)
+        Me.Label15.TabIndex = 56
+        Me.Label15.Text = "Master Data Client"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btn_kembali
+        '
+        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
+        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_kembali.FlatAppearance.BorderSize = 0
+        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
+        Me.btn_kembali.Location = New System.Drawing.Point(12, 11)
+        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_kembali.Name = "btn_kembali"
+        Me.btn_kembali.Size = New System.Drawing.Size(101, 69)
+        Me.btn_kembali.TabIndex = 10
+        Me.btn_kembali.UseVisualStyleBackColor = False
+        '
         'Button13
         '
         Me.Button13.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -310,7 +310,7 @@ Partial Class MasterClient
         Me.Button13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(93, 39)
-        Me.Button13.TabIndex = 45
+        Me.Button13.TabIndex = 9
         Me.Button13.Text = "Hapus"
         Me.Button13.UseVisualStyleBackColor = False
         '

@@ -58,7 +58,7 @@ Partial Class MasterTipe
         Me.txt_tipe_barang.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_tipe_barang.Name = "txt_tipe_barang"
         Me.txt_tipe_barang.Size = New System.Drawing.Size(236, 22)
-        Me.txt_tipe_barang.TabIndex = 8
+        Me.txt_tipe_barang.TabIndex = 1
         '
         'Label4
         '
@@ -80,7 +80,7 @@ Partial Class MasterTipe
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
-        Me.btn_simpan.TabIndex = 17
+        Me.btn_simpan.TabIndex = 3
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = False
         '
@@ -140,7 +140,7 @@ Partial Class MasterTipe
         Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(132, 30)
-        Me.Button3.TabIndex = 55
+        Me.Button3.TabIndex = 4
         Me.Button3.Text = "Browse" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -152,7 +152,7 @@ Partial Class MasterTipe
         Me.cmb_jenis_barang.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmb_jenis_barang.Name = "cmb_jenis_barang"
         Me.cmb_jenis_barang.Size = New System.Drawing.Size(236, 24)
-        Me.cmb_jenis_barang.TabIndex = 21
+        Me.cmb_jenis_barang.TabIndex = 2
         '
         'Label2
         '
@@ -178,7 +178,7 @@ Partial Class MasterTipe
         Me.data_master_tipe.RowHeadersWidth = 51
         Me.data_master_tipe.RowTemplate.Height = 24
         Me.data_master_tipe.Size = New System.Drawing.Size(1368, 254)
-        Me.data_master_tipe.TabIndex = 16
+        Me.data_master_tipe.TabIndex = 5
         '
         'id
         '
@@ -219,7 +219,7 @@ Partial Class MasterTipe
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(101, 80)
-        Me.btn_kembali.TabIndex = 52
+        Me.btn_kembali.TabIndex = 7
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'OpenFileDialog1
@@ -235,7 +235,7 @@ Partial Class MasterTipe
         Me.hapus_data_tipe.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.hapus_data_tipe.Name = "hapus_data_tipe"
         Me.hapus_data_tipe.Size = New System.Drawing.Size(93, 39)
-        Me.hapus_data_tipe.TabIndex = 54
+        Me.hapus_data_tipe.TabIndex = 6
         Me.hapus_data_tipe.Text = "Hapus"
         Me.hapus_data_tipe.UseVisualStyleBackColor = False
         '

@@ -75,11 +75,12 @@ Partial Class MasterDetailLokasi
         '
         Me.cmb_id_lokasi.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cmb_id_lokasi.FormattingEnabled = True
+        Me.cmb_id_lokasi.ItemHeight = 16
         Me.cmb_id_lokasi.Location = New System.Drawing.Point(191, 37)
         Me.cmb_id_lokasi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmb_id_lokasi.Name = "cmb_id_lokasi"
         Me.cmb_id_lokasi.Size = New System.Drawing.Size(236, 24)
-        Me.cmb_id_lokasi.TabIndex = 20
+        Me.cmb_id_lokasi.TabIndex = 1
         '
         'btn_simpan
         '
@@ -91,7 +92,7 @@ Partial Class MasterDetailLokasi
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
-        Me.btn_simpan.TabIndex = 17
+        Me.btn_simpan.TabIndex = 3
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = False
         '
@@ -109,7 +110,7 @@ Partial Class MasterDetailLokasi
         Me.data_master_detail.RowHeadersWidth = 51
         Me.data_master_detail.RowTemplate.Height = 24
         Me.data_master_detail.Size = New System.Drawing.Size(1371, 248)
-        Me.data_master_detail.TabIndex = 16
+        Me.data_master_detail.TabIndex = 4
         '
         'id
         '
@@ -139,7 +140,7 @@ Partial Class MasterDetailLokasi
         Me.txt_detail_lokasi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_detail_lokasi.Name = "txt_detail_lokasi"
         Me.txt_detail_lokasi.Size = New System.Drawing.Size(236, 22)
-        Me.txt_detail_lokasi.TabIndex = 8
+        Me.txt_detail_lokasi.TabIndex = 2
         '
         'Label4
         '
@@ -162,7 +163,7 @@ Partial Class MasterDetailLokasi
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(101, 85)
-        Me.btn_kembali.TabIndex = 58
+        Me.btn_kembali.TabIndex = 6
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'hapus_data_detail_lokasi
@@ -174,7 +175,7 @@ Partial Class MasterDetailLokasi
         Me.hapus_data_detail_lokasi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.hapus_data_detail_lokasi.Name = "hapus_data_detail_lokasi"
         Me.hapus_data_detail_lokasi.Size = New System.Drawing.Size(93, 39)
-        Me.hapus_data_detail_lokasi.TabIndex = 49
+        Me.hapus_data_detail_lokasi.TabIndex = 5
         Me.hapus_data_detail_lokasi.Text = "Hapus"
         Me.hapus_data_detail_lokasi.UseVisualStyleBackColor = False
         '
