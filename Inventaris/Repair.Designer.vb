@@ -51,7 +51,6 @@ Partial Class Repair
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_alamat = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.date_tgl_keluar = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -71,6 +70,7 @@ Partial Class Repair
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btn_tanda_terima = New System.Windows.Forms.Button()
         Me.txt_diskon = New System.Windows.Forms.TextBox()
@@ -94,7 +94,7 @@ Partial Class Repair
         Me.btn_kwitansi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kwitansi.Name = "btn_kwitansi"
         Me.btn_kwitansi.Size = New System.Drawing.Size(227, 30)
-        Me.btn_kwitansi.TabIndex = 96
+        Me.btn_kwitansi.TabIndex = 19
         Me.btn_kwitansi.Text = "Cetak Kwitansi"
         Me.btn_kwitansi.UseVisualStyleBackColor = True
         '
@@ -104,7 +104,7 @@ Partial Class Repair
         Me.btn_invoice.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_invoice.Name = "btn_invoice"
         Me.btn_invoice.Size = New System.Drawing.Size(227, 30)
-        Me.btn_invoice.TabIndex = 95
+        Me.btn_invoice.TabIndex = 18
         Me.btn_invoice.Text = "Cetak Invoice"
         Me.btn_invoice.UseVisualStyleBackColor = True
         '
@@ -117,7 +117,7 @@ Partial Class Repair
         Me.txt_harga_akhir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_harga_akhir.Name = "txt_harga_akhir"
         Me.txt_harga_akhir.Size = New System.Drawing.Size(236, 22)
-        Me.txt_harga_akhir.TabIndex = 94
+        Me.txt_harga_akhir.TabIndex = 17
         '
         'btn_tambah
         '
@@ -129,7 +129,7 @@ Partial Class Repair
         Me.btn_tambah.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_tambah.Name = "btn_tambah"
         Me.btn_tambah.Size = New System.Drawing.Size(237, 32)
-        Me.btn_tambah.TabIndex = 56
+        Me.btn_tambah.TabIndex = 11
         Me.btn_tambah.Text = "Tambah"
         Me.btn_tambah.UseVisualStyleBackColor = False
         '
@@ -147,8 +147,8 @@ Partial Class Repair
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1422, 146)
-        Me.dt_barang_keluar_fix.TabIndex = 55
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1479, 146)
+        Me.dt_barang_keluar_fix.TabIndex = 12
         '
         'jenis_barang2
         '
@@ -220,7 +220,7 @@ Partial Class Repair
         Me.txt_kdpos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_kdpos.Name = "txt_kdpos"
         Me.txt_kdpos.Size = New System.Drawing.Size(236, 22)
-        Me.txt_kdpos.TabIndex = 54
+        Me.txt_kdpos.TabIndex = 7
         '
         'Label10
         '
@@ -239,7 +239,7 @@ Partial Class Repair
         Me.txt_kota.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_kota.Name = "txt_kota"
         Me.txt_kota.Size = New System.Drawing.Size(236, 22)
-        Me.txt_kota.TabIndex = 52
+        Me.txt_kota.TabIndex = 6
         '
         'Label8
         '
@@ -262,7 +262,7 @@ Partial Class Repair
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(100, 90)
-        Me.btn_kembali.TabIndex = 46
+        Me.btn_kembali.TabIndex = 21
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'pict_logo
@@ -283,7 +283,7 @@ Partial Class Repair
         Me.txt_kd_transaksi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_kd_transaksi.Name = "txt_kd_transaksi"
         Me.txt_kd_transaksi.Size = New System.Drawing.Size(236, 22)
-        Me.txt_kd_transaksi.TabIndex = 26
+        Me.txt_kd_transaksi.TabIndex = 1
         '
         'btn_hapus
         '
@@ -291,7 +291,7 @@ Partial Class Repair
         Me.btn_hapus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_hapus.Name = "btn_hapus"
         Me.btn_hapus.Size = New System.Drawing.Size(93, 60)
-        Me.btn_hapus.TabIndex = 88
+        Me.btn_hapus.TabIndex = 14
         Me.btn_hapus.Text = "Hapus"
         Me.btn_hapus.UseVisualStyleBackColor = True
         '
@@ -327,26 +327,26 @@ Partial Class Repair
         Me.Panel2.Location = New System.Drawing.Point(1, 97)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1765, 583)
+        Me.Panel2.Size = New System.Drawing.Size(1822, 583)
         Me.Panel2.TabIndex = 86
         '
         'btncari
         '
-        Me.btncari.Location = New System.Drawing.Point(1138, 161)
+        Me.btncari.Location = New System.Drawing.Point(928, 156)
         Me.btncari.Margin = New System.Windows.Forms.Padding(4)
         Me.btncari.Name = "btncari"
-        Me.btncari.Size = New System.Drawing.Size(100, 28)
+        Me.btncari.Size = New System.Drawing.Size(47, 28)
         Me.btncari.TabIndex = 62
         Me.btncari.Text = "Cari"
         Me.btncari.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(722, 164)
+        Me.TextBox1.Location = New System.Drawing.Point(691, 156)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(388, 22)
-        Me.TextBox1.TabIndex = 61
+        Me.TextBox1.Size = New System.Drawing.Size(236, 22)
+        Me.TextBox1.TabIndex = 9
         '
         'Label4
         '
@@ -354,9 +354,9 @@ Partial Class Repair
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(530, 148)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(185, 17)
+        Me.Label4.Size = New System.Drawing.Size(98, 34)
         Me.Label4.TabIndex = 60
-        Me.Label4.Text = "Cari Barang / Serial Number"
+        Me.Label4.Text = "Cari Barang / " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Serial Number"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'txt_alamat
@@ -367,7 +367,7 @@ Partial Class Repair
         Me.txt_alamat.Multiline = True
         Me.txt_alamat.Name = "txt_alamat"
         Me.txt_alamat.Size = New System.Drawing.Size(236, 22)
-        Me.txt_alamat.TabIndex = 50
+        Me.txt_alamat.TabIndex = 5
         '
         'Label7
         '
@@ -378,16 +378,6 @@ Partial Class Repair
         Me.Label7.Size = New System.Drawing.Size(51, 17)
         Me.Label7.TabIndex = 49
         Me.Label7.Text = "Alamat"
-        '
-        'Label6
-        '
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(577, 9)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(339, 58)
-        Me.Label6.TabIndex = 47
-        Me.Label6.Text = "Repair"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label9
         '
@@ -401,11 +391,11 @@ Partial Class Repair
         '
         'date_tgl_keluar
         '
-        Me.date_tgl_keluar.Location = New System.Drawing.Point(691, 114)
+        Me.date_tgl_keluar.Location = New System.Drawing.Point(691, 100)
         Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.date_tgl_keluar.Name = "date_tgl_keluar"
         Me.date_tgl_keluar.Size = New System.Drawing.Size(236, 22)
-        Me.date_tgl_keluar.TabIndex = 22
+        Me.date_tgl_keluar.TabIndex = 8
         '
         'Label1
         '
@@ -431,8 +421,8 @@ Partial Class Repair
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1425, 146)
-        Me.dt_barang_masuk.TabIndex = 16
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1482, 146)
+        Me.dt_barang_masuk.TabIndex = 10
         '
         'jenis_barang
         '
@@ -505,7 +495,7 @@ Partial Class Repair
         Me.cmb_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmb_client.Name = "cmb_client"
         Me.cmb_client.Size = New System.Drawing.Size(236, 24)
-        Me.cmb_client.TabIndex = 11
+        Me.cmb_client.TabIndex = 4
         '
         'cmb_tipe_barang
         '
@@ -515,7 +505,7 @@ Partial Class Repair
         Me.cmb_tipe_barang.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmb_tipe_barang.Name = "cmb_tipe_barang"
         Me.cmb_tipe_barang.Size = New System.Drawing.Size(236, 24)
-        Me.cmb_tipe_barang.TabIndex = 10
+        Me.cmb_tipe_barang.TabIndex = 3
         '
         'cmb_jenis_barang
         '
@@ -525,7 +515,7 @@ Partial Class Repair
         Me.cmb_jenis_barang.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmb_jenis_barang.Name = "cmb_jenis_barang"
         Me.cmb_jenis_barang.Size = New System.Drawing.Size(236, 24)
-        Me.cmb_jenis_barang.TabIndex = 9
+        Me.cmb_jenis_barang.TabIndex = 2
         '
         'Label5
         '
@@ -557,6 +547,16 @@ Partial Class Repair
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Jenis Barang"
         '
+        'Label6
+        '
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(577, 9)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(339, 58)
+        Me.Label6.TabIndex = 47
+        Me.Label6.Text = "Repair"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -572,7 +572,7 @@ Partial Class Repair
         Me.btn_tanda_terima.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_tanda_terima.Name = "btn_tanda_terima"
         Me.btn_tanda_terima.Size = New System.Drawing.Size(227, 30)
-        Me.btn_tanda_terima.TabIndex = 97
+        Me.btn_tanda_terima.TabIndex = 20
         Me.btn_tanda_terima.Text = "Cetak Tanda Terima"
         Me.btn_tanda_terima.UseVisualStyleBackColor = True
         '
@@ -584,7 +584,7 @@ Partial Class Repair
         Me.txt_diskon.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_diskon.Name = "txt_diskon"
         Me.txt_diskon.Size = New System.Drawing.Size(236, 22)
-        Me.txt_diskon.TabIndex = 93
+        Me.txt_diskon.TabIndex = 16
         '
         'txt_harga_total
         '
@@ -595,7 +595,7 @@ Partial Class Repair
         Me.txt_harga_total.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_harga_total.Name = "txt_harga_total"
         Me.txt_harga_total.Size = New System.Drawing.Size(236, 22)
-        Me.txt_harga_total.TabIndex = 92
+        Me.txt_harga_total.TabIndex = 15
         '
         'Label13
         '
@@ -621,7 +621,7 @@ Partial Class Repair
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(93, 60)
-        Me.btn_simpan.TabIndex = 87
+        Me.btn_simpan.TabIndex = 13
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = True
         '
