@@ -436,7 +436,7 @@ Public Class BarangMasuk
         CONN.Close()
         Return result
     End Function
-    Function GetBarangMasuk()
+    Function GetBarangMasuk(idToko As String)
 
         Dim result As New List(Of Object)
 
@@ -448,7 +448,7 @@ Public Class BarangMasuk
 		                          INNER JOIN tbl_lokasi l ON b.id_lokasi = l.id_lokasi
 		                          INNER JOIN tbl_detail_lokasi dl ON b.id_detail_lokasi = dl.id_detail_lokasi
 		                          INNER JOIN tbl_status_barang sb ON b.id_status_barang = sb.id_status_barang
-                                  WHERE bm.is_active = 1 "
+                                  WHERE bm.is_active = 1 AND b.id_toko =" + idToko.ToString
 
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
@@ -544,7 +544,7 @@ Public Class BarangMasuk
         listBarangMasuk.Clear()
         data_barang_masuk.Rows.Clear()
         dt_barang_masuk.Rows.Clear()
-        GetBarangMasuk()
+        GetBarangMasuk(UserInfo.IdToko)
         Me.txt_kode_barang.Text = ""
         Me.txt_serial.Text = ""
         Me.txt_harga_modal.Text = ""
@@ -642,7 +642,7 @@ Public Class BarangMasuk
             Me.Label1.Tag = 0
             Me.Label2.Tag = 0
             VBnetSQLSeverConnection()
-            GetBarangMasuk()
+            GetBarangMasuk(UserInfo.IdToko)
             Dim listbarang As List(Of Object) = GetJenisBarang()
             If listbarang.Count > 0 Then
                 cmb_jenis_barang.DataSource = listbarang
@@ -859,7 +859,7 @@ Public Class BarangMasuk
                     End If
 
                 Next
-                GetBarangMasuk()
+                GetBarangMasuk(UserInfo.IdToko)
                 isDataReal.Clear()
             Else
             End If
@@ -935,7 +935,7 @@ Public Class BarangMasuk
         If isDataReal.Count > 0 Then
             Dim idBarangMasuk As Integer = SimpanBarangMasuk(insertDataBarangMasuk)
             dt_barang_masuk.Rows.Clear()
-            GetBarangMasuk()
+            GetBarangMasuk(UserInfo.IdToko)
             Me.txt_kode_barang.Text = ""
             Me.txt_serial.Text = ""
             Me.txt_harga_modal.Text = ""

@@ -6,6 +6,7 @@ Imports Microsoft.Office.Interop
 
 Public Class BarangKeluar
     Dim ppnNominal As Decimal = 0
+    Dim clientKodeSelect As String
     Public Property UserInfo As Object
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
@@ -75,7 +76,26 @@ Public Class BarangKeluar
         CONN.Close()
         Return result
     End Function
-    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer)
+    Function GetLastIdTransaksi() As List(Of Integer)
+        Dim result As New List(Of Integer)
+        Dim query As String = "SELECT TOP (1) id_transaksi FROM tbl_transaksi WHERE is_active = 1 ORDER BY id_transaksi desc"
+        cmd.CommandText = query
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        CONN.Open()
+        reader = cmd.ExecuteReader()
+        'This will loop through all returned records 
+        While reader.Read
+
+            Dim idTransaksi As Integer = reader("id_transaksi")
+
+            result.Add(idTransaksi)
+            'handle returned value before next loop here
+        End While
+        CONN.Close()
+        Return result
+    End Function
+    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer, idToko As Integer)
         Dim result As New List(Of Object)
         listBarangMasuk.Clear()
         Dim query As String = "SELECT *  FROM tbl_barang_masuk bm
@@ -90,7 +110,8 @@ Public Class BarangKeluar
                                     bm.is_active = 1 AND 
                                     sb.id_status_barang = " + idStatus.ToString + " AND 
                                     j.id_jenis = " + idJenis.ToString + " AND 
-                                    t.id_tipe = " + idTipe.ToString
+                                    t.id_tipe = " + idTipe.ToString + " AND
+                                    b.id_toko = " + idToko.ToString
 
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
@@ -192,7 +213,13 @@ Public Class BarangKeluar
         Next
 
         CONN.Close()
-
+        Dim lastIdTransaksi As Integer = 0
+        Dim idTransaksi = GetLastIdTransaksi()
+        If idTransaksi.Count > 0 Then
+            lastIdTransaksi = idTransaksi(0) + 1
+        End If
+        Dim kdTransaksi = GenerateKdtransaksi(lastIdTransaksi.ToString, clientKodeSelect, DateTime.Now.Year)
+        Me.txt_kd_transaksi.Text = kdTransaksi
         Return result
     End Function
     Function UpdateStatusBarang(idStatusBarang As Integer, userlogin As String, idBarang As Integer)
@@ -368,7 +395,8 @@ Public Class BarangKeluar
                             .nama_client = reader("nama_client"),
                               .alamat_client = reader("alamat_client"),
                             .kota_client = reader("kota_client"),
-                             .kdpos_client = reader("kdpos_client")
+                             .kdpos_client = reader("kdpos_client"),
+                             .kd_client = reader("kd_client")
                             }
             result.Add(client)
             clients.Add(client)
@@ -386,6 +414,14 @@ Public Class BarangKeluar
             sb.Append(s.Substring(idx, 1))
         Next
         Return sb.ToString()
+    End Function
+
+    Function GenerateKdtransaksi(idTransaksi As String, kdclient As String, year As Integer) As String
+        If (idTransaksi.Length = 1) Then
+            idTransaksi = "0" + idTransaksi
+        End If
+        Dim resultKdTransaksi As String = idTransaksi + "/" + kdclient + "/" + year.ToString
+        Return resultKdTransaksi
     End Function
 
     Function GenerateWord(isTrigger As Integer)
@@ -504,8 +540,8 @@ Public Class BarangKeluar
             Me.txt_shiphand.Text = 0
 
             isSelectedTipeJenis = 0
-            Dim kdTransaksi As String = RandomString(New Random)
-            Me.txt_kd_transaksi.Text = kdTransaksi
+            'Dim kdTransaksi As String = RandomString(New Random)
+            'Me.txt_kd_transaksi.Text = kdTransaksi
             Me.txt_kd_transaksi.Enabled = False
             VBnetSQLSeverConnection()
             Dim listbarang As List(Of Object) = GetJenisBarang()
@@ -551,10 +587,10 @@ Public Class BarangKeluar
     Private Sub cmb_tipe_barang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_tipe_barang.SelectedIndexChanged
         Try
             dt_barang_masuk.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe)
+            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe, UserInfo.IdToko)
         Catch ex As Exception
             dt_barang_masuk.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue)
+            GetBarangMasukByStatusTipeAndJenis(1, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue, UserInfo.IdToko)
         End Try
     End Sub
 
@@ -569,6 +605,7 @@ Public Class BarangKeluar
                 Me.txt_kota_ship.Text = client.kota_client
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedValue.nama_client
+                clientKodeSelect = client.kd_client.ToString
             End If
         Catch ex As Exception
             Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue).FirstOrDefault()
@@ -580,6 +617,7 @@ Public Class BarangKeluar
                 Me.txt_kota_ship.Text = client.kota_client
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedText
+                clientKodeSelect = client.kd_client.ToString
             End If
         End Try
     End Sub
@@ -621,8 +659,10 @@ Public Class BarangKeluar
 
                     dt_barang_keluar_fix.Update()
 
-                    Me.txt_harga_total.Text = Format(Me.txt_harga_total.Text + barangMasukHandle.harga_jual, "###,###,###")
-                    Me.txt_harga_akhir.Text = Format(Me.txt_harga_total.Text, "###,###,###")
+                    'Me.txt_harga_total.Text = Format(Me.txt_harga_total.Text + barangMasukHandle.harga_jual, "###,###,###")
+                    'Me.txt_harga_akhir.Text = Format(Me.txt_harga_total.Text, "###,###,###")
+                    Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangMasukHandle.harga_jual)
+                    Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text)
                     listBarangKeluarFix.Add(barangMasukHandle)
                     'Index = Index + 1
                 Else
@@ -728,8 +768,8 @@ Public Class BarangKeluar
         listBarangKeluarFix.Clear()
         listBarangMasuk.Clear()
         invoice_cetak.KdTransaksi = Me.txt_kd_transaksi.Text
-        Dim kdTransaksi As String = RandomString(New Random)
-        Me.txt_kd_transaksi.Text = kdTransaksi
+        'Dim kdTransaksi As String = RandomString(New Random)
+        Me.txt_kd_transaksi.Text = ""
         Me.txt_harga_total.Text = 0
         Me.txt_harga_akhir.Text = 0
         Me.txt_diskon.Text = 0
@@ -1050,6 +1090,7 @@ Public Class BarangKeluar
             Dim ppn = Val(ppnCalculate) * Val(hargaAkhir)
             ppnNominal = ppn
             Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppn) + Val(txt_shiphand.Text)
+            Me.txt_ppn_nominal.Text = ppnNominal
         ElseIf txt_ppn.Text = "" Then
             ppnNominal = 0
             Me.txt_ppn.Text = ""
@@ -1099,7 +1140,7 @@ Public Class BarangKeluar
         dt_barang_masuk.Rows.Clear()
         Dim search As List(Of Object)
         If keywoard <> "" Then
-            search = listBarangMasuk.Where(Function(x) keywoard.StartsWith(x.serial_number)).ToList()
+            search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
         Else
             search = listBarangMasuk.ToList()
         End If
@@ -1135,6 +1176,10 @@ Public Class BarangKeluar
 
 
         Next
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
 
     End Sub
 End Class

@@ -5,6 +5,7 @@ Imports System.Text
 
 Public Class extend_rental
     Dim ppnNominal As Decimal = 0
+    Dim clientKodeSelect As String
     Public Property UserInfo As Object
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
@@ -147,7 +148,26 @@ Public Class extend_rental
         dt_barang_keluar_fix.Update()
 
     End Function
-    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer, idTipe As Integer, idClient As Integer)
+    Function GetLastIdTransaksi() As List(Of Integer)
+        Dim result As New List(Of Integer)
+        Dim query As String = "SELECT TOP (1) id_transaksi FROM tbl_transaksi WHERE is_active = 1 ORDER BY id_transaksi desc"
+        cmd.CommandText = query
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        CONN.Open()
+        reader = cmd.ExecuteReader()
+        'This will loop through all returned records 
+        While reader.Read
+
+            Dim idTransaksi As Integer = reader("id_transaksi")
+
+            result.Add(idTransaksi)
+            'handle returned value before next loop here
+        End While
+        CONN.Close()
+        Return result
+    End Function
+    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer?, idTipe As Integer?, idClient As Integer, idToko As Integer)
         Dim result As New List(Of Object)
         listBarangMasuk.Clear()
         Dim query As String = "SELECT * FROM tbl_barang_keluar bm
@@ -161,11 +181,13 @@ Public Class extend_rental
                                   INNER JOIN tbl_transaksi trans ON bm.kd_transaksi_keluar = trans.kd_transaksi_keluar 
                                   WHERE 
                                     bm.is_active = 1 AND 
-                                    sb.id_status_barang = " + idStatus.ToString + " AND 
-                                    j.id_jenis = " + idJenis.ToString + " AND 
-                                    t.id_tipe = " + idTipe.ToString + " AND
-                                    trans.id_client = " + idClient.ToString
-
+                                    sb.id_status_barang = " + idStatus.ToString + " AND                                 
+                                    trans.id_client = " + idClient.ToString + " AND 
+                                    b.id_toko = " + idToko.ToString
+        If idJenis IsNot Nothing And idTipe IsNot Nothing Then
+            query = query + " AND j.id_jenis = " + idJenis.ToString + " AND 
+                                    t.id_tipe = " + idTipe.ToString
+        End If
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
         cmd.Connection = CONN
@@ -238,6 +260,15 @@ Public Class extend_rental
         MappingToDataGridBarangKeluar(result)
 
         CONN.Close()
+
+
+        Dim lastIdTransaksi As Integer = 0
+        Dim idTransaksi = GetLastIdTransaksi()
+        If idTransaksi.Count > 0 Then
+            lastIdTransaksi = idTransaksi(0) + 1
+        End If
+        Dim kdTransaksi = GenerateKdtransaksi(lastIdTransaksi.ToString, clientKodeSelect, DateTime.Now.Year)
+        Me.txt_kd_transaksi.Text = kdTransaksi
 
         Return result
     End Function
@@ -417,7 +448,8 @@ Public Class extend_rental
                             .nama_client = reader("nama_client"),
                               .alamat_client = reader("alamat_client"),
                             .kota_client = reader("kota_client"),
-                             .kdpos_client = reader("kdpos_client")
+                             .kdpos_client = reader("kdpos_client"),
+                             .kd_client = reader("kd_client")
                             }
             result.Add(client)
             clients.Add(client)
@@ -435,6 +467,13 @@ Public Class extend_rental
             sb.Append(s.Substring(idx, 1))
         Next
         Return sb.ToString()
+    End Function
+    Function GenerateKdtransaksi(idTransaksi As String, kdclient As String, year As Integer) As String
+        If (idTransaksi.Length = 1) Then
+            idTransaksi = "0" + idTransaksi
+        End If
+        Dim resultKdTransaksi As String = idTransaksi + "/" + kdclient + "/" + year.ToString
+        Return resultKdTransaksi
     End Function
     Private Sub extend_rental_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -491,10 +530,10 @@ Public Class extend_rental
     Private Sub cmb_tipe_barang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_tipe_barang.SelectedIndexChanged
         Try
             dt_barang_keluar.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe, cmb_client.SelectedValue)
+            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe, cmb_client.SelectedValue, UserInfo.IdToko)
         Catch ex As Exception
             dt_barang_keluar.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue, cmb_client.SelectedValue)
+            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue, cmb_client.SelectedValue, UserInfo.IdToko)
         End Try
     End Sub
 
@@ -533,8 +572,8 @@ Public Class extend_rental
                     barangMasukHandle.rental_exp = Nothing
                     barangMasukHandle.harga_akhir = ""
                     MappingToDataGridBarangKeluarFix(barangMasukHandle)
-                    Me.txt_harga_total.Text = FormatCurrency(Me.txt_harga_total.Text + barangMasukHandle.harga_jual)
-                    Me.txt_harga_akhir.Text = FormatCurrency(Me.txt_harga_total.Text)
+                    Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangMasukHandle.harga_jual)
+                    Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text)
 
                     listBarangKeluarFix.Add(barangMasukHandle)
                     'Index = Index + 1
@@ -635,7 +674,7 @@ Public Class extend_rental
             If Me.txt_diskon.Text <> "" Then
                 diskon = Me.txt_diskon.Text
             End If
-            insertDataBarangKeluar.kd_transaksi_keluar = kdTransaksi
+            insertDataBarangKeluar.kd_transaksi_keluar = Me.txt_kd_transaksi.Text
             'insertDataBarangKeluar.id_client = Me.cmb_client.SelectedValue
             'insertDataBarangKeluar.id_toko = idToko
             insertDataBarangKeluar.id_alasan = "NULL"
@@ -672,7 +711,7 @@ Public Class extend_rental
         listBarangMasuk.Clear()
         'invoice_cetak.KdTransaksi = Me.txt_kd_transaksi.Text
         'Dim kdTransaksi As String = RandomString(New Random)
-        'Me.txt_kd_transaksi.Text = kdTransaksi
+        Me.txt_kd_transaksi.Text = ""
         Me.txt_harga_total.Text = 0
         Me.txt_harga_akhir.Text = 0
         Me.txt_diskon.Text = 0
@@ -685,10 +724,7 @@ Public Class extend_rental
         dt_barang_keluar.Rows.Clear()
         Dim search As List(Of Object)
         If keywoard <> "" Then
-            search = listBarangMasuk.Where(Function(x) keywoard.StartsWith(x.serial_number) Or
-                                              keywoard.StartsWith(x.kd_transaksi_keluar) Or
-                                              keywoard.EndsWith(x.serial_number) Or
-                                              keywoard.EndsWith(x.kd_transaksi_keluar)).ToList()
+            search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
         Else
             search = listBarangMasuk.ToList()
         End If
@@ -839,6 +875,7 @@ Public Class extend_rental
     End Sub
 
     Private Sub cmb_client_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_client.SelectedIndexChanged
+
         Try
             Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue.id_client).FirstOrDefault()
             If client IsNot Nothing Then
@@ -846,6 +883,23 @@ Public Class extend_rental
                 Me.txt_kota_ship.Text = client.kota_client
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedValue.nama_client
+                clientKodeSelect = client.kd_client.ToString
+                dt_barang_keluar.Rows.Clear()
+                Dim idJenis As Integer?
+                Dim idTipe As Integer?
+                Try
+                    If cmb_tipe_barang.SelectedValue IsNot Nothing Then
+                        idTipe = cmb_tipe_barang.SelectedValue.id_tipe
+                        idJenis = cmb_jenis_barang.SelectedValue
+                    End If
+                Catch ex As Exception
+                    If cmb_tipe_barang.SelectedValue IsNot Nothing Then
+                        idJenis = cmb_jenis_barang.SelectedValue
+                        idTipe = cmb_tipe_barang.SelectedValue
+                    End If
+                End Try
+
+                GetBarangMasukByStatusTipeAndJenis(3, idJenis, idTipe, cmb_client.SelectedValue.id_client, UserInfo.IdToko)
             End If
         Catch ex As Exception
             Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue).FirstOrDefault()
@@ -854,8 +908,26 @@ Public Class extend_rental
                 Me.txt_kota_ship.Text = client.kota_client
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedText
+                clientKodeSelect = client.kd_client.ToString
+                dt_barang_keluar.Rows.Clear()
+                Dim idJenis As Integer?
+                Dim idTipe As Integer?
+                Try
+                    If cmb_tipe_barang.SelectedValue IsNot Nothing Then
+                        idTipe = cmb_tipe_barang.SelectedValue.id_tipe
+                        idJenis = cmb_jenis_barang.SelectedValue
+                    End If
+                Catch c As Exception
+                    If cmb_tipe_barang.SelectedValue IsNot Nothing Then
+                        idJenis = cmb_jenis_barang.SelectedValue
+                        idTipe = cmb_tipe_barang.SelectedValue
+                    End If
+                End Try
+                GetBarangMasukByStatusTipeAndJenis(3, idJenis, idTipe, cmb_client.SelectedValue, UserInfo.IdToko)
             End If
         End Try
+
+
     End Sub
 
     Private Sub txt_ppn_TextChanged(sender As Object, e As EventArgs) Handles txt_ppn.TextChanged
@@ -865,6 +937,7 @@ Public Class extend_rental
             Dim ppn = Val(ppnCalculate) * Val(hargaAkhir)
             ppnNominal = ppn
             Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppn) + Val(txt_shiphand.Text)
+            Me.txt_ppn_nominal.Text = ppnNominal
         ElseIf txt_ppn.Text = "" Then
             ppnNominal = 0
             Me.txt_ppn.Text = ""
