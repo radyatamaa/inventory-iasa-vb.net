@@ -164,7 +164,7 @@ Partial Class extend_rental
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1002, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1042, 119)
         Me.dt_barang_keluar_fix.TabIndex = 14
         '
         'kd_transaksi_keluar_new
@@ -346,7 +346,7 @@ Partial Class extend_rental
         Me.dt_barang_keluar.Name = "dt_barang_keluar"
         Me.dt_barang_keluar.RowHeadersWidth = 51
         Me.dt_barang_keluar.RowTemplate.Height = 24
-        Me.dt_barang_keluar.Size = New System.Drawing.Size(1002, 119)
+        Me.dt_barang_keluar.Size = New System.Drawing.Size(1042, 119)
         Me.dt_barang_keluar.TabIndex = 12
         '
         'kd_transaksi_keluar
@@ -511,7 +511,7 @@ Partial Class extend_rental
         Me.Panel2.Location = New System.Drawing.Point(2, 78)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1759, 500)
+        Me.Panel2.Size = New System.Drawing.Size(1799, 500)
         Me.Panel2.TabIndex = 86
         '
         'txt_kd_transaksi

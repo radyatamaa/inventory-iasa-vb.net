@@ -620,6 +620,15 @@ Public Class BarangKeluar
                 clientKodeSelect = client.kd_client.ToString
             End If
         End Try
+
+        Dim lastIdTransaksi As Integer = 0
+        Dim idTransaksi = GetLastIdTransaksi()
+        If idTransaksi.Count > 0 Then
+            lastIdTransaksi = idTransaksi(0) + 1
+        End If
+        Dim kdTransaksi = GenerateKdtransaksi(lastIdTransaksi.ToString, clientKodeSelect, DateTime.Now.Year)
+        Me.txt_kd_transaksi.Text = kdTransaksi
+
     End Sub
 
     Private Sub btn_simpan_Click(sender As Object, e As EventArgs)
