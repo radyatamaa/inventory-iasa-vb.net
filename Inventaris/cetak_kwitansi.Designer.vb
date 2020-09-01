@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class invoice_cetak
+Partial Class cetak_kwitansi
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -36,13 +36,13 @@ Partial Class invoice_cetak
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.dt_transaksi = New System.Windows.Forms.DataGridView()
-        Me.btn_tampil = New System.Windows.Forms.Button()
-        Me.date_tgl_keluar1 = New System.Windows.Forms.DateTimePicker()
-        Me.date_tgl_keluar2 = New System.Windows.Forms.DateTimePicker()
-        Me.btn_tampil_list = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.created_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.btn_tampil_list = New System.Windows.Forms.Button()
+        Me.date_tgl_keluar2 = New System.Windows.Forms.DateTimePicker()
+        Me.date_tgl_keluar1 = New System.Windows.Forms.DateTimePicker()
+        Me.btn_tampil = New System.Windows.Forms.Button()
         Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.harga_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.diskon = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,7 +54,7 @@ Partial Class invoice_cetak
         Me.tgl_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.total_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.created_by = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.created_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dt_transaksi = New System.Windows.Forms.DataGridView()
         CType(Me.dt_transaksi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -63,66 +63,42 @@ Partial Class invoice_cetak
         Me.ReportViewer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ReportViewer1.Location = New System.Drawing.Point(1, 208)
+        Me.ReportViewer1.Location = New System.Drawing.Point(1, 200)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
         Me.ReportViewer1.Size = New System.Drawing.Size(974, 321)
-        Me.ReportViewer1.TabIndex = 0
+        Me.ReportViewer1.TabIndex = 73
         '
-        'dt_transaksi
+        'created_date
         '
-        Me.dt_transaksi.AllowUserToOrderColumns = True
-        Me.dt_transaksi.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_transaksi.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dt_transaksi.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dt_transaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dt_transaksi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.harga_total, Me.diskon, Me.harga_akhir, Me.nama_client, Me.alamat_pengiriman, Me.kota_pengiriman, Me.kdpos_pengiriman, Me.tgl_keluar, Me.total_barang, Me.created_by, Me.created_date})
-        Me.dt_transaksi.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.dt_transaksi.Location = New System.Drawing.Point(1, 51)
-        Me.dt_transaksi.Margin = New System.Windows.Forms.Padding(2)
-        Me.dt_transaksi.Name = "dt_transaksi"
-        Me.dt_transaksi.RowHeadersWidth = 51
-        Me.dt_transaksi.RowTemplate.Height = 24
-        Me.dt_transaksi.Size = New System.Drawing.Size(974, 119)
-        Me.dt_transaksi.TabIndex = 56
+        Me.created_date.DefaultCellStyle = DataGridViewCellStyle1
+        Me.created_date.HeaderText = "Created Date"
+        Me.created_date.Name = "created_date"
         '
-        'btn_tampil
+        'Label1
         '
-        Me.btn_tampil.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_tampil.FlatAppearance.BorderSize = 0
-        Me.btn_tampil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_tampil.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_tampil.Location = New System.Drawing.Point(11, 174)
-        Me.btn_tampil.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_tampil.Name = "btn_tampil"
-        Me.btn_tampil.Size = New System.Drawing.Size(178, 26)
-        Me.btn_tampil.TabIndex = 57
-        Me.btn_tampil.Text = "Tampil"
-        Me.btn_tampil.UseVisualStyleBackColor = False
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(297, 16)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(23, 13)
+        Me.Label1.TabIndex = 80
+        Me.Label1.Text = "s/d"
         '
-        'date_tgl_keluar1
+        'Label9
         '
-        Me.date_tgl_keluar1.Location = New System.Drawing.Point(110, 20)
-        Me.date_tgl_keluar1.Margin = New System.Windows.Forms.Padding(2)
-        Me.date_tgl_keluar1.Name = "date_tgl_keluar1"
-        Me.date_tgl_keluar1.Size = New System.Drawing.Size(183, 20)
-        Me.date_tgl_keluar1.TabIndex = 58
-        '
-        'date_tgl_keluar2
-        '
-        Me.date_tgl_keluar2.Location = New System.Drawing.Point(324, 20)
-        Me.date_tgl_keluar2.Margin = New System.Windows.Forms.Padding(2)
-        Me.date_tgl_keluar2.Name = "date_tgl_keluar2"
-        Me.date_tgl_keluar2.Size = New System.Drawing.Size(193, 20)
-        Me.date_tgl_keluar2.TabIndex = 61
+        Me.Label9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(27, 16)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(79, 13)
+        Me.Label9.TabIndex = 79
+        Me.Label9.Text = "Tanggal Keluar"
         '
         'btn_tampil_list
         '
@@ -130,37 +106,43 @@ Partial Class invoice_cetak
         Me.btn_tampil_list.FlatAppearance.BorderSize = 0
         Me.btn_tampil_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_tampil_list.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_tampil_list.Location = New System.Drawing.Point(520, 17)
+        Me.btn_tampil_list.Location = New System.Drawing.Point(520, 9)
         Me.btn_tampil_list.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_tampil_list.Name = "btn_tampil_list"
         Me.btn_tampil_list.Size = New System.Drawing.Size(178, 26)
-        Me.btn_tampil_list.TabIndex = 62
+        Me.btn_tampil_list.TabIndex = 78
         Me.btn_tampil_list.Text = "Tampilkan List"
         Me.btn_tampil_list.UseVisualStyleBackColor = False
         '
-        'Label9
+        'date_tgl_keluar2
         '
-        Me.Label9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(27, 24)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(79, 13)
-        Me.Label9.TabIndex = 63
-        Me.Label9.Text = "Tanggal Keluar"
+        Me.date_tgl_keluar2.Location = New System.Drawing.Point(324, 12)
+        Me.date_tgl_keluar2.Margin = New System.Windows.Forms.Padding(2)
+        Me.date_tgl_keluar2.Name = "date_tgl_keluar2"
+        Me.date_tgl_keluar2.Size = New System.Drawing.Size(193, 20)
+        Me.date_tgl_keluar2.TabIndex = 77
         '
-        'Label1
+        'date_tgl_keluar1
         '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(297, 24)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(23, 13)
-        Me.Label1.TabIndex = 64
-        Me.Label1.Text = "s/d"
+        Me.date_tgl_keluar1.Location = New System.Drawing.Point(110, 12)
+        Me.date_tgl_keluar1.Margin = New System.Windows.Forms.Padding(2)
+        Me.date_tgl_keluar1.Name = "date_tgl_keluar1"
+        Me.date_tgl_keluar1.Size = New System.Drawing.Size(183, 20)
+        Me.date_tgl_keluar1.TabIndex = 76
+        '
+        'btn_tampil
+        '
+        Me.btn_tampil.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_tampil.FlatAppearance.BorderSize = 0
+        Me.btn_tampil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_tampil.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_tampil.Location = New System.Drawing.Point(11, 166)
+        Me.btn_tampil.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_tampil.Name = "btn_tampil"
+        Me.btn_tampil.Size = New System.Drawing.Size(178, 26)
+        Me.btn_tampil.TabIndex = 75
+        Me.btn_tampil.Text = "Tampil"
+        Me.btn_tampil.UseVisualStyleBackColor = False
         '
         'kd_transaksi_keluar
         '
@@ -262,18 +244,37 @@ Partial Class invoice_cetak
         Me.created_by.HeaderText = "Created By"
         Me.created_by.Name = "created_by"
         '
-        'created_date
+        'dt_transaksi
         '
+        Me.dt_transaksi.AllowUserToOrderColumns = True
+        Me.dt_transaksi.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dt_transaksi.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.created_date.DefaultCellStyle = DataGridViewCellStyle13
-        Me.created_date.HeaderText = "Created Date"
-        Me.created_date.Name = "created_date"
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dt_transaksi.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        Me.dt_transaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dt_transaksi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.harga_total, Me.diskon, Me.harga_akhir, Me.nama_client, Me.alamat_pengiriman, Me.kota_pengiriman, Me.kdpos_pengiriman, Me.tgl_keluar, Me.total_barang, Me.created_by, Me.created_date})
+        Me.dt_transaksi.GridColor = System.Drawing.SystemColors.ActiveBorder
+        Me.dt_transaksi.Location = New System.Drawing.Point(1, 43)
+        Me.dt_transaksi.Margin = New System.Windows.Forms.Padding(2)
+        Me.dt_transaksi.Name = "dt_transaksi"
+        Me.dt_transaksi.RowHeadersWidth = 51
+        Me.dt_transaksi.RowTemplate.Height = 24
+        Me.dt_transaksi.Size = New System.Drawing.Size(974, 119)
+        Me.dt_transaksi.TabIndex = 74
         '
-        'invoice_cetak
+        'cetak_kwitansi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(977, 530)
+        Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btn_tampil_list)
@@ -281,10 +282,8 @@ Partial Class invoice_cetak
         Me.Controls.Add(Me.date_tgl_keluar1)
         Me.Controls.Add(Me.btn_tampil)
         Me.Controls.Add(Me.dt_transaksi)
-        Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "invoice_cetak"
-        Me.Text = "Cetak Invoice"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.Name = "cetak_kwitansi"
+        Me.Text = "Cetak Kwitansi"
         CType(Me.dt_transaksi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -292,13 +291,13 @@ Partial Class invoice_cetak
     End Sub
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents dt_transaksi As DataGridView
-    Friend WithEvents btn_tampil As Button
-    Friend WithEvents date_tgl_keluar1 As DateTimePicker
-    Friend WithEvents date_tgl_keluar2 As DateTimePicker
-    Friend WithEvents btn_tampil_list As Button
-    Friend WithEvents Label9 As Label
+    Friend WithEvents created_date As DataGridViewTextBoxColumn
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents btn_tampil_list As Button
+    Friend WithEvents date_tgl_keluar2 As DateTimePicker
+    Friend WithEvents date_tgl_keluar1 As DateTimePicker
+    Friend WithEvents btn_tampil As Button
     Friend WithEvents kd_transaksi_keluar As DataGridViewTextBoxColumn
     Friend WithEvents harga_total As DataGridViewTextBoxColumn
     Friend WithEvents diskon As DataGridViewTextBoxColumn
@@ -310,5 +309,5 @@ Partial Class invoice_cetak
     Friend WithEvents tgl_keluar As DataGridViewTextBoxColumn
     Friend WithEvents total_barang As DataGridViewTextBoxColumn
     Friend WithEvents created_by As DataGridViewTextBoxColumn
-    Friend WithEvents created_date As DataGridViewTextBoxColumn
+    Friend WithEvents dt_transaksi As DataGridView
 End Class
