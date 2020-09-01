@@ -51,7 +51,7 @@ Partial Class MasterKondisi
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
-        Me.btn_simpan.TabIndex = 17
+        Me.btn_simpan.TabIndex = 2
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = False
         '
@@ -69,7 +69,7 @@ Partial Class MasterKondisi
         Me.data_master_kondisi.RowHeadersWidth = 51
         Me.data_master_kondisi.RowTemplate.Height = 24
         Me.data_master_kondisi.Size = New System.Drawing.Size(1364, 254)
-        Me.data_master_kondisi.TabIndex = 16
+        Me.data_master_kondisi.TabIndex = 3
         '
         'id
         '
@@ -92,7 +92,7 @@ Partial Class MasterKondisi
         Me.txt_nama_kondisi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_nama_kondisi.Name = "txt_nama_kondisi"
         Me.txt_nama_kondisi.Size = New System.Drawing.Size(236, 22)
-        Me.txt_nama_kondisi.TabIndex = 8
+        Me.txt_nama_kondisi.TabIndex = 1
         '
         'Label4
         '
@@ -130,7 +130,7 @@ Partial Class MasterKondisi
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(101, 69)
-        Me.btn_kembali.TabIndex = 55
+        Me.btn_kembali.TabIndex = 5
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'Button13
@@ -142,7 +142,7 @@ Partial Class MasterKondisi
         Me.Button13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(93, 39)
-        Me.Button13.TabIndex = 49
+        Me.Button13.TabIndex = 4
         Me.Button13.Text = "Hapus"
         Me.Button13.UseVisualStyleBackColor = False
         '

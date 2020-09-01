@@ -868,10 +868,6 @@ Public Class BarangMasuk
 
     End Sub
 
-    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim tested As Integer
         Dim test As String

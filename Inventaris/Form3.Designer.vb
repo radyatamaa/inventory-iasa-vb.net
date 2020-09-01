@@ -61,7 +61,7 @@ Partial Class Form3
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(82, 80)
-        Me.btn_kembali.TabIndex = 54
+        Me.btn_kembali.TabIndex = 5
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'txt_password_lama
@@ -71,7 +71,7 @@ Partial Class Form3
         Me.txt_password_lama.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_password_lama.Name = "txt_password_lama"
         Me.txt_password_lama.Size = New System.Drawing.Size(236, 22)
-        Me.txt_password_lama.TabIndex = 21
+        Me.txt_password_lama.TabIndex = 1
         Me.txt_password_lama.UseSystemPasswordChar = True
         '
         'txt_password_baru
@@ -81,7 +81,7 @@ Partial Class Form3
         Me.txt_password_baru.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_password_baru.Name = "txt_password_baru"
         Me.txt_password_baru.Size = New System.Drawing.Size(236, 22)
-        Me.txt_password_baru.TabIndex = 20
+        Me.txt_password_baru.TabIndex = 2
         Me.txt_password_baru.UseSystemPasswordChar = True
         '
         'btn_ubah
@@ -94,7 +94,7 @@ Partial Class Form3
         Me.btn_ubah.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_ubah.Name = "btn_ubah"
         Me.btn_ubah.Size = New System.Drawing.Size(236, 28)
-        Me.btn_ubah.TabIndex = 17
+        Me.btn_ubah.TabIndex = 4
         Me.btn_ubah.Text = "Ubah"
         Me.btn_ubah.UseVisualStyleBackColor = False
         '
@@ -105,7 +105,7 @@ Partial Class Form3
         Me.txt_konfirmasi_password.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_konfirmasi_password.Name = "txt_konfirmasi_password"
         Me.txt_konfirmasi_password.Size = New System.Drawing.Size(236, 22)
-        Me.txt_konfirmasi_password.TabIndex = 8
+        Me.txt_konfirmasi_password.TabIndex = 3
         Me.txt_konfirmasi_password.UseSystemPasswordChar = True
         '
         'Label4

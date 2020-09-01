@@ -59,7 +59,6 @@ Partial Class MasterDataToko
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btn_kembali = New System.Windows.Forms.Button()
         Me.hapus_data_toko = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -77,7 +76,7 @@ Partial Class MasterDataToko
         Me.txt_nama_toko.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_nama_toko.Name = "txt_nama_toko"
         Me.txt_nama_toko.Size = New System.Drawing.Size(236, 22)
-        Me.txt_nama_toko.TabIndex = 8
+        Me.txt_nama_toko.TabIndex = 1
         '
         'Label4
         '
@@ -99,7 +98,7 @@ Partial Class MasterDataToko
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
-        Me.btn_simpan.TabIndex = 17
+        Me.btn_simpan.TabIndex = 11
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = False
         '
@@ -153,7 +152,7 @@ Partial Class MasterDataToko
         Me.btn_browse.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_browse.Name = "btn_browse"
         Me.btn_browse.Size = New System.Drawing.Size(101, 32)
-        Me.btn_browse.TabIndex = 36
+        Me.btn_browse.TabIndex = 7
         Me.btn_browse.Text = "Browse"
         Me.btn_browse.UseVisualStyleBackColor = True
         '
@@ -164,7 +163,7 @@ Partial Class MasterDataToko
         Me.txt_norek_owner.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_norek_owner.Name = "txt_norek_owner"
         Me.txt_norek_owner.Size = New System.Drawing.Size(236, 22)
-        Me.txt_norek_owner.TabIndex = 35
+        Me.txt_norek_owner.TabIndex = 10
         '
         'Label8
         '
@@ -183,7 +182,7 @@ Partial Class MasterDataToko
         Me.txt_tlp_owner.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_tlp_owner.Name = "txt_tlp_owner"
         Me.txt_tlp_owner.Size = New System.Drawing.Size(236, 22)
-        Me.txt_tlp_owner.TabIndex = 33
+        Me.txt_tlp_owner.TabIndex = 9
         '
         'Label9
         '
@@ -202,7 +201,7 @@ Partial Class MasterDataToko
         Me.txt_nama_owner.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_nama_owner.Name = "txt_nama_owner"
         Me.txt_nama_owner.Size = New System.Drawing.Size(236, 22)
-        Me.txt_nama_owner.TabIndex = 31
+        Me.txt_nama_owner.TabIndex = 8
         '
         'Label10
         '
@@ -221,7 +220,7 @@ Partial Class MasterDataToko
         Me.txt_logo_toko.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_logo_toko.Name = "txt_logo_toko"
         Me.txt_logo_toko.Size = New System.Drawing.Size(236, 22)
-        Me.txt_logo_toko.TabIndex = 29
+        Me.txt_logo_toko.TabIndex = 6
         '
         'Label5
         '
@@ -240,7 +239,7 @@ Partial Class MasterDataToko
         Me.txt_tlp_toko.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_tlp_toko.Name = "txt_tlp_toko"
         Me.txt_tlp_toko.Size = New System.Drawing.Size(236, 22)
-        Me.txt_tlp_toko.TabIndex = 27
+        Me.txt_tlp_toko.TabIndex = 5
         '
         'Label6
         '
@@ -259,7 +258,7 @@ Partial Class MasterDataToko
         Me.txt_kdpos_toko.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_kdpos_toko.Name = "txt_kdpos_toko"
         Me.txt_kdpos_toko.Size = New System.Drawing.Size(236, 22)
-        Me.txt_kdpos_toko.TabIndex = 25
+        Me.txt_kdpos_toko.TabIndex = 4
         '
         'Label7
         '
@@ -278,7 +277,7 @@ Partial Class MasterDataToko
         Me.txt_kota_toko.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_kota_toko.Name = "txt_kota_toko"
         Me.txt_kota_toko.Size = New System.Drawing.Size(236, 22)
-        Me.txt_kota_toko.TabIndex = 23
+        Me.txt_kota_toko.TabIndex = 3
         '
         'Label3
         '
@@ -297,7 +296,7 @@ Partial Class MasterDataToko
         Me.txt_alamat_toko.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_alamat_toko.Name = "txt_alamat_toko"
         Me.txt_alamat_toko.Size = New System.Drawing.Size(236, 22)
-        Me.txt_alamat_toko.TabIndex = 21
+        Me.txt_alamat_toko.TabIndex = 2
         '
         'Label2
         '
@@ -322,8 +321,8 @@ Partial Class MasterDataToko
         Me.data_master_toko.Name = "data_master_toko"
         Me.data_master_toko.RowHeadersWidth = 51
         Me.data_master_toko.RowTemplate.Height = 24
-        Me.data_master_toko.Size = New System.Drawing.Size(2069, 254)
-        Me.data_master_toko.TabIndex = 16
+        Me.data_master_toko.Size = New System.Drawing.Size(2149, 254)
+        Me.data_master_toko.TabIndex = 12
         '
         'id
         '
@@ -418,7 +417,7 @@ Partial Class MasterDataToko
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(101, 79)
-        Me.btn_kembali.TabIndex = 58
+        Me.btn_kembali.TabIndex = 14
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'hapus_data_toko
@@ -426,26 +425,13 @@ Partial Class MasterDataToko
         Me.hapus_data_toko.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.hapus_data_toko.FlatAppearance.BorderSize = 0
         Me.hapus_data_toko.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.hapus_data_toko.Location = New System.Drawing.Point(115, 609)
+        Me.hapus_data_toko.Location = New System.Drawing.Point(7, 607)
         Me.hapus_data_toko.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.hapus_data_toko.Name = "hapus_data_toko"
         Me.hapus_data_toko.Size = New System.Drawing.Size(93, 39)
-        Me.hapus_data_toko.TabIndex = 47
+        Me.hapus_data_toko.TabIndex = 13
         Me.hapus_data_toko.Text = "Hapus"
         Me.hapus_data_toko.UseVisualStyleBackColor = False
-        '
-        'Button12
-        '
-        Me.Button12.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button12.FlatAppearance.BorderSize = 0
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.Location = New System.Drawing.Point(15, 609)
-        Me.Button12.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(93, 39)
-        Me.Button12.TabIndex = 46
-        Me.Button12.Text = "Edit"
-        Me.Button12.UseVisualStyleBackColor = False
         '
         'OpenFileDialog1
         '
@@ -482,7 +468,6 @@ Partial Class MasterDataToko
         Me.ClientSize = New System.Drawing.Size(1371, 750)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.hapus_data_toko)
-        Me.Controls.Add(Me.Button12)
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "MasterDataToko"
@@ -530,7 +515,6 @@ Partial Class MasterDataToko
     Friend WithEvents tlp_owner As DataGridViewTextBoxColumn
     Friend WithEvents norek_owner As DataGridViewTextBoxColumn
     Friend WithEvents hapus_data_toko As Button
-    Friend WithEvents Button12 As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents btn_browse As Button
     Friend WithEvents Label15 As Label

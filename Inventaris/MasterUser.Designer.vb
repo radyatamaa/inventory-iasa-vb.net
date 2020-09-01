@@ -79,7 +79,7 @@ Partial Class MasterUser
         Me.txt_username.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_username.Name = "txt_username"
         Me.txt_username.Size = New System.Drawing.Size(236, 22)
-        Me.txt_username.TabIndex = 21
+        Me.txt_username.TabIndex = 1
         '
         'txt_nama_lengkap
         '
@@ -88,7 +88,7 @@ Partial Class MasterUser
         Me.txt_nama_lengkap.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_nama_lengkap.Name = "txt_nama_lengkap"
         Me.txt_nama_lengkap.Size = New System.Drawing.Size(236, 22)
-        Me.txt_nama_lengkap.TabIndex = 20
+        Me.txt_nama_lengkap.TabIndex = 2
         '
         'btn_simpan
         '
@@ -100,7 +100,7 @@ Partial Class MasterUser
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
-        Me.btn_simpan.TabIndex = 17
+        Me.btn_simpan.TabIndex = 5
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = False
         '
@@ -118,7 +118,7 @@ Partial Class MasterUser
         Me.data_master_user.RowHeadersWidth = 51
         Me.data_master_user.RowTemplate.Height = 24
         Me.data_master_user.Size = New System.Drawing.Size(1365, 254)
-        Me.data_master_user.TabIndex = 16
+        Me.data_master_user.TabIndex = 7
         '
         'id_user
         '
@@ -163,7 +163,7 @@ Partial Class MasterUser
         Me.cmb_id_level.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cmb_id_level.Name = "cmb_id_level"
         Me.cmb_id_level.Size = New System.Drawing.Size(236, 24)
-        Me.cmb_id_level.TabIndex = 11
+        Me.cmb_id_level.TabIndex = 4
         '
         'txt_password
         '
@@ -172,7 +172,7 @@ Partial Class MasterUser
         Me.txt_password.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.Size = New System.Drawing.Size(236, 22)
-        Me.txt_password.TabIndex = 8
+        Me.txt_password.TabIndex = 3
         '
         'Label5
         '
@@ -237,7 +237,7 @@ Partial Class MasterUser
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(101, 80)
-        Me.btn_kembali.TabIndex = 54
+        Me.btn_kembali.TabIndex = 9
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'btn_hapus
@@ -249,7 +249,7 @@ Partial Class MasterUser
         Me.btn_hapus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_hapus.Name = "btn_hapus"
         Me.btn_hapus.Size = New System.Drawing.Size(93, 39)
-        Me.btn_hapus.TabIndex = 57
+        Me.btn_hapus.TabIndex = 8
         Me.btn_hapus.Text = "Hapus"
         Me.btn_hapus.UseVisualStyleBackColor = False
         '

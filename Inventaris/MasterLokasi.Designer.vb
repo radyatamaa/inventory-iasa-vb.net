@@ -54,7 +54,7 @@ Partial Class MasterLokasi
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
-        Me.btn_simpan.TabIndex = 17
+        Me.btn_simpan.TabIndex = 3
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = False
         '
@@ -72,7 +72,7 @@ Partial Class MasterLokasi
         Me.data_master_lokasi.RowHeadersWidth = 51
         Me.data_master_lokasi.RowTemplate.Height = 24
         Me.data_master_lokasi.Size = New System.Drawing.Size(1362, 321)
-        Me.data_master_lokasi.TabIndex = 16
+        Me.data_master_lokasi.TabIndex = 4
         '
         'id_lokasi
         '
@@ -102,7 +102,7 @@ Partial Class MasterLokasi
         Me.txt_nama_lokasi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_nama_lokasi.Name = "txt_nama_lokasi"
         Me.txt_nama_lokasi.Size = New System.Drawing.Size(236, 22)
-        Me.txt_nama_lokasi.TabIndex = 8
+        Me.txt_nama_lokasi.TabIndex = 1
         '
         'Label4
         '
@@ -138,7 +138,7 @@ Partial Class MasterLokasi
         Me.txt_alamat.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_alamat.Name = "txt_alamat"
         Me.txt_alamat.Size = New System.Drawing.Size(236, 22)
-        Me.txt_alamat.TabIndex = 21
+        Me.txt_alamat.TabIndex = 2
         '
         'Label2
         '
@@ -161,7 +161,7 @@ Partial Class MasterLokasi
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(101, 69)
-        Me.btn_kembali.TabIndex = 58
+        Me.btn_kembali.TabIndex = 6
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'Button13
@@ -173,7 +173,7 @@ Partial Class MasterLokasi
         Me.Button13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(93, 39)
-        Me.Button13.TabIndex = 51
+        Me.Button13.TabIndex = 5
         Me.Button13.Text = "Hapus"
         Me.Button13.UseVisualStyleBackColor = False
         '

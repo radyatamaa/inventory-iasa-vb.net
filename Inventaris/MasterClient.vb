@@ -206,79 +206,38 @@ Public Class MasterClient
         End Try
 
     End Function
-    Private Sub btn_menuutama_Click(sender As Object, e As EventArgs) 
-        MenuUtama.Show()
-        Me.Close()
-    End Sub
-    Private Sub btn_barang_masuk_Click(sender As Object, e As EventArgs) 
-        BarangMasuk.Show()
-        Me.Close()
-    End Sub
-    Private Sub btn_rental_Click(sender As Object, e As EventArgs) 
-        Rental.Show()
-        Me.Close()
-    End Sub
+    Function GetDataClientByKd(kd_client As String) As List(Of Object)
+        Dim resulteditclient As New List(Of Object)
+        Dim query As String = "SELECT * FROM tbl_client t		                     
+                                  WHERE t.is_active = 1 AND t.kd_client = '" + kd_client + "'"
 
-    Private Sub btn_repair_Click(sender As Object, e As EventArgs) 
-        Repair.Show()
-        Me.Close()
-    End Sub
+        cmd.CommandText = query
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        CONN.Open()
+        reader = cmd.ExecuteReader()
 
-    Private Sub btn_master_client_Click(sender As Object, e As EventArgs) 
-        MasterJenisBarang.Show()
-        Me.Close()
-    End Sub
+        While reader.Read
+            Dim client = New With
+                {
+                .id_client = reader("id_client"),
+                .kd_client = reader("kd_client"),
+                .nama_client = reader("nama_client"),
+                .alamat_client = reader("alamat_client"),
+                .kota_client = reader("kota_client"),
+                .kdpos_client = reader("kdpos_client"),
+                .tlp_client = reader("tlp_client")
+                }
 
-    Private Sub btn_master_tipe_Click(sender As Object, e As EventArgs) 
-        MasterTipe.Show()
-        Me.Close()
-    End Sub
+            resulteditclient.Add(client)
 
-    Private Sub btn_master_toko_Click(sender As Object, e As EventArgs) 
-        MasterDataToko.Show()
-        Me.Close()
-    End Sub
+        End While
 
+        CONN.Close()
 
+        Return resulteditclient
+    End Function
 
-    Private Sub btn_master_kondisi_Click(sender As Object, e As EventArgs) 
-        MasterKondisi.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub btn_master_status_Click(sender As Object, e As EventArgs) 
-        MasterStatus.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub MasterLokasiToolStripMenuIbtn_master_lokasi_Click(sender As Object, e As EventArgs) 
-        MasterLokasi.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub btn_master_detail_Click(sender As Object, e As EventArgs) 
-        MasterDetailLokasi.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub btn_master_alasan_Click(sender As Object, e As EventArgs) 
-        MasterAlasan.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub btn_master_data_user_Click(sender As Object, e As EventArgs) 
-        MasterUser.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub btn_logout_Click(sender As Object, e As EventArgs) 
-        Form1.Show()
-        Me.Close()
-    End Sub
-    Private Sub btn_penjualan_Click(sender As Object, e As EventArgs) 
-        BarangKeluar.Show()
-        Me.Close()
-    End Sub
 
     Private Sub MasterClient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -302,6 +261,12 @@ Public Class MasterClient
         .tlp_client = Me.txt_tlp_client.Text
             }
 
+        Dim client = GetDataClientByKd(insertDataclient.kd_client)
+        If client.Count > 0 Then
+            MsgBox("Kode Client Sudah ada!")
+            Return
+        End If
+
         Dim idclient As Integer = SimpanClient(insertDataclient)
         data_master_client.Rows.Clear()
         GetDataClient()
@@ -311,6 +276,8 @@ Public Class MasterClient
         Me.txt_kota_client.Text = ""
         Me.txt_kdpos_client.Text = ""
         Me.txt_tlp_client.Text = ""
+
+
 
         MsgBox("Sukses!")
 

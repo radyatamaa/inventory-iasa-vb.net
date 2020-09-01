@@ -50,7 +50,7 @@ Partial Class MasterAlasan
         Me.Button13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(93, 39)
-        Me.Button13.TabIndex = 19
+        Me.Button13.TabIndex = 4
         Me.Button13.Text = "Hapus"
         Me.Button13.UseVisualStyleBackColor = False
         '
@@ -68,7 +68,7 @@ Partial Class MasterAlasan
         Me.data_master_alasan.RowHeadersWidth = 51
         Me.data_master_alasan.RowTemplate.Height = 24
         Me.data_master_alasan.Size = New System.Drawing.Size(1370, 274)
-        Me.data_master_alasan.TabIndex = 16
+        Me.data_master_alasan.TabIndex = 3
         '
         'id_alasan
         '
@@ -87,17 +87,17 @@ Partial Class MasterAlasan
         'txt_nama_alasan
         '
         Me.txt_nama_alasan.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_nama_alasan.Location = New System.Drawing.Point(192, 65)
+        Me.txt_nama_alasan.Location = New System.Drawing.Point(192, 47)
         Me.txt_nama_alasan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_nama_alasan.Name = "txt_nama_alasan"
         Me.txt_nama_alasan.Size = New System.Drawing.Size(236, 22)
-        Me.txt_nama_alasan.TabIndex = 8
+        Me.txt_nama_alasan.TabIndex = 1
         '
         'Label4
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(77, 65)
+        Me.Label4.Location = New System.Drawing.Point(77, 47)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(92, 17)
         Me.Label4.TabIndex = 2
@@ -113,7 +113,7 @@ Partial Class MasterAlasan
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
-        Me.btn_simpan.TabIndex = 17
+        Me.btn_simpan.TabIndex = 2
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = False
         '
@@ -156,7 +156,7 @@ Partial Class MasterAlasan
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(101, 75)
-        Me.btn_kembali.TabIndex = 49
+        Me.btn_kembali.TabIndex = 5
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'Panel1

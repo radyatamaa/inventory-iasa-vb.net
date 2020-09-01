@@ -24,8 +24,6 @@ Partial Class MasterJenisBarang
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MasterJenisBarang))
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_simpan = New System.Windows.Forms.Button()
         Me.data_master_jenis = New System.Windows.Forms.DataGridView()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,7 +34,6 @@ Partial Class MasterJenisBarang
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btn_kembali = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         CType(Me.data_master_jenis, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,8 +46,6 @@ Partial Class MasterJenisBarang
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel2.Controls.Add(Me.ComboBox1)
-        Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.btn_simpan)
         Me.Panel2.Controls.Add(Me.data_master_jenis)
         Me.Panel2.Controls.Add(Me.txt_jenis_barang)
@@ -60,27 +55,6 @@ Partial Class MasterJenisBarang
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1539, 543)
         Me.Panel2.TabIndex = 11
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(222, 43)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(236, 24)
-        Me.ComboBox1.TabIndex = 19
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Ubuntu Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(73, 40)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 24)
-        Me.Label1.TabIndex = 18
-        Me.Label1.Text = "Master Data"
         '
         'btn_simpan
         '
@@ -92,7 +66,7 @@ Partial Class MasterJenisBarang
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
-        Me.btn_simpan.TabIndex = 17
+        Me.btn_simpan.TabIndex = 2
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = False
         '
@@ -110,7 +84,7 @@ Partial Class MasterJenisBarang
         Me.data_master_jenis.RowHeadersWidth = 51
         Me.data_master_jenis.RowTemplate.Height = 24
         Me.data_master_jenis.Size = New System.Drawing.Size(1373, 311)
-        Me.data_master_jenis.TabIndex = 16
+        Me.data_master_jenis.TabIndex = 3
         '
         'id
         '
@@ -133,7 +107,7 @@ Partial Class MasterJenisBarang
         Me.txt_jenis_barang.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_jenis_barang.Name = "txt_jenis_barang"
         Me.txt_jenis_barang.Size = New System.Drawing.Size(236, 22)
-        Me.txt_jenis_barang.TabIndex = 8
+        Me.txt_jenis_barang.TabIndex = 1
         '
         'Label4
         '
@@ -178,7 +152,7 @@ Partial Class MasterJenisBarang
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(79, 75)
-        Me.btn_kembali.TabIndex = 49
+        Me.btn_kembali.TabIndex = 5
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'Button13
@@ -186,26 +160,13 @@ Partial Class MasterJenisBarang
         Me.Button13.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button13.FlatAppearance.BorderSize = 0
         Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button13.Location = New System.Drawing.Point(117, 646)
+        Me.Button13.Location = New System.Drawing.Point(12, 642)
         Me.Button13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(93, 39)
-        Me.Button13.TabIndex = 47
+        Me.Button13.TabIndex = 4
         Me.Button13.Text = "Hapus"
         Me.Button13.UseVisualStyleBackColor = False
-        '
-        'Button12
-        '
-        Me.Button12.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button12.FlatAppearance.BorderSize = 0
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.Location = New System.Drawing.Point(17, 646)
-        Me.Button12.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(93, 39)
-        Me.Button12.TabIndex = 46
-        Me.Button12.Text = "Edit"
-        Me.Button12.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -226,7 +187,6 @@ Partial Class MasterJenisBarang
         Me.ClientSize = New System.Drawing.Size(1371, 750)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button13)
-        Me.Controls.Add(Me.Button12)
         Me.Controls.Add(Me.Panel2)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "MasterJenisBarang"
@@ -241,8 +201,6 @@ Partial Class MasterJenisBarang
 
     End Sub
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents btn_simpan As Button
     Friend WithEvents data_master_jenis As DataGridView
     Friend WithEvents txt_jenis_barang As TextBox
@@ -250,7 +208,6 @@ Partial Class MasterJenisBarang
     Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents jenis_barang As DataGridViewTextBoxColumn
     Friend WithEvents Button13 As Button
-    Friend WithEvents Button12 As Button
     Friend WithEvents pict_logo As PictureBox
     Friend WithEvents Label6 As Label
     Friend WithEvents btn_kembali As Button
