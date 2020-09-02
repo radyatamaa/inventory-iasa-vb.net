@@ -185,10 +185,10 @@
       <Body>
         <ReportItems>
           <Line Name="Line1">
-            <Top>3.905in</Top>
-            <Left>0.12223in</Left>
+            <Top>3.89111in</Top>
+            <Left>0.13417in</Left>
             <Height>0in</Height>
-            <Width>7.07571in</Width>
+            <Width>7.04573in</Width>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1252,7 +1252,7 @@
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>5.57167in</Top>
             <Left>0.12502in</Left>
-            <Height>1.63542in</Height>
+            <Height>0.77084in</Height>
             <Width>5.58336in</Width>
             <ZIndex>28</ZIndex>
             <Style>
@@ -1286,7 +1286,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>harga_total1</rd:DefaultName>
-            <Top>3.905in</Top>
+            <Top>3.89111in</Top>
             <Left>5.77782in</Left>
             <Height>0.25in</Height>
             <Width>1.42012in</Width>
@@ -1332,9 +1332,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>diskon</rd:DefaultName>
-            <Top>4.155in</Top>
+            <Top>4.14111in</Top>
             <Left>5.77782in</Left>
-            <Height>0.25in</Height>
+            <Height>0.26389in</Height>
             <Width>1.42012in</Width>
             <ZIndex>30</ZIndex>
             <Style>
@@ -1762,9 +1762,6 @@
                             <BottomBorder>
                               <Style>None</Style>
                             </BottomBorder>
-                            <RightBorder>
-                              <Style>Solid</Style>
-                            </RightBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1802,6 +1799,9 @@
                             <BottomBorder>
                               <Style>None</Style>
                             </BottomBorder>
+                            <LeftBorder>
+                              <Style>Solid</Style>
+                            </LeftBorder>
                             <RightBorder>
                               <Style>Solid</Style>
                             </RightBorder>
@@ -1975,7 +1975,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!tlp_client.Value, "DataSet1")</Value>
+                    <Value>=First(Fields!tlp_toko.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>Tahoma</FontFamily>
                       <FontSize>8.5pt</FontSize>
@@ -2020,9 +2020,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
             <Top>1.74387in</Top>
-            <Left>5.02257in</Left>
+            <Left>4.86739in</Left>
             <Height>0.2in</Height>
-            <Width>0.72747in</Width>
+            <Width>0.88265in</Width>
             <ZIndex>41</ZIndex>
             <Style>
               <Border>
@@ -2322,7 +2322,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>11in</Height>
+        <Height>6.4375in</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2330,7 +2330,7 @@
           </Border>
         </Style>
       </Body>
-      <Width>8.5in</Width>
+      <Width>8.14583in</Width>
       <Page>
         <LeftMargin>0.5in</LeftMargin>
         <RightMargin>0.5in</RightMargin>
