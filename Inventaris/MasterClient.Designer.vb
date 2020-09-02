@@ -35,6 +35,8 @@ Partial Class MasterClient
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btn_simpan = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txt_company_name = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_tlp_client = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.data_master_client = New System.Windows.Forms.DataGridView()
@@ -43,12 +45,10 @@ Partial Class MasterClient
         Me.Button13 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pict_logo = New System.Windows.Forms.PictureBox()
-        Me.txt_nama_perusahaan = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.kd_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nama_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_perusahaan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.company_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.alamat_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.kota_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.kdpos_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,7 +66,7 @@ Partial Class MasterClient
         Me.txt_kota_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_kota_client.Name = "txt_kota_client"
         Me.txt_kota_client.Size = New System.Drawing.Size(236, 22)
-        Me.txt_kota_client.TabIndex = 4
+        Me.txt_kota_client.TabIndex = 5
         '
         'Label5
         '
@@ -85,7 +85,7 @@ Partial Class MasterClient
         Me.txt_kdpos_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_kdpos_client.Name = "txt_kdpos_client"
         Me.txt_kdpos_client.Size = New System.Drawing.Size(236, 22)
-        Me.txt_kdpos_client.TabIndex = 5
+        Me.txt_kdpos_client.TabIndex = 6
         '
         'Label7
         '
@@ -104,7 +104,7 @@ Partial Class MasterClient
         Me.txt_alamat_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_alamat_client.Name = "txt_alamat_client"
         Me.txt_alamat_client.Size = New System.Drawing.Size(236, 22)
-        Me.txt_alamat_client.TabIndex = 3
+        Me.txt_alamat_client.TabIndex = 4
         '
         'Label3
         '
@@ -164,7 +164,7 @@ Partial Class MasterClient
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(236, 28)
-        Me.btn_simpan.TabIndex = 7
+        Me.btn_simpan.TabIndex = 8
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = False
         '
@@ -174,7 +174,7 @@ Partial Class MasterClient
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.AutoScroll = True
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Panel2.Controls.Add(Me.txt_nama_perusahaan)
+        Me.Panel2.Controls.Add(Me.txt_company_name)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.txt_tlp_client)
         Me.Panel2.Controls.Add(Me.Label6)
@@ -196,6 +196,25 @@ Partial Class MasterClient
         Me.Panel2.Size = New System.Drawing.Size(1367, 561)
         Me.Panel2.TabIndex = 21
         '
+        'txt_company_name
+        '
+        Me.txt_company_name.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_company_name.Location = New System.Drawing.Point(158, 128)
+        Me.txt_company_name.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_company_name.Name = "txt_company_name"
+        Me.txt_company_name.Size = New System.Drawing.Size(236, 22)
+        Me.txt_company_name.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(16, 133)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(126, 17)
+        Me.Label1.TabIndex = 32
+        Me.Label1.Text = "Nama Perusahaan"
+        '
         'txt_tlp_client
         '
         Me.txt_tlp_client.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -203,7 +222,7 @@ Partial Class MasterClient
         Me.txt_tlp_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txt_tlp_client.Name = "txt_tlp_client"
         Me.txt_tlp_client.Size = New System.Drawing.Size(236, 22)
-        Me.txt_tlp_client.TabIndex = 6
+        Me.txt_tlp_client.TabIndex = 7
         '
         'Label6
         '
@@ -222,14 +241,14 @@ Partial Class MasterClient
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.data_master_client.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.data_master_client.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.data_master_client.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.kd_client, Me.nama_client, Me.nama_perusahaan, Me.alamat_client, Me.kota_client, Me.kdpos_client, Me.tlp_client})
+        Me.data_master_client.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.kd_client, Me.nama_client, Me.company_name, Me.alamat_client, Me.kota_client, Me.kdpos_client, Me.tlp_client})
         Me.data_master_client.Location = New System.Drawing.Point(-2, 224)
         Me.data_master_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.data_master_client.Name = "data_master_client"
         Me.data_master_client.RowHeadersWidth = 51
         Me.data_master_client.RowTemplate.Height = 24
         Me.data_master_client.Size = New System.Drawing.Size(1366, 335)
-        Me.data_master_client.TabIndex = 8
+        Me.data_master_client.TabIndex = 9
         '
         'Label15
         '
@@ -254,7 +273,7 @@ Partial Class MasterClient
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(101, 69)
-        Me.btn_kembali.TabIndex = 10
+        Me.btn_kembali.TabIndex = 11
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'Button13
@@ -266,7 +285,7 @@ Partial Class MasterClient
         Me.Button13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(93, 39)
-        Me.Button13.TabIndex = 9
+        Me.Button13.TabIndex = 10
         Me.Button13.Text = "Hapus"
         Me.Button13.UseVisualStyleBackColor = False
         '
@@ -294,25 +313,6 @@ Partial Class MasterClient
         Me.pict_logo.TabIndex = 51
         Me.pict_logo.TabStop = False
         '
-        'txt_nama_perusahaan
-        '
-        Me.txt_nama_perusahaan.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_nama_perusahaan.Location = New System.Drawing.Point(158, 128)
-        Me.txt_nama_perusahaan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txt_nama_perusahaan.Name = "txt_nama_perusahaan"
-        Me.txt_nama_perusahaan.Size = New System.Drawing.Size(236, 22)
-        Me.txt_nama_perusahaan.TabIndex = 31
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 133)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(126, 17)
-        Me.Label1.TabIndex = 32
-        Me.Label1.Text = "Nama Perusahaan"
-        '
         'id
         '
         Me.id.HeaderText = "ID"
@@ -334,12 +334,12 @@ Partial Class MasterClient
         Me.nama_client.MinimumWidth = 6
         Me.nama_client.Name = "nama_client"
         '
-        'nama_perusahaan
+        'company_name
         '
-        Me.nama_perusahaan.HeaderText = "Nama Perusahaan"
-        Me.nama_perusahaan.MinimumWidth = 6
-        Me.nama_perusahaan.Name = "nama_perusahaan"
-        Me.nama_perusahaan.Width = 125
+        Me.company_name.HeaderText = "Nama Perusahaan"
+        Me.company_name.MinimumWidth = 6
+        Me.company_name.Name = "company_name"
+        Me.company_name.Width = 125
         '
         'alamat_client
         '
@@ -410,12 +410,12 @@ Partial Class MasterClient
     Friend WithEvents btn_kembali As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents pict_logo As PictureBox
-    Friend WithEvents txt_nama_perusahaan As TextBox
+    Friend WithEvents txt_company_name As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents kd_client As DataGridViewTextBoxColumn
     Friend WithEvents nama_client As DataGridViewTextBoxColumn
-    Friend WithEvents nama_perusahaan As DataGridViewTextBoxColumn
+    Friend WithEvents company_name As DataGridViewTextBoxColumn
     Friend WithEvents alamat_client As DataGridViewTextBoxColumn
     Friend WithEvents kota_client As DataGridViewTextBoxColumn
     Friend WithEvents kdpos_client As DataGridViewTextBoxColumn
