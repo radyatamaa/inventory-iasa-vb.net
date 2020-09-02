@@ -1044,6 +1044,18 @@ Public Class BarangMasuk
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
         MenuUtama.MenuStrip1.Tag = UserInfo
+        Me.cmb_jenis_barang.Text = ""
+        Me.cmb_tipe_barang.Text = ""
+        Me.cmb_detail_lokasi.Text = ""
+        Me.cmb_kondisi.Text = ""
+        Me.cmb_lokasi.Text = ""
+        Me.cmb_status.Text = ""
+        Me.txt_kode_barang.Text = ""
+        Me.txt_serial.Text = ""
+        Me.txt_harga_modal.Text = ""
+        Me.txt_harga_barang.Text = ""
+        Me.txt_lisensi.Text = ""
+        Me.txt_catatan.Text = ""
         MenuUtama.Show()
         Me.Hide()
     End Sub
