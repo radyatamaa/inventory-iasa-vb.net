@@ -38,6 +38,7 @@ Public Class MasterClient
                 Dim queryTblclient As String = " UPDATE tbl_client SET 
                                     kd_client =  '" + client.kd_client + "',
                                     nama_client =  '" + client.nama_client + "',
+                                    company_name =  '" + client.company_name + "',
                                     alamat_client =  '" + client.alamat_client + "',
                                     kota_client =  '" + client.kota_client + "',
                                     kdpos_client =  '" + client.kdpos_client + "',
@@ -66,6 +67,7 @@ Public Class MasterClient
                 Dim queryTblclient As String = " INSERT INTO tbl_client (
                                     kd_client,
                                     nama_client,
+                                    company_name,
                                     alamat_client,
                                     kota_client,
                                     kdpos_client,
@@ -76,6 +78,7 @@ Public Class MasterClient
                             VALUES (
                                     '" + client.kd_client + "',
                                     '" + client.nama_client + "',
+                                    '" + client.company_name + "',
                                     '" + client.alamat_client + "',
                                     '" + client.kota_client + "',
                                     '" + client.kdpos_client + "',
@@ -120,6 +123,7 @@ Public Class MasterClient
                 .id_client = reader("id_client"),
                 .kd_client = reader("kd_client"),
                 .nama_client = reader("nama_client"),
+                .company_name = reader("company_name"),
                 .alamat_client = reader("alamat_client"),
                 .kota_client = reader("kota_client"),
                 .kdpos_client = reader("kdpos_client"),
@@ -136,10 +140,11 @@ Public Class MasterClient
             data_master_client.Rows(data_master_client.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.id_client
             data_master_client.Rows(data_master_client.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.kd_client
             data_master_client.Rows(data_master_client.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.nama_client
-            data_master_client.Rows(data_master_client.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.alamat_client
-            data_master_client.Rows(data_master_client.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.kota_client
-            data_master_client.Rows(data_master_client.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.kdpos_client
-            data_master_client.Rows(data_master_client.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.tlp_client
+            data_master_client.Rows(data_master_client.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.company_name
+            data_master_client.Rows(data_master_client.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.alamat_client
+            data_master_client.Rows(data_master_client.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.kota_client
+            data_master_client.Rows(data_master_client.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.kdpos_client
+            data_master_client.Rows(data_master_client.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.tlp_client
 
 
             data_master_client.Update()
@@ -223,6 +228,7 @@ Public Class MasterClient
                 .id_client = reader("id_client"),
                 .kd_client = reader("kd_client"),
                 .nama_client = reader("nama_client"),
+                .company_name = reader("company_name"),
                 .alamat_client = reader("alamat_client"),
                 .kota_client = reader("kota_client"),
                 .kdpos_client = reader("kdpos_client"),
@@ -255,10 +261,11 @@ Public Class MasterClient
             .id_client = clientid,
              .kd_client = Me.txt_kd_client.Text,
              .nama_client = Me.txt_nama_client.Text,
+             .company_name = Me.txt_company_name.Text,
              .alamat_client = Me.txt_alamat_client.Text,
-        .kota_client = Me.txt_kota_client.Text,
-        .kdpos_client = Me.txt_kdpos_client.Text,
-        .tlp_client = Me.txt_tlp_client.Text
+            .kota_client = Me.txt_kota_client.Text,
+            .kdpos_client = Me.txt_kdpos_client.Text,
+            .tlp_client = Me.txt_tlp_client.Text
             }
 
         Dim client = GetDataClientByKd(insertDataclient.kd_client)
@@ -272,6 +279,7 @@ Public Class MasterClient
         GetDataClient()
         Me.txt_kd_client.Text = ""
         Me.txt_nama_client.Text = ""
+        Me.txt_company_name.Text = ""
         Me.txt_alamat_client.Text = ""
         Me.txt_kota_client.Text = ""
         Me.txt_kdpos_client.Text = ""
@@ -291,6 +299,7 @@ Public Class MasterClient
                 clientid = client(0).id_client
                 Me.txt_kd_client.Text = client(0).kd_client
                 Me.txt_nama_client.Text = client(0).nama_client
+                Me.txt_company_name.Text = client(0).company_name
                 Me.txt_alamat_client.Text = client(0).alamat_client
                 Me.txt_kota_client.Text = client(0).kota_client
                 Me.txt_kdpos_client.Text = client(0).kdpos_client
@@ -314,6 +323,7 @@ Public Class MasterClient
             GetDataClient()
             Me.txt_kd_client.Text = ""
             Me.txt_nama_client.Text = ""
+            Me.txt_company_name.Text = ""
             Me.txt_alamat_client.Text = ""
             Me.txt_kota_client.Text = ""
             Me.txt_kdpos_client.Text = ""
