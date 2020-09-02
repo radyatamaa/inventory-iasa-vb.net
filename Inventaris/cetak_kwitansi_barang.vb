@@ -6,7 +6,7 @@ Imports System.Net
 Imports System.Runtime.Serialization.Formatters.Binary
 Imports System.Text
 Imports Microsoft.Reporting.WinForms
-Public Class cetak_tanda_terima
+Public Class cetak_kwitansi_barang
     Public Property KdTransaksi As String
     Public Property UserInfo As Object
     Dim kdTransaksis As New List(Of String)
@@ -27,7 +27,7 @@ Public Class cetak_tanda_terima
         End Try
         CONN.Close()
     End Sub
-    Private Sub cetak_tanda_terima_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub cetak_kwitansi_barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         VBnetSQLSeverConnection()
         Me.ReportViewer1.RefreshReport()
         LoadReport()
@@ -126,7 +126,7 @@ Public Class cetak_tanda_terima
         Me.ReportViewer1.RefreshReport()
         Try
             With ReportViewer1.LocalReport
-                .ReportPath = Application.StartupPath & "\Reports\Report5_tanda_terima.rdlc"
+                .ReportPath = Application.StartupPath & "\Reports\Report6_kwitansi_barang.rdlc"
                 .DataSources.Clear()
             End With
 
@@ -339,6 +339,7 @@ Public Class cetak_tanda_terima
             kdTransaksis.Add(idBarangMasuk)
         Next selectedItem
     End Sub
+
     Private Sub btn_tampil_Click(sender As Object, e As EventArgs) Handles btn_tampil.Click
         If kdTransaksis.Count > 0 Then
             KdTransaksi = kdTransaksis(0)
