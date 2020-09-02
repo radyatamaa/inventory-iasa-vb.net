@@ -917,14 +917,14 @@ Public Class BarangMasuk
                     }
         'validationSerialNumberDB
         Dim barang = GetBarangMasukBySerialNumber(insertDataBarangMasuk.serial_number)
-        If barang.Count > 0 Then
+        If barang.Count > 0 And isDataReal.Count = 0 Then
             MsgBox("Serial Number Sudah ada!")
             Return
         End If
 
         'validationSerialNumberDataGrid
         Dim barangMasukCheck = listBarangMasuk.Where(Function(x) x.serial_number.ToLower() = insertDataBarangMasuk.serial_number.ToLower())
-        If barangMasukCheck.Count > 0 Then
+        If barangMasukCheck.Count > 0 And isDataReal.Count = 0 Then
             MsgBox("Serial Number Sudah ada!")
             Return
         End If

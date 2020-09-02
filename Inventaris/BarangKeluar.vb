@@ -620,6 +620,15 @@ Public Class BarangKeluar
                 clientKodeSelect = client.kd_client.ToString
             End If
         End Try
+
+        Dim lastIdTransaksi As Integer = 0
+        Dim idTransaksi = GetLastIdTransaksi()
+        If idTransaksi.Count > 0 Then
+            lastIdTransaksi = idTransaksi(0) + 1
+        End If
+        Dim kdTransaksi = GenerateKdtransaksi(lastIdTransaksi.ToString, clientKodeSelect, DateTime.Now.Year)
+        Me.txt_kd_transaksi.Text = kdTransaksi
+
     End Sub
 
     Private Sub btn_simpan_Click(sender As Object, e As EventArgs)
@@ -663,6 +672,7 @@ Public Class BarangKeluar
                     'Me.txt_harga_akhir.Text = Format(Me.txt_harga_total.Text, "###,###,###")
                     Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangMasukHandle.harga_jual)
                     Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text)
+                    Me.txt_subtotal.Text = Val(Me.txt_harga_total.Text)
                     listBarangKeluarFix.Add(barangMasukHandle)
                     'Index = Index + 1
                 Else

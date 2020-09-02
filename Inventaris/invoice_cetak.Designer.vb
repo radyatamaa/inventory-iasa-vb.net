@@ -22,8 +22,27 @@ Partial Class invoice_cetak
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.dt_transaksi = New System.Windows.Forms.DataGridView()
+        Me.btn_tampil = New System.Windows.Forms.Button()
+        Me.date_tgl_keluar1 = New System.Windows.Forms.DateTimePicker()
+        Me.date_tgl_keluar2 = New System.Windows.Forms.DateTimePicker()
+        Me.btn_tampil_list = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.harga_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.diskon = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,12 +55,6 @@ Partial Class invoice_cetak
         Me.total_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.created_by = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.created_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btn_tampil = New System.Windows.Forms.Button()
-        Me.date_tgl_keluar1 = New System.Windows.Forms.DateTimePicker()
-        Me.date_tgl_keluar2 = New System.Windows.Forms.DateTimePicker()
-        Me.btn_tampil_list = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dt_transaksi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -62,6 +75,14 @@ Partial Class invoice_cetak
         Me.dt_transaksi.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_transaksi.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dt_transaksi.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dt_transaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_transaksi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.harga_total, Me.diskon, Me.harga_akhir, Me.nama_client, Me.alamat_pengiriman, Me.kota_pengiriman, Me.kdpos_pengiriman, Me.tgl_keluar, Me.total_barang, Me.created_by, Me.created_date})
         Me.dt_transaksi.GridColor = System.Drawing.SystemColors.ActiveBorder
@@ -72,86 +93,6 @@ Partial Class invoice_cetak
         Me.dt_transaksi.RowTemplate.Height = 24
         Me.dt_transaksi.Size = New System.Drawing.Size(974, 119)
         Me.dt_transaksi.TabIndex = 56
-        '
-        'kd_transaksi_keluar
-        '
-        Me.kd_transaksi_keluar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.kd_transaksi_keluar.HeaderText = "Kode Transaksi Keluar"
-        Me.kd_transaksi_keluar.MinimumWidth = 70
-        Me.kd_transaksi_keluar.Name = "kd_transaksi_keluar"
-        '
-        'harga_total
-        '
-        Me.harga_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.harga_total.HeaderText = "Harga Total"
-        Me.harga_total.MinimumWidth = 70
-        Me.harga_total.Name = "harga_total"
-        '
-        'diskon
-        '
-        Me.diskon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.diskon.HeaderText = "Diskon"
-        Me.diskon.MinimumWidth = 70
-        Me.diskon.Name = "diskon"
-        '
-        'harga_akhir
-        '
-        Me.harga_akhir.HeaderText = "Harga Akhir"
-        Me.harga_akhir.MinimumWidth = 6
-        Me.harga_akhir.Name = "harga_akhir"
-        Me.harga_akhir.Width = 125
-        '
-        'nama_client
-        '
-        Me.nama_client.HeaderText = "Nama Client"
-        Me.nama_client.MinimumWidth = 6
-        Me.nama_client.Name = "nama_client"
-        Me.nama_client.Width = 125
-        '
-        'alamat_pengiriman
-        '
-        Me.alamat_pengiriman.HeaderText = "Alamat Pengiriman"
-        Me.alamat_pengiriman.MinimumWidth = 6
-        Me.alamat_pengiriman.Name = "alamat_pengiriman"
-        Me.alamat_pengiriman.Width = 125
-        '
-        'kota_pengiriman
-        '
-        Me.kota_pengiriman.HeaderText = "Kota Pengiriman"
-        Me.kota_pengiriman.MinimumWidth = 6
-        Me.kota_pengiriman.Name = "kota_pengiriman"
-        Me.kota_pengiriman.Width = 125
-        '
-        'kdpos_pengiriman
-        '
-        Me.kdpos_pengiriman.HeaderText = "Kdpos Pengiriman"
-        Me.kdpos_pengiriman.MinimumWidth = 6
-        Me.kdpos_pengiriman.Name = "kdpos_pengiriman"
-        Me.kdpos_pengiriman.Width = 125
-        '
-        'tgl_keluar
-        '
-        Me.tgl_keluar.HeaderText = "Tgl Keluar"
-        Me.tgl_keluar.MinimumWidth = 6
-        Me.tgl_keluar.Name = "tgl_keluar"
-        Me.tgl_keluar.Width = 125
-        '
-        'total_barang
-        '
-        Me.total_barang.HeaderText = "Total Barang"
-        Me.total_barang.MinimumWidth = 6
-        Me.total_barang.Name = "total_barang"
-        Me.total_barang.Width = 125
-        '
-        'created_by
-        '
-        Me.created_by.HeaderText = "Created By"
-        Me.created_by.Name = "created_by"
-        '
-        'created_date
-        '
-        Me.created_date.HeaderText = "Created Date"
-        Me.created_date.Name = "created_date"
         '
         'btn_tampil
         '
@@ -221,6 +162,113 @@ Partial Class invoice_cetak
         Me.Label1.TabIndex = 64
         Me.Label1.Text = "s/d"
         '
+        'kd_transaksi_keluar
+        '
+        Me.kd_transaksi_keluar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.kd_transaksi_keluar.DefaultCellStyle = DataGridViewCellStyle2
+        Me.kd_transaksi_keluar.HeaderText = "Kode Transaksi / Invoice No"
+        Me.kd_transaksi_keluar.MinimumWidth = 170
+        Me.kd_transaksi_keluar.Name = "kd_transaksi_keluar"
+        '
+        'harga_total
+        '
+        Me.harga_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N2"
+        Me.harga_total.DefaultCellStyle = DataGridViewCellStyle3
+        Me.harga_total.HeaderText = "Harga Total"
+        Me.harga_total.MinimumWidth = 125
+        Me.harga_total.Name = "harga_total"
+        '
+        'diskon
+        '
+        Me.diskon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "N2"
+        Me.diskon.DefaultCellStyle = DataGridViewCellStyle4
+        Me.diskon.HeaderText = "Diskon"
+        Me.diskon.MinimumWidth = 125
+        Me.diskon.Name = "diskon"
+        '
+        'harga_akhir
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        Me.harga_akhir.DefaultCellStyle = DataGridViewCellStyle5
+        Me.harga_akhir.HeaderText = "Harga Akhir"
+        Me.harga_akhir.MinimumWidth = 125
+        Me.harga_akhir.Name = "harga_akhir"
+        Me.harga_akhir.Width = 125
+        '
+        'nama_client
+        '
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.nama_client.DefaultCellStyle = DataGridViewCellStyle6
+        Me.nama_client.HeaderText = "Nama Client"
+        Me.nama_client.MinimumWidth = 6
+        Me.nama_client.Name = "nama_client"
+        Me.nama_client.Width = 125
+        '
+        'alamat_pengiriman
+        '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.alamat_pengiriman.DefaultCellStyle = DataGridViewCellStyle7
+        Me.alamat_pengiriman.HeaderText = "Alamat Pengiriman"
+        Me.alamat_pengiriman.MinimumWidth = 6
+        Me.alamat_pengiriman.Name = "alamat_pengiriman"
+        Me.alamat_pengiriman.Width = 125
+        '
+        'kota_pengiriman
+        '
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.kota_pengiriman.DefaultCellStyle = DataGridViewCellStyle8
+        Me.kota_pengiriman.HeaderText = "Kota Pengiriman"
+        Me.kota_pengiriman.MinimumWidth = 6
+        Me.kota_pengiriman.Name = "kota_pengiriman"
+        Me.kota_pengiriman.Width = 125
+        '
+        'kdpos_pengiriman
+        '
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.kdpos_pengiriman.DefaultCellStyle = DataGridViewCellStyle9
+        Me.kdpos_pengiriman.HeaderText = "Kodepos Pengiriman"
+        Me.kdpos_pengiriman.MinimumWidth = 140
+        Me.kdpos_pengiriman.Name = "kdpos_pengiriman"
+        Me.kdpos_pengiriman.Width = 140
+        '
+        'tgl_keluar
+        '
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.tgl_keluar.DefaultCellStyle = DataGridViewCellStyle10
+        Me.tgl_keluar.HeaderText = "Tanggal Keluar"
+        Me.tgl_keluar.MinimumWidth = 6
+        Me.tgl_keluar.Name = "tgl_keluar"
+        Me.tgl_keluar.Width = 125
+        '
+        'total_barang
+        '
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.total_barang.DefaultCellStyle = DataGridViewCellStyle11
+        Me.total_barang.HeaderText = "Total Barang"
+        Me.total_barang.MinimumWidth = 6
+        Me.total_barang.Name = "total_barang"
+        Me.total_barang.Width = 125
+        '
+        'created_by
+        '
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.created_by.DefaultCellStyle = DataGridViewCellStyle12
+        Me.created_by.HeaderText = "Created By"
+        Me.created_by.Name = "created_by"
+        '
+        'created_date
+        '
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.created_date.DefaultCellStyle = DataGridViewCellStyle13
+        Me.created_date.HeaderText = "Created Date"
+        Me.created_date.Name = "created_date"
+        '
         'invoice_cetak
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,6 +293,12 @@ Partial Class invoice_cetak
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents dt_transaksi As DataGridView
+    Friend WithEvents btn_tampil As Button
+    Friend WithEvents date_tgl_keluar1 As DateTimePicker
+    Friend WithEvents date_tgl_keluar2 As DateTimePicker
+    Friend WithEvents btn_tampil_list As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label1 As Label
     Friend WithEvents kd_transaksi_keluar As DataGridViewTextBoxColumn
     Friend WithEvents harga_total As DataGridViewTextBoxColumn
     Friend WithEvents diskon As DataGridViewTextBoxColumn
@@ -257,10 +311,4 @@ Partial Class invoice_cetak
     Friend WithEvents total_barang As DataGridViewTextBoxColumn
     Friend WithEvents created_by As DataGridViewTextBoxColumn
     Friend WithEvents created_date As DataGridViewTextBoxColumn
-    Friend WithEvents btn_tampil As Button
-    Friend WithEvents date_tgl_keluar1 As DateTimePicker
-    Friend WithEvents date_tgl_keluar2 As DateTimePicker
-    Friend WithEvents btn_tampil_list As Button
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label1 As Label
 End Class

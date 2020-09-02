@@ -230,4 +230,12 @@ Public Class MenuUtama
     Private Sub btn_r_hasil_penjualan_Click(sender As Object, e As EventArgs) Handles btn_r_hasil_penjualan.Click
         Laporan_Barang_Penjualan.Show()
     End Sub
+
+    Private Sub CetakTandaTerimaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CetakTandaTerimaToolStripMenuItem.Click
+        cetak_tanda_terima.Show()
+    End Sub
+
+    Private Sub CetakKwitansiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CetakKwitansiToolStripMenuItem.Click
+        cetak_kwitansi_barang.Show()
+    End Sub
 End Class
