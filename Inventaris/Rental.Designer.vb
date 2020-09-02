@@ -101,6 +101,8 @@ Partial Class Rental
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txt_pt = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -164,7 +166,7 @@ Partial Class Rental
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1034, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1060, 119)
         Me.dt_barang_masuk.TabIndex = 15
         '
         'jenis_barang
@@ -480,6 +482,8 @@ Partial Class Rental
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel2.Controls.Add(Me.Label21)
+        Me.Panel2.Controls.Add(Me.txt_pt)
         Me.Panel2.Controls.Add(Me.btncari)
         Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Controls.Add(Me.Label4)
@@ -514,12 +518,12 @@ Partial Class Rental
         Me.Panel2.Location = New System.Drawing.Point(0, 79)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1747, 563)
+        Me.Panel2.Size = New System.Drawing.Size(1773, 563)
         Me.Panel2.TabIndex = 74
         '
         'btncari
         '
-        Me.btncari.Location = New System.Drawing.Point(631, 165)
+        Me.btncari.Location = New System.Drawing.Point(631, 226)
         Me.btncari.Name = "btncari"
         Me.btncari.Size = New System.Drawing.Size(39, 23)
         Me.btncari.TabIndex = 11
@@ -528,7 +532,7 @@ Partial Class Rental
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(453, 167)
+        Me.TextBox1.Location = New System.Drawing.Point(453, 228)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(178, 20)
         Me.TextBox1.TabIndex = 10
@@ -537,7 +541,7 @@ Partial Class Rental
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(351, 163)
+        Me.Label4.Location = New System.Drawing.Point(351, 224)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 26)
@@ -657,7 +661,7 @@ Partial Class Rental
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1034, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1060, 119)
         Me.dt_barang_keluar_fix.TabIndex = 17
         '
         'jenis_barang2
@@ -893,6 +897,22 @@ Partial Class Rental
         Me.PictureBox1.TabIndex = 51
         Me.PictureBox1.TabStop = False
         '
+        'txt_pt
+        '
+        Me.txt_pt.Location = New System.Drawing.Point(453, 170)
+        Me.txt_pt.Name = "txt_pt"
+        Me.txt_pt.Size = New System.Drawing.Size(178, 20)
+        Me.txt_pt.TabIndex = 74
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(352, 171)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(95, 13)
+        Me.Label21.TabIndex = 75
+        Me.Label21.Text = "Nama Perusahaan"
+        '
         'Rental
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1015,4 +1035,6 @@ Partial Class Rental
     Friend WithEvents Label20 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label21 As Label
+    Friend WithEvents txt_pt As TextBox
 End Class

@@ -171,7 +171,8 @@ Public Class Rental
                   .persen_ppn = 0,
                 .nominal_ppn = 0,
                 .shipping_handling = 0,
-                .subtotal = 0
+                .subtotal = 0,
+                .company_name = ""
                 }
             listBarangMasuk.Add(barang)
             result.Add(barang)
@@ -272,6 +273,7 @@ Public Class Rental
                                     alamat_pengiriman,
                                     kota_pengiriman,
                                     kdpos_pengiriman,
+                                    company_name,
                                     tgl_keluar,
                                     shipto_nama,
                                     shipto_alamat,
@@ -294,6 +296,7 @@ Public Class Rental
                                     '" + barangKeluar.alamat_pengiriman + "',
                                     '" + barangKeluar.kota_pengiriman + "',
                                     '" + barangKeluar.kdpos_pengiriman + "',
+                                    '" + barangKeluar.company_name + "',
                                      CAST('" + DateTime.Parse(barangKeluar.tgl_keluar).ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),                                  
                                     '" + barangKeluar.shipto_nama + "',
                                     '" + barangKeluar.shipto_alamat + "',
@@ -401,6 +404,7 @@ Public Class Rental
             Dim client As New With {
                             .id_client = reader("id_client"),
                             .nama_client = reader("nama_client"),
+                            .company_name = reader("company_name"),
                               .alamat_client = reader("alamat_client"),
                             .kota_client = reader("kota_client"),
                              .kdpos_client = reader("kdpos_client"),
@@ -517,6 +521,12 @@ Public Class Rental
         Try
             Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue.id_client).FirstOrDefault()
             If client IsNot Nothing Then
+                Dim companyName As String
+                Try
+                    companyName = client.company_name
+                Catch c As Exception
+                    companyName = ""
+                End Try
                 Me.txt_alamat.Text = client.alamat_client
                 Me.txt_kota.Text = client.kota_client
                 Me.txt_kdpos.Text = client.kdpos_client
@@ -525,10 +535,17 @@ Public Class Rental
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedValue.nama_client
                 clientKodeSelect = client.kd_client.ToString
+                Me.txt_pt.Text = companyName
             End If
         Catch ex As Exception
             Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue).FirstOrDefault()
             If client IsNot Nothing Then
+                Dim companyName As String
+                Try
+                    companyName = client.company_name
+                Catch c As Exception
+                    companyName = ""
+                End Try
                 Me.txt_alamat.Text = client.alamat_client
                 Me.txt_kota.Text = client.kota_client
                 Me.txt_kdpos.Text = client.kdpos_client
@@ -537,6 +554,7 @@ Public Class Rental
                 Me.txt_kdpos_ship.Text = client.kdpos_client
                 Me.txt_client_ship.Text = cmb_client.SelectedText
                 clientKodeSelect = client.kd_client.ToString
+                Me.txt_pt.Text = companyName
             End If
         End Try
         Dim lastIdTransaksi As Integer = 0
@@ -724,6 +742,7 @@ Public Class Rental
             insertDataBarangKeluar.nominal_ppn = ppnNominal
             insertDataBarangKeluar.shipping_handling = Me.txt_shiphand.Text
             insertDataBarangKeluar.subtotal = Me.txt_subtotal.Text
+            insertDataBarangKeluar.company_name = Me.txt_pt.Text
             SimpanBarangKeluar(insertDataBarangKeluar, index)
             index = index + 1
         Next

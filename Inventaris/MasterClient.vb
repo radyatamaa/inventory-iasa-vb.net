@@ -172,6 +172,7 @@ Public Class MasterClient
                  .id_client = reader("id_client"),
                 .kd_client = reader("kd_client"),
                 .nama_client = reader("nama_client"),
+                .company_name = reader("company_name"),
                 .alamat_client = reader("alamat_client"),
                 .kota_client = reader("kota_client"),
                 .kdpos_client = reader("kdpos_client"),
@@ -269,7 +270,7 @@ Public Class MasterClient
             }
 
         Dim client = GetDataClientByKd(insertDataclient.kd_client)
-        If client.Count > 0 Then
+        If client.Count > 0 And clientid = 0 Then
             MsgBox("Kode Client Sudah ada!")
             Return
         End If
@@ -305,7 +306,11 @@ Public Class MasterClient
                 Me.txt_kdpos_client.Text = client(0).kdpos_client
                 Me.txt_tlp_client.Text = client(0).tlp_client
             Catch ex As Exception
-
+                Me.txt_company_name.Text = ""
+                Me.txt_alamat_client.Text = client(0).alamat_client
+                Me.txt_kota_client.Text = client(0).kota_client
+                Me.txt_kdpos_client.Text = client(0).kdpos_client
+                Me.txt_tlp_client.Text = client(0).tlp_client
             End Try
 
         End If
