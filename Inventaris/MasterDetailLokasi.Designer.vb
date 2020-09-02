@@ -36,12 +36,12 @@ Partial Class MasterDetailLokasi
         Me.btn_kembali = New System.Windows.Forms.Button()
         Me.hapus_data_detail_lokasi = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pict_logo = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         CType(Me.data_master_detail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -182,7 +182,7 @@ Partial Class MasterDetailLokasi
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.pict_logo)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.btn_kembali)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -191,17 +191,17 @@ Partial Class MasterDetailLokasi
         Me.Panel1.Size = New System.Drawing.Size(1371, 97)
         Me.Panel1.TabIndex = 58
         '
-        'PictureBox1
+        'pict_logo
         '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(1213, 7)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(155, 86)
-        Me.PictureBox1.TabIndex = 51
-        Me.PictureBox1.TabStop = False
+        Me.pict_logo.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
+        Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pict_logo.Location = New System.Drawing.Point(1213, 7)
+        Me.pict_logo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pict_logo.Name = "pict_logo"
+        Me.pict_logo.Size = New System.Drawing.Size(155, 86)
+        Me.pict_logo.TabIndex = 51
+        Me.pict_logo.TabStop = False
         '
         'Label6
         '
@@ -232,7 +232,7 @@ Partial Class MasterDetailLokasi
         Me.Panel2.PerformLayout()
         CType(Me.data_master_detail, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -249,6 +249,6 @@ Partial Class MasterDetailLokasi
     Friend WithEvents nama_lokasi As DataGridViewTextBoxColumn
     Friend WithEvents detail_lokasi As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pict_logo As PictureBox
     Friend WithEvents Label6 As Label
 End Class

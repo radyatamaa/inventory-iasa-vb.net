@@ -28,6 +28,12 @@ Public Class MenuUtama
         Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
 
         BarangMasuk.UserInfo = Me.MenuStrip1.Tag
+        BarangMasuk.cmb_jenis_barang.Text = ""
+        BarangMasuk.cmb_tipe_barang.Text = ""
+        BarangMasuk.cmb_detail_lokasi.Text = ""
+        BarangMasuk.cmb_kondisi.Text = ""
+        BarangMasuk.cmb_lokasi.Text = ""
+        BarangMasuk.cmb_status.Text = ""
         BarangMasuk.pict_logo.BackgroundImage = downloadImage
         BarangMasuk.txt_harga_modal.Text = 0
         BarangMasuk.txt_harga_barang.Text = 0
@@ -51,9 +57,15 @@ Public Class MenuUtama
     End Sub
     Private Sub btn_penjualan_Click(sender As Object, e As EventArgs) Handles btn_penjualan.Click
         BarangKeluar.UserInfo = Me.MenuStrip1.Tag
+        BarangKeluar.cmb_tipe_barang.Text = ""
+        BarangKeluar.cmb_jenis_barang.Text = ""
+        BarangKeluar.cmb_garansi.Text = ""
+        BarangKeluar.cmb_client.Text = ""
         Dim tClient As WebClient = New WebClient
         Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
         BarangKeluar.pict_logo.BackgroundImage = downloadImage
+
+
         BarangKeluar.Show()
         Me.Close()
     End Sub
@@ -77,60 +89,90 @@ Public Class MenuUtama
 
     Private Sub btn_master_jenis_Click(sender As Object, e As EventArgs) Handles btn_master_jenis.Click
         MasterJenisBarang.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        MasterJenisBarang.pict_logo.BackgroundImage = downloadImage
         MasterJenisBarang.Show()
         Me.Close()
     End Sub
 
     Private Sub btn_master_tipe_Click(sender As Object, e As EventArgs) Handles btn_master_tipe.Click
         MasterTipe.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        MasterTipe.pict_logo.BackgroundImage = downloadImage
         MasterTipe.Show()
         Me.Close()
     End Sub
 
     Private Sub btn_master_toko_Click(sender As Object, e As EventArgs) Handles btn_master_toko.Click
         MasterDataToko.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        MasterDataToko.pict_logo.BackgroundImage = downloadImage
         MasterDataToko.Show()
         Me.Close()
     End Sub
 
     Private Sub btn_master_client_Click(sender As Object, e As EventArgs) Handles btn_master_client.Click
         MasterClient.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        MasterClient.pict_logo.BackgroundImage = downloadImage
         MasterClient.Show()
         Me.Close()
     End Sub
 
     Private Sub btn_master_kondisi_Click(sender As Object, e As EventArgs) Handles btn_master_kondisi.Click
         MasterKondisi.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        MasterKondisi.pict_logo.BackgroundImage = downloadImage
         MasterKondisi.Show()
         Me.Close()
     End Sub
 
     Private Sub btn_master_status_Click(sender As Object, e As EventArgs) Handles btn_master_status.Click
         MasterStatus.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        MasterStatus.pict_logo.BackgroundImage = downloadImage
         MasterStatus.Show()
         Me.Close()
     End Sub
 
     Private Sub MasterLokasiToolStripMenuIbtn_master_lokasi_Click(sender As Object, e As EventArgs) Handles MasterLokasiToolStripMenuIbtn_master_lokasi.Click
         MasterLokasi.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        MasterLokasi.pict_logo.BackgroundImage = downloadImage
         MasterLokasi.Show()
         Me.Close()
     End Sub
 
     Private Sub btn_master_detail_Click(sender As Object, e As EventArgs) Handles btn_master_detail.Click
         MasterDetailLokasi.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        MasterDetailLokasi.pict_logo.BackgroundImage = downloadImage
         MasterDetailLokasi.Show()
         Me.Close()
     End Sub
 
     Private Sub btn_master_alasan_Click(sender As Object, e As EventArgs) Handles btn_master_alasan.Click
         MasterAlasan.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        MasterAlasan.pict_logo.BackgroundImage = downloadImage
         MasterAlasan.Show()
         Me.Close()
     End Sub
 
     Private Sub btn_master_data_user_Click(sender As Object, e As EventArgs) Handles btn_master_data_user.Click
         MasterUser.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        MasterUser.pict_logo.BackgroundImage = downloadImage
         MasterUser.Show()
         Me.Close()
     End Sub

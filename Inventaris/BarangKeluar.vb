@@ -527,6 +527,21 @@ Public Class BarangKeluar
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
         MenuUtama.MenuStrip1.Tag = UserInfo
+        Me.cmb_tipe_barang.Text = ""
+        Me.cmb_jenis_barang.Text = ""
+        Me.cmb_garansi.Text = ""
+        Me.cmb_client.Text = ""
+        Me.txt_kd_transaksi.Text = ""
+        Me.txt_alamat.Text = ""
+        Me.txt_alamat_ship.Text = ""
+        Me.txt_client_ship.Text = ""
+        Me.txt_kdpos.Text = ""
+        Me.txt_kdpos_ship.Text = ""
+        Me.txt_kota.Text = ""
+        Me.txt_kota_ship.Text = ""
+        Me.txt_harga_total.Text = 0
+        Me.txt_harga_akhir.Text = 0
+        Me.txt_diskon.Text = 0
         MenuUtama.Show()
         Me.Hide()
     End Sub
@@ -1190,6 +1205,10 @@ Public Class BarangKeluar
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub pict_logo_Click(sender As Object, e As EventArgs) Handles pict_logo.Click
 
     End Sub
 End Class
