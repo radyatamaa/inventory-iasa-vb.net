@@ -174,7 +174,9 @@ Public Class invoice_cetak
                                             shipping_handling,
                                             subtotal,
                                             logo_toko,
-                                            id_toko
+                                            id_toko,
+                                            company_name,
+                                            kd_client
                                   from view_invoice "
 
             If KdTransaksi IsNot Nothing And KdTransaksi <> "" Then
@@ -239,7 +241,9 @@ Public Class invoice_cetak
             .shipping_handling = reader("shipping_handling"),
             .subtotal = reader("subtotal"),
             .logo_toko = reader("logo_toko"),
-            .id_toko = reader("id_toko")
+            .id_toko = reader("id_toko"),
+            .company_name = reader("company_name"),
+            .kd_client = reader("kd_client")
                 }
                 Dim checkBarang = listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
                 If checkBarang.Count = 0 Then
@@ -309,6 +313,8 @@ Public Class invoice_cetak
                 'Dim convertLogoTOko = Convert.ToBase64String(logoToko)
                 row.Item(36) = Application.StartupPath & "\Reports\" + insertDataBarangMasuk.id_toko.ToString + ".jpeg"
                 row.Item(37) = insertDataBarangMasuk.id_toko
+                row.Item(38) = insertDataBarangMasuk.company_name
+                row.Item(39) = insertDataBarangMasuk.kd_client
                 ds.Tables("DataInvoice").Rows.Add(row)
 
 

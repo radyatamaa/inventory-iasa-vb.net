@@ -285,6 +285,7 @@ Partial Class cetak_kwitansi_barang
         Me.Controls.Add(Me.dt_transaksi)
         Me.Name = "cetak_kwitansi_barang"
         Me.Text = "Cetak Kwitansi"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dt_transaksi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
