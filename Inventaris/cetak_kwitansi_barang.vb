@@ -168,6 +168,7 @@ Public Class cetak_kwitansi_barang
 
             'CONN.Open()
             listTransaksi.Clear()
+            listTransaksiTODataSet.Clear()
             Dim query As String = "select id_transaksi, 
                                             kd_transaksi_keluar,
                                             qty,
@@ -343,6 +344,11 @@ Public Class cetak_kwitansi_barang
                     listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().
                         nama_jenis_tipe_serial = listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().
                         nama_jenis_tipe_serial + ", " + barang.qty.ToString + " Unit " + barang.nama_jenis_tipe_serial
+
+                    listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().
+                       qty = listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().
+                       qty + barang.qty
+
                 End If
             Next
 
@@ -432,5 +438,9 @@ Public Class cetak_kwitansi_barang
             KdTransaksi = kdTransaksis(0)
             LoadReport()
         End If
+    End Sub
+
+    Private Sub dt_transaksi_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_transaksi.CellContentClick
+
     End Sub
 End Class
