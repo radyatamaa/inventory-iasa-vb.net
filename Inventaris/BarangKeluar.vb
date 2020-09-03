@@ -813,6 +813,7 @@ Public Class BarangKeluar
         listBarangKeluarFix.Clear()
         listBarangMasuk.Clear()
         invoice_cetak.KdTransaksi = Me.txt_kd_transaksi.Text
+        cetak_kwitansi_barang.KdTransaksi = Me.txt_kd_transaksi.Text
         'Dim kdTransaksi As String = RandomString(New Random)
         Me.txt_kd_transaksi.Text = ""
         Me.txt_harga_total.Text = 0

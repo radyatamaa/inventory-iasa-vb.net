@@ -11,6 +11,7 @@ Public Class cetak_kwitansi_barang
     Public Property UserInfo As Object
     Dim kdTransaksis As New List(Of String)
     Dim listTransaksi As New List(Of Object)
+    Dim listTransaksiTODataSet As New List(Of Object)
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
@@ -32,6 +33,38 @@ Public Class cetak_kwitansi_barang
         Me.ReportViewer1.RefreshReport()
         LoadReport()
     End Sub
+    Public Function GetCountNamaJenisTipe(kdTransaksi As String, namaJenisTipe As String) As List(Of Object)
+        Dim result As New List(Of Object)
+        Dim query As String = "SELECT count(*) as count 
+                                    FROM View_invoice 
+                                    WHERE kd_transaksi_keluar = '" + kdTransaksi + "' 
+                                    AND nama_jenis_tipe = '" + namaJenisTipe + "' "
+
+
+        cmd.CommandText = query
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        Try
+
+            'CONN.Open()
+        Catch ex As Exception
+            'CONN.Close()
+            'CONN.Open()
+        End Try
+        Dim reader As SqlDataReader
+        reader = cmd.ExecuteReader
+
+        While reader.Read
+            Dim barang = New With
+                {
+            .count = reader("count")
+                }
+            'listTransaksi.Add(barang)
+            result.Add(barang)
+
+        End While
+        Return result
+    End Function
     Public Function GetTransaksi(startDate As DateTime, endDate As DateTime)
         dt_transaksi.Rows.Clear()
         listTransaksi.Clear()
@@ -194,7 +227,6 @@ Public Class cetak_kwitansi_barang
             End Try
             Dim reader As SqlDataReader
             reader = cmd.ExecuteReader
-
             While reader.Read
 
                 Dim barang = New With
@@ -240,7 +272,7 @@ Public Class cetak_kwitansi_barang
                 }
                 Dim checkBarang = listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
                 If checkBarang.Count = 0 Then
-                    barang.nama_jenis_tipe_serial = barang.nama_jenis_tipe + vbCrLf + "SN: " + barang.serial_number
+                    barang.nama_jenis_tipe_serial = barang.nama_jenis_tipe + " SN: " + barang.serial_number
                     barang.qty = 1
                     listTransaksi.Add(barang)
                     'listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe).FirstOrDefault().nama_jenis_tipe = checkBarang.FirstOrDefault().nama_jenis_tipe + " SN: " + barang.serial_number
@@ -258,8 +290,63 @@ Public Class cetak_kwitansi_barang
             CONN.Close()
             Dim data = New DataSet1()
 
+            Dim index = 0
+            For i = 0 To listTransaksi.Count - 1
 
-            For Each insertDataBarangMasuk As Object In listTransaksi
+                Dim barang = New With
+              {
+               .id_transaksi = listTransaksi(i).id_transaksi,
+               .kd_transaksi_keluar = listTransaksi(i).kd_transaksi_keluar,
+          .qty = listTransaksi(i).qty,
+          .nama_jenis = listTransaksi(i).nama_jenis,
+          .nama_tipe = listTransaksi(i).nama_tipe,
+          .serial_number = listTransaksi(i).serial_number,
+          .nama_jenis_tipe = listTransaksi(i).nama_jenis_tipe,
+          .nama_barang = listTransaksi(i).nama_barang,
+          .harga_jual = listTransaksi(i).harga_jual,
+          .harga_total = listTransaksi(i).harga_total,
+          .diskon = listTransaksi(i).diskon,
+          .harga_akhir = listTransaksi(i).harga_akhir,
+          .id_status_barang = listTransaksi(i).id_status_barang,
+          .nama_status = listTransaksi(i).nama_status,
+          .nama_client = listTransaksi(i).nama_client,
+          .alamat_pengiriman = listTransaksi(i).alamat_pengiriman,
+          .kota_pengiriman = listTransaksi(i).kota_pengiriman,
+          .kdpos_pengiriman = listTransaksi(i).kdpos_pengiriman,
+          .tlp_client = listTransaksi(i).tlp_client,
+          .nama_toko = listTransaksi(i).nama_toko,
+          .alamat_toko = listTransaksi(i).alamat_toko,
+          .kota_toko = listTransaksi(i).kota_toko,
+          .kdpos_toko = listTransaksi(i).kdpos_toko,
+          .tlp_toko = listTransaksi(i).tlp_toko,
+          .nama_owner = listTransaksi(i).nama_owner,
+          .norek_owner = listTransaksi(i).norek_owner,
+          .tlp_owner = listTransaksi(i).tlp_owner,
+          .nama_jenis_tipe_serial = listTransaksi(i).nama_jenis_tipe_serial,
+          .shipto_nama = listTransaksi(i).shipto_nama,
+          .shipto_alamat = listTransaksi(i).shipto_alamat,
+          .shipto_kota = listTransaksi(i).shipto_kota,
+          .shipto_kdpos = listTransaksi(i).shipto_kdpos,
+          .persen_ppn = listTransaksi(i).persen_ppn,
+          .nominal_ppn = listTransaksi(i).nominal_ppn,
+          .shipping_handling = listTransaksi(i).shipping_handling,
+          .subtotal = listTransaksi(i).subtotal,
+          .logo_toko = listTransaksi(i).logo_toko,
+          .id_toko = listTransaksi(i).id_toko
+              }
+                Dim checkTransaksi = listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
+                If checkTransaksi.Count = 0 Then
+                    barang.nama_jenis_tipe_serial = barang.qty.ToString + " Unit " + barang.nama_jenis_tipe_serial
+                    listTransaksiTODataSet.Add(barang)
+                    index = index + 1
+                Else
+                    listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().
+                        nama_jenis_tipe_serial = listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().
+                        nama_jenis_tipe_serial + ", " + barang.qty.ToString + " Unit " + barang.nama_jenis_tipe_serial
+                End If
+            Next
+
+            For Each insertDataBarangMasuk As Object In listTransaksiTODataSet
                 Dim row As DataRow
 
                 row = ds.Tables("DataInvoice").NewRow
