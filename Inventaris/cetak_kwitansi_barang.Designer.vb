@@ -22,19 +22,19 @@ Partial Class cetak_kwitansi_barang
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -85,8 +85,8 @@ Partial Class cetak_kwitansi_barang
         'kd_transaksi_keluar
         '
         Me.kd_transaksi_keluar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.kd_transaksi_keluar.DefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.kd_transaksi_keluar.DefaultCellStyle = DataGridViewCellStyle1
         Me.kd_transaksi_keluar.HeaderText = "Kode Transaksi / Invoice No"
         Me.kd_transaksi_keluar.MinimumWidth = 170
         Me.kd_transaksi_keluar.Name = "kd_transaksi_keluar"
@@ -94,9 +94,9 @@ Partial Class cetak_kwitansi_barang
         'harga_total
         '
         Me.harga_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle28.Format = "N2"
-        Me.harga_total.DefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Format = "N2"
+        Me.harga_total.DefaultCellStyle = DataGridViewCellStyle2
         Me.harga_total.HeaderText = "Harga Total"
         Me.harga_total.MinimumWidth = 125
         Me.harga_total.Name = "harga_total"
@@ -104,18 +104,18 @@ Partial Class cetak_kwitansi_barang
         'diskon
         '
         Me.diskon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle29.Format = "N2"
-        Me.diskon.DefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N2"
+        Me.diskon.DefaultCellStyle = DataGridViewCellStyle3
         Me.diskon.HeaderText = "Diskon"
         Me.diskon.MinimumWidth = 125
         Me.diskon.Name = "diskon"
         '
         'harga_akhir
         '
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle30.Format = "N2"
-        Me.harga_akhir.DefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "N2"
+        Me.harga_akhir.DefaultCellStyle = DataGridViewCellStyle4
         Me.harga_akhir.HeaderText = "Harga Akhir"
         Me.harga_akhir.MinimumWidth = 125
         Me.harga_akhir.Name = "harga_akhir"
@@ -123,8 +123,8 @@ Partial Class cetak_kwitansi_barang
         '
         'nama_client
         '
-        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.nama_client.DefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.nama_client.DefaultCellStyle = DataGridViewCellStyle5
         Me.nama_client.HeaderText = "Nama Client"
         Me.nama_client.MinimumWidth = 6
         Me.nama_client.Name = "nama_client"
@@ -132,8 +132,8 @@ Partial Class cetak_kwitansi_barang
         '
         'alamat_pengiriman
         '
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.alamat_pengiriman.DefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.alamat_pengiriman.DefaultCellStyle = DataGridViewCellStyle6
         Me.alamat_pengiriman.HeaderText = "Alamat Pengiriman"
         Me.alamat_pengiriman.MinimumWidth = 6
         Me.alamat_pengiriman.Name = "alamat_pengiriman"
@@ -141,8 +141,8 @@ Partial Class cetak_kwitansi_barang
         '
         'kota_pengiriman
         '
-        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.kota_pengiriman.DefaultCellStyle = DataGridViewCellStyle33
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.kota_pengiriman.DefaultCellStyle = DataGridViewCellStyle7
         Me.kota_pengiriman.HeaderText = "Kota Pengiriman"
         Me.kota_pengiriman.MinimumWidth = 6
         Me.kota_pengiriman.Name = "kota_pengiriman"
@@ -150,8 +150,8 @@ Partial Class cetak_kwitansi_barang
         '
         'kdpos_pengiriman
         '
-        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.kdpos_pengiriman.DefaultCellStyle = DataGridViewCellStyle34
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.kdpos_pengiriman.DefaultCellStyle = DataGridViewCellStyle8
         Me.kdpos_pengiriman.HeaderText = "Kodepos Pengiriman"
         Me.kdpos_pengiriman.MinimumWidth = 140
         Me.kdpos_pengiriman.Name = "kdpos_pengiriman"
@@ -159,8 +159,8 @@ Partial Class cetak_kwitansi_barang
         '
         'tgl_keluar
         '
-        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.tgl_keluar.DefaultCellStyle = DataGridViewCellStyle35
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.tgl_keluar.DefaultCellStyle = DataGridViewCellStyle9
         Me.tgl_keluar.HeaderText = "Tanggal Keluar"
         Me.tgl_keluar.MinimumWidth = 6
         Me.tgl_keluar.Name = "tgl_keluar"
@@ -168,8 +168,8 @@ Partial Class cetak_kwitansi_barang
         '
         'total_barang
         '
-        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.total_barang.DefaultCellStyle = DataGridViewCellStyle36
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.total_barang.DefaultCellStyle = DataGridViewCellStyle10
         Me.total_barang.HeaderText = "Total Barang"
         Me.total_barang.MinimumWidth = 6
         Me.total_barang.Name = "total_barang"
@@ -177,15 +177,15 @@ Partial Class cetak_kwitansi_barang
         '
         'created_by
         '
-        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.created_by.DefaultCellStyle = DataGridViewCellStyle37
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.created_by.DefaultCellStyle = DataGridViewCellStyle11
         Me.created_by.HeaderText = "Created By"
         Me.created_by.Name = "created_by"
         '
         'created_date
         '
-        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.created_date.DefaultCellStyle = DataGridViewCellStyle38
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.created_date.DefaultCellStyle = DataGridViewCellStyle12
         Me.created_date.HeaderText = "Created Date"
         Me.created_date.Name = "created_date"
         '
@@ -251,14 +251,14 @@ Partial Class cetak_kwitansi_barang
         Me.dt_transaksi.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_transaksi.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dt_transaksi.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle39
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dt_transaksi.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.dt_transaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_transaksi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.harga_total, Me.diskon, Me.harga_akhir, Me.nama_client, Me.alamat_pengiriman, Me.kota_pengiriman, Me.kdpos_pengiriman, Me.tgl_keluar, Me.total_barang, Me.created_by, Me.created_date})
         Me.dt_transaksi.GridColor = System.Drawing.SystemColors.ActiveBorder
