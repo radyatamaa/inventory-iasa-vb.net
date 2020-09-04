@@ -945,7 +945,7 @@ Public Class BarangKeluar
             If selectedItem.ColumnIndex = 9 Then
                 If selectedItem.Value IsNot Nothing Then
                     If System.Text.RegularExpressions.Regex.IsMatch(selectedItem.Value, "[  ^ 0-9]") Then
-                        listBarangKeluarFix(selectedItem.RowIndex).harga_jual = selectedItem.Value
+                        listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(selectedItem.Value)
                         If index = 0 Then
                             dt_barang_keluar_fix.Rows.Clear()
                         End If
