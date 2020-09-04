@@ -755,6 +755,7 @@
                       <FontStyle>Normal</FontStyle>
                       <FontSize>18pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <Format>#,0.00;(#,0.00)</Format>
                       <TextDecoration>None</TextDecoration>
                     </Style>
                   </TextRun>
