@@ -154,6 +154,33 @@ Public Class cetak_kwitansi_barang
 
         Return bmpBytes
     End Function
+    Public Function Terbilang(ByVal x As Integer) As String
+
+        Dim bilangan As String() = {"", "SATU", "DUA", "TIGA", "EMPAT", "LIMA", "ENAM", "TUJUH", "DELAPAN", "SEMBILAN", "SEPULUH", "SEBELAS"}
+
+        Dim temp As String = ""
+
+        If x < 12 Then
+            temp = bilangan(x)
+        ElseIf x < 20 Then
+            temp = Terbilang(x - 10) + " BELAS "
+        ElseIf x < 100 Then
+            temp = Terbilang(x / 10) + " PULUH " + Terbilang(x Mod 10)
+        ElseIf x < 200 Then
+            temp = " SERATUS" + Terbilang(x - 100)
+        ElseIf x < 1000 Then
+            temp = Terbilang(x / 100) + " RATUS " + Terbilang(x Mod 100)
+        ElseIf x < 2000 Then
+            temp = " SERIBU " + Terbilang(x - 1000)
+        ElseIf x < 1000000 Then
+            temp = Terbilang(x / 1000) + " RIBU " + Terbilang(x Mod 1000)
+        ElseIf x < 1000000000 Then
+            temp = Terbilang(x / 1000000) + " JUTA " + Terbilang(x Mod 1000000)
+        End If
+
+        Return temp
+
+    End Function
     Sub LoadReport()
         Dim rptDS As ReportDataSource
         Me.ReportViewer1.RefreshReport()
@@ -339,10 +366,19 @@ Public Class cetak_kwitansi_barang
           .logo_toko = listTransaksi(i).logo_toko,
           .id_toko = listTransaksi(i).id_toko,
           .company_name = listTransaksi(i).company_name,
-          .kd_client = listTransaksi(i).kd_client
+          .kd_client = listTransaksi(i).kd_client,
+          .terbilangNominal = ""
               }
+
                 Dim checkTransaksi = listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
                 If checkTransaksi.Count = 0 Then
+                    Try
+                        barang.terbilangNominal = Terbilang(barang.subtotal)
+                        barang.terbilangNominal = barang.terbilangNominal + " RUPIAH "
+                    Catch ex As Exception
+
+                    End Try
+
                     barang.nama_jenis_tipe_serial = barang.qty.ToString + " Unit " + barang.nama_jenis_tipe_serial
                     listTransaksiTODataSet.Add(barang)
                     index = index + 1
@@ -407,6 +443,8 @@ Public Class cetak_kwitansi_barang
                 row.Item(37) = insertDataBarangMasuk.id_toko
                 row.Item(38) = insertDataBarangMasuk.company_name
                 row.Item(39) = insertDataBarangMasuk.kd_client
+                row.Item(40) = insertDataBarangMasuk.terbilangNominal
+
                 ds.Tables("DataInvoice").Rows.Add(row)
 
 
