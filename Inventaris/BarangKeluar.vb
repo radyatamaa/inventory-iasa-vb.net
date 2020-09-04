@@ -745,11 +745,12 @@ Public Class BarangKeluar
     End Sub
 
     Private Sub btn_kwitansi_Click(sender As Object, e As EventArgs) Handles btn_kwitansi.Click
-        GenerateWord(2)
+        cetak_kwitansi_barang.Show()
+        'GenerateWord(2)
     End Sub
 
     Private Sub btn_tanda_terima_Click(sender As Object, e As EventArgs) Handles btn_tanda_terima.Click
-        GenerateWord(3)
+        cetak_tanda_terima.Show()
     End Sub
 
     Private Sub btn_simpan_Click_1(sender As Object, e As EventArgs) Handles btn_simpan.Click

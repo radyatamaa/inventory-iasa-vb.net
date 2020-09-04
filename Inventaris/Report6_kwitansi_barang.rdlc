@@ -177,6 +177,10 @@
           <DataField>kd_client</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="terbilang">
+          <DataField>terbilang</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
@@ -644,41 +648,6 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="subtotal">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Sum(Fields!subtotal.Value, "DataSet1")</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>subtotal</rd:DefaultName>
-            <Top>2.31472in</Top>
-            <Left>1.73834in</Left>
-            <Height>0.25in</Height>
-            <Width>6.80208in</Width>
-            <ZIndex>15</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <BottomBorder>
-                <Style>Solid</Style>
-              </BottomBorder>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox12">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -834,7 +803,7 @@
             <Left>0.51833in</Left>
             <Height>1.8125in</Height>
             <Width>6.14708in</Width>
-            <ZIndex>16</ZIndex>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -870,7 +839,7 @@
             <Left>7.83208in</Left>
             <Height>0.25in</Height>
             <Width>1.23958in</Width>
-            <ZIndex>17</ZIndex>
+            <ZIndex>16</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -886,13 +855,46 @@
             <Left>7.58208in</Left>
             <Height>0in</Height>
             <Width>1.76042in</Width>
-            <ZIndex>18</ZIndex>
+            <ZIndex>17</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
               </Border>
             </Style>
           </Line>
+          <Textbox Name="terbilang">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!terbilang.Value, "DataSet1")</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>terbilang</rd:DefaultName>
+            <Top>2.30083in</Top>
+            <Left>1.75222in</Left>
+            <Height>0.25in</Height>
+            <Width>6.7882in</Width>
+            <ZIndex>18</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Solid</Style>
+              </BottomBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>5.18625in</Height>
         <Style />
