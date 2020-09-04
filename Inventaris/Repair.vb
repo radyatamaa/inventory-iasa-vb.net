@@ -496,8 +496,11 @@ Public Class Repair
 
                     dt_barang_keluar_fix.Update()
 
-                    Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangMasukHandle.harga_jual)
-                    Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text)
+                    Dim hargaTOtal = Val(Double.Parse(Me.txt_harga_total.Text)) + Val(Double.Parse(barangMasukHandle.harga_jual))
+                    Me.txt_harga_total.Text = hargaTOtal.ToString("N2")
+
+                    Dim hargaAkhir = Val(Double.Parse(Me.txt_harga_total.Text))
+                    Me.txt_harga_akhir.Text = hargaAkhir.ToString("N2")
                     'Me.txt_subtotal.Text = Val(Me.txt_harga_total.Text)
                     listBarangKeluarFix.Add(barangMasukHandle)
                     'Index = Index + 1
@@ -567,8 +570,12 @@ Public Class Repair
 
             dt_barang_keluar_fix.Update()
 
-            Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangKeluarFix.harga_jual)
-            Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+            Dim hargaTotal = Val(Double.Parse(Me.txt_harga_total.Text)) + Val(Double.Parse(barangKeluarFix.harga_jual))
+            Me.txt_harga_total.Text = hargaTotal.ToString("N2")
+
+            Dim hargaAkhir = Double.Parse(Me.txt_harga_total.Text)
+            Me.txt_harga_akhir.Text = hargaAkhir.ToString("N2")
+
             'listBarangKeluarFix.Add(barangMasukHandle)
             'Index = Index + 1
 
@@ -585,10 +592,15 @@ Public Class Repair
 
     Private Sub txt_diskon_TextChanged(sender As Object, e As EventArgs) Handles txt_diskon.TextChanged
         If System.Text.RegularExpressions.Regex.IsMatch(txt_diskon.Text, "[  ^ 0-9]") Then
-            Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text) - Val(Me.txt_diskon.Text)
+            Dim hargaAkhir = Val(Double.Parse(Me.txt_harga_total.Text)) - Val(Double.Parse(Me.txt_diskon.Text))
+            Me.txt_harga_akhir.Text = hargaAkhir.ToString("N2")
+            txt_diskon.Text = Double.Parse(txt_diskon.Text)
         ElseIf txt_diskon.Text = "" Then
-            Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+            txt_diskon.Text = 0
+            Dim hargaAkhir = Double.Parse(Me.txt_harga_total.Text)
+            Me.txt_harga_akhir.Text = hargaAkhir.ToString("N2")
         Else
+            txt_diskon.Text = 0
             MsgBox("Diskon hanya bisa numbering")
         End If
     End Sub
@@ -615,7 +627,7 @@ Public Class Repair
                 idToko = MenuUtama.MenuStrip1.Tag.IdToko
             End If
             If Me.txt_diskon.Text <> "" Then
-                diskon = Me.txt_diskon.Text
+                diskon = Decimal.Parse(Me.txt_diskon.Text)
             End If
             insertDataBarangKeluar.kd_transaksi_keluar = Me.txt_kd_transaksi.Text
             insertDataBarangKeluar.id_client = Me.cmb_client.SelectedValue
@@ -628,9 +640,9 @@ Public Class Repair
             insertDataBarangKeluar.garansi_exp = garansiExp
             insertDataBarangKeluar.id_client = Me.cmb_client.SelectedValue
             'insertDataBarangKeluar.jumlah = reader("jumlah"),
-            insertDataBarangKeluar.harga_total = Me.txt_harga_total.Text
+            insertDataBarangKeluar.harga_total = Decimal.Parse(Me.txt_harga_total.Text)
             insertDataBarangKeluar.diskon = diskon
-            insertDataBarangKeluar.harga_akhir = Me.txt_harga_akhir.Text
+            insertDataBarangKeluar.harga_akhir = Decimal.Parse(Me.txt_harga_akhir.Text)
             insertDataBarangKeluar.alamat_pengiriman = Me.txt_alamat.Text
             insertDataBarangKeluar.kota_pengiriman = Me.txt_kota.Text
             insertDataBarangKeluar.kdpos_pengiriman = Me.txt_kdpos.Text
@@ -708,6 +720,10 @@ Public Class Repair
 
 
         Next
+
+    End Sub
+
+    Private Sub dt_barang_keluar_fix_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_keluar_fix.CellValueChanged
 
     End Sub
 End Class
