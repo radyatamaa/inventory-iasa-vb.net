@@ -12,7 +12,7 @@
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataInvoice" msprop:Generator_TableClassName="DataInvoiceDataTable" msprop:Generator_TableVarName="tableDataInvoice" msprop:Generator_TablePropName="DataInvoice" msprop:Generator_RowDeletingName="DataInvoiceRowDeleting" msprop:Generator_RowChangingName="DataInvoiceRowChanging" msprop:Generator_RowEvHandlerName="DataInvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="DataInvoiceRowDeleted" msprop:Generator_UserTableName="DataInvoice" msprop:Generator_RowChangedName="DataInvoiceRowChanged" msprop:Generator_RowEvArgName="DataInvoiceRowChangeEvent" msprop:Generator_RowClassName="DataInvoiceRow">
+        <xs:element name="DataInvoice" msprop:Generator_TableClassName="DataInvoiceDataTable" msprop:Generator_TableVarName="tableDataInvoice" msprop:Generator_RowChangedName="DataInvoiceRowChanged" msprop:Generator_TablePropName="DataInvoice" msprop:Generator_RowDeletingName="DataInvoiceRowDeleting" msprop:Generator_RowChangingName="DataInvoiceRowChanging" msprop:Generator_RowEvHandlerName="DataInvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="DataInvoiceRowDeleted" msprop:Generator_RowClassName="DataInvoiceRow" msprop:Generator_UserTableName="DataInvoice" msprop:Generator_RowEvArgName="DataInvoiceRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_transaksi" msprop:Generator_ColumnVarNameInTable="columnID_TRANSAKSI" msprop:Generator_ColumnPropNameInRow="ID_TRANSAKSI" msprop:Generator_ColumnPropNameInTable="ID_TRANSAKSIColumn" msprop:Generator_UserColumnName="id_transaksi" type="xs:string" minOccurs="0" />
@@ -55,6 +55,7 @@
               <xs:element name="id_toko" msprop:Generator_ColumnVarNameInTable="columnid_toko" msprop:Generator_ColumnPropNameInRow="id_toko" msprop:Generator_ColumnPropNameInTable="id_tokoColumn" msprop:Generator_UserColumnName="id_toko" type="xs:string" minOccurs="0" />
               <xs:element name="company_name" msprop:Generator_ColumnVarNameInTable="columncompany_name" msprop:Generator_ColumnPropNameInRow="company_name" msprop:Generator_ColumnPropNameInTable="company_nameColumn" msprop:Generator_UserColumnName="company_name" type="xs:string" minOccurs="0" />
               <xs:element name="kd_client" msprop:Generator_ColumnVarNameInTable="columnkd_client" msprop:Generator_ColumnPropNameInRow="kd_client" msprop:Generator_ColumnPropNameInTable="kd_clientColumn" msprop:Generator_UserColumnName="kd_client" type="xs:string" minOccurs="0" />
+              <xs:element name="terbilang" msprop:Generator_ColumnVarNameInTable="columnterbilang" msprop:Generator_ColumnPropNameInRow="terbilang" msprop:Generator_ColumnPropNameInTable="terbilangColumn" msprop:Generator_UserColumnName="terbilang" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
