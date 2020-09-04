@@ -1111,4 +1111,12 @@ Public Class Rental
         Next
 
     End Sub
+
+    Private Sub btn_kwitansi_Click(sender As Object, e As EventArgs) Handles btn_kwitansi.Click
+        cetak_kwitansi_barang.Show()
+    End Sub
+
+    Private Sub btn_tanda_terima_Click(sender As Object, e As EventArgs) Handles btn_tanda_terima.Click
+        cetak_kwitansi_barang.Show()
+    End Sub
 End Class

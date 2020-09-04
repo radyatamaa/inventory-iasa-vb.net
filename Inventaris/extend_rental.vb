@@ -995,4 +995,16 @@ Public Class extend_rental
     Private Sub txt_harga_total_TextChanged(sender As Object, e As EventArgs) Handles txt_harga_total.TextChanged
 
     End Sub
+
+    Private Sub btn_invoice_Click(sender As Object, e As EventArgs) Handles btn_invoice.Click
+        invoice_cetak.Show()
+    End Sub
+
+    Private Sub btn_kwitansi_Click(sender As Object, e As EventArgs) Handles btn_kwitansi.Click
+        cetak_kwitansi_barang.Show()
+    End Sub
+
+    Private Sub btn_tanda_terima_Click(sender As Object, e As EventArgs) Handles btn_tanda_terima.Click
+        cetak_tanda_terima.Show()
+    End Sub
 End Class
