@@ -401,6 +401,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_db_inventory_iasaDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_db_inventory_iasaDataSet4.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_db_inventory_iasaDataSet4.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BarangKeluar.resx">
@@ -568,6 +573,17 @@
     </None>
     <None Include="_db_inventory_iasaDataSet3.xss">
       <DependentUpon>_db_inventory_iasaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="_db_inventory_iasaDataSet4.xsc">
+      <DependentUpon>_db_inventory_iasaDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="_db_inventory_iasaDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_db_inventory_iasaDataSet4.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_db_inventory_iasaDataSet4.xss">
+      <DependentUpon>_db_inventory_iasaDataSet4.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
