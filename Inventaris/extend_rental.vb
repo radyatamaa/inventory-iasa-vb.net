@@ -480,8 +480,10 @@ Public Class extend_rental
             Me.txt_harga_total.Text = 0
             Me.txt_harga_akhir.Text = 0
             Me.txt_subtotal.Text = 0
-            Me.txt_ppn.Text = 0
+
             Me.txt_shiphand.Text = 0
+            Me.txt_ppn.Text = 0
+
             isSelectedTipeJenis = 0
             'Dim kdTransaksi As String = RandomString(New Random)
             'Me.txt_kd_transaksi.Text = kdTransaksi
@@ -572,9 +574,15 @@ Public Class extend_rental
                     barangMasukHandle.rental_exp = Nothing
                     barangMasukHandle.harga_akhir = ""
                     MappingToDataGridBarangKeluarFix(barangMasukHandle)
-                    Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangMasukHandle.harga_jual)
-                    Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text)
-                    Me.txt_subtotal.Text = Val(Me.txt_harga_total.Text)
+                    Dim hargaTotal = Val(Double.Parse(Me.txt_harga_total.Text)) + Val(Double.Parse(barangMasukHandle.harga_jual))
+                    Me.txt_harga_total.Text = hargaTotal.ToString("N2")
+
+                    Dim hargaAkhir = Val(Double.Parse(Me.txt_harga_total.Text))
+                    Me.txt_harga_akhir.Text = hargaAkhir.ToString("N2")
+
+                    Dim subTotal = Val(Double.Parse(Me.txt_harga_total.Text))
+                    Me.txt_subtotal.Text = subTotal.ToString("N2")
+
                     listBarangKeluarFix.Add(barangMasukHandle)
                     'Index = Index + 1
                 Else
@@ -625,8 +633,12 @@ Public Class extend_rental
 
             MappingToDataGridBarangKeluarFix(barangKeluarFix)
 
-            Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangKeluarFix.harga_akhir)
-            Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+            Dim hargaTotal = Val(Double.Parse(Me.txt_harga_total.Text)) + Val(Double.Parse(barangKeluarFix.harga_akhir))
+            Me.txt_harga_total.Text = hargaTotal.ToString("N2")
+
+            Dim hargaAkhir = Double.Parse( Me.txt_harga_total.Text)
+            Me.txt_harga_akhir.Text = hargaAkhir.ToString("N2")
+
             'listBarangKeluarFix.Add(barangMasukHandle)
             'Index = Index + 1
 
@@ -639,11 +651,19 @@ Public Class extend_rental
 
     Private Sub txt_diskon_TextChanged(sender As Object, e As EventArgs) Handles txt_diskon.TextChanged
         If System.Text.RegularExpressions.Regex.IsMatch(txt_diskon.Text, "[  ^ 0-9]") Then
-            Me.txt_harga_akhir.Text = Val(Me.txt_harga_total.Text) - Val(Me.txt_diskon.Text)
-            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
+            Dim hargaAkhir = Val(Double.Parse(Me.txt_harga_total.Text)) - Val(Double.Parse(Me.txt_diskon.Text))
+            Me.txt_harga_akhir.Text = hargaAkhir.ToString("N2")
+
+            Dim subTotal = Val(Double.Parse(txt_harga_akhir.Text)) + Val(ppnNominal) + Val(Double.Parse(txt_shiphand.Text))
+            Me.txt_subtotal.Text = subTotal.ToString("N2")
+
+            Me.txt_diskon.Text = Double.Parse(Me.txt_diskon.Text).ToString("N2")
+
         ElseIf txt_diskon.Text = "" Then
-            Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+
+            Me.txt_harga_akhir.Text = Double.Parse(Me.txt_harga_total.Text).ToString("N2")
         Else
+            Me.txt_diskon.Text = 0
             MsgBox("Diskon hanya bisa numbering")
         End If
     End Sub
@@ -672,7 +692,7 @@ Public Class extend_rental
                 idToko = MenuUtama.MenuStrip1.Tag.IdToko
             End If
             If Me.txt_diskon.Text <> "" Then
-                diskon = Me.txt_diskon.Text
+                diskon = Decimal.Parse(Me.txt_diskon.Text)
             End If
             insertDataBarangKeluar.kd_transaksi_keluar = Me.txt_kd_transaksi.Text
             'insertDataBarangKeluar.id_client = Me.cmb_client.SelectedValue
@@ -685,9 +705,9 @@ Public Class extend_rental
             insertDataBarangKeluar.garansi_exp = garansiExp
             'insertDataBarangKeluar.id_client = Me.cmb_client.SelectedValue
             'insertDataBarangKeluar.jumlah = reader("jumlah"),
-            insertDataBarangKeluar.harga_total = Me.txt_harga_total.Text
+            insertDataBarangKeluar.harga_total = Decimal.Parse(Me.txt_harga_total.Text)
             insertDataBarangKeluar.diskon = diskon
-            insertDataBarangKeluar.harga_akhir = Me.txt_harga_akhir.Text
+            insertDataBarangKeluar.harga_akhir = Decimal.Parse(Me.txt_harga_akhir.Text)
             'insertDataBarangKeluar.alamat_pengiriman = Me.txt_alamat.Text
             'insertDataBarangKeluar.kota_pengiriman = Me.txt_kota.Text
             'insertDataBarangKeluar.kdpos_pengiriman = Me.txt_kdpos.Text
@@ -699,8 +719,8 @@ Public Class extend_rental
             insertDataBarangKeluar.shipto_kdpos = Me.txt_kdpos_ship.Text
             insertDataBarangKeluar.persen_ppn = Me.txt_ppn.Text
             insertDataBarangKeluar.nominal_ppn = ppnNominal
-            insertDataBarangKeluar.shipping_handling = Me.txt_shiphand.Text
-            insertDataBarangKeluar.subtotal = Me.txt_subtotal.Text
+            insertDataBarangKeluar.shipping_handling = Decimal.Parse(Me.txt_shiphand.Text)
+            insertDataBarangKeluar.subtotal = Decimal.Parse(Me.txt_subtotal.Text)
             SimpanBarangKeluar(insertDataBarangKeluar, index)
             index = index + 1
         Next
@@ -749,7 +769,7 @@ Public Class extend_rental
             If selectedItem.ColumnIndex = 10 Then
                 If selectedItem.Value IsNot Nothing Then
                     If System.Text.RegularExpressions.Regex.IsMatch(selectedItem.Value, "[  ^ 0-9]") Then
-                        listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = selectedItem.Value
+                        listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = Decimal.Parse(selectedItem.Value)
                         If index = 0 Then
                             dt_barang_keluar_fix.Rows.Clear()
                         End If
@@ -759,8 +779,11 @@ Public Class extend_rental
 
                             MappingToDataGridBarangKeluarFix(barangKeluarFix)
 
-                            Me.txt_harga_total.Text = Val(Me.txt_harga_total.Text) + Val(barangKeluarFix.harga_akhir)
-                            Me.txt_harga_akhir.Text = Me.txt_harga_total.Text
+                            Dim hargaTotal = Val(Double.Parse(Me.txt_harga_total.Text)) + Val(Double.Parse(barangKeluarFix.harga_akhir))
+                            Me.txt_harga_total.Text = hargaTotal.ToString("N2")
+
+                            Dim hargaAkhir = Double.Parse( Me.txt_harga_total.Text)
+                            Me.txt_harga_akhir.Text = hargaAkhir.ToString("N2")
                             'listBarangKeluarFix.Add(barangMasukHandle)
                             index = index + 1
 
@@ -932,32 +955,44 @@ Public Class extend_rental
 
     Private Sub txt_ppn_TextChanged(sender As Object, e As EventArgs) Handles txt_ppn.TextChanged
         If System.Text.RegularExpressions.Regex.IsMatch(txt_ppn.Text, "[  ^ 0-9]") Then
-            Dim hargaAkhir = Me.txt_harga_akhir.Text
-            Dim ppnCalculate = Val(txt_ppn.Text) / 100
+            Dim hargaAkhir = Double.Parse(Me.txt_harga_akhir.Text)
+            Dim ppnCalculate = Val(Double.Parse(txt_ppn.Text)) / 100
             Dim ppn = Val(ppnCalculate) * Val(hargaAkhir)
             ppnNominal = ppn
-            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppn) + Val(txt_shiphand.Text)
-            Me.txt_ppn_nominal.Text = ppnNominal
+
+            Dim subTotal = Val(Double.Parse(txt_harga_akhir.Text)) + Val(ppn) + Val(Double.Parse(txt_shiphand.Text))
+            Me.txt_subtotal.Text = subTotal.ToString("N2")
+            Me.txt_ppn_nominal.Text = ppnNominal.ToString("N2")
+
         ElseIf txt_ppn.Text = "" Then
             ppnNominal = 0
-            Me.txt_ppn.Text = ""
+            Me.txt_ppn.Text = 0
         Else
             ppnNominal = 0
             MsgBox("PPN hanya bisa numbering")
-            Me.txt_ppn.Text = ""
+            Me.txt_ppn.Text = 0
         End If
     End Sub
 
     Private Sub txt_shiphand_TextChanged(sender As Object, e As EventArgs) Handles txt_shiphand.TextChanged
         If System.Text.RegularExpressions.Regex.IsMatch(txt_shiphand.Text, "[  ^ 0-9]") Then
-            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
+            Dim subTotal = Val(Double.Parse(txt_harga_akhir.Text)) + Val(ppnNominal) + Val(Double.Parse(txt_shiphand.Text))
+            Me.txt_subtotal.Text = subTotal.ToString("N2")
+
+            txt_shiphand.Text = Double.Parse(txt_shiphand.Text).ToString("N2")
         ElseIf txt_shiphand.Text = "" Then
             txt_shiphand.Text = 0
-            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
+            Dim subTotal = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
+            Me.txt_subtotal.Text = subTotal.ToString("N2")
         Else
             txt_shiphand.Text = 0
             MsgBox("PPN hanya bisa numbering")
-            Me.txt_subtotal.Text = Val(txt_harga_akhir.Text) + Val(ppnNominal) + Val(txt_shiphand.Text)
+            Dim subTotal = Val(Double.Parse(txt_harga_akhir.Text)) + Val(ppnNominal) + Val(Double.Parse(txt_shiphand.Text))
+            Me.txt_subtotal.Text = subTotal.ToString("N2")
         End If
+    End Sub
+
+    Private Sub txt_harga_total_TextChanged(sender As Object, e As EventArgs) Handles txt_harga_total.TextChanged
+
     End Sub
 End Class
