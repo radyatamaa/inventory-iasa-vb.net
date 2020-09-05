@@ -784,6 +784,10 @@ Public Class BarangMasuk
             ElseIf barangMasuk.tested = 0 Then
                 cbx_tidak_teruji.Checked = True
             End If
+
+            Dim hargaBeli = Double.Parse(barangMasuk.harga_beli).ToString("N2")
+            Dim hargaJual = Double.Parse(barangMasuk.harga_jual).ToString("N2")
+
             Me.txt_kode_barang.Text = barangMasuk.kd_barang
             Me.cmb_jenis_barang.SelectedValue = barangMasuk.id_jenis
             Me.cmb_tipe_barang.SelectedValue = barangMasuk.id_tipe
@@ -792,8 +796,8 @@ Public Class BarangMasuk
             Me.cmb_status.SelectedValue = barangMasuk.id_status_barang
             Me.cmb_lokasi.SelectedValue = barangMasuk.id_lokasi
             Me.cmb_detail_lokasi.SelectedValue = barangMasuk.id_detail_lokasi
-            Me.txt_harga_modal.Text = barangMasuk.harga_beli
-            Me.txt_harga_barang.Text = barangMasuk.harga_jual
+            Me.txt_harga_modal.Text = hargaBeli
+            Me.txt_harga_barang.Text = hargaJual
             Me.txt_lisensi.Text = barangMasuk.licence
             Me.date_tgl_masuk.Value = barangMasuk.tgl_masuk
         End If
@@ -883,6 +887,8 @@ Public Class BarangMasuk
             idToko = UserInfo.IdToko
         End If
         Dim kdTransaksi As String = RandomString(New Random)
+        Dim hargaBeli As Decimal = Decimal.Parse(Me.txt_harga_modal.Text)
+        Dim hargaJual As Decimal = Decimal.Parse(Me.txt_harga_barang.Text)
         Dim insertDataBarangMasuk = New With
                     {
                     .catatan = Me.txt_catatan.Text,
@@ -905,8 +911,8 @@ Public Class BarangMasuk
                      .nama_detail_lokasi = Me.cmb_detail_lokasi.SelectedItem.detail_lokasi,
                      .id_detail_lokasi = Me.cmb_detail_lokasi.SelectedValue,
                      .id_toko = idToko,
-                     .harga_beli = Me.txt_harga_modal.Text,
-                     .harga_jual = Me.txt_harga_barang.Text,
+                     .harga_beli = hargaBeli,
+                     .harga_jual = hargaJual,
                      .stock = 0,
                      .licence = Me.txt_lisensi.Text,
                      .ios = Me.txt_catatan.Text,
@@ -1026,6 +1032,8 @@ Public Class BarangMasuk
             ElseIf barangMasuk(0).tested = 0 Then
                 cbx_tidak_teruji.Checked = True
             End If
+            Dim hargaBeli = Double.Parse(barangMasuk(0).harga_beli).ToString("N2")
+            Dim hargaJual = Double.Parse(barangMasuk(0).harga_jual).ToString("N2")
             Me.txt_kode_barang.Text = barangMasuk(0).kd_barang
             Me.cmb_jenis_barang.SelectedValue = barangMasuk(0).id_jenis
             Me.cmb_tipe_barang.SelectedValue = barangMasuk(0).id_tipe
@@ -1034,8 +1042,8 @@ Public Class BarangMasuk
             Me.cmb_status.SelectedValue = barangMasuk(0).id_status_barang
             Me.cmb_lokasi.SelectedValue = barangMasuk(0).id_lokasi
             Me.cmb_detail_lokasi.SelectedValue = barangMasuk(0).id_detail_lokasi
-            Me.txt_harga_modal.Text = barangMasuk(0).harga_beli
-            Me.txt_harga_barang.Text = barangMasuk(0).harga_jual
+            Me.txt_harga_modal.Text = hargaBeli
+            Me.txt_harga_barang.Text = hargaJual
             Me.txt_lisensi.Text = barangMasuk(0).licence
             Me.date_tgl_masuk.Value = barangMasuk(0).tgl_masuk
 
@@ -1069,6 +1077,24 @@ Public Class BarangMasuk
     End Sub
 
     Private Sub dt_barang_masuk_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_masuk.CellEndEdit
+
+    End Sub
+
+    Private Sub txt_harga_modal_TextChanged(sender As Object, e As EventArgs) Handles txt_harga_modal.TextChanged
+        If txt_harga_modal.Text <> "" Then
+            Dim hargaModal As Double = txt_harga_modal.Text
+            txt_harga_modal.Text = hargaModal.ToString("N2")
+        End If
+    End Sub
+
+    Private Sub txt_harga_barang_TextChanged(sender As Object, e As EventArgs) Handles txt_harga_barang.TextChanged
+        If txt_harga_barang.Text <> "" Then
+            Dim hargaBarang As Double = txt_harga_barang.Text
+            txt_harga_barang.Text = hargaBarang.ToString("N2")
+        End If
+    End Sub
+
+    Private Sub dt_barang_masuk_CellContextMenuStripNeeded(sender As Object, e As DataGridViewCellContextMenuStripNeededEventArgs) Handles dt_barang_masuk.CellContextMenuStripNeeded
 
     End Sub
 End Class
