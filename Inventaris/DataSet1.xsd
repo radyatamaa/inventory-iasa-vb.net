@@ -53,6 +53,9 @@
               <xs:element name="subtotal" msprop:Generator_ColumnVarNameInTable="columnsubtotal" msprop:Generator_ColumnPropNameInRow="subtotal" msprop:Generator_ColumnPropNameInTable="subtotalColumn" msprop:Generator_UserColumnName="subtotal" type="xs:decimal" minOccurs="0" />
               <xs:element name="logo_toko" msprop:Generator_ColumnVarNameInTable="columnlogo_toko" msprop:Generator_ColumnPropNameInRow="logo_toko" msprop:Generator_ColumnPropNameInTable="logo_tokoColumn" msprop:Generator_UserColumnName="logo_toko" type="xs:string" minOccurs="0" />
               <xs:element name="id_toko" msprop:Generator_ColumnVarNameInTable="columnid_toko" msprop:Generator_ColumnPropNameInRow="id_toko" msprop:Generator_ColumnPropNameInTable="id_tokoColumn" msprop:Generator_UserColumnName="id_toko" type="xs:string" minOccurs="0" />
+              <xs:element name="company_name" msprop:Generator_ColumnVarNameInTable="columncompany_name" msprop:Generator_ColumnPropNameInRow="company_name" msprop:Generator_ColumnPropNameInTable="company_nameColumn" msprop:Generator_UserColumnName="company_name" type="xs:string" minOccurs="0" />
+              <xs:element name="kd_client" msprop:Generator_ColumnVarNameInTable="columnkd_client" msprop:Generator_ColumnPropNameInRow="kd_client" msprop:Generator_ColumnPropNameInTable="kd_clientColumn" msprop:Generator_UserColumnName="kd_client" type="xs:string" minOccurs="0" />
+              <xs:element name="terbilang" msprop:Generator_ColumnVarNameInTable="columnterbilang" msprop:Generator_ColumnPropNameInRow="terbilang" msprop:Generator_ColumnPropNameInTable="terbilangColumn" msprop:Generator_UserColumnName="terbilang" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

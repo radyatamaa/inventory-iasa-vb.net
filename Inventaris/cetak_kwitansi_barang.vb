@@ -11,9 +11,134 @@ Public Class cetak_kwitansi_barang
     Public Property UserInfo As Object
     Dim kdTransaksis As New List(Of String)
     Dim listTransaksi As New List(Of Object)
+    Dim listTransaksiTODataSet As New List(Of Object)
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
+    Private _Kamus As SortedDictionary(Of Integer, String)
+    Private _ArGroup() As String = {"", " RIBU", " JUTA", " MILYAR", " TRILIYUN"}
+
+    Private Sub InitializeKamus()
+        _Kamus = New SortedDictionary(Of Integer, String)
+        _Kamus.Clear()
+        _Kamus.Add(0, "")
+        _Kamus.Add(1, " SATU")
+        _Kamus.Add(2, " DUA")
+        _Kamus.Add(3, " TIGA")
+        _Kamus.Add(4, " EMPAT")
+        _Kamus.Add(5, " LIMA")
+        _Kamus.Add(6, " ENAM")
+        _Kamus.Add(7, " TUJUH")
+        _Kamus.Add(8, " DELAPAN")
+        _Kamus.Add(9, " SEMBILAN")
+        _Kamus.Add(10, " SEPULUH")
+        _Kamus.Add(11, " SEBELAS")
+        _Kamus.Add(100, " SERATUS")
+    End Sub
+
+    Public Function Terbilang2(Bilangan As Double) As String
+        Dim sRet As String = ""
+        Dim sMinus As String = ""
+        Dim BilCacah As Double = 0
+        Dim BilPecahan As Integer = 0
+
+
+        InitializeKamus()
+
+        Try
+            If Bilangan < 0 Then sMinus = "MINUS "
+
+            Dim grp() As String = Split(Math.Abs(Bilangan).ToString(System.Globalization.NumberFormatInfo.CurrentInfo), System.Globalization.NumberFormatInfo.CurrentInfo.NumberDecimalSeparator)
+            If grp.Length > 1 Then
+                BilCacah = CDbl(grp(0))
+                BilPecahan = CInt(grp(1))
+            Else
+                BilCacah = Bilangan
+            End If
+
+            Dim triple() As String = Split(BilCacah.ToString("#,##0", System.Globalization.NumberFormatInfo.CurrentInfo), System.Globalization.NumberFormatInfo.CurrentInfo.NumberGroupSeparator)
+            Array.Reverse(triple)
+
+            For i As Integer = triple.Length - 1 To 0 Step -1
+                sRet = sRet & BacaGroupAngka(triple(i), False, IIf(i > 5, i - 5 + 1, i))
+            Next
+
+            If BilPecahan > 0 Then
+                sRet = sRet & " Koma" & BacaGroupAngka(BilPecahan, True)
+            End If
+
+            sRet = sMinus & sRet
+
+        Catch ex As Exception
+            MsgBox(ex.Message, vbOKOnly, "Parsing Bilangan")
+
+        End Try
+
+        _Kamus.Clear()
+        _Kamus = Nothing
+
+        Return sRet.Trim
+    End Function
+
+    Private Function BacaGroupAngka(ByVal Angka As Integer,
+                                    Optional IsPecahan As Boolean = False,
+                                    Optional iGroup As Byte = 0) As String
+        Dim sRet As String = ""
+        Dim sAngka As String = Angka.ToString("000")
+
+        Select Case IsPecahan
+            Case True
+                Try
+                    For i As Integer = 0 To sAngka.Length - 1
+                        If CInt(sAngka.Substring(i, 1)) = 0 Then
+                            sRet = sRet & "Nol"
+                        Else
+                            sRet = sRet & _Kamus(CInt(sAngka.Substring(i, 1)))
+                        End If
+                    Next
+                Catch ex As Exception
+                    MsgBox(ex.Message, vbOKOnly, "Baca Pecahan")
+                End Try
+            Case Else
+                Try
+                    If Angka = 1 And iGroup = 1 Then
+                        sRet = " SERIBU"
+                    ElseIf _Kamus.ContainsKey(Angka) Then
+                        sRet = _Kamus(Angka) & _ArGroup(iGroup)
+                    Else
+                        Dim Satuan As String = _Kamus(CInt(sAngka.Substring(2, 1)))
+                        Dim puluhan As String = ""
+                        Dim ratusan As String = ""
+
+                        If _Kamus.ContainsKey(CInt(sAngka.Substring(1, 2))) Then
+                            puluhan = _Kamus(CInt(sAngka.Substring(1, 2)))
+                        Else
+                            If CInt(sAngka.Substring(1, 1)) = 0 Then
+                                puluhan = Satuan
+                            ElseIf CInt(sAngka.Substring(1, 1)) = 1 Then
+                                puluhan = Satuan & " BELAS"
+                            Else
+                                puluhan = _Kamus(CInt(sAngka.Substring(1, 1))) & " PULUH" & Satuan
+                            End If
+                        End If
+
+                        If CInt(sAngka.Substring(0, 1)) = 0 Then
+                            ratusan = puluhan
+                        ElseIf CInt(sAngka.Substring(0, 1)) = 1 Then
+                            ratusan = " SERATUS" & puluhan
+                        Else
+                            ratusan = _Kamus(CInt(sAngka.Substring(0, 1))) & " RATUS" & puluhan
+                        End If
+
+                        sRet = ratusan & _ArGroup(iGroup)
+                    End If
+                Catch ex As Exception
+                    MsgBox(ex.Message, vbOKOnly, "Baca Bilangan Bulat")
+                End Try
+        End Select
+
+        Return sRet
+    End Function
     Sub VBnetSQLSeverConnection()
         Try
             'SQL connection script to SQL Server Instance
@@ -32,6 +157,38 @@ Public Class cetak_kwitansi_barang
         Me.ReportViewer1.RefreshReport()
         LoadReport()
     End Sub
+    Public Function GetCountNamaJenisTipe(kdTransaksi As String, namaJenisTipe As String) As List(Of Object)
+        Dim result As New List(Of Object)
+        Dim query As String = "SELECT count(*) as count 
+                                    FROM View_invoice 
+                                    WHERE kd_transaksi_keluar = '" + kdTransaksi + "' 
+                                    AND nama_jenis_tipe = '" + namaJenisTipe + "' "
+
+
+        cmd.CommandText = query
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        Try
+
+            'CONN.Open()
+        Catch ex As Exception
+            'CONN.Close()
+            'CONN.Open()
+        End Try
+        Dim reader As SqlDataReader
+        reader = cmd.ExecuteReader
+
+        While reader.Read
+            Dim barang = New With
+                {
+            .count = reader("count")
+                }
+            'listTransaksi.Add(barang)
+            result.Add(barang)
+
+        End While
+        Return result
+    End Function
     Public Function GetTransaksi(startDate As DateTime, endDate As DateTime)
         dt_transaksi.Rows.Clear()
         listTransaksi.Clear()
@@ -121,6 +278,33 @@ Public Class cetak_kwitansi_barang
 
         Return bmpBytes
     End Function
+    Public Function Terbilang(ByVal x As Integer) As String
+
+        Dim bilangan As String() = {"", "SATU", "DUA", "TIGA", "EMPAT", "LIMA", "ENAM", "TUJUH", "DELAPAN", "SEMBILAN", "SEPULUH", "SEBELAS"}
+
+        Dim temp As String = ""
+
+        If x < 12 Then
+            temp = bilangan(x)
+        ElseIf x < 20 Then
+            temp = Terbilang(x - 10) + " BELAS "
+        ElseIf x < 100 Then
+            temp = Terbilang(x / 10) + " PULUH " + Terbilang(x Mod 10)
+        ElseIf x < 200 Then
+            temp = " SERATUS" + Terbilang(x - 100)
+        ElseIf x < 1000 Then
+            temp = Terbilang(x / 100) + " RATUS " + Terbilang(x Mod 100)
+        ElseIf x < 2000 Then
+            temp = " SERIBU " + Terbilang(x - 1000)
+        ElseIf x < 1000000 Then
+            temp = Terbilang(x / 1000) + " RIBU " + Terbilang(x Mod 1000)
+        ElseIf x < 1000000000 Then
+            temp = Terbilang(x / 1000000) + " JUTA " + Terbilang(x Mod 1000000)
+        End If
+
+        Return temp
+
+    End Function
     Sub LoadReport()
         Dim rptDS As ReportDataSource
         Me.ReportViewer1.RefreshReport()
@@ -135,6 +319,7 @@ Public Class cetak_kwitansi_barang
 
             'CONN.Open()
             listTransaksi.Clear()
+            listTransaksiTODataSet.Clear()
             Dim query As String = "select id_transaksi, 
                                             kd_transaksi_keluar,
                                             qty,
@@ -171,7 +356,9 @@ Public Class cetak_kwitansi_barang
                                             shipping_handling,
                                             subtotal,
                                             logo_toko,
-                                            id_toko
+                                            id_toko,
+                                            company_name,
+                                            kd_client
                                   from view_invoice "
 
             If KdTransaksi IsNot Nothing And KdTransaksi <> "" Then
@@ -194,7 +381,6 @@ Public Class cetak_kwitansi_barang
             End Try
             Dim reader As SqlDataReader
             reader = cmd.ExecuteReader
-
             While reader.Read
 
                 Dim barang = New With
@@ -236,11 +422,13 @@ Public Class cetak_kwitansi_barang
             .shipping_handling = reader("shipping_handling"),
             .subtotal = reader("subtotal"),
             .logo_toko = reader("logo_toko"),
-            .id_toko = reader("id_toko")
+            .id_toko = reader("id_toko"),
+            .company_name = reader("company_name"),
+            .kd_client = reader("kd_client")
                 }
                 Dim checkBarang = listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
                 If checkBarang.Count = 0 Then
-                    barang.nama_jenis_tipe_serial = barang.nama_jenis_tipe + vbCrLf + "SN: " + barang.serial_number
+                    barang.nama_jenis_tipe_serial = barang.nama_jenis_tipe + " SN: " + barang.serial_number
                     barang.qty = 1
                     listTransaksi.Add(barang)
                     'listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe).FirstOrDefault().nama_jenis_tipe = checkBarang.FirstOrDefault().nama_jenis_tipe + " SN: " + barang.serial_number
@@ -258,8 +446,79 @@ Public Class cetak_kwitansi_barang
             CONN.Close()
             Dim data = New DataSet1()
 
+            Dim index = 0
+            For i = 0 To listTransaksi.Count - 1
 
-            For Each insertDataBarangMasuk As Object In listTransaksi
+                Dim barang = New With
+              {
+               .id_transaksi = listTransaksi(i).id_transaksi,
+               .kd_transaksi_keluar = listTransaksi(i).kd_transaksi_keluar,
+          .qty = listTransaksi(i).qty,
+          .nama_jenis = listTransaksi(i).nama_jenis,
+          .nama_tipe = listTransaksi(i).nama_tipe,
+          .serial_number = listTransaksi(i).serial_number,
+          .nama_jenis_tipe = listTransaksi(i).nama_jenis_tipe,
+          .nama_barang = listTransaksi(i).nama_barang,
+          .harga_jual = listTransaksi(i).harga_jual,
+          .harga_total = listTransaksi(i).harga_total,
+          .diskon = listTransaksi(i).diskon,
+          .harga_akhir = listTransaksi(i).harga_akhir,
+          .id_status_barang = listTransaksi(i).id_status_barang,
+          .nama_status = listTransaksi(i).nama_status,
+          .nama_client = listTransaksi(i).nama_client,
+          .alamat_pengiriman = listTransaksi(i).alamat_pengiriman,
+          .kota_pengiriman = listTransaksi(i).kota_pengiriman,
+          .kdpos_pengiriman = listTransaksi(i).kdpos_pengiriman,
+          .tlp_client = listTransaksi(i).tlp_client,
+          .nama_toko = listTransaksi(i).nama_toko,
+          .alamat_toko = listTransaksi(i).alamat_toko,
+          .kota_toko = listTransaksi(i).kota_toko,
+          .kdpos_toko = listTransaksi(i).kdpos_toko,
+          .tlp_toko = listTransaksi(i).tlp_toko,
+          .nama_owner = listTransaksi(i).nama_owner,
+          .norek_owner = listTransaksi(i).norek_owner,
+          .tlp_owner = listTransaksi(i).tlp_owner,
+          .nama_jenis_tipe_serial = listTransaksi(i).nama_jenis_tipe_serial,
+          .shipto_nama = listTransaksi(i).shipto_nama,
+          .shipto_alamat = listTransaksi(i).shipto_alamat,
+          .shipto_kota = listTransaksi(i).shipto_kota,
+          .shipto_kdpos = listTransaksi(i).shipto_kdpos,
+          .persen_ppn = listTransaksi(i).persen_ppn,
+          .nominal_ppn = listTransaksi(i).nominal_ppn,
+          .shipping_handling = listTransaksi(i).shipping_handling,
+          .subtotal = listTransaksi(i).subtotal,
+          .logo_toko = listTransaksi(i).logo_toko,
+          .id_toko = listTransaksi(i).id_toko,
+          .company_name = listTransaksi(i).company_name,
+          .kd_client = listTransaksi(i).kd_client,
+          .terbilangNominal = ""
+              }
+
+                Dim checkTransaksi = listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
+                If checkTransaksi.Count = 0 Then
+                    Try
+                        barang.terbilangNominal = Terbilang2(barang.subtotal)
+                        barang.terbilangNominal = barang.terbilangNominal + " RUPIAH "
+                    Catch ex As Exception
+
+                    End Try
+
+                    barang.nama_jenis_tipe_serial = barang.qty.ToString + " Unit " + barang.nama_jenis_tipe_serial
+                    listTransaksiTODataSet.Add(barang)
+                    index = index + 1
+                Else
+                    listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().
+                        nama_jenis_tipe_serial = listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().
+                        nama_jenis_tipe_serial + ", " + barang.qty.ToString + " Unit " + barang.nama_jenis_tipe_serial
+
+                    listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().
+                       qty = listTransaksiTODataSet.Where(Function(x) x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().
+                       qty + barang.qty
+
+                End If
+            Next
+
+            For Each insertDataBarangMasuk As Object In listTransaksiTODataSet
                 Dim row As DataRow
 
                 row = ds.Tables("DataInvoice").NewRow
@@ -306,6 +565,10 @@ Public Class cetak_kwitansi_barang
                 'Dim convertLogoTOko = Convert.ToBase64String(logoToko)
                 row.Item(36) = Application.StartupPath & "\Reports\" + insertDataBarangMasuk.id_toko.ToString + ".jpeg"
                 row.Item(37) = insertDataBarangMasuk.id_toko
+                row.Item(38) = insertDataBarangMasuk.company_name
+                row.Item(39) = insertDataBarangMasuk.kd_client
+                row.Item(40) = insertDataBarangMasuk.terbilangNominal
+
                 ds.Tables("DataInvoice").Rows.Add(row)
 
 
@@ -345,5 +608,9 @@ Public Class cetak_kwitansi_barang
             KdTransaksi = kdTransaksis(0)
             LoadReport()
         End If
+    End Sub
+
+    Private Sub dt_transaksi_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_transaksi.CellContentClick
+
     End Sub
 End Class

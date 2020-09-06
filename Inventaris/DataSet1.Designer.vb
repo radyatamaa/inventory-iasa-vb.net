@@ -359,6 +359,12 @@ Partial Public Class DataSet1
         
         Private columnid_toko As Global.System.Data.DataColumn
         
+        Private columncompany_name As Global.System.Data.DataColumn
+        
+        Private columnkd_client As Global.System.Data.DataColumn
+        
+        Private columnterbilang As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -699,6 +705,30 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property company_nameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncompany_name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property kd_clientColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnkd_client
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property terbilangColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnterbilang
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -773,9 +803,12 @@ Partial Public Class DataSet1
                     ByVal shipping_handling As Decimal,  _
                     ByVal subtotal As Decimal,  _
                     ByVal logo_toko As String,  _
-                    ByVal id_toko As String) As DataInvoiceRow
+                    ByVal id_toko As String,  _
+                    ByVal company_name As String,  _
+                    ByVal kd_client As String,  _
+                    ByVal terbilang As String) As DataInvoiceRow
             Dim rowDataInvoiceRow As DataInvoiceRow = CType(Me.NewRow,DataInvoiceRow)
-            Dim columnValuesArray() As Object = New Object() {ID_TRANSAKSI, kd_transaksi_keluar, qty, nama_jenis, nama_tipe, serial_number, nama_jenis_tipe, nama_barang, harga_jual, harga_total, diskon, harga_akhir, id_status_barang, nama_status, nama_client, alamat_pengiriman, kota_pengiriman, kdpos_pengiriman, tlp_client, nama_toko, alamat_toko, kota_toko, kdpos_toko, tlp_toko, nama_owner, norek_owner, tlp_owner, nama_jenis_tipe_serial, shipto_nama, shipto_alamat, shipto_kota, shipto_kdpos, persen_ppn, nominal_ppn, shipping_handling, subtotal, logo_toko, id_toko}
+            Dim columnValuesArray() As Object = New Object() {ID_TRANSAKSI, kd_transaksi_keluar, qty, nama_jenis, nama_tipe, serial_number, nama_jenis_tipe, nama_barang, harga_jual, harga_total, diskon, harga_akhir, id_status_barang, nama_status, nama_client, alamat_pengiriman, kota_pengiriman, kdpos_pengiriman, tlp_client, nama_toko, alamat_toko, kota_toko, kdpos_toko, tlp_toko, nama_owner, norek_owner, tlp_owner, nama_jenis_tipe_serial, shipto_nama, shipto_alamat, shipto_kota, shipto_kdpos, persen_ppn, nominal_ppn, shipping_handling, subtotal, logo_toko, id_toko, company_name, kd_client, terbilang}
             rowDataInvoiceRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataInvoiceRow)
             Return rowDataInvoiceRow
@@ -836,6 +869,9 @@ Partial Public Class DataSet1
             Me.columnsubtotal = MyBase.Columns("subtotal")
             Me.columnlogo_toko = MyBase.Columns("logo_toko")
             Me.columnid_toko = MyBase.Columns("id_toko")
+            Me.columncompany_name = MyBase.Columns("company_name")
+            Me.columnkd_client = MyBase.Columns("kd_client")
+            Me.columnterbilang = MyBase.Columns("terbilang")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -921,6 +957,12 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnlogo_toko)
             Me.columnid_toko = New Global.System.Data.DataColumn("id_toko", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid_toko)
+            Me.columncompany_name = New Global.System.Data.DataColumn("company_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncompany_name)
+            Me.columnkd_client = New Global.System.Data.DataColumn("kd_client", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnkd_client)
+            Me.columnterbilang = New Global.System.Data.DataColumn("terbilang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnterbilang)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1637,6 +1679,51 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property company_name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.company_nameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'company_name' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.company_nameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property kd_client() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.kd_clientColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'kd_client' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.kd_clientColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property terbilang() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.terbilangColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'terbilang' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.terbilangColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsID_TRANSAKSINull() As Boolean
             Return Me.IsNull(Me.tableDataInvoice.ID_TRANSAKSIColumn)
         End Function
@@ -2089,6 +2176,42 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub Setid_tokoNull()
             Me(Me.tableDataInvoice.id_tokoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Iscompany_nameNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.company_nameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setcompany_nameNull()
+            Me(Me.tableDataInvoice.company_nameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Iskd_clientNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.kd_clientColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setkd_clientNull()
+            Me(Me.tableDataInvoice.kd_clientColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsterbilangNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.terbilangColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetterbilangNull()
+            Me(Me.tableDataInvoice.terbilangColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

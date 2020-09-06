@@ -37,12 +37,6 @@ Partial Class invoice_cetak
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.dt_transaksi = New System.Windows.Forms.DataGridView()
-        Me.btn_tampil = New System.Windows.Forms.Button()
-        Me.date_tgl_keluar1 = New System.Windows.Forms.DateTimePicker()
-        Me.date_tgl_keluar2 = New System.Windows.Forms.DateTimePicker()
-        Me.btn_tampil_list = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.harga_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.diskon = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,6 +49,12 @@ Partial Class invoice_cetak
         Me.total_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.created_by = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.created_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_tampil = New System.Windows.Forms.Button()
+        Me.date_tgl_keluar1 = New System.Windows.Forms.DateTimePicker()
+        Me.date_tgl_keluar2 = New System.Windows.Forms.DateTimePicker()
+        Me.btn_tampil_list = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dt_transaksi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -93,74 +93,6 @@ Partial Class invoice_cetak
         Me.dt_transaksi.RowTemplate.Height = 24
         Me.dt_transaksi.Size = New System.Drawing.Size(974, 119)
         Me.dt_transaksi.TabIndex = 56
-        '
-        'btn_tampil
-        '
-        Me.btn_tampil.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_tampil.FlatAppearance.BorderSize = 0
-        Me.btn_tampil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_tampil.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_tampil.Location = New System.Drawing.Point(11, 174)
-        Me.btn_tampil.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_tampil.Name = "btn_tampil"
-        Me.btn_tampil.Size = New System.Drawing.Size(178, 26)
-        Me.btn_tampil.TabIndex = 57
-        Me.btn_tampil.Text = "Tampil"
-        Me.btn_tampil.UseVisualStyleBackColor = False
-        '
-        'date_tgl_keluar1
-        '
-        Me.date_tgl_keluar1.Location = New System.Drawing.Point(110, 20)
-        Me.date_tgl_keluar1.Margin = New System.Windows.Forms.Padding(2)
-        Me.date_tgl_keluar1.Name = "date_tgl_keluar1"
-        Me.date_tgl_keluar1.Size = New System.Drawing.Size(183, 20)
-        Me.date_tgl_keluar1.TabIndex = 58
-        '
-        'date_tgl_keluar2
-        '
-        Me.date_tgl_keluar2.Location = New System.Drawing.Point(324, 20)
-        Me.date_tgl_keluar2.Margin = New System.Windows.Forms.Padding(2)
-        Me.date_tgl_keluar2.Name = "date_tgl_keluar2"
-        Me.date_tgl_keluar2.Size = New System.Drawing.Size(193, 20)
-        Me.date_tgl_keluar2.TabIndex = 61
-        '
-        'btn_tampil_list
-        '
-        Me.btn_tampil_list.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_tampil_list.FlatAppearance.BorderSize = 0
-        Me.btn_tampil_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_tampil_list.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_tampil_list.Location = New System.Drawing.Point(520, 17)
-        Me.btn_tampil_list.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_tampil_list.Name = "btn_tampil_list"
-        Me.btn_tampil_list.Size = New System.Drawing.Size(178, 26)
-        Me.btn_tampil_list.TabIndex = 62
-        Me.btn_tampil_list.Text = "Tampilkan List"
-        Me.btn_tampil_list.UseVisualStyleBackColor = False
-        '
-        'Label9
-        '
-        Me.Label9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(27, 24)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(79, 13)
-        Me.Label9.TabIndex = 63
-        Me.Label9.Text = "Tanggal Keluar"
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(297, 24)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(23, 13)
-        Me.Label1.TabIndex = 64
-        Me.Label1.Text = "s/d"
         '
         'kd_transaksi_keluar
         '
@@ -268,6 +200,74 @@ Partial Class invoice_cetak
         Me.created_date.DefaultCellStyle = DataGridViewCellStyle13
         Me.created_date.HeaderText = "Created Date"
         Me.created_date.Name = "created_date"
+        '
+        'btn_tampil
+        '
+        Me.btn_tampil.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_tampil.FlatAppearance.BorderSize = 0
+        Me.btn_tampil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_tampil.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_tampil.Location = New System.Drawing.Point(11, 174)
+        Me.btn_tampil.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_tampil.Name = "btn_tampil"
+        Me.btn_tampil.Size = New System.Drawing.Size(178, 26)
+        Me.btn_tampil.TabIndex = 57
+        Me.btn_tampil.Text = "Tampil"
+        Me.btn_tampil.UseVisualStyleBackColor = False
+        '
+        'date_tgl_keluar1
+        '
+        Me.date_tgl_keluar1.Location = New System.Drawing.Point(110, 20)
+        Me.date_tgl_keluar1.Margin = New System.Windows.Forms.Padding(2)
+        Me.date_tgl_keluar1.Name = "date_tgl_keluar1"
+        Me.date_tgl_keluar1.Size = New System.Drawing.Size(183, 20)
+        Me.date_tgl_keluar1.TabIndex = 58
+        '
+        'date_tgl_keluar2
+        '
+        Me.date_tgl_keluar2.Location = New System.Drawing.Point(324, 20)
+        Me.date_tgl_keluar2.Margin = New System.Windows.Forms.Padding(2)
+        Me.date_tgl_keluar2.Name = "date_tgl_keluar2"
+        Me.date_tgl_keluar2.Size = New System.Drawing.Size(193, 20)
+        Me.date_tgl_keluar2.TabIndex = 61
+        '
+        'btn_tampil_list
+        '
+        Me.btn_tampil_list.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_tampil_list.FlatAppearance.BorderSize = 0
+        Me.btn_tampil_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_tampil_list.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_tampil_list.Location = New System.Drawing.Point(520, 17)
+        Me.btn_tampil_list.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_tampil_list.Name = "btn_tampil_list"
+        Me.btn_tampil_list.Size = New System.Drawing.Size(178, 26)
+        Me.btn_tampil_list.TabIndex = 62
+        Me.btn_tampil_list.Text = "Tampilkan List"
+        Me.btn_tampil_list.UseVisualStyleBackColor = False
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(27, 24)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(79, 13)
+        Me.Label9.TabIndex = 63
+        Me.Label9.Text = "Tanggal Keluar"
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(297, 24)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(23, 13)
+        Me.Label1.TabIndex = 64
+        Me.Label1.Text = "s/d"
         '
         'invoice_cetak
         '

@@ -22,7 +22,11 @@ Partial Class extend_rental
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(extend_rental))
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btn_kwitansi = New System.Windows.Forms.Button()
         Me.btn_invoice = New System.Windows.Forms.Button()
         Me.btn_hapus = New System.Windows.Forms.Button()
@@ -156,6 +160,14 @@ Partial Class extend_rental
         Me.dt_barang_keluar_fix.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_barang_keluar_fix.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dt_barang_keluar_fix.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.dt_barang_keluar_fix.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_barang_keluar_fix.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar_new, Me.jenis_barang2, Me.tipe_barang2, Me.serial_number2, Me.kondisi2, Me.tested2, Me.lokasi2, Me.detail_lokasi2, Me.catatan2, Me.status2, Me.harga_jual2, Me.periode_rental, Me.rental_type, Me.rental_exp})
         Me.dt_barang_keluar_fix.GridColor = System.Drawing.SystemColors.ActiveBorder
@@ -164,35 +176,35 @@ Partial Class extend_rental
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1042, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1045, 119)
         Me.dt_barang_keluar_fix.TabIndex = 14
         '
         'kd_transaksi_keluar_new
         '
         Me.kd_transaksi_keluar_new.HeaderText = "Kode Transaksi Keluar"
-        Me.kd_transaksi_keluar_new.MinimumWidth = 120
+        Me.kd_transaksi_keluar_new.MinimumWidth = 150
         Me.kd_transaksi_keluar_new.Name = "kd_transaksi_keluar_new"
-        Me.kd_transaksi_keluar_new.Width = 120
+        Me.kd_transaksi_keluar_new.Width = 150
         '
         'jenis_barang2
         '
         Me.jenis_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.jenis_barang2.HeaderText = "Jenis Barang"
-        Me.jenis_barang2.MinimumWidth = 70
+        Me.jenis_barang2.MinimumWidth = 125
         Me.jenis_barang2.Name = "jenis_barang2"
         '
         'tipe_barang2
         '
         Me.tipe_barang2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.tipe_barang2.HeaderText = "Tipe Barang"
-        Me.tipe_barang2.MinimumWidth = 70
+        Me.tipe_barang2.MinimumWidth = 125
         Me.tipe_barang2.Name = "tipe_barang2"
         '
         'serial_number2
         '
         Me.serial_number2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.serial_number2.HeaderText = "Serial Number"
-        Me.serial_number2.MinimumWidth = 70
+        Me.serial_number2.MinimumWidth = 125
         Me.serial_number2.Name = "serial_number2"
         '
         'kondisi2
@@ -239,6 +251,10 @@ Partial Class extend_rental
         '
         'harga_jual2
         '
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle18.Format = "N2"
+        DataGridViewCellStyle18.NullValue = Nothing
+        Me.harga_jual2.DefaultCellStyle = DataGridViewCellStyle18
         Me.harga_jual2.HeaderText = "Harga Rental Baru"
         Me.harga_jual2.MinimumWidth = 6
         Me.harga_jual2.Name = "harga_jual2"
@@ -338,6 +354,14 @@ Partial Class extend_rental
         Me.dt_barang_keluar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_barang_keluar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dt_barang_keluar.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.dt_barang_keluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_barang_keluar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.jenis_barang, Me.tipe_barang, Me.serial_number, Me.kondisi, Me.tested, Me.lokasi, Me.detail_lokasi, Me.catatan, Me.status, Me.harga_jual, Me.periode_rental_lama, Me.rental_type_lama, Me.rental_exp_lama})
         Me.dt_barang_keluar.GridColor = System.Drawing.SystemColors.ActiveBorder
@@ -346,41 +370,41 @@ Partial Class extend_rental
         Me.dt_barang_keluar.Name = "dt_barang_keluar"
         Me.dt_barang_keluar.RowHeadersWidth = 51
         Me.dt_barang_keluar.RowTemplate.Height = 24
-        Me.dt_barang_keluar.Size = New System.Drawing.Size(1042, 119)
+        Me.dt_barang_keluar.Size = New System.Drawing.Size(1045, 119)
         Me.dt_barang_keluar.TabIndex = 12
         '
         'kd_transaksi_keluar
         '
         Me.kd_transaksi_keluar.HeaderText = "Kode Transaksi Keluar"
-        Me.kd_transaksi_keluar.MinimumWidth = 120
+        Me.kd_transaksi_keluar.MinimumWidth = 150
         Me.kd_transaksi_keluar.Name = "kd_transaksi_keluar"
-        Me.kd_transaksi_keluar.Width = 120
+        Me.kd_transaksi_keluar.Width = 150
         '
         'jenis_barang
         '
         Me.jenis_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.jenis_barang.HeaderText = "Jenis Barang"
-        Me.jenis_barang.MinimumWidth = 70
+        Me.jenis_barang.MinimumWidth = 125
         Me.jenis_barang.Name = "jenis_barang"
         '
         'tipe_barang
         '
         Me.tipe_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.tipe_barang.HeaderText = "Tipe Barang"
-        Me.tipe_barang.MinimumWidth = 70
+        Me.tipe_barang.MinimumWidth = 125
         Me.tipe_barang.Name = "tipe_barang"
         '
         'serial_number
         '
         Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.serial_number.HeaderText = "Serial Number"
-        Me.serial_number.MinimumWidth = 70
+        Me.serial_number.MinimumWidth = 125
         Me.serial_number.Name = "serial_number"
         '
         'kondisi
         '
         Me.kondisi.HeaderText = "Kondisi"
-        Me.kondisi.MinimumWidth = 6
+        Me.kondisi.MinimumWidth = 125
         Me.kondisi.Name = "kondisi"
         Me.kondisi.Width = 125
         '
@@ -421,6 +445,10 @@ Partial Class extend_rental
         '
         'harga_jual
         '
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle20.Format = "N2"
+        DataGridViewCellStyle20.NullValue = Nothing
+        Me.harga_jual.DefaultCellStyle = DataGridViewCellStyle20
         Me.harga_jual.HeaderText = "Harga Rental Lama"
         Me.harga_jual.MinimumWidth = 6
         Me.harga_jual.Name = "harga_jual"
@@ -511,7 +539,7 @@ Partial Class extend_rental
         Me.Panel2.Location = New System.Drawing.Point(2, 78)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1799, 500)
+        Me.Panel2.Size = New System.Drawing.Size(1879, 500)
         Me.Panel2.TabIndex = 86
         '
         'txt_kd_transaksi
@@ -916,6 +944,28 @@ Partial Class extend_rental
     Friend WithEvents btncari As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents cmb_client As ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txt_kdpos_ship As TextBox
+    Friend WithEvents txt_kota_ship As TextBox
+    Friend WithEvents txt_alamat_ship As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txt_client_ship As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents txt_subtotal As TextBox
+    Friend WithEvents txt_shiphand As TextBox
+    Friend WithEvents txt_ppn As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents PPN As Label
+    Friend WithEvents txt_ppn_nominal As TextBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents txt_kd_transaksi As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label6 As Label
     Friend WithEvents kd_transaksi_keluar_new As DataGridViewTextBoxColumn
     Friend WithEvents jenis_barang2 As DataGridViewTextBoxColumn
     Friend WithEvents tipe_barang2 As DataGridViewTextBoxColumn
@@ -944,26 +994,4 @@ Partial Class extend_rental
     Friend WithEvents periode_rental_lama As DataGridViewTextBoxColumn
     Friend WithEvents rental_type_lama As DataGridViewComboBoxColumn
     Friend WithEvents rental_exp_lama As DataGridViewTextBoxColumn
-    Friend WithEvents cmb_client As ComboBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents txt_kdpos_ship As TextBox
-    Friend WithEvents txt_kota_ship As TextBox
-    Friend WithEvents txt_alamat_ship As TextBox
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents txt_client_ship As TextBox
-    Friend WithEvents Label17 As Label
-    Friend WithEvents txt_subtotal As TextBox
-    Friend WithEvents txt_shiphand As TextBox
-    Friend WithEvents txt_ppn As TextBox
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents PPN As Label
-    Friend WithEvents txt_ppn_nominal As TextBox
-    Friend WithEvents Label20 As Label
-    Friend WithEvents txt_kd_transaksi As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label6 As Label
 End Class
