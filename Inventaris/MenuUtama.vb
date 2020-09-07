@@ -280,4 +280,13 @@ Public Class MenuUtama
     Private Sub CetakKwitansiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CetakKwitansiToolStripMenuItem.Click
         cetak_kwitansi_barang.Show()
     End Sub
+
+    Private Sub MasterJenisMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterJenisMaintenanceToolStripMenuItem.Click
+        MasterJenisMaintenance.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub MaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaintenanceToolStripMenuItem.Click
+        transaksi_maintenance.Show()
+    End Sub
 End Class
