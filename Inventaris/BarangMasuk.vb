@@ -547,8 +547,8 @@ Public Class BarangMasuk
         GetBarangMasuk(UserInfo.IdToko)
         Me.txt_kode_barang.Text = ""
         Me.txt_serial.Text = ""
-        Me.txt_harga_modal.Text = ""
-        Me.txt_harga_barang.Text = ""
+        Me.txt_harga_modal.Text = 0
+        Me.txt_harga_barang.Text = 0
         Me.txt_lisensi.Text = ""
         Me.txt_catatan.Text = ""
 
