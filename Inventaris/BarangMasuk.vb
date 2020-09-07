@@ -544,6 +544,7 @@ Public Class BarangMasuk
         listBarangMasuk.Clear()
         data_barang_masuk.Rows.Clear()
         dt_barang_masuk.Rows.Clear()
+        indexPenampung.Clear()
         GetBarangMasuk(UserInfo.IdToko)
         Me.txt_kode_barang.Text = ""
         Me.txt_serial.Text = ""
