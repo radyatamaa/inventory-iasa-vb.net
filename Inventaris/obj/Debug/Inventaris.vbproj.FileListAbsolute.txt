@@ -568,3 +568,5 @@ C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.cetak_tanda_terima.resources
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.cetak_kwitansi_barang.resources
 E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.cetak_tanda_terima.resources
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.MasterJenisMaintenance.resources
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.transaksi_maintenance.resources
