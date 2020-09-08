@@ -460,7 +460,7 @@ Partial Class transaksi_maintenance
         Me.Panel2.Location = New System.Drawing.Point(0, 78)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1163, 563)
+        Me.Panel2.Size = New System.Drawing.Size(1189, 563)
         Me.Panel2.TabIndex = 121
         '
         'Label3
@@ -610,7 +610,7 @@ Partial Class transaksi_maintenance
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1130, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1156, 119)
         Me.dt_barang_keluar_fix.TabIndex = 17
         '
         'nama_jenis_maintenance2
