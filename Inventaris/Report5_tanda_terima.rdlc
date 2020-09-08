@@ -760,7 +760,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!ncompany_name.Value, "DataSet1")</Value>
+                    <Value>=First(Fields!company_name.Value, "DataSet1")</Value>
                     <Style>
                       <FontSize>11pt</FontSize>
                     </Style>
