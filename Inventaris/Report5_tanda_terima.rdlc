@@ -169,6 +169,18 @@
           <DataField>id_toko</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="company_name">
+          <DataField>company_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="kd_client">
+          <DataField>kd_client</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="terbilang">
+          <DataField>terbilang</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
@@ -588,7 +600,7 @@
             <Top>2.82167in</Top>
             <Left>0.125in</Left>
             <Height>0.5in</Height>
-            <Width>7.07571in</Width>
+            <Width>7.0757in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -748,7 +760,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!nama_client.Value, "DataSet1")</Value>
+                    <Value>=First(Fields!company_name.Value, "DataSet1")</Value>
                     <Style>
                       <FontSize>11pt</FontSize>
                     </Style>
