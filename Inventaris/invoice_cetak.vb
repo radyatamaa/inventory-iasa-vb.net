@@ -176,7 +176,11 @@ Public Class invoice_cetak
                                             logo_toko,
                                             id_toko,
                                             company_name,
-                                            kd_client
+                                            kd_client,
+                                            tgl_keluar,
+                                            periode_rental,
+                                            rental_type,
+                                            rental_exp
                                   from view_invoice "
 
             If KdTransaksi IsNot Nothing And KdTransaksi <> "" Then
@@ -243,7 +247,11 @@ Public Class invoice_cetak
             .logo_toko = reader("logo_toko"),
             .id_toko = reader("id_toko"),
             .company_name = reader("company_name"),
-            .kd_client = reader("kd_client")
+            .kd_client = reader("kd_client"),
+            .tgl_keluar = reader("tgl_keluar"),
+            .periode_rental = reader("periode_rental"),
+            .rental_type = reader("rental_type"),
+            .rental_exp = reader("rental_exp")
                 }
                 Dim checkBarang = listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
                 If checkBarang.Count = 0 Then
@@ -315,6 +323,25 @@ Public Class invoice_cetak
                 row.Item(37) = insertDataBarangMasuk.id_toko
                 row.Item(38) = insertDataBarangMasuk.company_name
                 row.Item(39) = insertDataBarangMasuk.kd_client
+                Dim edate = insertDataBarangMasuk.tgl_keluar.ToString
+                Dim iDate As String = "05/05/2005"
+                Dim oDate As Date = Convert.ToDateTime(edate)
+                row.Item(41) = oDate.ToShortDateString
+                row.Item(42) = insertDataBarangMasuk.periode_rental
+
+                Try
+                    If insertDataBarangMasuk.rental_type = "Hari" Then
+                        row.Item(43) = "Days"
+                    ElseIf insertDataBarangMasuk.rental_type = "Bulan" Then
+                        row.Item(43) = "Months"
+                    ElseIf insertDataBarangMasuk.rental_type = "Tahun" Then
+                        row.Item(43) = "Years"
+                    End If
+                Catch ex As Exception
+                    row.Item(43) = ""
+                End Try
+
+                'row.Item(43) = insertDataBarangMasuk.rental_type Then
                 ds.Tables("DataInvoice").Rows.Add(row)
 
 

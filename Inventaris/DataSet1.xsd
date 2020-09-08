@@ -56,6 +56,10 @@
               <xs:element name="company_name" msprop:Generator_ColumnVarNameInTable="columncompany_name" msprop:Generator_ColumnPropNameInRow="company_name" msprop:Generator_ColumnPropNameInTable="company_nameColumn" msprop:Generator_UserColumnName="company_name" type="xs:string" minOccurs="0" />
               <xs:element name="kd_client" msprop:Generator_ColumnVarNameInTable="columnkd_client" msprop:Generator_ColumnPropNameInRow="kd_client" msprop:Generator_ColumnPropNameInTable="kd_clientColumn" msprop:Generator_UserColumnName="kd_client" type="xs:string" minOccurs="0" />
               <xs:element name="terbilang" msprop:Generator_ColumnVarNameInTable="columnterbilang" msprop:Generator_ColumnPropNameInRow="terbilang" msprop:Generator_ColumnPropNameInTable="terbilangColumn" msprop:Generator_UserColumnName="terbilang" type="xs:string" minOccurs="0" />
+              <xs:element name="tgl_keluar" msprop:Generator_ColumnVarNameInTable="columntgl_keluar" msprop:Generator_ColumnPropNameInRow="tgl_keluar" msprop:Generator_ColumnPropNameInTable="tgl_keluarColumn" msprop:Generator_UserColumnName="tgl_keluar" type="xs:string" minOccurs="0" />
+              <xs:element name="periode_rental" msprop:Generator_ColumnVarNameInTable="columnperiode_rental" msprop:Generator_ColumnPropNameInRow="periode_rental" msprop:Generator_ColumnPropNameInTable="periode_rentalColumn" msprop:Generator_UserColumnName="periode_rental" type="xs:string" minOccurs="0" />
+              <xs:element name="rental_type" msprop:Generator_ColumnVarNameInTable="columnrental_type" msprop:Generator_ColumnPropNameInRow="rental_type" msprop:Generator_ColumnPropNameInTable="rental_typeColumn" msprop:Generator_UserColumnName="rental_type" type="xs:string" minOccurs="0" />
+              <xs:element name="rental_exp" msprop:Generator_ColumnVarNameInTable="columnrental_exp" msprop:Generator_ColumnPropNameInRow="rental_exp" msprop:Generator_ColumnPropNameInTable="rental_expColumn" msprop:Generator_UserColumnName="rental_exp" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
