@@ -558,7 +558,7 @@
             <Top>3.05815in</Top>
             <Left>1.16391in</Left>
             <Height>0.2in</Height>
-            <Width>1.375in</Width>
+            <Width>1.14582in</Width>
             <ZIndex>11</ZIndex>
             <Style>
               <Border>
@@ -592,9 +592,9 @@
             </Paragraphs>
             <rd:DefaultName>kdpos_pengiriman</rd:DefaultName>
             <Top>3.05815in</Top>
-            <Left>2.53891in</Left>
+            <Left>2.37917in</Left>
             <Height>0.2in</Height>
-            <Width>0.93751in</Width>
+            <Width>1.09725in</Width>
             <ZIndex>12</ZIndex>
             <Style>
               <Border>
@@ -900,7 +900,7 @@
             <Top>3.05815in</Top>
             <Left>4.86462in</Left>
             <Height>0.2in</Height>
-            <Width>1.39584in</Width>
+            <Width>1.08334in</Width>
             <ZIndex>21</ZIndex>
             <Style>
               <Border>
@@ -934,9 +934,9 @@
             </Paragraphs>
             <rd:DefaultName>kdpos_pengiriman</rd:DefaultName>
             <Top>3.05815in</Top>
-            <Left>6.26046in</Left>
+            <Left>6.00352in</Left>
             <Height>0.2in</Height>
-            <Width>0.91667in</Width>
+            <Width>1.17361in</Width>
             <ZIndex>22</ZIndex>
             <Style>
               <Border>
@@ -1567,7 +1567,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Total Price</Value>
+                                  <Value>TOTAL PRICE</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -1944,7 +1944,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>IINVOICE NO</Value>
+                    <Value>INVOICE NO</Value>
                     <Style>
                       <FontFamily>Tahoma</FontFamily>
                       <FontSize>8.5pt</FontSize>
