@@ -280,4 +280,18 @@ Public Class MenuUtama
     Private Sub CetakKwitansiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CetakKwitansiToolStripMenuItem.Click
         cetak_kwitansi_barang.Show()
     End Sub
+
+    Private Sub MasterJenisMaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MasterJenisMaintenanceToolStripMenuItem.Click
+        MasterJenisMaintenance.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub MaintenanceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaintenanceToolStripMenuItem.Click
+        transaksi_maintenance.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        transaksi_maintenance.pict_logo.BackgroundImage = downloadImage
+        transaksi_maintenance.Show()
+        Me.Close()
+    End Sub
 End Class

@@ -24,9 +24,7 @@ Partial Class transaksi_maintenance
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(transaksi_maintenance))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.txt_diskon = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -51,7 +49,6 @@ Partial Class transaksi_maintenance
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_kd_transaksi = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.dt_barang_masuk = New System.Windows.Forms.DataGridView()
         Me.btn_invoice = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.date_tgl_keluar = New System.Windows.Forms.DateTimePicker()
@@ -61,10 +58,10 @@ Partial Class transaksi_maintenance
         Me.btn_kwitansi = New System.Windows.Forms.Button()
         Me.btn_simpan = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.harga_maintance = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.txt_pt = New System.Windows.Forms.TextBox()
-        Me.btncari = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_kdpos_ship = New System.Windows.Forms.TextBox()
         Me.txt_kota_ship = New System.Windows.Forms.TextBox()
         Me.txt_alamat_ship = New System.Windows.Forms.TextBox()
@@ -73,24 +70,20 @@ Partial Class transaksi_maintenance
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.btn_tambah = New System.Windows.Forms.Button()
         Me.dt_barang_keluar_fix = New System.Windows.Forms.DataGridView()
+        Me.nama_jenis_maintenance2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.harga2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.periode_maintenance = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.maintenance_type = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.maintenance_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_kdpos = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_kota = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txt_alamat = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.nama_jenis_maintenance = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.harga = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_jenis_maintenance2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.harga2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.periode_maintenance = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.maintenance_type = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.maintenance_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -174,7 +167,7 @@ Partial Class transaksi_maintenance
         Me.pict_logo.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
         Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pict_logo.Location = New System.Drawing.Point(881, 6)
+        Me.pict_logo.Location = New System.Drawing.Point(907, 6)
         Me.pict_logo.Margin = New System.Windows.Forms.Padding(2)
         Me.pict_logo.Name = "pict_logo"
         Me.pict_logo.Size = New System.Drawing.Size(135, 70)
@@ -191,7 +184,7 @@ Partial Class transaksi_maintenance
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1028, 79)
+        Me.Panel1.Size = New System.Drawing.Size(1054, 79)
         Me.Panel1.TabIndex = 129
         '
         'Label6
@@ -202,7 +195,7 @@ Partial Class transaksi_maintenance
         Me.Label6.Location = New System.Drawing.Point(439, 21)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(229, 47)
+        Me.Label6.Size = New System.Drawing.Size(255, 47)
         Me.Label6.TabIndex = 47
         Me.Label6.Text = "Maintenance"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -350,31 +343,6 @@ Partial Class transaksi_maintenance
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Client"
         '
-        'dt_barang_masuk
-        '
-        Me.dt_barang_masuk.AllowUserToOrderColumns = True
-        Me.dt_barang_masuk.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_barang_masuk.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dt_barang_masuk.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dt_barang_masuk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dt_barang_masuk.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nama_jenis_maintenance, Me.harga})
-        Me.dt_barang_masuk.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.dt_barang_masuk.Location = New System.Drawing.Point(0, 264)
-        Me.dt_barang_masuk.Margin = New System.Windows.Forms.Padding(2)
-        Me.dt_barang_masuk.Name = "dt_barang_masuk"
-        Me.dt_barang_masuk.RowHeadersWidth = 51
-        Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1000, 119)
-        Me.dt_barang_masuk.TabIndex = 15
-        '
         'btn_invoice
         '
         Me.btn_invoice.Location = New System.Drawing.Point(884, 664)
@@ -461,11 +429,11 @@ Partial Class transaksi_maintenance
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.harga_maintance)
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.Label21)
         Me.Panel2.Controls.Add(Me.txt_pt)
-        Me.Panel2.Controls.Add(Me.btncari)
-        Me.Panel2.Controls.Add(Me.TextBox1)
-        Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.txt_kdpos_ship)
         Me.Panel2.Controls.Add(Me.txt_kota_ship)
         Me.Panel2.Controls.Add(Me.txt_alamat_ship)
@@ -474,7 +442,6 @@ Partial Class transaksi_maintenance
         Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.Label15)
         Me.Panel2.Controls.Add(Me.Label16)
-        Me.Panel2.Controls.Add(Me.btn_tambah)
         Me.Panel2.Controls.Add(Me.dt_barang_keluar_fix)
         Me.Panel2.Controls.Add(Me.txt_kdpos)
         Me.Panel2.Controls.Add(Me.Label10)
@@ -486,7 +453,6 @@ Partial Class transaksi_maintenance
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.date_tgl_keluar)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.dt_barang_masuk)
         Me.Panel2.Controls.Add(Me.cmb_client)
         Me.Panel2.Controls.Add(Me.cmb_jenis_barang)
         Me.Panel2.Controls.Add(Me.Label5)
@@ -494,8 +460,42 @@ Partial Class transaksi_maintenance
         Me.Panel2.Location = New System.Drawing.Point(0, 78)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1033, 563)
+        Me.Panel2.Size = New System.Drawing.Size(1137, 563)
         Me.Panel2.TabIndex = 121
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(35, 95)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(89, 13)
+        Me.Label3.TabIndex = 78
+        Me.Label3.Text = "Harga Maintance"
+        '
+        'harga_maintance
+        '
+        Me.harga_maintance.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.harga_maintance.Location = New System.Drawing.Point(157, 92)
+        Me.harga_maintance.Margin = New System.Windows.Forms.Padding(2)
+        Me.harga_maintance.Name = "harga_maintance"
+        Me.harga_maintance.Size = New System.Drawing.Size(178, 20)
+        Me.harga_maintance.TabIndex = 77
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Location = New System.Drawing.Point(667, 129)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(178, 26)
+        Me.Button1.TabIndex = 76
+        Me.Button1.Text = "Tambah"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'txt_pt
         '
@@ -503,34 +503,6 @@ Partial Class transaksi_maintenance
         Me.txt_pt.Name = "txt_pt"
         Me.txt_pt.Size = New System.Drawing.Size(178, 20)
         Me.txt_pt.TabIndex = 74
-        '
-        'btncari
-        '
-        Me.btncari.Location = New System.Drawing.Point(631, 226)
-        Me.btncari.Name = "btncari"
-        Me.btncari.Size = New System.Drawing.Size(39, 23)
-        Me.btncari.TabIndex = 11
-        Me.btncari.Text = "Cari"
-        Me.btncari.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(453, 228)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(178, 20)
-        Me.TextBox1.TabIndex = 10
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(340, 224)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(73, 26)
-        Me.Label4.TabIndex = 73
-        Me.Label4.Text = "Cari Barang/" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Serial Number"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'txt_kdpos_ship
         '
@@ -616,44 +588,72 @@ Partial Class transaksi_maintenance
         Me.Label16.TabIndex = 65
         Me.Label16.Text = "Ship To Alamat Transaksi"
         '
-        'btn_tambah
-        '
-        Me.btn_tambah.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_tambah.FlatAppearance.BorderSize = 0
-        Me.btn_tambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_tambah.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_tambah.Location = New System.Drawing.Point(27, 390)
-        Me.btn_tambah.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_tambah.Name = "btn_tambah"
-        Me.btn_tambah.Size = New System.Drawing.Size(178, 26)
-        Me.btn_tambah.TabIndex = 16
-        Me.btn_tambah.Text = "Tambah"
-        Me.btn_tambah.UseVisualStyleBackColor = False
-        '
         'dt_barang_keluar_fix
         '
         Me.dt_barang_keluar_fix.AllowUserToOrderColumns = True
         Me.dt_barang_keluar_fix.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_barang_keluar_fix.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dt_barang_keluar_fix.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dt_barang_keluar_fix.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dt_barang_keluar_fix.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_barang_keluar_fix.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nama_jenis_maintenance2, Me.harga2, Me.periode_maintenance, Me.maintenance_type, Me.maintenance_exp})
         Me.dt_barang_keluar_fix.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.dt_barang_keluar_fix.Location = New System.Drawing.Point(0, 444)
+        Me.dt_barang_keluar_fix.Location = New System.Drawing.Point(0, 285)
         Me.dt_barang_keluar_fix.Margin = New System.Windows.Forms.Padding(2)
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1000, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1104, 119)
         Me.dt_barang_keluar_fix.TabIndex = 17
+        '
+        'nama_jenis_maintenance2
+        '
+        Me.nama_jenis_maintenance2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.nama_jenis_maintenance2.Frozen = True
+        Me.nama_jenis_maintenance2.HeaderText = "Jenis Maintenance"
+        Me.nama_jenis_maintenance2.MinimumWidth = 125
+        Me.nama_jenis_maintenance2.Name = "nama_jenis_maintenance2"
+        Me.nama_jenis_maintenance2.Width = 125
+        '
+        'harga2
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Format = "N2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.harga2.DefaultCellStyle = DataGridViewCellStyle2
+        Me.harga2.HeaderText = "Harga Maintance"
+        Me.harga2.MinimumWidth = 125
+        Me.harga2.Name = "harga2"
+        Me.harga2.Width = 125
+        '
+        'periode_maintenance
+        '
+        Me.periode_maintenance.HeaderText = "Periode Maintenance"
+        Me.periode_maintenance.MinimumWidth = 125
+        Me.periode_maintenance.Name = "periode_maintenance"
+        Me.periode_maintenance.Width = 125
+        '
+        'maintenance_type
+        '
+        Me.maintenance_type.HeaderText = "Maintenance Type"
+        Me.maintenance_type.Items.AddRange(New Object() {"Hari", "Bulan", "Tahun"})
+        Me.maintenance_type.MinimumWidth = 125
+        Me.maintenance_type.Name = "maintenance_type"
+        Me.maintenance_type.Width = 125
+        '
+        'maintenance_exp
+        '
+        Me.maintenance_exp.HeaderText = "Maintenance Exp"
+        Me.maintenance_exp.MinimumWidth = 125
+        Me.maintenance_exp.Name = "maintenance_exp"
+        Me.maintenance_exp.Width = 125
         '
         'txt_kdpos
         '
@@ -716,71 +716,12 @@ Partial Class transaksi_maintenance
         Me.Label7.TabIndex = 49
         Me.Label7.Text = "Alamat"
         '
-        'nama_jenis_maintenance
-        '
-        Me.nama_jenis_maintenance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nama_jenis_maintenance.HeaderText = "Jenis Maintenance"
-        Me.nama_jenis_maintenance.MinimumWidth = 125
-        Me.nama_jenis_maintenance.Name = "nama_jenis_maintenance"
-        '
-        'harga
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "N2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.harga.DefaultCellStyle = DataGridViewCellStyle2
-        Me.harga.HeaderText = "Harga Maintenance"
-        Me.harga.MinimumWidth = 125
-        Me.harga.Name = "harga"
-        Me.harga.Width = 125
-        '
-        'nama_jenis_maintenance2
-        '
-        Me.nama_jenis_maintenance2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.nama_jenis_maintenance2.Frozen = True
-        Me.nama_jenis_maintenance2.HeaderText = "Jenis Maintenance"
-        Me.nama_jenis_maintenance2.MinimumWidth = 125
-        Me.nama_jenis_maintenance2.Name = "nama_jenis_maintenance2"
-        Me.nama_jenis_maintenance2.Width = 125
-        '
-        'harga2
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "N2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.harga2.DefaultCellStyle = DataGridViewCellStyle4
-        Me.harga2.HeaderText = "Harga Rental"
-        Me.harga2.MinimumWidth = 125
-        Me.harga2.Name = "harga2"
-        Me.harga2.Width = 125
-        '
-        'periode_maintenance
-        '
-        Me.periode_maintenance.HeaderText = "Periode Maintenance"
-        Me.periode_maintenance.MinimumWidth = 125
-        Me.periode_maintenance.Name = "periode_maintenance"
-        Me.periode_maintenance.Width = 125
-        '
-        'maintenance_type
-        '
-        Me.maintenance_type.HeaderText = "Maintenance Type"
-        Me.maintenance_type.Items.AddRange(New Object() {"Hari", "Bulan", "Tahun"})
-        Me.maintenance_type.MinimumWidth = 125
-        Me.maintenance_type.Name = "maintenance_type"
-        Me.maintenance_type.Width = 125
-        '
-        'maintenance_exp
-        '
-        Me.maintenance_exp.HeaderText = "Maintenance Exp"
-        Me.maintenance_exp.MinimumWidth = 125
-        Me.maintenance_exp.Name = "maintenance_exp"
-        Me.maintenance_exp.Width = 125
-        '
         'transaksi_maintenance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1028, 665)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.txt_diskon)
         Me.Controls.Add(Me.Label13)
@@ -806,7 +747,6 @@ Partial Class transaksi_maintenance
         Me.Text = "transaksi_maintenance"
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).EndInit()
@@ -839,9 +779,6 @@ Partial Class transaksi_maintenance
     Friend WithEvents Label2 As Label
     Friend WithEvents txt_kd_transaksi As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents dt_barang_masuk As DataGridView
-    Friend WithEvents nama_jenis_maintenance As DataGridViewTextBoxColumn
-    Friend WithEvents harga As DataGridViewTextBoxColumn
     Friend WithEvents btn_invoice As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents date_tgl_keluar As DateTimePicker
@@ -852,9 +789,6 @@ Partial Class transaksi_maintenance
     Friend WithEvents btn_simpan As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents txt_pt As TextBox
-    Friend WithEvents btncari As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents txt_kdpos_ship As TextBox
     Friend WithEvents txt_kota_ship As TextBox
     Friend WithEvents txt_alamat_ship As TextBox
@@ -863,17 +797,19 @@ Partial Class transaksi_maintenance
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
-    Friend WithEvents btn_tambah As Button
     Friend WithEvents dt_barang_keluar_fix As DataGridView
-    Friend WithEvents nama_jenis_maintenance2 As DataGridViewTextBoxColumn
-    Friend WithEvents harga2 As DataGridViewTextBoxColumn
-    Friend WithEvents periode_maintenance As DataGridViewTextBoxColumn
-    Friend WithEvents maintenance_type As DataGridViewComboBoxColumn
-    Friend WithEvents maintenance_exp As DataGridViewTextBoxColumn
     Friend WithEvents txt_kdpos As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents txt_kota As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents txt_alamat As TextBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents harga_maintance As TextBox
+    Friend WithEvents nama_jenis_maintenance2 As DataGridViewTextBoxColumn
+    Friend WithEvents harga2 As DataGridViewTextBoxColumn
+    Friend WithEvents periode_maintenance As DataGridViewTextBoxColumn
+    Friend WithEvents maintenance_type As DataGridViewComboBoxColumn
+    Friend WithEvents maintenance_exp As DataGridViewTextBoxColumn
 End Class

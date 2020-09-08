@@ -55,13 +55,15 @@ Partial Class MenuUtama
         Me.btn_master_status = New System.Windows.Forms.ToolStripMenuItem()
         Me.MasterLokasiToolStripMenuIbtn_master_lokasi = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_master_detail = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_master_alasan = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MasterJenisMaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MasterUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_master_data_user = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_master_ubahprofil = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.p_logo = New System.Windows.Forms.PictureBox()
-        Me.btn_master_alasan = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.p_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,7 +98,7 @@ Partial Class MenuUtama
         '
         'BarangKeluarToolStripMenuItem
         '
-        Me.BarangKeluarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_penjualan, Me.btn_rental, Me.btn_repair, Me.ExtendRentalToolStripMenuItem, Me.ReplacementBarangToolStripMenuItem})
+        Me.BarangKeluarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_penjualan, Me.btn_rental, Me.btn_repair, Me.ExtendRentalToolStripMenuItem, Me.ReplacementBarangToolStripMenuItem, Me.MaintenanceToolStripMenuItem})
         Me.BarangKeluarToolStripMenuItem.Name = "BarangKeluarToolStripMenuItem"
         Me.BarangKeluarToolStripMenuItem.Size = New System.Drawing.Size(180, 55)
         Me.BarangKeluarToolStripMenuItem.Text = "Barang Keluar"
@@ -243,7 +245,7 @@ Partial Class MenuUtama
         '
         'MasterDataToolStripMenuItem
         '
-        Me.MasterDataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_master_jenis, Me.btn_master_tipe, Me.btn_master_toko, Me.btn_master_client, Me.btn_master_kondisi, Me.btn_master_status, Me.MasterLokasiToolStripMenuIbtn_master_lokasi, Me.btn_master_detail, Me.btn_master_alasan})
+        Me.MasterDataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_master_jenis, Me.btn_master_tipe, Me.btn_master_toko, Me.btn_master_client, Me.btn_master_kondisi, Me.btn_master_status, Me.MasterLokasiToolStripMenuIbtn_master_lokasi, Me.btn_master_detail, Me.btn_master_alasan, Me.MasterJenisMaintenanceToolStripMenuItem})
         Me.MasterDataToolStripMenuItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MasterDataToolStripMenuItem.Name = "MasterDataToolStripMenuItem"
         Me.MasterDataToolStripMenuItem.Size = New System.Drawing.Size(155, 55)
@@ -253,57 +255,72 @@ Partial Class MenuUtama
         '
         Me.btn_master_jenis.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_master_jenis.Name = "btn_master_jenis"
-        Me.btn_master_jenis.Size = New System.Drawing.Size(259, 28)
+        Me.btn_master_jenis.Size = New System.Drawing.Size(294, 28)
         Me.btn_master_jenis.Text = "Master Jenis Barang"
         '
         'btn_master_tipe
         '
         Me.btn_master_tipe.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_master_tipe.Name = "btn_master_tipe"
-        Me.btn_master_tipe.Size = New System.Drawing.Size(259, 28)
+        Me.btn_master_tipe.Size = New System.Drawing.Size(294, 28)
         Me.btn_master_tipe.Text = "Master Tipe Barang"
         '
         'btn_master_toko
         '
         Me.btn_master_toko.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_master_toko.Name = "btn_master_toko"
-        Me.btn_master_toko.Size = New System.Drawing.Size(259, 28)
+        Me.btn_master_toko.Size = New System.Drawing.Size(294, 28)
         Me.btn_master_toko.Text = "Master Toko"
         '
         'btn_master_client
         '
         Me.btn_master_client.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_master_client.Name = "btn_master_client"
-        Me.btn_master_client.Size = New System.Drawing.Size(259, 28)
+        Me.btn_master_client.Size = New System.Drawing.Size(294, 28)
         Me.btn_master_client.Text = "Master Client"
         '
         'btn_master_kondisi
         '
         Me.btn_master_kondisi.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_master_kondisi.Name = "btn_master_kondisi"
-        Me.btn_master_kondisi.Size = New System.Drawing.Size(259, 28)
+        Me.btn_master_kondisi.Size = New System.Drawing.Size(294, 28)
         Me.btn_master_kondisi.Text = "Master Kondisi"
         '
         'btn_master_status
         '
         Me.btn_master_status.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_master_status.Name = "btn_master_status"
-        Me.btn_master_status.Size = New System.Drawing.Size(259, 28)
+        Me.btn_master_status.Size = New System.Drawing.Size(294, 28)
         Me.btn_master_status.Text = "Master Status Barang"
         '
         'MasterLokasiToolStripMenuIbtn_master_lokasi
         '
         Me.MasterLokasiToolStripMenuIbtn_master_lokasi.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MasterLokasiToolStripMenuIbtn_master_lokasi.Name = "MasterLokasiToolStripMenuIbtn_master_lokasi"
-        Me.MasterLokasiToolStripMenuIbtn_master_lokasi.Size = New System.Drawing.Size(259, 28)
+        Me.MasterLokasiToolStripMenuIbtn_master_lokasi.Size = New System.Drawing.Size(294, 28)
         Me.MasterLokasiToolStripMenuIbtn_master_lokasi.Text = "Master Lokasi"
         '
         'btn_master_detail
         '
         Me.btn_master_detail.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_master_detail.Name = "btn_master_detail"
-        Me.btn_master_detail.Size = New System.Drawing.Size(259, 28)
+        Me.btn_master_detail.Size = New System.Drawing.Size(294, 28)
         Me.btn_master_detail.Text = "Master Detail Lokasi"
+        '
+        'btn_master_alasan
+        '
+        Me.btn_master_alasan.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_master_alasan.Name = "btn_master_alasan"
+        Me.btn_master_alasan.Size = New System.Drawing.Size(294, 28)
+        Me.btn_master_alasan.Text = "Master Alasan"
+        Me.btn_master_alasan.Visible = False
+        '
+        'MasterJenisMaintenanceToolStripMenuItem
+        '
+        Me.MasterJenisMaintenanceToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.MasterJenisMaintenanceToolStripMenuItem.Name = "MasterJenisMaintenanceToolStripMenuItem"
+        Me.MasterJenisMaintenanceToolStripMenuItem.Size = New System.Drawing.Size(294, 28)
+        Me.MasterJenisMaintenanceToolStripMenuItem.Text = "Master Jenis Maintenance"
         '
         'MasterUserToolStripMenuItem
         '
@@ -357,13 +374,12 @@ Partial Class MenuUtama
         Me.p_logo.TabIndex = 0
         Me.p_logo.TabStop = False
         '
-        'btn_master_alasan
+        'MaintenanceToolStripMenuItem
         '
-        Me.btn_master_alasan.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_master_alasan.Name = "btn_master_alasan"
-        Me.btn_master_alasan.Size = New System.Drawing.Size(259, 28)
-        Me.btn_master_alasan.Text = "Master Alasan"
-        Me.btn_master_alasan.Visible = False
+        Me.MaintenanceToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem"
+        Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(255, 28)
+        Me.MaintenanceToolStripMenuItem.Text = "Maintenance"
         '
         'MenuUtama
         '
@@ -425,4 +441,6 @@ Partial Class MenuUtama
     Friend WithEvents CetakKwitansiToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CetakTandaTerimaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btn_master_alasan As ToolStripMenuItem
+    Friend WithEvents MasterJenisMaintenanceToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MaintenanceToolStripMenuItem As ToolStripMenuItem
 End Class

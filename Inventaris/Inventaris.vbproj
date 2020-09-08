@@ -297,6 +297,12 @@
     <Compile Include="MasterDetailLokasi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MasterJenisMaintenance.Designer.vb">
+      <DependentUpon>MasterJenisMaintenance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MasterJenisMaintenance.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MasterKondisi.Designer.vb">
       <DependentUpon>MasterKondisi.vb</DependentUpon>
     </Compile>
@@ -381,6 +387,12 @@
     <Compile Include="Repair.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="transaksi_maintenance.Designer.vb">
+      <DependentUpon>transaksi_maintenance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="transaksi_maintenance.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="_db_inventory_iasaDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -462,6 +474,9 @@
     <EmbeddedResource Include="MasterDetailLokasi.resx">
       <DependentUpon>MasterDetailLokasi.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MasterJenisMaintenance.resx">
+      <DependentUpon>MasterJenisMaintenance.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MasterKondisi.resx">
       <DependentUpon>MasterKondisi.vb</DependentUpon>
     </EmbeddedResource>
@@ -507,6 +522,9 @@
     <EmbeddedResource Include="Report5_tanda_terima.rdlc" />
     <EmbeddedResource Include="Report6_kwitansi_barang.rdlc" />
     <EmbeddedResource Include="Report_Penjualan.rdlc" />
+    <EmbeddedResource Include="transaksi_maintenance.resx">
+      <DependentUpon>transaksi_maintenance.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSet1.xsc">
