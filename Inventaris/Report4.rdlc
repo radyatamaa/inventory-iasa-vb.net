@@ -18,10 +18,10 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.27083in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.11458in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
@@ -65,10 +65,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>No</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -95,11 +99,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id barang</Value>
-                              <Style />
+                              <Value>Id Barang</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox7</rd:DefaultName>
@@ -126,11 +134,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama jenis</Value>
-                              <Style />
+                              <Value>Nama Jenis</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox11</rd:DefaultName>
@@ -157,11 +169,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama tipe</Value>
-                              <Style />
+                              <Value>Nama Tipe</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -188,11 +204,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>serial number</Value>
-                              <Style />
+                              <Value>Serial Number</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -219,11 +239,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama kondisi</Value>
-                              <Style />
+                              <Value>Nama Kondisi</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox19</rd:DefaultName>
@@ -250,11 +274,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama status</Value>
-                              <Style />
+                              <Value>Nama Status</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox21</rd:DefaultName>
@@ -281,11 +309,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>tested</Value>
-                              <Style />
+                              <Value>Tested</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox23</rd:DefaultName>
@@ -312,11 +344,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama lokasi</Value>
-                              <Style />
+                              <Value>Nama Lokasi</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox25</rd:DefaultName>
@@ -343,11 +379,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>detail lokasi</Value>
-                              <Style />
+                              <Value>Detail Lokasi</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox27</rd:DefaultName>
@@ -374,11 +414,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama toko</Value>
-                              <Style />
+                              <Value>Nama Toko</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox29</rd:DefaultName>
@@ -405,11 +449,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>harga beli</Value>
-                              <Style />
+                              <Value>Harga Beli</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox31</rd:DefaultName>
@@ -436,11 +484,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>harga jual</Value>
-                              <Style />
+                              <Value>Harga Jual</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox35</rd:DefaultName>
@@ -467,11 +519,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>licence</Value>
-                              <Style />
+                              <Value>Licence</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox33</rd:DefaultName>
@@ -498,11 +554,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ios</Value>
-                              <Style />
+                              <Value>Ios</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox37</rd:DefaultName>
@@ -1008,10 +1068,10 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet3</DataSetName>
+        <DataSetName>DataSet2_Stock</DataSetName>
         <Top>0.19667in</Top>
         <Height>0.5in</Height>
-        <Width>14.57292in</Width>
+        <Width>14.95834in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1020,9 +1080,13 @@
       </Tablix>
     </ReportItems>
     <Height>2in</Height>
-    <Style />
+    <Style>
+      <Border>
+        <Style>None</Style>
+      </Border>
+    </Style>
   </Body>
-  <Width>15in</Width>
+  <Width>14.95834in</Width>
   <Page>
     <PageHeader>
       <Height>1in</Height>
@@ -1036,7 +1100,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Laporan Stock Barang</Value>
+                  <Value>Hasil Laporan Stock Barang</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                   </Style>
@@ -1066,10 +1130,12 @@
         </Border>
       </Style>
     </PageHeader>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>17in</PageWidth>
+    <LeftMargin>0.5in</LeftMargin>
+    <RightMargin>0.5in</RightMargin>
+    <TopMargin>0.5in</TopMargin>
+    <BottomMargin>0.5in</BottomMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -1090,7 +1156,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet3">
+    <DataSet Name="DataSet2_Stock">
       <Query>
         <DataSourceName>ID_db_inventory_iasaDataSet1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1098,7 +1164,7 @@
       <Fields>
         <Field Name="id_barang">
           <DataField>id_barang</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="nama_barang">
           <DataField>nama_barang</DataField>
@@ -1130,7 +1196,7 @@
         </Field>
         <Field Name="tested">
           <DataField>tested</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="nama_lokasi">
           <DataField>nama_lokasi</DataField>
@@ -1146,7 +1212,7 @@
         </Field>
         <Field Name="harga_beli">
           <DataField>harga_beli</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="harga_jual">
           <DataField>harga_jual</DataField>
@@ -1162,16 +1228,16 @@
         </Field>
         <Field Name="stock">
           <DataField>stock</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>_db_inventory_iasaDataSet2</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\_db_inventory_iasaDataSet2.xsd</rd:SchemaPath>
-        <rd:TableName>View_StockBarang</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>View_StockBarangTableAdapter</rd:TableAdapterName>
+        <rd:DataSetName>DataSet2_Stock</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\DataSet2_Stock.xsd</rd:SchemaPath>
+        <rd:TableName>DataStock</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

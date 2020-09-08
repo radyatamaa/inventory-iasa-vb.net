@@ -231,6 +231,7 @@ Public Class MenuUtama
     End Sub
 
     Private Sub btn_r_barang_masuk_Click(sender As Object, e As EventArgs) Handles ccc.Click
+        'Laporan_Barang_Masuk.user
         Laporan_Barang_Masuk.Show()
     End Sub
 
@@ -256,6 +257,7 @@ Public Class MenuUtama
     End Sub
 
     Private Sub btn_r_stock_barang_Click(sender As Object, e As EventArgs) Handles btn_r_stock_barang.Click
+        Laporan_Stock_Barang.UserInfo = MenuStrip1.Tag
         Laporan_Stock_Barang.Show()
     End Sub
 

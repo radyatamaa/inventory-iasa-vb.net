@@ -23,28 +23,38 @@ Partial Class Laporan_Stock_Barang
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.View_StockBarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me._db_inventory_iasaDataSet2 = New Inventaris._db_inventory_iasaDataSet2()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me._db_inventory_iasaDataSet = New Inventaris._db_inventory_iasaDataSet()
         Me.View_BARANG_MASUK_DUMMYBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.View_BARANG_MASUK_DUMMYTableAdapter = New Inventaris._db_inventory_iasaDataSetTableAdapters.View_BARANG_MASUK_DUMMYTableAdapter()
-        Me._db_inventory_iasaDataSet2 = New Inventaris._db_inventory_iasaDataSet2()
-        Me.View_StockBarangBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.View_StockBarangTableAdapter = New Inventaris._db_inventory_iasaDataSet2TableAdapters.View_StockBarangTableAdapter()
+        CType(Me.View_StockBarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me._db_inventory_iasaDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me._db_inventory_iasaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.View_BARANG_MASUK_DUMMYBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me._db_inventory_iasaDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.View_StockBarangBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'View_StockBarangBindingSource
+        '
+        Me.View_StockBarangBindingSource.DataMember = "View_StockBarang"
+        Me.View_StockBarangBindingSource.DataSource = Me._db_inventory_iasaDataSet2
+        '
+        '_db_inventory_iasaDataSet2
+        '
+        Me._db_inventory_iasaDataSet2.DataSetName = "_db_inventory_iasaDataSet2"
+        Me._db_inventory_iasaDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
         Me.ReportViewer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        ReportDataSource2.Name = "DataSet3"
-        ReportDataSource2.Value = Me.View_StockBarangBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "DataSet3"
+        ReportDataSource1.Value = Me.View_StockBarangBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "Inventaris.Report4.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(1, 1)
         Me.ReportViewer1.Name = "ReportViewer1"
@@ -66,16 +76,6 @@ Partial Class Laporan_Stock_Barang
         '
         Me.View_BARANG_MASUK_DUMMYTableAdapter.ClearBeforeFill = True
         '
-        '_db_inventory_iasaDataSet2
-        '
-        Me._db_inventory_iasaDataSet2.DataSetName = "_db_inventory_iasaDataSet2"
-        Me._db_inventory_iasaDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'View_StockBarangBindingSource
-        '
-        Me.View_StockBarangBindingSource.DataMember = "View_StockBarang"
-        Me.View_StockBarangBindingSource.DataSource = Me._db_inventory_iasaDataSet2
-        '
         'View_StockBarangTableAdapter
         '
         Me.View_StockBarangTableAdapter.ClearBeforeFill = True
@@ -89,10 +89,10 @@ Partial Class Laporan_Stock_Barang
         Me.Name = "Laporan_Stock_Barang"
         Me.Text = "Laporan_Stock_Barang"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        CType(Me.View_StockBarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me._db_inventory_iasaDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me._db_inventory_iasaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.View_BARANG_MASUK_DUMMYBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me._db_inventory_iasaDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.View_StockBarangBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

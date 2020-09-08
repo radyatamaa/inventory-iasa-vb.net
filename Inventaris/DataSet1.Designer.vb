@@ -365,6 +365,14 @@ Partial Public Class DataSet1
         
         Private columnterbilang As Global.System.Data.DataColumn
         
+        Private columntgl_keluar As Global.System.Data.DataColumn
+        
+        Private columnperiode_rental As Global.System.Data.DataColumn
+        
+        Private columnrental_type As Global.System.Data.DataColumn
+        
+        Private columnrental_exp As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -729,6 +737,38 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property tgl_keluarColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntgl_keluar
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property periode_rentalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnperiode_rental
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property rental_typeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrental_type
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property rental_expColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrental_exp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -806,9 +846,13 @@ Partial Public Class DataSet1
                     ByVal id_toko As String,  _
                     ByVal company_name As String,  _
                     ByVal kd_client As String,  _
-                    ByVal terbilang As String) As DataInvoiceRow
+                    ByVal terbilang As String,  _
+                    ByVal tgl_keluar As String,  _
+                    ByVal periode_rental As String,  _
+                    ByVal rental_type As String,  _
+                    ByVal rental_exp As String) As DataInvoiceRow
             Dim rowDataInvoiceRow As DataInvoiceRow = CType(Me.NewRow,DataInvoiceRow)
-            Dim columnValuesArray() As Object = New Object() {ID_TRANSAKSI, kd_transaksi_keluar, qty, nama_jenis, nama_tipe, serial_number, nama_jenis_tipe, nama_barang, harga_jual, harga_total, diskon, harga_akhir, id_status_barang, nama_status, nama_client, alamat_pengiriman, kota_pengiriman, kdpos_pengiriman, tlp_client, nama_toko, alamat_toko, kota_toko, kdpos_toko, tlp_toko, nama_owner, norek_owner, tlp_owner, nama_jenis_tipe_serial, shipto_nama, shipto_alamat, shipto_kota, shipto_kdpos, persen_ppn, nominal_ppn, shipping_handling, subtotal, logo_toko, id_toko, company_name, kd_client, terbilang}
+            Dim columnValuesArray() As Object = New Object() {ID_TRANSAKSI, kd_transaksi_keluar, qty, nama_jenis, nama_tipe, serial_number, nama_jenis_tipe, nama_barang, harga_jual, harga_total, diskon, harga_akhir, id_status_barang, nama_status, nama_client, alamat_pengiriman, kota_pengiriman, kdpos_pengiriman, tlp_client, nama_toko, alamat_toko, kota_toko, kdpos_toko, tlp_toko, nama_owner, norek_owner, tlp_owner, nama_jenis_tipe_serial, shipto_nama, shipto_alamat, shipto_kota, shipto_kdpos, persen_ppn, nominal_ppn, shipping_handling, subtotal, logo_toko, id_toko, company_name, kd_client, terbilang, tgl_keluar, periode_rental, rental_type, rental_exp}
             rowDataInvoiceRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataInvoiceRow)
             Return rowDataInvoiceRow
@@ -872,6 +916,10 @@ Partial Public Class DataSet1
             Me.columncompany_name = MyBase.Columns("company_name")
             Me.columnkd_client = MyBase.Columns("kd_client")
             Me.columnterbilang = MyBase.Columns("terbilang")
+            Me.columntgl_keluar = MyBase.Columns("tgl_keluar")
+            Me.columnperiode_rental = MyBase.Columns("periode_rental")
+            Me.columnrental_type = MyBase.Columns("rental_type")
+            Me.columnrental_exp = MyBase.Columns("rental_exp")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -963,6 +1011,14 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnkd_client)
             Me.columnterbilang = New Global.System.Data.DataColumn("terbilang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnterbilang)
+            Me.columntgl_keluar = New Global.System.Data.DataColumn("tgl_keluar", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntgl_keluar)
+            Me.columnperiode_rental = New Global.System.Data.DataColumn("periode_rental", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnperiode_rental)
+            Me.columnrental_type = New Global.System.Data.DataColumn("rental_type", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrental_type)
+            Me.columnrental_exp = New Global.System.Data.DataColumn("rental_exp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrental_exp)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1724,6 +1780,66 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property tgl_keluar() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.tgl_keluarColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tgl_keluar' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.tgl_keluarColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property periode_rental() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.periode_rentalColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'periode_rental' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.periode_rentalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property rental_type() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.rental_typeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rental_type' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.rental_typeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property rental_exp() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataInvoice.rental_expColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rental_exp' in table 'DataInvoice' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataInvoice.rental_expColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsID_TRANSAKSINull() As Boolean
             Return Me.IsNull(Me.tableDataInvoice.ID_TRANSAKSIColumn)
         End Function
@@ -2212,6 +2328,54 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetterbilangNull()
             Me(Me.tableDataInvoice.terbilangColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Istgl_keluarNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.tgl_keluarColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Settgl_keluarNull()
+            Me(Me.tableDataInvoice.tgl_keluarColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isperiode_rentalNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.periode_rentalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setperiode_rentalNull()
+            Me(Me.tableDataInvoice.periode_rentalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isrental_typeNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.rental_typeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setrental_typeNull()
+            Me(Me.tableDataInvoice.rental_typeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isrental_expNull() As Boolean
+            Return Me.IsNull(Me.tableDataInvoice.rental_expColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setrental_expNull()
+            Me(Me.tableDataInvoice.rental_expColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
