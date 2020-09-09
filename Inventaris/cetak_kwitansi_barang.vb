@@ -189,15 +189,16 @@ Public Class cetak_kwitansi_barang
         End While
         Return result
     End Function
-    Public Function GetTransaksi(startDate As DateTime, endDate As DateTime)
+    Public Function GetTransaksi(idToko As String, startDate As DateTime, endDate As DateTime)
         dt_transaksi.Rows.Clear()
         listTransaksi.Clear()
         Dim result As New List(Of Object)
-        Dim query As String = "SELECT t.*,tc.nama_client FROM tbl_transaksi t
+        Dim query As String = "SELECT t.*,tc.nama_client, a.id_toko FROM tbl_transaksi t
                                     INNER JOIN tbl_client tc ON t.id_client = tc.id_client
+									LEFT OUTER JOIN (select kd_transaksi_keluar, max(id_toko) as id_toko from tbl_barang_keluar group by kd_transaksi_keluar) a on t.kd_transaksi_keluar = a.kd_transaksi_keluar
                                     WHERE t.is_active = 1 and 
                                     (CAST(t.created_date as DATE) BETWEEN CAST('" + startDate.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATE) AND 
-                                    CAST('" + endDate.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATE))"
+                                    CAST('" + endDate.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATE)) AND a.id_toko =" + idToko.ToString
 
 
         cmd.CommandText = query
@@ -592,7 +593,7 @@ Public Class cetak_kwitansi_barang
     End Sub
 
     Private Sub btn_tampil_list_Click(sender As Object, e As EventArgs) Handles btn_tampil_list.Click
-        GetTransaksi(date_tgl_keluar1.Value, date_tgl_keluar2.Value)
+        GetTransaksi(UserInfo.IdToko, date_tgl_keluar1.Value, date_tgl_keluar2.Value)
     End Sub
     Private Sub dt_transaksi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_transaksi.CellClick
         kdTransaksis.Clear()
