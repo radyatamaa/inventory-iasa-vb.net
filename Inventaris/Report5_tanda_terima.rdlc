@@ -433,14 +433,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="nama_jenis_tipe">
+                        <Textbox Name="nama_tipe">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!nama_jenis_tipe.Value</Value>
+                                  <Value>=Fields!nama_tipe.Value</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -450,7 +450,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>nama_jenis_tipe</rd:DefaultName>
+                          <rd:DefaultName>nama_tipe</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>

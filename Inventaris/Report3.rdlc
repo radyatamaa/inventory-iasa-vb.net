@@ -1587,7 +1587,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(Fields!id_status_barang.Value = 4,"TOTAL PRICE","TOTAL FEES PER UNIT")</Value>
+                                  <Value>=IIF(Fields!id_status_barang.Value = 4,"TOTAL PRICE","TOTAL FEES")</Value>
                                   <Style>
                                     <FontFamily>Tahoma</FontFamily>
                                     <FontSize>8pt</FontSize>

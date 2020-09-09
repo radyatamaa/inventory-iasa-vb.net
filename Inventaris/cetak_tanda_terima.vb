@@ -238,18 +238,18 @@ Public Class cetak_tanda_terima
             .logo_toko = reader("logo_toko"),
             .id_toko = reader("id_toko")
                 }
-                Dim checkBarang = listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
+                Dim checkBarang = listTransaksi.Where(Function(x) x.nama_tipe = barang.nama_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
                 If checkBarang.Count = 0 Then
-                    barang.nama_jenis_tipe_serial = barang.nama_jenis_tipe + vbCrLf + "SN: " + barang.serial_number
+                    barang.nama_jenis_tipe_serial = barang.nama_tipe + vbCrLf + "SN: " + barang.serial_number
                     barang.qty = 1
                     listTransaksi.Add(barang)
                     'listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe).FirstOrDefault().nama_jenis_tipe = checkBarang.FirstOrDefault().nama_jenis_tipe + " SN: " + barang.serial_number
                 Else
-                    listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().qty = Val(checkBarang.FirstOrDefault().qty) + 1
+                    listTransaksi.Where(Function(x) x.nama_tipe = barang.nama_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().qty = Val(checkBarang.FirstOrDefault().qty) + 1
 
-                    listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().serial_number = checkBarang.FirstOrDefault().serial_number + "," + barang.serial_number
+                    listTransaksi.Where(Function(x) x.nama_tipe = barang.nama_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().serial_number = checkBarang.FirstOrDefault().serial_number + "," + barang.serial_number
 
-                    listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().nama_jenis_tipe_serial = checkBarang.FirstOrDefault().nama_jenis_tipe_serial + "," + barang.serial_number
+                    listTransaksi.Where(Function(x) x.nama_tipe = barang.nama_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().nama_jenis_tipe_serial = checkBarang.FirstOrDefault().nama_jenis_tipe_serial + "," + barang.serial_number
                 End If
 
                 'Result.Add(barang)
