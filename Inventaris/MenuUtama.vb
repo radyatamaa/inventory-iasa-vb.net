@@ -253,6 +253,7 @@ Public Class MenuUtama
     End Sub
 
     Private Sub CetakInvoiceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CetakInvoiceToolStripMenuItem.Click
+        invoice_cetak.UserInfo = Me.MenuStrip1.Tag
         invoice_cetak.Show()
     End Sub
 
@@ -276,10 +277,12 @@ Public Class MenuUtama
     End Sub
 
     Private Sub CetakTandaTerimaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CetakTandaTerimaToolStripMenuItem.Click
+        cetak_tanda_terima.UserInfo = Me.MenuStrip1.Tag
         cetak_tanda_terima.Show()
     End Sub
 
     Private Sub CetakKwitansiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CetakKwitansiToolStripMenuItem.Click
+        cetak_kwitansi_barang.UserInfo = Me.MenuStrip1.Tag
         cetak_kwitansi_barang.Show()
     End Sub
 
