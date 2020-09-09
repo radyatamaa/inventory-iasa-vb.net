@@ -166,7 +166,7 @@ Partial Class BarangKeluar
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1266, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1331, 119)
         Me.dt_barang_masuk.TabIndex = 15
         '
         'jenis_barang
@@ -358,7 +358,7 @@ Partial Class BarangKeluar
         Me.Panel2.Location = New System.Drawing.Point(0, 77)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(3612, 506)
+        Me.Panel2.Size = New System.Drawing.Size(3677, 506)
         Me.Panel2.TabIndex = 6
         '
         'Label21
@@ -519,7 +519,7 @@ Partial Class BarangKeluar
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1266, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1331, 119)
         Me.dt_barang_keluar_fix.TabIndex = 17
         '
         'jenis_barang2

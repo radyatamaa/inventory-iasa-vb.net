@@ -715,4 +715,10 @@ Public Class transaksi_maintenance
     Private Sub btn_tanda_terima_Click(sender As Object, e As EventArgs) Handles btn_tanda_terima.Click
         cetak_tanda_terima.Show()
     End Sub
+
+    Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
+        MenuUtama.Show()
+        Me.Close()
+    End Sub
 End Class

@@ -547,7 +547,7 @@ Public Class BarangKeluar
         Me.txt_harga_akhir.Text = 0
         Me.txt_diskon.Text = 0
         MenuUtama.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub BarangKeluar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
