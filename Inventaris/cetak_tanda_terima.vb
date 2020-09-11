@@ -32,15 +32,16 @@ Public Class cetak_tanda_terima
         Me.ReportViewer1.RefreshReport()
         LoadReport()
     End Sub
-    Public Function GetTransaksi(startDate As DateTime, endDate As DateTime)
+    Public Function GetTransaksi(idToko As String, startDate As DateTime, endDate As DateTime)
         dt_transaksi.Rows.Clear()
         listTransaksi.Clear()
         Dim result As New List(Of Object)
-        Dim query As String = "SELECT t.*,tc.nama_client FROM tbl_transaksi t
+        Dim query As String = "SELECT t.*,tc.nama_client, a.id_toko FROM tbl_transaksi t
                                     INNER JOIN tbl_client tc ON t.id_client = tc.id_client
+									LEFT OUTER JOIN (select kd_transaksi_keluar, max(id_toko) as id_toko from tbl_barang_keluar group by kd_transaksi_keluar) a on t.kd_transaksi_keluar = a.kd_transaksi_keluar
                                     WHERE t.is_active = 1 and 
                                     (CAST(t.created_date as DATE) BETWEEN CAST('" + startDate.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATE) AND 
-                                    CAST('" + endDate.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATE))"
+                                    CAST('" + endDate.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATE)) AND a.id_toko =" + idToko.ToString
 
 
         cmd.CommandText = query
@@ -238,18 +239,18 @@ Public Class cetak_tanda_terima
             .logo_toko = reader("logo_toko"),
             .id_toko = reader("id_toko")
                 }
-                Dim checkBarang = listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
+                Dim checkBarang = listTransaksi.Where(Function(x) x.nama_tipe = barang.nama_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
                 If checkBarang.Count = 0 Then
-                    barang.nama_jenis_tipe_serial = barang.nama_jenis_tipe + vbCrLf + "SN: " + barang.serial_number
+                    barang.nama_jenis_tipe_serial = barang.nama_tipe + vbCrLf + "SN: " + barang.serial_number
                     barang.qty = 1
                     listTransaksi.Add(barang)
                     'listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe).FirstOrDefault().nama_jenis_tipe = checkBarang.FirstOrDefault().nama_jenis_tipe + " SN: " + barang.serial_number
                 Else
-                    listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().qty = Val(checkBarang.FirstOrDefault().qty) + 1
+                    listTransaksi.Where(Function(x) x.nama_tipe = barang.nama_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().qty = Val(checkBarang.FirstOrDefault().qty) + 1
 
-                    listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().serial_number = checkBarang.FirstOrDefault().serial_number + "," + barang.serial_number
+                    listTransaksi.Where(Function(x) x.nama_tipe = barang.nama_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().serial_number = checkBarang.FirstOrDefault().serial_number + "," + barang.serial_number
 
-                    listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().nama_jenis_tipe_serial = checkBarang.FirstOrDefault().nama_jenis_tipe_serial + "," + barang.serial_number
+                    listTransaksi.Where(Function(x) x.nama_tipe = barang.nama_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).FirstOrDefault().nama_jenis_tipe_serial = checkBarang.FirstOrDefault().nama_jenis_tipe_serial + "," + barang.serial_number
                 End If
 
                 'Result.Add(barang)
@@ -329,7 +330,7 @@ Public Class cetak_tanda_terima
     End Sub
 
     Private Sub btn_tampil_list_Click(sender As Object, e As EventArgs) Handles btn_tampil_list.Click
-        GetTransaksi(date_tgl_keluar1.Value, date_tgl_keluar2.Value)
+        GetTransaksi(UserInfo.IdToko, date_tgl_keluar1.Value, date_tgl_keluar2.Value)
     End Sub
     Private Sub dt_transaksi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_transaksi.CellClick
         kdTransaksis.Clear()

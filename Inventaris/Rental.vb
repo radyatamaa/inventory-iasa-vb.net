@@ -456,7 +456,7 @@ Public Class Rental
             Dim listClient As List(Of Object) = GetClient()
             If listClient.Count > 0 Then
                 cmb_client.DataSource = listClient
-                cmb_client.DisplayMember = "nama_client"
+                cmb_client.DisplayMember = "kd_client"
                 cmb_client.ValueMember = "id_client"
             End If
 
