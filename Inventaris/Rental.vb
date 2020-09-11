@@ -780,7 +780,18 @@ Public Class Rental
             Dim subTotal = Val(Double.Parse(txt_harga_akhir.Text)) + Val(ppnNominal) + Val(Double.Parse(txt_shiphand.Text))
             Me.txt_subtotal.Text = subTotal.ToString("N2")
 
-            txt_diskon.Text = Double.Parse(txt_diskon.Text).ToString("N2")
+            'txt_diskon.Text = Double.Parse(txt_diskon.Text).ToString("N2")
+            If Len(txt_diskon.Text) > 0 Then
+                txt_diskon.Text = FormatNumber(CDbl(txt_diskon.Text), 0)
+                Dim x As Integer = txt_diskon.SelectionStart.ToString
+                If x = 0 Then
+                    txt_diskon.SelectionStart = Len(txt_diskon.Text)
+                    txt_diskon.SelectionLength = 0
+                Else
+                    txt_diskon.SelectionStart = x
+                    txt_diskon.SelectionLength = 0
+                End If
+            End If
         ElseIf txt_diskon.Text = "" Then
             Dim hargaakhir = Double.Parse(Me.txt_harga_total.Text)
             Me.txt_harga_akhir.Text = hargaakhir.ToString("N2")
@@ -1037,7 +1048,18 @@ Public Class Rental
         If System.Text.RegularExpressions.Regex.IsMatch(txt_shiphand.Text, "[  ^ 0-9]") Then
             Dim subTotal = Val(Double.Parse(txt_harga_akhir.Text)) + Val(ppnNominal) + Val(Double.Parse(txt_shiphand.Text))
             Me.txt_subtotal.Text = subTotal.ToString("N2")
-            txt_shiphand.Text = Double.Parse(txt_shiphand.Text).ToString("N2")
+            'txt_shiphand.Text = Double.Parse(txt_shiphand.Text).ToString("N2")
+            If Len(txt_shiphand.Text) > 0 Then
+                txt_shiphand.Text = FormatNumber(CDbl(txt_shiphand.Text), 0)
+                Dim x As Integer = txt_shiphand.SelectionStart.ToString
+                If x = 0 Then
+                    txt_shiphand.SelectionStart = Len(txt_shiphand.Text)
+                    txt_shiphand.SelectionLength = 0
+                Else
+                    txt_shiphand.SelectionStart = x
+                    txt_shiphand.SelectionLength = 0
+                End If
+            End If
         ElseIf txt_shiphand.Text = "" Then
             txt_shiphand.Text = 0
 
