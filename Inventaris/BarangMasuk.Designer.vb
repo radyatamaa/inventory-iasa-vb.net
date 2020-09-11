@@ -822,7 +822,7 @@ Partial Class BarangMasuk
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1011, 79)
+        Me.Panel1.Size = New System.Drawing.Size(1028, 79)
         Me.Panel1.TabIndex = 109
         '
         'pict_logo
@@ -830,7 +830,7 @@ Partial Class BarangMasuk
         Me.pict_logo.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
         Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pict_logo.Location = New System.Drawing.Point(886, 6)
+        Me.pict_logo.Location = New System.Drawing.Point(903, 6)
         Me.pict_logo.Margin = New System.Windows.Forms.Padding(2)
         Me.pict_logo.Name = "pict_logo"
         Me.pict_logo.Size = New System.Drawing.Size(116, 70)
@@ -845,7 +845,7 @@ Partial Class BarangMasuk
         Me.Label15.Location = New System.Drawing.Point(394, 11)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(237, 47)
+        Me.Label15.Size = New System.Drawing.Size(254, 47)
         Me.Label15.TabIndex = 50
         Me.Label15.Text = "Barang Masuk"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -855,7 +855,7 @@ Partial Class BarangMasuk
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.ClientSize = New System.Drawing.Size(1045, 609)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.hapus_data_barang_masuk)
         Me.Controls.Add(Me.Panel2)

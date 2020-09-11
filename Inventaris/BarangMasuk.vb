@@ -1082,17 +1082,32 @@ Public Class BarangMasuk
     End Sub
 
     Private Sub txt_harga_modal_TextChanged(sender As Object, e As EventArgs) Handles txt_harga_modal.TextChanged
-        If txt_harga_modal.Text <> "" Then
-            Dim hargaModal As Double = txt_harga_modal.Text
-            txt_harga_modal.Text = hargaModal.ToString("N2")
+        If Len(txt_harga_modal.Text) > 0 Then
+            txt_harga_modal.Text = FormatNumber(CDbl(txt_harga_modal.Text), 0)
+            Dim x As Integer = txt_harga_modal.SelectionStart.ToString
+            If x = 0 Then
+                txt_harga_modal.SelectionStart = Len(txt_harga_modal.Text)
+                txt_harga_modal.SelectionLength = 0
+            Else
+                txt_harga_modal.SelectionStart = x
+                txt_harga_modal.SelectionLength = 0
+            End If
         End If
     End Sub
 
     Private Sub txt_harga_barang_TextChanged(sender As Object, e As EventArgs) Handles txt_harga_barang.TextChanged
-        If txt_harga_barang.Text <> "" Then
-            Dim hargaBarang As Double = txt_harga_barang.Text
-            txt_harga_barang.Text = hargaBarang.ToString("N2")
+        If Len(txt_harga_barang.Text) > 0 Then
+            txt_harga_barang.Text = FormatNumber(CDbl(txt_harga_barang.Text), 0)
+            Dim x As Integer = txt_harga_barang.SelectionStart.ToString
+            If x = 0 Then
+                txt_harga_barang.SelectionStart = Len(txt_harga_barang.Text)
+                txt_harga_barang.SelectionLength = 0
+            Else
+                txt_harga_barang.SelectionStart = x
+                txt_harga_barang.SelectionLength = 0
+            End If
         End If
+
     End Sub
 
     Private Sub dt_barang_masuk_CellContextMenuStripNeeded(sender As Object, e As DataGridViewCellContextMenuStripNeededEventArgs) Handles dt_barang_masuk.CellContextMenuStripNeeded

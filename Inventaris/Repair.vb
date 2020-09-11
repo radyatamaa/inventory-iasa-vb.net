@@ -594,7 +594,18 @@ Public Class Repair
         If System.Text.RegularExpressions.Regex.IsMatch(txt_diskon.Text, "[  ^ 0-9]") Then
             Dim hargaAkhir = Val(Double.Parse(Me.txt_harga_total.Text)) - Val(Double.Parse(Me.txt_diskon.Text))
             Me.txt_harga_akhir.Text = hargaAkhir.ToString("N2")
-            txt_diskon.Text = Double.Parse(txt_diskon.Text)
+            'txt_diskon.Text = Double.Parse(txt_diskon.Text)
+            If Len(txt_diskon.Text) > 0 Then
+                txt_diskon.Text = FormatNumber(CDbl(txt_diskon.Text), 0)
+                Dim x As Integer = txt_diskon.SelectionStart.ToString
+                If x = 0 Then
+                    txt_diskon.SelectionStart = Len(txt_diskon.Text)
+                    txt_diskon.SelectionLength = 0
+                Else
+                    txt_diskon.SelectionStart = x
+                    txt_diskon.SelectionLength = 0
+                End If
+            End If
         ElseIf txt_diskon.Text = "" Then
             txt_diskon.Text = 0
             Dim hargaAkhir = Double.Parse(Me.txt_harga_total.Text)
