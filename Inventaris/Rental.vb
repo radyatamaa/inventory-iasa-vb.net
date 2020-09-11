@@ -457,7 +457,7 @@ Public Class Rental
             If listClient.Count > 0 Then
                 cmb_client.DataSource = listClient
                 cmb_client.DisplayMember = "kd_client"
-                cmb_client.ValueMember = "kd_client"
+                cmb_client.ValueMember = "id_client"
             End If
 
         Catch ex As Exception

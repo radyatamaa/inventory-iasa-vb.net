@@ -52,7 +52,6 @@ Partial Class BarangKeluar
         Me.Label21 = New System.Windows.Forms.Label()
         Me.txt_pt = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.txt_kdpos_ship = New System.Windows.Forms.TextBox()
         Me.txt_kota_ship = New System.Windows.Forms.TextBox()
         Me.txt_alamat_ship = New System.Windows.Forms.TextBox()
@@ -107,6 +106,7 @@ Partial Class BarangKeluar
         Me.txt_ppn_nominal = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -166,7 +166,7 @@ Partial Class BarangKeluar
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1266, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1331, 119)
         Me.dt_barang_masuk.TabIndex = 15
         '
         'jenis_barang
@@ -322,10 +322,10 @@ Partial Class BarangKeluar
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Controls.Add(Me.Label21)
         Me.Panel2.Controls.Add(Me.txt_pt)
         Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Controls.Add(Me.txt_kdpos_ship)
         Me.Panel2.Controls.Add(Me.txt_kota_ship)
         Me.Panel2.Controls.Add(Me.txt_alamat_ship)
@@ -358,7 +358,7 @@ Partial Class BarangKeluar
         Me.Panel2.Location = New System.Drawing.Point(0, 77)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(3612, 506)
+        Me.Panel2.Size = New System.Drawing.Size(3677, 506)
         Me.Panel2.TabIndex = 6
         '
         'Label21
@@ -386,18 +386,6 @@ Partial Class BarangKeluar
         Me.Button1.TabIndex = 66
         Me.Button1.Text = "Cari"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.TextBox1.Location = New System.Drawing.Point(702, 153)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(178, 19)
-        Me.TextBox1.TabIndex = 10
-        Me.TextBox1.Text = "Serial Numvber"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_kdpos_ship
         '
@@ -519,7 +507,7 @@ Partial Class BarangKeluar
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1266, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1331, 119)
         Me.dt_barang_keluar_fix.TabIndex = 17
         '
         'jenis_barang2
@@ -944,6 +932,13 @@ Partial Class BarangKeluar
         Me.Panel1.Size = New System.Drawing.Size(1093, 79)
         Me.Panel1.TabIndex = 71
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(702, 152)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(178, 20)
+        Me.TextBox1.TabIndex = 72
+        '
         'BarangKeluar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1039,7 +1034,6 @@ Partial Class BarangKeluar
     Friend WithEvents PPN As Label
     Friend WithEvents txt_shiphand As TextBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents txt_ppn_nominal As TextBox
     Friend WithEvents Label20 As Label
     Friend WithEvents Panel1 As Panel
@@ -1068,4 +1062,5 @@ Partial Class BarangKeluar
     Friend WithEvents garansi_exp As DataGridViewTextBoxColumn
     Friend WithEvents txt_pt As TextBox
     Friend WithEvents Label21 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class
