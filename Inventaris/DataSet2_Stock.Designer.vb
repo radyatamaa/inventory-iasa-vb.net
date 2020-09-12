@@ -27,6 +27,10 @@ Partial Public Class DataSet2_Stock
     
     Private tableDataStock As DataStockDataTable
     
+    Private tableDataBarangMasuk As DataBarangMasukDataTable
+    
+    Private tableDataPenjualan As DataPenjualanDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -59,6 +63,12 @@ Partial Public Class DataSet2_Stock
             If (Not (ds.Tables("DataStock")) Is Nothing) Then
                 MyBase.Tables.Add(New DataStockDataTable(ds.Tables("DataStock")))
             End If
+            If (Not (ds.Tables("DataBarangMasuk")) Is Nothing) Then
+                MyBase.Tables.Add(New DataBarangMasukDataTable(ds.Tables("DataBarangMasuk")))
+            End If
+            If (Not (ds.Tables("DataPenjualan")) Is Nothing) Then
+                MyBase.Tables.Add(New DataPenjualanDataTable(ds.Tables("DataPenjualan")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -83,6 +93,26 @@ Partial Public Class DataSet2_Stock
     Public ReadOnly Property DataStock() As DataStockDataTable
         Get
             Return Me.tableDataStock
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property DataBarangMasuk() As DataBarangMasukDataTable
+        Get
+            Return Me.tableDataBarangMasuk
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property DataPenjualan() As DataPenjualanDataTable
+        Get
+            Return Me.tableDataPenjualan
         End Get
     End Property
     
@@ -156,6 +186,12 @@ Partial Public Class DataSet2_Stock
             If (Not (ds.Tables("DataStock")) Is Nothing) Then
                 MyBase.Tables.Add(New DataStockDataTable(ds.Tables("DataStock")))
             End If
+            If (Not (ds.Tables("DataBarangMasuk")) Is Nothing) Then
+                MyBase.Tables.Add(New DataBarangMasukDataTable(ds.Tables("DataBarangMasuk")))
+            End If
+            If (Not (ds.Tables("DataPenjualan")) Is Nothing) Then
+                MyBase.Tables.Add(New DataPenjualanDataTable(ds.Tables("DataPenjualan")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -194,6 +230,18 @@ Partial Public Class DataSet2_Stock
                 Me.tableDataStock.InitVars
             End If
         End If
+        Me.tableDataBarangMasuk = CType(MyBase.Tables("DataBarangMasuk"),DataBarangMasukDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableDataBarangMasuk) Is Nothing) Then
+                Me.tableDataBarangMasuk.InitVars
+            End If
+        End If
+        Me.tableDataPenjualan = CType(MyBase.Tables("DataPenjualan"),DataPenjualanDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableDataPenjualan) Is Nothing) Then
+                Me.tableDataPenjualan.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -206,11 +254,27 @@ Partial Public Class DataSet2_Stock
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableDataStock = New DataStockDataTable()
         MyBase.Tables.Add(Me.tableDataStock)
+        Me.tableDataBarangMasuk = New DataBarangMasukDataTable()
+        MyBase.Tables.Add(Me.tableDataBarangMasuk)
+        Me.tableDataPenjualan = New DataPenjualanDataTable()
+        MyBase.Tables.Add(Me.tableDataPenjualan)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Private Function ShouldSerializeDataStock() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Private Function ShouldSerializeDataBarangMasuk() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Private Function ShouldSerializeDataPenjualan() As Boolean
         Return false
     End Function
     
@@ -274,6 +338,12 @@ Partial Public Class DataSet2_Stock
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Delegate Sub DataStockRowChangeEventHandler(ByVal sender As Object, ByVal e As DataStockRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Public Delegate Sub DataBarangMasukRowChangeEventHandler(ByVal sender As Object, ByVal e As DataBarangMasukRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Public Delegate Sub DataPenjualanRowChangeEventHandler(ByVal sender As Object, ByVal e As DataPenjualanRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -709,6 +779,1086 @@ Partial Public Class DataSet2_Stock
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "DataStockDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class DataBarangMasukDataTable
+        Inherits Global.System.Data.TypedTableBase(Of DataBarangMasukRow)
+        
+        Private columnid_barang_masuk As Global.System.Data.DataColumn
+        
+        Private columnkd_transaksi_masuk As Global.System.Data.DataColumn
+        
+        Private columnnama_barang As Global.System.Data.DataColumn
+        
+        Private columnnama_jenis As Global.System.Data.DataColumn
+        
+        Private columnnama_tipe As Global.System.Data.DataColumn
+        
+        Private columnserial_number As Global.System.Data.DataColumn
+        
+        Private columnnama_kondisi As Global.System.Data.DataColumn
+        
+        Private columnwarna As Global.System.Data.DataColumn
+        
+        Private columnnama_status As Global.System.Data.DataColumn
+        
+        Private columntested As Global.System.Data.DataColumn
+        
+        Private columnnama_lokasi As Global.System.Data.DataColumn
+        
+        Private columndetail_lokasi As Global.System.Data.DataColumn
+        
+        Private columnnama_toko As Global.System.Data.DataColumn
+        
+        Private columnharga_beli As Global.System.Data.DataColumn
+        
+        Private columnharga_jual As Global.System.Data.DataColumn
+        
+        Private columnstock As Global.System.Data.DataColumn
+        
+        Private columnlicence As Global.System.Data.DataColumn
+        
+        Private columnios As Global.System.Data.DataColumn
+        
+        Private columncreated_by As Global.System.Data.DataColumn
+        
+        Private columncreated_date As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "DataBarangMasuk"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property id_barang_masukColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_barang_masuk
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property kd_transaksi_masukColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnkd_transaksi_masuk
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_barangColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_barang
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_jenisColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_jenis
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_tipeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_tipe
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property serial_numberColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnserial_number
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_kondisiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_kondisi
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property warnaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnwarna
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_statusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_status
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property testedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntested
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_lokasiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_lokasi
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property detail_lokasiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndetail_lokasi
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_tokoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_toko
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property harga_beliColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnharga_beli
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property harga_jualColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnharga_jual
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property stockColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnstock
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property licenceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlicence
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property iosColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnios
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property created_byColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncreated_by
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property created_dateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncreated_date
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As DataBarangMasukRow
+            Get
+                Return CType(Me.Rows(index),DataBarangMasukRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event DataBarangMasukRowChanging As DataBarangMasukRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event DataBarangMasukRowChanged As DataBarangMasukRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event DataBarangMasukRowDeleting As DataBarangMasukRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event DataBarangMasukRowDeleted As DataBarangMasukRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Sub AddDataBarangMasukRow(ByVal row As DataBarangMasukRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Function AddDataBarangMasukRow( _
+                    ByVal id_barang_masuk As String,  _
+                    ByVal kd_transaksi_masuk As String,  _
+                    ByVal nama_barang As String,  _
+                    ByVal nama_jenis As String,  _
+                    ByVal nama_tipe As String,  _
+                    ByVal serial_number As String,  _
+                    ByVal nama_kondisi As String,  _
+                    ByVal warna As String,  _
+                    ByVal nama_status As String,  _
+                    ByVal tested As String,  _
+                    ByVal nama_lokasi As String,  _
+                    ByVal detail_lokasi As String,  _
+                    ByVal nama_toko As String,  _
+                    ByVal harga_beli As String,  _
+                    ByVal harga_jual As String,  _
+                    ByVal stock As String,  _
+                    ByVal licence As String,  _
+                    ByVal ios As String,  _
+                    ByVal created_by As String,  _
+                    ByVal created_date As String) As DataBarangMasukRow
+            Dim rowDataBarangMasukRow As DataBarangMasukRow = CType(Me.NewRow,DataBarangMasukRow)
+            Dim columnValuesArray() As Object = New Object() {id_barang_masuk, kd_transaksi_masuk, nama_barang, nama_jenis, nama_tipe, serial_number, nama_kondisi, warna, nama_status, tested, nama_lokasi, detail_lokasi, nama_toko, harga_beli, harga_jual, stock, licence, ios, created_by, created_date}
+            rowDataBarangMasukRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowDataBarangMasukRow)
+            Return rowDataBarangMasukRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As DataBarangMasukDataTable = CType(MyBase.Clone,DataBarangMasukDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New DataBarangMasukDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnid_barang_masuk = MyBase.Columns("id_barang_masuk")
+            Me.columnkd_transaksi_masuk = MyBase.Columns("kd_transaksi_masuk")
+            Me.columnnama_barang = MyBase.Columns("nama_barang")
+            Me.columnnama_jenis = MyBase.Columns("nama_jenis")
+            Me.columnnama_tipe = MyBase.Columns("nama_tipe")
+            Me.columnserial_number = MyBase.Columns("serial_number")
+            Me.columnnama_kondisi = MyBase.Columns("nama_kondisi")
+            Me.columnwarna = MyBase.Columns("warna")
+            Me.columnnama_status = MyBase.Columns("nama_status")
+            Me.columntested = MyBase.Columns("tested")
+            Me.columnnama_lokasi = MyBase.Columns("nama_lokasi")
+            Me.columndetail_lokasi = MyBase.Columns("detail_lokasi")
+            Me.columnnama_toko = MyBase.Columns("nama_toko")
+            Me.columnharga_beli = MyBase.Columns("harga_beli")
+            Me.columnharga_jual = MyBase.Columns("harga_jual")
+            Me.columnstock = MyBase.Columns("stock")
+            Me.columnlicence = MyBase.Columns("licence")
+            Me.columnios = MyBase.Columns("ios")
+            Me.columncreated_by = MyBase.Columns("created_by")
+            Me.columncreated_date = MyBase.Columns("created_date")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnid_barang_masuk = New Global.System.Data.DataColumn("id_barang_masuk", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_barang_masuk)
+            Me.columnkd_transaksi_masuk = New Global.System.Data.DataColumn("kd_transaksi_masuk", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnkd_transaksi_masuk)
+            Me.columnnama_barang = New Global.System.Data.DataColumn("nama_barang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_barang)
+            Me.columnnama_jenis = New Global.System.Data.DataColumn("nama_jenis", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_jenis)
+            Me.columnnama_tipe = New Global.System.Data.DataColumn("nama_tipe", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_tipe)
+            Me.columnserial_number = New Global.System.Data.DataColumn("serial_number", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnserial_number)
+            Me.columnnama_kondisi = New Global.System.Data.DataColumn("nama_kondisi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_kondisi)
+            Me.columnwarna = New Global.System.Data.DataColumn("warna", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnwarna)
+            Me.columnnama_status = New Global.System.Data.DataColumn("nama_status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_status)
+            Me.columntested = New Global.System.Data.DataColumn("tested", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntested)
+            Me.columnnama_lokasi = New Global.System.Data.DataColumn("nama_lokasi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_lokasi)
+            Me.columndetail_lokasi = New Global.System.Data.DataColumn("detail_lokasi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndetail_lokasi)
+            Me.columnnama_toko = New Global.System.Data.DataColumn("nama_toko", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_toko)
+            Me.columnharga_beli = New Global.System.Data.DataColumn("harga_beli", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnharga_beli)
+            Me.columnharga_jual = New Global.System.Data.DataColumn("harga_jual", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnharga_jual)
+            Me.columnstock = New Global.System.Data.DataColumn("stock", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnstock)
+            Me.columnlicence = New Global.System.Data.DataColumn("licence", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlicence)
+            Me.columnios = New Global.System.Data.DataColumn("ios", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnios)
+            Me.columncreated_by = New Global.System.Data.DataColumn("created_by", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncreated_by)
+            Me.columncreated_date = New Global.System.Data.DataColumn("created_date", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncreated_date)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function NewDataBarangMasukRow() As DataBarangMasukRow
+            Return CType(Me.NewRow,DataBarangMasukRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New DataBarangMasukRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(DataBarangMasukRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.DataBarangMasukRowChangedEvent) Is Nothing) Then
+                RaiseEvent DataBarangMasukRowChanged(Me, New DataBarangMasukRowChangeEvent(CType(e.Row,DataBarangMasukRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.DataBarangMasukRowChangingEvent) Is Nothing) Then
+                RaiseEvent DataBarangMasukRowChanging(Me, New DataBarangMasukRowChangeEvent(CType(e.Row,DataBarangMasukRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.DataBarangMasukRowDeletedEvent) Is Nothing) Then
+                RaiseEvent DataBarangMasukRowDeleted(Me, New DataBarangMasukRowChangeEvent(CType(e.Row,DataBarangMasukRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.DataBarangMasukRowDeletingEvent) Is Nothing) Then
+                RaiseEvent DataBarangMasukRowDeleting(Me, New DataBarangMasukRowChangeEvent(CType(e.Row,DataBarangMasukRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub RemoveDataBarangMasukRow(ByVal row As DataBarangMasukRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSet2_Stock = New DataSet2_Stock()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "DataBarangMasukDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class DataPenjualanDataTable
+        Inherits Global.System.Data.TypedTableBase(Of DataPenjualanRow)
+        
+        Private columnkd_transaksi_keluar As Global.System.Data.DataColumn
+        
+        Private columnnama_barang As Global.System.Data.DataColumn
+        
+        Private columnnama_toko As Global.System.Data.DataColumn
+        
+        Private columnnama_jenis As Global.System.Data.DataColumn
+        
+        Private columnnama_tipe As Global.System.Data.DataColumn
+        
+        Private columnserial_number As Global.System.Data.DataColumn
+        
+        Private columntgl_keluar As Global.System.Data.DataColumn
+        
+        Private columngaransi As Global.System.Data.DataColumn
+        
+        Private columngaransi_type As Global.System.Data.DataColumn
+        
+        Private columngaransi_exp As Global.System.Data.DataColumn
+        
+        Private columnnama_lokasi As Global.System.Data.DataColumn
+        
+        Private columndetail_lokasi As Global.System.Data.DataColumn
+        
+        Private columnnama_client As Global.System.Data.DataColumn
+        
+        Private columnalamat_pengiriman As Global.System.Data.DataColumn
+        
+        Private columnkota_pengiriman As Global.System.Data.DataColumn
+        
+        Private columnkdpos_pengiriman As Global.System.Data.DataColumn
+        
+        Private columnharga_jual As Global.System.Data.DataColumn
+        
+        Private columnjumlah As Global.System.Data.DataColumn
+        
+        Private columnid_status_barang As Global.System.Data.DataColumn
+        
+        Private columnnama_status As Global.System.Data.DataColumn
+        
+        Private columncreated_by As Global.System.Data.DataColumn
+        
+        Private columncreated_date As Global.System.Data.DataColumn
+        
+        Private columncompany_name As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "DataPenjualan"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property kd_transaksi_keluarColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnkd_transaksi_keluar
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_barangColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_barang
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_tokoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_toko
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_jenisColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_jenis
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_tipeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_tipe
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property serial_numberColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnserial_number
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property tgl_keluarColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntgl_keluar
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property garansiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columngaransi
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property garansi_typeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columngaransi_type
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property garansi_expColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columngaransi_exp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_lokasiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_lokasi
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property detail_lokasiColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndetail_lokasi
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_clientColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_client
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property alamat_pengirimanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnalamat_pengiriman
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property kota_pengirimanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnkota_pengiriman
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property kdpos_pengirimanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnkdpos_pengiriman
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property harga_jualColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnharga_jual
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property jumlahColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnjumlah
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property id_status_barangColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_status_barang
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property nama_statusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnama_status
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property created_byColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncreated_by
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property created_dateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncreated_date
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property company_nameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncompany_name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As DataPenjualanRow
+            Get
+                Return CType(Me.Rows(index),DataPenjualanRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event DataPenjualanRowChanging As DataPenjualanRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event DataPenjualanRowChanged As DataPenjualanRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event DataPenjualanRowDeleting As DataPenjualanRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event DataPenjualanRowDeleted As DataPenjualanRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Sub AddDataPenjualanRow(ByVal row As DataPenjualanRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Function AddDataPenjualanRow( _
+                    ByVal kd_transaksi_keluar As String,  _
+                    ByVal nama_barang As String,  _
+                    ByVal nama_toko As String,  _
+                    ByVal nama_jenis As String,  _
+                    ByVal nama_tipe As String,  _
+                    ByVal serial_number As String,  _
+                    ByVal tgl_keluar As String,  _
+                    ByVal garansi As String,  _
+                    ByVal garansi_type As String,  _
+                    ByVal garansi_exp As String,  _
+                    ByVal nama_lokasi As String,  _
+                    ByVal detail_lokasi As String,  _
+                    ByVal nama_client As String,  _
+                    ByVal alamat_pengiriman As String,  _
+                    ByVal kota_pengiriman As String,  _
+                    ByVal kdpos_pengiriman As String,  _
+                    ByVal harga_jual As String,  _
+                    ByVal jumlah As String,  _
+                    ByVal id_status_barang As String,  _
+                    ByVal nama_status As String,  _
+                    ByVal created_by As String,  _
+                    ByVal created_date As String,  _
+                    ByVal company_name As String) As DataPenjualanRow
+            Dim rowDataPenjualanRow As DataPenjualanRow = CType(Me.NewRow,DataPenjualanRow)
+            Dim columnValuesArray() As Object = New Object() {kd_transaksi_keluar, nama_barang, nama_toko, nama_jenis, nama_tipe, serial_number, tgl_keluar, garansi, garansi_type, garansi_exp, nama_lokasi, detail_lokasi, nama_client, alamat_pengiriman, kota_pengiriman, kdpos_pengiriman, harga_jual, jumlah, id_status_barang, nama_status, created_by, created_date, company_name}
+            rowDataPenjualanRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowDataPenjualanRow)
+            Return rowDataPenjualanRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As DataPenjualanDataTable = CType(MyBase.Clone,DataPenjualanDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New DataPenjualanDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnkd_transaksi_keluar = MyBase.Columns("kd_transaksi_keluar")
+            Me.columnnama_barang = MyBase.Columns("nama_barang")
+            Me.columnnama_toko = MyBase.Columns("nama_toko")
+            Me.columnnama_jenis = MyBase.Columns("nama_jenis")
+            Me.columnnama_tipe = MyBase.Columns("nama_tipe")
+            Me.columnserial_number = MyBase.Columns("serial_number")
+            Me.columntgl_keluar = MyBase.Columns("tgl_keluar")
+            Me.columngaransi = MyBase.Columns("garansi")
+            Me.columngaransi_type = MyBase.Columns("garansi_type")
+            Me.columngaransi_exp = MyBase.Columns("garansi_exp")
+            Me.columnnama_lokasi = MyBase.Columns("nama_lokasi")
+            Me.columndetail_lokasi = MyBase.Columns("detail_lokasi")
+            Me.columnnama_client = MyBase.Columns("nama_client")
+            Me.columnalamat_pengiriman = MyBase.Columns("alamat_pengiriman")
+            Me.columnkota_pengiriman = MyBase.Columns("kota_pengiriman")
+            Me.columnkdpos_pengiriman = MyBase.Columns("kdpos_pengiriman")
+            Me.columnharga_jual = MyBase.Columns("harga_jual")
+            Me.columnjumlah = MyBase.Columns("jumlah")
+            Me.columnid_status_barang = MyBase.Columns("id_status_barang")
+            Me.columnnama_status = MyBase.Columns("nama_status")
+            Me.columncreated_by = MyBase.Columns("created_by")
+            Me.columncreated_date = MyBase.Columns("created_date")
+            Me.columncompany_name = MyBase.Columns("company_name")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnkd_transaksi_keluar = New Global.System.Data.DataColumn("kd_transaksi_keluar", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnkd_transaksi_keluar)
+            Me.columnnama_barang = New Global.System.Data.DataColumn("nama_barang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_barang)
+            Me.columnnama_toko = New Global.System.Data.DataColumn("nama_toko", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_toko)
+            Me.columnnama_jenis = New Global.System.Data.DataColumn("nama_jenis", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_jenis)
+            Me.columnnama_tipe = New Global.System.Data.DataColumn("nama_tipe", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_tipe)
+            Me.columnserial_number = New Global.System.Data.DataColumn("serial_number", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnserial_number)
+            Me.columntgl_keluar = New Global.System.Data.DataColumn("tgl_keluar", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntgl_keluar)
+            Me.columngaransi = New Global.System.Data.DataColumn("garansi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columngaransi)
+            Me.columngaransi_type = New Global.System.Data.DataColumn("garansi_type", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columngaransi_type)
+            Me.columngaransi_exp = New Global.System.Data.DataColumn("garansi_exp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columngaransi_exp)
+            Me.columnnama_lokasi = New Global.System.Data.DataColumn("nama_lokasi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_lokasi)
+            Me.columndetail_lokasi = New Global.System.Data.DataColumn("detail_lokasi", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndetail_lokasi)
+            Me.columnnama_client = New Global.System.Data.DataColumn("nama_client", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_client)
+            Me.columnalamat_pengiriman = New Global.System.Data.DataColumn("alamat_pengiriman", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnalamat_pengiriman)
+            Me.columnkota_pengiriman = New Global.System.Data.DataColumn("kota_pengiriman", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnkota_pengiriman)
+            Me.columnkdpos_pengiriman = New Global.System.Data.DataColumn("kdpos_pengiriman", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnkdpos_pengiriman)
+            Me.columnharga_jual = New Global.System.Data.DataColumn("harga_jual", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnharga_jual)
+            Me.columnjumlah = New Global.System.Data.DataColumn("jumlah", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnjumlah)
+            Me.columnid_status_barang = New Global.System.Data.DataColumn("id_status_barang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_status_barang)
+            Me.columnnama_status = New Global.System.Data.DataColumn("nama_status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnama_status)
+            Me.columncreated_by = New Global.System.Data.DataColumn("created_by", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncreated_by)
+            Me.columncreated_date = New Global.System.Data.DataColumn("created_date", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncreated_date)
+            Me.columncompany_name = New Global.System.Data.DataColumn("company_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncompany_name)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function NewDataPenjualanRow() As DataPenjualanRow
+            Return CType(Me.NewRow,DataPenjualanRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New DataPenjualanRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(DataPenjualanRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.DataPenjualanRowChangedEvent) Is Nothing) Then
+                RaiseEvent DataPenjualanRowChanged(Me, New DataPenjualanRowChangeEvent(CType(e.Row,DataPenjualanRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.DataPenjualanRowChangingEvent) Is Nothing) Then
+                RaiseEvent DataPenjualanRowChanging(Me, New DataPenjualanRowChangeEvent(CType(e.Row,DataPenjualanRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.DataPenjualanRowDeletedEvent) Is Nothing) Then
+                RaiseEvent DataPenjualanRowDeleted(Me, New DataPenjualanRowChangeEvent(CType(e.Row,DataPenjualanRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.DataPenjualanRowDeletingEvent) Is Nothing) Then
+                RaiseEvent DataPenjualanRowDeleting(Me, New DataPenjualanRowChangeEvent(CType(e.Row,DataPenjualanRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub RemoveDataPenjualanRow(ByVal row As DataPenjualanRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As DataSet2_Stock = New DataSet2_Stock()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "DataPenjualanDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1228,6 +2378,1199 @@ Partial Public Class DataSet2_Stock
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class DataBarangMasukRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableDataBarangMasuk As DataBarangMasukDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableDataBarangMasuk = CType(Me.Table,DataBarangMasukDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property id_barang_masuk() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.id_barang_masukColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'id_barang_masuk' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.id_barang_masukColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property kd_transaksi_masuk() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.kd_transaksi_masukColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'kd_transaksi_masuk' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.kd_transaksi_masukColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_barang() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.nama_barangColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_barang' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.nama_barangColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_jenis() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.nama_jenisColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_jenis' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.nama_jenisColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_tipe() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.nama_tipeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_tipe' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.nama_tipeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property serial_number() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.serial_numberColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'serial_number' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.serial_numberColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_kondisi() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.nama_kondisiColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_kondisi' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.nama_kondisiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property warna() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.warnaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'warna' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.warnaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_status() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.nama_statusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_status' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.nama_statusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property tested() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.testedColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tested' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.testedColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_lokasi() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.nama_lokasiColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_lokasi' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.nama_lokasiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property detail_lokasi() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.detail_lokasiColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'detail_lokasi' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.detail_lokasiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_toko() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.nama_tokoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_toko' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.nama_tokoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property harga_beli() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.harga_beliColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'harga_beli' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.harga_beliColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property harga_jual() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.harga_jualColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'harga_jual' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.harga_jualColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property stock() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.stockColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'stock' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.stockColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property licence() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.licenceColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'licence' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.licenceColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property ios() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.iosColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ios' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.iosColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property created_by() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.created_byColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'created_by' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.created_byColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property created_date() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataBarangMasuk.created_dateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'created_date' in table 'DataBarangMasuk' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataBarangMasuk.created_dateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isid_barang_masukNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.id_barang_masukColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setid_barang_masukNull()
+            Me(Me.tableDataBarangMasuk.id_barang_masukColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Iskd_transaksi_masukNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.kd_transaksi_masukColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setkd_transaksi_masukNull()
+            Me(Me.tableDataBarangMasuk.kd_transaksi_masukColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_barangNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.nama_barangColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_barangNull()
+            Me(Me.tableDataBarangMasuk.nama_barangColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_jenisNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.nama_jenisColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_jenisNull()
+            Me(Me.tableDataBarangMasuk.nama_jenisColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_tipeNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.nama_tipeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_tipeNull()
+            Me(Me.tableDataBarangMasuk.nama_tipeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isserial_numberNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.serial_numberColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setserial_numberNull()
+            Me(Me.tableDataBarangMasuk.serial_numberColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_kondisiNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.nama_kondisiColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_kondisiNull()
+            Me(Me.tableDataBarangMasuk.nama_kondisiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IswarnaNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.warnaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetwarnaNull()
+            Me(Me.tableDataBarangMasuk.warnaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_statusNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.nama_statusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_statusNull()
+            Me(Me.tableDataBarangMasuk.nama_statusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IstestedNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.testedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SettestedNull()
+            Me(Me.tableDataBarangMasuk.testedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_lokasiNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.nama_lokasiColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_lokasiNull()
+            Me(Me.tableDataBarangMasuk.nama_lokasiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isdetail_lokasiNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.detail_lokasiColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setdetail_lokasiNull()
+            Me(Me.tableDataBarangMasuk.detail_lokasiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_tokoNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.nama_tokoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_tokoNull()
+            Me(Me.tableDataBarangMasuk.nama_tokoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isharga_beliNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.harga_beliColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setharga_beliNull()
+            Me(Me.tableDataBarangMasuk.harga_beliColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isharga_jualNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.harga_jualColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setharga_jualNull()
+            Me(Me.tableDataBarangMasuk.harga_jualColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsstockNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.stockColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetstockNull()
+            Me(Me.tableDataBarangMasuk.stockColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IslicenceNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.licenceColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetlicenceNull()
+            Me(Me.tableDataBarangMasuk.licenceColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsiosNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.iosColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetiosNull()
+            Me(Me.tableDataBarangMasuk.iosColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Iscreated_byNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.created_byColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setcreated_byNull()
+            Me(Me.tableDataBarangMasuk.created_byColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Iscreated_dateNull() As Boolean
+            Return Me.IsNull(Me.tableDataBarangMasuk.created_dateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setcreated_dateNull()
+            Me(Me.tableDataBarangMasuk.created_dateColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class DataPenjualanRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableDataPenjualan As DataPenjualanDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableDataPenjualan = CType(Me.Table,DataPenjualanDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property kd_transaksi_keluar() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.kd_transaksi_keluarColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'kd_transaksi_keluar' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.kd_transaksi_keluarColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_barang() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.nama_barangColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_barang' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.nama_barangColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_toko() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.nama_tokoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_toko' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.nama_tokoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_jenis() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.nama_jenisColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_jenis' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.nama_jenisColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_tipe() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.nama_tipeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_tipe' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.nama_tipeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property serial_number() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.serial_numberColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'serial_number' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.serial_numberColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property tgl_keluar() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.tgl_keluarColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tgl_keluar' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.tgl_keluarColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property garansi() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.garansiColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'garansi' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.garansiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property garansi_type() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.garansi_typeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'garansi_type' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.garansi_typeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property garansi_exp() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.garansi_expColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'garansi_exp' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.garansi_expColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_lokasi() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.nama_lokasiColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_lokasi' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.nama_lokasiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property detail_lokasi() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.detail_lokasiColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'detail_lokasi' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.detail_lokasiColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_client() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.nama_clientColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_client' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.nama_clientColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property alamat_pengiriman() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.alamat_pengirimanColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'alamat_pengiriman' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.alamat_pengirimanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property kota_pengiriman() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.kota_pengirimanColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'kota_pengiriman' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.kota_pengirimanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property kdpos_pengiriman() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.kdpos_pengirimanColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'kdpos_pengiriman' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.kdpos_pengirimanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property harga_jual() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.harga_jualColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'harga_jual' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.harga_jualColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property jumlah() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.jumlahColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'jumlah' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.jumlahColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property id_status_barang() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.id_status_barangColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'id_status_barang' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.id_status_barangColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property nama_status() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.nama_statusColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'nama_status' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.nama_statusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property created_by() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.created_byColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'created_by' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.created_byColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property created_date() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.created_dateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'created_date' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.created_dateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property company_name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataPenjualan.company_nameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'company_name' in table 'DataPenjualan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataPenjualan.company_nameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Iskd_transaksi_keluarNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.kd_transaksi_keluarColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setkd_transaksi_keluarNull()
+            Me(Me.tableDataPenjualan.kd_transaksi_keluarColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_barangNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.nama_barangColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_barangNull()
+            Me(Me.tableDataPenjualan.nama_barangColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_tokoNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.nama_tokoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_tokoNull()
+            Me(Me.tableDataPenjualan.nama_tokoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_jenisNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.nama_jenisColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_jenisNull()
+            Me(Me.tableDataPenjualan.nama_jenisColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_tipeNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.nama_tipeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_tipeNull()
+            Me(Me.tableDataPenjualan.nama_tipeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isserial_numberNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.serial_numberColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setserial_numberNull()
+            Me(Me.tableDataPenjualan.serial_numberColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Istgl_keluarNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.tgl_keluarColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Settgl_keluarNull()
+            Me(Me.tableDataPenjualan.tgl_keluarColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsgaransiNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.garansiColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetgaransiNull()
+            Me(Me.tableDataPenjualan.garansiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isgaransi_typeNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.garansi_typeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setgaransi_typeNull()
+            Me(Me.tableDataPenjualan.garansi_typeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isgaransi_expNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.garansi_expColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setgaransi_expNull()
+            Me(Me.tableDataPenjualan.garansi_expColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_lokasiNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.nama_lokasiColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_lokasiNull()
+            Me(Me.tableDataPenjualan.nama_lokasiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isdetail_lokasiNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.detail_lokasiColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setdetail_lokasiNull()
+            Me(Me.tableDataPenjualan.detail_lokasiColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_clientNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.nama_clientColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_clientNull()
+            Me(Me.tableDataPenjualan.nama_clientColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isalamat_pengirimanNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.alamat_pengirimanColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setalamat_pengirimanNull()
+            Me(Me.tableDataPenjualan.alamat_pengirimanColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Iskota_pengirimanNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.kota_pengirimanColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setkota_pengirimanNull()
+            Me(Me.tableDataPenjualan.kota_pengirimanColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Iskdpos_pengirimanNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.kdpos_pengirimanColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setkdpos_pengirimanNull()
+            Me(Me.tableDataPenjualan.kdpos_pengirimanColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isharga_jualNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.harga_jualColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setharga_jualNull()
+            Me(Me.tableDataPenjualan.harga_jualColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsjumlahNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.jumlahColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetjumlahNull()
+            Me(Me.tableDataPenjualan.jumlahColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isid_status_barangNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.id_status_barangColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setid_status_barangNull()
+            Me(Me.tableDataPenjualan.id_status_barangColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isnama_statusNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.nama_statusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setnama_statusNull()
+            Me(Me.tableDataPenjualan.nama_statusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Iscreated_byNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.created_byColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setcreated_byNull()
+            Me(Me.tableDataPenjualan.created_byColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Iscreated_dateNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.created_dateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setcreated_dateNull()
+            Me(Me.tableDataPenjualan.created_dateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Iscompany_nameNull() As Boolean
+            Return Me.IsNull(Me.tableDataPenjualan.company_nameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setcompany_nameNull()
+            Me(Me.tableDataPenjualan.company_nameColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -1249,6 +3592,78 @@ Partial Public Class DataSet2_Stock
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property Row() As DataStockRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Public Class DataBarangMasukRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As DataBarangMasukRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New(ByVal row As DataBarangMasukRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Row() As DataBarangMasukRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Public Class DataPenjualanRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As DataPenjualanRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New(ByVal row As DataPenjualanRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Row() As DataPenjualanRow
             Get
                 Return Me.eventRow
             End Get
