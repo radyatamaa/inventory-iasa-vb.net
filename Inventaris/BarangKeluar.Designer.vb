@@ -49,6 +49,7 @@ Partial Class BarangKeluar
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.txt_pt = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -106,7 +107,6 @@ Partial Class BarangKeluar
         Me.txt_ppn_nominal = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -166,7 +166,7 @@ Partial Class BarangKeluar
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1331, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1396, 119)
         Me.dt_barang_masuk.TabIndex = 15
         '
         'jenis_barang
@@ -358,8 +358,15 @@ Partial Class BarangKeluar
         Me.Panel2.Location = New System.Drawing.Point(0, 77)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(3677, 506)
+        Me.Panel2.Size = New System.Drawing.Size(3742, 506)
         Me.Panel2.TabIndex = 6
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(702, 152)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(178, 20)
+        Me.TextBox1.TabIndex = 72
         '
         'Label21
         '
@@ -507,7 +514,7 @@ Partial Class BarangKeluar
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1331, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1396, 119)
         Me.dt_barang_keluar_fix.TabIndex = 17
         '
         'jenis_barang2
@@ -931,13 +938,6 @@ Partial Class BarangKeluar
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1093, 79)
         Me.Panel1.TabIndex = 71
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(702, 152)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(178, 20)
-        Me.TextBox1.TabIndex = 72
         '
         'BarangKeluar
         '
