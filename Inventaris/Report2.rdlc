@@ -1416,7 +1416,7 @@
       <Fields>
         <Field Name="id_barang_masuk">
           <DataField>id_barang_masuk</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="kd_transaksi_masuk">
           <DataField>kd_transaksi_masuk</DataField>
@@ -1452,7 +1452,7 @@
         </Field>
         <Field Name="tested">
           <DataField>tested</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="nama_lokasi">
           <DataField>nama_lokasi</DataField>
@@ -1468,15 +1468,15 @@
         </Field>
         <Field Name="harga_beli">
           <DataField>harga_beli</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="harga_jual">
           <DataField>harga_jual</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="stock">
           <DataField>stock</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="licence">
           <DataField>licence</DataField>
@@ -1486,26 +1486,22 @@
           <DataField>ios</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="foto_barang">
-          <DataField>foto_barang</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="created_by">
           <DataField>created_by</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="created_date">
           <DataField>created_date</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>_db_inventory_iasaDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\_db_inventory_iasaDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>View_BARANG_MASUK_DUMMY</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>View_BARANG_MASUK_DUMMYTableAdapter</rd:TableAdapterName>
+        <rd:DataSetName>DataSet2_Stock</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\DataSet2_Stock.xsd</rd:SchemaPath>
+        <rd:TableName>DataBarangMasuk</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
