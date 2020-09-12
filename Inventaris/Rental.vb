@@ -827,7 +827,14 @@ Public Class Rental
             If selectedItem.ColumnIndex = 9 Then
                 If selectedItem.Value IsNot Nothing Then
                     If System.Text.RegularExpressions.Regex.IsMatch(selectedItem.Value, "[  ^ 0-9]") Then
-                        listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(selectedItem.Value)
+                        If listBarangKeluarFix(selectedItem.RowIndex).garansi IsNot Nothing And
+                            listBarangKeluarFix(selectedItem.RowIndex).garansi <> "" Then
+                            listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(selectedItem.Value)
+                            'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(selectedItem.Value) * listBarangKeluarFix(selectedItem.RowIndex).garansi
+                        Else
+                            listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(selectedItem.Value)
+                        End If
+
                         If index = 0 Then
                             dt_barang_keluar_fix.Rows.Clear()
                         End If
@@ -852,6 +859,9 @@ Public Class Rental
                             dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(7).Value = barangKeluarFix.catatan
                             dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(8).Value = barangKeluarFix.nama_status
                             dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(9).Value = barangKeluarFix.harga_jual
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(10).Value = barangKeluarFix.garansi
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(11).Value = barangKeluarFix.garansi_type
+                            dt_barang_keluar_fix.Rows(dt_barang_keluar_fix.RowCount - 2).Cells(12).Value = barangKeluarFix.garansi_exp
                             If triggerTambahBarangKeluar = False Then
                                 triggerTambahBarangKeluar = True
                                 dt_barang_keluar_fix.Columns.Add("id_barang_masuk", "IdBarangMasuk")
@@ -889,21 +899,36 @@ Public Class Rental
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Bulan" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Tahun" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
+                            ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Minggu" Then
+                                Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi * 7)
+                                listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             End If
+                        End If
+
+                        If listBarangKeluarFix(selectedItem.RowIndex).garansi IsNot Nothing And
+                           listBarangKeluarFix(selectedItem.RowIndex).garansi <> "" Then
+                            'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(selectedItem.Value)
+                            listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                         End If
 
                         If index = 0 Then
                             dt_barang_keluar_fix.Rows.Clear()
                         End If
-
+                        Me.txt_harga_total.Text = 0
+                        Me.txt_harga_akhir.Text = 0
 
                         For Each barangKeluarFix As Object In listBarangKeluarFix
 
@@ -938,6 +963,11 @@ Public Class Rental
 
                             dt_barang_keluar_fix.Update()
 
+                            Dim hargaTotal = Val(Double.Parse(Me.txt_harga_total.Text)) + Val(Double.Parse(barangKeluarFix.harga_jual))
+                            Me.txt_harga_total.Text = hargaTotal.ToString("N2")
+
+                            Dim hargaakhir = Double.Parse(Me.txt_harga_total.Text)
+                            Me.txt_harga_akhir.Text = hargaakhir.ToString("N2")
                             'listBarangKeluarFix.Add(barangMasukHandle)
                             index = index + 1
 
@@ -960,20 +990,29 @@ Public Class Rental
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Bulan" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Tahun" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
+                            ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Minggu" Then
+                                Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             End If
                         End If
                         If index = 0 Then
                             dt_barang_keluar_fix.Rows.Clear()
                         End If
-
+                        Me.txt_harga_total.Text = 0
+                        Me.txt_harga_akhir.Text = 0
 
                         For Each barangKeluarFix As Object In listBarangKeluarFix
 
@@ -1008,9 +1047,13 @@ Public Class Rental
 
                             dt_barang_keluar_fix.Update()
 
+                            Dim hargaTotal = Val(Double.Parse(Me.txt_harga_total.Text)) + Val(Double.Parse(barangKeluarFix.harga_jual))
+                            Me.txt_harga_total.Text = hargaTotal.ToString("N2")
+
+                            Dim hargaakhir = Double.Parse(Me.txt_harga_total.Text)
+                            Me.txt_harga_akhir.Text = hargaakhir.ToString("N2")
                             'listBarangKeluarFix.Add(barangMasukHandle)
                             index = index + 1
-
                         Next
                     ElseIf selectedItem.Value = "" Then
                         'MsgBox("harga Jual Tidak Boleh Kosong")
