@@ -779,7 +779,15 @@ Public Class extend_rental
             If selectedItem.ColumnIndex = 10 Then
                 If selectedItem.Value IsNot Nothing Then
                     If System.Text.RegularExpressions.Regex.IsMatch(selectedItem.Value, "[  ^ 0-9]") Then
-                        listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = Decimal.Parse(selectedItem.Value)
+                        If listBarangKeluarFix(selectedItem.RowIndex).periode_rental IsNot Nothing And
+                            listBarangKeluarFix(selectedItem.RowIndex).periode_rental <> "" Then
+                            listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = Decimal.Parse(selectedItem.Value)
+                            'listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = Decimal.Parse(selectedItem.Value) * listBarangKeluarFix(selectedItem.RowIndex).periode_rental
+                        Else
+                            listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = Decimal.Parse(selectedItem.Value)
+                        End If
+
+
                         If index = 0 Then
                             dt_barang_keluar_fix.Rows.Clear()
                         End If
@@ -818,30 +826,50 @@ Public Class extend_rental
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).periode_rental)
                                 listBarangKeluarFix(selectedItem.RowIndex).rental_exp = calculateGaransiExp
-
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = listBarangKeluarFix(selectedItem.RowIndex).harga_akhir * listBarangKeluarFix(selectedItem.RowIndex).periode_rental
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).rental_type = "Bulan" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).periode_rental)
                                 listBarangKeluarFix(selectedItem.RowIndex).rental_exp = calculateGaransiExp
-
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = listBarangKeluarFix(selectedItem.RowIndex).harga_akhir * listBarangKeluarFix(selectedItem.RowIndex).periode_rental
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).rental_type = "Tahun" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).periode_rental)
                                 listBarangKeluarFix(selectedItem.RowIndex).rental_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = listBarangKeluarFix(selectedItem.RowIndex).harga_akhir * listBarangKeluarFix(selectedItem.RowIndex).periode_rental
+                            ElseIf listBarangKeluarFix(selectedItem.RowIndex).rental_type = "Minggu" Then
+                                Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).periode_rental * 7)
+                                listBarangKeluarFix(selectedItem.RowIndex).rental_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = listBarangKeluarFix(selectedItem.RowIndex).harga_akhir * listBarangKeluarFix(selectedItem.RowIndex).periode_rental
                             End If
+
+
+
                         End If
 
-
+                        If listBarangKeluarFix(selectedItem.RowIndex).periode_rental IsNot Nothing And
+                           listBarangKeluarFix(selectedItem.RowIndex).periode_rental <> "" Then
+                            'listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = Decimal.Parse(selectedItem.Value)
+                            listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_akhir) * listBarangKeluarFix(selectedItem.RowIndex).periode_rental
+                        End If
 
                         If index = 0 Then
                             dt_barang_keluar_fix.Rows.Clear()
                         End If
 
 
+                        Me.txt_harga_total.Text = 0
+                        Me.txt_harga_akhir.Text = 0
                         For Each barangKeluarFix As Object In listBarangKeluarFix
 
                             MappingToDataGridBarangKeluarFix(barangKeluarFix)
 
+                            Dim hargaTotal = Val(Double.Parse(Me.txt_harga_total.Text)) + Val(Double.Parse(barangKeluarFix.harga_akhir))
+                            Me.txt_harga_total.Text = hargaTotal.ToString("N2")
+
+                            Dim hargaAkhir = Double.Parse(Me.txt_harga_total.Text)
+                            Me.txt_harga_akhir.Text = hargaAkhir.ToString("N2")
                             'listBarangKeluarFix.Add(barangMasukHandle)
                             index = index + 1
 
@@ -865,28 +893,48 @@ Public Class extend_rental
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).periode_rental)
                                 listBarangKeluarFix(selectedItem.RowIndex).rental_exp = calculateGaransiExp
-
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = listBarangKeluarFix(selectedItem.RowIndex).harga_akhir * listBarangKeluarFix(selectedItem.RowIndex).periode_rental
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).rental_type = "Bulan" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).periode_rental)
                                 listBarangKeluarFix(selectedItem.RowIndex).rental_exp = calculateGaransiExp
-
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = listBarangKeluarFix(selectedItem.RowIndex).harga_akhir * listBarangKeluarFix(selectedItem.RowIndex).periode_rental
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).rental_type = "Tahun" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
                                 Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).periode_rental)
                                 listBarangKeluarFix(selectedItem.RowIndex).rental_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = listBarangKeluarFix(selectedItem.RowIndex).harga_akhir * listBarangKeluarFix(selectedItem.RowIndex).periode_rental
+                            ElseIf listBarangKeluarFix(selectedItem.RowIndex).rental_type = "Minggu" Then
+                                Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).periode_rental * 7)
+                                listBarangKeluarFix(selectedItem.RowIndex).rental_exp = calculateGaransiExp
+                                'listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = listBarangKeluarFix(selectedItem.RowIndex).harga_akhir * listBarangKeluarFix(selectedItem.RowIndex).periode_rental
 
                             End If
                         End If
+
+                        'If listBarangKeluarFix(selectedItem.RowIndex).periode_rental IsNot Nothing And
+                        '   listBarangKeluarFix(selectedItem.RowIndex).periode_rental <> "" Then
+                        '    'listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = Decimal.Parse(selectedItem.Value)
+                        '    listBarangKeluarFix(selectedItem.RowIndex).harga_akhir = Decimal.Parse(selectedItem.Value) * listBarangKeluarFix(selectedItem.RowIndex).periode_rental
+                        'End If
+
                         If index = 0 Then
                             dt_barang_keluar_fix.Rows.Clear()
                         End If
 
 
+                        Me.txt_harga_total.Text = 0
+                        Me.txt_harga_akhir.Text = 0
                         For Each barangKeluarFix As Object In listBarangKeluarFix
 
                             MappingToDataGridBarangKeluarFix(barangKeluarFix)
 
+                            Dim hargaTotal = Val(Double.Parse(Me.txt_harga_total.Text)) + Val(Double.Parse(barangKeluarFix.harga_akhir))
+                            Me.txt_harga_total.Text = hargaTotal.ToString("N2")
+
+                            Dim hargaAkhir = Double.Parse(Me.txt_harga_total.Text)
+                            Me.txt_harga_akhir.Text = hargaAkhir.ToString("N2")
                             'listBarangKeluarFix.Add(barangMasukHandle)
                             index = index + 1
 
