@@ -299,4 +299,9 @@ Public Class MenuUtama
         transaksi_maintenance.Show()
         Me.Close()
     End Sub
+
+    Private Sub btn_r_barang_rental_Click(sender As Object, e As EventArgs) Handles btn_r_barang_rental.Click
+        LaporanBarangRental.Show()
+        Me.Hide()
+    End Sub
 End Class
