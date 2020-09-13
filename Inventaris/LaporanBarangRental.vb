@@ -6,7 +6,7 @@ Imports System.Net
 Imports System.Runtime.Serialization.Formatters.Binary
 Imports System.Text
 Imports Microsoft.Reporting.WinForms
-Public Class Laporan_Stock_Barang
+Public Class LaporanBarangRental
     Public Property KdTransaksi As String
     Public Property UserInfo As Object
     Dim kdTransaksis As New List(Of String)
@@ -28,12 +28,13 @@ Public Class Laporan_Stock_Barang
         CONN.Close()
     End Sub
 
+
     Sub LoadReport()
         Dim rptDS As ReportDataSource
         Me.ReportViewer1.RefreshReport()
         Try
             With ReportViewer1.LocalReport
-                .ReportPath = Application.StartupPath & "\Reports\Report4.rdlc"
+                .ReportPath = Application.StartupPath & "\Reports\ReportRental.rdlc"
                 .DataSources.Clear()
             End With
 
@@ -42,24 +43,28 @@ Public Class Laporan_Stock_Barang
 
             'CONN.Open()
             listTransaksi.Clear()
-            Dim query As String = "SELECT id_barang 
-                                  ,nama_barang 
+            Dim query As String = "SELECT kd_transaksi_keluar
+                                  ,nama_barang
+                                  ,nama_toko
                                   ,nama_jenis 
                                   ,nama_tipe 
                                   ,serial_number 
-                                  ,nama_kondisi
-                                  ,warna 
-                                  ,nama_status 
-                                  ,tested 
-                                  ,nama_lokasi 
-                                  ,detail_lokasi 
-                                  ,nama_toko 
-                                  ,harga_beli 
-                                  ,harga_jual 
-                                  ,licence 
-                                  ,ios 
-                                  ,stock
-                                  from view_stockbarang "
+                                  ,tgl_keluar
+                                  ,periode_rental 
+                                  ,rental_type 
+                                  ,rental_exp 
+                                  ,nama_lokasi
+                                  ,detail_lokasi
+                                  ,nama_client
+                                  ,company_name
+                                  ,alamat_pengiriman 
+                                  ,kota_pengiriman 
+                                  ,kdpos_pengiriman 
+                                  ,id_status_barang 
+                                  ,nama_status
+                                  ,created_by
+                                  ,created_date
+                                  from view_detail_barang_rental "
 
             'If KdTransaksi IsNot Nothing And KdTransaksi <> "" Then
             '    query = query + " where kd_transaksi_keluar = '" + KdTransaksi + "' "
@@ -86,23 +91,27 @@ Public Class Laporan_Stock_Barang
 
                 Dim barang = New With
                 {
-            .id_barang = reader("id_barang"),
+            .kd_transaksi_keluar = reader("kd_transaksi_keluar"),
             .nama_barang = reader("nama_barang"),
+            .nama_toko = reader("nama_toko"),
             .nama_jenis = reader("nama_jenis"),
             .nama_tipe = reader("nama_tipe"),
             .serial_number = reader("serial_number"),
-            .nama_kondisi = reader("nama_kondisi"),
-            .warna = reader("warna"),
-            .nama_status = reader("nama_status"),
-            .tested = reader("tested"),
+            .tgl_keluar = reader("tgl_keluar"),
+            .periode_rental = reader("periode_rental"),
+            .rental_type = reader("rental_type"),
+            .rental_exp = reader("rental_exp"),
             .nama_lokasi = reader("nama_lokasi"),
             .detail_lokasi = reader("detail_lokasi"),
-            .nama_toko = reader("nama_toko"),
-            .harga_beli = reader("harga_beli"),
-            .harga_jual = reader("harga_jual"),
-            .licence = reader("licence"),
-            .ios = reader("ios"),
-            .stock = reader("stock")
+            .nama_client = reader("nama_client"),
+            .company_name = reader("company_name"),
+            .alamat_pengiriman = reader("alamat_pengiriman"),
+            .kota_pengiriman = reader("kota_pengiriman"),
+            .kdpos_pengiriman = reader("kdpos_pengiriman"),
+            .id_status_barang = reader("id_status_barang"),
+            .nama_status = reader("nama_status"),
+            .created_by = reader("created_by"),
+            .created_date = reader("created_date")
                 }
                 'Dim checkBarang = listTransaksi.Where(Function(x) x.nama_jenis_tipe = barang.nama_jenis_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
                 'If checkBarang.Count = 0 Then
@@ -123,35 +132,44 @@ Public Class Laporan_Stock_Barang
             End While
             CONN.Close()
 
+
             For Each insertDataBarangMasuk As Object In listTransaksi
                 Dim row As DataRow
 
-                row = ds.Tables("DataStock").NewRow
-                row.Item(0) = insertDataBarangMasuk.id_barang
+                row = ds.Tables("DataRental").NewRow
+                row.Item(0) = insertDataBarangMasuk.kd_transaksi_keluar
                 row.Item(1) = insertDataBarangMasuk.nama_barang
                 row.Item(2) = insertDataBarangMasuk.nama_jenis
                 row.Item(3) = insertDataBarangMasuk.nama_tipe
                 row.Item(4) = insertDataBarangMasuk.serial_number
-                row.Item(5) = insertDataBarangMasuk.nama_kondisi
-                row.Item(6) = insertDataBarangMasuk.warna
-                row.Item(7) = insertDataBarangMasuk.nama_status
-                row.Item(8) = insertDataBarangMasuk.tested
-                row.Item(9) = insertDataBarangMasuk.nama_lokasi
-                row.Item(10) = insertDataBarangMasuk.detail_lokasi
-                row.Item(11) = insertDataBarangMasuk.nama_toko
-                If UserInfo.IdLevel = 1 Then
-                    row.Item(12) = insertDataBarangMasuk.harga_beli.ToString
-                Else
-                    row.Item(12) = "-"
-                End If
+                row.Item(4) = insertDataBarangMasuk.tgl_keluar
+                row.Item(7) = insertDataBarangMasuk.periode_rental
+                row.Item(8) = insertDataBarangMasuk.rental_type
+                row.Item(9) = insertDataBarangMasuk.rental_exp
+                row.Item(10) = insertDataBarangMasuk.nama_lokasi
+                row.Item(11) = insertDataBarangMasuk.detail_lokasi
+                row.Item(12) = insertDataBarangMasuk.nama_client
+                row.Item(13) = insertDataBarangMasuk.alamat_pengiriman
+                row.Item(14) = insertDataBarangMasuk.kota_pengiriman
+                row.Item(15) = insertDataBarangMasuk.kdpos_pengiriman
+                row.Item(16) = insertDataBarangMasuk.id_status_barang
+                row.Item(17) = insertDataBarangMasuk.nama_status
+                row.Item(18) = insertDataBarangMasuk.created_by
+                row.Item(19) = insertDataBarangMasuk.created_date
+                row.Item(20) = insertDataBarangMasuk.company_name
+                'If UserInfo.IdLevel = 1 Then
+                '    row.Item(12) = insertDataBarangMasuk.harga_beli.ToString
+                'Else
+                '    row.Item(12) = "-"
+                'End If
 
 
-                row.Item(13) = insertDataBarangMasuk.harga_jual
-                row.Item(14) = insertDataBarangMasuk.licence
-                row.Item(15) = insertDataBarangMasuk.ios
-                row.Item(16) = insertDataBarangMasuk.stock
+                'row.Item(13) = insertDataBarangMasuk.harga_jual
+                'row.Item(14) = insertDataBarangMasuk.licence
+                'row.Item(15) = insertDataBarangMasuk.ios
+                'row.Item(16) = insertDataBarangMasuk.stock
                 'row.Item(17) = "1"
-                ds.Tables("DataStock").Rows.Add(row)
+                ds.Tables("DataRental").Rows.Add(row)
 
 
             Next
@@ -162,7 +180,7 @@ Public Class Laporan_Stock_Barang
             'ReportViewer1.LocalReport.EnableExternalImages = True
             'ReportViewer1.LocalReport.SetParameters(New ReportParameter() {r(0)})
 
-            rptDS = New ReportDataSource("DataSet2_Stock", ds.Tables("DataStock"))
+            rptDS = New ReportDataSource("DataSet2_Stock", ds.Tables("DataRental"))
             ReportViewer1.LocalReport.DataSources.Add(rptDS)
             ReportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
             ReportViewer1.ZoomMode = ZoomMode.Percent
@@ -172,12 +190,7 @@ Public Class Laporan_Stock_Barang
             MsgBox(ex.Message)
         End Try
     End Sub
-
-    Private Sub ReportViewer1_Load(sender As Object, e As EventArgs) Handles ReportViewer1.Load
-
-    End Sub
-
-    Private Sub Laporan_Stock_Barang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub LaporanBarangRental_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         VBnetSQLSeverConnection()
         Me.ReportViewer1.RefreshReport()
         LoadReport()
