@@ -324,10 +324,11 @@ Public Class invoice_cetak
                 row.Item(37) = insertDataBarangMasuk.id_toko
                 row.Item(38) = insertDataBarangMasuk.company_name
                 row.Item(39) = insertDataBarangMasuk.kd_client
-                Dim edate = insertDataBarangMasuk.tgl_keluar.ToString
-                Dim iDate As String = "05/05/2005"
-                Dim oDate As Date = Convert.ToDateTime(edate)
-                row.Item(41) = oDate.ToShortDateString
+                'Dim edate = insertDataBarangMasuk.tgl_keluar.ToString
+                'Dim iDate As String = "05/05/2005"
+                'Dim oDate As Date = Convert.ToDateTime(edate)
+                'row.Item(41) = oDate.ToShortDateString
+                row.Item(41) = insertDataBarangMasuk.tgl_keluar
                 row.Item(42) = insertDataBarangMasuk.periode_rental
 
                 Try
