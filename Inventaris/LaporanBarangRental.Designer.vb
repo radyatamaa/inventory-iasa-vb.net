@@ -24,12 +24,22 @@ Partial Class LaporanBarangRental
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet2_Stock = New Inventaris.DataSet2_Stock()
         Me.DataRentalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.DataSet2_Stock, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataSet2_Stock = New Inventaris.DataSet2_Stock()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.DataRentalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet2_Stock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'DataRentalBindingSource
+        '
+        Me.DataRentalBindingSource.DataMember = "DataRental"
+        Me.DataRentalBindingSource.DataSource = Me.DataSet2_Stock
+        '
+        'DataSet2_Stock
+        '
+        Me.DataSet2_Stock.DataSetName = "DataSet2_Stock"
+        Me.DataSet2_Stock.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -37,6 +47,7 @@ Partial Class LaporanBarangRental
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ReportViewer1.AutoScroll = True
+        Me.ReportViewer1.AutoSize = True
         ReportDataSource1.Name = "DataSet1"
         ReportDataSource1.Value = Me.DataRentalBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
@@ -45,30 +56,21 @@ Partial Class LaporanBarangRental
         Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(4)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(797, 448)
+        Me.ReportViewer1.Size = New System.Drawing.Size(1216, 448)
         Me.ReportViewer1.TabIndex = 1
-        '
-        'DataSet2_Stock
-        '
-        Me.DataSet2_Stock.DataSetName = "DataSet2_Stock"
-        Me.DataSet2_Stock.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataRentalBindingSource
-        '
-        Me.DataRentalBindingSource.DataMember = "DataRental"
-        Me.DataRentalBindingSource.DataSource = Me.DataSet2_Stock
         '
         'LaporanBarangRental
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1219, 450)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "LaporanBarangRental"
         Me.Text = "LaporanBarangRental"
-        CType(Me.DataSet2_Stock, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataRentalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet2_Stock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

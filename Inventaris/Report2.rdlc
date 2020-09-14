@@ -1333,7 +1333,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
+        <DataSetName>DataSet2_Stock</DataSetName>
         <Top>0.31125in</Top>
         <Height>0.5in</Height>
         <Width>19.5625in</Width>
@@ -1391,10 +1391,12 @@
         </Border>
       </Style>
     </PageHeader>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>30in</PageWidth>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <BottomMargin>1.5in</BottomMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -1408,7 +1410,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DataSet2_Stock">
       <Query>
         <DataSourceName>ID_db_inventory_iasaDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
