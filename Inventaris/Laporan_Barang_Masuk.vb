@@ -14,13 +14,18 @@ Public Class Laporan_Barang_Masuk
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
-    Private Sub Form6_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the '_db_inventory_iasaDataSet3.VIEW_DETAIL_BARANG_KELUAR' table. You can move, or remove it, as needed.
-        Me.VIEW_DETAIL_BARANG_KELUARTableAdapter.Fill(Me._db_inventory_iasaDataSet3.VIEW_DETAIL_BARANG_KELUAR)
-        'TODO: This line of code loads data into the '_db_inventory_iasaDataSet.View_BARANG_MASUK_DUMMY' table. You can move, or remove it, as needed.
-        Me.View_BARANG_MASUK_DUMMYTableAdapter.Fill(Me._db_inventory_iasaDataSet.View_BARANG_MASUK_DUMMY)
+    Sub VBnetSQLSeverConnection()
+        Try
+            'SQL connection script to SQL Server Instance
+            CONN = New SqlConnection(ConfigurationManager.ConnectionStrings("myConnectionString").ConnectionString)
+            CONN.Open()
 
-        Me.ReportViewer1.RefreshReport()
+            'Show a test connection message status
+            'MsgBox("Successfully connected to SQL Server Instance")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        CONN.Close()
     End Sub
     Sub LoadReport()
         Dim rptDS As ReportDataSource
@@ -56,7 +61,7 @@ Public Class Laporan_Barang_Masuk
                                   ,ios 
                                   ,created_by
                                   ,created_date
-                                  from view_barang_masuk "
+                                  from view_barang_masuk_dummy "
 
             'If KdTransaksi IsNot Nothing And KdTransaksi <> "" Then
             '    query = query + " where kd_transaksi_keluar = '" + KdTransaksi + "' "
@@ -83,7 +88,7 @@ Public Class Laporan_Barang_Masuk
 
                 Dim barang = New With
                 {
-            .id_barang_masuk = reader("kd_barang_masuk"),
+            .id_barang_masuk = reader("id_barang_masuk"),
             .kd_transaksi_masuk = reader("kd_transaksi_masuk"),
             .nama_barang = reader("nama_barang"),
             .nama_jenis = reader("nama_jenis"),
@@ -122,7 +127,7 @@ Public Class Laporan_Barang_Masuk
 
             End While
             CONN.Close()
-            Dim data = New DataSet1()
+            Dim data = New DataSet2_Stock()
 
 
             For Each insertDataBarangMasuk As Object In listTransaksi
@@ -142,24 +147,24 @@ Public Class Laporan_Barang_Masuk
                 row.Item(9) = insertDataBarangMasuk.nama_lokasi
                 row.Item(10) = insertDataBarangMasuk.detail_lokasi
                 row.Item(11) = insertDataBarangMasuk.nama_toko
-                row.Item(11) = insertDataBarangMasuk.harga_beli
-                row.Item(11) = insertDataBarangMasuk.harga_jual
-                row.Item(11) = insertDataBarangMasuk.stock
-                row.Item(11) = insertDataBarangMasuk.licence
-                row.Item(11) = insertDataBarangMasuk.ios
-                row.Item(11) = insertDataBarangMasuk.created_by
-                row.Item(11) = insertDataBarangMasuk.created_date
-                If UserInfo.IdLevel = 1 Then
-                    row.Item(12) = insertDataBarangMasuk.harga_beli.ToString
-                Else
-                    row.Item(12) = "-"
-                End If
-
-
+                row.Item(12) = insertDataBarangMasuk.harga_beli
                 row.Item(13) = insertDataBarangMasuk.harga_jual
-                row.Item(14) = insertDataBarangMasuk.licence
-                row.Item(15) = insertDataBarangMasuk.ios
-                row.Item(16) = insertDataBarangMasuk.stock
+                row.Item(14) = insertDataBarangMasuk.stock
+                row.Item(15) = insertDataBarangMasuk.licence
+                row.Item(16) = insertDataBarangMasuk.ios
+                row.Item(17) = insertDataBarangMasuk.created_by
+                row.Item(18) = insertDataBarangMasuk.created_date
+                'If UserInfo.IdLevel = 1 Then
+                '    row.Item(12) = insertDataBarangMasuk.harga_beli.ToString
+                'Else
+                '    row.Item(12) = "-"
+                'End If
+
+
+                'row.Item(13) = insertDataBarangMasuk.harga_jual
+                'row.Item(14) = insertDataBarangMasuk.licence
+                'row.Item(15) = insertDataBarangMasuk.ios
+                'row.Item(16) = insertDataBarangMasuk.stock
                 'row.Item(17) = "1"
                 ds.Tables("DataBarangMasuk").Rows.Add(row)
 
@@ -183,4 +188,9 @@ Public Class Laporan_Barang_Masuk
         End Try
     End Sub
 
+    Private Sub Laporan_Barang_Masuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        VBnetSQLSeverConnection()
+        Me.ReportViewer1.RefreshReport()
+        LoadReport()
+    End Sub
 End Class

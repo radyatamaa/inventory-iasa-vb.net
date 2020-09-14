@@ -1482,7 +1482,7 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
+        <DataSetName>DataSet2_Stock</DataSetName>
         <Top>0.25917in</Top>
         <Height>0.5in</Height>
         <Width>26.56125in</Width>
@@ -1496,7 +1496,7 @@
     <Height>3.01042in</Height>
     <Style />
   </Body>
-  <Width>26.56125in</Width>
+  <Width>26.56958in</Width>
   <Page>
     <PageHeader>
       <Height>1in</Height>
@@ -1521,6 +1521,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox41</rd:DefaultName>
           <Top>0.62153in</Top>
+          <Left>0.02117cm</Left>
           <Height>0.36458in</Height>
           <Width>2.67583in</Width>
           <Style>
@@ -1557,7 +1558,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DataSet2_Stock">
       <Query>
         <DataSourceName>ID_db_inventory_iasaDataSet3</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1658,7 +1659,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>_db_inventory_iasaDataSet4</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\_db_inventory_iasaDataSet4.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\_db_inventory_iasaDataSet4.xsd</rd:SchemaPath>
         <rd:TableName>VIEW_DETAIL_BARANG_KELUAR</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
