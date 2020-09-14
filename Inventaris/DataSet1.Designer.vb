@@ -847,7 +847,7 @@ Partial Public Class DataSet1
                     ByVal company_name As String,  _
                     ByVal kd_client As String,  _
                     ByVal terbilang As String,  _
-                    ByVal tgl_keluar As String,  _
+                    ByVal tgl_keluar As Date,  _
                     ByVal periode_rental As String,  _
                     ByVal rental_type As String,  _
                     ByVal rental_exp As String) As DataInvoiceRow
@@ -1011,7 +1011,7 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnkd_client)
             Me.columnterbilang = New Global.System.Data.DataColumn("terbilang", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnterbilang)
-            Me.columntgl_keluar = New Global.System.Data.DataColumn("tgl_keluar", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columntgl_keluar = New Global.System.Data.DataColumn("tgl_keluar", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntgl_keluar)
             Me.columnperiode_rental = New Global.System.Data.DataColumn("periode_rental", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnperiode_rental)
@@ -1780,10 +1780,10 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property tgl_keluar() As String
+        Public Property tgl_keluar() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tableDataInvoice.tgl_keluarColumn),String)
+                    Return CType(Me(Me.tableDataInvoice.tgl_keluarColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'tgl_keluar' in table 'DataInvoice' is DBNull.", e)
                 End Try

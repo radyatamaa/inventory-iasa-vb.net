@@ -172,7 +172,13 @@ Public Class cetak_tanda_terima
                                             shipping_handling,
                                             subtotal,
                                             logo_toko,
-                                            id_toko
+                                            id_toko,
+                                            company_name,
+                                            kd_client,
+                                            tgl_keluar,
+                                            periode_rental,
+                                            rental_type,
+                                            rental_exp
                                   from view_invoice "
 
             If KdTransaksi IsNot Nothing And KdTransaksi <> "" Then
@@ -237,7 +243,13 @@ Public Class cetak_tanda_terima
             .shipping_handling = reader("shipping_handling"),
             .subtotal = reader("subtotal"),
             .logo_toko = reader("logo_toko"),
-            .id_toko = reader("id_toko")
+            .id_toko = reader("id_toko"),
+            .company_name = reader("company_name"),
+            .kd_client = reader("kd_client"),
+            .tgl_keluar = reader("tgl_keluar"),
+            .periode_rental = reader("periode_rental"),
+            .rental_type = reader("rental_type"),
+            .rental_exp = reader("rental_exp")
                 }
                 Dim checkBarang = listTransaksi.Where(Function(x) x.nama_tipe = barang.nama_tipe And x.kd_transaksi_keluar = barang.kd_transaksi_keluar).ToList()
                 If checkBarang.Count = 0 Then
@@ -307,6 +319,14 @@ Public Class cetak_tanda_terima
                 'Dim convertLogoTOko = Convert.ToBase64String(logoToko)
                 row.Item(36) = Application.StartupPath & "\Reports\" + insertDataBarangMasuk.id_toko.ToString + ".jpeg"
                 row.Item(37) = insertDataBarangMasuk.id_toko
+                row.Item(38) = insertDataBarangMasuk.company_name
+                row.Item(39) = insertDataBarangMasuk.kd_client
+                'Dim edate = insertDataBarangMasuk.tgl_keluar.ToString
+                'Dim iDate As String = "05/05/2005"
+                'Dim oDate As Date = Convert.ToDateTime(edate)
+                'row.Item(41) = oDate.ToShortDateString
+                row.Item(41) = insertDataBarangMasuk.tgl_keluar
+                row.Item(42) = insertDataBarangMasuk.periode_rental
                 ds.Tables("DataInvoice").Rows.Add(row)
 
 

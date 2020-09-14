@@ -2013,7 +2013,7 @@
             <Top>1.61887in</Top>
             <Left>5.77782in</Left>
             <Height>0.2in</Height>
-            <Width>1.29791in</Width>
+            <Width>1.39931in</Width>
             <ZIndex>40</ZIndex>
             <Style>
               <Border>
@@ -2601,17 +2601,20 @@
                     <Style>
                       <FontFamily>Tahoma</FontFamily>
                       <FontSize>8pt</FontSize>
+                      <Format>MMMM d, yyyy</Format>
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>tgl_keluar</rd:DefaultName>
             <Top>1.84665in</Top>
             <Left>5.77782in</Left>
             <Height>0.18611in</Height>
-            <Width>1.29791in</Width>
+            <Width>1.39931in</Width>
             <ZIndex>57</ZIndex>
             <Style>
               <Border>
