@@ -9,7 +9,10 @@
               <Width>0.5625in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.43333in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.33333in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
@@ -18,13 +21,10 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.34167in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.43333in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
@@ -110,7 +110,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id barang masuk</Value>
+                              <Value>ID Barang Masuk</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -141,7 +141,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>kd transaksi masuk</Value>
+                              <Value>Kode Transaksi Masuk</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -172,7 +172,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama barang</Value>
+                              <Value>Nama Barang</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -203,7 +203,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama jenis</Value>
+                              <Value>Nama Jenis</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -234,7 +234,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama tipe</Value>
+                              <Value>Nama Tipe</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -265,7 +265,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>serial number</Value>
+                              <Value>Serial Number</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -296,7 +296,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>warna</Value>
+                              <Value>Warna </Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -327,7 +327,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama status</Value>
+                              <Value>Nama Status</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -358,7 +358,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>tested</Value>
+                              <Value>Tested</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -389,7 +389,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama lokasi</Value>
+                              <Value>Nama Lokasi</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -420,7 +420,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>detail lokasi</Value>
+                              <Value>Detail Lokasi</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -451,7 +451,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nama toko</Value>
+                              <Value>Nama Toko</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -482,7 +482,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>harga beli</Value>
+                              <Value>Harga Beli</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -513,7 +513,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>harga jual</Value>
+                              <Value>Harga Jual</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -544,7 +544,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>stock</Value>
+                              <Value>Stock</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -575,7 +575,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>licence</Value>
+                              <Value>License</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -606,7 +606,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ios</Value>
+                              <Value>IOS</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -637,7 +637,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>created by</Value>
+                              <Value>Created By</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -668,7 +668,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>created date</Value>
+                              <Value>Created Date</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1336,7 +1336,7 @@
         <DataSetName>DataSet2_Stock</DataSetName>
         <Top>0.31125in</Top>
         <Height>0.5in</Height>
-        <Width>19.5625in</Width>
+        <Width>21.10417in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1347,7 +1347,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>19.5625in</Width>
+  <Width>21.10417in</Width>
   <Page>
     <PageHeader>
       <Height>1in</Height>
@@ -1361,7 +1361,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Laporan Data Barang Masuk</Value>
+                  <Value>Hasil Input Barang Masuk</Value>
                   <Style>
                     <FontSize>14pt</FontSize>
                   </Style>
