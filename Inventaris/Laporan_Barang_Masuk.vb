@@ -28,6 +28,7 @@ Public Class Laporan_Barang_Masuk
         CONN.Close()
     End Sub
     Sub LoadReport()
+
         Dim rptDS As ReportDataSource
         Me.ReportViewer1.RefreshReport()
         Try
@@ -192,5 +193,10 @@ Public Class Laporan_Barang_Masuk
         VBnetSQLSeverConnection()
         Me.ReportViewer1.RefreshReport()
         LoadReport()
+
+    End Sub
+
+    Private Sub date_tgl_keluar1_ValueChanged(sender As Object, e As EventArgs) 
+
     End Sub
 End Class

@@ -393,4 +393,8 @@ Public Class invoice_cetak
             LoadReport()
         End If
     End Sub
+
+    Private Sub date_tgl_keluar2_ValueChanged(sender As Object, e As EventArgs) Handles date_tgl_keluar2.ValueChanged
+
+    End Sub
 End Class
