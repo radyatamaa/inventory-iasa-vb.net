@@ -240,7 +240,12 @@ Public Class MenuUtama
     End Sub
 
     Private Sub ReplacementBarangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReplacementBarangToolStripMenuItem.Click
-
+        'ReplacementBarang.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        ReplacementBarang.pict_logo.BackgroundImage = downloadImage
+        ReplacementBarang.Show()
+        Me.Close()
     End Sub
 
     Private Sub ExtendRentalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExtendRentalToolStripMenuItem.Click
@@ -302,5 +307,13 @@ Public Class MenuUtama
 
     Private Sub btn_r_barang_rental_Click(sender As Object, e As EventArgs) Handles btn_r_barang_rental.Click
         LaporanBarangRental.Show()
+    End Sub
+
+    Private Sub PengembalianBarangRentalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PengembalianBarangRentalToolStripMenuItem.Click
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        PengembalianRental.pict_logo.BackgroundImage = downloadImage
+        PengembalianRental.Show()
+        Me.Close()
     End Sub
 End Class

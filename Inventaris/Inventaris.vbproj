@@ -383,6 +383,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PengembalianRental.Designer.vb">
+      <DependentUpon>PengembalianRental.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PengembalianRental.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="QPenawaran.Designer.vb">
       <DependentUpon>QPenawaran.vb</DependentUpon>
     </Compile>
@@ -399,6 +405,12 @@
       <DependentUpon>Repair.vb</DependentUpon>
     </Compile>
     <Compile Include="Repair.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReplacementBarang.Designer.vb">
+      <DependentUpon>ReplacementBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReplacementBarang.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="transaksi_maintenance.Designer.vb">
@@ -524,6 +536,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="PengembalianRental.resx">
+      <DependentUpon>PengembalianRental.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QPenawaran.resx">
       <DependentUpon>QPenawaran.vb</DependentUpon>
     </EmbeddedResource>
@@ -532,6 +547,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Repair.resx">
       <DependentUpon>Repair.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReplacementBarang.resx">
+      <DependentUpon>ReplacementBarang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />

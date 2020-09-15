@@ -64,6 +64,7 @@ Partial Class MenuUtama
         Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.p_logo = New System.Windows.Forms.PictureBox()
+        Me.PengembalianBarangRentalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.p_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,7 +99,7 @@ Partial Class MenuUtama
         '
         'BarangKeluarToolStripMenuItem
         '
-        Me.BarangKeluarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_penjualan, Me.btn_rental, Me.btn_repair, Me.ExtendRentalToolStripMenuItem, Me.ReplacementBarangToolStripMenuItem, Me.MaintenanceToolStripMenuItem})
+        Me.BarangKeluarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_penjualan, Me.btn_rental, Me.btn_repair, Me.ExtendRentalToolStripMenuItem, Me.ReplacementBarangToolStripMenuItem, Me.MaintenanceToolStripMenuItem, Me.PengembalianBarangRentalToolStripMenuItem})
         Me.BarangKeluarToolStripMenuItem.Name = "BarangKeluarToolStripMenuItem"
         Me.BarangKeluarToolStripMenuItem.Size = New System.Drawing.Size(180, 55)
         Me.BarangKeluarToolStripMenuItem.Text = "Barang Keluar"
@@ -107,42 +108,42 @@ Partial Class MenuUtama
         '
         Me.btn_penjualan.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_penjualan.Name = "btn_penjualan"
-        Me.btn_penjualan.Size = New System.Drawing.Size(255, 28)
+        Me.btn_penjualan.Size = New System.Drawing.Size(317, 28)
         Me.btn_penjualan.Text = "Penjualan"
         '
         'btn_rental
         '
         Me.btn_rental.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_rental.Name = "btn_rental"
-        Me.btn_rental.Size = New System.Drawing.Size(255, 28)
+        Me.btn_rental.Size = New System.Drawing.Size(317, 28)
         Me.btn_rental.Text = "Rental"
         '
         'btn_repair
         '
         Me.btn_repair.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_repair.Name = "btn_repair"
-        Me.btn_repair.Size = New System.Drawing.Size(255, 28)
+        Me.btn_repair.Size = New System.Drawing.Size(317, 28)
         Me.btn_repair.Text = "Repair"
         '
         'ExtendRentalToolStripMenuItem
         '
         Me.ExtendRentalToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.ExtendRentalToolStripMenuItem.Name = "ExtendRentalToolStripMenuItem"
-        Me.ExtendRentalToolStripMenuItem.Size = New System.Drawing.Size(255, 28)
+        Me.ExtendRentalToolStripMenuItem.Size = New System.Drawing.Size(317, 28)
         Me.ExtendRentalToolStripMenuItem.Text = "Extend Rental"
         '
         'ReplacementBarangToolStripMenuItem
         '
         Me.ReplacementBarangToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.ReplacementBarangToolStripMenuItem.Name = "ReplacementBarangToolStripMenuItem"
-        Me.ReplacementBarangToolStripMenuItem.Size = New System.Drawing.Size(255, 28)
+        Me.ReplacementBarangToolStripMenuItem.Size = New System.Drawing.Size(317, 28)
         Me.ReplacementBarangToolStripMenuItem.Text = "Replacement Barang"
         '
         'MaintenanceToolStripMenuItem
         '
         Me.MaintenanceToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.MaintenanceToolStripMenuItem.Name = "MaintenanceToolStripMenuItem"
-        Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(255, 28)
+        Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(317, 28)
         Me.MaintenanceToolStripMenuItem.Text = "Maintenance"
         '
         'QuotationToolStripMenuItem
@@ -381,6 +382,13 @@ Partial Class MenuUtama
         Me.p_logo.TabIndex = 0
         Me.p_logo.TabStop = False
         '
+        'PengembalianBarangRentalToolStripMenuItem
+        '
+        Me.PengembalianBarangRentalToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.PengembalianBarangRentalToolStripMenuItem.Name = "PengembalianBarangRentalToolStripMenuItem"
+        Me.PengembalianBarangRentalToolStripMenuItem.Size = New System.Drawing.Size(317, 28)
+        Me.PengembalianBarangRentalToolStripMenuItem.Text = "Pengembalian Barang Rental"
+        '
         'MenuUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -443,4 +451,5 @@ Partial Class MenuUtama
     Friend WithEvents btn_master_alasan As ToolStripMenuItem
     Friend WithEvents MasterJenisMaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MaintenanceToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PengembalianBarangRentalToolStripMenuItem As ToolStripMenuItem
 End Class
