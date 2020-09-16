@@ -310,6 +310,7 @@ Public Class MenuUtama
     End Sub
 
     Private Sub PengembalianBarangRentalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PengembalianBarangRentalToolStripMenuItem.Click
+        PengembalianRental.UserInfo = Me.MenuStrip1.Tag
         Dim tClient As WebClient = New WebClient
         Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
         PengembalianRental.pict_logo.BackgroundImage = downloadImage
