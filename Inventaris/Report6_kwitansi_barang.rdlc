@@ -216,10 +216,9 @@
             <Source>External</Source>
             <Value>=Parameters!rpt_image.Value</Value>
             <Sizing>FitProportional</Sizing>
-            <Top>0.125in</Top>
             <Left>0.13417in</Left>
-            <Height>0.90151in</Height>
-            <Width>1.97917in</Width>
+            <Height>1.23831in</Height>
+            <Width>2.39584in</Width>
             <ToolTip>External</ToolTip>
             <Style>
               <Border>
@@ -244,7 +243,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.02651in</Top>
+            <Top>1.27651in</Top>
             <Left>0.13417in</Left>
             <Height>0.25in</Height>
             <Width>2.23959in</Width>
@@ -274,7 +273,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>alamat_toko</rd:DefaultName>
-            <Top>1.27651in</Top>
+            <Top>1.52651in</Top>
             <Left>0.13417in</Left>
             <Height>0.25in</Height>
             <Width>4.62501in</Width>
@@ -304,7 +303,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>1.52651in</Top>
+            <Top>1.77651in</Top>
             <Left>0.13417in</Left>
             <Height>0.25in</Height>
             <Width>0.41667in</Width>
@@ -334,7 +333,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>tlp_toko</rd:DefaultName>
-            <Top>1.52651in</Top>
+            <Top>1.77651in</Top>
             <Left>0.57861in</Left>
             <Height>0.25in</Height>
             <Width>1.79514in</Width>
@@ -364,7 +363,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>nama_jenis_tipe_serial</rd:DefaultName>
-            <Top>2.82861in</Top>
+            <Top>3.07861in</Top>
             <Left>1.73834in</Left>
             <Height>0.25in</Height>
             <Width>6.80208in</Width>
@@ -397,7 +396,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>2.30083in</Top>
+            <Top>2.55083in</Top>
             <Left>0.13417in</Left>
             <Height>0.25in</Height>
             <Width>1.39236in</Width>
@@ -427,7 +426,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>2.56472in</Top>
+            <Top>2.81472in</Top>
             <Left>0.13417in</Left>
             <Height>0.25in</Height>
             <Width>1.39236in</Width>
@@ -457,7 +456,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
-            <Top>2.30083in</Top>
+            <Top>2.55083in</Top>
             <Left>1.5682in</Left>
             <Height>0.25in</Height>
             <Width>0.11458in</Width>
@@ -487,7 +486,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
-            <Top>2.56472in</Top>
+            <Top>2.81472in</Top>
             <Left>1.5682in</Left>
             <Height>0.25in</Height>
             <Width>0.11458in</Width>
@@ -526,7 +525,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>2.82861in</Top>
+            <Top>3.07861in</Top>
             <Left>0.13417in</Left>
             <Height>0.25in</Height>
             <Width>1.39236in</Width>
@@ -556,7 +555,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox6</rd:DefaultName>
-            <Top>2.82861in</Top>
+            <Top>3.07861in</Top>
             <Left>1.5682in</Left>
             <Height>0.25in</Height>
             <Width>0.11458in</Width>
@@ -586,7 +585,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>company_name</rd:DefaultName>
-            <Top>2.30083in</Top>
+            <Top>2.55083in</Top>
             <Left>1.73834in</Left>
             <Height>0.25in</Height>
             <Width>6.80208in</Width>
@@ -755,7 +754,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>3.54042in</Top>
+            <Top>3.79042in</Top>
             <Left>0.51833in</Left>
             <Height>1.8125in</Height>
             <Width>6.14708in</Width>
@@ -791,7 +790,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
-            <Top>3.54042in</Top>
+            <Top>3.79042in</Top>
             <Left>7.83208in</Left>
             <Height>0.25in</Height>
             <Width>1.23958in</Width>
@@ -807,7 +806,7 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>5.12375in</Top>
+            <Top>5.37375in</Top>
             <Left>7.58208in</Left>
             <Height>0in</Height>
             <Width>1.76042in</Width>
@@ -833,7 +832,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>terbilang</rd:DefaultName>
-            <Top>2.55083in</Top>
+            <Top>2.80083in</Top>
             <Left>1.75222in</Left>
             <Height>0.25in</Height>
             <Width>6.7882in</Width>
@@ -858,7 +857,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>INVOICE NO.</Value>
+                    <Value>NO.</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -868,10 +867,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>1.60916in</Top>
-            <Left>5.78553in</Left>
+            <Top>1.85916in</Top>
+            <Left>6.11886in</Left>
             <Height>0.25in</Height>
-            <Width>1.02848in</Width>
+            <Width>0.69515in</Width>
             <ZIndex>17</ZIndex>
             <Style>
               <Border>
@@ -894,11 +893,13 @@
                     <Style />
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>kd_transaksi_keluar</rd:DefaultName>
-            <Top>1.60916in</Top>
+            <Top>1.85916in</Top>
             <Left>6.8418in</Left>
             <Height>0.25in</Height>
             <Width>1.69585in</Width>
@@ -930,10 +931,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>1.87305in</Top>
-            <Left>5.7883in</Left>
+            <Top>2.12305in</Top>
+            <Left>6.11886in</Left>
             <Height>0.25in</Height>
-            <Width>1.02571in</Width>
+            <Width>0.69515in</Width>
             <ZIndex>19</ZIndex>
             <Style>
               <Border>
@@ -964,7 +965,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>tgl_keluar</rd:DefaultName>
-            <Top>1.87305in</Top>
+            <Top>2.12305in</Top>
             <Left>6.84457in</Left>
             <Height>0.25in</Height>
             <Width>1.69585in</Width>
@@ -980,7 +981,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>5.35292in</Height>
+        <Height>5.97792in</Height>
         <Style />
       </Body>
       <Width>9.39458in</Width>
