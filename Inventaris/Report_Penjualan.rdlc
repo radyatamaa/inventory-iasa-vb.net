@@ -1562,10 +1562,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.01042in</Height>
+    <Height>1.61459in</Height>
     <Style />
   </Body>
-  <Width>27.77792in</Width>
+  <Width>26.98625in</Width>
   <Page>
     <PageHeader>
       <Height>1in</Height>
@@ -1610,6 +1610,8 @@
         </Border>
       </Style>
     </PageHeader>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>30in</PageWidth>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
