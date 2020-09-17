@@ -766,7 +766,7 @@ Public Class extend_rental
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
         MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub dt_barang_keluar_fix_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_keluar_fix.CellValueChanged

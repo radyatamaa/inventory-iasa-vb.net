@@ -296,7 +296,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Spesifikasi</Value>
+                                  <Value>Serial Number</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -612,10 +612,9 @@
             <Value>=Parameters!rpt_image.Value</Value>
             <MIMEType>image/jpeg</MIMEType>
             <Sizing>FitProportional</Sizing>
-            <Top>0.125in</Top>
             <Left>0.13417in</Left>
-            <Height>0.90151in</Height>
-            <Width>1.97917in</Width>
+            <Height>1.23831in</Height>
+            <Width>2.39584in</Width>
             <ZIndex>1</ZIndex>
             <ToolTip>External</ToolTip>
             <Style>
@@ -707,7 +706,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
             <Top>1.06125in</Top>
-            <Left>2.44667in</Left>
+            <Left>2.57167in</Left>
             <Height>0.25in</Height>
             <Width>2.9698in</Width>
             <ZIndex>4</ZIndex>

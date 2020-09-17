@@ -213,7 +213,7 @@
       <Body>
         <ReportItems>
           <Line Name="Line1">
-            <Top>4.26611in</Top>
+            <Top>4.51611in</Top>
             <Left>0.13417in</Left>
             <Height>0in</Height>
             <Width>7.04573in</Width>
@@ -241,7 +241,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>2.37706in</Top>
+            <Top>2.62706in</Top>
             <Left>0.12502in</Left>
             <Height>0.2in</Height>
             <Width>0.87223in</Width>
@@ -275,7 +275,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>2.14665in</Top>
+            <Top>2.39665in</Top>
             <Left>0.125in</Left>
             <Height>0.1875in</Height>
             <Width>0.3125in</Width>
@@ -308,7 +308,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>2.37706in</Top>
+            <Top>2.62706in</Top>
             <Left>1.02503in</Left>
             <Height>0.2in</Height>
             <Width>0.1in</Width>
@@ -341,7 +341,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>2.83037in</Top>
+            <Top>3.08037in</Top>
             <Left>0.12223in</Left>
             <Height>0.2in</Height>
             <Width>0.87223in</Width>
@@ -374,7 +374,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>2.81648in</Top>
+            <Top>3.06648in</Top>
             <Left>1.02224in</Left>
             <Height>0.2in</Height>
             <Width>0.1in</Width>
@@ -407,7 +407,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>3.04426in</Top>
+            <Top>3.29426in</Top>
             <Left>1.02224in</Left>
             <Height>0.2in</Height>
             <Width>0.11389in</Width>
@@ -440,7 +440,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>3.05815in</Top>
+            <Top>3.30815in</Top>
             <Left>0.12223in</Left>
             <Height>0.2in</Height>
             <Width>0.87223in</Width>
@@ -473,7 +473,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>3.3104in</Top>
+            <Top>3.5604in</Top>
             <Left>0.12223in</Left>
             <Height>0.2in</Height>
             <Width>0.87223in</Width>
@@ -506,7 +506,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>3.3104in</Top>
+            <Top>3.5604in</Top>
             <Left>1.02224in</Left>
             <Height>0.2in</Height>
             <Width>0.1in</Width>
@@ -539,7 +539,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>alamat_pengiriman</rd:DefaultName>
-            <Top>2.83037in</Top>
+            <Top>3.08037in</Top>
             <Left>1.15002in</Left>
             <Height>0.2in</Height>
             <Width>2.3264in</Width>
@@ -575,7 +575,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>kota_pengiriman</rd:DefaultName>
-            <Top>3.05815in</Top>
+            <Top>3.30815in</Top>
             <Left>1.16391in</Left>
             <Height>0.2in</Height>
             <Width>1.14582in</Width>
@@ -611,7 +611,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>kdpos_pengiriman</rd:DefaultName>
-            <Top>3.05815in</Top>
+            <Top>3.30815in</Top>
             <Left>2.37917in</Left>
             <Height>0.2in</Height>
             <Width>1.09725in</Width>
@@ -647,7 +647,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>tlp_client</rd:DefaultName>
-            <Top>3.29982in</Top>
+            <Top>3.54982in</Top>
             <Left>1.16391in</Left>
             <Height>0.2in</Height>
             <Width>2.31251in</Width>
@@ -683,7 +683,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>2.40484in</Top>
+            <Top>2.65484in</Top>
             <Left>4.68405in</Left>
             <Height>0.2in</Height>
             <Width>0.1in</Width>
@@ -716,7 +716,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>2.83037in</Top>
+            <Top>3.08037in</Top>
             <Left>3.7542in</Left>
             <Height>0.2in</Height>
             <Width>0.87153in</Width>
@@ -749,7 +749,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>2.40484in</Top>
+            <Top>2.65484in</Top>
             <Left>3.75697in</Left>
             <Height>0.2in</Height>
             <Width>0.87153in</Width>
@@ -782,7 +782,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>2.81648in</Top>
+            <Top>3.06648in</Top>
             <Left>4.68128in</Left>
             <Height>0.2in</Height>
             <Width>0.1in</Width>
@@ -815,7 +815,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>alamat_pengiriman</rd:DefaultName>
-            <Top>2.83037in</Top>
+            <Top>3.08037in</Top>
             <Left>4.85073in</Left>
             <Height>0.2in</Height>
             <Width>2.3264in</Width>
@@ -851,7 +851,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>3.05815in</Top>
+            <Top>3.30815in</Top>
             <Left>3.75419in</Left>
             <Height>0.2in</Height>
             <Width>0.87153in</Width>
@@ -884,7 +884,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>3.04426in</Top>
+            <Top>3.29426in</Top>
             <Left>4.68128in</Left>
             <Height>0.2in</Height>
             <Width>0.11389in</Width>
@@ -917,7 +917,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>kota_pengiriman</rd:DefaultName>
-            <Top>3.05815in</Top>
+            <Top>3.30815in</Top>
             <Left>4.86462in</Left>
             <Height>0.2in</Height>
             <Width>1.08334in</Width>
@@ -953,7 +953,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>kdpos_pengiriman</rd:DefaultName>
-            <Top>3.05815in</Top>
+            <Top>3.30815in</Top>
             <Left>6.00352in</Left>
             <Height>0.2in</Height>
             <Width>1.17361in</Width>
@@ -989,7 +989,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>3.31702in</Top>
+            <Top>3.56702in</Top>
             <Left>3.75419in</Left>
             <Height>0.2in</Height>
             <Width>0.87153in</Width>
@@ -1022,7 +1022,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>3.31702in</Top>
+            <Top>3.56702in</Top>
             <Left>4.68128in</Left>
             <Height>0.2in</Height>
             <Width>0.1in</Width>
@@ -1055,7 +1055,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>tlp_client</rd:DefaultName>
-            <Top>3.29982in</Top>
+            <Top>3.54982in</Top>
             <Left>4.86462in</Left>
             <Height>0.2in</Height>
             <Width>2.31251in</Width>
@@ -1206,7 +1206,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>5.94667in</Top>
+            <Top>6.19667in</Top>
             <Left>0.12502in</Left>
             <Height>0.77084in</Height>
             <Width>5.58336in</Width>
@@ -1242,7 +1242,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>harga_total1</rd:DefaultName>
-            <Top>4.26611in</Top>
+            <Top>4.51611in</Top>
             <Left>5.77782in</Left>
             <Height>0.25in</Height>
             <Width>1.42012in</Width>
@@ -1288,7 +1288,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>diskon</rd:DefaultName>
-            <Top>4.51611in</Top>
+            <Top>4.76611in</Top>
             <Left>5.77782in</Left>
             <Height>0.26389in</Height>
             <Width>1.42012in</Width>
@@ -1333,7 +1333,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>4.31125in</Top>
+            <Top>4.56125in</Top>
             <Left>4.68404in</Left>
             <Height>0.2in</Height>
             <Width>1.02434in</Width>
@@ -1368,7 +1368,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>4.55292in</Top>
+            <Top>4.80292in</Top>
             <Left>4.68404in</Left>
             <Height>0.2in</Height>
             <Width>1.02434in</Width>
@@ -1404,7 +1404,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>5.04459in</Top>
+            <Top>5.29459in</Top>
             <Left>4.68404in</Left>
             <Height>0.2in</Height>
             <Width>1.02434in</Width>
@@ -1438,7 +1438,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>2.14665in</Top>
+            <Top>2.39665in</Top>
             <Left>3.75697in</Left>
             <Height>0.1875in</Height>
             <Width>0.69792in</Width>
@@ -1793,7 +1793,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>3.76611in</Top>
+            <Top>4.01611in</Top>
             <Left>0.12223in</Left>
             <Height>0.5in</Height>
             <Width>7.07571in</Width>
@@ -1809,10 +1809,9 @@
             <Value>=Parameters!rpt_image.Value</Value>
             <MIMEType>image/jpeg</MIMEType>
             <Sizing>FitProportional</Sizing>
-            <Top>0.125in</Top>
             <Left>0.13417in</Left>
-            <Height>0.90151in</Height>
-            <Width>1.97917in</Width>
+            <Height>1.23831in</Height>
+            <Width>2.39584in</Width>
             <ZIndex>34</ZIndex>
             <ToolTip>External</ToolTip>
             <Style>
@@ -1843,7 +1842,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>1.04387in</Top>
+            <Top>1.29387in</Top>
             <Left>0.13417in</Left>
             <Height>0.2in</Height>
             <Width>2.1875in</Width>
@@ -1876,7 +1875,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>alamat_toko</rd:DefaultName>
-            <Top>1.25776in</Top>
+            <Top>1.50776in</Top>
             <Left>0.12223in</Left>
             <Height>0.25in</Height>
             <Width>3.35696in</Width>
@@ -1909,7 +1908,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>1.50776in</Top>
+            <Top>1.75776in</Top>
             <Left>0.12223in</Left>
             <Height>0.22778in</Height>
             <Width>0.20069in</Width>
@@ -1942,7 +1941,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>tlp_client1</rd:DefaultName>
-            <Top>1.50776in</Top>
+            <Top>1.75776in</Top>
             <Left>0.35264in</Left>
             <Height>0.22778in</Height>
             <Width>1.95709in</Width>
@@ -1977,7 +1976,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>1.61887in</Top>
+            <Top>1.86887in</Top>
             <Left>4.86739in</Left>
             <Height>0.2in</Height>
             <Width>0.88265in</Width>
@@ -2006,11 +2005,13 @@
                     </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>kd_transaksi_keluar</rd:DefaultName>
-            <Top>1.61887in</Top>
+            <Top>1.86887in</Top>
             <Left>5.77782in</Left>
             <Height>0.2in</Height>
             <Width>1.39931in</Width>
@@ -2046,7 +2047,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox33</rd:DefaultName>
-            <Top>5.28in</Top>
+            <Top>5.53in</Top>
             <Left>5.77782in</Left>
             <Height>0.25in</Height>
             <Width>1.42012in</Width>
@@ -2082,7 +2083,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>5.28556in</Top>
+            <Top>5.53556in</Top>
             <Left>4.68405in</Left>
             <Height>0.2in</Height>
             <Width>1.02434in</Width>
@@ -2118,7 +2119,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>5.555in</Top>
+            <Top>5.805in</Top>
             <Left>4.68404in</Left>
             <Height>0.2in</Height>
             <Width>1.02434in</Width>
@@ -2154,7 +2155,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>subtotal</rd:DefaultName>
-            <Top>5.53in</Top>
+            <Top>5.78in</Top>
             <Left>5.77782in</Left>
             <Height>0.25in</Height>
             <Width>1.42012in</Width>
@@ -2191,7 +2192,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>shipping_handling</rd:DefaultName>
-            <Top>4.78in</Top>
+            <Top>5.03in</Top>
             <Left>5.77782in</Left>
             <Height>0.25in</Height>
             <Width>1.42012in</Width>
@@ -2227,7 +2228,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>4.80848in</Top>
+            <Top>5.05848in</Top>
             <Left>4.18406in</Left>
             <Height>0.2in</Height>
             <Width>1.52432in</Width>
@@ -2263,7 +2264,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox39</rd:DefaultName>
-            <Top>5.03in</Top>
+            <Top>5.28in</Top>
             <Left>5.77782in</Left>
             <Height>0.25in</Height>
             <Width>1.42012in</Width>
@@ -2297,7 +2298,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>company_name</rd:DefaultName>
-            <Top>2.37706in</Top>
+            <Top>2.62706in</Top>
             <Left>1.18059in</Left>
             <Height>0.2in</Height>
             <Width>2.2986in</Width>
@@ -2333,7 +2334,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>company_name</rd:DefaultName>
-            <Top>2.39095in</Top>
+            <Top>2.64095in</Top>
             <Left>4.86739in</Left>
             <Height>0.2in</Height>
             <Width>2.31251in</Width>
@@ -2369,7 +2370,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>2.59929in</Top>
+            <Top>2.84929in</Top>
             <Left>0.12223in</Left>
             <Height>0.2in</Height>
             <Width>0.87223in</Width>
@@ -2402,7 +2403,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>2.59929in</Top>
+            <Top>2.84929in</Top>
             <Left>1.02224in</Left>
             <Height>0.2in</Height>
             <Width>0.1in</Width>
@@ -2435,7 +2436,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>company_name</rd:DefaultName>
-            <Top>2.59929in</Top>
+            <Top>2.84929in</Top>
             <Left>1.18059in</Left>
             <Height>0.2in</Height>
             <Width>2.2986in</Width>
@@ -2471,7 +2472,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>company_name</rd:DefaultName>
-            <Top>2.63262in</Top>
+            <Top>2.88262in</Top>
             <Left>4.86739in</Left>
             <Height>0.2in</Height>
             <Width>2.31251in</Width>
@@ -2507,7 +2508,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>2.63262in</Top>
+            <Top>2.88262in</Top>
             <Left>3.75697in</Left>
             <Height>0.2in</Height>
             <Width>0.87223in</Width>
@@ -2540,7 +2541,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>2.63262in</Top>
+            <Top>2.88262in</Top>
             <Left>4.68404in</Left>
             <Height>0.2in</Height>
             <Width>0.1in</Width>
@@ -2575,7 +2576,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>1.83276in</Top>
+            <Top>2.08276in</Top>
             <Left>4.86462in</Left>
             <Height>0.2in</Height>
             <Width>0.88265in</Width>
@@ -2611,7 +2612,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>tgl_keluar</rd:DefaultName>
-            <Top>1.84665in</Top>
+            <Top>2.09665in</Top>
             <Left>5.77782in</Left>
             <Height>0.18611in</Height>
             <Width>1.39931in</Width>
@@ -2645,7 +2646,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox12</rd:DefaultName>
-            <Top>3.53833in</Top>
+            <Top>3.78833in</Top>
             <Left>0.12223in</Left>
             <Height>0.2in</Height>
             <Width>1.05836in</Width>
@@ -2679,7 +2680,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>rental_type</rd:DefaultName>
-            <Top>3.54149in</Top>
+            <Top>3.79149in</Top>
             <Left>1.53891in</Left>
             <Height>0.19685in</Height>
             <Width>1.15625in</Width>
@@ -2713,7 +2714,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>periode_rental</rd:DefaultName>
-            <Top>3.53833in</Top>
+            <Top>3.78833in</Top>
             <Left>1.22226in</Left>
             <Height>0.18611in</Height>
             <Width>0.28888in</Width>
@@ -2729,7 +2730,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>6.71751in</Height>
+        <Height>6.96751in</Height>
         <Style>
           <Border>
             <Style>None</Style>
