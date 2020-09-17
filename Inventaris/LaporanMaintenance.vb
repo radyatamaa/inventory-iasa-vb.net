@@ -42,7 +42,7 @@ Public Class LaporanMaintenance
             'CONN.Open()
             listTransaksi.Clear()
             Dim query As String = "SELECT kd_transaksi_maintenance 
-                                  ,nama_jenis 
+                                  ,nama_jenis_maintenance 
                                   ,nama_toko 
                                   ,harga 
                                   ,tgl_maintenance
@@ -186,7 +186,8 @@ Public Class LaporanMaintenance
         End Try
     End Sub
     Private Sub LaporanMaintenance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        VBnetSQLSeverConnection()
         Me.ReportViewer1.RefreshReport()
+        LoadReport()
     End Sub
 End Class
