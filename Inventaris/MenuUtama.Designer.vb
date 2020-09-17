@@ -32,6 +32,7 @@ Partial Class MenuUtama
         Me.ExtendRentalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReplacementBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MaintenanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PengembalianBarangRentalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuotationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_qrental = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_qinstallasi = New System.Windows.Forms.ToolStripMenuItem()
@@ -64,7 +65,7 @@ Partial Class MenuUtama
         Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.p_logo = New System.Windows.Forms.PictureBox()
-        Me.PengembalianBarangRentalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.p_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -146,6 +147,13 @@ Partial Class MenuUtama
         Me.MaintenanceToolStripMenuItem.Size = New System.Drawing.Size(317, 28)
         Me.MaintenanceToolStripMenuItem.Text = "Maintenance"
         '
+        'PengembalianBarangRentalToolStripMenuItem
+        '
+        Me.PengembalianBarangRentalToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.PengembalianBarangRentalToolStripMenuItem.Name = "PengembalianBarangRentalToolStripMenuItem"
+        Me.PengembalianBarangRentalToolStripMenuItem.Size = New System.Drawing.Size(317, 28)
+        Me.PengembalianBarangRentalToolStripMenuItem.Text = "Pengembalian Barang Rental"
+        '
         'QuotationToolStripMenuItem
         '
         Me.QuotationToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btn_qrental, Me.btn_qinstallasi, Me.btn_qmaintenence})
@@ -176,7 +184,7 @@ Partial Class MenuUtama
         '
         'ReportToolStripMenuItem
         '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ccc, Me.btn_r_hasil_penjualan, Me.btn_r_barang_rental, Me.btn_r_invoice_keluar, Me.btn_r_garansi, Me.btn_r_stock_barang})
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ccc, Me.btn_r_hasil_penjualan, Me.btn_r_barang_rental, Me.btn_r_invoice_keluar, Me.btn_r_garansi, Me.btn_r_stock_barang, Me.MaintenanceToolStripMenuItem1})
         Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
         Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(100, 55)
         Me.ReportToolStripMenuItem.Text = "Report"
@@ -382,12 +390,12 @@ Partial Class MenuUtama
         Me.p_logo.TabIndex = 0
         Me.p_logo.TabStop = False
         '
-        'PengembalianBarangRentalToolStripMenuItem
+        'MaintenanceToolStripMenuItem1
         '
-        Me.PengembalianBarangRentalToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
-        Me.PengembalianBarangRentalToolStripMenuItem.Name = "PengembalianBarangRentalToolStripMenuItem"
-        Me.PengembalianBarangRentalToolStripMenuItem.Size = New System.Drawing.Size(317, 28)
-        Me.PengembalianBarangRentalToolStripMenuItem.Text = "Pengembalian Barang Rental"
+        Me.MaintenanceToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.MaintenanceToolStripMenuItem1.Name = "MaintenanceToolStripMenuItem1"
+        Me.MaintenanceToolStripMenuItem1.Size = New System.Drawing.Size(292, 28)
+        Me.MaintenanceToolStripMenuItem1.Text = "Maintenance"
         '
         'MenuUtama
         '
@@ -452,4 +460,5 @@ Partial Class MenuUtama
     Friend WithEvents MasterJenisMaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PengembalianBarangRentalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MaintenanceToolStripMenuItem1 As ToolStripMenuItem
 End Class

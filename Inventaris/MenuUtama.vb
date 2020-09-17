@@ -317,4 +317,9 @@ Public Class MenuUtama
         PengembalianRental.Show()
         Me.Close()
     End Sub
+
+    Private Sub MaintenanceToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles MaintenanceToolStripMenuItem1.Click
+        LaporanMaintenance.UserInfo = Me.MenuStrip1.Tag
+        LaporanMaintenance.Show()
+    End Sub
 End Class
