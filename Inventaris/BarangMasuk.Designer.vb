@@ -22,14 +22,17 @@ Partial Class BarangMasuk
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BarangMasuk))
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btn_browse = New System.Windows.Forms.Button()
+        Me.txt_file_excel = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.dt_barang_masuk = New System.Windows.Forms.DataGridView()
         Me.dt_jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -96,6 +99,7 @@ Partial Class BarangMasuk
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pict_logo = New System.Windows.Forms.PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.data_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,6 +112,9 @@ Partial Class BarangMasuk
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel2.Controls.Add(Me.btn_browse)
+        Me.Panel2.Controls.Add(Me.txt_file_excel)
+        Me.Panel2.Controls.Add(Me.Label17)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.dt_barang_masuk)
         Me.Panel2.Controls.Add(Me.cmb_warna)
@@ -146,8 +153,38 @@ Partial Class BarangMasuk
         Me.Panel2.Location = New System.Drawing.Point(1, 79)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1028, 626)
+        Me.Panel2.Size = New System.Drawing.Size(977, 626)
         Me.Panel2.TabIndex = 1
+        '
+        'btn_browse
+        '
+        Me.btn_browse.Location = New System.Drawing.Point(644, 159)
+        Me.btn_browse.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_browse.Name = "btn_browse"
+        Me.btn_browse.Size = New System.Drawing.Size(76, 26)
+        Me.btn_browse.TabIndex = 58
+        Me.btn_browse.Text = "Browse"
+        Me.btn_browse.UseVisualStyleBackColor = True
+        '
+        'txt_file_excel
+        '
+        Me.txt_file_excel.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_file_excel.Location = New System.Drawing.Point(452, 162)
+        Me.txt_file_excel.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_file_excel.Name = "txt_file_excel"
+        Me.txt_file_excel.Size = New System.Drawing.Size(178, 20)
+        Me.txt_file_excel.TabIndex = 57
+        '
+        'Label17
+        '
+        Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(350, 162)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(65, 13)
+        Me.Label17.TabIndex = 59
+        Me.Label17.Text = "Import Excel"
         '
         'Button1
         '
@@ -170,14 +207,14 @@ Partial Class BarangMasuk
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_barang_masuk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dt_barang_masuk.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dt_barang_masuk.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dt_barang_masuk.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.dt_barang_masuk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_barang_masuk.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dt_jenis_barang, Me.dt_tipe_barang, Me.dt_serial, Me.dt_kondisi, Me.dt_tested, Me.dt_lokasi, Me.dt_detail, Me.dt_lincese, Me.dt_catatan, Me.dt_status, Me.dt_hargamodal, Me.dt_hargabarang, Me.dt_tgl_masuk})
         Me.dt_barang_masuk.Location = New System.Drawing.Point(0, 432)
@@ -185,7 +222,7 @@ Partial Class BarangMasuk
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1008, 191)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(957, 191)
         Me.dt_barang_masuk.TabIndex = 55
         '
         'dt_jenis_barang
@@ -271,10 +308,10 @@ Partial Class BarangMasuk
         'dt_hargamodal
         '
         Me.dt_hargamodal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "N2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.dt_hargamodal.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle14.Format = "N2"
+        DataGridViewCellStyle14.NullValue = Nothing
+        Me.dt_hargamodal.DefaultCellStyle = DataGridViewCellStyle14
         Me.dt_hargamodal.FillWeight = 39.59391!
         Me.dt_hargamodal.HeaderText = "Harga Modal"
         Me.dt_hargamodal.MinimumWidth = 125
@@ -283,10 +320,10 @@ Partial Class BarangMasuk
         'dt_hargabarang
         '
         Me.dt_hargabarang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "N2"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.dt_hargabarang.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle15.Format = "N2"
+        DataGridViewCellStyle15.NullValue = Nothing
+        Me.dt_hargabarang.DefaultCellStyle = DataGridViewCellStyle15
         Me.dt_hargabarang.FillWeight = 39.59391!
         Me.dt_hargabarang.HeaderText = "Harga Barang"
         Me.dt_hargabarang.MinimumWidth = 125
@@ -505,14 +542,14 @@ Partial Class BarangMasuk
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.data_barang_masuk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.data_barang_masuk.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.data_barang_masuk.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.data_barang_masuk.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.data_barang_masuk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.data_barang_masuk.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang, Me.tipe_barang, Me.serial_number, Me.kondisi, Me.tested, Me.lokasi, Me.detail_lokasi, Me.lisensi, Me.catatan, Me.status_barang, Me.harga_modal, Me.harga_barang, Me.tgl_masuk})
         Me.data_barang_masuk.Location = New System.Drawing.Point(-1, 198)
@@ -520,7 +557,7 @@ Partial Class BarangMasuk
         Me.data_barang_masuk.Name = "data_barang_masuk"
         Me.data_barang_masuk.RowHeadersWidth = 51
         Me.data_barang_masuk.RowTemplate.Height = 24
-        Me.data_barang_masuk.Size = New System.Drawing.Size(1008, 184)
+        Me.data_barang_masuk.Size = New System.Drawing.Size(957, 184)
         Me.data_barang_masuk.TabIndex = 16
         '
         'jenis_barang
@@ -617,10 +654,10 @@ Partial Class BarangMasuk
         'harga_modal
         '
         Me.harga_modal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "N2"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.harga_modal.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle17.Format = "N2"
+        DataGridViewCellStyle17.NullValue = Nothing
+        Me.harga_modal.DefaultCellStyle = DataGridViewCellStyle17
         Me.harga_modal.FillWeight = 39.59391!
         Me.harga_modal.HeaderText = "Harga Modal"
         Me.harga_modal.MinimumWidth = 125
@@ -629,10 +666,10 @@ Partial Class BarangMasuk
         'harga_barang
         '
         Me.harga_barang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "N2"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.harga_barang.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle18.Format = "N2"
+        DataGridViewCellStyle18.NullValue = Nothing
+        Me.harga_barang.DefaultCellStyle = DataGridViewCellStyle18
         Me.harga_barang.FillWeight = 39.59391!
         Me.harga_barang.HeaderText = "Harga Barang"
         Me.harga_barang.MinimumWidth = 125
@@ -850,6 +887,10 @@ Partial Class BarangMasuk
         Me.Label15.Text = "Barang Masuk"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'BarangMasuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -940,4 +981,8 @@ Partial Class BarangMasuk
     Friend WithEvents harga_modal As DataGridViewTextBoxColumn
     Friend WithEvents harga_barang As DataGridViewTextBoxColumn
     Friend WithEvents tgl_masuk As DataGridViewTextBoxColumn
+    Friend WithEvents btn_browse As Button
+    Friend WithEvents txt_file_excel As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

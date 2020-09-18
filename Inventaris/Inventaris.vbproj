@@ -48,6 +48,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="expertxls, Version=6.0.2.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExpertXls.ExcelLibrary.6.0.2\lib\net40\expertxls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>..\..\..\..\Downloads\Compressed\Guna.UI-Framework-Lib-master\Guna.UI2.WinForms_v2.0.0.6\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
@@ -80,6 +84,10 @@
     </Reference>
     <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.7.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.7\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
@@ -249,6 +257,12 @@
       <DependentUpon>LaporanBarangRental.vb</DependentUpon>
     </Compile>
     <Compile Include="LaporanBarangRental.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LaporanMaintenance.Designer.vb">
+      <DependentUpon>LaporanMaintenance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LaporanMaintenance.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Laporan_Barang_Masuk.Designer.vb">
@@ -473,6 +487,9 @@
     <EmbeddedResource Include="LaporanBarangRental.resx">
       <DependentUpon>LaporanBarangRental.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LaporanMaintenance.resx">
+      <DependentUpon>LaporanMaintenance.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Laporan_Barang_Masuk.resx">
       <DependentUpon>Laporan_Barang_Masuk.vb</DependentUpon>
     </EmbeddedResource>
@@ -556,6 +573,7 @@
     <EmbeddedResource Include="Report4.rdlc" />
     <EmbeddedResource Include="Report5_tanda_terima.rdlc" />
     <EmbeddedResource Include="Report6_kwitansi_barang.rdlc" />
+    <EmbeddedResource Include="ReportMaintenance.rdlc" />
     <EmbeddedResource Include="ReportRental.rdlc" />
     <EmbeddedResource Include="Report_Penjualan.rdlc" />
     <EmbeddedResource Include="transaksi_maintenance.resx">
