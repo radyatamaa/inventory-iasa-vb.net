@@ -126,6 +126,7 @@ Public Class BarangMasuk
 
         Next
 end_of_for:
+        objWorkBook.Close()
         Return result
     End Function
     Function DeleteBarangMasuk(idBarangMasuk As Integer, idbarang As Integer)
