@@ -690,7 +690,7 @@ Partial Class ReplacementBarang
         Me.dt_barang_keluar_fix2.Name = "dt_barang_keluar_fix2"
         Me.dt_barang_keluar_fix2.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix2.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix2.Size = New System.Drawing.Size(878, 119)
+        Me.dt_barang_keluar_fix2.Size = New System.Drawing.Size(518, 119)
         Me.dt_barang_keluar_fix2.TabIndex = 145
         '
         'DataGridViewTextBoxColumn13
@@ -1113,7 +1113,7 @@ Partial Class ReplacementBarang
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(878, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(517, 119)
         Me.dt_barang_masuk.TabIndex = 114
         '
         'jenis_barang
@@ -1393,6 +1393,7 @@ Partial Class ReplacementBarang
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "ReplacementBarang"
         Me.Text = "ReplacementBarang"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
