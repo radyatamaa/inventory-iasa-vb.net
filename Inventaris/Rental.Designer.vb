@@ -176,7 +176,7 @@ Partial Class Rental
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1008, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1034, 119)
         Me.dt_barang_masuk.TabIndex = 15
         '
         'jenis_barang
@@ -531,7 +531,7 @@ Partial Class Rental
         Me.Panel2.Location = New System.Drawing.Point(0, 79)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1163, 563)
+        Me.Panel2.Size = New System.Drawing.Size(1189, 563)
         Me.Panel2.TabIndex = 74
         '
         'Label21
@@ -698,7 +698,7 @@ Partial Class Rental
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1008, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1034, 119)
         Me.dt_barang_keluar_fix.TabIndex = 17
         '
         'jenis_barang2
