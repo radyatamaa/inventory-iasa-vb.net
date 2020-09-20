@@ -52,37 +52,80 @@ Public Class BarangMasuk
                 If UserInfo IsNot Nothing Then
                     idToko = UserInfo.IdToko
                 End If
+                Dim tested As Integer = 0
+                If CType(ex.Cells(i, 5), Microsoft.Office.Interop.Excel.Range).Value.ToString.ToLower = "Teruji".ToLower Then
+                    tested = 1
+                ElseIf CType(ex.Cells(i, 5), Microsoft.Office.Interop.Excel.Range).Value.ToString.ToLower = "Tidak Teruji".ToLower Then
+                    tested = 0
+                End If
                 Dim test = CType(ex.Cells(i, 11), Microsoft.Office.Interop.Excel.Range).Value.ToString
-                Dim test3 = CType(ex.Cells(i, 11), Microsoft.Office.Interop.Excel.Range).Value
+                'Dim test3 = CType(ex.Cells(i, 11), Microsoft.Office.Interop.Excel.Range).Value
                 Dim hargaBeli As Decimal = Decimal.Parse(test)
                 Dim hargaJual As Decimal = Decimal.Parse(CType(ex.Cells(i, 12), Microsoft.Office.Interop.Excel.Range).Value.ToString)
-                Dim namaJenis = listJenis.Where(Function(x) x.id_jenis = CType(ex.Cells(i, 1), Microsoft.Office.Interop.Excel.Range).Value.ToString()).Select(Function(x) x.nama_jenis).FirstOrDefault()
-                Dim namaTipe = listTipe.Where(Function(x) x.id_tipe = CType(ex.Cells(i, 2), Microsoft.Office.Interop.Excel.Range).Value.ToString()).Select(Function(x) x.nama_tipe).FirstOrDefault()
-                Dim namaKondisi = listKondisiCache.Where(Function(x) x.id_kondisi = CType(ex.Cells(i, 4), Microsoft.Office.Interop.Excel.Range).Value.ToString()).Select(Function(x) x.nama_kondisi).FirstOrDefault()
-                Dim namaLokasi = listLokasiCache.Where(Function(x) x.id_lokasi = CType(ex.Cells(i, 6), Microsoft.Office.Interop.Excel.Range).Value.ToString()).Select(Function(x) x.nama_lokasi).FirstOrDefault()
-                Dim namaDetailLokasi = listDetailLokasiCache.Where(Function(x) x.id_detail_lokasi = CType(ex.Cells(i, 7), Microsoft.Office.Interop.Excel.Range).Value.ToString()).Select(Function(x) x.detail_lokasi).FirstOrDefault()
-                Dim namaStatus = listStatus.Where(Function(x) x.id_status_barang = CType(ex.Cells(i, 10), Microsoft.Office.Interop.Excel.Range).Value.ToString()).Select(Function(x) x.nama_status).FirstOrDefault()
+
+                Dim namaJenis = listJenis.Where(Function(x) x.nama_jenis.ToString.ToLower = CType(ex.Cells(i, 1), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaJenis Is Nothing Then
+                    MsgBox("Jenis Barang " + CType(ex.Cells(i, 1), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    Return result
+                End If
+
+                Dim namaTipe = listTipe.Where(Function(x) x.nama_tipe.ToString.ToLower = CType(ex.Cells(i, 2), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaTipe Is Nothing Then
+                    MsgBox("Tipe Barang " + CType(ex.Cells(i, 2), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    Return result
+                End If
+
+                Dim namaKondisi = listKondisiCache.Where(Function(x) x.nama_kondisi.ToString.ToLower = CType(ex.Cells(i, 4), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaKondisi Is Nothing Then
+                    MsgBox("Kondisi Barang " + CType(ex.Cells(i, 4), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    Return result
+                End If
+
+                Dim namaLokasi = listLokasiCache.Where(Function(x) x.nama_lokasi.ToString.ToLower = CType(ex.Cells(i, 6), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaLokasi Is Nothing Then
+                    MsgBox("Lokasi Barang " + CType(ex.Cells(i, 6), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    Return result
+                End If
+
+                Dim namaDetailLokasi = listDetailLokasiCache.Where(Function(x) x.detail_lokasi.ToString.ToLower = CType(ex.Cells(i, 7), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaDetailLokasi Is Nothing Then
+                    MsgBox("Lokasi Detail Barang " + CType(ex.Cells(i, 7), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    Return result
+                End If
+
+                Dim namaStatus = listStatus.Where(Function(x) x.nama_status.ToString.ToLower = CType(ex.Cells(i, 10), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaStatus Is Nothing Then
+                    MsgBox("Status Barang " + CType(ex.Cells(i, 10), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    Return result
+                End If
+
                 Dim insertDataBarangMasuk = New With
                     {
                     .catatan = CType(ex.Cells(i, 9), Microsoft.Office.Interop.Excel.Range).Value.ToString,
                     .id_barang = Me.Label2.Tag,
                      .id_barang_masuk = Me.Label1.Tag,
                      .kd_barang = CType(ex.Cells(i, 13), Microsoft.Office.Interop.Excel.Range).Value.ToString,
-                     .nama_jenis = namaJenis,
-                     .id_jenis = CType(ex.Cells(i, 1), Microsoft.Office.Interop.Excel.Range).Value,
-                     .nama_tipe = namaTipe,
-                     .id_tipe = CType(ex.Cells(i, 2), Microsoft.Office.Interop.Excel.Range).Value,
+                     .nama_jenis = namaJenis.nama_jenis,
+                     .id_jenis = namaJenis.id_jenis,
+                     .nama_tipe = namaTipe.nama_tipe,
+                     .id_tipe = namaTipe.id_tipe,
                      .serial_number = CType(ex.Cells(i, 3), Microsoft.Office.Interop.Excel.Range).Value.ToString,
-                     .nama_kondisi = namaKondisi,
-                     .id_kondisi = CType(ex.Cells(i, 4), Microsoft.Office.Interop.Excel.Range).Value,
+                     .nama_kondisi = namaKondisi.nama_kondisi,
+                     .id_kondisi = namaKondisi.id_kondisi,
                      .warna = "",
-                     .nama_status_barang = namaStatus,
-                     .id_status_barang = CType(ex.Cells(i, 10), Microsoft.Office.Interop.Excel.Range).Value,
-                     .tested = CType(ex.Cells(i, 5), Microsoft.Office.Interop.Excel.Range).Value,
-                     .nama_lokasi = namaLokasi,
-                     .id_lokasi = CType(ex.Cells(i, 6), Microsoft.Office.Interop.Excel.Range).Value,
-                     .nama_detail_lokasi = namaDetailLokasi,
-                     .id_detail_lokasi = CType(ex.Cells(i, 7), Microsoft.Office.Interop.Excel.Range).Value,
+                     .nama_status_barang = namaStatus.nama_status,
+                     .id_status_barang = namaStatus.id_status_barang,
+                     .tested = tested,
+                     .nama_lokasi = namaLokasi.nama_lokasi,
+                     .id_lokasi = namaLokasi.id_lokasi,
+                     .nama_detail_lokasi = namaDetailLokasi.detail_lokasi,
+                     .id_detail_lokasi = namaDetailLokasi.id_detail_lokasi,
                      .id_toko = idToko,
                      .harga_beli = hargaBeli,
                      .harga_jual = hargaJual,
@@ -127,6 +170,7 @@ Public Class BarangMasuk
         Next
 end_of_for:
         objWorkBook.Close()
+        objExcel.Quit()
         Return result
     End Function
     Function DeleteBarangMasuk(idBarangMasuk As Integer, idbarang As Integer)
@@ -1028,13 +1072,18 @@ end_of_for:
             If listData.Count > 0 Then
                 listBarangMasuk.AddRange(listData)
                 For Each insertDataBarangMasuk As Object In listBarangMasuk
-
+                    Dim test As String
+                    If insertDataBarangMasuk.tested = 1 Then
+                        test = "Teruji"
+                    ElseIf insertDataBarangMasuk.tested = 0 Then
+                        test = "Tidak Teruji"
+                    End If
                     data_barang_masuk.Rows.Add(1)
                     data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.nama_jenis
                     data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_tipe
                     data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.serial_number
                     data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_kondisi
-                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.tested
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(4).Value = test
                     data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.nama_lokasi
                     data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.nama_detail_lokasi
                     data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.licence
