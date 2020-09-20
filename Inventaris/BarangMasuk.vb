@@ -67,6 +67,8 @@ Public Class BarangMasuk
                 If namaJenis Is Nothing Then
                     MsgBox("Jenis Barang " + CType(ex.Cells(i, 1), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
                     result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
                     Return result
                 End If
 
@@ -74,6 +76,8 @@ Public Class BarangMasuk
                 If namaTipe Is Nothing Then
                     MsgBox("Tipe Barang " + CType(ex.Cells(i, 2), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
                     result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
                     Return result
                 End If
 
@@ -81,6 +85,8 @@ Public Class BarangMasuk
                 If namaKondisi Is Nothing Then
                     MsgBox("Kondisi Barang " + CType(ex.Cells(i, 4), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
                     result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
                     Return result
                 End If
 
@@ -88,6 +94,8 @@ Public Class BarangMasuk
                 If namaLokasi Is Nothing Then
                     MsgBox("Lokasi Barang " + CType(ex.Cells(i, 6), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
                     result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
                     Return result
                 End If
 
@@ -95,6 +103,8 @@ Public Class BarangMasuk
                 If namaDetailLokasi Is Nothing Then
                     MsgBox("Lokasi Detail Barang " + CType(ex.Cells(i, 7), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
                     result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
                     Return result
                 End If
 
@@ -102,6 +112,8 @@ Public Class BarangMasuk
                 If namaStatus Is Nothing Then
                     MsgBox("Status Barang " + CType(ex.Cells(i, 10), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
                     result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
                     Return result
                 End If
 
@@ -142,6 +154,8 @@ Public Class BarangMasuk
                 If barang.Count > 0 Then
                     MsgBox("Serial Number " + insertDataBarangMasuk.serial_number + " Sudah ada!")
                     result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
                     Return result
                 End If
 
@@ -150,6 +164,8 @@ Public Class BarangMasuk
                 If barangMasukCheck.Count > 0 Then
                     MsgBox("Serial Number " + insertDataBarangMasuk.serial_number + " Sudah ada!")
                     result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
                     Return result
                 End If
 
@@ -158,6 +174,8 @@ Public Class BarangMasuk
                 If barangMasukExcel.Count > 0 Then
                     MsgBox("Serial Number " + insertDataBarangMasuk.serial_number + " Sudah ada!")
                     result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
                     Return result
                 End If
                 result.Add(insertDataBarangMasuk)
