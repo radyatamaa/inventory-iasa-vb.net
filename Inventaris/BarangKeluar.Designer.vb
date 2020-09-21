@@ -118,9 +118,10 @@ Partial Class BarangKeluar
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(88, 33)
+        Me.Label1.Location = New System.Drawing.Point(66, 27)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(107, 17)
+        Me.Label1.Size = New System.Drawing.Size(81, 13)
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Kode Transaksi"
         '
@@ -128,18 +129,19 @@ Partial Class BarangKeluar
         '
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(517, 146)
+        Me.Label9.Location = New System.Drawing.Point(388, 119)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(105, 17)
+        Me.Label9.Size = New System.Drawing.Size(79, 13)
         Me.Label9.TabIndex = 23
         Me.Label9.Text = "Tanggal Keluar"
         '
         'date_tgl_keluar
         '
-        Me.date_tgl_keluar.Location = New System.Drawing.Point(677, 151)
-        Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.date_tgl_keluar.Location = New System.Drawing.Point(508, 123)
+        Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(2)
         Me.date_tgl_keluar.Name = "date_tgl_keluar"
-        Me.date_tgl_keluar.Size = New System.Drawing.Size(236, 22)
+        Me.date_tgl_keluar.Size = New System.Drawing.Size(178, 20)
         Me.date_tgl_keluar.TabIndex = 9
         '
         'dt_barang_masuk
@@ -159,12 +161,12 @@ Partial Class BarangKeluar
         Me.dt_barang_masuk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_barang_masuk.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang, Me.tipe_barang, Me.serial_number, Me.kondisi, Me.tested, Me.lokasi, Me.detail_lokasi, Me.catatan, Me.status, Me.harga_jual})
         Me.dt_barang_masuk.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.dt_barang_masuk.Location = New System.Drawing.Point(0, 226)
-        Me.dt_barang_masuk.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dt_barang_masuk.Location = New System.Drawing.Point(0, 184)
+        Me.dt_barang_masuk.Margin = New System.Windows.Forms.Padding(2)
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1431, 146)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1015, 119)
         Me.dt_barang_masuk.TabIndex = 15
         '
         'jenis_barang
@@ -245,29 +247,30 @@ Partial Class BarangKeluar
         '
         Me.cmb_tipe_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cmb_tipe_barang.FormattingEnabled = True
-        Me.cmb_tipe_barang.Location = New System.Drawing.Point(251, 107)
-        Me.cmb_tipe_barang.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cmb_tipe_barang.Location = New System.Drawing.Point(188, 87)
+        Me.cmb_tipe_barang.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_tipe_barang.Name = "cmb_tipe_barang"
-        Me.cmb_tipe_barang.Size = New System.Drawing.Size(236, 24)
+        Me.cmb_tipe_barang.Size = New System.Drawing.Size(178, 21)
         Me.cmb_tipe_barang.TabIndex = 3
         '
         'cmb_jenis_barang
         '
         Me.cmb_jenis_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cmb_jenis_barang.FormattingEnabled = True
-        Me.cmb_jenis_barang.Location = New System.Drawing.Point(251, 71)
-        Me.cmb_jenis_barang.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cmb_jenis_barang.Location = New System.Drawing.Point(188, 58)
+        Me.cmb_jenis_barang.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_jenis_barang.Name = "cmb_jenis_barang"
-        Me.cmb_jenis_barang.Size = New System.Drawing.Size(236, 24)
+        Me.cmb_jenis_barang.Size = New System.Drawing.Size(178, 21)
         Me.cmb_jenis_barang.TabIndex = 2
         '
         'Label5
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(88, 146)
+        Me.Label5.Location = New System.Drawing.Point(66, 119)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(43, 17)
+        Me.Label5.Size = New System.Drawing.Size(33, 13)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Client"
         '
@@ -275,19 +278,20 @@ Partial Class BarangKeluar
         '
         Me.cmb_client.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cmb_client.FormattingEnabled = True
-        Me.cmb_client.Location = New System.Drawing.Point(251, 140)
-        Me.cmb_client.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cmb_client.Location = New System.Drawing.Point(188, 114)
+        Me.cmb_client.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_client.Name = "cmb_client"
-        Me.cmb_client.Size = New System.Drawing.Size(236, 24)
+        Me.cmb_client.Size = New System.Drawing.Size(178, 21)
         Me.cmb_client.TabIndex = 4
         '
         'Label4
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(88, 175)
+        Me.Label4.Location = New System.Drawing.Point(66, 142)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 17)
+        Me.Label4.Size = New System.Drawing.Size(43, 13)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Garansi"
         '
@@ -295,9 +299,10 @@ Partial Class BarangKeluar
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(88, 108)
+        Me.Label3.Location = New System.Drawing.Point(66, 88)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 17)
+        Me.Label3.Size = New System.Drawing.Size(65, 13)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Tipe Barang"
         '
@@ -305,9 +310,10 @@ Partial Class BarangKeluar
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(88, 71)
+        Me.Label2.Location = New System.Drawing.Point(66, 58)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(91, 17)
+        Me.Label2.Size = New System.Drawing.Size(68, 13)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Jenis Barang"
         '
@@ -349,44 +355,41 @@ Partial Class BarangKeluar
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Location = New System.Drawing.Point(0, 95)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Location = New System.Drawing.Point(0, 77)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(5163, 623)
+        Me.Panel2.Size = New System.Drawing.Size(4002, 506)
         Me.Panel2.TabIndex = 6
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(936, 187)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox1.Location = New System.Drawing.Point(702, 152)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(236, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(178, 20)
         Me.TextBox1.TabIndex = 72
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(517, 187)
-        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label21.Location = New System.Drawing.Point(388, 152)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(118, 17)
+        Me.Label21.Size = New System.Drawing.Size(89, 13)
         Me.Label21.TabIndex = 68
         Me.Label21.Text = "Nama Perushaan"
         '
         'txt_pt
         '
-        Me.txt_pt.Location = New System.Drawing.Point(676, 187)
-        Me.txt_pt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_pt.Location = New System.Drawing.Point(507, 152)
         Me.txt_pt.Name = "txt_pt"
-        Me.txt_pt.Size = New System.Drawing.Size(236, 22)
+        Me.txt_pt.Size = New System.Drawing.Size(178, 20)
         Me.txt_pt.TabIndex = 67
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1173, 187)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Location = New System.Drawing.Point(880, 152)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(51, 25)
+        Me.Button1.Size = New System.Drawing.Size(38, 20)
         Me.Button1.TabIndex = 66
         Me.Button1.Text = "Cari"
         Me.Button1.UseVisualStyleBackColor = True
@@ -394,50 +397,51 @@ Partial Class BarangKeluar
         'txt_kdpos_ship
         '
         Me.txt_kdpos_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kdpos_ship.Location = New System.Drawing.Point(1121, 148)
-        Me.txt_kdpos_ship.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_kdpos_ship.Location = New System.Drawing.Point(841, 120)
+        Me.txt_kdpos_ship.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_kdpos_ship.Multiline = True
         Me.txt_kdpos_ship.Name = "txt_kdpos_ship"
-        Me.txt_kdpos_ship.Size = New System.Drawing.Size(236, 22)
+        Me.txt_kdpos_ship.Size = New System.Drawing.Size(178, 19)
         Me.txt_kdpos_ship.TabIndex = 14
         '
         'txt_kota_ship
         '
         Me.txt_kota_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kota_ship.Location = New System.Drawing.Point(1121, 110)
-        Me.txt_kota_ship.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_kota_ship.Location = New System.Drawing.Point(841, 89)
+        Me.txt_kota_ship.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_kota_ship.Multiline = True
         Me.txt_kota_ship.Name = "txt_kota_ship"
-        Me.txt_kota_ship.Size = New System.Drawing.Size(236, 22)
+        Me.txt_kota_ship.Size = New System.Drawing.Size(178, 19)
         Me.txt_kota_ship.TabIndex = 13
         '
         'txt_alamat_ship
         '
         Me.txt_alamat_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_alamat_ship.Location = New System.Drawing.Point(1121, 76)
-        Me.txt_alamat_ship.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_alamat_ship.Location = New System.Drawing.Point(841, 62)
+        Me.txt_alamat_ship.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_alamat_ship.Multiline = True
         Me.txt_alamat_ship.Name = "txt_alamat_ship"
-        Me.txt_alamat_ship.Size = New System.Drawing.Size(236, 22)
+        Me.txt_alamat_ship.Size = New System.Drawing.Size(178, 19)
         Me.txt_alamat_ship.TabIndex = 12
         '
         'txt_client_ship
         '
         Me.txt_client_ship.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_client_ship.Location = New System.Drawing.Point(1121, 41)
-        Me.txt_client_ship.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_client_ship.Location = New System.Drawing.Point(841, 33)
+        Me.txt_client_ship.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_client_ship.Multiline = True
         Me.txt_client_ship.Name = "txt_client_ship"
-        Me.txt_client_ship.Size = New System.Drawing.Size(236, 22)
+        Me.txt_client_ship.Size = New System.Drawing.Size(178, 19)
         Me.txt_client_ship.TabIndex = 11
         '
         'Label17
         '
         Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(932, 41)
+        Me.Label17.Location = New System.Drawing.Point(699, 33)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(98, 17)
+        Me.Label17.Size = New System.Drawing.Size(75, 13)
         Me.Label17.TabIndex = 60
         Me.Label17.Text = "Ship To Name"
         '
@@ -445,9 +449,10 @@ Partial Class BarangKeluar
         '
         Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(932, 145)
+        Me.Label14.Location = New System.Drawing.Point(699, 118)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(117, 17)
+        Me.Label14.Size = New System.Drawing.Size(89, 13)
         Me.Label14.TabIndex = 59
         Me.Label14.Text = "Ship To Kodepos"
         '
@@ -455,9 +460,10 @@ Partial Class BarangKeluar
         '
         Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(932, 110)
+        Me.Label15.Location = New System.Drawing.Point(699, 89)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(90, 17)
+        Me.Label15.Size = New System.Drawing.Size(69, 13)
         Me.Label15.TabIndex = 58
         Me.Label15.Text = "Ship To Kota"
         '
@@ -465,9 +471,10 @@ Partial Class BarangKeluar
         '
         Me.Label16.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(932, 75)
+        Me.Label16.Location = New System.Drawing.Point(699, 61)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(170, 17)
+        Me.Label16.Size = New System.Drawing.Size(128, 13)
         Me.Label16.TabIndex = 57
         Me.Label16.Text = "Ship To Alamat Transaksi"
         '
@@ -477,10 +484,10 @@ Partial Class BarangKeluar
         Me.btn_tambha.FlatAppearance.BorderSize = 0
         Me.btn_tambha.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_tambha.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_tambha.Location = New System.Drawing.Point(35, 391)
-        Me.btn_tambha.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_tambha.Location = New System.Drawing.Point(26, 318)
+        Me.btn_tambha.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_tambha.Name = "btn_tambha"
-        Me.btn_tambha.Size = New System.Drawing.Size(237, 32)
+        Me.btn_tambha.Size = New System.Drawing.Size(178, 26)
         Me.btn_tambha.TabIndex = 16
         Me.btn_tambha.Text = "Tambah"
         Me.btn_tambha.UseVisualStyleBackColor = False
@@ -502,12 +509,12 @@ Partial Class BarangKeluar
         Me.dt_barang_keluar_fix.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_barang_keluar_fix.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jenis_barang2, Me.tipe_barang2, Me.serial_number2, Me.kondisi2, Me.tested2, Me.lokasi2, Me.detail_lokasi2, Me.catatan2, Me.status2, Me.harga_jual2, Me.garansi, Me.garansi_type, Me.garansi_exp})
         Me.dt_barang_keluar_fix.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.dt_barang_keluar_fix.Location = New System.Drawing.Point(0, 457)
-        Me.dt_barang_keluar_fix.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dt_barang_keluar_fix.Location = New System.Drawing.Point(0, 371)
+        Me.dt_barang_keluar_fix.Margin = New System.Windows.Forms.Padding(2)
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1431, 146)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1015, 119)
         Me.dt_barang_keluar_fix.TabIndex = 17
         '
         'jenis_barang2
@@ -609,58 +616,61 @@ Partial Class BarangKeluar
         'txt_kdpos
         '
         Me.txt_kdpos.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kdpos.Location = New System.Drawing.Point(677, 108)
-        Me.txt_kdpos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_kdpos.Location = New System.Drawing.Point(508, 88)
+        Me.txt_kdpos.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_kdpos.Name = "txt_kdpos"
-        Me.txt_kdpos.Size = New System.Drawing.Size(236, 22)
+        Me.txt_kdpos.Size = New System.Drawing.Size(178, 20)
         Me.txt_kdpos.TabIndex = 8
         '
         'Label10
         '
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(516, 107)
+        Me.Label10.Location = New System.Drawing.Point(387, 87)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(64, 17)
+        Me.Label10.Size = New System.Drawing.Size(49, 13)
         Me.Label10.TabIndex = 53
         Me.Label10.Text = "Kodepos"
         '
         'txt_kota
         '
         Me.txt_kota.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kota.Location = New System.Drawing.Point(677, 75)
-        Me.txt_kota.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_kota.Location = New System.Drawing.Point(508, 61)
+        Me.txt_kota.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_kota.Name = "txt_kota"
-        Me.txt_kota.Size = New System.Drawing.Size(236, 22)
+        Me.txt_kota.Size = New System.Drawing.Size(178, 20)
         Me.txt_kota.TabIndex = 7
         '
         'Label8
         '
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(516, 71)
+        Me.Label8.Location = New System.Drawing.Point(387, 58)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(76, 17)
+        Me.Label8.Size = New System.Drawing.Size(58, 13)
         Me.Label8.TabIndex = 51
         Me.Label8.Text = "Kota Client"
         '
         'txt_alamat
         '
         Me.txt_alamat.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_alamat.Location = New System.Drawing.Point(677, 38)
-        Me.txt_alamat.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_alamat.Location = New System.Drawing.Point(508, 31)
+        Me.txt_alamat.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_alamat.Multiline = True
         Me.txt_alamat.Name = "txt_alamat"
-        Me.txt_alamat.Size = New System.Drawing.Size(236, 22)
+        Me.txt_alamat.Size = New System.Drawing.Size(178, 19)
         Me.txt_alamat.TabIndex = 6
         '
         'Label7
         '
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(516, 36)
+        Me.Label7.Location = New System.Drawing.Point(387, 29)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(117, 17)
+        Me.Label7.Size = New System.Drawing.Size(88, 13)
         Me.Label7.TabIndex = 49
         Me.Label7.Text = "Alamat Transaksi"
         '
@@ -668,19 +678,19 @@ Partial Class BarangKeluar
         '
         Me.cmb_garansi.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cmb_garansi.FormattingEnabled = True
-        Me.cmb_garansi.Location = New System.Drawing.Point(251, 175)
-        Me.cmb_garansi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cmb_garansi.Location = New System.Drawing.Point(188, 142)
+        Me.cmb_garansi.Margin = New System.Windows.Forms.Padding(2)
         Me.cmb_garansi.Name = "cmb_garansi"
-        Me.cmb_garansi.Size = New System.Drawing.Size(236, 24)
+        Me.cmb_garansi.Size = New System.Drawing.Size(178, 21)
         Me.cmb_garansi.TabIndex = 5
         '
         'txt_kd_transaksi
         '
         Me.txt_kd_transaksi.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txt_kd_transaksi.Location = New System.Drawing.Point(251, 34)
-        Me.txt_kd_transaksi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_kd_transaksi.Location = New System.Drawing.Point(188, 28)
+        Me.txt_kd_transaksi.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_kd_transaksi.Name = "txt_kd_transaksi"
-        Me.txt_kd_transaksi.Size = New System.Drawing.Size(236, 22)
+        Me.txt_kd_transaksi.Size = New System.Drawing.Size(178, 20)
         Me.txt_kd_transaksi.TabIndex = 1
         '
         'pict_logo
@@ -688,10 +698,10 @@ Partial Class BarangKeluar
         Me.pict_logo.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
         Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pict_logo.Location = New System.Drawing.Point(1180, 4)
-        Me.pict_logo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pict_logo.Location = New System.Drawing.Point(884, 3)
+        Me.pict_logo.Margin = New System.Windows.Forms.Padding(2)
         Me.pict_logo.Name = "pict_logo"
-        Me.pict_logo.Size = New System.Drawing.Size(180, 86)
+        Me.pict_logo.Size = New System.Drawing.Size(135, 70)
         Me.pict_logo.TabIndex = 48
         Me.pict_logo.TabStop = False
         '
@@ -700,9 +710,10 @@ Partial Class BarangKeluar
         Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(613, 22)
+        Me.Label6.Location = New System.Drawing.Point(460, 18)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(338, 58)
+        Me.Label6.Size = New System.Drawing.Size(253, 47)
         Me.Label6.TabIndex = 47
         Me.Label6.Text = "Penjualan"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -714,29 +725,29 @@ Partial Class BarangKeluar
         Me.btn_kembali.FlatAppearance.BorderSize = 0
         Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
-        Me.btn_kembali.Location = New System.Drawing.Point(12, 11)
-        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_kembali.Location = New System.Drawing.Point(9, 9)
+        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_kembali.Name = "btn_kembali"
-        Me.btn_kembali.Size = New System.Drawing.Size(63, 69)
+        Me.btn_kembali.Size = New System.Drawing.Size(47, 56)
         Me.btn_kembali.TabIndex = 30
         Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'btn_hapus
         '
-        Me.btn_hapus.Location = New System.Drawing.Point(123, 734)
-        Me.btn_hapus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_hapus.Location = New System.Drawing.Point(92, 596)
+        Me.btn_hapus.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_hapus.Name = "btn_hapus"
-        Me.btn_hapus.Size = New System.Drawing.Size(93, 39)
+        Me.btn_hapus.Size = New System.Drawing.Size(70, 32)
         Me.btn_hapus.TabIndex = 19
         Me.btn_hapus.Text = "Hapus"
         Me.btn_hapus.UseVisualStyleBackColor = True
         '
         'btn_simpan
         '
-        Me.btn_simpan.Location = New System.Drawing.Point(11, 734)
-        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_simpan.Location = New System.Drawing.Point(8, 596)
+        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_simpan.Name = "btn_simpan"
-        Me.btn_simpan.Size = New System.Drawing.Size(93, 39)
+        Me.btn_simpan.Size = New System.Drawing.Size(70, 32)
         Me.btn_simpan.TabIndex = 18
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = True
@@ -744,27 +755,30 @@ Partial Class BarangKeluar
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(445, 742)
+        Me.Label11.Location = New System.Drawing.Point(334, 603)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(83, 17)
+        Me.Label11.Size = New System.Drawing.Size(63, 13)
         Me.Label11.TabIndex = 46
         Me.Label11.Text = "Harga Total"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(445, 780)
+        Me.Label12.Location = New System.Drawing.Point(334, 634)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(51, 17)
+        Me.Label12.Size = New System.Drawing.Size(40, 13)
         Me.Label12.TabIndex = 47
         Me.Label12.Text = "Diskon"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(445, 822)
+        Me.Label13.Location = New System.Drawing.Point(334, 668)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(83, 17)
+        Me.Label13.Size = New System.Drawing.Size(63, 13)
         Me.Label13.TabIndex = 48
         Me.Label13.Text = "Harga Akhir"
         '
@@ -773,20 +787,20 @@ Partial Class BarangKeluar
         Me.txt_harga_total.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_harga_total.Enabled = False
-        Me.txt_harga_total.Location = New System.Drawing.Point(572, 742)
-        Me.txt_harga_total.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_harga_total.Location = New System.Drawing.Point(429, 603)
+        Me.txt_harga_total.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_harga_total.Name = "txt_harga_total"
-        Me.txt_harga_total.Size = New System.Drawing.Size(236, 22)
+        Me.txt_harga_total.Size = New System.Drawing.Size(178, 20)
         Me.txt_harga_total.TabIndex = 20
         '
         'txt_diskon
         '
         Me.txt_diskon.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txt_diskon.Location = New System.Drawing.Point(572, 780)
-        Me.txt_diskon.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_diskon.Location = New System.Drawing.Point(429, 634)
+        Me.txt_diskon.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_diskon.Name = "txt_diskon"
-        Me.txt_diskon.Size = New System.Drawing.Size(236, 22)
+        Me.txt_diskon.Size = New System.Drawing.Size(178, 20)
         Me.txt_diskon.TabIndex = 21
         '
         'txt_harga_akhir
@@ -794,38 +808,38 @@ Partial Class BarangKeluar
         Me.txt_harga_akhir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_harga_akhir.Enabled = False
-        Me.txt_harga_akhir.Location = New System.Drawing.Point(572, 820)
-        Me.txt_harga_akhir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_harga_akhir.Location = New System.Drawing.Point(429, 666)
+        Me.txt_harga_akhir.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_harga_akhir.Name = "txt_harga_akhir"
-        Me.txt_harga_akhir.Size = New System.Drawing.Size(236, 22)
+        Me.txt_harga_akhir.Size = New System.Drawing.Size(178, 20)
         Me.txt_harga_akhir.TabIndex = 22
         '
         'btn_invoice
         '
-        Me.btn_invoice.Location = New System.Drawing.Point(1231, 734)
-        Me.btn_invoice.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_invoice.Location = New System.Drawing.Point(923, 596)
+        Me.btn_invoice.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_invoice.Name = "btn_invoice"
-        Me.btn_invoice.Size = New System.Drawing.Size(227, 30)
+        Me.btn_invoice.Size = New System.Drawing.Size(170, 24)
         Me.btn_invoice.TabIndex = 27
         Me.btn_invoice.Text = "Cetak Invoice"
         Me.btn_invoice.UseVisualStyleBackColor = True
         '
         'btn_kwitansi
         '
-        Me.btn_kwitansi.Location = New System.Drawing.Point(1229, 773)
-        Me.btn_kwitansi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_kwitansi.Location = New System.Drawing.Point(922, 628)
+        Me.btn_kwitansi.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_kwitansi.Name = "btn_kwitansi"
-        Me.btn_kwitansi.Size = New System.Drawing.Size(227, 30)
+        Me.btn_kwitansi.Size = New System.Drawing.Size(170, 24)
         Me.btn_kwitansi.TabIndex = 28
         Me.btn_kwitansi.Text = "Cetak Kwitansi"
         Me.btn_kwitansi.UseVisualStyleBackColor = True
         '
         'btn_tanda_terima
         '
-        Me.btn_tanda_terima.Location = New System.Drawing.Point(1231, 814)
-        Me.btn_tanda_terima.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_tanda_terima.Location = New System.Drawing.Point(923, 661)
+        Me.btn_tanda_terima.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_tanda_terima.Name = "btn_tanda_terima"
-        Me.btn_tanda_terima.Size = New System.Drawing.Size(227, 30)
+        Me.btn_tanda_terima.Size = New System.Drawing.Size(170, 24)
         Me.btn_tanda_terima.TabIndex = 29
         Me.btn_tanda_terima.Text = "Cetak Tanda Terima"
         Me.btn_tanda_terima.UseVisualStyleBackColor = True
@@ -835,46 +849,49 @@ Partial Class BarangKeluar
         Me.txt_subtotal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_subtotal.Enabled = False
-        Me.txt_subtotal.Location = New System.Drawing.Point(949, 822)
-        Me.txt_subtotal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_subtotal.Location = New System.Drawing.Point(712, 668)
+        Me.txt_subtotal.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_subtotal.Name = "txt_subtotal"
-        Me.txt_subtotal.Size = New System.Drawing.Size(236, 22)
+        Me.txt_subtotal.Size = New System.Drawing.Size(178, 20)
         Me.txt_subtotal.TabIndex = 26
         '
         'txt_ppn
         '
         Me.txt_ppn.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txt_ppn.Location = New System.Drawing.Point(572, 863)
-        Me.txt_ppn.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_ppn.Location = New System.Drawing.Point(429, 701)
+        Me.txt_ppn.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_ppn.Name = "txt_ppn"
-        Me.txt_ppn.Size = New System.Drawing.Size(236, 22)
+        Me.txt_ppn.Size = New System.Drawing.Size(178, 20)
         Me.txt_ppn.TabIndex = 23
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(821, 825)
+        Me.Label18.Location = New System.Drawing.Point(616, 670)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(69, 17)
+        Me.Label18.Size = New System.Drawing.Size(53, 13)
         Me.Label18.TabIndex = 64
         Me.Label18.Text = "SubTotal "
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(821, 783)
+        Me.Label19.Location = New System.Drawing.Point(616, 636)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(111, 17)
+        Me.Label19.Size = New System.Drawing.Size(84, 13)
         Me.Label19.TabIndex = 63
         Me.Label19.Text = "ShipingHandling"
         '
         'PPN
         '
         Me.PPN.AutoSize = True
-        Me.PPN.Location = New System.Drawing.Point(445, 863)
+        Me.PPN.Location = New System.Drawing.Point(334, 701)
+        Me.PPN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.PPN.Name = "PPN"
-        Me.PPN.Size = New System.Drawing.Size(36, 17)
+        Me.PPN.Size = New System.Drawing.Size(29, 13)
         Me.PPN.TabIndex = 62
         Me.PPN.Text = "PPN"
         '
@@ -882,10 +899,10 @@ Partial Class BarangKeluar
         '
         Me.txt_shiphand.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txt_shiphand.Location = New System.Drawing.Point(949, 783)
-        Me.txt_shiphand.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_shiphand.Location = New System.Drawing.Point(712, 636)
+        Me.txt_shiphand.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_shiphand.Name = "txt_shiphand"
-        Me.txt_shiphand.Size = New System.Drawing.Size(236, 22)
+        Me.txt_shiphand.Size = New System.Drawing.Size(178, 20)
         Me.txt_shiphand.TabIndex = 25
         '
         'txt_ppn_nominal
@@ -893,18 +910,19 @@ Partial Class BarangKeluar
         Me.txt_ppn_nominal.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_ppn_nominal.Enabled = False
-        Me.txt_ppn_nominal.Location = New System.Drawing.Point(949, 742)
-        Me.txt_ppn_nominal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_ppn_nominal.Location = New System.Drawing.Point(712, 603)
+        Me.txt_ppn_nominal.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_ppn_nominal.Name = "txt_ppn_nominal"
-        Me.txt_ppn_nominal.Size = New System.Drawing.Size(236, 22)
+        Me.txt_ppn_nominal.Size = New System.Drawing.Size(178, 20)
         Me.txt_ppn_nominal.TabIndex = 24
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(821, 742)
+        Me.Label20.Location = New System.Drawing.Point(616, 603)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(91, 17)
+        Me.Label20.Size = New System.Drawing.Size(70, 13)
         Me.Label20.TabIndex = 69
         Me.Label20.Text = "PPN Nominal"
         '
@@ -916,18 +934,18 @@ Partial Class BarangKeluar
         Me.Panel1.Controls.Add(Me.pict_logo)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1458, 97)
+        Me.Panel1.Size = New System.Drawing.Size(1093, 79)
         Me.Panel1.TabIndex = 71
         '
         'BarangKeluar
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(1371, 750)
+        Me.ClientSize = New System.Drawing.Size(1028, 609)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txt_ppn_nominal)
         Me.Controls.Add(Me.Label20)
@@ -949,7 +967,7 @@ Partial Class BarangKeluar
         Me.Controls.Add(Me.btn_hapus)
         Me.Controls.Add(Me.btn_simpan)
         Me.Controls.Add(Me.Panel2)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "BarangKeluar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Penjualan"

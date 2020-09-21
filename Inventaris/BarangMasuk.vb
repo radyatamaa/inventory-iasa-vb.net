@@ -2,12 +2,19 @@
 Imports System.Data.SqlClient
 Imports System.Globalization
 Imports System.Text
+Imports Microsoft.Office.Interop
 
 Public Class BarangMasuk
     Public Property UserInfo As Object
     Dim CONN As SqlConnection
     Dim cmd As New SqlCommand
     Dim reader As SqlDataReader
+    Dim listJenis As New List(Of Object)
+    Dim listTipe As New List(Of Object)
+    Dim listKondisiCache As New List(Of Object)
+    Dim listStatus As New List(Of Object)
+    Dim listLokasiCache As New List(Of Object)
+    Dim listDetailLokasiCache As New List(Of Object)
     Dim indexPenampung As New List(Of Integer)
     Dim isDataReal As New List(Of Integer)
     Dim listBarangMasuk As New List(Of Object)
@@ -26,6 +33,164 @@ Public Class BarangMasuk
         End Try
         CONN.Close()
     End Sub
+    Private Function GetExcelSheetsName(ByVal Excelfilename As String) As List(Of Object)
+        Dim result As New List(Of Object)
+        Dim objExcel As Excel.Application
+        Dim objWorkBook As Excel.Workbook
+        Dim objWorkSheets As Excel.Worksheet
+        Dim objWorkCells As Excel.DataTable
+        Dim SheetList As New ArrayList
+        objExcel = CreateObject("Excel.Application")
+        objWorkBook = objExcel.Workbooks.Open(Excelfilename)
+        Dim a
+        Dim ex = objWorkBook.Worksheets(1)
+
+        For i As Long = 2 To 999999999999999999
+            a = ex.Cells(i, 1).Value
+            If a IsNot Nothing Then
+                Dim idToko As String
+                If UserInfo IsNot Nothing Then
+                    idToko = UserInfo.IdToko
+                End If
+                Dim tested As Integer = 0
+                If CType(ex.Cells(i, 5), Microsoft.Office.Interop.Excel.Range).Value.ToString.ToLower = "Teruji".ToLower Then
+                    tested = 1
+                ElseIf CType(ex.Cells(i, 5), Microsoft.Office.Interop.Excel.Range).Value.ToString.ToLower = "Tidak Teruji".ToLower Then
+                    tested = 0
+                End If
+                Dim test = CType(ex.Cells(i, 11), Microsoft.Office.Interop.Excel.Range).Value.ToString
+                'Dim test3 = CType(ex.Cells(i, 11), Microsoft.Office.Interop.Excel.Range).Value
+                Dim hargaBeli As Decimal = Decimal.Parse(test)
+                Dim hargaJual As Decimal = Decimal.Parse(CType(ex.Cells(i, 12), Microsoft.Office.Interop.Excel.Range).Value.ToString)
+
+                Dim namaJenis = listJenis.Where(Function(x) x.nama_jenis.ToString.ToLower = CType(ex.Cells(i, 1), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaJenis Is Nothing Then
+                    MsgBox("Jenis Barang " + CType(ex.Cells(i, 1), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
+                    Return result
+                End If
+
+                Dim namaTipe = listTipe.Where(Function(x) x.nama_tipe.ToString.ToLower = CType(ex.Cells(i, 2), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaTipe Is Nothing Then
+                    MsgBox("Tipe Barang " + CType(ex.Cells(i, 2), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
+                    Return result
+                End If
+
+                Dim namaKondisi = listKondisiCache.Where(Function(x) x.nama_kondisi.ToString.ToLower = CType(ex.Cells(i, 4), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaKondisi Is Nothing Then
+                    MsgBox("Kondisi Barang " + CType(ex.Cells(i, 4), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
+                    Return result
+                End If
+
+                Dim namaLokasi = listLokasiCache.Where(Function(x) x.nama_lokasi.ToString.ToLower = CType(ex.Cells(i, 6), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaLokasi Is Nothing Then
+                    MsgBox("Lokasi Barang " + CType(ex.Cells(i, 6), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
+                    Return result
+                End If
+
+                Dim namaDetailLokasi = listDetailLokasiCache.Where(Function(x) x.detail_lokasi.ToString.ToLower = CType(ex.Cells(i, 7), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaDetailLokasi Is Nothing Then
+                    MsgBox("Lokasi Detail Barang " + CType(ex.Cells(i, 7), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
+                    Return result
+                End If
+
+                Dim namaStatus = listStatus.Where(Function(x) x.nama_status.ToString.ToLower = CType(ex.Cells(i, 10), Microsoft.Office.Interop.Excel.Range).Value.ToString().ToLower).FirstOrDefault()
+                If namaStatus Is Nothing Then
+                    MsgBox("Status Barang " + CType(ex.Cells(i, 10), Microsoft.Office.Interop.Excel.Range).Value.ToString() + " Tidak valid!")
+                    result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
+                    Return result
+                End If
+
+                Dim insertDataBarangMasuk = New With
+                    {
+                    .catatan = CType(ex.Cells(i, 9), Microsoft.Office.Interop.Excel.Range).Value.ToString,
+                    .id_barang = Me.Label2.Tag,
+                     .id_barang_masuk = Me.Label1.Tag,
+                     .kd_barang = CType(ex.Cells(i, 13), Microsoft.Office.Interop.Excel.Range).Value.ToString,
+                     .nama_jenis = namaJenis.nama_jenis,
+                     .id_jenis = namaJenis.id_jenis,
+                     .nama_tipe = namaTipe.nama_tipe,
+                     .id_tipe = namaTipe.id_tipe,
+                     .serial_number = CType(ex.Cells(i, 3), Microsoft.Office.Interop.Excel.Range).Value.ToString,
+                     .nama_kondisi = namaKondisi.nama_kondisi,
+                     .id_kondisi = namaKondisi.id_kondisi,
+                     .warna = "",
+                     .nama_status_barang = namaStatus.nama_status,
+                     .id_status_barang = namaStatus.id_status_barang,
+                     .tested = tested,
+                     .nama_lokasi = namaLokasi.nama_lokasi,
+                     .id_lokasi = namaLokasi.id_lokasi,
+                     .nama_detail_lokasi = namaDetailLokasi.detail_lokasi,
+                     .id_detail_lokasi = namaDetailLokasi.id_detail_lokasi,
+                     .id_toko = idToko,
+                     .harga_beli = hargaBeli,
+                     .harga_jual = hargaJual,
+                     .stock = 0,
+                     .licence = CType(ex.Cells(i, 8), Microsoft.Office.Interop.Excel.Range).Value.ToString,
+                     .ios = CType(ex.Cells(i, 9), Microsoft.Office.Interop.Excel.Range).Value.ToString,
+                     .foto_barang = "",
+                     .kd_transaksi_masuk = "",
+                     .tgl_masuk = CType(ex.Cells(i, 14), Microsoft.Office.Interop.Excel.Range).Value.ToString,
+                     .jumlah = 0
+                    }
+                'validationSerialNumberDB
+                Dim barang = GetBarangMasukBySerialNumber(insertDataBarangMasuk.serial_number)
+                If barang.Count > 0 Then
+                    MsgBox("Serial Number " + insertDataBarangMasuk.serial_number + " Sudah ada!")
+                    result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
+                    Return result
+                End If
+
+                'validationSerialNumberDataGrid
+                Dim barangMasukCheck = listBarangMasuk.Where(Function(x) x.serial_number.ToLower() = insertDataBarangMasuk.serial_number.ToLower())
+                If barangMasukCheck.Count > 0 Then
+                    MsgBox("Serial Number " + insertDataBarangMasuk.serial_number + " Sudah ada!")
+                    result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
+                    Return result
+                End If
+
+                'validationSerialNumberExcel
+                Dim barangMasukExcel = result.Where(Function(x) x.serial_number.ToLower() = insertDataBarangMasuk.serial_number.ToLower())
+                If barangMasukExcel.Count > 0 Then
+                    MsgBox("Serial Number " + insertDataBarangMasuk.serial_number + " Sudah ada!")
+                    result.Clear()
+                    objWorkBook.Close()
+                    objExcel.Quit()
+                    Return result
+                End If
+                result.Add(insertDataBarangMasuk)
+                'MessageBox.Show(CType(ex.Cells(i, 1), Microsoft.Office.Interop.Excel.Range).Value.ToString())
+
+            Else
+                GoTo end_of_for
+            End If
+
+        Next
+end_of_for:
+        objWorkBook.Close()
+        objExcel.Quit()
+        Return result
+    End Function
     Function DeleteBarangMasuk(idBarangMasuk As Integer, idbarang As Integer)
         Try
             Dim userlogin As String = ""
@@ -86,7 +251,26 @@ Public Class BarangMasuk
         CONN.Close()
         Return result
     End Function
-
+    Function GetAllLokasiDetail() As List(Of Object)
+        Dim result As New List(Of Object)
+        Dim query As String = "SELECT * FROM tbl_detail_lokasi WHERE is_active = 1 "
+        cmd.CommandText = query
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        CONN.Open()
+        reader = cmd.ExecuteReader()
+        'This will loop through all returned records 
+        While reader.Read
+            Dim jenis As New With {
+                            .detail_lokasi = reader("detail_lokasi").ToString,
+                            .id_detail_lokasi = reader("id_detail_lokasi")
+                            }
+            result.Add(jenis)
+            'handle returned value before next loop here
+        End While
+        CONN.Close()
+        Return result
+    End Function
     Function GetLokasiDetail(idLokasi As String) As List(Of Object)
         Dim result As New List(Of Object)
         Dim query As String = "SELECT * FROM tbl_detail_lokasi WHERE is_active = 1 AND id_lokasi = " + idLokasi
@@ -173,6 +357,26 @@ Public Class BarangMasuk
     Function GetTipeJenisBarang(idJenis As String) As List(Of Object)
         Dim result As New List(Of Object)
         Dim query As String = "SELECT * FROM tbl_tipe WHERE is_active = 1 AND id_jenis = " + idJenis
+        cmd.CommandText = query
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        CONN.Open()
+        reader = cmd.ExecuteReader()
+        'This will loop through all returned records 
+        While reader.Read
+            Dim jenis As New With {
+                            .nama_tipe = reader("nama_tipe").ToString,
+                            .id_tipe = reader("id_tipe")
+                            }
+            result.Add(jenis)
+            'handle returned value before next loop here
+        End While
+        CONN.Close()
+        Return result
+    End Function
+    Function GetAllTipeJenisBarang() As List(Of Object)
+        Dim result As New List(Of Object)
+        Dim query As String = "SELECT * FROM tbl_tipe WHERE is_active = 1"
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
         cmd.Connection = CONN
@@ -552,7 +756,7 @@ Public Class BarangMasuk
         Me.txt_harga_barang.Text = 0
         Me.txt_lisensi.Text = ""
         Me.txt_catatan.Text = ""
-
+        Me.txt_file_excel.Text = ""
         MsgBox("Sukses!")
     End Sub
 
@@ -645,6 +849,7 @@ Public Class BarangMasuk
             VBnetSQLSeverConnection()
             GetBarangMasuk(UserInfo.IdToko)
             Dim listbarang As List(Of Object) = GetJenisBarang()
+
             If listbarang.Count > 0 Then
                 cmb_jenis_barang.DataSource = listbarang
                 cmb_jenis_barang.DisplayMember = "nama_jenis"
@@ -672,6 +877,12 @@ Public Class BarangMasuk
                 cmb_status.ValueMember = "id_status_barang"
             End If
 
+            listJenis = listbarang
+            listTipe = GetAllTipeJenisBarang()
+            listLokasiCache = listLokasi
+            listStatus = listStatusBarang
+            listKondisiCache = listKondisi
+            listDetailLokasiCache = GetAllLokasiDetail()
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
@@ -874,131 +1085,167 @@ Public Class BarangMasuk
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim tested As Integer
-        Dim test As String
-        If Me.cbx_teruji.Checked Then
-            tested = 1
-            test = "Teruji"
-        ElseIf cbx_tidak_teruji.Checked Then
-            tested = 0
-            test = "Tidak Teruji"
-        End If
-        Dim idToko As String
-        If UserInfo IsNot Nothing Then
-            idToko = UserInfo.IdToko
-        End If
-        Dim kdTransaksi As String = RandomString(New Random)
-        Dim hargaBeli As Decimal = Decimal.Parse(Me.txt_harga_modal.Text)
-        Dim hargaJual As Decimal = Decimal.Parse(Me.txt_harga_barang.Text)
-        Dim insertDataBarangMasuk = New With
-                    {
-                    .catatan = Me.txt_catatan.Text,
-                    .id_barang = Me.Label2.Tag,
-                     .id_barang_masuk = Me.Label1.Tag,
-                     .kd_barang = Me.txt_kode_barang.Text,
-                     .nama_jenis = Me.cmb_jenis_barang.SelectedItem.nama_jenis,
-                     .id_jenis = Me.cmb_jenis_barang.SelectedValue,
-                     .nama_tipe = Me.cmb_tipe_barang.SelectedItem.nama_tipe,
-                     .id_tipe = Me.cmb_tipe_barang.SelectedValue,
-                     .serial_number = Me.txt_serial.Text,
-                     .nama_kondisi = Me.cmb_kondisi.SelectedItem.nama_kondisi,
-                     .id_kondisi = Me.cmb_kondisi.SelectedValue,
-                     .warna = "",
-                     .nama_status_barang = Me.cmb_status.SelectedItem.nama_status,
-                     .id_status_barang = Me.cmb_status.SelectedValue,
-                     .tested = tested,
-                     .nama_lokasi = Me.cmb_lokasi.SelectedItem.nama_lokasi,
-                     .id_lokasi = Me.cmb_lokasi.SelectedValue,
-                     .nama_detail_lokasi = Me.cmb_detail_lokasi.SelectedItem.detail_lokasi,
-                     .id_detail_lokasi = Me.cmb_detail_lokasi.SelectedValue,
-                     .id_toko = idToko,
-                     .harga_beli = hargaBeli,
-                     .harga_jual = hargaJual,
-                     .stock = 0,
-                     .licence = Me.txt_lisensi.Text,
-                     .ios = Me.txt_catatan.Text,
-                     .foto_barang = "",
-                     .kd_transaksi_masuk = kdTransaksi,
-                     .tgl_masuk = Me.date_tgl_masuk.Value,
-                     .jumlah = 0
-                    }
-        'validationSerialNumberDB
-        Dim barang = GetBarangMasukBySerialNumber(insertDataBarangMasuk.serial_number)
-        If barang.Count > 0 And isDataReal.Count = 0 Then
-            MsgBox("Serial Number Sudah ada!")
-            Return
-        End If
-
-        'validationSerialNumberDataGrid
-        Dim barangMasukCheck = listBarangMasuk.Where(Function(x) x.serial_number.ToLower() = insertDataBarangMasuk.serial_number.ToLower())
-        If barangMasukCheck.Count > 0 And isDataReal.Count = 0 Then
-            MsgBox("Serial Number Sudah ada!")
-            Return
-        End If
-        If isDataReal.Count > 0 Then
-            Dim idBarangMasuk As Integer = SimpanBarangMasuk(insertDataBarangMasuk)
-            dt_barang_masuk.Rows.Clear()
-            GetBarangMasuk(UserInfo.IdToko)
-            Me.txt_kode_barang.Text = ""
-            Me.txt_serial.Text = ""
-            Me.txt_harga_modal.Text = ""
-            Me.txt_harga_barang.Text = ""
-            Me.txt_lisensi.Text = ""
-            Me.txt_catatan.Text = ""
-            isDataReal.Clear()
-            MsgBox("Sukses!")
-        Else
-            If indexPenampung.Count > 0 Then
-                For Each index As Integer In indexPenampung
-                    listBarangMasuk(index) = insertDataBarangMasuk
-
-                    data_barang_masuk.Rows(index).Cells(0).Value = insertDataBarangMasuk.nama_jenis
-                    data_barang_masuk.Rows(index).Cells(1).Value = insertDataBarangMasuk.nama_tipe
-                    data_barang_masuk.Rows(index).Cells(2).Value = insertDataBarangMasuk.serial_number
-                    data_barang_masuk.Rows(index).Cells(3).Value = insertDataBarangMasuk.nama_kondisi
-                    data_barang_masuk.Rows(index).Cells(4).Value = test
-                    data_barang_masuk.Rows(index).Cells(5).Value = insertDataBarangMasuk.nama_lokasi
-                    data_barang_masuk.Rows(index).Cells(6).Value = insertDataBarangMasuk.nama_detail_lokasi
-                    data_barang_masuk.Rows(index).Cells(7).Value = insertDataBarangMasuk.licence
-                    data_barang_masuk.Rows(index).Cells(8).Value = insertDataBarangMasuk.catatan
-                    data_barang_masuk.Rows(index).Cells(9).Value = insertDataBarangMasuk.nama_status_barang
-                    data_barang_masuk.Rows(index).Cells(10).Value = insertDataBarangMasuk.harga_beli
+        If txt_file_excel.Text <> "" Then
+            Dim listData = GetExcelSheetsName(txt_file_excel.Text)
+            If listData.Count > 0 Then
+                listBarangMasuk.AddRange(listData)
+                For Each insertDataBarangMasuk As Object In listBarangMasuk
+                    Dim test As String
+                    If insertDataBarangMasuk.tested = 1 Then
+                        test = "Teruji"
+                    ElseIf insertDataBarangMasuk.tested = 0 Then
+                        test = "Tidak Teruji"
+                    End If
+                    data_barang_masuk.Rows.Add(1)
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.nama_jenis
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_tipe
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.serial_number
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_kondisi
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(4).Value = test
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.nama_lokasi
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.nama_detail_lokasi
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.licence
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.catatan
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.nama_status_barang
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.harga_beli
                     If UserInfo.IdLevel <> 1 Then
                         data_barang_masuk.Columns(10).Visible = False
                     ElseIf UserInfo.IdLevel = 1 Then
                         data_barang_masuk.Columns(10).Visible = True
                     End If
-                    data_barang_masuk.Rows(index).Cells(11).Value = insertDataBarangMasuk.harga_jual
-                    data_barang_masuk.Rows(index).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.harga_jual
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
                     data_barang_masuk.Update()
-
                 Next
-                indexPenampung.Clear()
-            Else
-                listBarangMasuk.Add(insertDataBarangMasuk)
-                data_barang_masuk.Rows.Add(1)
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.nama_jenis
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_tipe
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.serial_number
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_kondisi
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(4).Value = test
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.nama_lokasi
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.nama_detail_lokasi
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.licence
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.catatan
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.nama_status_barang
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.harga_beli
-                If UserInfo.IdLevel <> 1 Then
-                    data_barang_masuk.Columns(10).Visible = False
-                ElseIf UserInfo.IdLevel = 1 Then
-                    data_barang_masuk.Columns(10).Visible = True
-                End If
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.harga_jual
-                data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
-                data_barang_masuk.Update()
+            End If
+        Else
+            Dim tested As Integer
+            Dim test As String
+            If Me.cbx_teruji.Checked Then
+                tested = 1
+                test = "Teruji"
+            ElseIf cbx_tidak_teruji.Checked Then
+                tested = 0
+                test = "Tidak Teruji"
+            End If
+            Dim idToko As String
+            If UserInfo IsNot Nothing Then
+                idToko = UserInfo.IdToko
+            End If
+            Dim kdTransaksi As String = RandomString(New Random)
+            Dim hargaBeli As Decimal = Decimal.Parse(Me.txt_harga_modal.Text)
+            Dim hargaJual As Decimal = Decimal.Parse(Me.txt_harga_barang.Text)
+            Dim insertDataBarangMasuk = New With
+                        {
+                        .catatan = Me.txt_catatan.Text,
+                        .id_barang = Me.Label2.Tag,
+                         .id_barang_masuk = Me.Label1.Tag,
+                         .kd_barang = Me.txt_kode_barang.Text,
+                         .nama_jenis = Me.cmb_jenis_barang.SelectedItem.nama_jenis,
+                         .id_jenis = Me.cmb_jenis_barang.SelectedValue,
+                         .nama_tipe = Me.cmb_tipe_barang.SelectedItem.nama_tipe,
+                         .id_tipe = Me.cmb_tipe_barang.SelectedValue,
+                         .serial_number = Me.txt_serial.Text,
+                         .nama_kondisi = Me.cmb_kondisi.SelectedItem.nama_kondisi,
+                         .id_kondisi = Me.cmb_kondisi.SelectedValue,
+                         .warna = "",
+                         .nama_status_barang = Me.cmb_status.SelectedItem.nama_status,
+                         .id_status_barang = Me.cmb_status.SelectedValue,
+                         .tested = tested,
+                         .nama_lokasi = Me.cmb_lokasi.SelectedItem.nama_lokasi,
+                         .id_lokasi = Me.cmb_lokasi.SelectedValue,
+                         .nama_detail_lokasi = Me.cmb_detail_lokasi.SelectedItem.detail_lokasi,
+                         .id_detail_lokasi = Me.cmb_detail_lokasi.SelectedValue,
+                         .id_toko = idToko,
+                         .harga_beli = hargaBeli,
+                         .harga_jual = hargaJual,
+                         .stock = 0,
+                         .licence = Me.txt_lisensi.Text,
+                         .ios = Me.txt_catatan.Text,
+                         .foto_barang = "",
+                         .kd_transaksi_masuk = kdTransaksi,
+                         .tgl_masuk = Me.date_tgl_masuk.Value,
+                         .jumlah = 0
+                        }
+            'validationSerialNumberDB
+            Dim barang = GetBarangMasukBySerialNumber(insertDataBarangMasuk.serial_number)
+            If barang.Count > 0 And isDataReal.Count = 0 Then
+                MsgBox("Serial Number Sudah ada!")
+                Return
             End If
 
+            'validationSerialNumberDataGrid
+            Dim barangMasukCheck = listBarangMasuk.Where(Function(x) x.serial_number.ToLower() = insertDataBarangMasuk.serial_number.ToLower())
+            If barangMasukCheck.Count > 0 And isDataReal.Count = 0 Then
+                MsgBox("Serial Number Sudah ada!")
+                Return
+            End If
+            If isDataReal.Count > 0 Then
+                Dim idBarangMasuk As Integer = SimpanBarangMasuk(insertDataBarangMasuk)
+                dt_barang_masuk.Rows.Clear()
+                GetBarangMasuk(UserInfo.IdToko)
+                Me.txt_kode_barang.Text = ""
+                Me.txt_serial.Text = ""
+                Me.txt_harga_modal.Text = ""
+                Me.txt_harga_barang.Text = ""
+                Me.txt_lisensi.Text = ""
+                Me.txt_catatan.Text = ""
+                isDataReal.Clear()
+                MsgBox("Sukses!")
+            Else
+                If indexPenampung.Count > 0 Then
+                    For Each index As Integer In indexPenampung
+                        listBarangMasuk(index) = insertDataBarangMasuk
+
+                        data_barang_masuk.Rows(index).Cells(0).Value = insertDataBarangMasuk.nama_jenis
+                        data_barang_masuk.Rows(index).Cells(1).Value = insertDataBarangMasuk.nama_tipe
+                        data_barang_masuk.Rows(index).Cells(2).Value = insertDataBarangMasuk.serial_number
+                        data_barang_masuk.Rows(index).Cells(3).Value = insertDataBarangMasuk.nama_kondisi
+                        data_barang_masuk.Rows(index).Cells(4).Value = test
+                        data_barang_masuk.Rows(index).Cells(5).Value = insertDataBarangMasuk.nama_lokasi
+                        data_barang_masuk.Rows(index).Cells(6).Value = insertDataBarangMasuk.nama_detail_lokasi
+                        data_barang_masuk.Rows(index).Cells(7).Value = insertDataBarangMasuk.licence
+                        data_barang_masuk.Rows(index).Cells(8).Value = insertDataBarangMasuk.catatan
+                        data_barang_masuk.Rows(index).Cells(9).Value = insertDataBarangMasuk.nama_status_barang
+                        data_barang_masuk.Rows(index).Cells(10).Value = insertDataBarangMasuk.harga_beli
+                        If UserInfo.IdLevel <> 1 Then
+                            data_barang_masuk.Columns(10).Visible = False
+                        ElseIf UserInfo.IdLevel = 1 Then
+                            data_barang_masuk.Columns(10).Visible = True
+                        End If
+                        data_barang_masuk.Rows(index).Cells(11).Value = insertDataBarangMasuk.harga_jual
+                        data_barang_masuk.Rows(index).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
+                        data_barang_masuk.Update()
+
+                    Next
+                    indexPenampung.Clear()
+                Else
+                    listBarangMasuk.Add(insertDataBarangMasuk)
+                    data_barang_masuk.Rows.Add(1)
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.nama_jenis
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_tipe
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.serial_number
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_kondisi
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(4).Value = test
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.nama_lokasi
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.nama_detail_lokasi
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.licence
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.catatan
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.nama_status_barang
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.harga_beli
+                    If UserInfo.IdLevel <> 1 Then
+                        data_barang_masuk.Columns(10).Visible = False
+                    ElseIf UserInfo.IdLevel = 1 Then
+                        data_barang_masuk.Columns(10).Visible = True
+                    End If
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.harga_jual
+                    data_barang_masuk.Rows(data_barang_masuk.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
+                    data_barang_masuk.Update()
+                End If
+
+            End If
         End If
+
 
     End Sub
 
@@ -1111,6 +1358,23 @@ Public Class BarangMasuk
     End Sub
 
     Private Sub dt_barang_masuk_CellContextMenuStripNeeded(sender As Object, e As DataGridViewCellContextMenuStripNeededEventArgs) Handles dt_barang_masuk.CellContextMenuStripNeeded
+
+    End Sub
+
+    Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label17.Click
+
+    End Sub
+
+    Private Sub btn_browse_Click(sender As Object, e As EventArgs) Handles btn_browse.Click
+        OpenFileDialog1.Filter = "All Files (*.*)|*.*|Excel files (*.xlsx)|*.xlsx|CSV Files (*.csv)|*.csv|XLS Files (*.xls)|*xls"
+        OpenFileDialog1.RestoreDirectory = True
+        OpenFileDialog1.ShowDialog()
+        If OpenFileDialog1.FileName <> "" Then
+            txt_file_excel.Text = OpenFileDialog1.FileName
+        End If
+    End Sub
+
+    Private Sub cmb_detail_lokasi_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_detail_lokasi.SelectedIndexChanged
 
     End Sub
 End Class

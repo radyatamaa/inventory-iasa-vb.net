@@ -30,6 +30,9 @@ Partial Class BarangMasuk
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BarangMasuk))
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btn_browse = New System.Windows.Forms.Button()
+        Me.txt_file_excel = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.dt_barang_masuk = New System.Windows.Forms.DataGridView()
         Me.dt_jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -96,6 +99,7 @@ Partial Class BarangMasuk
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pict_logo = New System.Windows.Forms.PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.data_barang_masuk, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,6 +112,9 @@ Partial Class BarangMasuk
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Panel2.Controls.Add(Me.btn_browse)
+        Me.Panel2.Controls.Add(Me.txt_file_excel)
+        Me.Panel2.Controls.Add(Me.Label17)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.dt_barang_masuk)
         Me.Panel2.Controls.Add(Me.cmb_warna)
@@ -146,8 +153,38 @@ Partial Class BarangMasuk
         Me.Panel2.Location = New System.Drawing.Point(1, 79)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1028, 626)
+        Me.Panel2.Size = New System.Drawing.Size(1029, 626)
         Me.Panel2.TabIndex = 1
+        '
+        'btn_browse
+        '
+        Me.btn_browse.Location = New System.Drawing.Point(644, 159)
+        Me.btn_browse.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_browse.Name = "btn_browse"
+        Me.btn_browse.Size = New System.Drawing.Size(76, 26)
+        Me.btn_browse.TabIndex = 58
+        Me.btn_browse.Text = "Browse"
+        Me.btn_browse.UseVisualStyleBackColor = True
+        '
+        'txt_file_excel
+        '
+        Me.txt_file_excel.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txt_file_excel.Location = New System.Drawing.Point(452, 162)
+        Me.txt_file_excel.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_file_excel.Name = "txt_file_excel"
+        Me.txt_file_excel.Size = New System.Drawing.Size(178, 20)
+        Me.txt_file_excel.TabIndex = 57
+        '
+        'Label17
+        '
+        Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(350, 162)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(65, 13)
+        Me.Label17.TabIndex = 59
+        Me.Label17.Text = "Import Excel"
         '
         'Button1
         '
@@ -185,7 +222,7 @@ Partial Class BarangMasuk
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1008, 191)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1009, 191)
         Me.dt_barang_masuk.TabIndex = 55
         '
         'dt_jenis_barang
@@ -520,7 +557,7 @@ Partial Class BarangMasuk
         Me.data_barang_masuk.Name = "data_barang_masuk"
         Me.data_barang_masuk.RowHeadersWidth = 51
         Me.data_barang_masuk.RowTemplate.Height = 24
-        Me.data_barang_masuk.Size = New System.Drawing.Size(1008, 184)
+        Me.data_barang_masuk.Size = New System.Drawing.Size(1009, 184)
         Me.data_barang_masuk.TabIndex = 16
         '
         'jenis_barang
@@ -850,6 +887,10 @@ Partial Class BarangMasuk
         Me.Label15.Text = "Barang Masuk"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'BarangMasuk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -940,4 +981,8 @@ Partial Class BarangMasuk
     Friend WithEvents harga_modal As DataGridViewTextBoxColumn
     Friend WithEvents harga_barang As DataGridViewTextBoxColumn
     Friend WithEvents tgl_masuk As DataGridViewTextBoxColumn
+    Friend WithEvents btn_browse As Button
+    Friend WithEvents txt_file_excel As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class
