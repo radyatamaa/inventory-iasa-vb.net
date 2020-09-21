@@ -577,17 +577,17 @@ Public Class transaksi_maintenance
 
                             If listBarangKeluarFix(selectedItem.RowIndex).maintenance_type = "Hari" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).maintenance_exp = calculateGaransiExp
 
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).maintenance_type = "Bulan" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).maintenance_exp = calculateGaransiExp
 
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).maintenance_type = "Tahun" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).maintenance_exp = calculateGaransiExp
                             End If
                         End If
@@ -618,18 +618,18 @@ Public Class transaksi_maintenance
                     If listBarangKeluarFix(selectedItem.RowIndex).maintenance_type <> "" Then
                         If listBarangKeluarFix(selectedItem.RowIndex).maintenance_type = "Hari" Then
                             Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                            Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance)
-                            listBarangKeluarFix(selectedItem.RowIndex).maintenance_exp = calculateGaransiExp
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance).AddDays(-1)
+                                listBarangKeluarFix(selectedItem.RowIndex).maintenance_exp = calculateGaransiExp
 
                         ElseIf listBarangKeluarFix(selectedItem.RowIndex).maintenance_type = "Bulan" Then
                             Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                            Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance)
-                            listBarangKeluarFix(selectedItem.RowIndex).maintenance_exp = calculateGaransiExp
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance).AddDays(-1)
+                                listBarangKeluarFix(selectedItem.RowIndex).maintenance_exp = calculateGaransiExp
 
                         ElseIf listBarangKeluarFix(selectedItem.RowIndex).maintenance_type = "Tahun" Then
                             Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                            Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance)
-                            listBarangKeluarFix(selectedItem.RowIndex).maintenance_exp = calculateGaransiExp
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).periode_maintenance).AddDays(-1)
+                                listBarangKeluarFix(selectedItem.RowIndex).maintenance_exp = calculateGaransiExp
 
                         End If
                     End If

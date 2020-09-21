@@ -897,22 +897,22 @@ Public Class Rental
                         If listBarangKeluarFix(selectedItem.RowIndex).garansi_type <> "" Then
                             If listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Hari" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                                 'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Bulan" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                                 'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Tahun" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                                 'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Minggu" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi * 7)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi * 7).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                                 'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             End If
@@ -988,22 +988,22 @@ Public Class Rental
                         If listBarangKeluarFix(selectedItem.RowIndex).garansi IsNot Nothing Then
                             If listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Hari" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                                 'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Bulan" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                                 'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Tahun" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                                 'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Minggu" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                                 'listBarangKeluarFix(selectedItem.RowIndex).harga_jual = Decimal.Parse(listBarangKeluarFix(selectedItem.RowIndex).harga_jual) * listBarangKeluarFix(selectedItem.RowIndex).garansi
                             End If
