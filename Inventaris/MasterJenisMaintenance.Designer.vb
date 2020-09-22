@@ -23,6 +23,7 @@ Partial Class MasterJenisMaintenance
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MasterJenisMaintenance))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pict_logo = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -32,12 +33,12 @@ Partial Class MasterJenisMaintenance
         Me.txt_harga = New System.Windows.Forms.TextBox()
         Me.btn_simpan = New System.Windows.Forms.Button()
         Me.data_master_jenis = New System.Windows.Forms.DataGridView()
-        Me.id_jenis_maintenance = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_jenis_maintenance = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.harga_jenis_maintenance = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_jenis_maintenance = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button13 = New System.Windows.Forms.Button()
+        Me.id_jenis_maintenance = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nama_jenis_maintenance = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.harga_jenis_maintenance = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -158,27 +159,6 @@ Partial Class MasterJenisMaintenance
         Me.data_master_jenis.Size = New System.Drawing.Size(1365, 311)
         Me.data_master_jenis.TabIndex = 3
         '
-        'id_jenis_maintenance
-        '
-        Me.id_jenis_maintenance.HeaderText = "ID"
-        Me.id_jenis_maintenance.MinimumWidth = 6
-        Me.id_jenis_maintenance.Name = "id_jenis_maintenance"
-        Me.id_jenis_maintenance.Width = 125
-        '
-        'nama_jenis_maintenance
-        '
-        Me.nama_jenis_maintenance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nama_jenis_maintenance.HeaderText = "Nama Jenis Maintenance"
-        Me.nama_jenis_maintenance.MinimumWidth = 6
-        Me.nama_jenis_maintenance.Name = "nama_jenis_maintenance"
-        '
-        'harga_jenis_maintenance
-        '
-        Me.harga_jenis_maintenance.HeaderText = "Harga Jenis Maintenance"
-        Me.harga_jenis_maintenance.MinimumWidth = 200
-        Me.harga_jenis_maintenance.Name = "harga_jenis_maintenance"
-        Me.harga_jenis_maintenance.Width = 200
-        '
         'txt_jenis_maintenance
         '
         Me.txt_jenis_maintenance.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -210,6 +190,30 @@ Partial Class MasterJenisMaintenance
         Me.Button13.TabIndex = 49
         Me.Button13.Text = "Hapus"
         Me.Button13.UseVisualStyleBackColor = False
+        '
+        'id_jenis_maintenance
+        '
+        Me.id_jenis_maintenance.HeaderText = "ID"
+        Me.id_jenis_maintenance.MinimumWidth = 6
+        Me.id_jenis_maintenance.Name = "id_jenis_maintenance"
+        Me.id_jenis_maintenance.Width = 125
+        '
+        'nama_jenis_maintenance
+        '
+        Me.nama_jenis_maintenance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.nama_jenis_maintenance.HeaderText = "Nama Jenis Maintenance"
+        Me.nama_jenis_maintenance.MinimumWidth = 6
+        Me.nama_jenis_maintenance.Name = "nama_jenis_maintenance"
+        '
+        'harga_jenis_maintenance
+        '
+        DataGridViewCellStyle1.Format = "N2"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.harga_jenis_maintenance.DefaultCellStyle = DataGridViewCellStyle1
+        Me.harga_jenis_maintenance.HeaderText = "Harga Jenis Maintenance"
+        Me.harga_jenis_maintenance.MinimumWidth = 200
+        Me.harga_jenis_maintenance.Name = "harga_jenis_maintenance"
+        Me.harga_jenis_maintenance.Width = 200
         '
         'MasterJenisMaintenance
         '

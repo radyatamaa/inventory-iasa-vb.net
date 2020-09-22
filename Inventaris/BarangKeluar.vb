@@ -939,7 +939,17 @@ Public Class BarangKeluar
     End Sub
 
     Private Sub txt_harga_total_TextChanged(sender As Object, e As EventArgs) Handles txt_harga_total.TextChanged
-
+        If Len(txt_harga_total.Text) > 0 Then
+            txt_harga_total.Text = FormatNumber(CDbl(txt_harga_total.Text), 0)
+            Dim x As Integer = txt_harga_total.SelectionStart.ToString
+            If x = 0 Then
+                txt_harga_total.SelectionStart = Len(txt_harga_total.Text)
+                txt_harga_total.SelectionLength = 0
+            Else
+                txt_harga_total.SelectionStart = x
+                txt_harga_total.SelectionLength = 0
+            End If
+        End If
     End Sub
 
     Private Sub dt_barang_keluar_fix_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_keluar_fix.CellEndEdit
@@ -1191,7 +1201,17 @@ Public Class BarangKeluar
     End Sub
 
     Private Sub txt_subtotal_TextChanged(sender As Object, e As EventArgs) Handles txt_subtotal.TextChanged
-
+        If Len(txt_subtotal.Text) > 0 Then
+            txt_subtotal.Text = FormatNumber(CDbl(txt_subtotal.Text), 0)
+            Dim x As Integer = txt_subtotal.SelectionStart.ToString
+            If x = 0 Then
+                txt_subtotal.SelectionStart = Len(txt_subtotal.Text)
+                txt_subtotal.SelectionLength = 0
+            Else
+                txt_subtotal.SelectionStart = x
+                txt_subtotal.SelectionLength = 0
+            End If
+        End If
     End Sub
 
     Private Sub txt_shiphand_TextChanged_1(sender As Object, e As EventArgs) Handles txt_shiphand.TextChanged
@@ -1223,7 +1243,17 @@ Public Class BarangKeluar
     End Sub
 
     Private Sub txt_harga_akhir_TextChanged(sender As Object, e As EventArgs) Handles txt_harga_akhir.TextChanged
-
+        If Len(txt_harga_akhir.Text) > 0 Then
+            txt_harga_akhir.Text = FormatNumber(CDbl(txt_harga_akhir.Text), 0)
+            Dim x As Integer = txt_harga_akhir.SelectionStart.ToString
+            If x = 0 Then
+                txt_harga_akhir.SelectionStart = Len(txt_harga_akhir.Text)
+                txt_harga_akhir.SelectionLength = 0
+            Else
+                txt_harga_akhir.SelectionStart = x
+                txt_harga_akhir.SelectionLength = 0
+            End If
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
