@@ -1017,15 +1017,15 @@ Public Class BarangKeluar
                         If listBarangKeluarFix(selectedItem.RowIndex).garansi_type <> "" Then
                             If listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Hari" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Bulan" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Tahun" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                             End If
                         End If
@@ -1088,15 +1088,15 @@ Public Class BarangKeluar
                         If listBarangKeluarFix(selectedItem.RowIndex).garansi IsNot Nothing Then
                             If listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Hari" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddDays(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Bulan" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddMonths(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                             ElseIf listBarangKeluarFix(selectedItem.RowIndex).garansi_type = "Tahun" Then
                                 Dim tglkeluar As DateTime = Me.date_tgl_keluar.Value
-                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi)
+                                Dim calculateGaransiExp As DateTime = tglkeluar.AddYears(listBarangKeluarFix(selectedItem.RowIndex).garansi).AddDays(-1)
                                 listBarangKeluarFix(selectedItem.RowIndex).garansi_exp = calculateGaransiExp
                             End If
                         End If
