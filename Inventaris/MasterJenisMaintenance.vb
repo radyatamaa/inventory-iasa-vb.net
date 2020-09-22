@@ -252,4 +252,18 @@ Public Class MasterJenisMaintenance
         MenuUtama.Show()
         Me.Close()
     End Sub
+
+    Private Sub txt_harga_TextChanged(sender As Object, e As EventArgs) Handles txt_harga.TextChanged
+        If Len(txt_harga.Text) > 0 Then
+            txt_harga.Text = FormatNumber(CDbl(txt_harga.Text), 0)
+            Dim x As Integer = txt_harga.SelectionStart.ToString
+            If x = 0 Then
+                txt_harga.SelectionStart = Len(txt_harga.Text)
+                txt_harga.SelectionLength = 0
+            Else
+                txt_harga.SelectionStart = x
+                txt_harga.SelectionLength = 0
+            End If
+        End If
+    End Sub
 End Class
