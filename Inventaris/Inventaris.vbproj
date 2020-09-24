@@ -259,10 +259,22 @@
     <Compile Include="LaporanBarangRental.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LaporanGaransi.Designer.vb">
+      <DependentUpon>LaporanGaransi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LaporanGaransi.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LaporanMaintenance.Designer.vb">
       <DependentUpon>LaporanMaintenance.vb</DependentUpon>
     </Compile>
     <Compile Include="LaporanMaintenance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LaporanStatusBarang.Designer.vb">
+      <DependentUpon>LaporanStatusBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LaporanStatusBarang.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Laporan_Barang_Masuk.Designer.vb">
@@ -487,8 +499,14 @@
     <EmbeddedResource Include="LaporanBarangRental.resx">
       <DependentUpon>LaporanBarangRental.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LaporanGaransi.resx">
+      <DependentUpon>LaporanGaransi.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LaporanMaintenance.resx">
       <DependentUpon>LaporanMaintenance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LaporanStatusBarang.resx">
+      <DependentUpon>LaporanStatusBarang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laporan_Barang_Masuk.resx">
       <DependentUpon>Laporan_Barang_Masuk.vb</DependentUpon>
@@ -573,8 +591,10 @@
     <EmbeddedResource Include="Report4.rdlc" />
     <EmbeddedResource Include="Report5_tanda_terima.rdlc" />
     <EmbeddedResource Include="Report6_kwitansi_barang.rdlc" />
+    <EmbeddedResource Include="ReportGaransi.rdlc" />
     <EmbeddedResource Include="ReportMaintenance.rdlc" />
     <EmbeddedResource Include="ReportRental.rdlc" />
+    <EmbeddedResource Include="ReportStatusBarang.rdlc" />
     <EmbeddedResource Include="Report_Penjualan.rdlc" />
     <EmbeddedResource Include="transaksi_maintenance.resx">
       <DependentUpon>transaksi_maintenance.vb</DependentUpon>

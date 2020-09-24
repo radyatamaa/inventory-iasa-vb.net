@@ -42,8 +42,9 @@ Partial Class MenuUtama
         Me.btn_r_hasil_penjualan = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_barang_rental = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_invoice_keluar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btn_r_garansi = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_stock_barang = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatusBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CetakToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CetakInvoiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CetakKwitansiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -65,7 +66,7 @@ Partial Class MenuUtama
         Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.p_logo = New System.Windows.Forms.PictureBox()
-        Me.MaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GaransiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.p_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -184,7 +185,7 @@ Partial Class MenuUtama
         '
         'ReportToolStripMenuItem
         '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ccc, Me.btn_r_hasil_penjualan, Me.btn_r_barang_rental, Me.btn_r_invoice_keluar, Me.btn_r_garansi, Me.btn_r_stock_barang, Me.MaintenanceToolStripMenuItem1})
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ccc, Me.btn_r_hasil_penjualan, Me.btn_r_barang_rental, Me.btn_r_invoice_keluar, Me.btn_r_stock_barang, Me.MaintenanceToolStripMenuItem1, Me.StatusBarangToolStripMenuItem, Me.GaransiToolStripMenuItem})
         Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
         Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(100, 55)
         Me.ReportToolStripMenuItem.Text = "Report"
@@ -217,19 +218,26 @@ Partial Class MenuUtama
         Me.btn_r_invoice_keluar.Size = New System.Drawing.Size(292, 28)
         Me.btn_r_invoice_keluar.Text = "List Invoice Keluar"
         '
-        'btn_r_garansi
-        '
-        Me.btn_r_garansi.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_r_garansi.Name = "btn_r_garansi"
-        Me.btn_r_garansi.Size = New System.Drawing.Size(292, 28)
-        Me.btn_r_garansi.Text = "Garansi"
-        '
         'btn_r_stock_barang
         '
         Me.btn_r_stock_barang.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_r_stock_barang.Name = "btn_r_stock_barang"
         Me.btn_r_stock_barang.Size = New System.Drawing.Size(292, 28)
         Me.btn_r_stock_barang.Text = "Stock Barang"
+        '
+        'MaintenanceToolStripMenuItem1
+        '
+        Me.MaintenanceToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.MaintenanceToolStripMenuItem1.Name = "MaintenanceToolStripMenuItem1"
+        Me.MaintenanceToolStripMenuItem1.Size = New System.Drawing.Size(292, 28)
+        Me.MaintenanceToolStripMenuItem1.Text = "Maintenance"
+        '
+        'StatusBarangToolStripMenuItem
+        '
+        Me.StatusBarangToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.StatusBarangToolStripMenuItem.Name = "StatusBarangToolStripMenuItem"
+        Me.StatusBarangToolStripMenuItem.Size = New System.Drawing.Size(292, 28)
+        Me.StatusBarangToolStripMenuItem.Text = "Status Barang"
         '
         'CetakToolStripMenuItem
         '
@@ -390,12 +398,12 @@ Partial Class MenuUtama
         Me.p_logo.TabIndex = 0
         Me.p_logo.TabStop = False
         '
-        'MaintenanceToolStripMenuItem1
+        'GaransiToolStripMenuItem
         '
-        Me.MaintenanceToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 10.2!)
-        Me.MaintenanceToolStripMenuItem1.Name = "MaintenanceToolStripMenuItem1"
-        Me.MaintenanceToolStripMenuItem1.Size = New System.Drawing.Size(292, 28)
-        Me.MaintenanceToolStripMenuItem1.Text = "Maintenance"
+        Me.GaransiToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.GaransiToolStripMenuItem.Name = "GaransiToolStripMenuItem"
+        Me.GaransiToolStripMenuItem.Size = New System.Drawing.Size(292, 28)
+        Me.GaransiToolStripMenuItem.Text = "Garansi"
         '
         'MenuUtama
         '
@@ -433,7 +441,6 @@ Partial Class MenuUtama
     Friend WithEvents btn_r_hasil_penjualan As ToolStripMenuItem
     Friend WithEvents btn_r_invoice_keluar As ToolStripMenuItem
     Friend WithEvents btn_r_barang_rental As ToolStripMenuItem
-    Friend WithEvents btn_r_garansi As ToolStripMenuItem
     Friend WithEvents btn_r_stock_barang As ToolStripMenuItem
     Friend WithEvents MasterDataToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btn_master_jenis As ToolStripMenuItem
@@ -461,4 +468,6 @@ Partial Class MenuUtama
     Friend WithEvents MaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PengembalianBarangRentalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MaintenanceToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents StatusBarangToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GaransiToolStripMenuItem As ToolStripMenuItem
 End Class
