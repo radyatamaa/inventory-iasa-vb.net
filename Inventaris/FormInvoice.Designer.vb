@@ -33,9 +33,10 @@ Partial Class FormInvoice
         Me.kd_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nama_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_tipe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.garansi_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.inovice_tittle = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.harga_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.type_service = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.already_paid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -111,7 +112,7 @@ Partial Class FormInvoice
         '
         Me.DataGridView1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_client, Me.kd_transaksi_keluar, Me.nama_client, Me.nama_tipe, Me.serial_number, Me.garansi_exp})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_client, Me.kd_transaksi_keluar, Me.nama_client, Me.inovice_tittle, Me.harga_total, Me.type_service, Me.already_paid})
         Me.DataGridView1.Location = New System.Drawing.Point(0, 131)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
@@ -140,26 +141,33 @@ Partial Class FormInvoice
         Me.nama_client.MinimumWidth = 6
         Me.nama_client.Name = "nama_client"
         '
-        'nama_tipe
+        'inovice_tittle
         '
-        Me.nama_tipe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nama_tipe.HeaderText = "Device Type"
-        Me.nama_tipe.MinimumWidth = 6
-        Me.nama_tipe.Name = "nama_tipe"
+        Me.inovice_tittle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.inovice_tittle.HeaderText = "Invoice Tittle"
+        Me.inovice_tittle.MinimumWidth = 6
+        Me.inovice_tittle.Name = "inovice_tittle"
         '
-        'serial_number
+        'harga_total
         '
-        Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.serial_number.HeaderText = "Serial Number"
-        Me.serial_number.MinimumWidth = 6
-        Me.serial_number.Name = "serial_number"
+        Me.harga_total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.harga_total.HeaderText = "Total Price"
+        Me.harga_total.MinimumWidth = 6
+        Me.harga_total.Name = "harga_total"
         '
-        'garansi_exp
+        'type_service
         '
-        Me.garansi_exp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.garansi_exp.HeaderText = "Warranty end Date"
-        Me.garansi_exp.MinimumWidth = 6
-        Me.garansi_exp.Name = "garansi_exp"
+        Me.type_service.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.type_service.HeaderText = "Type of Service"
+        Me.type_service.MinimumWidth = 6
+        Me.type_service.Name = "type_service"
+        '
+        'already_paid
+        '
+        Me.already_paid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.already_paid.HeaderText = "Already Paid"
+        Me.already_paid.MinimumWidth = 6
+        Me.already_paid.Name = "already_paid"
         '
         'FormInvoice
         '
@@ -187,7 +195,8 @@ Partial Class FormInvoice
     Friend WithEvents kd_client As DataGridViewTextBoxColumn
     Friend WithEvents kd_transaksi_keluar As DataGridViewTextBoxColumn
     Friend WithEvents nama_client As DataGridViewTextBoxColumn
-    Friend WithEvents nama_tipe As DataGridViewTextBoxColumn
-    Friend WithEvents serial_number As DataGridViewTextBoxColumn
-    Friend WithEvents garansi_exp As DataGridViewTextBoxColumn
+    Friend WithEvents inovice_tittle As DataGridViewTextBoxColumn
+    Friend WithEvents harga_total As DataGridViewTextBoxColumn
+    Friend WithEvents type_service As DataGridViewTextBoxColumn
+    Friend WithEvents already_paid As DataGridViewTextBoxColumn
 End Class

@@ -31,11 +31,15 @@ Partial Class FormBarangRental
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.kd_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.start_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.end_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rental_period = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.past_rental = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nama_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_tipe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.garansi_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pickup_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.checked_by = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.outstanding = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -111,7 +115,7 @@ Partial Class FormBarangRental
         '
         Me.DataGridView1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_client, Me.kd_transaksi_keluar, Me.nama_client, Me.nama_tipe, Me.serial_number, Me.garansi_exp})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_client, Me.start_date, Me.end_date, Me.rental_period, Me.past_rental, Me.kd_transaksi_keluar, Me.nama_client, Me.pickup_date, Me.checked_by, Me.outstanding})
         Me.DataGridView1.Location = New System.Drawing.Point(0, 131)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
@@ -125,6 +129,34 @@ Partial Class FormBarangRental
         Me.kd_client.HeaderText = "Client ID"
         Me.kd_client.MinimumWidth = 6
         Me.kd_client.Name = "kd_client"
+        '
+        'start_date
+        '
+        Me.start_date.HeaderText = "Start Date"
+        Me.start_date.MinimumWidth = 6
+        Me.start_date.Name = "start_date"
+        Me.start_date.Width = 125
+        '
+        'end_date
+        '
+        Me.end_date.HeaderText = "End Date"
+        Me.end_date.MinimumWidth = 6
+        Me.end_date.Name = "end_date"
+        Me.end_date.Width = 125
+        '
+        'rental_period
+        '
+        Me.rental_period.HeaderText = "Rental Period"
+        Me.rental_period.MinimumWidth = 6
+        Me.rental_period.Name = "rental_period"
+        Me.rental_period.Width = 125
+        '
+        'past_rental
+        '
+        Me.past_rental.HeaderText = "Past Rental Period"
+        Me.past_rental.MinimumWidth = 6
+        Me.past_rental.Name = "past_rental"
+        Me.past_rental.Width = 125
         '
         'kd_transaksi_keluar
         '
@@ -140,26 +172,26 @@ Partial Class FormBarangRental
         Me.nama_client.MinimumWidth = 6
         Me.nama_client.Name = "nama_client"
         '
-        'nama_tipe
+        'pickup_date
         '
-        Me.nama_tipe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nama_tipe.HeaderText = "Device Type"
-        Me.nama_tipe.MinimumWidth = 6
-        Me.nama_tipe.Name = "nama_tipe"
+        Me.pickup_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.pickup_date.HeaderText = "Pickup Date"
+        Me.pickup_date.MinimumWidth = 6
+        Me.pickup_date.Name = "pickup_date"
         '
-        'serial_number
+        'checked_by
         '
-        Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.serial_number.HeaderText = "Serial Number"
-        Me.serial_number.MinimumWidth = 6
-        Me.serial_number.Name = "serial_number"
+        Me.checked_by.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.checked_by.HeaderText = "Checked By"
+        Me.checked_by.MinimumWidth = 6
+        Me.checked_by.Name = "checked_by"
         '
-        'garansi_exp
+        'outstanding
         '
-        Me.garansi_exp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.garansi_exp.HeaderText = "Warranty end Date"
-        Me.garansi_exp.MinimumWidth = 6
-        Me.garansi_exp.Name = "garansi_exp"
+        Me.outstanding.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.outstanding.HeaderText = "Outstanding"
+        Me.outstanding.MinimumWidth = 6
+        Me.outstanding.Name = "outstanding"
         '
         'FormBarangRental
         '
@@ -185,9 +217,13 @@ Partial Class FormBarangRental
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents kd_client As DataGridViewTextBoxColumn
+    Friend WithEvents start_date As DataGridViewTextBoxColumn
+    Friend WithEvents end_date As DataGridViewTextBoxColumn
+    Friend WithEvents rental_period As DataGridViewTextBoxColumn
+    Friend WithEvents past_rental As DataGridViewTextBoxColumn
     Friend WithEvents kd_transaksi_keluar As DataGridViewTextBoxColumn
     Friend WithEvents nama_client As DataGridViewTextBoxColumn
-    Friend WithEvents nama_tipe As DataGridViewTextBoxColumn
-    Friend WithEvents serial_number As DataGridViewTextBoxColumn
-    Friend WithEvents garansi_exp As DataGridViewTextBoxColumn
+    Friend WithEvents pickup_date As DataGridViewTextBoxColumn
+    Friend WithEvents checked_by As DataGridViewTextBoxColumn
+    Friend WithEvents outstanding As DataGridViewTextBoxColumn
 End Class

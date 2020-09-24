@@ -23,12 +23,6 @@ Partial Class StatusBarang
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.kd_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_tipe = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.garansi_exp = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -36,6 +30,13 @@ Partial Class StatusBarang
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.device = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.device_type = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tested = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ios = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.condition = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.location = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -44,55 +45,13 @@ Partial Class StatusBarang
         '
         Me.DataGridView1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_client, Me.kd_transaksi_keluar, Me.nama_client, Me.nama_tipe, Me.serial_number, Me.garansi_exp})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.device, Me.device_type, Me.serial_number, Me.tested, Me.ios, Me.condition, Me.location})
         Me.DataGridView1.Location = New System.Drawing.Point(0, 131)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(1477, 585)
         Me.DataGridView1.TabIndex = 0
-        '
-        'kd_client
-        '
-        Me.kd_client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.kd_client.HeaderText = "Client ID"
-        Me.kd_client.MinimumWidth = 6
-        Me.kd_client.Name = "kd_client"
-        '
-        'kd_transaksi_keluar
-        '
-        Me.kd_transaksi_keluar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.kd_transaksi_keluar.HeaderText = "Invoice Number"
-        Me.kd_transaksi_keluar.MinimumWidth = 6
-        Me.kd_transaksi_keluar.Name = "kd_transaksi_keluar"
-        '
-        'nama_client
-        '
-        Me.nama_client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nama_client.HeaderText = "Client's Name"
-        Me.nama_client.MinimumWidth = 6
-        Me.nama_client.Name = "nama_client"
-        '
-        'nama_tipe
-        '
-        Me.nama_tipe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nama_tipe.HeaderText = "Device Type"
-        Me.nama_tipe.MinimumWidth = 6
-        Me.nama_tipe.Name = "nama_tipe"
-        '
-        'serial_number
-        '
-        Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.serial_number.HeaderText = "Serial Number"
-        Me.serial_number.MinimumWidth = 6
-        Me.serial_number.Name = "serial_number"
-        '
-        'garansi_exp
-        '
-        Me.garansi_exp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.garansi_exp.HeaderText = "Warranty end Date"
-        Me.garansi_exp.MinimumWidth = 6
-        Me.garansi_exp.Name = "garansi_exp"
         '
         'Panel1
         '
@@ -161,6 +120,55 @@ Partial Class StatusBarang
         Me.TextBox2.Size = New System.Drawing.Size(327, 31)
         Me.TextBox2.TabIndex = 4
         '
+        'device
+        '
+        Me.device.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.device.HeaderText = "Device"
+        Me.device.MinimumWidth = 6
+        Me.device.Name = "device"
+        '
+        'device_type
+        '
+        Me.device_type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.device_type.HeaderText = "Device Type"
+        Me.device_type.MinimumWidth = 6
+        Me.device_type.Name = "device_type"
+        '
+        'serial_number
+        '
+        Me.serial_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.serial_number.HeaderText = "Serial Number"
+        Me.serial_number.MinimumWidth = 6
+        Me.serial_number.Name = "serial_number"
+        '
+        'tested
+        '
+        Me.tested.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tested.HeaderText = "Tested"
+        Me.tested.MinimumWidth = 6
+        Me.tested.Name = "tested"
+        '
+        'ios
+        '
+        Me.ios.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ios.HeaderText = "IOS"
+        Me.ios.MinimumWidth = 6
+        Me.ios.Name = "ios"
+        '
+        'condition
+        '
+        Me.condition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.condition.HeaderText = "Condition"
+        Me.condition.MinimumWidth = 6
+        Me.condition.Name = "condition"
+        '
+        'location
+        '
+        Me.location.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.location.HeaderText = "Location"
+        Me.location.MinimumWidth = 6
+        Me.location.Name = "location"
+        '
         'StatusBarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -177,12 +185,6 @@ Partial Class StatusBarang
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents kd_client As DataGridViewTextBoxColumn
-    Friend WithEvents kd_transaksi_keluar As DataGridViewTextBoxColumn
-    Friend WithEvents nama_client As DataGridViewTextBoxColumn
-    Friend WithEvents nama_tipe As DataGridViewTextBoxColumn
-    Friend WithEvents serial_number As DataGridViewTextBoxColumn
-    Friend WithEvents garansi_exp As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
@@ -190,4 +192,11 @@ Partial Class StatusBarang
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents device As DataGridViewTextBoxColumn
+    Friend WithEvents device_type As DataGridViewTextBoxColumn
+    Friend WithEvents serial_number As DataGridViewTextBoxColumn
+    Friend WithEvents tested As DataGridViewTextBoxColumn
+    Friend WithEvents ios As DataGridViewTextBoxColumn
+    Friend WithEvents condition As DataGridViewTextBoxColumn
+    Friend WithEvents location As DataGridViewTextBoxColumn
 End Class
