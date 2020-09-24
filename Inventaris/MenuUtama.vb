@@ -199,7 +199,7 @@ Public Class MenuUtama
         btn_r_hasil_penjualan.Visible = True
         btn_r_invoice_keluar.Visible = True
         btn_r_barang_rental.Visible = True
-        btn_r_garansi.Visible = False
+
 
         If Me.MenuStrip1.Tag.IdLevel = 3 Then
             btn_barang_masuk.Visible = False
@@ -219,7 +219,6 @@ Public Class MenuUtama
             btn_r_hasil_penjualan.Visible = False
             btn_r_invoice_keluar.Visible = False
             btn_r_barang_rental.Visible = False
-            btn_r_garansi.Visible = False
         End If
     End Sub
     Private Sub MenuUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -321,5 +320,17 @@ Public Class MenuUtama
     Private Sub MaintenanceToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles MaintenanceToolStripMenuItem1.Click
         LaporanMaintenance.UserInfo = Me.MenuStrip1.Tag
         LaporanMaintenance.Show()
+    End Sub
+
+
+    Private Sub StatusBarangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StatusBarangToolStripMenuItem.Click
+        LaporanStatusBarang.UserInfo = Me.MenuStrip1.Tag
+        LaporanStatusBarang.Show()
+
+    End Sub
+
+    Private Sub GaransiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GaransiToolStripMenuItem.Click
+        LaporanGaransi.UserInfo = Me.MenuStrip1.Tag
+        LaporanGaransi.Show()
     End Sub
 End Class

@@ -593,3 +593,7 @@ E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.L
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\expertxls.dll
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\bin\Debug\expertxls.xml
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.LaporanMaintenance.resources
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\expertxls.dll
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\bin\Debug\expertxls.xml
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.LaporanGaransi.resources
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.LaporanStatusBarang.resources

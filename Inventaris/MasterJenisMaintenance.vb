@@ -37,7 +37,7 @@ Public Class MasterJenisMaintenance
             Try
                 Dim queryTbljenis As String = " UPDATE tbl_jenis_maintenance SET 
                                     nama_jenis_maintenance =  '" + jenis.nama_jenis_maintenance + "',
-                                    harga =  '" + jenis.harga + "',
+                                    harga =  " + jenis.harga.ToString + ",
                                     updated_by =  '" + userlogin + "',
                                     updated_date =    CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME)
                             WHERE  id_jenis_maintenance = " + jenis.id_jenis_maintenance.ToString
@@ -67,7 +67,7 @@ Public Class MasterJenisMaintenance
                                     is_active) 
                             VALUES (
                                     '" + jenis.nama_jenis_maintenance + "',
-                                    '" + jenis.harga + "',
+                                    " + jenis.harga.ToString + ",
                                     '" + userlogin + "',
                                     CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME),
                                     " + 1.ToString + "
@@ -198,7 +198,7 @@ Public Class MasterJenisMaintenance
            {
            .id_jenis_maintenance = jenisId,
             .nama_jenis_maintenance = Me.txt_jenis_maintenance.Text,
-            .harga = Me.txt_harga.Text
+            .harga = Decimal.Parse(Me.txt_harga.Text)
            }
 
         Dim idjenis As Integer = SimpanJenis(insertDatajenis)
@@ -251,5 +251,19 @@ Public Class MasterJenisMaintenance
     Private Sub btn_kembali_Click_1(sender As Object, e As EventArgs) Handles btn_kembali.Click
         MenuUtama.Show()
         Me.Close()
+    End Sub
+
+    Private Sub txt_harga_TextChanged(sender As Object, e As EventArgs) Handles txt_harga.TextChanged
+        If Len(txt_harga.Text) > 0 Then
+            txt_harga.Text = FormatNumber(CDbl(txt_harga.Text), 0)
+            Dim x As Integer = txt_harga.SelectionStart.ToString
+            If x = 0 Then
+                txt_harga.SelectionStart = Len(txt_harga.Text)
+                txt_harga.SelectionLength = 0
+            Else
+                txt_harga.SelectionStart = x
+                txt_harga.SelectionLength = 0
+            End If
+        End If
     End Sub
 End Class
