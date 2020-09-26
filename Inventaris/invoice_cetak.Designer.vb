@@ -37,6 +37,16 @@ Partial Class invoice_cetak
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.dt_transaksi = New System.Windows.Forms.DataGridView()
+        Me.btn_tampil = New System.Windows.Forms.Button()
+        Me.date_tgl_keluar1 = New System.Windows.Forms.DateTimePicker()
+        Me.date_tgl_keluar2 = New System.Windows.Forms.DateTimePicker()
+        Me.btn_tampil_list = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btncari2 = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.btncari = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.harga_total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.diskon = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,12 +59,12 @@ Partial Class invoice_cetak
         Me.total_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.created_by = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.created_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btn_tampil = New System.Windows.Forms.Button()
-        Me.date_tgl_keluar1 = New System.Windows.Forms.DateTimePicker()
-        Me.date_tgl_keluar2 = New System.Windows.Forms.DateTimePicker()
-        Me.btn_tampil_list = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.status_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.flag_bayar = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.btn_simpan = New System.Windows.Forms.Button()
+        Me.btn_hapus = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         CType(Me.dt_transaksi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -63,10 +73,10 @@ Partial Class invoice_cetak
         Me.ReportViewer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ReportViewer1.Location = New System.Drawing.Point(1, 208)
+        Me.ReportViewer1.Location = New System.Drawing.Point(1, 243)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(974, 321)
+        Me.ReportViewer1.Size = New System.Drawing.Size(974, 284)
         Me.ReportViewer1.TabIndex = 0
         '
         'dt_transaksi
@@ -84,15 +94,115 @@ Partial Class invoice_cetak
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dt_transaksi.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dt_transaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dt_transaksi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.harga_total, Me.diskon, Me.harga_akhir, Me.nama_client, Me.alamat_pengiriman, Me.kota_pengiriman, Me.kdpos_pengiriman, Me.tgl_keluar, Me.total_barang, Me.created_by, Me.created_date})
+        Me.dt_transaksi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.harga_total, Me.diskon, Me.harga_akhir, Me.nama_client, Me.alamat_pengiriman, Me.kota_pengiriman, Me.kdpos_pengiriman, Me.tgl_keluar, Me.total_barang, Me.created_by, Me.created_date, Me.status_barang, Me.flag_bayar})
         Me.dt_transaksi.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.dt_transaksi.Location = New System.Drawing.Point(1, 51)
+        Me.dt_transaksi.Location = New System.Drawing.Point(1, 83)
         Me.dt_transaksi.Margin = New System.Windows.Forms.Padding(2)
         Me.dt_transaksi.Name = "dt_transaksi"
         Me.dt_transaksi.RowHeadersWidth = 51
         Me.dt_transaksi.RowTemplate.Height = 24
         Me.dt_transaksi.Size = New System.Drawing.Size(974, 119)
         Me.dt_transaksi.TabIndex = 56
+        '
+        'btn_tampil
+        '
+        Me.btn_tampil.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_tampil.FlatAppearance.BorderSize = 0
+        Me.btn_tampil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_tampil.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_tampil.Location = New System.Drawing.Point(11, 209)
+        Me.btn_tampil.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_tampil.Name = "btn_tampil"
+        Me.btn_tampil.Size = New System.Drawing.Size(178, 26)
+        Me.btn_tampil.TabIndex = 57
+        Me.btn_tampil.Text = "Tampil"
+        Me.btn_tampil.UseVisualStyleBackColor = False
+        '
+        'date_tgl_keluar1
+        '
+        Me.date_tgl_keluar1.Location = New System.Drawing.Point(110, 7)
+        Me.date_tgl_keluar1.Margin = New System.Windows.Forms.Padding(2)
+        Me.date_tgl_keluar1.Name = "date_tgl_keluar1"
+        Me.date_tgl_keluar1.Size = New System.Drawing.Size(183, 20)
+        Me.date_tgl_keluar1.TabIndex = 58
+        '
+        'date_tgl_keluar2
+        '
+        Me.date_tgl_keluar2.Location = New System.Drawing.Point(324, 7)
+        Me.date_tgl_keluar2.Margin = New System.Windows.Forms.Padding(2)
+        Me.date_tgl_keluar2.Name = "date_tgl_keluar2"
+        Me.date_tgl_keluar2.Size = New System.Drawing.Size(193, 20)
+        Me.date_tgl_keluar2.TabIndex = 61
+        '
+        'btn_tampil_list
+        '
+        Me.btn_tampil_list.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_tampil_list.FlatAppearance.BorderSize = 0
+        Me.btn_tampil_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_tampil_list.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_tampil_list.Location = New System.Drawing.Point(520, 4)
+        Me.btn_tampil_list.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_tampil_list.Name = "btn_tampil_list"
+        Me.btn_tampil_list.Size = New System.Drawing.Size(178, 26)
+        Me.btn_tampil_list.TabIndex = 62
+        Me.btn_tampil_list.Text = "Tampilkan List"
+        Me.btn_tampil_list.UseVisualStyleBackColor = False
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(-2, 11)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(79, 13)
+        Me.Label9.TabIndex = 63
+        Me.Label9.Text = "Tanggal Keluar"
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(297, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(23, 13)
+        Me.Label1.TabIndex = 64
+        Me.Label1.Text = "s/d"
+        '
+        'btncari2
+        '
+        Me.btncari2.Location = New System.Drawing.Point(288, 59)
+        Me.btncari2.Name = "btncari2"
+        Me.btncari2.Size = New System.Drawing.Size(39, 20)
+        Me.btncari2.TabIndex = 89
+        Me.btncari2.Text = "Cari"
+        Me.btncari2.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(110, 59)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(178, 20)
+        Me.TextBox2.TabIndex = 88
+        '
+        'btncari
+        '
+        Me.btncari.Location = New System.Drawing.Point(288, 32)
+        Me.btncari.Name = "btncari"
+        Me.btncari.Size = New System.Drawing.Size(39, 21)
+        Me.btncari.TabIndex = 86
+        Me.btncari.Text = "Cari"
+        Me.btncari.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(110, 32)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(178, 20)
+        Me.TextBox1.TabIndex = 85
         '
         'kd_transaksi_keluar
         '
@@ -201,79 +311,76 @@ Partial Class invoice_cetak
         Me.created_date.HeaderText = "Created Date"
         Me.created_date.Name = "created_date"
         '
-        'btn_tampil
+        'status_barang
         '
-        Me.btn_tampil.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_tampil.FlatAppearance.BorderSize = 0
-        Me.btn_tampil.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_tampil.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_tampil.Location = New System.Drawing.Point(11, 174)
-        Me.btn_tampil.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_tampil.Name = "btn_tampil"
-        Me.btn_tampil.Size = New System.Drawing.Size(178, 26)
-        Me.btn_tampil.TabIndex = 57
-        Me.btn_tampil.Text = "Tampil"
-        Me.btn_tampil.UseVisualStyleBackColor = False
+        Me.status_barang.HeaderText = "Type Of Service"
+        Me.status_barang.Name = "status_barang"
         '
-        'date_tgl_keluar1
+        'flag_bayar
         '
-        Me.date_tgl_keluar1.Location = New System.Drawing.Point(110, 20)
-        Me.date_tgl_keluar1.Margin = New System.Windows.Forms.Padding(2)
-        Me.date_tgl_keluar1.Name = "date_tgl_keluar1"
-        Me.date_tgl_keluar1.Size = New System.Drawing.Size(183, 20)
-        Me.date_tgl_keluar1.TabIndex = 58
+        Me.flag_bayar.HeaderText = "Already Paid"
+        Me.flag_bayar.Items.AddRange(New Object() {"No", "Yes"})
+        Me.flag_bayar.Name = "flag_bayar"
         '
-        'date_tgl_keluar2
+        'btn_simpan
         '
-        Me.date_tgl_keluar2.Location = New System.Drawing.Point(324, 20)
-        Me.date_tgl_keluar2.Margin = New System.Windows.Forms.Padding(2)
-        Me.date_tgl_keluar2.Name = "date_tgl_keluar2"
-        Me.date_tgl_keluar2.Size = New System.Drawing.Size(193, 20)
-        Me.date_tgl_keluar2.TabIndex = 61
+        Me.btn_simpan.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_simpan.FlatAppearance.BorderSize = 0
+        Me.btn_simpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_simpan.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_simpan.Location = New System.Drawing.Point(193, 209)
+        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_simpan.Name = "btn_simpan"
+        Me.btn_simpan.Size = New System.Drawing.Size(95, 26)
+        Me.btn_simpan.TabIndex = 91
+        Me.btn_simpan.Text = "Simpan"
+        Me.btn_simpan.UseVisualStyleBackColor = False
         '
-        'btn_tampil_list
+        'btn_hapus
         '
-        Me.btn_tampil_list.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_tampil_list.FlatAppearance.BorderSize = 0
-        Me.btn_tampil_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_tampil_list.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_tampil_list.Location = New System.Drawing.Point(520, 17)
-        Me.btn_tampil_list.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_tampil_list.Name = "btn_tampil_list"
-        Me.btn_tampil_list.Size = New System.Drawing.Size(178, 26)
-        Me.btn_tampil_list.TabIndex = 62
-        Me.btn_tampil_list.Text = "Tampilkan List"
-        Me.btn_tampil_list.UseVisualStyleBackColor = False
+        Me.btn_hapus.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btn_hapus.FlatAppearance.BorderSize = 0
+        Me.btn_hapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_hapus.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_hapus.Location = New System.Drawing.Point(292, 209)
+        Me.btn_hapus.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_hapus.Name = "btn_hapus"
+        Me.btn_hapus.Size = New System.Drawing.Size(95, 26)
+        Me.btn_hapus.TabIndex = 92
+        Me.btn_hapus.Text = "Hapus"
+        Me.btn_hapus.UseVisualStyleBackColor = False
         '
-        'Label9
+        'ComboBox1
         '
-        Me.Label9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(27, 24)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(79, 13)
-        Me.Label9.TabIndex = 63
-        Me.Label9.Text = "Tanggal Keluar"
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "ID Client", "Jenis Barang", "Tipe Barang", "Serial Number", "Flag Bayar"})
+        Me.ComboBox1.Location = New System.Drawing.Point(1, 32)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(105, 21)
+        Me.ComboBox1.TabIndex = 93
         '
-        'Label1
+        'ComboBox2
         '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(297, 24)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(23, 13)
-        Me.Label1.TabIndex = 64
-        Me.Label1.Text = "s/d"
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "ID Client", "Jenis Barang", "Tipe Barang", "Serial Number", "Flag Bayar"})
+        Me.ComboBox2.Location = New System.Drawing.Point(1, 59)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(105, 21)
+        Me.ComboBox2.TabIndex = 94
         '
         'invoice_cetak
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(977, 530)
+        Me.Controls.Add(Me.ComboBox2)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.btn_hapus)
+        Me.Controls.Add(Me.btn_simpan)
+        Me.Controls.Add(Me.btncari2)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.btncari)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btn_tampil_list)
@@ -299,6 +406,10 @@ Partial Class invoice_cetak
     Friend WithEvents btn_tampil_list As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents btncari2 As Button
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents btncari As Button
+    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents kd_transaksi_keluar As DataGridViewTextBoxColumn
     Friend WithEvents harga_total As DataGridViewTextBoxColumn
     Friend WithEvents diskon As DataGridViewTextBoxColumn
@@ -311,4 +422,10 @@ Partial Class invoice_cetak
     Friend WithEvents total_barang As DataGridViewTextBoxColumn
     Friend WithEvents created_by As DataGridViewTextBoxColumn
     Friend WithEvents created_date As DataGridViewTextBoxColumn
+    Friend WithEvents status_barang As DataGridViewTextBoxColumn
+    Friend WithEvents flag_bayar As DataGridViewComboBoxColumn
+    Friend WithEvents btn_simpan As Button
+    Friend WithEvents btn_hapus As Button
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ComboBox2 As ComboBox
 End Class
