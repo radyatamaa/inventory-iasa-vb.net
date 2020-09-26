@@ -23,10 +23,10 @@ Partial Class PengembalianRental
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PengembalianRental))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btn_kembali = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -65,20 +65,13 @@ Partial Class PengembalianRental
         Me.periode_rental_lama = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rental_type_lama = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.rental_exp_lama = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btncari = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.cmb_client = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.cmb_tipe_barang = New System.Windows.Forms.ComboBox()
-        Me.cmb_jenis_barang = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_hapus = New System.Windows.Forms.Button()
         Me.btn_simpan = New System.Windows.Forms.Button()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.btncari2 = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -140,23 +133,16 @@ Partial Class PengembalianRental
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.ComboBox2)
+        Me.Panel2.Controls.Add(Me.ComboBox1)
         Me.Panel2.Controls.Add(Me.btncari2)
         Me.Panel2.Controls.Add(Me.TextBox2)
-        Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.date_tgl_keluar)
         Me.Panel2.Controls.Add(Me.btn_tambah)
         Me.Panel2.Controls.Add(Me.dt_barang_keluar_fix)
         Me.Panel2.Controls.Add(Me.dt_barang_keluar)
-        Me.Panel2.Controls.Add(Me.btncari)
-        Me.Panel2.Controls.Add(Me.TextBox1)
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.cmb_client)
-        Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Controls.Add(Me.cmb_tipe_barang)
-        Me.Panel2.Controls.Add(Me.cmb_jenis_barang)
-        Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Location = New System.Drawing.Point(0, 93)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
@@ -167,7 +153,7 @@ Partial Class PengembalianRental
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(461, 18)
+        Me.Label1.Location = New System.Drawing.Point(316, 48)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(116, 13)
@@ -177,7 +163,7 @@ Partial Class PengembalianRental
         '
         'date_tgl_keluar
         '
-        Me.date_tgl_keluar.Location = New System.Drawing.Point(581, 18)
+        Me.date_tgl_keluar.Location = New System.Drawing.Point(436, 48)
         Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(2)
         Me.date_tgl_keluar.Name = "date_tgl_keluar"
         Me.date_tgl_keluar.Size = New System.Drawing.Size(178, 20)
@@ -203,14 +189,14 @@ Partial Class PengembalianRental
         Me.dt_barang_keluar_fix.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_barang_keluar_fix.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dt_barang_keluar_fix.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dt_barang_keluar_fix.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dt_barang_keluar_fix.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_barang_keluar_fix.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewComboBoxColumn1, Me.DataGridViewTextBoxColumn13})
         Me.dt_barang_keluar_fix.GridColor = System.Drawing.SystemColors.ActiveBorder
@@ -294,10 +280,10 @@ Partial Class PengembalianRental
         '
         'DataGridViewTextBoxColumn11
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "N2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Format = "N2"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn11.HeaderText = "Harga Rental Lama"
         Me.DataGridViewTextBoxColumn11.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
@@ -331,14 +317,14 @@ Partial Class PengembalianRental
         Me.dt_barang_keluar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_barang_keluar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dt_barang_keluar.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dt_barang_keluar.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dt_barang_keluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_barang_keluar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.jenis_barang, Me.tipe_barang, Me.serial_number, Me.kondisi, Me.tested, Me.lokasi, Me.detail_lokasi, Me.catatan, Me.status, Me.harga_jual, Me.periode_rental_lama, Me.rental_type_lama, Me.rental_exp_lama})
         Me.dt_barang_keluar.GridColor = System.Drawing.SystemColors.ActiveBorder
@@ -422,10 +408,10 @@ Partial Class PengembalianRental
         '
         'harga_jual
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "N2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.harga_jual.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle8.Format = "N2"
+        DataGridViewCellStyle8.NullValue = Nothing
+        Me.harga_jual.DefaultCellStyle = DataGridViewCellStyle8
         Me.harga_jual.HeaderText = "Harga Rental Lama"
         Me.harga_jual.MinimumWidth = 6
         Me.harga_jual.Name = "harga_jual"
@@ -453,97 +439,6 @@ Partial Class PengembalianRental
         Me.rental_exp_lama.Name = "rental_exp_lama"
         Me.rental_exp_lama.Width = 125
         '
-        'btncari
-        '
-        Me.btncari.Location = New System.Drawing.Point(449, 105)
-        Me.btncari.Name = "btncari"
-        Me.btncari.Size = New System.Drawing.Size(39, 23)
-        Me.btncari.TabIndex = 75
-        Me.btncari.Text = "Cari"
-        Me.btncari.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(271, 107)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(178, 20)
-        Me.TextBox1.TabIndex = 74
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(149, 109)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(25, 13)
-        Me.Label4.TabIndex = 76
-        Me.Label4.Text = "Cari"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'cmb_client
-        '
-        Me.cmb_client.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cmb_client.FormattingEnabled = True
-        Me.cmb_client.Location = New System.Drawing.Point(271, 14)
-        Me.cmb_client.Margin = New System.Windows.Forms.Padding(2)
-        Me.cmb_client.Name = "cmb_client"
-        Me.cmb_client.Size = New System.Drawing.Size(178, 21)
-        Me.cmb_client.TabIndex = 12
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(149, 18)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(61, 13)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Kode Client"
-        '
-        'cmb_tipe_barang
-        '
-        Me.cmb_tipe_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cmb_tipe_barang.FormattingEnabled = True
-        Me.cmb_tipe_barang.Location = New System.Drawing.Point(271, 76)
-        Me.cmb_tipe_barang.Margin = New System.Windows.Forms.Padding(2)
-        Me.cmb_tipe_barang.Name = "cmb_tipe_barang"
-        Me.cmb_tipe_barang.Size = New System.Drawing.Size(178, 21)
-        Me.cmb_tipe_barang.TabIndex = 8
-        '
-        'cmb_jenis_barang
-        '
-        Me.cmb_jenis_barang.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cmb_jenis_barang.FormattingEnabled = True
-        Me.cmb_jenis_barang.Location = New System.Drawing.Point(271, 44)
-        Me.cmb_jenis_barang.Margin = New System.Windows.Forms.Padding(2)
-        Me.cmb_jenis_barang.Name = "cmb_jenis_barang"
-        Me.cmb_jenis_barang.Size = New System.Drawing.Size(178, 21)
-        Me.cmb_jenis_barang.TabIndex = 7
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(149, 78)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Tipe Barang"
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(149, 44)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 13)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Jenis Barang"
-        '
         'btn_hapus
         '
         Me.btn_hapus.Location = New System.Drawing.Point(76, 564)
@@ -564,33 +459,46 @@ Partial Class PengembalianRental
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = True
         '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"No. Invoice v", "Nama Client", "ID Client", "Jenis Barang", "Tipe Barang", "Serial Number"})
+        Me.ComboBox2.Location = New System.Drawing.Point(327, 117)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(105, 21)
+        Me.ComboBox2.TabIndex = 99
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"No. Invoice v", "Nama Client", "ID Client", "Jenis Barang", "Tipe Barang", "Serial Number"})
+        Me.ComboBox1.Location = New System.Drawing.Point(327, 90)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(105, 21)
+        Me.ComboBox1.TabIndex = 98
+        '
         'btncari2
         '
-        Me.btncari2.Location = New System.Drawing.Point(449, 137)
+        Me.btncari2.Location = New System.Drawing.Point(614, 117)
         Me.btncari2.Name = "btncari2"
-        Me.btncari2.Size = New System.Drawing.Size(39, 23)
-        Me.btncari2.TabIndex = 83
+        Me.btncari2.Size = New System.Drawing.Size(39, 20)
+        Me.btncari2.TabIndex = 97
         Me.btncari2.Text = "Cari"
         Me.btncari2.UseVisualStyleBackColor = True
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(271, 139)
+        Me.TextBox2.Location = New System.Drawing.Point(436, 117)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(178, 20)
-        Me.TextBox2.TabIndex = 82
+        Me.TextBox2.TabIndex = 96
         '
-        'Label7
+        'TextBox1
         '
-        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(149, 141)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(25, 13)
-        Me.Label7.TabIndex = 84
-        Me.Label7.Text = "Cari"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.TextBox1.Location = New System.Drawing.Point(436, 90)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(178, 20)
+        Me.TextBox1.TabIndex = 95
         '
         'PengembalianRental
         '
@@ -620,15 +528,6 @@ Partial Class PengembalianRental
     Friend WithEvents Label6 As Label
     Friend WithEvents pict_logo As PictureBox
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents cmb_tipe_barang As ComboBox
-    Friend WithEvents cmb_jenis_barang As ComboBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents cmb_client As ComboBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents btncari As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents dt_barang_keluar_fix As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
@@ -664,7 +563,9 @@ Partial Class PengembalianRental
     Friend WithEvents btn_simpan As Button
     Friend WithEvents date_tgl_keluar As DateTimePicker
     Friend WithEvents Label1 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents btncari2 As Button
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label7 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class
