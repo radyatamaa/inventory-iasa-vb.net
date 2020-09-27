@@ -8,7 +8,7 @@ Imports System.Text
 Imports Microsoft.Reporting.WinForms
 
 Public Class invoice_cetak
-
+    Dim indexPenampung As New List(Of Integer)
     Public Property KdTransaksi As String
     Public Property UserInfo As Object
     Dim kdTransaksis As New List(Of String)
@@ -34,11 +34,77 @@ Public Class invoice_cetak
         Me.ReportViewer1.RefreshReport()
         LoadReport()
     End Sub
+    Public Function MappingToDataGrid(transaksi As List(Of Object))
+        For Each insertDataBarangMasuk As Object In transaksi
+            dt_transaksi.Rows.Add(1)
+            Dim isTest As String
+            Dim flagBayar = "No"
+            If insertDataBarangMasuk.flag_bayar = 1 Then
+                flagBayar = "Yes"
+            End If
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.kd_transaksi_keluar
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.harga_total
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.diskon
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.harga_akhir
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.nama_client
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.alamat_pengiriman
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.kota_pengiriman
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.kdpos_pengiriman
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.tgl_keluar
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.total_barang
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.created_by
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.created_date
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.nama_status
+            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(13).Value = flagBayar
+            dt_transaksi.Update()
+            'Index = Index + 1
+
+
+        Next
+    End Function
+    Function UpdateFlagBayar(flagBayar As Integer, userlogin As String, kdTransaksi As String)
+        Dim barangKeluarId
+        Dim queryTblBarang As String = " UPDATE tbl_transaksi SET 
+                                    flag_bayar = " + flagBayar.ToString + ",
+                                    updated_by = '" + userlogin + "',
+                                    updated_date =   CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME)
+                                    WHERE kd_transaksi_keluar = '" + kdTransaksi.ToString + "'"
+
+        cmd.CommandText = queryTblBarang
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        CONN.Open()
+        barangKeluarId = cmd.ExecuteScalar()
+        'reader = cmd.ExecuteReader()
+
+        CONN.Close()
+    End Function
+    Function UpdateStatusBarang(idStatusBarang As Integer, userlogin As String, idBarang As Integer)
+        Dim barangKeluarId
+        Dim queryTblBarang As String = " UPDATE tbl_barang SET 
+                                    id_status_barang = " + idStatusBarang.ToString + ",
+                                    updated_by = '" + userlogin + "',
+                                    updated_date =   CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME)
+                                    WHERE id_barang = " + idBarang.ToString
+
+        cmd.CommandText = queryTblBarang
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = CONN
+        CONN.Open()
+        barangKeluarId = cmd.ExecuteScalar()
+        'reader = cmd.ExecuteReader()
+
+        CONN.Close()
+    End Function
     Public Function GetTransaksi(idToko As String, startDate As DateTime, endDate As DateTime)
         dt_transaksi.Rows.Clear()
         listTransaksi.Clear()
         Dim result As New List(Of Object)
-        Dim query As String = "  SELECT t.*,tc.nama_client, a.id_toko FROM tbl_transaksi t
+        Dim query As String = "  SELECT t.*,tc.nama_client, a.id_toko,
+                                  (SELECT top 1 s.nama_status FROM tbl_barang_keluar bk
+                                    JOIN tbl_status_barang s ON bk.id_status_barang = s.id_status_barang 
+                                    WHERE bk.kd_transaksi_keluar = t.kd_transaksi_keluar) as nama_status
+                                    FROM tbl_transaksi t
                                     INNER JOIN tbl_client tc ON t.id_client = tc.id_client
 									LEFT OUTER JOIN (select kd_transaksi_keluar, max(id_toko) as id_toko from tbl_barang_keluar group by kd_transaksi_keluar) a on t.kd_transaksi_keluar = a.kd_transaksi_keluar
                                     WHERE t.is_active = 1 and 
@@ -62,10 +128,13 @@ Public Class invoice_cetak
         While reader.Read
             Dim barang = New With
                 {
+                .nama_status = reader("nama_status"),
+                .flag_bayar = reader("flag_bayar"),
                  .kd_transaksi_keluar = reader("kd_transaksi_keluar"),
                     .harga_total = reader("harga_total"),
             .diskon = reader("diskon"),
             .harga_akhir = reader("harga_akhir"),
+            .id_client = reader("id_client"),
             .nama_client = reader("nama_client"),
             .alamat_pengiriman = reader("alamat_pengiriman"),
             .kota_pengiriman = reader("kota_pengiriman"),
@@ -81,28 +150,8 @@ Public Class invoice_cetak
         End While
 
         Dim index = 0
-        For Each insertDataBarangMasuk As Object In listTransaksi
-            dt_transaksi.Rows.Add(1)
-            Dim isTest As String
 
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.kd_transaksi_keluar
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.harga_total
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.diskon
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.harga_akhir
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.nama_client
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.alamat_pengiriman
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.kota_pengiriman
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.kdpos_pengiriman
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.tgl_keluar
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.total_barang
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.created_by
-            dt_transaksi.Rows(dt_transaksi.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.created_date
-
-            dt_transaksi.Update()
-            index = index + 1
-
-
-        Next
+        MappingToDataGrid(listTransaksi)
 
         CONN.Close()
 
@@ -126,6 +175,8 @@ Public Class invoice_cetak
     End Function
 
     Sub LoadReport()
+        kdTransaksis.Clear()
+        indexPenampung.Clear()
         Dim rptDS As ReportDataSource
         Me.ReportViewer1.RefreshReport()
         Try
@@ -181,7 +232,8 @@ Public Class invoice_cetak
                                             tgl_keluar,
                                             periode_rental,
                                             rental_type,
-                                            rental_exp
+                                            rental_exp,
+                                            flag_bayar
                                   from view_invoice "
 
             If KdTransaksi IsNot Nothing And KdTransaksi <> "" Then
@@ -209,6 +261,7 @@ Public Class invoice_cetak
 
                 Dim barang = New With
                 {
+                .flag_bayar = reader("flag_bayar"),
                  .id_transaksi = reader("id_transaksi"),
                  .kd_transaksi_keluar = reader("kd_transaksi_keluar"),
             .qty = reader("qty"),
@@ -223,6 +276,7 @@ Public Class invoice_cetak
             .harga_akhir = reader("harga_akhir"),
             .id_status_barang = reader("id_status_barang"),
             .nama_status = reader("nama_status"),
+            .kd_client = reader("kd_client"),
             .nama_client = reader("nama_client"),
             .alamat_pengiriman = reader("alamat_pengiriman"),
             .kota_pengiriman = reader("kota_pengiriman"),
@@ -248,7 +302,6 @@ Public Class invoice_cetak
             .logo_toko = reader("logo_toko"),
             .id_toko = reader("id_toko"),
             .company_name = reader("company_name"),
-            .kd_client = reader("kd_client"),
             .tgl_keluar = reader("tgl_keluar"),
             .periode_rental = reader("periode_rental"),
             .rental_type = reader("rental_type"),
@@ -375,22 +428,152 @@ Public Class invoice_cetak
     End Sub
 
     Private Sub dt_transaksi_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_transaksi.CellContentClick
-
+        kdTransaksis.Clear()
+        indexPenampung.Clear()
     End Sub
 
     Private Sub dt_transaksi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_transaksi.CellClick
         kdTransaksis.Clear()
+        indexPenampung.Clear()
         Dim selectedIdBarangKeluar = dt_transaksi.SelectedRows
         For Each selectedItem As DataGridViewRow In selectedIdBarangKeluar
             Dim idBarangMasuk = selectedItem.Cells(0).Value
+            Dim index = selectedItem.Index
+            indexPenampung.Add(index)
             kdTransaksis.Add(idBarangMasuk)
         Next selectedItem
     End Sub
+    Function DeleteTransaksi(kdTransaksi As String)
+        Try
+            Dim userlogin As String = ""
+            If UserInfo IsNot Nothing Then
+                userlogin = UserInfo.Username
+            End If
 
+            Dim queryTblBarangMasuk As String = "UPDATE tbl_transaksi SET 
+                                    is_active = 0 ,
+                                    deleted_by =   '" + userlogin + "',
+                                    deleted_date =    CAST('" + DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo) + "'AS DATETIME)
+                                WHERE kd_transaksi_keluar = '" + kdTransaksi.ToString + "'"
+
+            cmd.CommandText = queryTblBarangMasuk
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = CONN
+            CONN.Open()
+            reader = cmd.ExecuteReader()
+            CONN.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            MsgBox("Data Telah Di Hapus")
+        End Try
+
+    End Function
     Private Sub btn_tampil_Click(sender As Object, e As EventArgs) Handles btn_tampil.Click
         If kdTransaksis.Count > 0 Then
             KdTransaksi = kdTransaksis(0)
             LoadReport()
         End If
+    End Sub
+
+    Private Sub btncari_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub btncari2_Click(sender As Object, e As EventArgs) Handles btncari2.Click
+        dt_transaksi.Rows.Clear()
+        Dim search = listTransaksi
+        If TextBox1.Text <> "" Then
+            Dim keywoard = TextBox1.Text
+            If ComboBox1.Text = "No. Invoice" Then
+                search = listTransaksi.Where(Function(x) x.kd_transaksi_keluar.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox1.Text = "Nama Client" Then
+                search = listTransaksi.Where(Function(x) x.nama_client.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox1.Text = "ID Client" Then
+                search = listTransaksi.Where(Function(x) x.kd_client.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox1.Text = "Flag Bayar" Then
+                search = listTransaksi.Where(Function(x) x.flag_bayar.ToString.Contains(keywoard)).ToList()
+            End If
+        End If
+
+        If TextBox2.Text <> "" Then
+            Dim keywoard = TextBox2.Text
+            If ComboBox2.Text = "No. Invoice" Then
+                search = listTransaksi.Where(Function(x) x.kd_transaksi_keluar.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox2.Text = "Nama Client" Then
+                search = listTransaksi.Where(Function(x) x.nama_client.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox2.Text = "ID Client" Then
+                search = listTransaksi.Where(Function(x) x.kd_client.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox2.Text = "Flag Bayar" Then
+                search = listTransaksi.Where(Function(x) x.flag_bayar.ToString.Contains(keywoard)).ToList()
+            End If
+        End If
+        If TextBox1.Text = "" And TextBox2.Text = "" Then
+            GetTransaksi(UserInfo.IdToko, date_tgl_keluar1.Value, date_tgl_keluar2.Value)
+        Else
+            MappingToDataGrid(search)
+            'listTransaksi = search
+        End If
+
+    End Sub
+
+    Private Sub dt_transaksi_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles dt_transaksi.CellValueChanged
+        Dim changeHargaJualBarangKeluar = dt_transaksi.SelectedCells
+
+        Dim index = 0
+        For Each selectedItem As DataGridViewCell In changeHargaJualBarangKeluar
+            If selectedItem.ColumnIndex = 13 Then
+                If selectedItem.Value IsNot Nothing Then
+                    Dim flagBayar = selectedItem.Value
+                    If selectedItem.Value = "Yes" Then
+                        flagBayar = 1
+                    ElseIf selectedItem.Value = "No" Then
+                        flagBayar = 0
+                    End If
+                    listTransaksi(selectedItem.RowIndex).flag_bayar = flagBayar
+
+                    index = index + 1
+
+                End If
+            End If
+        Next selectedItem
+    End Sub
+
+    Private Sub btn_simpan_Click(sender As Object, e As EventArgs) Handles btn_simpan.Click
+        For Each data As Object In listTransaksi
+            UpdateFlagBayar(data.flag_bayar, UserInfo.Username, data.kd_transaksi_keluar)
+        Next
+        kdTransaksis.Clear()
+        indexPenampung.Clear()
+
+        MsgBox("Data Telah Tersimpan")
+        dt_transaksi.Rows.Clear()
+        MappingToDataGrid(listTransaksi)
+    End Sub
+
+    Private Sub btn_hapus_Click(sender As Object, e As EventArgs) Handles btn_hapus.Click
+
+        For Each data As Object In kdTransaksis
+            Dim index = listTransaksi.Where(Function(x) x.kd_transaksi_keluar = data).FirstOrDefault()
+            listTransaksi.Remove(index)
+            DeleteTransaksi(data)
+        Next
+
+        kdTransaksis.Clear()
+        indexPenampung.Clear()
+
+        dt_transaksi.Rows.Clear()
+        MappingToDataGrid(listTransaksi)
     End Sub
 End Class

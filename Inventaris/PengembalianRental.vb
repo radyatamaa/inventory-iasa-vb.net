@@ -231,7 +231,7 @@ Public Class PengembalianRental
 
     End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Label2_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -250,26 +250,26 @@ Public Class PengembalianRental
             'Me.txt_kd_transaksi.Enabled = False
             VBnetSQLSeverConnection()
             Dim listbarang As List(Of Object) = GetJenisBarang()
-            If listbarang.Count > 0 Then
-                cmb_jenis_barang.DataSource = listbarang
-                cmb_jenis_barang.DisplayMember = "nama_jenis"
-                cmb_jenis_barang.ValueMember = "id_jenis"
-            End If
+            'If listbarang.Count > 0 Then
+            '    cmb_jenis_barang.DataSource = listbarang
+            '    cmb_jenis_barang.DisplayMember = "nama_jenis"
+            '    cmb_jenis_barang.ValueMember = "id_jenis"
+            'End If
 
-            Dim listClient As List(Of Object) = GetClient()
-            If listClient.Count > 0 Then
-                cmb_client.DataSource = listClient
-                cmb_client.DisplayMember = "kd_client"
-                cmb_client.ValueMember = "id_client"
-            End If
-
+            'Dim listClient As List(Of Object) = GetClient()
+            'If listClient.Count > 0 Then
+            '    cmb_client.DataSource = listClient
+            '    cmb_client.DisplayMember = "kd_client"
+            '    cmb_client.ValueMember = "id_client"
+            'End If
+            GetBarangMasukByStatusTipeAndJenis(3, UserInfo.IdToko)
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
             'CONN.Close()
         End Try
     End Sub
-    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idJenis As Integer?, idTipe As Integer?, idClient As Integer, idToko As Integer)
+    Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idToko As Integer)
         Dim result As New List(Of Object)
         listBarangMasuk.Clear()
         Dim query As String = "SELECT * FROM tbl_barang_keluar bm
@@ -283,13 +283,12 @@ Public Class PengembalianRental
                                   INNER JOIN tbl_transaksi trans ON bm.kd_transaksi_keluar = trans.kd_transaksi_keluar 
                                   WHERE 
                                     bm.is_active = 1 AND 
-                                    sb.id_status_barang = " + idStatus.ToString + " AND                                 
-                                    trans.id_client = " + idClient.ToString + " AND 
+                                    sb.id_status_barang = " + idStatus.ToString + " AND       
                                     b.id_toko = " + idToko.ToString
-        If idJenis IsNot Nothing And idTipe IsNot Nothing Then
-            query = query + " AND j.id_jenis = " + idJenis.ToString + " AND 
-                                    t.id_tipe = " + idTipe.ToString
-        End If
+        'If idJenis IsNot Nothing And idTipe IsNot Nothing Then
+        '    query = query + " AND j.id_jenis = " + idJenis.ToString + " AND 
+        '                            t.id_tipe = " + idTipe.ToString
+        'End If
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
         cmd.Connection = CONN
@@ -376,61 +375,61 @@ Public Class PengembalianRental
         Return result
     End Function
 
-    Private Sub cmb_client_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_client.SelectedIndexChanged
+    'Private Sub cmb_client_SelectedIndexChanged(sender As Object, e As EventArgs)
 
-        Try
-            Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue.id_client).FirstOrDefault()
-            If client IsNot Nothing Then
-                'Me.txt_alamat_ship.Text = client.alamat_client
-                'Me.txt_kota_ship.Text = client.kota_client
-                'Me.txt_kdpos_ship.Text = client.kdpos_client
-                'Me.txt_client_ship.Text = cmb_client.SelectedValue.nama_client
-                clientKodeSelect = client.kd_client.ToString
-                dt_barang_keluar.Rows.Clear()
-                Dim idJenis As Integer?
-                Dim idTipe As Integer?
-                Try
-                    If cmb_tipe_barang.SelectedValue IsNot Nothing Then
-                        idTipe = cmb_tipe_barang.SelectedValue.id_tipe
-                        idJenis = cmb_jenis_barang.SelectedValue
-                    End If
-                Catch ex As Exception
-                    If cmb_tipe_barang.SelectedValue IsNot Nothing Then
-                        idJenis = cmb_jenis_barang.SelectedValue
-                        idTipe = cmb_tipe_barang.SelectedValue
-                    End If
-                End Try
+    '    Try
+    '        Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue.id_client).FirstOrDefault()
+    '        If client IsNot Nothing Then
+    '            'Me.txt_alamat_ship.Text = client.alamat_client
+    '            'Me.txt_kota_ship.Text = client.kota_client
+    '            'Me.txt_kdpos_ship.Text = client.kdpos_client
+    '            'Me.txt_client_ship.Text = cmb_client.SelectedValue.nama_client
+    '            clientKodeSelect = client.kd_client.ToString
+    '            dt_barang_keluar.Rows.Clear()
+    '            Dim idJenis As Integer?
+    '            Dim idTipe As Integer?
+    '            Try
+    '                If cmb_tipe_barang.SelectedValue IsNot Nothing Then
+    '                    idTipe = cmb_tipe_barang.SelectedValue.id_tipe
+    '                    idJenis = cmb_jenis_barang.SelectedValue
+    '                End If
+    '            Catch ex As Exception
+    '                If cmb_tipe_barang.SelectedValue IsNot Nothing Then
+    '                    idJenis = cmb_jenis_barang.SelectedValue
+    '                    idTipe = cmb_tipe_barang.SelectedValue
+    '                End If
+    '            End Try
 
-                GetBarangMasukByStatusTipeAndJenis(3, idJenis, idTipe, cmb_client.SelectedValue.id_client, UserInfo.IdToko)
-            End If
-        Catch ex As Exception
-            Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue).FirstOrDefault()
-            If client IsNot Nothing Then
-                'Me.txt_alamat_ship.Text = client.alamat_client
-                'Me.txt_kota_ship.Text = client.kota_client
-                'Me.txt_kdpos_ship.Text = client.kdpos_client
-                'Me.txt_client_ship.Text = cmb_client.SelectedText
-                clientKodeSelect = client.kd_client.ToString
-                dt_barang_keluar.Rows.Clear()
-                Dim idJenis As Integer?
-                Dim idTipe As Integer?
-                Try
-                    If cmb_tipe_barang.SelectedValue IsNot Nothing Then
-                        idTipe = cmb_tipe_barang.SelectedValue.id_tipe
-                        idJenis = cmb_jenis_barang.SelectedValue
-                    End If
-                Catch c As Exception
-                    If cmb_tipe_barang.SelectedValue IsNot Nothing Then
-                        idJenis = cmb_jenis_barang.SelectedValue
-                        idTipe = cmb_tipe_barang.SelectedValue
-                    End If
-                End Try
-                GetBarangMasukByStatusTipeAndJenis(3, idJenis, idTipe, cmb_client.SelectedValue, UserInfo.IdToko)
-            End If
-        End Try
+    '            GetBarangMasukByStatusTipeAndJenis(3, idJenis, idTipe, cmb_client.SelectedValue.id_client, UserInfo.IdToko)
+    '        End If
+    '    Catch ex As Exception
+    '        Dim client As Object = clients.Where(Function(x) x.id_client = cmb_client.SelectedValue).FirstOrDefault()
+    '        If client IsNot Nothing Then
+    '            'Me.txt_alamat_ship.Text = client.alamat_client
+    '            'Me.txt_kota_ship.Text = client.kota_client
+    '            'Me.txt_kdpos_ship.Text = client.kdpos_client
+    '            'Me.txt_client_ship.Text = cmb_client.SelectedText
+    '            clientKodeSelect = client.kd_client.ToString
+    '            dt_barang_keluar.Rows.Clear()
+    '            Dim idJenis As Integer?
+    '            Dim idTipe As Integer?
+    '            Try
+    '                If cmb_tipe_barang.SelectedValue IsNot Nothing Then
+    '                    idTipe = cmb_tipe_barang.SelectedValue.id_tipe
+    '                    idJenis = cmb_jenis_barang.SelectedValue
+    '                End If
+    '            Catch c As Exception
+    '                If cmb_tipe_barang.SelectedValue IsNot Nothing Then
+    '                    idJenis = cmb_jenis_barang.SelectedValue
+    '                    idTipe = cmb_tipe_barang.SelectedValue
+    '                End If
+    '            End Try
+    '            GetBarangMasukByStatusTipeAndJenis(3, idJenis, idTipe, cmb_client.SelectedValue, UserInfo.IdToko)
+    '        End If
+    '    End Try
 
 
-    End Sub
+    'End Sub
 
     Private Sub dt_barang_keluar_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_barang_keluar.CellContentClick
         listBarangMasukHandle.Clear()
@@ -473,15 +472,15 @@ Public Class PengembalianRental
         Next selectedItem
     End Sub
 
-    Private Sub cmb_tipe_barang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_tipe_barang.SelectedIndexChanged
-        Try
-            dt_barang_keluar.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe, cmb_client.SelectedValue, UserInfo.IdToko)
-        Catch ex As Exception
-            dt_barang_keluar.Rows.Clear()
-            GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue, cmb_client.SelectedValue, UserInfo.IdToko)
-        End Try
-    End Sub
+    'Private Sub cmb_tipe_barang_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    Try
+    '        dt_barang_keluar.Rows.Clear()
+    '        GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue.id_tipe, cmb_client.SelectedValue, UserInfo.IdToko)
+    '    Catch ex As Exception
+    '        dt_barang_keluar.Rows.Clear()
+    '        GetBarangMasukByStatusTipeAndJenis(3, cmb_jenis_barang.SelectedValue, cmb_tipe_barang.SelectedValue, cmb_client.SelectedValue, UserInfo.IdToko)
+    '    End Try
+    'End Sub
 
     Private Sub btn_tambah_Click(sender As Object, e As EventArgs) Handles btn_tambah.Click
         For Each barangMasukHandle As Object In listBarangMasukHandle
@@ -617,11 +616,11 @@ Public Class PengembalianRental
         MsgBox("Sukses Data Tersimpan!")
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub btncari_Click(sender As Object, e As EventArgs) Handles btncari.Click
+    Private Sub btncari_Click(sender As Object, e As EventArgs)
         Dim keywoard = TextBox1.Text
         dt_barang_keluar.Rows.Clear()
         Dim search As List(Of Object)
@@ -641,30 +640,87 @@ Public Class PengembalianRental
         Me.Close()
     End Sub
 
-    Private Sub cmb_jenis_barang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_jenis_barang.SelectedIndexChanged
-        If cmb_jenis_barang.SelectedIndex <> -1 Then
-            Try
-                Dim idJenisBarang = cmb_jenis_barang.SelectedValue.id_jenis
-                Dim listTipe As List(Of Object) = GetTipeJenisBarang(idJenisBarang)
-                If listTipe.Count > 0 Then
-                    cmb_tipe_barang.DataSource = listTipe
-                    cmb_tipe_barang.DisplayMember = "nama_tipe"
-                    cmb_tipe_barang.ValueMember = "id_tipe"
-                Else
-                    cmb_tipe_barang.DataSource = New List(Of Object)
-                End If
-            Catch ex As Exception
-                Dim idJenisBarang = cmb_jenis_barang.SelectedValue
-                Dim listTipe As List(Of Object) = GetTipeJenisBarang(idJenisBarang)
-                If listTipe.Count > 0 Then
-                    cmb_tipe_barang.DataSource = listTipe
-                    cmb_tipe_barang.DisplayMember = "nama_tipe"
-                    cmb_tipe_barang.ValueMember = "id_tipe"
-                Else
-                    cmb_tipe_barang.DataSource = New List(Of Object)
-                End If
-            End Try
+    Private Sub btncari2_Click(sender As Object, e As EventArgs) Handles btncari2.Click
+        dt_barang_keluar.Rows.Clear()
+        Dim search = listBarangMasuk
+        If TextBox1.Text <> "" Then
+            Dim keywoard = TextBox1.Text
+            If ComboBox1.Text = "No. Invoice" Then
+                search = listBarangMasuk.Where(Function(x) x.kd_transaksi_keluar.ToString.Contains(keywoard)).ToList()
 
+            ElseIf ComboBox1.Text = "Nama Client" Then
+                search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox1.Text = "ID Client" Then
+                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox1.Text = "Jenis Barang" Then
+                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox1.Text = "Tipe Barang" Then
+                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox1.Text = "Serial Number" Then
+                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
+
+            End If
         End If
+
+        If TextBox2.Text <> "" Then
+            Dim keywoard = TextBox2.Text
+            If ComboBox2.Text = "No. Invoice" Then
+                search = listBarangMasuk.Where(Function(x) x.kd_transaksi_keluar.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox2.Text = "Nama Client" Then
+                search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox2.Text = "ID Client" Then
+                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox2.Text = "Jenis Barang" Then
+                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox2.Text = "Tipe Barang" Then
+                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox2.Text = "Serial Number" Then
+                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
+
+            End If
+        End If
+        If TextBox1.Text = "" And TextBox2.Text = "" Then
+            GetBarangMasukByStatusTipeAndJenis(3, UserInfo.IdToko)
+        Else
+            MappingToDataGridBarangKeluar(search)
+            'listTransaksi = search
+        End If
+
     End Sub
+
+    'Private Sub cmb_jenis_barang_SelectedIndexChanged(sender As Object, e As EventArgs)
+    '    If cmb_jenis_barang.SelectedIndex <> -1 Then
+    '        Try
+    '            Dim idJenisBarang = cmb_jenis_barang.SelectedValue.id_jenis
+    '            Dim listTipe As List(Of Object) = GetTipeJenisBarang(idJenisBarang)
+    '            If listTipe.Count > 0 Then
+    '                cmb_tipe_barang.DataSource = listTipe
+    '                cmb_tipe_barang.DisplayMember = "nama_tipe"
+    '                cmb_tipe_barang.ValueMember = "id_tipe"
+    '            Else
+    '                cmb_tipe_barang.DataSource = New List(Of Object)
+    '            End If
+    '        Catch ex As Exception
+    '            Dim idJenisBarang = cmb_jenis_barang.SelectedValue
+    '            Dim listTipe As List(Of Object) = GetTipeJenisBarang(idJenisBarang)
+    '            If listTipe.Count > 0 Then
+    '                cmb_tipe_barang.DataSource = listTipe
+    '                cmb_tipe_barang.DisplayMember = "nama_tipe"
+    '                cmb_tipe_barang.ValueMember = "id_tipe"
+    '            Else
+    '                cmb_tipe_barang.DataSource = New List(Of Object)
+    '            End If
+    '        End Try
+
+    '    End If
+    'End Sub
 End Class
