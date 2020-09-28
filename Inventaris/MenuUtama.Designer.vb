@@ -44,7 +44,7 @@ Partial Class MenuUtama
         Me.btn_r_invoice_keluar = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_r_stock_barang = New System.Windows.Forms.ToolStripMenuItem()
         Me.MaintenanceToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StatusBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GaransiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CetakToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CetakInvoiceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CetakKwitansiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -66,7 +66,7 @@ Partial Class MenuUtama
         Me.btn_logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.p_logo = New System.Windows.Forms.PictureBox()
-        Me.GaransiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatusBarangToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.p_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -185,7 +185,7 @@ Partial Class MenuUtama
         '
         'ReportToolStripMenuItem
         '
-        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ccc, Me.btn_r_hasil_penjualan, Me.btn_r_barang_rental, Me.btn_r_invoice_keluar, Me.btn_r_stock_barang, Me.MaintenanceToolStripMenuItem1, Me.StatusBarangToolStripMenuItem, Me.GaransiToolStripMenuItem})
+        Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ccc, Me.btn_r_hasil_penjualan, Me.btn_r_barang_rental, Me.btn_r_invoice_keluar, Me.btn_r_stock_barang, Me.MaintenanceToolStripMenuItem1, Me.GaransiToolStripMenuItem, Me.StatusBarangToolStripMenuItem})
         Me.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem"
         Me.ReportToolStripMenuItem.Size = New System.Drawing.Size(100, 55)
         Me.ReportToolStripMenuItem.Text = "Report"
@@ -232,12 +232,12 @@ Partial Class MenuUtama
         Me.MaintenanceToolStripMenuItem1.Size = New System.Drawing.Size(292, 28)
         Me.MaintenanceToolStripMenuItem1.Text = "Maintenance"
         '
-        'StatusBarangToolStripMenuItem
+        'GaransiToolStripMenuItem
         '
-        Me.StatusBarangToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
-        Me.StatusBarangToolStripMenuItem.Name = "StatusBarangToolStripMenuItem"
-        Me.StatusBarangToolStripMenuItem.Size = New System.Drawing.Size(292, 28)
-        Me.StatusBarangToolStripMenuItem.Text = "Status Barang"
+        Me.GaransiToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.GaransiToolStripMenuItem.Name = "GaransiToolStripMenuItem"
+        Me.GaransiToolStripMenuItem.Size = New System.Drawing.Size(292, 28)
+        Me.GaransiToolStripMenuItem.Text = "Garansi"
         '
         'CetakToolStripMenuItem
         '
@@ -398,12 +398,12 @@ Partial Class MenuUtama
         Me.p_logo.TabIndex = 0
         Me.p_logo.TabStop = False
         '
-        'GaransiToolStripMenuItem
+        'StatusBarangToolStripMenuItem
         '
-        Me.GaransiToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
-        Me.GaransiToolStripMenuItem.Name = "GaransiToolStripMenuItem"
-        Me.GaransiToolStripMenuItem.Size = New System.Drawing.Size(292, 28)
-        Me.GaransiToolStripMenuItem.Text = "Garansi"
+        Me.StatusBarangToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
+        Me.StatusBarangToolStripMenuItem.Name = "StatusBarangToolStripMenuItem"
+        Me.StatusBarangToolStripMenuItem.Size = New System.Drawing.Size(292, 28)
+        Me.StatusBarangToolStripMenuItem.Text = "Status Barang"
         '
         'MenuUtama
         '
@@ -468,6 +468,6 @@ Partial Class MenuUtama
     Friend WithEvents MaintenanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PengembalianBarangRentalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MaintenanceToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents StatusBarangToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GaransiToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents StatusBarangToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -604,3 +604,8 @@ C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormInvoice.resources
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.LaporanGaransi.resources
 C:\Users\ASUS A441U\Documents\GitHub\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.LaporanStatusBarang.resources
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormBarangRental.resources
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormGaransi.resources
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormInvoice.resources
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormStockBarang.resources
+C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormStatusBarang.resources
