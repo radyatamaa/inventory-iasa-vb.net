@@ -241,12 +241,6 @@
     <Compile Include="Form3.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form6.Designer.vb">
-      <DependentUpon>Form6.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form6.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormBarangRental.Designer.vb">
       <DependentUpon>FormBarangRental.vb</DependentUpon>
     </Compile>
@@ -263,6 +257,12 @@
       <DependentUpon>FormInvoice.vb</DependentUpon>
     </Compile>
     <Compile Include="FormInvoice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStatusBarang.Designer.vb">
+      <DependentUpon>FormStatusBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormStatusBarang.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="invoice_cetak.Designer.vb">
@@ -508,9 +508,6 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormBarangRental.resx">
       <DependentUpon>FormBarangRental.vb</DependentUpon>
     </EmbeddedResource>
@@ -519,6 +516,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormInvoice.resx">
       <DependentUpon>FormInvoice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStatusBarang.resx">
+      <DependentUpon>FormStatusBarang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="invoice_cetak.resx">
       <DependentUpon>invoice_cetak.vb</DependentUpon>
