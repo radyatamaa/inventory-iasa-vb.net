@@ -1,7 +1,7 @@
 ﻿Imports System.Configuration
 Imports System.Data.SqlClient
 Imports System.Globalization
-Public Class FormGaransi
+Public Class FormStatusBarang
     Dim ppnNominal As Decimal = 0
     Dim clientKodeSelect As String
     Public Property UserInfo As Object
@@ -34,7 +34,7 @@ Public Class FormGaransi
     Function MappingToDataGridBarangKeluar(result As List(Of Object))
         Dim index = 0
         For Each insertDataBarangMasuk As Object In result
-            dt_garansi.Rows.Add(1)
+            dt_status.Rows.Add(1)
             'Dim isTest As String
             'If insertDataBarangMasuk.tested = 1 Then
             '    isTest = "Teruji"
@@ -42,22 +42,24 @@ Public Class FormGaransi
             '    isTest = "Tidak Teruji"
             'End If
 
-            dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.id_client
-            dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.kd_transaksi_keluar
-            dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.nama_client
-            dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_tipe
-            dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.serial_number
-            dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.garansi_exp
-            dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.id_toko
+            dt_status.Rows(dt_status.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.nama_jenis
+            dt_status.Rows(dt_status.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_tipe
+            dt_status.Rows(dt_status.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.serial_number
+            dt_status.Rows(dt_status.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.tested
+            dt_status.Rows(dt_status.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.ios
+            dt_status.Rows(dt_status.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.nama_kondisi
+            dt_status.Rows(dt_status.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.nama_lokasi
+            dt_status.Rows(dt_status.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.detail_lokasi
+            dt_status.Rows(dt_status.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.id_toko
 
             'If index = 0 And isSelectedTipeJenis = 0 Then
             '    isSelectedTipeJenis = 1
-            '    dt_garansi.Columns.Add("kd_transaksi_keluar", "IdBarangKeluar")
-            '    dt_garansi.Columns(14).Visible = False
+            '    dt_status.Columns.Add("kd_transaksi_keluar", "IdBarangKeluar")
+            '    dt_status.Columns(14).Visible = False
             'End If
-            'dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(14).Value = insertDataBarangMasuk.id_barang_keluar
+            'dt_status.Rows(dt_status.RowCount - 2).Cells(14).Value = insertDataBarangMasuk.id_barang_keluar
 
-            dt_garansi.Update()
+            dt_status.Update()
             index = index + 1
 
 
@@ -66,15 +68,16 @@ Public Class FormGaransi
     Function GetBarangMasukByStatusTipeAndJenis(idStatus As Integer, idToko As Integer)
         Dim result As New List(Of Object)
         listBarangMasuk.Clear()
-        Dim query As String = "SELECT kd_transaksi_keluar
-                                  ,id_client
-                                  ,nama_client
+        Dim query As String = "SELECT nama_jenis
                                   ,nama_tipe
-                                  ,nama_jenis 
                                   ,serial_number 
-                                  ,garansi_exp 
+                                  ,tested
+                                  ,ios
+                                  ,nama_kondisi
+                                  ,nama_lokasi
+                                  ,detail_lokasi
                                   ,id_toko
-                                  from view_warranty "
+                                  from view_status_barang "
 
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
@@ -92,13 +95,14 @@ Public Class FormGaransi
         While reader.Read
             Dim barang = New With
                 {
-                  .kd_transaksi_keluar = reader("kd_transaksi_keluar"),
-            .id_client = reader("id_client"),
-            .nama_client = reader("nama_client"),
-            .nama_tipe = reader("nama_tipe"),
             .nama_jenis = reader("nama_jenis"),
+            .nama_tipe = reader("nama_tipe"),
             .serial_number = reader("serial_number"),
-            .garansi_exp = reader("garansi_exp"),
+            .tested = reader("tested"),
+            .ios = reader("ios"),
+            .nama_kondisi = reader("nama_kondisi"),
+            .nama_lokasi = reader("nama_lokasi"),
+            .detail_lokasi = reader("detail_lokasi"),
             .id_toko = reader("id_toko")
                 }
             listBarangMasuk.Add(barang)
@@ -122,49 +126,48 @@ Public Class FormGaransi
         Return result
     End Function
     Private Sub btncari2_Click(sender As Object, e As EventArgs) Handles btncari2.Click
-        dt_garansi.Rows.Clear()
+        dt_status.Rows.Clear()
         Dim search = listBarangMasuk
         If TextBox1.Text <> "" Then
             Dim keywoard = TextBox1.Text
-            If ComboBox1.Text = "No. Invoice" Then
+            If ComboBox1.Text = "Device" Then
                 search = listBarangMasuk.Where(Function(x) x.kd_transaksi_keluar.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox1.Text = "Nama Client" Then
+            ElseIf ComboBox1.Text = "Device Type" Then
                 search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox1.Text = "ID Client" Then
+            ElseIf ComboBox1.Text = "Serial Number" Then
                 search = listBarangMasuk.Where(Function(x) x.id_client.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox1.Text = "Deive Type" Then
+            ElseIf ComboBox1.Text = "Tested" Then
                 search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox1.Text = "Valid Warranty" Then
+            ElseIf ComboBox1.Text = "Condition" Then
                 search = listBarangMasuk.Where(Function(x) x.garansi_exp.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox1.Text = "Serial Number" Then
+            ElseIf ComboBox1.Text = "Location" Then
                 search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
 
             End If
         End If
-
         If TextBox2.Text <> "" Then
             Dim keywoard = TextBox2.Text
-            If ComboBox2.Text = "No. Invoice" Then
+            If ComboBox2.Text = "Device" Then
                 search = listBarangMasuk.Where(Function(x) x.kd_transaksi_keluar.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox2.Text = "Nama Client" Then
+            ElseIf ComboBox2.Text = "Device Type" Then
                 search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox2.Text = "ID Client" Then
-                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.Contains(keywoard)).ToList()
+            ElseIf ComboBox2.Text = "Serial Number" Then
+                search = listBarangMasuk.Where(Function(x) x.id_client.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox2.Text = "Jenis Barang" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.Contains(keywoard)).ToList()
-
-            ElseIf ComboBox2.Text = "Tipe Barang" Then
+            ElseIf ComboBox2.Text = "Tested" Then
                 search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox2.Text = "Serial Number" Then
+            ElseIf ComboBox2.Text = "Condition" Then
+                search = listBarangMasuk.Where(Function(x) x.garansi_exp.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox2.Text = "Location" Then
                 search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
 
             End If
@@ -175,15 +178,15 @@ Public Class FormGaransi
             MappingToDataGridBarangKeluar(search)
             'listTransaksi = search
         End If
-
     End Sub
-    Private Sub dt_garansi_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_garansi.CellContentClick
+
+    Private Sub dt_status_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_status.CellContentClick
         listBarangMasukHandle.Clear()
     End Sub
 
-    Private Sub dt_garansi_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_garansi.CellClick
+    Private Sub dt_status_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dt_status.CellClick
         listBarangMasukHandle.Clear()
-        Dim selectedIdBarangMasuk = dt_garansi.SelectedRows
+        Dim selectedIdBarangMasuk = dt_status.SelectedRows
         For Each selectedItem As DataGridViewRow In selectedIdBarangMasuk
 
             Dim idBarangKeluar = selectedItem.Cells(14).Value
@@ -200,7 +203,7 @@ Public Class FormGaransi
 
     End Sub
 
-    Private Sub FormGaransi_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FormStatusBarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             'Me.txt_harga_total.Text = 0
             'Me.txt_harga_akhir.Text = 0
@@ -234,4 +237,5 @@ Public Class FormGaransi
             'CONN.Close()
         End Try
     End Sub
+
 End Class
