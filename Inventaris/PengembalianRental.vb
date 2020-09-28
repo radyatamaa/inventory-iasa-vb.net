@@ -646,22 +646,22 @@ Public Class PengembalianRental
         If TextBox1.Text <> "" Then
             Dim keywoard = TextBox1.Text
             If ComboBox1.Text = "No. Invoice" Then
-                search = listBarangMasuk.Where(Function(x) x.kd_transaksi_keluar.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.kd_transaksi_keluar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Nama Client" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "ID Client" Then
-                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Jenis Barang" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Tipe Barang" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Serial Number" Then
-                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             End If
         End If
@@ -669,22 +669,22 @@ Public Class PengembalianRental
         If TextBox2.Text <> "" Then
             Dim keywoard = TextBox2.Text
             If ComboBox2.Text = "No. Invoice" Then
-                search = listBarangMasuk.Where(Function(x) x.kd_transaksi_keluar.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.kd_transaksi_keluar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Nama Client" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "ID Client" Then
-                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Jenis Barang" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Tipe Barang" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Serial Number" Then
-                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             End If
         End If
