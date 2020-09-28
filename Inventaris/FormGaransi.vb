@@ -156,13 +156,13 @@ Public Class FormGaransi
                 search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.Contains(keywoard)).ToList()
 
             ElseIf ComboBox2.Text = "ID Client" Then
-                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.id_client.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox2.Text = "Jenis Barang" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.Contains(keywoard)).ToList()
-
-            ElseIf ComboBox2.Text = "Tipe Barang" Then
+            ElseIf ComboBox2.Text = "Deive Type" Then
                 search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.Contains(keywoard)).ToList()
+
+            ElseIf ComboBox2.Text = "Valid Warranty" Then
+                search = listBarangMasuk.Where(Function(x) x.garansi_exp.ToString.Contains(keywoard)).ToList()
 
             ElseIf ComboBox2.Text = "Serial Number" Then
                 search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
@@ -233,5 +233,10 @@ Public Class FormGaransi
         Finally
             'CONN.Close()
         End Try
+    End Sub
+
+    Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.Show()
+        Me.Close()
     End Sub
 End Class
