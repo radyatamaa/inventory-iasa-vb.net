@@ -36,28 +36,24 @@ Partial Class FormStatusBarang
         Me.Label6 = New System.Windows.Forms.Label()
         Me.pict_logo = New System.Windows.Forms.PictureBox()
         Me.dt_status = New System.Windows.Forms.DataGridView()
-        Me.kd_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nama_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.device = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.device_type = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.warranty_end_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.valid_warranty = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tested = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ios = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.condition = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.location = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dt_status, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.ComboBox2)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
-        Me.Panel1.Controls.Add(Me.btncari2)
-        Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.date_tgl_keluar)
+        Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.dt_status)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -70,7 +66,7 @@ Partial Class FormStatusBarang
         '
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Device", "Device Type", "Serial Number", "Tested", "Condition", "Location"})
-        Me.ComboBox2.Location = New System.Drawing.Point(519, 240)
+        Me.ComboBox2.Location = New System.Drawing.Point(524, 108)
         Me.ComboBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(139, 24)
@@ -80,7 +76,7 @@ Partial Class FormStatusBarang
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Device", "Device Type", "Serial Number", "Tested", "Condition", "Location"})
-        Me.ComboBox1.Location = New System.Drawing.Point(519, 207)
+        Me.ComboBox1.Location = New System.Drawing.Point(524, 75)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(139, 24)
@@ -88,7 +84,7 @@ Partial Class FormStatusBarang
         '
         'btncari2
         '
-        Me.btncari2.Location = New System.Drawing.Point(902, 240)
+        Me.btncari2.Location = New System.Drawing.Point(907, 108)
         Me.btncari2.Margin = New System.Windows.Forms.Padding(4)
         Me.btncari2.Name = "btncari2"
         Me.btncari2.Size = New System.Drawing.Size(52, 25)
@@ -98,7 +94,7 @@ Partial Class FormStatusBarang
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(664, 240)
+        Me.TextBox2.Location = New System.Drawing.Point(669, 108)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(236, 22)
@@ -106,7 +102,7 @@ Partial Class FormStatusBarang
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(664, 207)
+        Me.TextBox1.Location = New System.Drawing.Point(669, 75)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(236, 22)
@@ -116,7 +112,7 @@ Partial Class FormStatusBarang
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(504, 155)
+        Me.Label1.Location = New System.Drawing.Point(509, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(154, 17)
         Me.Label1.TabIndex = 101
@@ -125,7 +121,8 @@ Partial Class FormStatusBarang
         '
         'date_tgl_keluar
         '
-        Me.date_tgl_keluar.Location = New System.Drawing.Point(664, 155)
+        Me.date_tgl_keluar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.date_tgl_keluar.Location = New System.Drawing.Point(669, 23)
         Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.date_tgl_keluar.Name = "date_tgl_keluar"
         Me.date_tgl_keluar.Size = New System.Drawing.Size(236, 22)
@@ -184,9 +181,10 @@ Partial Class FormStatusBarang
         '
         'dt_status
         '
-        Me.dt_status.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dt_status.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_status.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dt_status.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_client, Me.kd_transaksi_keluar, Me.nama_client, Me.device_type, Me.serial_number, Me.warranty_end_date, Me.valid_warranty})
+        Me.dt_status.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.device, Me.device_type, Me.serial_number, Me.tested, Me.ios, Me.condition, Me.location})
         Me.dt_status.Location = New System.Drawing.Point(0, 329)
         Me.dt_status.Name = "dt_status"
         Me.dt_status.RowHeadersWidth = 51
@@ -194,26 +192,27 @@ Partial Class FormStatusBarang
         Me.dt_status.Size = New System.Drawing.Size(1477, 387)
         Me.dt_status.TabIndex = 0
         '
-        'kd_client
+        'Panel3
         '
-        Me.kd_client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.kd_client.HeaderText = "Client ID"
-        Me.kd_client.MinimumWidth = 6
-        Me.kd_client.Name = "kd_client"
+        Me.Panel3.Controls.Add(Me.ComboBox2)
+        Me.Panel3.Controls.Add(Me.date_tgl_keluar)
+        Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Controls.Add(Me.ComboBox1)
+        Me.Panel3.Controls.Add(Me.TextBox1)
+        Me.Panel3.Controls.Add(Me.TextBox2)
+        Me.Panel3.Controls.Add(Me.btncari2)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 119)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1477, 204)
+        Me.Panel3.TabIndex = 2
         '
-        'kd_transaksi_keluar
+        'device
         '
-        Me.kd_transaksi_keluar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.kd_transaksi_keluar.HeaderText = "Invoice Number"
-        Me.kd_transaksi_keluar.MinimumWidth = 6
-        Me.kd_transaksi_keluar.Name = "kd_transaksi_keluar"
-        '
-        'nama_client
-        '
-        Me.nama_client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.nama_client.HeaderText = "Client's Name"
-        Me.nama_client.MinimumWidth = 6
-        Me.nama_client.Name = "nama_client"
+        Me.device.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.device.HeaderText = "Device"
+        Me.device.MinimumWidth = 6
+        Me.device.Name = "device"
         '
         'device_type
         '
@@ -229,19 +228,33 @@ Partial Class FormStatusBarang
         Me.serial_number.MinimumWidth = 6
         Me.serial_number.Name = "serial_number"
         '
-        'warranty_end_date
+        'tested
         '
-        Me.warranty_end_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.warranty_end_date.HeaderText = "Warranty end Date"
-        Me.warranty_end_date.MinimumWidth = 6
-        Me.warranty_end_date.Name = "warranty_end_date"
+        Me.tested.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.tested.HeaderText = "Tested"
+        Me.tested.MinimumWidth = 6
+        Me.tested.Name = "tested"
         '
-        'valid_warranty
+        'ios
         '
-        Me.valid_warranty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.valid_warranty.HeaderText = "Valid Warranty"
-        Me.valid_warranty.MinimumWidth = 6
-        Me.valid_warranty.Name = "valid_warranty"
+        Me.ios.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ios.HeaderText = "IOS"
+        Me.ios.MinimumWidth = 6
+        Me.ios.Name = "ios"
+        '
+        'condition
+        '
+        Me.condition.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.condition.HeaderText = "Condition"
+        Me.condition.MinimumWidth = 6
+        Me.condition.Name = "condition"
+        '
+        'location
+        '
+        Me.location.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.location.HeaderText = "Location"
+        Me.location.MinimumWidth = 6
+        Me.location.Name = "location"
         '
         'FormStatusBarang
         '
@@ -252,10 +265,11 @@ Partial Class FormStatusBarang
         Me.Name = "FormStatusBarang"
         Me.Text = "FormStatusBarang"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dt_status, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -273,11 +287,12 @@ Partial Class FormStatusBarang
     Friend WithEvents Label6 As Label
     Friend WithEvents pict_logo As PictureBox
     Friend WithEvents dt_status As DataGridView
-    Friend WithEvents kd_client As DataGridViewTextBoxColumn
-    Friend WithEvents kd_transaksi_keluar As DataGridViewTextBoxColumn
-    Friend WithEvents nama_client As DataGridViewTextBoxColumn
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents device As DataGridViewTextBoxColumn
     Friend WithEvents device_type As DataGridViewTextBoxColumn
     Friend WithEvents serial_number As DataGridViewTextBoxColumn
-    Friend WithEvents warranty_end_date As DataGridViewTextBoxColumn
-    Friend WithEvents valid_warranty As DataGridViewTextBoxColumn
+    Friend WithEvents tested As DataGridViewTextBoxColumn
+    Friend WithEvents ios As DataGridViewTextBoxColumn
+    Friend WithEvents condition As DataGridViewTextBoxColumn
+    Friend WithEvents location As DataGridViewTextBoxColumn
 End Class

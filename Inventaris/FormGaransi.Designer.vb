@@ -43,23 +43,19 @@ Partial Class FormGaransi
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.date_tgl_keluar = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.dt_garansi, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.dt_garansi)
-        Me.Panel1.Controls.Add(Me.ComboBox2)
         Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
-        Me.Panel1.Controls.Add(Me.btncari2)
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Controls.Add(Me.date_tgl_keluar)
-        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -68,7 +64,8 @@ Partial Class FormGaransi
         '
         'dt_garansi
         '
-        Me.dt_garansi.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dt_garansi.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_garansi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_garansi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_client, Me.kd_transaksi_keluar, Me.nama_client, Me.device_type, Me.serial_number, Me.warranty_end_date, Me.valid_warranty})
         Me.dt_garansi.Location = New System.Drawing.Point(0, 330)
@@ -131,7 +128,7 @@ Partial Class FormGaransi
         '
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "ID Client", "Device Type", "Valid Warranty"})
-        Me.ComboBox2.Location = New System.Drawing.Point(527, 232)
+        Me.ComboBox2.Location = New System.Drawing.Point(524, 113)
         Me.ComboBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(139, 24)
@@ -169,7 +166,7 @@ Partial Class FormGaransi
         Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(497, 35)
+        Me.Label6.Location = New System.Drawing.Point(497, 24)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(462, 58)
         Me.Label6.TabIndex = 50
@@ -192,7 +189,7 @@ Partial Class FormGaransi
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "ID Client", "Device Type", "Valid Warranty"})
-        Me.ComboBox1.Location = New System.Drawing.Point(527, 199)
+        Me.ComboBox1.Location = New System.Drawing.Point(524, 80)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(139, 24)
@@ -200,7 +197,7 @@ Partial Class FormGaransi
         '
         'btncari2
         '
-        Me.btncari2.Location = New System.Drawing.Point(910, 232)
+        Me.btncari2.Location = New System.Drawing.Point(907, 113)
         Me.btncari2.Margin = New System.Windows.Forms.Padding(4)
         Me.btncari2.Name = "btncari2"
         Me.btncari2.Size = New System.Drawing.Size(52, 25)
@@ -210,7 +207,7 @@ Partial Class FormGaransi
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(672, 199)
+        Me.TextBox1.Location = New System.Drawing.Point(669, 80)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(236, 22)
@@ -218,7 +215,7 @@ Partial Class FormGaransi
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(672, 232)
+        Me.TextBox2.Location = New System.Drawing.Point(669, 113)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(236, 22)
@@ -226,7 +223,7 @@ Partial Class FormGaransi
         '
         'date_tgl_keluar
         '
-        Me.date_tgl_keluar.Location = New System.Drawing.Point(672, 147)
+        Me.date_tgl_keluar.Location = New System.Drawing.Point(666, 28)
         Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.date_tgl_keluar.Name = "date_tgl_keluar"
         Me.date_tgl_keluar.Size = New System.Drawing.Size(236, 22)
@@ -236,12 +233,27 @@ Partial Class FormGaransi
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(512, 147)
+        Me.Label1.Location = New System.Drawing.Point(506, 28)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(154, 17)
         Me.Label1.TabIndex = 108
         Me.Label1.Text = "Tanggal Pengembalian"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.date_tgl_keluar)
+        Me.Panel3.Controls.Add(Me.ComboBox2)
+        Me.Panel3.Controls.Add(Me.TextBox2)
+        Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Controls.Add(Me.btncari2)
+        Me.Panel3.Controls.Add(Me.ComboBox1)
+        Me.Panel3.Controls.Add(Me.TextBox1)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 119)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1477, 212)
+        Me.Panel3.TabIndex = 115
         '
         'FormGaransi
         '
@@ -252,10 +264,11 @@ Partial Class FormGaransi
         Me.Name = "FormGaransi"
         Me.Text = "FormGaransi"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.dt_garansi, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -280,4 +293,5 @@ Partial Class FormGaransi
     Friend WithEvents serial_number As DataGridViewTextBoxColumn
     Friend WithEvents warranty_end_date As DataGridViewTextBoxColumn
     Friend WithEvents valid_warranty As DataGridViewTextBoxColumn
+    Friend WithEvents Panel3 As Panel
 End Class
