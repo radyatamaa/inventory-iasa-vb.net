@@ -77,7 +77,8 @@ Public Class FormStatusBarang
                                   ,nama_lokasi
                                   ,detail_lokasi
                                   ,id_toko
-                                  from view_status_barang "
+                                  from view_status_barang 
+                                    WHERE id_toko = " + idToko.ToString
 
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
@@ -239,6 +240,7 @@ Public Class FormStatusBarang
     End Sub
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Close()
     End Sub
