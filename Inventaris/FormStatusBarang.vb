@@ -49,8 +49,8 @@ Public Class FormStatusBarang
             dt_status.Rows(dt_status.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.ios
             dt_status.Rows(dt_status.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.nama_kondisi
             dt_status.Rows(dt_status.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.nama_lokasi
-            dt_status.Rows(dt_status.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.detail_lokasi
-            dt_status.Rows(dt_status.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.id_toko
+            'dt_status.Rows(dt_status.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.detail_lokasi
+            'dt_status.Rows(dt_status.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.id_toko
 
             'If index = 0 And isSelectedTipeJenis = 0 Then
             '    isSelectedTipeJenis = 1
@@ -132,44 +132,44 @@ Public Class FormStatusBarang
         If TextBox1.Text <> "" Then
             Dim keywoard = TextBox1.Text
             If ComboBox1.Text = "Device" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Device Type" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Serial Number" Then
-                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Tested" Then
-                search = listBarangMasuk.Where(Function(x) x.tested.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.tested.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Condition" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_kondisi.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_kondisi.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Location" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_lokasi.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_lokasi.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             End If
         End If
         If TextBox2.Text <> "" Then
             Dim keywoard = TextBox2.Text
             If ComboBox2.Text = "Device" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_jenis.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Device Type" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Serial Number" Then
-                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Tested" Then
-                search = listBarangMasuk.Where(Function(x) x.tested.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.tested.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Condition" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_kondisi.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_kondisi.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Location" Then
-                search = listBarangMasuk.Where(Function(x) x.nama_lokasi.ToString.Contains(keywoard)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_lokasi.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             End If
         End If
