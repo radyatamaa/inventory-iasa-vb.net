@@ -301,7 +301,6 @@ Public Class MenuUtama
         Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
         transaksi_maintenance.pict_logo.BackgroundImage = downloadImage
         transaksi_maintenance.Show()
-        Me.Close()
     End Sub
 
     Private Sub btn_r_barang_rental_Click(sender As Object, e As EventArgs) Handles btn_r_barang_rental.Click
@@ -314,7 +313,6 @@ Public Class MenuUtama
         Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
         PengembalianRental.pict_logo.BackgroundImage = downloadImage
         PengembalianRental.Show()
-        Me.Close()
     End Sub
 
     Private Sub MaintenanceToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles MaintenanceToolStripMenuItem1.Click
@@ -331,5 +329,18 @@ Public Class MenuUtama
     Private Sub StatusBarangToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles StatusBarangToolStripMenuItem1.Click
         FormStatusBarang.UserInfo = Me.MenuStrip1.Tag
         FormStatusBarang.Show()
+    End Sub
+
+    Private Sub InvoiceToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InvoiceToolStripMenuItem.Click
+        invoice_cetak.UserInfo = Me.MenuStrip1.Tag
+        invoice_cetak.Show()
+    End Sub
+
+    Private Sub StockBarangToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StockBarangToolStripMenuItem.Click
+        PengembalianRental.UserInfo = Me.MenuStrip1.Tag
+        Dim tClient As WebClient = New WebClient
+        Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
+        PengembalianRental.pict_logo.BackgroundImage = downloadImage
+        PengembalianRental.Show()
     End Sub
 End Class
