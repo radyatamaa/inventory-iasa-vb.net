@@ -491,32 +491,32 @@ Public Class invoice_cetak
         If TextBox1.Text <> "" Then
             Dim keywoard = TextBox1.Text
             If ComboBox1.Text = "No. Invoice" Then
-                search = listTransaksi.Where(Function(x) x.kd_transaksi_keluar.ToString.Contains(keywoard)).ToList()
+                search = listTransaksi.Where(Function(x) x.kd_transaksi_keluar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Nama Client" Then
-                search = listTransaksi.Where(Function(x) x.nama_client.ToString.Contains(keywoard)).ToList()
+                search = listTransaksi.Where(Function(x) x.nama_client.ToString.ToLower.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "ID Client" Then
-                search = listTransaksi.Where(Function(x) x.kd_client.ToString.Contains(keywoard)).ToList()
+                search = listTransaksi.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Flag Bayar" Then
-                search = listTransaksi.Where(Function(x) x.flag_bayar.ToString.Contains(keywoard)).ToList()
+                search = listTransaksi.Where(Function(x) x.flag_bayar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
             End If
         End If
 
         If TextBox2.Text <> "" Then
             Dim keywoard = TextBox2.Text
             If ComboBox2.Text = "No. Invoice" Then
-                search = listTransaksi.Where(Function(x) x.kd_transaksi_keluar.ToString.Contains(keywoard)).ToList()
+                search = listTransaksi.Where(Function(x) x.kd_transaksi_keluar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Nama Client" Then
-                search = listTransaksi.Where(Function(x) x.nama_client.ToString.Contains(keywoard)).ToList()
+                search = listTransaksi.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "ID Client" Then
-                search = listTransaksi.Where(Function(x) x.kd_client.ToString.Contains(keywoard)).ToList()
+                search = listTransaksi.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Flag Bayar" Then
-                search = listTransaksi.Where(Function(x) x.flag_bayar.ToString.Contains(keywoard)).ToList()
+                search = listTransaksi.Where(Function(x) x.flag_bayar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
             End If
         End If
         If TextBox1.Text = "" And TextBox2.Text = "" Then

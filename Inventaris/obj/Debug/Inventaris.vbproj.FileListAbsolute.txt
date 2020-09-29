@@ -609,3 +609,7 @@ C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormInvoice.resources
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormStockBarang.resources
 C:\Users\Asus\Documents\Github\bagusgoblog\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormStatusBarang.resources
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormBarangRental.resources
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormGaransi.resources
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormInvoice.resources
+E:\radya\project\pribadi\inventory-iasa-vb.net\Inventaris\obj\Debug\Inventaris.FormStatusBarang.resources

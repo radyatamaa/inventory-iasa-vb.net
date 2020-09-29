@@ -321,12 +321,14 @@ Public Class MenuUtama
         LaporanMaintenance.UserInfo = Me.MenuStrip1.Tag
         LaporanMaintenance.Show()
     End Sub
-    Private Sub GaransiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GaransiToolStripMenuItem.Click
+
+
+    Private Sub GaransiToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GaransiToolStripMenuItem1.Click
         FormGaransi.UserInfo = Me.MenuStrip1.Tag
         FormGaransi.Show()
     End Sub
 
-    Private Sub StatusBarangToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles StatusBarangToolStripMenuItem.Click
+    Private Sub StatusBarangToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles StatusBarangToolStripMenuItem1.Click
         FormStatusBarang.UserInfo = Me.MenuStrip1.Tag
         FormStatusBarang.Show()
     End Sub
