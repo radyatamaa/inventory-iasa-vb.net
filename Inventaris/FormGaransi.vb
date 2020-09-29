@@ -74,7 +74,8 @@ Public Class FormGaransi
                                   ,serial_number 
                                   ,garansi_exp 
                                   ,id_toko
-                                  from view_warranty "
+                                  from view_warranty 
+                                    WHERE id_toko = " + idToko.ToString
 
         cmd.CommandText = query
         cmd.CommandType = CommandType.Text
@@ -135,7 +136,7 @@ Public Class FormGaransi
             ElseIf ComboBox1.Text = "ID Client" Then
                 search = listBarangMasuk.Where(Function(x) x.id_client.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox1.Text = "Deive Type" Then
+            ElseIf ComboBox1.Text = "Device Type" Then
                 search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.Contains(keywoard)).ToList()
 
             ElseIf ComboBox1.Text = "Valid Warranty" Then
@@ -158,7 +159,7 @@ Public Class FormGaransi
             ElseIf ComboBox2.Text = "ID Client" Then
                 search = listBarangMasuk.Where(Function(x) x.id_client.ToString.Contains(keywoard)).ToList()
 
-            ElseIf ComboBox2.Text = "Deive Type" Then
+            ElseIf ComboBox2.Text = "Device Type" Then
                 search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.Contains(keywoard)).ToList()
 
             ElseIf ComboBox2.Text = "Valid Warranty" Then
@@ -236,6 +237,7 @@ Public Class FormGaransi
     End Sub
 
     Private Sub btn_kembali_Click(sender As Object, e As EventArgs) Handles btn_kembali.Click
+        MenuUtama.MenuStrip1.Tag = UserInfo
         MenuUtama.Show()
         Me.Close()
     End Sub
