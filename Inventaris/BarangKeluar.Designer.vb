@@ -164,7 +164,7 @@ Partial Class BarangKeluar
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1614, 146)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1788, 146)
         Me.dt_barang_masuk.TabIndex = 15
         '
         'jenis_barang
@@ -352,7 +352,7 @@ Partial Class BarangKeluar
         Me.Panel2.Location = New System.Drawing.Point(0, 95)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(5597, 623)
+        Me.Panel2.Size = New System.Drawing.Size(5771, 623)
         Me.Panel2.TabIndex = 6
         '
         'TextBox1
@@ -507,7 +507,7 @@ Partial Class BarangKeluar
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1614, 146)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1788, 146)
         Me.dt_barang_keluar_fix.TabIndex = 17
         '
         'jenis_barang2
@@ -714,7 +714,7 @@ Partial Class BarangKeluar
         Me.btn_kembali.FlatAppearance.BorderSize = 0
         Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
-        Me.btn_kembali.Location = New System.Drawing.Point(12, 11)
+        Me.btn_kembali.Location = New System.Drawing.Point(9, 21)
         Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_kembali.Name = "btn_kembali"
         Me.btn_kembali.Size = New System.Drawing.Size(63, 69)
