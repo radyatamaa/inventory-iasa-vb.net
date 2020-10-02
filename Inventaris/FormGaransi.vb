@@ -42,14 +42,13 @@ Public Class FormGaransi
             '    isTest = "Tidak Teruji"
             'End If
 
-            dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.kd_client
+            dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.id_client
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.kd_transaksi_keluar
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.nama_client
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_tipe
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.serial_number
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.garansi_exp
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.id_toko
-
 
             'If index = 0 And isSelectedTipeJenis = 0 Then
             '    isSelectedTipeJenis = 1
@@ -75,7 +74,6 @@ Public Class FormGaransi
                                   ,serial_number 
                                   ,garansi_exp 
                                   ,id_toko
-                                  ,kd_client
                                   from view_warranty 
                                     WHERE id_toko = " + idToko.ToString
 
@@ -102,8 +100,7 @@ Public Class FormGaransi
             .nama_jenis = reader("nama_jenis"),
             .serial_number = reader("serial_number"),
             .garansi_exp = reader("garansi_exp"),
-            .id_toko = reader("id_toko"),
-            .kd_client = reader("kd_client")
+            .id_toko = reader("id_toko")
                 }
             listBarangMasuk.Add(barang)
             result.Add(barang)
@@ -137,7 +134,7 @@ Public Class FormGaransi
                 search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "ID Client" Then
-                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.id_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Device Type" Then
                 search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
@@ -160,7 +157,7 @@ Public Class FormGaransi
                 search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "ID Client" Then
-                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.id_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Device Type" Then
                 search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
