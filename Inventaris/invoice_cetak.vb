@@ -473,6 +473,7 @@ Public Class invoice_cetak
     Private Sub btn_tampil_Click(sender As Object, e As EventArgs) Handles btn_tampil.Click
         If kdTransaksis.Count > 0 Then
             KdTransaksi = kdTransaksis(0)
+            ReportViewer1.Visible = True
             LoadReport()
         End If
     End Sub
