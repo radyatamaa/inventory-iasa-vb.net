@@ -42,13 +42,14 @@ Public Class FormGaransi
             '    isTest = "Tidak Teruji"
             'End If
 
-            dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.id_client
+            dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.kd_client
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.kd_transaksi_keluar
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.nama_client
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_tipe
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.serial_number
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.garansi_exp
             dt_garansi.Rows(dt_garansi.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.id_toko
+
 
             'If index = 0 And isSelectedTipeJenis = 0 Then
             '    isSelectedTipeJenis = 1
@@ -74,6 +75,7 @@ Public Class FormGaransi
                                   ,serial_number 
                                   ,garansi_exp 
                                   ,id_toko
+                                  ,kd_client
                                   from view_warranty 
                                     WHERE id_toko = " + idToko.ToString
 
@@ -100,7 +102,8 @@ Public Class FormGaransi
             .nama_jenis = reader("nama_jenis"),
             .serial_number = reader("serial_number"),
             .garansi_exp = reader("garansi_exp"),
-            .id_toko = reader("id_toko")
+            .id_toko = reader("id_toko"),
+            .kd_client = reader("kd_client")
                 }
             listBarangMasuk.Add(barang)
             result.Add(barang)
@@ -128,22 +131,22 @@ Public Class FormGaransi
         If TextBox1.Text <> "" Then
             Dim keywoard = TextBox1.Text
             If ComboBox1.Text = "No. Invoice" Then
-                search = search.Where(Function(x) x.kd_transaksi_keluar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.kd_transaksi_keluar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Nama Client" Then
-                search = search.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "ID Client" Then
-                search = search.Where(Function(x) x.id_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Device Type" Then
-                search = search.Where(Function(x) x.nama_tipe.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Valid Warranty" Then
-                search = search.Where(Function(x) x.garansi_exp.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.garansi_exp.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Serial Number" Then
-                search = search.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             End If
         End If
@@ -151,22 +154,22 @@ Public Class FormGaransi
         If TextBox2.Text <> "" Then
             Dim keywoard = TextBox2.Text
             If ComboBox2.Text = "No. Invoice" Then
-                search = search.Where(Function(x) x.kd_transaksi_keluar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.kd_transaksi_keluar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Nama Client" Then
-                search = search.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "ID Client" Then
-                search = search.Where(Function(x) x.id_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Device Type" Then
-                search = search.Where(Function(x) x.nama_tipe.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.nama_tipe.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Valid Warranty" Then
-                search = search.Where(Function(x) x.garansi_exp.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.garansi_exp.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Serial Number" Then
-                search = search.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+                search = listBarangMasuk.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             End If
         End If
