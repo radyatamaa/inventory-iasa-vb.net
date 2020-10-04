@@ -157,6 +157,7 @@ Partial Class MenuUtama
         Me.PengembalianBarangRentalToolStripMenuItem.Name = "PengembalianBarangRentalToolStripMenuItem"
         Me.PengembalianBarangRentalToolStripMenuItem.Size = New System.Drawing.Size(253, 24)
         Me.PengembalianBarangRentalToolStripMenuItem.Text = "Pengembalian Barang Rental"
+        Me.PengembalianBarangRentalToolStripMenuItem.Visible = False
         '
         'QuotationToolStripMenuItem
         '
@@ -246,28 +247,28 @@ Partial Class MenuUtama
         '
         Me.GaransiToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.GaransiToolStripMenuItem1.Name = "GaransiToolStripMenuItem1"
-        Me.GaransiToolStripMenuItem1.Size = New System.Drawing.Size(180, 24)
+        Me.GaransiToolStripMenuItem1.Size = New System.Drawing.Size(164, 24)
         Me.GaransiToolStripMenuItem1.Text = "Garansi"
         '
         'StatusBarangToolStripMenuItem1
         '
         Me.StatusBarangToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.StatusBarangToolStripMenuItem1.Name = "StatusBarangToolStripMenuItem1"
-        Me.StatusBarangToolStripMenuItem1.Size = New System.Drawing.Size(180, 24)
+        Me.StatusBarangToolStripMenuItem1.Size = New System.Drawing.Size(164, 24)
         Me.StatusBarangToolStripMenuItem1.Text = "Status Barang"
         '
         'StockBarangToolStripMenuItem
         '
         Me.StockBarangToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.StockBarangToolStripMenuItem.Name = "StockBarangToolStripMenuItem"
-        Me.StockBarangToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.StockBarangToolStripMenuItem.Size = New System.Drawing.Size(164, 24)
         Me.StockBarangToolStripMenuItem.Text = "Barang Rental"
         '
         'InvoiceToolStripMenuItem
         '
         Me.InvoiceToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!)
         Me.InvoiceToolStripMenuItem.Name = "InvoiceToolStripMenuItem"
-        Me.InvoiceToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
+        Me.InvoiceToolStripMenuItem.Size = New System.Drawing.Size(164, 24)
         Me.InvoiceToolStripMenuItem.Text = "Invoice"
         '
         'CetakToolStripMenuItem
@@ -411,7 +412,7 @@ Partial Class MenuUtama
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.p_logo)
         Me.Panel1.Location = New System.Drawing.Point(0, 51)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1206, 626)
         Me.Panel1.TabIndex = 44
@@ -422,7 +423,7 @@ Partial Class MenuUtama
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.p_logo.Location = New System.Drawing.Point(228, 86)
-        Me.p_logo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.p_logo.Margin = New System.Windows.Forms.Padding(2)
         Me.p_logo.Name = "p_logo"
         Me.p_logo.Size = New System.Drawing.Size(495, 435)
         Me.p_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -436,7 +437,7 @@ Partial Class MenuUtama
         Me.ClientSize = New System.Drawing.Size(1028, 609)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MenuUtama"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MenuUtama"

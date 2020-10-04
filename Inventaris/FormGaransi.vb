@@ -136,7 +136,7 @@ Public Class FormGaransi
             ElseIf ComboBox1.Text = "Nama Client" Then
                 search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
-            ElseIf ComboBox1.Text = "ID Client" Then
+            ElseIf ComboBox1.Text = "Kode Client" Then
                 search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Device Type" Then
@@ -159,7 +159,7 @@ Public Class FormGaransi
             ElseIf ComboBox2.Text = "Nama Client" Then
                 search = listBarangMasuk.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
-            ElseIf ComboBox2.Text = "ID Client" Then
+            ElseIf ComboBox2.Text = "Kode Client" Then
                 search = listBarangMasuk.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Device Type" Then

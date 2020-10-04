@@ -33,6 +33,10 @@ Partial Class FormGaransi
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.dt_garansi = New System.Windows.Forms.DataGridView()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btn_kembali = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.pict_logo = New System.Windows.Forms.PictureBox()
         Me.kd_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nama_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,10 +44,6 @@ Partial Class FormGaransi
         Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.warranty_end_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.valid_warranty = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btn_kembali = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.pict_logo = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.dt_garansi, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,7 +58,7 @@ Partial Class FormGaransi
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1028, 583)
         Me.Panel1.TabIndex = 5
@@ -74,7 +74,7 @@ Partial Class FormGaransi
         Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 97)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1028, 172)
         Me.Panel3.TabIndex = 115
@@ -82,7 +82,7 @@ Partial Class FormGaransi
         'date_tgl_keluar
         '
         Me.date_tgl_keluar.Location = New System.Drawing.Point(500, 23)
-        Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(2)
         Me.date_tgl_keluar.Name = "date_tgl_keluar"
         Me.date_tgl_keluar.Size = New System.Drawing.Size(178, 20)
         Me.date_tgl_keluar.TabIndex = 107
@@ -91,7 +91,7 @@ Partial Class FormGaransi
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "ID Client", "Device Type", "Valid Warranty"})
+        Me.ComboBox2.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "Kode Client", "Device Type", "Valid Warranty"})
         Me.ComboBox2.Location = New System.Drawing.Point(393, 92)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(105, 21)
@@ -129,7 +129,7 @@ Partial Class FormGaransi
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "ID Client", "Device Type", "Valid Warranty"})
+        Me.ComboBox1.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "Kode Client", "Device Type", "Valid Warranty"})
         Me.ComboBox1.Location = New System.Drawing.Point(393, 65)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(105, 21)
@@ -149,17 +149,70 @@ Partial Class FormGaransi
         Me.dt_garansi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_garansi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_client, Me.kd_transaksi_keluar, Me.nama_client, Me.device_type, Me.serial_number, Me.warranty_end_date, Me.valid_warranty})
         Me.dt_garansi.Location = New System.Drawing.Point(0, 268)
-        Me.dt_garansi.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dt_garansi.Margin = New System.Windows.Forms.Padding(2)
         Me.dt_garansi.Name = "dt_garansi"
         Me.dt_garansi.RowHeadersWidth = 51
         Me.dt_garansi.RowTemplate.Height = 24
         Me.dt_garansi.Size = New System.Drawing.Size(1028, 314)
         Me.dt_garansi.TabIndex = 114
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Panel2.Controls.Add(Me.btn_kembali)
+        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Controls.Add(Me.pict_logo)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1028, 97)
+        Me.Panel2.TabIndex = 1
+        '
+        'btn_kembali
+        '
+        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
+        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_kembali.FlatAppearance.BorderSize = 0
+        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
+        Me.btn_kembali.Location = New System.Drawing.Point(9, 9)
+        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_kembali.Name = "btn_kembali"
+        Me.btn_kembali.Size = New System.Drawing.Size(75, 67)
+        Me.btn_kembali.TabIndex = 49
+        Me.btn_kembali.UseVisualStyleBackColor = False
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(373, 20)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(266, 47)
+        Me.Label6.TabIndex = 50
+        Me.Label6.Text = "Form Garansi"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'pict_logo
+        '
+        Me.pict_logo.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
+        Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pict_logo.Location = New System.Drawing.Point(876, 9)
+        Me.pict_logo.Margin = New System.Windows.Forms.Padding(2)
+        Me.pict_logo.Name = "pict_logo"
+        Me.pict_logo.Size = New System.Drawing.Size(135, 70)
+        Me.pict_logo.TabIndex = 51
+        Me.pict_logo.TabStop = False
+        Me.pict_logo.Visible = False
+        '
         'kd_client
         '
         Me.kd_client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.kd_client.HeaderText = "Client ID"
+        Me.kd_client.HeaderText = "Kode Client"
         Me.kd_client.MinimumWidth = 6
         Me.kd_client.Name = "kd_client"
         '
@@ -205,66 +258,13 @@ Partial Class FormGaransi
         Me.valid_warranty.MinimumWidth = 6
         Me.valid_warranty.Name = "valid_warranty"
         '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Panel2.Controls.Add(Me.btn_kembali)
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Controls.Add(Me.pict_logo)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1028, 97)
-        Me.Panel2.TabIndex = 1
-        '
-        'btn_kembali
-        '
-        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
-        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_kembali.FlatAppearance.BorderSize = 0
-        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
-        Me.btn_kembali.Location = New System.Drawing.Point(9, 9)
-        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btn_kembali.Name = "btn_kembali"
-        Me.btn_kembali.Size = New System.Drawing.Size(75, 67)
-        Me.btn_kembali.TabIndex = 49
-        Me.btn_kembali.UseVisualStyleBackColor = False
-        '
-        'Label6
-        '
-        Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(373, 20)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(266, 47)
-        Me.Label6.TabIndex = 50
-        Me.Label6.Text = "Form Garansi"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'pict_logo
-        '
-        Me.pict_logo.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
-        Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pict_logo.Location = New System.Drawing.Point(876, 9)
-        Me.pict_logo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.pict_logo.Name = "pict_logo"
-        Me.pict_logo.Size = New System.Drawing.Size(135, 70)
-        Me.pict_logo.TabIndex = 51
-        Me.pict_logo.TabStop = False
-        Me.pict_logo.Visible = False
-        '
         'FormGaransi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 583)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormGaransi"
         Me.Text = "FormGaransi"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -291,6 +291,7 @@ Partial Class FormGaransi
     Friend WithEvents date_tgl_keluar As DateTimePicker
     Friend WithEvents Label1 As Label
     Friend WithEvents dt_garansi As DataGridView
+    Friend WithEvents Panel3 As Panel
     Friend WithEvents kd_client As DataGridViewTextBoxColumn
     Friend WithEvents kd_transaksi_keluar As DataGridViewTextBoxColumn
     Friend WithEvents nama_client As DataGridViewTextBoxColumn
@@ -298,5 +299,4 @@ Partial Class FormGaransi
     Friend WithEvents serial_number As DataGridViewTextBoxColumn
     Friend WithEvents warranty_end_date As DataGridViewTextBoxColumn
     Friend WithEvents valid_warranty As DataGridViewTextBoxColumn
-    Friend WithEvents Panel3 As Panel
 End Class
