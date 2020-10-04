@@ -111,26 +111,28 @@ Public Class PengembalianRental
             End If
 
             dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.kd_transaksi_keluar
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_jenis
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.nama_tipe
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.serial_number
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.nama_kondisi
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(5).Value = isTest
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.nama_lokasi
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.detail_lokasi
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.catatan
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.nama_status
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.harga_akhir
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.periode_rental
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.rental_type
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(13).Value = insertDataBarangMasuk.rental_exp
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_client
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.kd_client
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_jenis
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(4).Value = insertDataBarangMasuk.nama_tipe
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.serial_number
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.nama_kondisi
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(7).Value = isTest
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.nama_lokasi
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.detail_lokasi
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.catatan
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.nama_status
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.harga_akhir
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(13).Value = insertDataBarangMasuk.periode_rental
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(14).Value = insertDataBarangMasuk.rental_type
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(15).Value = insertDataBarangMasuk.rental_exp
 
             If index = 0 And isSelectedTipeJenis = 0 Then
                 isSelectedTipeJenis = 1
                 dt_barang_keluar.Columns.Add("id_barang_keluar", "IdBarangKeluar")
-                dt_barang_keluar.Columns(14).Visible = False
+                dt_barang_keluar.Columns(16).Visible = False
             End If
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(14).Value = insertDataBarangMasuk.id_barang_keluar
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(16).Value = insertDataBarangMasuk.id_barang_keluar
 
             dt_barang_keluar.Update()
             index = index + 1
@@ -274,6 +276,7 @@ Public Class PengembalianRental
         listBarangMasuk.Clear()
         Dim query As String = "SELECT * FROM tbl_barang_keluar bm
                                   INNER JOIN tbl_barang b ON bm.id_barang = b.id_barang
+                                  INNER JOIN tbl_client cl ON bm.id_client = cl.id_client
 		                          INNER JOIN tbl_kondisi k ON b.id_kondisi = k.id_kondisi
 		                          INNER JOIN tbl_jenis j ON b.id_jenis = j.id_jenis
 		                          INNER JOIN tbl_tipe t ON b.id_tipe = t.id_tipe
@@ -331,6 +334,8 @@ Public Class PengembalianRental
             .rental_type = reader("rental_type"),
             .rental_exp = reader("rental_exp"),
             .id_client = reader("id_client"),
+            .kd_client = reader("kd_client"),
+            .nama_client = reader("nama_client"),
             .id_lokasi = reader("id_lokasi"),
             .id_detail_lokasi = reader("id_detail_lokasi"),
             .jumlah = reader("jumlah"),
@@ -440,7 +445,7 @@ Public Class PengembalianRental
         Dim selectedIdBarangMasuk = dt_barang_keluar.SelectedRows
         For Each selectedItem As DataGridViewRow In selectedIdBarangMasuk
 
-            Dim idBarangKeluar = selectedItem.Cells(14).Value
+            Dim idBarangKeluar = selectedItem.Cells(16).Value
             'Dim checkDuplicate As Object = listBarangMasukHandle.Where(Function(x) x.id_barang_masuk = idBarangMasuk).FirstOrDefault()
             'If checkDuplicate Is Nothing Then
             Dim barang As Object = listBarangMasuk.Where(Function(x) x.id_barang_keluar = idBarangKeluar).FirstOrDefault()
@@ -651,7 +656,7 @@ Public Class PengembalianRental
             ElseIf ComboBox1.Text = "Nama Client" Then
                 search = search.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
-            ElseIf ComboBox1.Text = "ID Client" Then
+            ElseIf ComboBox1.Text = "Kode Client" Then
                 search = search.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox1.Text = "Jenis Barang" Then
@@ -674,7 +679,7 @@ Public Class PengembalianRental
             ElseIf ComboBox2.Text = "Nama Client" Then
                 search = search.Where(Function(x) x.nama_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
-            ElseIf ComboBox2.Text = "ID Client" Then
+            ElseIf ComboBox2.Text = "Kode Client" Then
                 search = search.Where(Function(x) x.kd_client.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             ElseIf ComboBox2.Text = "Jenis Barang" Then

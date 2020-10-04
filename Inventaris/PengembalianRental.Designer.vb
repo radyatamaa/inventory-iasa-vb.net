@@ -22,13 +22,15 @@ Partial Class PengembalianRental
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PengembalianRental))
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_kembali = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.pict_logo = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -54,7 +56,11 @@ Partial Class PengembalianRental
         Me.DataGridViewComboBoxColumn1 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dt_barang_keluar = New System.Windows.Forms.DataGridView()
+        Me.btn_hapus = New System.Windows.Forms.Button()
+        Me.btn_simpan = New System.Windows.Forms.Button()
         Me.kd_transaksi_keluar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.client = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kd_client = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.jenis_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipe_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.serial_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -68,15 +74,11 @@ Partial Class PengembalianRental
         Me.periode_rental_lama = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rental_type_lama = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.rental_exp_lama = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btn_hapus = New System.Windows.Forms.Button()
-        Me.btn_simpan = New System.Windows.Forms.Button()
-        Me.btn_kembali = New System.Windows.Forms.Button()
-        Me.pict_logo = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dt_barang_keluar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -87,22 +89,49 @@ Partial Class PengembalianRental
         Me.Panel1.Controls.Add(Me.pict_logo)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1371, 119)
+        Me.Panel1.Size = New System.Drawing.Size(1028, 97)
         Me.Panel1.TabIndex = 0
+        '
+        'btn_kembali
+        '
+        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
+        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_kembali.FlatAppearance.BorderSize = 0
+        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
+        Me.btn_kembali.Location = New System.Drawing.Point(9, 9)
+        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_kembali.Name = "btn_kembali"
+        Me.btn_kembali.Size = New System.Drawing.Size(75, 67)
+        Me.btn_kembali.TabIndex = 49
+        Me.btn_kembali.UseVisualStyleBackColor = False
         '
         'Label6
         '
         Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(476, 35)
+        Me.Label6.Location = New System.Drawing.Point(357, 28)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(356, 58)
+        Me.Label6.Size = New System.Drawing.Size(267, 47)
         Me.Label6.TabIndex = 50
         Me.Label6.Text = "Pengembalian Rental"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'pict_logo
+        '
+        Me.pict_logo.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
+        Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pict_logo.Location = New System.Drawing.Point(877, 9)
+        Me.pict_logo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.pict_logo.Name = "pict_logo"
+        Me.pict_logo.Size = New System.Drawing.Size(135, 70)
+        Me.pict_logo.TabIndex = 51
+        Me.pict_logo.TabStop = False
         '
         'Panel2
         '
@@ -116,75 +145,71 @@ Partial Class PengembalianRental
         Me.Panel2.Controls.Add(Me.btn_tambah)
         Me.Panel2.Controls.Add(Me.dt_barang_keluar_fix)
         Me.Panel2.Controls.Add(Me.dt_barang_keluar)
-        Me.Panel2.Location = New System.Drawing.Point(0, 114)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Location = New System.Drawing.Point(0, 93)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1488, 574)
+        Me.Panel2.Size = New System.Drawing.Size(1116, 466)
         Me.Panel2.TabIndex = 1
         '
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "ID Client", "Jenis Barang", "Tipe Barang", "Serial Number"})
-        Me.ComboBox2.Location = New System.Drawing.Point(436, 144)
-        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBox2.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "Kode Client", "Jenis Barang", "Tipe Barang", "Serial Number"})
+        Me.ComboBox2.Location = New System.Drawing.Point(327, 117)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(139, 24)
+        Me.ComboBox2.Size = New System.Drawing.Size(105, 21)
         Me.ComboBox2.TabIndex = 99
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "ID Client", "Jenis Barang", "Tipe Barang", "Serial Number"})
-        Me.ComboBox1.Location = New System.Drawing.Point(436, 111)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboBox1.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "Kode Client", "Jenis Barang", "Tipe Barang", "Serial Number"})
+        Me.ComboBox1.Location = New System.Drawing.Point(327, 90)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(139, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(105, 21)
         Me.ComboBox1.TabIndex = 98
         '
         'btncari2
         '
-        Me.btncari2.Location = New System.Drawing.Point(819, 144)
-        Me.btncari2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btncari2.Location = New System.Drawing.Point(614, 117)
         Me.btncari2.Name = "btncari2"
-        Me.btncari2.Size = New System.Drawing.Size(52, 25)
+        Me.btncari2.Size = New System.Drawing.Size(39, 20)
         Me.btncari2.TabIndex = 97
         Me.btncari2.Text = "Cari"
         Me.btncari2.UseVisualStyleBackColor = True
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(581, 144)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox2.Location = New System.Drawing.Point(436, 117)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(236, 22)
+        Me.TextBox2.Size = New System.Drawing.Size(178, 20)
         Me.TextBox2.TabIndex = 96
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(581, 111)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox1.Location = New System.Drawing.Point(436, 90)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(236, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(178, 20)
         Me.TextBox1.TabIndex = 95
         '
         'Label1
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(421, 59)
+        Me.Label1.Location = New System.Drawing.Point(316, 48)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(154, 17)
+        Me.Label1.Size = New System.Drawing.Size(116, 13)
         Me.Label1.TabIndex = 81
         Me.Label1.Text = "Tanggal Pengembalian"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'date_tgl_keluar
         '
-        Me.date_tgl_keluar.Location = New System.Drawing.Point(581, 59)
-        Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.date_tgl_keluar.Location = New System.Drawing.Point(436, 48)
+        Me.date_tgl_keluar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.date_tgl_keluar.Name = "date_tgl_keluar"
-        Me.date_tgl_keluar.Size = New System.Drawing.Size(236, 22)
+        Me.date_tgl_keluar.Size = New System.Drawing.Size(178, 20)
         Me.date_tgl_keluar.TabIndex = 80
         '
         'btn_tambah
@@ -193,10 +218,10 @@ Partial Class PengembalianRental
         Me.btn_tambah.FlatAppearance.BorderSize = 0
         Me.btn_tambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_tambah.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_tambah.Location = New System.Drawing.Point(12, 364)
-        Me.btn_tambah.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btn_tambah.Location = New System.Drawing.Point(9, 296)
+        Me.btn_tambah.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_tambah.Name = "btn_tambah"
-        Me.btn_tambah.Size = New System.Drawing.Size(237, 32)
+        Me.btn_tambah.Size = New System.Drawing.Size(178, 26)
         Me.btn_tambah.TabIndex = 79
         Me.btn_tambah.Text = "Tambah"
         Me.btn_tambah.UseVisualStyleBackColor = False
@@ -207,23 +232,23 @@ Partial Class PengembalianRental
         Me.dt_barang_keluar_fix.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_barang_keluar_fix.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dt_barang_keluar_fix.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dt_barang_keluar_fix.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dt_barang_keluar_fix.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dt_barang_keluar_fix.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewComboBoxColumn1, Me.DataGridViewTextBoxColumn13})
         Me.dt_barang_keluar_fix.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.dt_barang_keluar_fix.Location = New System.Drawing.Point(3, 417)
-        Me.dt_barang_keluar_fix.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dt_barang_keluar_fix.Location = New System.Drawing.Point(2, 339)
+        Me.dt_barang_keluar_fix.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1368, 146)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1026, 119)
         Me.dt_barang_keluar_fix.TabIndex = 78
         '
         'DataGridViewTextBoxColumn1
@@ -298,10 +323,10 @@ Partial Class PengembalianRental
         '
         'DataGridViewTextBoxColumn11
         '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "N2"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle10.Format = "N2"
+        DataGridViewCellStyle10.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle10
         Me.DataGridViewTextBoxColumn11.HeaderText = "Harga Rental Lama"
         Me.DataGridViewTextBoxColumn11.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
@@ -335,24 +360,44 @@ Partial Class PengembalianRental
         Me.dt_barang_keluar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_barang_keluar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dt_barang_keluar.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dt_barang_keluar.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.dt_barang_keluar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dt_barang_keluar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.jenis_barang, Me.tipe_barang, Me.serial_number, Me.kondisi, Me.tested, Me.lokasi, Me.detail_lokasi, Me.catatan, Me.status, Me.harga_jual, Me.periode_rental_lama, Me.rental_type_lama, Me.rental_exp_lama})
+        Me.dt_barang_keluar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.kd_transaksi_keluar, Me.client, Me.kd_client, Me.jenis_barang, Me.tipe_barang, Me.serial_number, Me.kondisi, Me.tested, Me.lokasi, Me.detail_lokasi, Me.catatan, Me.status, Me.harga_jual, Me.periode_rental_lama, Me.rental_type_lama, Me.rental_exp_lama})
         Me.dt_barang_keluar.GridColor = System.Drawing.SystemColors.ActiveBorder
-        Me.dt_barang_keluar.Location = New System.Drawing.Point(3, 202)
-        Me.dt_barang_keluar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dt_barang_keluar.Location = New System.Drawing.Point(2, 164)
+        Me.dt_barang_keluar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dt_barang_keluar.Name = "dt_barang_keluar"
         Me.dt_barang_keluar.RowHeadersWidth = 51
         Me.dt_barang_keluar.RowTemplate.Height = 24
-        Me.dt_barang_keluar.Size = New System.Drawing.Size(1368, 146)
+        Me.dt_barang_keluar.Size = New System.Drawing.Size(1026, 119)
         Me.dt_barang_keluar.TabIndex = 77
+        '
+        'btn_hapus
+        '
+        Me.btn_hapus.Location = New System.Drawing.Point(76, 564)
+        Me.btn_hapus.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_hapus.Name = "btn_hapus"
+        Me.btn_hapus.Size = New System.Drawing.Size(70, 49)
+        Me.btn_hapus.TabIndex = 21
+        Me.btn_hapus.Text = "Hapus"
+        Me.btn_hapus.UseVisualStyleBackColor = True
+        '
+        'btn_simpan
+        '
+        Me.btn_simpan.Location = New System.Drawing.Point(2, 563)
+        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_simpan.Name = "btn_simpan"
+        Me.btn_simpan.Size = New System.Drawing.Size(70, 49)
+        Me.btn_simpan.TabIndex = 20
+        Me.btn_simpan.Text = "Simpan"
+        Me.btn_simpan.UseVisualStyleBackColor = True
         '
         'kd_transaksi_keluar
         '
@@ -360,6 +405,16 @@ Partial Class PengembalianRental
         Me.kd_transaksi_keluar.MinimumWidth = 150
         Me.kd_transaksi_keluar.Name = "kd_transaksi_keluar"
         Me.kd_transaksi_keluar.Width = 150
+        '
+        'client
+        '
+        Me.client.HeaderText = "Client"
+        Me.client.Name = "client"
+        '
+        'kd_client
+        '
+        Me.kd_client.HeaderText = "Kode Client"
+        Me.kd_client.Name = "kd_client"
         '
         'jenis_barang
         '
@@ -426,10 +481,10 @@ Partial Class PengembalianRental
         '
         'harga_jual
         '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle8.Format = "N2"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.harga_jual.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle12.Format = "N2"
+        DataGridViewCellStyle12.NullValue = Nothing
+        Me.harga_jual.DefaultCellStyle = DataGridViewCellStyle12
         Me.harga_jual.HeaderText = "Harga Rental Lama"
         Me.harga_jual.MinimumWidth = 6
         Me.harga_jual.Name = "harga_jual"
@@ -457,71 +512,25 @@ Partial Class PengembalianRental
         Me.rental_exp_lama.Name = "rental_exp_lama"
         Me.rental_exp_lama.Width = 125
         '
-        'btn_hapus
-        '
-        Me.btn_hapus.Location = New System.Drawing.Point(101, 694)
-        Me.btn_hapus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btn_hapus.Name = "btn_hapus"
-        Me.btn_hapus.Size = New System.Drawing.Size(93, 60)
-        Me.btn_hapus.TabIndex = 21
-        Me.btn_hapus.Text = "Hapus"
-        Me.btn_hapus.UseVisualStyleBackColor = True
-        '
-        'btn_simpan
-        '
-        Me.btn_simpan.Location = New System.Drawing.Point(3, 693)
-        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btn_simpan.Name = "btn_simpan"
-        Me.btn_simpan.Size = New System.Drawing.Size(93, 60)
-        Me.btn_simpan.TabIndex = 20
-        Me.btn_simpan.Text = "Simpan"
-        Me.btn_simpan.UseVisualStyleBackColor = True
-        '
-        'btn_kembali
-        '
-        Me.btn_kembali.BackColor = System.Drawing.Color.Transparent
-        Me.btn_kembali.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_kembali.FlatAppearance.BorderSize = 0
-        Me.btn_kembali.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_kembali.Image = CType(resources.GetObject("btn_kembali.Image"), System.Drawing.Image)
-        Me.btn_kembali.Location = New System.Drawing.Point(12, 11)
-        Me.btn_kembali.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btn_kembali.Name = "btn_kembali"
-        Me.btn_kembali.Size = New System.Drawing.Size(100, 82)
-        Me.btn_kembali.TabIndex = 49
-        Me.btn_kembali.UseVisualStyleBackColor = False
-        '
-        'pict_logo
-        '
-        Me.pict_logo.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.pict_logo.BackgroundImage = CType(resources.GetObject("pict_logo.BackgroundImage"), System.Drawing.Image)
-        Me.pict_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pict_logo.Location = New System.Drawing.Point(1169, 11)
-        Me.pict_logo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.pict_logo.Name = "pict_logo"
-        Me.pict_logo.Size = New System.Drawing.Size(180, 86)
-        Me.pict_logo.TabIndex = 51
-        Me.pict_logo.TabStop = False
-        '
         'PengembalianRental
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1371, 750)
+        Me.ClientSize = New System.Drawing.Size(1028, 609)
         Me.Controls.Add(Me.btn_hapus)
         Me.Controls.Add(Me.btn_simpan)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "PengembalianRental"
         Me.Text = "PengembalianRental"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
+        CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.dt_barang_keluar_fix, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dt_barang_keluar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pict_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -547,7 +556,19 @@ Partial Class PengembalianRental
     Friend WithEvents DataGridViewComboBoxColumn1 As DataGridViewComboBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents dt_barang_keluar As DataGridView
+    Friend WithEvents btn_tambah As Button
+    Friend WithEvents btn_hapus As Button
+    Friend WithEvents btn_simpan As Button
+    Friend WithEvents date_tgl_keluar As DateTimePicker
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents btncari2 As Button
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents kd_transaksi_keluar As DataGridViewTextBoxColumn
+    Friend WithEvents client As DataGridViewTextBoxColumn
+    Friend WithEvents kd_client As DataGridViewTextBoxColumn
     Friend WithEvents jenis_barang As DataGridViewTextBoxColumn
     Friend WithEvents tipe_barang As DataGridViewTextBoxColumn
     Friend WithEvents serial_number As DataGridViewTextBoxColumn
@@ -561,14 +582,4 @@ Partial Class PengembalianRental
     Friend WithEvents periode_rental_lama As DataGridViewTextBoxColumn
     Friend WithEvents rental_type_lama As DataGridViewComboBoxColumn
     Friend WithEvents rental_exp_lama As DataGridViewTextBoxColumn
-    Friend WithEvents btn_tambah As Button
-    Friend WithEvents btn_hapus As Button
-    Friend WithEvents btn_simpan As Button
-    Friend WithEvents date_tgl_keluar As DateTimePicker
-    Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents btncari2 As Button
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
 End Class
