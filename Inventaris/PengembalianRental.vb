@@ -370,8 +370,19 @@ Public Class PengembalianRental
                 .nominal_ppn = 0,
                 .shipping_handling = 0,
                 .subtotal = 0,
-                .tgl_pengembalian = Nothing
+                .tgl_pengembalian = Nothing,
+                .passed = "No"
                 }
+
+            Try
+                Dim rentalType = DateTime.Parse(barang.rental_exp).ToString("s", DateTimeFormatInfo.InvariantInfo)
+                Dim now = DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo)
+                If now >= rentalType Then
+                    barang.passed = "Yes"
+                End If
+            Catch ex As Exception
+
+            End Try
             listBarangMasuk.Add(barang)
             result.Add(barang)
 
@@ -681,6 +692,9 @@ Public Class PengembalianRental
             ElseIf ComboBox1.Text = "Serial Number" Then
                 search = search.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
+            ElseIf ComboBox1.Text = "Passed Rental" Then
+                search = search.Where(Function(x) x.passed.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
             End If
         End If
 
@@ -703,6 +717,9 @@ Public Class PengembalianRental
 
             ElseIf ComboBox2.Text = "Serial Number" Then
                 search = search.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
+            ElseIf ComboBox1.Text = "Passed Rental" Then
+                search = search.Where(Function(x) x.passed.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
 
             End If
         End If
