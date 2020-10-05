@@ -182,7 +182,6 @@ Public Class MenuUtama
         Form1.TextBox2.Text = ""
         Form1.Show()
         Me.Close()
-        Form2.Close()
     End Sub
 
     Private Sub BarangMasuk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -343,10 +342,5 @@ Public Class MenuUtama
         Dim downloadImage As Bitmap = Bitmap.FromStream(New MemoryStream(tClient.DownloadData(Me.MenuStrip1.Tag.LogoToko.ToString)))
         PengembalianRental.pict_logo.BackgroundImage = downloadImage
         PengembalianRental.Show()
-    End Sub
-
-    Private Sub PilihTokoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PilihTokoToolStripMenuItem.Click
-        Form2.Show()
-        Me.Close()
     End Sub
 End Class
