@@ -110,6 +110,18 @@ Public Class PengembalianRental
                 isTest = "Tidak Teruji"
             End If
 
+            Dim passed = "No"
+            Try
+                Dim rentalType = DateTime.Parse(insertDataBarangMasuk.rental_exp).ToString("s", DateTimeFormatInfo.InvariantInfo)
+                Dim now = DateTime.Now.ToString("s", DateTimeFormatInfo.InvariantInfo)
+                If now >= rentalType Then
+                    passed = "Yes"
+                End If
+            Catch ex As Exception
+
+            End Try
+
+
             dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.kd_transaksi_keluar
             dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_client
             dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.kd_client
@@ -126,13 +138,14 @@ Public Class PengembalianRental
             dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(13).Value = insertDataBarangMasuk.periode_rental
             dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(14).Value = insertDataBarangMasuk.rental_type
             dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(15).Value = insertDataBarangMasuk.rental_exp
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(16).Value = passed
 
             If index = 0 And isSelectedTipeJenis = 0 Then
                 isSelectedTipeJenis = 1
                 dt_barang_keluar.Columns.Add("id_barang_keluar", "IdBarangKeluar")
-                dt_barang_keluar.Columns(16).Visible = False
+                dt_barang_keluar.Columns(17).Visible = False
             End If
-            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(16).Value = insertDataBarangMasuk.id_barang_keluar
+            dt_barang_keluar.Rows(dt_barang_keluar.RowCount - 2).Cells(17).Value = insertDataBarangMasuk.id_barang_keluar
 
             dt_barang_keluar.Update()
             index = index + 1
@@ -445,7 +458,7 @@ Public Class PengembalianRental
         Dim selectedIdBarangMasuk = dt_barang_keluar.SelectedRows
         For Each selectedItem As DataGridViewRow In selectedIdBarangMasuk
 
-            Dim idBarangKeluar = selectedItem.Cells(16).Value
+            Dim idBarangKeluar = selectedItem.Cells(17).Value
             'Dim checkDuplicate As Object = listBarangMasukHandle.Where(Function(x) x.id_barang_masuk = idBarangMasuk).FirstOrDefault()
             'If checkDuplicate Is Nothing Then
             Dim barang As Object = listBarangMasuk.Where(Function(x) x.id_barang_keluar = idBarangKeluar).FirstOrDefault()
