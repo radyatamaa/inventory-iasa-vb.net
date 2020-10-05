@@ -24,12 +24,22 @@ Partial Class LaporanMaintenance
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet2_Stock = New Inventaris.DataSet2_Stock()
         Me.DataMaintenanceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.DataSet2_Stock, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataSet2_Stock = New Inventaris.DataSet2_Stock()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.DataMaintenanceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet2_Stock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'DataMaintenanceBindingSource
+        '
+        Me.DataMaintenanceBindingSource.DataMember = "DataMaintenance"
+        Me.DataMaintenanceBindingSource.DataSource = Me.DataSet2_Stock
+        '
+        'DataSet2_Stock
+        '
+        Me.DataSet2_Stock.DataSetName = "DataSet2_Stock"
+        Me.DataSet2_Stock.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -44,16 +54,6 @@ Partial Class LaporanMaintenance
         Me.ReportViewer1.Size = New System.Drawing.Size(1444, 554)
         Me.ReportViewer1.TabIndex = 0
         '
-        'DataSet2_Stock
-        '
-        Me.DataSet2_Stock.DataSetName = "DataSet2_Stock"
-        Me.DataSet2_Stock.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataMaintenanceBindingSource
-        '
-        Me.DataMaintenanceBindingSource.DataMember = "DataMaintenance"
-        Me.DataMaintenanceBindingSource.DataSource = Me.DataSet2_Stock
-        '
         'LaporanMaintenance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -61,9 +61,11 @@ Partial Class LaporanMaintenance
         Me.ClientSize = New System.Drawing.Size(1444, 554)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "LaporanMaintenance"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LaporanMaintenance"
-        CType(Me.DataSet2_Stock, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DataMaintenanceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet2_Stock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
