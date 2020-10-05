@@ -502,6 +502,10 @@ Public Class invoice_cetak
 
             ElseIf ComboBox1.Text = "Flag Bayar" Then
                 search = search.Where(Function(x) x.flag_bayar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
+            ElseIf ComboBox1.Text = "Type Of Service" Then
+                search = search.Where(Function(x) x.nama_status.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
             End If
         End If
 
@@ -518,6 +522,10 @@ Public Class invoice_cetak
 
             ElseIf ComboBox2.Text = "Flag Bayar" Then
                 search = search.Where(Function(x) x.flag_bayar.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
+            ElseIf ComboBox1.Text = "Type Of Service" Then
+                search = search.Where(Function(x) x.nama_status.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
             End If
         End If
         If TextBox1.Text = "" And TextBox2.Text = "" Then
