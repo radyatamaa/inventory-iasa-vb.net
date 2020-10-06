@@ -154,9 +154,14 @@ Partial Class PengembalianRental
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
+<<<<<<< Updated upstream
         Me.ComboBox2.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "Kode Client", "Jenis Barang", "Tipe Barang", "Serial Number"})
         Me.ComboBox2.Location = New System.Drawing.Point(436, 144)
         Me.ComboBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+=======
+        Me.ComboBox2.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "Kode Client", "Jenis Barang", "Tipe Barang", "Serial Number", "Passed Rental"})
+        Me.ComboBox2.Location = New System.Drawing.Point(327, 117)
+>>>>>>> Stashed changes
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(139, 24)
         Me.ComboBox2.TabIndex = 99
@@ -164,9 +169,14 @@ Partial Class PengembalianRental
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
+<<<<<<< Updated upstream
         Me.ComboBox1.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "Kode Client", "Jenis Barang", "Tipe Barang", "Serial Number"})
         Me.ComboBox1.Location = New System.Drawing.Point(436, 111)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+=======
+        Me.ComboBox1.Items.AddRange(New Object() {"No. Invoice", "Nama Client", "Kode Client", "Jenis Barang", "Tipe Barang", "Serial Number", "Passed Rental"})
+        Me.ComboBox1.Location = New System.Drawing.Point(327, 90)
+>>>>>>> Stashed changes
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(139, 24)
         Me.ComboBox1.TabIndex = 98
@@ -521,6 +531,26 @@ Partial Class PengembalianRental
         Me.btn_simpan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btn_simpan.Name = "btn_simpan"
         Me.btn_simpan.Size = New System.Drawing.Size(93, 60)
+        Me.btn_simpan.TabIndex = 20
+        Me.btn_simpan.Text = "Simpan"
+        Me.btn_simpan.UseVisualStyleBackColor = True
+        '
+        'btn_hapus
+        '
+        Me.btn_hapus.Location = New System.Drawing.Point(76, 564)
+        Me.btn_hapus.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_hapus.Name = "btn_hapus"
+        Me.btn_hapus.Size = New System.Drawing.Size(70, 49)
+        Me.btn_hapus.TabIndex = 21
+        Me.btn_hapus.Text = "Hapus"
+        Me.btn_hapus.UseVisualStyleBackColor = True
+        '
+        'btn_simpan
+        '
+        Me.btn_simpan.Location = New System.Drawing.Point(2, 563)
+        Me.btn_simpan.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_simpan.Name = "btn_simpan"
+        Me.btn_simpan.Size = New System.Drawing.Size(70, 49)
         Me.btn_simpan.TabIndex = 20
         Me.btn_simpan.Text = "Simpan"
         Me.btn_simpan.UseVisualStyleBackColor = True
