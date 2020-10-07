@@ -7,9 +7,9 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Inventaris", "Inventaris\In
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InventorySetup", "InventorySetup\InventorySetup.vdproj", "{7E99C456-557B-464A-8775-94DFEB362D20}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InventoryDevelopment", "InventoryDevelopment\InventoryDevelopment.vdproj", "{51EB17FF-3C46-4EEC-B95E-6725B4D209A1}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InventoryDevelopment", "InventoryDevelopment\InventoryDevelopment.vdproj", "{EDD4C892-E322-4FA7-AAF2-748302CCFCC9}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Inventory-iasa-group", "Inventory-iasa-group\Inventory-iasa-group.vdproj", "{43FB9252-137D-445E-917D-EA0EC8A7BAC2}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Inventory-iasa-group", "Inventory-iasa-group\Inventory-iasa-group.vdproj", "{6FBBFBDB-F5C3-4C86-87F6-8941A40DC835}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{A20064B7-439E-448D-A4B1-F85CFF0F199F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7E99C456-557B-464A-8775-94DFEB362D20}.Debug|Any CPU.ActiveCfg = Debug
 		{7E99C456-557B-464A-8775-94DFEB362D20}.Release|Any CPU.ActiveCfg = Release
-		{51EB17FF-3C46-4EEC-B95E-6725B4D209A1}.Debug|Any CPU.ActiveCfg = Debug
-		{51EB17FF-3C46-4EEC-B95E-6725B4D209A1}.Release|Any CPU.ActiveCfg = Release
-		{43FB9252-137D-445E-917D-EA0EC8A7BAC2}.Debug|Any CPU.ActiveCfg = Debug
-		{43FB9252-137D-445E-917D-EA0EC8A7BAC2}.Release|Any CPU.ActiveCfg = Release
+		{EDD4C892-E322-4FA7-AAF2-748302CCFCC9}.Debug|Any CPU.ActiveCfg = Debug
+		{EDD4C892-E322-4FA7-AAF2-748302CCFCC9}.Release|Any CPU.ActiveCfg = Release
+		{6FBBFBDB-F5C3-4C86-87F6-8941A40DC835}.Debug|Any CPU.ActiveCfg = Debug
+		{6FBBFBDB-F5C3-4C86-87F6-8941A40DC835}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
