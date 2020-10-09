@@ -145,7 +145,7 @@ Partial Class Repair
         Me.dt_barang_keluar_fix.Name = "dt_barang_keluar_fix"
         Me.dt_barang_keluar_fix.RowHeadersWidth = 51
         Me.dt_barang_keluar_fix.RowTemplate.Height = 24
-        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1332, 119)
+        Me.dt_barang_keluar_fix.Size = New System.Drawing.Size(1375, 119)
         Me.dt_barang_keluar_fix.TabIndex = 12
         '
         'jenis_barang2
@@ -327,7 +327,7 @@ Partial Class Repair
         Me.Panel2.Location = New System.Drawing.Point(1, 79)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1667, 474)
+        Me.Panel2.Size = New System.Drawing.Size(1710, 474)
         Me.Panel2.TabIndex = 86
         '
         'btncari
@@ -423,7 +423,7 @@ Partial Class Repair
         Me.dt_barang_masuk.Name = "dt_barang_masuk"
         Me.dt_barang_masuk.RowHeadersWidth = 51
         Me.dt_barang_masuk.RowTemplate.Height = 24
-        Me.dt_barang_masuk.Size = New System.Drawing.Size(1336, 119)
+        Me.dt_barang_masuk.Size = New System.Drawing.Size(1379, 119)
         Me.dt_barang_masuk.TabIndex = 10
         '
         'jenis_barang
