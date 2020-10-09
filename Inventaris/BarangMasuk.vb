@@ -1377,4 +1377,82 @@ end_of_for:
     Private Sub cmb_detail_lokasi_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_detail_lokasi.SelectedIndexChanged
 
     End Sub
+
+    Private Sub btncari2_Click(sender As Object, e As EventArgs) Handles btncari2.Click
+        dt_barang_masuk.Rows.Clear()
+        Dim search = listBarangMasuk2
+        If TextBox1.Text <> "" Then
+            Dim keywoard = TextBox1.Text
+            If ComboBox1.Text = "Jenis Barang" Then
+                search = search.Where(Function(x) x.nama_jenis.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
+            ElseIf ComboBox1.Text = "Tipe Barang" Then
+                search = search.Where(Function(x) x.tipe_barang.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
+            ElseIf ComboBox1.Text = "Serial Number" Then
+                search = search.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
+            ElseIf ComboBox1.Text = "Status Barang" Then
+                search = search.Where(Function(x) x.nama_status.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+            End If
+        End If
+
+        If TextBox2.Text <> "" Then
+            Dim keywoard = TextBox2.Text
+            If ComboBox2.Text = "Jenis Barang" Then
+                search = search.Where(Function(x) x.jenis_barang.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
+            ElseIf ComboBox2.Text = "Tipe Barang" Then
+                search = search.Where(Function(x) x.tipe_barang.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
+            ElseIf ComboBox2.Text = "Serial Number" Then
+                search = search.Where(Function(x) x.serial_number.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+
+            ElseIf ComboBox2.Text = "Status Barang" Then
+                search = search.Where(Function(x) x.nama_status.ToString.ToLower.Contains(keywoard.ToLower)).ToList()
+            End If
+        End If
+        If TextBox1.Text = "" And TextBox2.Text = "" Then
+            GetBarangMasuk(UserInfo.IdToko)
+        Else
+            Dim index = 0
+            For Each insertDataBarangMasuk As Object In search
+                dt_barang_masuk.Rows.Add(1)
+                Dim isTest As String
+                If insertDataBarangMasuk.tested = 1 Then
+                    isTest = "Teruji"
+                Else
+                    isTest = "Tidak Teruji"
+                End If
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(0).Value = insertDataBarangMasuk.nama_jenis
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(1).Value = insertDataBarangMasuk.nama_tipe
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(2).Value = insertDataBarangMasuk.serial_number
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(3).Value = insertDataBarangMasuk.nama_kondisi
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(4).Value = isTest
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(5).Value = insertDataBarangMasuk.nama_lokasi
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(6).Value = insertDataBarangMasuk.detail_lokasi
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(7).Value = insertDataBarangMasuk.licence
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(8).Value = insertDataBarangMasuk.catatan
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(9).Value = insertDataBarangMasuk.nama_status
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(10).Value = insertDataBarangMasuk.harga_beli
+                If UserInfo.IdLevel <> 1 Then
+                    dt_barang_masuk.Columns(10).Visible = False
+                ElseIf UserInfo.IdLevel = 1 Then
+                    dt_barang_masuk.Columns(10).Visible = True
+                End If
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(11).Value = insertDataBarangMasuk.harga_jual
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(12).Value = insertDataBarangMasuk.tgl_masuk
+                If index = 0 Then
+                    dt_barang_masuk.Columns.Add("id_barang_masuk", "IdBarangMasuk")
+                    dt_barang_masuk.Columns(13).Visible = False
+                End If
+                dt_barang_masuk.Rows(dt_barang_masuk.RowCount - 2).Cells(13).Value = insertDataBarangMasuk.id_barang_masuk
+
+                dt_barang_masuk.Update()
+                index = index + 1
+
+            Next
+        End If
+
+    End Sub
 End Class
